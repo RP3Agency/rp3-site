@@ -1,0 +1,3 @@
+[submodule "WordPress-Skeleton"]
+	path = WordPress-Skeleton
+	url = git://github.com/markjaquith/WordPress-Skeleton

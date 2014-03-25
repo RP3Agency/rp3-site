@@ -1,0 +1,95 @@
+// Define our Gulp plugins
+var gulp = require( 'gulp' ),
+	sass = require( 'gulp-ruby-sass' ),
+	autoprefixer = require( 'gulp-autoprefixer' ),
+	minifycss = require( 'gulp-minify-css' ),
+	jshint = require( 'gulp-jshint' ),
+	uglify = require( 'gulp-uglify' ),
+	imagemin = require( 'gulp-imagemin' ),
+	rename = require( 'gulp-rename' ),
+	clean = require( 'gulp-clean' ),
+	concat = require( 'gulp-concat' ),
+	notify = require( 'gulp-notify' ),
+	cache = require( 'gulp-cache' ),
+	livereload = require( 'gulp-livereload' ),
+	lr = require( 'tiny-lr' ),
+	server = lr();
+
+// Sass & CSS processing
+gulp.task( 'styles', function() {
+	return gulp.src( 'src/scss/**/*.scss')
+		.pipe( sass( { style: 'expanded' } ) )
+		.pipe( autoprefixer( 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ) )
+		.pipe( gulp.dest( 'css' ) )
+		.pipe( rename( { suffix: '.min' } ) )
+		.pipe( minifycss() )
+		.pipe( gulp.dest( 'css' ) )
+		.pipe( livereload( server ) )
+		.pipe( notify( { message: 'Styles task complete' } ) );
+});
+
+// JavaScript processing
+gulp.task( 'scripts', function() {
+	return gulp.src( 'src/js/main.js' )
+		.pipe( jshint( '.jshintrc' ) )
+		.pipe( jshint.reporter( 'default' ) )
+		.pipe( gulp.dest( 'js' ) )
+		.pipe( rename( { suffix: '.min' } ) )
+		.pipe( uglify() )
+		.pipe( gulp.dest( 'js' ) )
+		.pipe( livereload( server ) )
+		.pipe( notify( { message: 'Scripts task complete' } ) );
+});
+
+gulp.task( 'scripts-vendor', function() {
+	return gulp.src( 'src/js/vendor/**/*.js' )
+		.pipe( gulp.dest( 'js/vendor' ) )
+		.pipe( livereload( server ) )
+		.pipe( notify( { message: 'Scripts (vendor) task complete' } ) );
+});
+
+gulp.task( 'scripts-plugins', function() {
+	return gulp.src( 'src/js/plugins/**/*.js' )
+		.pipe( concat( 'plugins.js' ) )
+		.pipe( gulp.dest( 'js' ) )
+		.pipe( rename( { suffix: '.min' } ) )
+		.pipe( uglify() )
+		.pipe( gulp.dest( 'js' ) )
+		.pipe( livereload( server ) )
+		.pipe( notify( { message: 'Scripts (scripts-plugins) task complete' } ) );
+});
+
+// Image processing
+gulp.task( 'images', function() {
+	return gulp.src( 'src/images/**/*' )
+		.pipe( cache( imagemin( { optimizationLevel: 5, progressive: true, interlaced: true } ) ) )
+		.pipe( gulp.dest( 'images' ) )
+		.pipe( livereload( server ) )
+		.pipe( notify( { message: 'Images task complete' } ) );
+});
+
+// Clean task
+gulp.task( 'clean', function() {
+	return gulp.src( ['css', 'js', 'images'], { read: false } )
+		.pipe( clean() );
+});
+
+// "Default" task
+gulp.task( 'default', ['clean'], function() {
+	gulp.start( 'styles', 'scripts', 'scripts-vendor', 'scripts-plugins', 'images');
+});
+
+// "Watch" task
+gulp.task( 'watch', function() {
+	gulp.watch( 'src/scss/**/*.scss', ['styles'] );
+	gulp.watch( 'src/js/**/*.js', ['scripts'] );
+	gulp.watch( 'src/images/**/*', ['images'] );
+
+	// Listen on port 35729
+	server.listen( 35729, function( err ) {
+		if ( err ) {
+			return console.log( err )
+		};
+	});
+});
+
