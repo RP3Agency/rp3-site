@@ -1,0 +1,85 @@
+.splash {
+	background: url('http://rp3agency.com//img/header/rp3-logo.png') no-repeat center 40%;
+	bottom: 0;
+	left: 0;
+	padding: 0.5em;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	@include highlight;
+	background-clip: content-box;
+
+	.introduction {
+		bottom: 0;
+		font-size: 1.5em;
+		padding-bottom: 1.5em;
+		position: absolute;
+		text-align: center;
+		// width: 100%;
+	}
+}
+
+.video-wrapper {
+	// position: fixed;
+	// margin-top: -749px;
+	// min-height: 779px;
+	// width: 100%;
+
+	// video {
+	// 	height: auto;
+	// 	opacity: 0.5;
+	// 	width: 100%;
+	// }
+
+	.introduction {
+		// background: {
+		// 	image: ;
+		// 	position: center 10%;
+		// 	repeat: no-repeat;
+		// }
+		// bottom: 0;
+		color: #fff;
+		font-family: Raleway;
+		font-weight: 700;
+		// left: 0;
+		// position: absolute;
+		// right: 0;
+		// top: 0;
+	}
+}
+
+article.slide {
+	background: {
+		color: #fff;
+		position: center center;
+		repeat: no-repeat;
+		size: cover;
+	}
+	height: 100%;
+	min-height: 779px;
+	position: relative;
+	width: 100%;
+
+	&.one {
+		background-image: url('http://www.rp3agency.com/data1/images/home_feat_nscorp.jpg');
+		margin-top: 749px;
+	}
+
+	&.two {
+		background-image: url('http://www.rp3agency.com/data1/images/home_feat_conjunction.jpg');
+	}
+
+	&.three {
+		background-image: url('http://www.rp3agency.com/data1/images/home_feat_hero.jpg');
+	}
+
+	&.four {
+		background-image: url('http://www.rp3agency.com/data1/images/home_feat_sizzle.jpg');
+	}
+}
+
+
+div.placeholder {
+	transition: background-size 4s linear;
+}
