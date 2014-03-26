@@ -36,17 +36,29 @@
 		}
 
 		li:nth-child(1) span {
-			background-image: url("../images/city.1.jpg");
+			background-image: url("../images/city-1.jpg");
+
+			@include retina {
+				background-image: url("../images/city-1@2x.jpg");
+			}
 		}
 
 		li:nth-child(2) span {
-			background-image: url("../images/city.3.jpg");
+			background-image: url("../images/city-2.jpg");
 			animation-delay: 6s;
+
+			@include retina {
+				background-image: url("../images/city-2@2x.jpg");
+			}
 		}
 
 		li:nth-child(3) span {
-			background-image: url("../images/city.5.jpg");
+			background-image: url("../images/city-3.jpg");
 			animation-delay: 12s;
+
+			@include retina {
+				background-image: url("../images/city-3@2x.jpg");
+			}
 		}
 	}
 }
