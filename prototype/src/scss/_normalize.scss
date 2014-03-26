@@ -84,6 +84,15 @@ textarea {
 	resize: vertical;
 }
 
+/**
+ * Make all images display: block and max out their width
+ */
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
 /* ==========================================================================
 	 Browse Happy prompt
 	 ========================================================================== */

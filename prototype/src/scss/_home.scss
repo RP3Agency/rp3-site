@@ -1,22 +1,16 @@
-.splash {
-	background: url('http://rp3agency.com//img/header/rp3-logo.png') no-repeat center 40%;
-	bottom: 0;
-	left: 0;
-	padding: 0.5em;
-	position: absolute;
-	right: 0;
-	top: 0;
+@import "splash-slideshow";
 
-	@include highlight;
-	background-clip: content-box;
+.splash {
+	// background: url('http://rp3agency.com/img/header/rp3-logo.png') no-repeat center 40%;
 
 	.introduction {
 		bottom: 0;
 		font-size: 1.5em;
-		padding-bottom: 1.5em;
+		padding: 0.5em 0.5em 1.5em;
 		position: absolute;
 		text-align: center;
-		// width: 100%;
+		width: 100%;
+		z-index: 1;
 	}
 }
 
