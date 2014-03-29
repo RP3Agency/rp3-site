@@ -1,3 +1,9 @@
 @mixin highlight( $adjustment: 0 ) {
 	background-color: adjust-hue( transparentize( #f0f, 0.8 ), $adjustment );
 }
+
+@mixin modernizr($test) {
+	html.#{$test} & {
+		@content;
+	}
+}

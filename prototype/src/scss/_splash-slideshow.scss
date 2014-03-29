@@ -8,19 +8,16 @@
 	.slideshow {
 		position: absolute;
 		bottom: 0;
+		list-style: none;
+		margin: 0;
+		opacity: 0.5;
+		padding: 0;
 		right: 0;
 		top: 0;
 		left: 0;
 		z-index: 0;
 
-		ul,
 		li {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-
-		li span {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -32,10 +29,12 @@
 			background-repeat: no-repeat;
 			opacity: 0;
 			z-index: 0;
+
 			animation: imageAnimation 18s linear infinite 0s;
+			transform: translateZ(0);
 		}
 
-		li:nth-child(1) span {
+		li:nth-child(1) {
 			background-image: url("../images/city-1.jpg");
 
 			@include retina {
@@ -43,7 +42,7 @@
 			}
 		}
 
-		li:nth-child(2) span {
+		li:nth-child(2) {
 			background-image: url("../images/city-2.jpg");
 			animation-delay: 6s;
 
@@ -52,7 +51,7 @@
 			}
 		}
 
-		li:nth-child(3) span {
+		li:nth-child(3) {
 			background-image: url("../images/city-3.jpg");
 			animation-delay: 12s;
 

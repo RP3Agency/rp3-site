@@ -1,45 +1,64 @@
 @import "splash-slideshow";
+@import "video";
 
 .splash {
-	// background: url('http://rp3agency.com/img/header/rp3-logo.png') no-repeat center 40%;
-
 	.introduction {
+		background: {
+			position: center 10%;
+			repeat: no-repeat;
+		}
 		bottom: 0;
-		font-size: 1.5em;
-		padding: 0.5em 0.5em 1.5em;
+		color: #fff;
+		font-family: Raleway;
+		font-size: 2em;
+		font-weight: 700;
+		left: 0;
+		padding: 0.5em;
 		position: absolute;
+		right: 0;
 		text-align: center;
-		width: 100%;
-		z-index: 1;
+		top: 50%;
+		z-index: 10;
+
+		&::before {
+			background-image: url("../images/logo@2x.png");
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			content: "";
+			display: block;
+			height: (516px / 2);
+			left: 50%;
+			margin-left: -80px;
+			position: absolute;
+			top: -200px;
+			width: 50%;
+
+			@include responsive("min-width: 640px") {
+				background-size: (722px/2) auto;
+				margin-left: -180px;
+				top: -295px;
+				width: (722px / 2);
+			}
+		}
 	}
 }
 
-.video-wrapper {
-	// position: fixed;
-	// margin-top: -749px;
-	// min-height: 779px;
-	// width: 100%;
+.interstitial {
+	background-color: rgb(247, 253, 255);
 
-	// video {
-	// 	height: auto;
-	// 	opacity: 0.5;
-	// 	width: 100%;
-	// }
-
-	.introduction {
-		// background: {
-		// 	image: ;
-		// 	position: center 10%;
-		// 	repeat: no-repeat;
-		// }
-		// bottom: 0;
+	h1 {
+		background: $black linear-gradient( to top, $black, mix( #fff, $black, 15% ) );
 		color: #fff;
-		font-family: Raleway;
-		font-weight: 700;
-		// left: 0;
-		// position: absolute;
-		// right: 0;
-		// top: 0;
+		font-weight: 400;
+		margin: 0 0 2px;
+		padding: 0.5em 0;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	p {
+		padding: 0 5vw;
 	}
 }
 
@@ -50,14 +69,9 @@ article.slide {
 		repeat: no-repeat;
 		size: cover;
 	}
-	height: 100%;
-	min-height: 779px;
-	position: relative;
-	width: 100%;
 
 	&.one {
 		background-image: url('http://www.rp3agency.com/data1/images/home_feat_nscorp.jpg');
-		margin-top: 749px;
 	}
 
 	&.two {
@@ -73,7 +87,45 @@ article.slide {
 	}
 }
 
+section.news-blog {
+	background-color: #fff;
+	padding-top: 5vw;
 
-div.placeholder {
-	transition: background-size 4s linear;
+	article {
+		border-bottom: 1px solid $black;
+		padding: 0 5vw;
+	}
+
+	.tag {
+		background-color: $blue;
+		color: #fff;
+		display: inline-block;
+		font-size: ce( 11px, $default-font-size );
+		font-weight: bold;
+		margin-bottom: 0;
+		padding: 3px;
+		text-transform: uppercase;
+	}
+}
+
+section.clients {
+	background-color: #fff;
+	text-align: center;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: block;
+		margin-bottom: 1em;
+		text-align: center;
+		width: 100%;
+	}
+
+	img {
+		display: inline-block;
+	}
 }

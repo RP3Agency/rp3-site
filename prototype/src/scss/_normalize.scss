@@ -23,7 +23,8 @@ textarea {
 
 html {
 	background-color: #000;
-	font-size: 1em;
+	font-family: $muli;
+	font-size: cp( $default-font-size, 16px );
 	line-height: 1.4;
 }
 
