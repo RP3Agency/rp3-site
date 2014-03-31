@@ -51,6 +51,31 @@ var rp3 = (function($) {
 		});
 	},
 
+	toggleNavigation = function() {
+		var $menuOpen = $("#menu-open");
+
+		bindNavClose();
+
+		$menuOpen.on('click', function() {
+			showMainNav();
+		});
+	},
+	showMainNav = function() {
+		var $mainNav = $('#main-nav');
+
+		if ( ! $mainNav.is(':visible') ) {
+			$mainNav.show();
+		}
+	},
+	bindNavClose = function() {
+		var $mainNav = $('#main-nav'),
+			$menuClose = $('#menu-close');
+
+		$menuClose.on( 'click', function() {
+			$mainNav.hide();
+		});
+	},
+
 	/**
 	 * Determine if we're on an iPhone/iPod Touch
 	 * browser sniffing. yuck.
@@ -73,6 +98,7 @@ var rp3 = (function($) {
 		setHomePageFrames();
 		homePageVideo();
 		homePageAccordion();
+		toggleNavigation();
 	};
 
 	return {
