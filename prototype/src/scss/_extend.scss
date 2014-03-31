@@ -71,7 +71,7 @@
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-%cleafix {
+%clearfix {
 	&:before,
 	&:after {
 		content: " ";
@@ -89,4 +89,22 @@
 	 * Include this rule to trigger hasLayout and contain floats.
 	 */
 	*zoom: 1;
+}
+
+/**
+ * %fullscreen: for absolutely positioned elements to fill every corner
+ * of their relatively-positioned parent elements
+ */
+%fullscreen {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+%clear-button-formatting {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }

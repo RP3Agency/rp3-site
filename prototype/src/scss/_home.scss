@@ -45,7 +45,6 @@
 }
 
 .interstitial {
-	background-color: rgb(247, 253, 255);
 
 	h1 {
 		background: $black linear-gradient( to top, $black, mix( #fff, $black, 15% ) );
@@ -64,7 +63,6 @@
 
 article.slide {
 	background: {
-		color: #fff;
 		position: center center;
 		repeat: no-repeat;
 		size: cover;
@@ -88,7 +86,6 @@ article.slide {
 }
 
 section.news-blog {
-	background-color: #fff;
 	padding-top: 5vw;
 
 	article {
@@ -109,7 +106,6 @@ section.news-blog {
 }
 
 section.clients {
-	background-color: #fff;
 	text-align: center;
 
 	ul {
