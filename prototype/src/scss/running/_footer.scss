@@ -1,0 +1,11 @@
+footer[role="contentinfo"] {
+	@include bp(medium) {
+		background-color: #fff;
+		position: relative;
+		z-index: 10;
+	}
+
+	ul {
+		@extend %clear-ul-formatting;
+	}
+}

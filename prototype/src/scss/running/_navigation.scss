@@ -1,6 +1,12 @@
 nav[role="navigation"] {
+	$height: 58px;
+
 	@extend %fullscreen;
 	z-index: 20;
+
+	@include bp(medium) {
+		bottom: auto;
+	}
 
 	.menu-open {
 		@extend %clear-button-formatting;
@@ -12,18 +18,40 @@ nav[role="navigation"] {
 		margin: 5px;
 		padding: 5px;
 		text-transform: uppercase;
+
+		@include bp(medium) {
+			display: none;
+		}
 	}
 
 	a[rel="home"],
 	.main-nav {
 		display: none;
+
+		@include bp(medium) {
+			display: block;
+		}
+	}
+
+	a[rel="home"] {
+		@extend %ir;
+		float: left;
+
+		.home & {
+			display: none;
+		}
 	}
 
 	.main-nav {
 		@extend %clearfix;
+
+		@include bp(medium) {
+			height: cr($height);
+		}
 	}
 
 	ul {
+		@extend %clear-ul-formatting;
 		@extend %clearfix;
 		@extend %fullscreen;
 		align-content: stretch;
@@ -31,10 +59,15 @@ nav[role="navigation"] {
 		background-color: $black;
 		display: flex;
 		flex-direction: column;
-		list-style: none;
-		margin: 0;
-		padding: 0;
 		z-index: 30;
+
+		@include bp(medium) {
+			background-color: $blue;
+			flex-direction: row;
+			height: 100%;
+			position: static;
+			z-index: auto;
+		}
 	}
 
 	li {
@@ -47,9 +80,21 @@ nav[role="navigation"] {
 			display: block;
 			height: 100%;
 			padding-left: 10px;
-			position: relative;
+			position: absolute;
+			text-align: center;
 			text-decoration: none;
+			text-transform: uppercase;
+			vertical-align: middle;
 			width: 100%;
+
+			@include bp(medium) {
+				line-height: cr($height);
+			}
+
+			@include hover-state {
+				background-color: #fff;
+				color: $blue;
+			}
 		}
 	}
 
@@ -61,6 +106,10 @@ nav[role="navigation"] {
 		right: 0;
 		top: 0;
 		z-index: 40;
+
+		@include bp(medium) {
+			display: none;
+		}
 
 		&::after {
 			color: #fff;
