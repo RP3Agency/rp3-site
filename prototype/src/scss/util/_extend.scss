@@ -108,3 +108,15 @@
 	-moz-appearance: none;
 	appearance: none;
 }
+
+%clear-ul-formatting {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
