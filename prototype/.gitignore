@@ -1,5 +1,6 @@
 css/*.css
 js/*.js
 js/vendor/*.js
+images/*.*
 .sass-cache
 node_modules
