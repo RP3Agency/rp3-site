@@ -2,6 +2,7 @@
 	position: fixed;
 	min-height: 779px;
 	width: 100%;
+	z-index: 0;
 
 	@include modernizr(no-video) {
 		background: url("../images/city-1@2x.jpg") no-repeat center center;
