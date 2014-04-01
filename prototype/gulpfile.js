@@ -13,7 +13,8 @@ var gulp = require( 'gulp' ),
 	cache = require( 'gulp-cache' ),
 	livereload = require( 'gulp-livereload' ),
 	lr = require( 'tiny-lr' ),
-	server = lr();
+	server = lr(),
+	gutil = require( 'gulp-util' );
 
 // Sass & CSS processing
 gulp.task( 'styles', function() {
@@ -24,7 +25,8 @@ gulp.task( 'styles', function() {
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( minifycss() )
 		.pipe( gulp.dest( 'css' ) )
-		.pipe( notify( { message: 'Styles task complete' } ) );
+		.pipe( notify( { message: 'Styles task complete' } ) )
+		.on( 'error', gutil.log );
 });
 
 // JavaScript processing
@@ -56,12 +58,12 @@ gulp.task( 'scripts-plugins', function() {
 });
 
 // Image processing
-gulp.task( 'images', function() {
-	return gulp.src( 'src/images/**/*' )
-		.pipe( cache( imagemin( { optimizationLevel: 5, progressive: true, interlaced: true } ) ) )
-		.pipe( gulp.dest( 'images' ) )
-		.pipe( notify( { message: 'Images task complete' } ) );
-});
+// gulp.task( 'images', function() {
+// 	return gulp.src( 'src/images/**/*' )
+// 		.pipe( cache( imagemin( { optimizationLevel: 5, progressive: true, interlaced: true } ) ) )
+// 		.pipe( gulp.dest( 'images' ) )
+// 		.pipe( notify( { message: 'Images task complete' } ) );
+// });
 
 // Clean task
 gulp.task( 'clean', function() {
@@ -71,13 +73,15 @@ gulp.task( 'clean', function() {
 
 // "Default" task
 gulp.task( 'default', ['clean'], function() {
-	gulp.start( 'styles', 'scripts', 'scripts-vendor', 'scripts-plugins', 'images' );
+	gulp.start( 'styles', 'scripts', 'scripts-vendor', 'scripts-plugins' );
 });
 
 // "Watch" task
 gulp.task( 'watch', function() {
 	gulp.start( 'default' );
 	gulp.watch( 'src/scss/**/*.scss', ['styles'] );
-	gulp.watch( 'src/js/**/*.js', ['scripts'] );
-	gulp.watch( 'src/images/**/*', ['images'] );
+	gulp.watch( 'src/js/*.js', ['scripts'] );
+	gulp.watch( 'src/js/vendor/*.js', ['scripts-vendor'] );
+	gulp.watch( 'src/js/plugins/*.js', ['scripts-plugins'] );
+	// gulp.watch( 'src/images/**/*', ['images'] );
 });
