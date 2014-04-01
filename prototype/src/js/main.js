@@ -20,11 +20,12 @@ var rp3 = (function($) {
 		}
 
 		$splash.height(clientHeight);
-		$interstitial.height( clientHeight ).css( 'margin-top', clientHeight + 'px' );
+		// $interstitial.height( clientHeight ).css( 'margin-top', clientHeight + 'px' );
 
+		$caseStudies.css('margin-top', clientHeight + 'px');
 		$caseStudies.find('article').height( clientHeight );
-		$caseStudies.find('one').css( 'margin-top', ( clientHeight * 2 ) + 'px' );
-		$caseStudies.find('two').css( 'margin-top', ( clientHeight * 3 ) + 'px' );
+		// $caseStudies.find('.nscorp').css( 'margin-top', clientHeight + 'px' );
+		// $caseStudies.find('two').css( 'margin-top', ( clientHeight * 3 ) + 'px' );
 	},
 
 	homePageVideo = function() {
@@ -43,11 +44,22 @@ var rp3 = (function($) {
 	},
 
 	homePageAccordion = function() {
-		$('#accordion').accordion({
-			header: 'h1',
-			collapsible: true,
-			active: false,
-			heightStyle: 'content'
+		var clientWidth = document.documentElement.clientWidth;
+		if ( clientWidth < 640 ) {
+			$('#accordion').accordion({
+				header: 'h1',
+				collapsible: true,
+				active: false,
+				heightStyle: 'content'
+			});
+		}
+	},
+
+	homePageClients = function() {
+		var $clientsUl = $('#clients ul');
+
+		$clientsUl.masonry({
+			columnWidth: 160
 		});
 	},
 
@@ -99,6 +111,7 @@ var rp3 = (function($) {
 		homePageVideo();
 		homePageAccordion();
 		toggleNavigation();
+		homePageClients();
 	};
 
 	return {
