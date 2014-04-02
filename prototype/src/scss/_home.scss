@@ -51,17 +51,17 @@ article.slide {
 		size: cover;
 	}
 
-	// &.nscorp {
-	// 	background-image: url('http://www.rp3agency.com/data1/images/home_feat_nscorp.jpg');
-	// }
+	&.nscorp {
+		background-image: url('http://www.rp3agency.com/data1/images/home_feat_nscorp.jpg');
+	}
 
-	// &.conjunction-junction {
-	// 	background-image: url('http://www.rp3agency.com/data1/images/home_feat_conjunction.jpg');
-	// }
+	&.conjunction-junction {
+		background-image: url('http://www.rp3agency.com/data1/images/home_feat_conjunction.jpg');
+	}
 
-	// &.united-way {
-	// 	background-image: url('http://www.rp3agency.com/data1/images/home_feat_hero.jpg');
-	// }
+	&.united-way {
+		background-image: url('http://www.rp3agency.com/data1/images/home_feat_hero.jpg');
+	}
 }
 
 section.case-studies {
