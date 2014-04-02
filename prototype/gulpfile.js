@@ -13,8 +13,7 @@ var gulp = require( 'gulp' ),
 	cache = require( 'gulp-cache' ),
 	livereload = require( 'gulp-livereload' ),
 	lr = require( 'tiny-lr' ),
-	server = lr(),
-	gutil = require( 'gulp-util' );
+	server = lr();
 
 // Sass & CSS processing
 gulp.task( 'styles', function() {
@@ -25,8 +24,7 @@ gulp.task( 'styles', function() {
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( minifycss() )
 		.pipe( gulp.dest( 'css' ) )
-		.pipe( notify( { message: 'Styles task complete' } ) )
-		.on( 'error', gutil.log );
+		.pipe( notify( { message: 'Styles task complete' } ) );
 });
 
 // JavaScript processing
