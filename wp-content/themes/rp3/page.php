@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package _s
+ * @package RP3
  */
 
 get_header(); ?>
