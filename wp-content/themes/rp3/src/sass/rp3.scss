@@ -1,0 +1,80 @@
+/*!
+Theme Name: RP3
+Theme URI: http://rp3agency.com/
+Author: RP3
+Author URI: http://rp3agency.com/
+Version: 3.1
+License: MIT
+License URI: http://opensource.org/licenses/MIT
+Text Domain: rp3
+Domain Path: /languages/
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+ _s is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/*--------------------------------------------------------------
+Utilities
+--------------------------------------------------------------*/
+
+@import "utils/extend";
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset (_reset.scss)
+2.0 - Typography (_typography.scss)
+3.0 - Elements (_elements.scss)
+4.0 - Forms (_forms.scss)
+5.0 - Navigation
+	5.1 - Links (navigation/_links.scss)
+	5.2 - Menus (navigation/_menus.scss)
+6.0 - Accessibility (_a11y.scss)
+7.0 - Alignments (_alignments.scss)
+8.0 - Clearings (_clearings.scss)
+9.0 - Widgets (_widgets.scss)
+10.0 - Content
+	10.1 - Posts and pages (content/_posts.scss)
+	10.2 - Asides (content/_asides.scss)
+	10.3 - Comments (content/_comments.scss)
+11.0 - Infinite scroll (_infinite-scroll.scss)
+12.0 - Media (_media.scss)
+--------------------------------------------------------------*/
+
+@import "reset";
+
+@import "typography";
+
+@import "elements";
+
+@import "forms";
+
+@import "navigation/links";
+
+@import "navigation/menus";
+
+@import "a11y";
+
+@import "alignments";
+
+@import "clearings";
+
+@import "widgets";
+
+@import "content/posts";
+
+@import "content/asides";
+
+@import "content/comments";
+
+@import "infinite-scroll";
+
+@import "media";
