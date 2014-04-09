@@ -3,3 +3,4 @@ npm-debug.log
 .vagrant
 wp
 vendor
+composer.lock
