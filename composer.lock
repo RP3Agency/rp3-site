@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "10f795d0db18c8dc3f458bd4bc2ca534",
+    "hash": "c174e4df5798399325d038142bf8bd1a",
     "packages": [
         {
             "name": "fancyguy/webroot-installer",
@@ -49,10 +49,10 @@
         },
         {
             "name": "wordpress",
-            "version": "3.8.1",
+            "version": "3.8.2",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/3.8.1.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/3.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
