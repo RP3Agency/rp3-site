@@ -22,7 +22,9 @@ and Blueprint http://www.blueprintcss.org/
 */
 
 /*--------------------------------------------------------------
-Utilities
+ * Utilities
+ * Nothing in the utils directory produces any direct output to 
+ * the compiled CSS file
 --------------------------------------------------------------*/
 
 @import "utils/utils";
@@ -55,11 +57,13 @@ Utilities
 
 @import "elements";
 
+@import "layout";
+
 @import "forms";
 
 @import "navigation/links";
 
-@import "navigation/menus";
+@import "running/primary-navigation";
 
 @import "a11y";
 

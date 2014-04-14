@@ -1,0 +1,11 @@
+@mixin appearance($appearance) {
+	-webkit-appearance: $appearance;
+	-moz-appearance: $appearance;
+	appearance: $appearance;
+}
+
+@mixin hover-state {
+    &:hover, &:active, &:focus {
+        @content;
+    }
+}

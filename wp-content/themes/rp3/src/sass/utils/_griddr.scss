@@ -1,0 +1,92 @@
+/**
+ * Formulae and mixins to create any kind of evenly-spaced flexible grid
+ * you can possibly imagine.
+ */
+
+
+/**
+ * Our grid settings.  Change as desired for your project
+ */
+$columns: 12;  		// Desired number of columns
+$margin: 16px;		// Margin width in pixels
+$max-width: 960px;	// Max width of row (i.e. context) in pixels
+
+
+/**
+ * Start with our formula to get a single column's width in pixels
+ * based on the number of columns, the max-width context, and the
+ * target margin.
+ */
+@function griddr-column-width($cols-to-span) {
+	$column-width: ( $max-width - ( $margin * ( $columns - 1 ) ) ) / $columns;
+	
+	// Now, do some target / context * 100% magic to make it all fluid and responsive-like
+	@return ( $column-width / $max-width * 100% * $cols-to-span ) + ( $margin / $max-width * 100% ) * ( $cols-to-span - 1 );
+}
+
+
+/**
+ * Build our grid system because MATH
+ */
+@mixin griddr($cols-to-span) {
+	float: left;
+
+	// Easy enough to set the right margin: target / context * 100% = resulting percentage
+	// Be sure to invoke the griddr-last mixin on the last column in your row
+	margin-right: $margin / $max-width * 100%;
+
+	// Use the same target / context = result formula times the number of columns we're spanning,
+	// and add to that the margins that will get swallowed up by that span.
+	width: griddr-column-width($cols-to-span);
+}
+
+
+/**
+ * Other Stuff
+ */
+
+/**
+ * Create a clearfixed row
+ * Using Nicolas Gallagher's micro clearfix method
+ */
+@mixin griddr-row {
+    &:before, &:after {
+    	content: "";
+    	display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    *zoom: 1;
+}
+
+
+/**
+ * "Omega" mixin for designating the last column
+ */
+@mixin griddr-last {
+	margin-right: 0;
+}
+
+
+/**
+ * It ain't a perfect world. Let's make .row and .col-* stuff so they can be baked
+ * into the HTML non-semantically in a pinch.
+ */
+// .row {
+// 	@include griddr-row;
+// 	margin-bottom: $margin;
+// }
+
+// @for $i from 1 through $columns {
+// 	.col-#{$i} {
+// 		@include griddr($i);
+// 		@extend %col;
+// 	}
+// }
+
+// .col-last {
+// 	@include griddr-last;
+// }

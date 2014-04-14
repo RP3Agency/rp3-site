@@ -1,6 +1,19 @@
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+2.1 Fonts
+--------------------------------------------------------------*/
+
+@import "http://fonts.googleapis.com/css?family=Roboto:400|Lato:400,700,400italic";
+
+$lato:		"Lato", sans-serif;
+$roboto:	"Roboto", sans-serif;
+$bold:		700;
+
+/*--------------------------------------------------------------
+2.1 General Typography
+--------------------------------------------------------------*/
 html {
 	font-size: cp( $default-font-size, 16px );
 }
@@ -10,18 +23,15 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
+	color: $black;
+	font-family: $lato;
 	line-height: 1.5;
-}
-h1, h2, h3, h4, h5, h6 {
-	clear: both;
 }
 p {
 	margin-bottom: 1.5em;
 }
 b, strong {
-	font-weight: bold;
+	font-weight: $bold;
 }
 dfn, cite, em, i {
 	font-style: italic;
@@ -74,3 +84,5 @@ small {
 big {
 	font-size: 125%;
 }
+
+@import "headers";

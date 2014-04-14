@@ -5,15 +5,14 @@
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
-
+	&,
 	&:visited {
-		color: purple;
+		color: $blue;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: midnightblue;
+		color: $pink;
 	}
 }

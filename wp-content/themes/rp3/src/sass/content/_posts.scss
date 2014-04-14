@@ -26,3 +26,23 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+article.post {
+	> a {
+		color: inherit;
+		display: block;
+		text-decoration: none;
+	}
+
+	h1 {
+		color: $blue;
+
+		a:hover &,
+		a:active &,
+		a:focus & {
+			color: $pink;
+		}
+	}
+}
+
+@import "category-news";
