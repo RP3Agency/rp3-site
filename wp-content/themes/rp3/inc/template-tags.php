@@ -52,8 +52,8 @@ function rp3_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'rp3' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'rp3' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'rp3' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'rp3' ), true );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'rp3' ), true );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -78,15 +78,39 @@ function rp3_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'rp3' ),
+	printf( __( '<span class="posted-on">Posted on %1$s</span>', 'rp3' ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string
-		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() )
 		)
+	);
+
+	// Only add an author to blog posts (not news)
+	if ( has_category( 'blog' ) ) {
+		printf( __( '<span class="byline"> by %1$s</span>', 'rp3' ),
+			sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_html( get_the_author() )
+			)
+		);
+	}
+}
+endif;
+
+if ( ! function_exists( 'rp3_output_the_date' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date.
+ */
+function rp3_output_the_date() {
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
+
+	printf( __( '<span class="posted-on">%1$s</span>', 'rp3' ),
+		sprintf( '%1$s', $time_string )
 	);
 }
 endif;
