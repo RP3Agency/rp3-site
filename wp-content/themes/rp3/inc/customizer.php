@@ -21,6 +21,6 @@ add_action( 'customize_register', 'rp3_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function rp3_customize_preview_js() {
-	wp_enqueue_script( 'rp3_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'rp3_customizer', get_template_directory_uri() . '/admin-js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'rp3_customize_preview_js' );
