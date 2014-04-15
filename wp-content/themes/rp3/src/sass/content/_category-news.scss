@@ -1,7 +1,25 @@
 /**
- * News Archives
+ * News Archives & Single Page
+ * (common properties)
  */
 .category-news {
+
+	.entry-title {
+		color: $blue;
+		line-height: 1;
+		text-transform: none;
+	}
+
+	.entry-date {
+		color: $gray;
+		font-style: italic;
+	}
+}
+
+/**
+ * News Archives
+ */
+body.category-news {
 
 	.post {
 		min-height: 175px;
@@ -18,14 +36,8 @@
 			text-align: center;
 		}
 
-		.entry-date {
-			color: $gray;
-			font-style: italic;
-		}
-
 		.entry-title {
 			font-size: ce(19px, $default-font-size);
-			text-transform: none;
 		}
 
 		.entry-footer {
@@ -53,3 +65,39 @@
 	} // .post
 
 } // .category-news
+
+/**
+ * News Single Page
+ */
+.post.category-news {
+
+	.entry-title {
+		font-size: ce(36px, $default-font-size);
+		margin-bottom: 0.5em;
+	}
+
+	.entry-footer {
+		padding-top: 1em;
+
+		.entry-categories {
+			color: $blue;
+			font-size: ce(16px);
+			font-weight: $bold;
+			margin-right: 1ex;
+			text-transform: uppercase;
+		}
+
+		a[rel="category tag"] {
+			background-color: mix(#fff, $blue, 33%);
+			border-radius: $border-radius;
+			color: #fff;
+			padding: 5px 10px;
+			text-decoration: none;
+			transition: background-color 0.2s;
+
+			@include hover-state {
+				background-color: $blue;
+			}
+		}
+	}
+}
