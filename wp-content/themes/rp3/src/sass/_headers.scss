@@ -11,4 +11,12 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-size: ce( 30px, $default-font-size );
 	text-transform: uppercase;
+
+	&.page-title {
+		color: $blue;
+		font-size: ce(48px, $default-font-size);
+		font-weight: $light;
+		line-height: 1;
+		margin-bottom: 1em;
+	}
 }
