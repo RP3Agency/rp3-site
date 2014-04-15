@@ -17,9 +17,7 @@ a {
 		color: $blue;
 	}
 
-	&:hover,
-	&:focus,
-	&:active {
+	@include hover-state {
 		color: $pink;
 	}
 }

@@ -6,9 +6,7 @@
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 
-	&:hover,
-	&:active,
-	&:focus {
+	@include hover-state {
 		background-color: #f1f1f1;
 		border-radius: 3px;
 		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
