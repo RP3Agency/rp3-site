@@ -37,6 +37,28 @@ gulp.task('scripts', function() {
 		.pipe(notify({message: 'Scripts task complete'}));
 });
 
+// Scripts task: Plugins
+gulp.task('scripts-plugins', function() {
+	return gulp.src('src/js/plugins/*.js')
+		.pipe(concat('rp3-plugins.js'))
+		.pipe(rename({suffix: '.min'}))
+		.pipe(uglify())
+		.on('error', gutil.log)
+		.pipe(gulp.dest('js'))
+		.pipe(notify({message: 'Scripts task complete'}));
+});
+
+// Scripts task: Vendor
+gulp.task('scripts-vendor', function() {
+	return gulp.src('src/js/vendor/*.js')
+		.pipe(concat('rp3-vendor.js'))
+		.pipe(rename({suffix: '.min'}))
+		.pipe(uglify())
+		.on('error', gutil.log)
+		.pipe(gulp.dest('js'))
+		.pipe(notify({message: 'Scripts task complete'}));
+});
+
 // Clean
 gulp.task('clean', function() {
 	return gulp.src(['css'], {read: false})
@@ -47,6 +69,8 @@ gulp.task('clean', function() {
 gulp.task('default', ['clean'], function() {
 	gulp.start('styles');
 	gulp.start('scripts');
+	gulp.start('scripts-plugins');
+	gulp.start('scripts-vendor');
 });
 
 // Watch
@@ -58,4 +82,6 @@ gulp.task('watch', function() {
 
 	// Watch JavaScript files
 	gulp.watch('src/js/*.js', ['scripts']);
+	gulp.watch('src/js/plugins/*.js', ['scripts-plugins']);
+	gulp.watch('src/js/vendor/*.js', ['scripts-vendor']);
 });
