@@ -5,6 +5,13 @@
 5.1 Links
 --------------------------------------------------------------*/
 a {
+	// Apply a transition to the color change, whether it's directly
+	// on the <a> element or on a decendent element
+	&,
+	& * {
+		transition: color 0.2s;
+	}
+
 	&,
 	&:visited {
 		color: $blue;
