@@ -4,7 +4,10 @@ Layout
 .site-content {
 	margin: 0 auto;
 	max-width: ce(1280px, $default-font-size);
-	width: 95%;
+
+	@include bp(medium) {
+		width: 95%;
+	}
 
 	@include bp(large) {
 
