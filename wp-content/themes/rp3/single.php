@@ -12,7 +12,27 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'single' ); ?>
+			<?php
+
+			if ( has_category( 'news' ) ) :
+
+				get_template_part( 'content', 'single-news' );
+
+			elseif ( has_category( 'blog' ) ) :
+
+				get_template_part( 'content', 'single-blog' );
+
+			elseif ( has_category( 'careers' ) ) :
+
+				get_template_part( 'content', 'single-careers' );
+
+			else :
+
+				get_template_part( 'content', 'single' );
+
+			endif;
+
+			?>
 
 			<?php rp3_post_nav(); ?>
 
