@@ -89,6 +89,10 @@ function rp3_scripts() {
 
 	wp_enqueue_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', array( 'jquery' ), '20120206', true );
 
+	wp_enqueue_script( 'rp3-vendor', get_template_directory_uri() . '/js/rp3-vendor.min.js', array(), '20120206' );
+
+	wp_enqueue_script( 'rp3-plugins', get_template_directory_uri() . '/js/rp3-plugins.min.js', array( 'jquery' ), '20120206', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
