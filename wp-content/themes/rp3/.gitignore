@@ -2,4 +2,5 @@
 css
 js
 !src/js
+!src/js/vendor
 *.css
