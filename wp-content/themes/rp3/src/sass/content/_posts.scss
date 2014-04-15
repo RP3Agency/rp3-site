@@ -27,20 +27,22 @@
 	margin: 0 0 1.5em;
 }
 
-article.post {
+.post {
 	> a {
 		color: inherit;
 		display: block;
 		text-decoration: none;
-	}
 
-	h1 {
-		color: $blue;
+		.entry-title {
+			color: $blue;
+		}
 
-		a:hover &,
-		a:active &,
-		a:focus & {
-			color: $pink;
+		&:hover,
+		&:active,
+		&:focus {
+			.entry-title {
+				color: $pink;
+			}
 		}
 	}
 }
