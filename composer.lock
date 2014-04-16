@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ef4141ae6ee21776edcd810d8c2eae28",
+    "hash": "4d84dbb888208e6b620c0a2ad36c80f4",
     "packages": [
         {
             "name": "composer/installers",
@@ -133,10 +133,10 @@
         },
         {
             "name": "wordpress",
-            "version": "3.8.3",
+            "version": "3.9",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/3.8.3.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/3.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -290,6 +290,30 @@
             "time": "2014-03-09 01:45:50"
         },
         {
+            "name": "wpackagist-plugin/markdown-on-save",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/markdown-on-save/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/markdown-on-save.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/markdown-on-save": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/markdown-on-save/",
+            "time": "2013-04-24 15:43:19"
+        },
+        {
             "name": "wpackagist-plugin/regenerate-thumbnails",
             "version": "dev-trunk",
             "source": {
@@ -424,6 +448,7 @@
         "wpackagist-plugin/debug-bar": 20,
         "wpackagist-plugin/fv-top-level-cats": 20,
         "wpackagist-plugin/list-category-posts": 20,
+        "wpackagist-plugin/markdown-on-save": 20,
         "wpackagist-plugin/regenerate-thumbnails": 20,
         "wpackagist-plugin/show-template": 20,
         "wpackagist-plugin/simple-page-ordering": 20,

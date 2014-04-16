@@ -9,10 +9,10 @@
       "package": {
         "name": "wordpress",
         "type": "webroot",
-        "version": "3.8.3",
+        "version": "3.9",
         "dist": {
           "type": "zip",
-          "url": "https://github.com/WordPress/WordPress/archive/3.8.3.zip"
+          "url": "https://github.com/WordPress/WordPress/archive/3.9.zip"
         },
         "require" : {
           "fancyguy/webroot-installer": "1.0.0"
@@ -22,7 +22,7 @@
   ],
   "require": {
     "php": ">=5.3.0",
-    "wordpress": "3.8.3",
+    "wordpress": "3.9",
     "fancyguy/webroot-installer": "1.0.0",
     "wpackagist-plugin/add-from-server":"dev-trunk",
     "wpackagist-plugin/admin-post-navigation":"dev-trunk",
@@ -30,6 +30,7 @@
     "wpackagist-plugin/debug-bar":"dev-trunk",
     "wpackagist-plugin/fv-top-level-cats":"dev-trunk",
     "wpackagist-plugin/list-category-posts":"dev-trunk",
+    "wpackagist-plugin/markdown-on-save":"dev-trunk",
     "wpackagist-plugin/regenerate-thumbnails":"dev-trunk",
     "wpackagist-plugin/show-template":"dev-trunk",
     "wpackagist-plugin/simple-page-ordering":"dev-trunk",
