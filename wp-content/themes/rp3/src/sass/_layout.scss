@@ -14,8 +14,16 @@ Layout
 		> .content-area {
 			@include griddr(8);
 		}
+	}
 
-		> .widget-area {
+	> .widget-area {
+		padding: 0 cp(20px, 960px);
+
+		@include bp(medium) {
+			padding: 0;
+		}
+
+		@include bp(large) {
 			@include griddr(4);
 			@include griddr-last;
 		}
