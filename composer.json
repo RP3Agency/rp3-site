@@ -35,7 +35,8 @@
     "wpackagist-plugin/show-template":"dev-trunk",
     "wpackagist-plugin/simple-page-ordering":"dev-trunk",
     "wpackagist-plugin/theme-check":"dev-trunk",
-    "wpackagist-plugin/wordpress-importer":"dev-trunk"
+    "wpackagist-plugin/wordpress-importer":"dev-trunk",
+    "wpackagist-plugin/category-post-list-widget":"dev-trunk"
   },
   "extra": {
     "webroot-dir": "wp",

@@ -1,0 +1,16 @@
+.widget_dimension{width:20%;margin-top:5px;}
+.text_alignment{text-align: center;}
+.display{width:200px;}
+
+.hide{display: none !important;}
+.lbl_display{vertical-align: top}
+label.lbl_cplw{margin-right: 15px !important;}
+label.lbl_width{margin-right: 19px !important;}
+label.lbl_effects{margin-right: 19px !important;}
+label.lbl_thumb_h{margin-right: 11px !important;}
+label.error{display: none !important;}
+input.error{border-color: #ff0000 !important}
+.width_wrapper{float: left !important; margin-right: 20px !important;}
+.input_date_format{margin-right: 10px;}
+
+.view_all_link{float: right; margin-right: 20px;}

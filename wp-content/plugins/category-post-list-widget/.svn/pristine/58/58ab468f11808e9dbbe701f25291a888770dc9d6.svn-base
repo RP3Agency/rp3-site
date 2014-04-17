@@ -1,0 +1,13 @@
+#mycarousel #mycarousel-next {background:url(../images/next_prevarrw.png) 100% -27px no-repeat; width:22px; height:22px; position:absolute; right:0; top:0}
+#mycarousel #mycarousel-next:hover,#mycarousel #mycarousel-next.current {background:url(../images/next_prevarrw.png) 100% 0 no-repeat}
+#mycarousel #mycarousel-prev {background:url(../images/next_prevarrw.png) 0 0 no-repeat; width:22px; height:22px; position:absolute; right:25px; top:0}
+#mycarousel #mycarousel-prev:hover,#mycarousel #mycarousel-prev.current {background:url(../images/next_prevarrw.png) 0 -27px no-repeat}
+#mycarousel #mycarousel-next,#mycarousel #mycarousel-prev {top:-70px}
+/*ul.newslist {height: 300px}*/
+ul.newslist li {float:left; width:220px}
+ul.newslist li .news_scroll {margin-bottom:20px}
+ul.newslist li .newsimg {width:78px; height:52px; background:#f2f2f2}
+ul.newslist li .newsdesc {width:160px; color:#898a8b; line-height:18px}
+ul.newslist li .newsdesc p {margin-bottom:5px}
+ul.newslist li .newsdesc a {color:#ee7e1f; font-style:italic}
+ul.newslist li .newsdesc a:hover {text-decoration:underline}
