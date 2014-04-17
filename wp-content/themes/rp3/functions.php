@@ -67,19 +67,9 @@ endif; // rp3_setup
 add_action( 'after_setup_theme', 'rp3_setup' );
 
 /**
- * Register widgetized area and update sidebar with default widgets.
+ * Widgets for this theme.
  */
-function rp3_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'rp3' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'rp3_widgets_init' );
+require get_template_directory() . '/inc/widgets.php';
 
 /**
  * Enqueue scripts and styles.
@@ -133,3 +123,13 @@ require get_template_directory() . '/inc/filters.php';
  * Custom image sizes for this theme.
  */
 require get_template_directory() . '/inc/image-sizes.php';
+
+/**
+ * Miscellaneous
+ */
+
+// Dequeue the stylesheet for Category Post List Widget
+function rp3_dequeue_CPLW_css() {
+	wp_dequeue_style( 'main-style' );
+}
+add_action( 'wp_enqueue_scripts', 'rp3_dequeue_CPLW_css' );
