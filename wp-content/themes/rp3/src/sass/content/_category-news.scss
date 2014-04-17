@@ -5,6 +5,7 @@
 .category-news {
 
 	.entry-title {
+		color: $blue;
 		line-height: 1;
 		text-transform: none;
 	}
@@ -71,7 +72,6 @@ body.category-news {
 
 	.entry-title {
 		font-size: ce(36px, $default-font-size);
-		margin-bottom: 0.5em;
 	}
 
 	.entry-footer {
