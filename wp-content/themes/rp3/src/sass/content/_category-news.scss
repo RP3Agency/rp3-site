@@ -5,14 +5,12 @@
 .category-news {
 
 	.entry-title {
-		color: $blue;
 		line-height: 1;
 		text-transform: none;
 	}
 
 	.entry-date {
-		color: $gray;
-		font-style: italic;
+		@extend %meta-date;
 	}
 }
 
