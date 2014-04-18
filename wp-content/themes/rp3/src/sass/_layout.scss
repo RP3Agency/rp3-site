@@ -4,21 +4,15 @@ Layout
 .site-content {
 	margin: 0 auto;
 	max-width: ce(1280px, $default-font-size);
-
-	@include bp(medium) {
-		width: 95%;
-	}
+	width: 95%;
 
 	@include bp(large) {
-
 		> .content-area {
 			@include griddr(8);
 		}
 	}
 
 	> .widget-area {
-		padding: 0 cp(20px, 960px);
-
 		@include bp(medium) {
 			padding: 0;
 		}
