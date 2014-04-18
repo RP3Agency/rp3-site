@@ -34,18 +34,20 @@
 /* ==========================================================================
    Fonts
    ========================================================================== */
-@import url("http://fonts.googleapis.com/css?family=Raleway:400,700|Muli");
+@import url("http://fonts.googleapis.com/css?family=Roboto:300,400,700|Lato");
 
 @import "util/fonts";
 
 /* ==========================================================================
    Normalize
    ========================================================================== */
-@import "normalize";
+@import "reset";
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+@import "running/header";
 
 @import "running/navigation";
 
@@ -54,3 +56,7 @@
 @import "capabilities";
 
 @import "running/footer";
+
+html {
+   font-family: Lato, sans-serif;
+}
