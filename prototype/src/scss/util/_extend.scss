@@ -28,7 +28,8 @@
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-%visuallyhidden {
+%visuallyhidden,
+%assistive {
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;
@@ -122,6 +123,9 @@
 }
 
 
+/**
+ * Genericons
+ */
 %genericon {
 	display: inline-block;
 	width: 16px;
@@ -138,3 +142,4 @@
 }
 
 %genericon-menu:before {            content: '\f419'; }
+%genericon-search:before {          content: '\f400'; }
