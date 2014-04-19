@@ -1,113 +1,127 @@
-/*--------------------------------------------------------------
-5.0 Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-5.2 Menus
---------------------------------------------------------------*/
-.main-navigation {
-	// @extend %fullscreen;
+nav[role="navigation"] {
+	@extend %ir;
+	background-color: $gray;
+	display: none;
+	font-family: Roboto, sans-serif;
 
-	.menu-primary-navigation-container {
-		@extend %clearfix;
+	@include bp(medium) {
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+		display: block;
+		position: relative;
 
-		display: none;
+		&.fixed {
+			left: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
 
-		@include font-size(18px);
-		@include rem(height, 66px);
-		@include rem(margin-bottom, 33px);
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	ul {
+		@extend %clear-ul-formatting;
 
 		@include bp(medium) {
-			display: block;
-		}
-	}
-
-	ul.menu {
-		@extend %clear-ul-formatting;
-		// @extend %fullscreen;
-
-		// Flexbox
-		align-content: stretch;
-		align-items: stretch;
-		display: flex;
-		// flex-direction: column;
-
-		background-color: transparentize($blue, 0.2);
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-		position: fixed;
-		width: 100%;
-
-		@include rem(height, 66px);
-
-		li {
-			flex: 1;
-		}
-	}
-
-	a {
-		// background-color: orange;
-		color: #fff;
-		display: block;
-		height: 100%;
-		// left: 50%;
-		line-height: 1;
-		// position: relative;
-		text-align: center;
-		text-decoration: none;
-		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-		text-transform: uppercase;
-		// top: 50%;
-		// transform: translate(-50%, -50%);
-		transition:
-			background-color 0.1s linear,
-			color 0.1s linear,
-			text-shadow 0.1s linear;
-
-		@include rem(line-height, 66px);
-
-		@include hover-state {
-			background-color: #fff;
-			color: $blue;
-			text-shadow: none;
-		}
-	}
-
-	.current_page_item a,
-	.current-menu-item a {
-
-	}
-
-	@include bp(medium) {
-		display: block;
-		&.toggled .nav-menu {
-			display: block;
-		}
-	}
-}
-/* Small menu */
-.menu-toggle {
-	margin: 5px;
-
-	@include bp(medium) {
-		display: none;
-	}
-}
-
-.site-main {
-	.comment-navigation,
-	.paging-navigation,
-	.post-navigation {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-
-		.nav-previous {
 			float: left;
-			width: 50%;
+			height: 70px;
+		}
+	}
+
+	li {
+
+		@include bp(medium) {
+			float: left;
 		}
 
-		.nav-next {
-			float: right;
-			text-align: right;
-			width: 50%;
+		a {
+			border-bottom: 1px solid mix(#fff, $gray, 20%);
+			color: #fff;
+			display: block;
+			font-size: ce(18px, $default-font-size);
+			font-weight: 300;
+			padding: 0.5em cp(10px, 640px);
+			text-decoration: none;
+			text-transform: uppercase;
+			transition: background-color 0.1s linear;
+
+			@include hover-state {
+				background-color: $blue;
+			}
+
+			@include bp(medium) {
+				border-bottom: none;
+				height: 60px;
+				line-height: 60px;
+				padding: 0 1ex;
+			}
+		}
+	}
+
+	form {
+		@extend %clearfix;
+		padding: 1em cp(10px, 640px);
+
+		@include bp(medium) {
+			display: none;
+		}
+
+		label span {
+			@extend %assistive;
+		}
+
+		input[type="text"] {
+			border: 0;
+			float: left;
+			font-family: Roboto, sans-serif;
+			font-size: ce(18px, $default-font-size);
+			font-weight: 300;
+			margin-right: 1ex;
+			padding: 0.25em;
+			width: 60%;
+		}
+
+		button {
+			@extend %genericon;
+			@extend %genericon-search;
+			@extend %ir;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background-color: transparent;
+			border: none;
+			color: #fff;
+			display: inline;
+			font-size: ce(40px, $default-font-size);
+			height: 40px;
+			line-height: 40px;
+			padding: 0;
+			width: 40px;
+
+			&:before {
+				width: auto;
+			}
+		}
+	}
+
+	/**
+	 * Stupid Logo Tricks
+	 */
+	.logo {
+		background-image: url("../images/logo-white.svg");
+		float: left;
+		opacity: 0;
+		padding: 0.25em 0;
+		transition: width 0.5s ease;
+		width: 0;
+	}
+
+	&.fixed {
+		.logo {
+			width: auto;
+			opacity: 1;
 		}
 	}
 }

@@ -22,17 +22,51 @@
 <div id="page" class="hfeed site">
 
 	<header id="masthead" class="site-header" role="banner">
-		<?php /* <div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div> */ ?>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Menu', 'rp3' ); ?></button>
+		<!-- Site Branding -->
+		<div class="site-branding">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rp3' ); ?></a>
+		</div>
+		<!-- // .site-branding -->
+
+		<!-- Header Aux -->
+
+		<div class="header-aux">
+
+			<?php wp_nav_menu( array( 'theme_location' => 'header_aux' ) ); ?>
+
+			<!-- <div class="search">Search</div> -->
+
+		</div>
+		<!-- // .header-aux -->
+
+		<a href="#!" id="menu-open" class="menu-open">Menu</a>
+
+	</header>
+	<!-- // #masthead -->
+
+	<!-- Primary Navigation -->
+
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+
+		<div id="main-nav" class="main-nav">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" rel="home"><?php bloginfo( 'name' ); ?></a>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+
+		</div>
+		<!-- // #main-nav -->
+
+		<form>
+			<label><span>Search</span>
+				<input type="text" placeholder="Search…">
+			</label>
+			<button>Search</button>
+		</form>
+
+	</nav>
+	<!-- // #site-navigation -->
 
 	<div id="content" class="site-content">
