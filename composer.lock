@@ -46,7 +46,7 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama",
+                    "homepage": "http://dontkry.com",
                     "role": "Developer"
                 }
             ],
@@ -311,7 +311,7 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/list-category-posts/",
-            "time": "2014-03-09 01:45:50"
+            "time": "2014-04-16 20:22:31"
         },
         {
             "name": "wpackagist-plugin/markdown-on-save",
