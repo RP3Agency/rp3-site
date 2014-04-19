@@ -1,0 +1,124 @@
+header[role="banner"] {
+	@extend %clearfix;
+	background-color: #6b747c;
+	border-bottom: 3px solid #fff;
+	font-family: Roboto, sans-serif;
+	padding: ce(10px, $default-font-size) cp(10px, 320px);
+	position: relative;
+
+	@include bp(medium) {
+		background-color: #fff;
+	}
+
+	/**
+	 * Site Branding (.site-branding)
+	 */
+	
+	.site-branding {
+		display: flex;
+
+		@include bp(medium) {
+			display: block;
+			float: left;
+		}
+	}
+
+	.site-description {
+		display: none;
+	 	padding-top: 1em;
+	}
+
+	.site-description {
+		color: #fff;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+
+	.header-aux {
+		display: none;
+
+		@include bp(medium) {
+			display: block;
+			float: right;
+		}
+
+		li {
+			float: left;
+
+			a {
+				@extend %ir;
+				background: url("../images/social-sprites.png") no-repeat;
+				display: block;
+				filter: grayscale(100%);
+				height: 32px;
+				margin: 0 1ex;
+				width: 32px;
+
+				&.facebook {
+					background-position: 0 0;
+				}
+
+				&.twitter {
+					background-position: 0 -57px;
+				}
+
+				&.linkedin {
+					background-position: 0 -114px;
+				}
+
+				@include hover-state {
+					filter: grayscale(0);
+				}
+			}
+		}
+	}
+
+	.menu-open {
+		@extend %genericon;
+		@extend %genericon-menu;
+		@extend %ir;
+
+		border-left: 1px solid mix(#fff, $gray, 20%);
+		color: #fff;
+		display: block;
+		font-size: ce(36px, $default-font-size);
+		height: 90px;
+		line-height: 90px;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		width: 90px;
+
+		&:before {
+			width: auto;
+		}
+
+		@include hover-state {
+			background-color: $blue;
+		}
+
+		@include bp(medium) {
+			display: none;
+		}
+	}
+}
+
+
+
+.logo {
+	@extend %ir;
+	background: {
+		image: url("../images/logo-white.svg");
+		repeat: no-repeat;
+		size: 100% auto;
+	}
+	display: block;
+	height: ce(60px, $default-font-size);
+	margin-right: 2ex;
+	width: auto;
+
+	@include bp(medium) {
+		background-image: url("../images/logo-color.svg");
+	}
+}
