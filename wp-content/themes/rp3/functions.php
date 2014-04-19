@@ -41,10 +41,7 @@ function rp3_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'rp3' ),
-	) );
+	require get_template_directory() . '/inc/menus.php';
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
