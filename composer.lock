@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "482a14b13ec94672fe9bf29a387fb8d1",
+    "hash": "f63574428ac3f41ce24e5e1e57d43433",
     "packages": [
         {
             "name": "composer/installers",
@@ -192,30 +192,6 @@
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/admin-post-navigation/",
             "time": "2013-12-29 22:34:01"
-        },
-        {
-            "name": "wpackagist-plugin/category-post-list-widget",
-            "version": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/category-post-list-widget/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/category-post-list-widget.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "replace": {
-                "wpackagist/category-post-list-widget": "self.version"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/category-post-list-widget/",
-            "time": "2013-11-28 13:13:08"
         },
         {
             "name": "wpackagist-plugin/co-authors-plus",
@@ -477,8 +453,7 @@
         "wpackagist-plugin/show-template": 20,
         "wpackagist-plugin/simple-page-ordering": 20,
         "wpackagist-plugin/theme-check": 20,
-        "wpackagist-plugin/wordpress-importer": 20,
-        "wpackagist-plugin/category-post-list-widget": 20
+        "wpackagist-plugin/wordpress-importer": 20
     },
     "platform": {
         "php": ">=5.3.0"
