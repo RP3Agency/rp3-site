@@ -1,8 +1,9 @@
 nav[role="navigation"] {
 	@extend %ir;
 	background-color: $gray;
+	border-top: 3px solid #fff;
 	display: none;
-	font-family: Roboto, sans-serif;
+	font-family: $roboto;
 
 	@include bp(medium) {
 		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);

@@ -1,7 +1,6 @@
 header[role="banner"] {
 	@extend %clearfix;
 	background-color: #6b747c;
-	border-bottom: 3px solid #fff;
 	font-family: Roboto, sans-serif;
 	height: ce(76px);
 	overflow: hidden;
@@ -76,24 +75,38 @@ header[role="banner"] {
 	}
 
 	.menu-open {
-		@extend %genericon;
-		@extend %genericon-menu;
-		@extend %ir;
 
 		border-left: 1px solid mix(#fff, $gray, 20%);
 		color: #fff;
 		display: block;
-		font-size: ce(36px);
-		height: ce(76px, 36px);
-		line-height: ( 76px / 36px );
+		font-size: ce(24px);
+		height: 100%;
+		line-height: ( 76px / 24px );
 		position: absolute;
 		right: 0;
 		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
 		top: 0;
 		width: 90px;
 
 		&:before {
 			width: auto;
+		}
+
+		&.use-genericons {
+			@extend %genericon;
+			@extend %genericon-menu;
+			@extend %ir;
+			font-size: ce(36px);
+			height: ce(76px, 36px);
+			line-height: ( 76px / 36px );
+			text-align: center;
+			width: 90px;
+
+			&:before {
+				width: auto;
+			}
 		}
 
 		@include hover-state {
