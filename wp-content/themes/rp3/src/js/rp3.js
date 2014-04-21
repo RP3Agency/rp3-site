@@ -24,15 +24,23 @@ var rp3 = (function($) {
 	 * Navigation Anchor
 	 */
 	navigationAnchor = function() {
-		var $siteNavigation = $('#site-navigation');
 
-		var y = $siteNavigation.offset().top,
-			scrollY = $(window).scrollTop();
+		if ( ! Modernizr.touch ) {
 
-		if ( scrollY >= y ) {
-			$siteNavigation.addClass('fixed');
-		} else {
-			$siteNavigation.removeClass('fixed');
+			var $mastHead			= $('#masthead'),
+				$siteNavigation		= $('#site-navigation'),
+				$logo				= $siteNavigation.find('.logo'),
+				mastHeight			= $mastHead.outerHeight(true),
+				scrollY				= $(window).scrollTop();
+
+			if ( scrollY >= mastHeight ) {
+				$siteNavigation.addClass('fixed');
+				$logo.fadeIn().css('display', 'block');
+			} else {
+				$siteNavigation.removeClass('fixed');
+				$logo.fadeOut();
+			}
+
 		}
 	},
 	init = function() {
