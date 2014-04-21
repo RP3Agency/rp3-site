@@ -1,15 +1,32 @@
+.logo {
+	background: {
+		image: url("../images/logo-white.svg");
+		repeat: no-repeat;
+		size: auto 100%;
+	}
+	display: block;
+	height: ce(56px, 30px);
+	overflow: hidden;
+	text-indent: 150%;
+	white-space: nowrap;
+	width: auto;
+
+	@include bp(medium) {
+		background-image: url("../images/logo-color.svg");
+	}
+}
+
 header[role="banner"] {
-	@extend %clearfix;
 	background-color: #6b747c;
+	display: table;
 	font-family: Roboto, sans-serif;
 	height: ce(76px);
 	margin-bottom: 3px;
-	overflow: hidden;
-	padding: ce(10px) cp(10px, 320px);
-	position: relative;
+	width: 100%;
 
 	@include bp(medium) {
 		background-color: #fff;
+		margin-bottom: 0;
 	}
 
 	/**
@@ -17,96 +34,50 @@ header[role="banner"] {
 	 */
 	
 	.site-branding {
-		display: flex;
-
-		@include bp(medium) {
-			display: block;
-			float: left;
-		}
+		display: table-row;
 	}
 
-	.site-description {
-		display: none;
-	 	padding-top: 1em;
+	.site-title {
+		display: table-cell;
+		vertical-align: middle;
+
+		@include bp(medium) {
+			width: 87px;
+		}
+
+		.logo {
+			margin: 0 15px 0 10px;
+			width: 78px;
+		}
 	}
 
 	.site-description {
 		color: #fff;
-		font-weight: 300;
+		display: table-cell;
+		font-weight: $light;
+		padding-right: 10px;
 		text-transform: uppercase;
-	}
+		vertical-align: middle;
 
-	.header-aux {
-		display: none;
-
-		@include bp(medium) {
-			display: block;
-			margin-top: -16px;
-			position: absolute;
-			right: 3.125%;
-			top: 50%;
-		}
-
-		ul {
-			@extend %clear-ul-formatting;
-		}
-
-		li {
-			float: left;
-
-			a {
-				@extend %genericon;
-				@extend %ir;
-
-				background-color: mix(#fff, $gray, 60%);
-				border-radius: 100%;
-				color: #fff;
-				display: block;
-				height: 32px;
-				margin: 0 8px;
-				text-decoration: none;
-				transition: background-color 0.1s linear;
-				width: 32px;
-
-				@include hover-state {
-					background-color: $blue;
-				}
-
-				&:before {
-					font-size: ce(18px);
-					line-height: 32px;
-					text-align: center;
-					width: auto;
-				}
-			}
-
-			@each $social in facebook, twitter, linkedin {
-				&.#{$social} a {
-					@extend %genericon-#{$social};
-				}
-			}
-
-			&:last-of-type a {
-				margin-right: 0;
-			}
-		}
+	 	@include bp(medium) {
+	 		color: $black;
+	 		font-size: ce(18px);
+	 	}
 	}
 
 	.menu-open {
-
 		border-left: 1px solid mix(#fff, $gray, 20%);
 		color: #fff;
-		display: block;
-		font-size: ce(24px);
+		display: table-cell;
+		float: right;
+		font-size: ce(18px);
 		height: 100%;
-		line-height: ( 76px / 24px );
-		position: absolute;
-		right: 0;
+		line-height: ( 76px / 18px );
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
-		top: 0;
-		width: 90px;
+		vertical-align: middle;
+		width: 80px;
 
 		&:before {
 			width: auto;
@@ -137,19 +108,78 @@ header[role="banner"] {
 	}
 }
 
-.logo {
+
+/**
+ * Header Auxiliary
+ */
+%header-aux {
+	@extend %genericon;
 	@extend %ir;
-	background: {
-		image: url("../images/logo-white.svg");
-		repeat: no-repeat;
-		size: auto 100%;
-	}
+	border-radius: 100%;
 	display: block;
-	height: ce(56px, 30px);
-	margin-right: 2ex;
-	width: auto;
+	height: 32px;
+	margin: 0 8px;
+	text-decoration: none;
+	transition: background-color 0.1s linear;
+	width: 32px;
+
+	@include hover-state {
+		background-color: $blue;
+	}
+
+	&:before {
+		font-size: ce(18px);
+		line-height: 32px;
+		text-align: center;
+		width: auto;
+	}
+}
+
+.header-aux {
+	display: none;
 
 	@include bp(medium) {
-		background-image: url("../images/logo-color.svg");
+		display: table-cell;
+		text-align: right;
+		vertical-align: middle;
+		width: 48px * 4;
+	}
+
+	.menu-header-auxiliary-container {
+		float: right;
+	}
+
+	ul {
+		@extend %clear-ul-formatting;
+	}
+
+	li {
+		float: left;
+
+		a {
+			@extend %header-aux;
+
+			background-color: mix(#fff, $gray, 60%);
+			color: #fff;
+		}
+
+		@each $social in facebook, twitter, linkedin, search {
+			&.#{$social} a {
+				@extend %genericon-#{$social};
+			}
+		}
+	}
+
+	.search-toggle {
+		@extend %header-aux;
+		@extend %genericon-search;
+
+		color: mix(#fff, $gray, 60%);
+		float: right;
+		transition: color 0.1s linear;
+
+		@include hover-state {
+			color: #fff;
+		}
 	}
 }
