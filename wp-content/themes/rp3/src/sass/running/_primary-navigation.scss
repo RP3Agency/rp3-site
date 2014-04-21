@@ -1,7 +1,6 @@
-nav[role="navigation"] {
+.main-navigation {
 	@extend %ir;
 	background-color: $gray;
-	border-top: 3px solid #fff;
 	display: none;
 	font-family: $roboto;
 
@@ -42,11 +41,15 @@ nav[role="navigation"] {
 			color: #fff;
 			display: block;
 			font-size: ce(18px, $default-font-size);
-			font-weight: 300;
-			padding: 0.5em cp(10px, 640px);
+			font-weight: $light;
+			padding: 0.5em cp(10px, 320px);
 			text-decoration: none;
 			text-transform: uppercase;
 			transition: background-color 0.1s linear;
+
+			@include modernizr(touch) {
+				font-weight: $normal;
+			}
 
 			@include hover-state {
 				background-color: $blue;
@@ -61,19 +64,22 @@ nav[role="navigation"] {
 		}
 	}
 
+	/**
+	 * Search Form
+	 */
 	form {
 		@extend %clearfix;
-		padding: 1em cp(10px, 640px);
+		padding: 1em cp(10px, 320px);
 
 		@include bp(medium) {
 			display: none;
 		}
 
-		label span {
+		.screen-reader-text {
 			@extend %assistive;
 		}
 
-		input[type="text"] {
+		input[type="search"] {
 			border: 0;
 			float: left;
 			font-family: Roboto, sans-serif;
@@ -84,14 +90,12 @@ nav[role="navigation"] {
 			width: 60%;
 		}
 
-		button {
+		button[type="submit"] {
 			@extend %genericon;
 			@extend %genericon-search;
 			@extend %ir;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			background-color: transparent;
+
+			background: none;
 			border: none;
 			color: #fff;
 			display: inline;
@@ -100,6 +104,8 @@ nav[role="navigation"] {
 			line-height: 40px;
 			padding: 0;
 			width: 40px;
+
+			@include appearance(none);
 
 			&:before {
 				width: auto;
@@ -112,6 +118,7 @@ nav[role="navigation"] {
 	 */
 	.logo {
 		background-image: url("../images/logo-white.svg");
+		display: none;
 		float: left;
 		opacity: 0;
 		padding: 0.25em 0;
