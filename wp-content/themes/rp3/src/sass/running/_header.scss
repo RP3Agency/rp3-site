@@ -41,36 +41,53 @@ header[role="banner"] {
 
 		@include bp(medium) {
 			display: block;
-			float: right;
+			margin-top: -16px;
+			position: absolute;
+			right: 3.125%;
+			top: 50%;
+		}
+
+		ul {
+			@extend %clear-ul-formatting;
 		}
 
 		li {
 			float: left;
 
 			a {
+				@extend %genericon;
 				@extend %ir;
-				background: url("../images/social-sprites.png") no-repeat;
+
+				background-color: mix(#fff, $gray, 60%);
+				border-radius: 100%;
+				color: #fff;
 				display: block;
-				filter: grayscale(100%);
 				height: 32px;
-				margin: 0 1ex;
+				margin: 0 8px;
+				text-decoration: none;
+				transition: background-color 0.1s linear;
 				width: 32px;
 
-				&.facebook {
-					background-position: 0 0;
-				}
-
-				&.twitter {
-					background-position: 0 -57px;
-				}
-
-				&.linkedin {
-					background-position: 0 -114px;
-				}
-
 				@include hover-state {
-					filter: grayscale(0);
+					background-color: $blue;
 				}
+
+				&:before {
+					font-size: ce(18px);
+					line-height: 32px;
+					text-align: center;
+					width: auto;
+				}
+			}
+
+			@each $social in facebook, twitter, linkedin {
+				&.#{$social} a {
+					@extend %genericon-#{$social};
+				}
+			}
+
+			&:last-of-type a {
+				margin-right: 0;
 			}
 		}
 	}
