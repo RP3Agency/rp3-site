@@ -53,18 +53,12 @@
 
 		<div id="main-nav" class="main-nav">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" rel="home"><?php bloginfo( 'name' ); ?></a>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-
+			<?php wp_nav_menu( array( 'theme_location' => 'primary-left' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary-right' ) ); ?>
 		</div>
 		<!-- // #main-nav -->
 
-		<form>
-			<label><span>Search</span>
-				<input type="text" placeholder="Search…">
-			</label>
-			<button>Search</button>
-		</form>
+		<?php get_search_form(); ?>
 
 	</nav>
 	<!-- // #site-navigation -->
