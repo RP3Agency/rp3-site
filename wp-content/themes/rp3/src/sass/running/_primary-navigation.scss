@@ -1,11 +1,12 @@
 .main-navigation {
+	@extend %clearfix;
 	@extend %ir;
 	background-color: $gray;
 	display: none;
 	font-family: $roboto;
 
 	@include bp(medium) {
-		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 		display: block;
 		position: relative;
 
@@ -25,8 +26,29 @@
 		@extend %clear-ul-formatting;
 
 		@include bp(medium) {
-			float: left;
-			height: 70px;
+			height: 60px;
+
+			&.primary-menu-left {
+				float: left;
+				margin-left: cp(10px, 320px);
+
+				li:first-of-type {
+					margin-left: -12px;
+				}
+			}
+
+			&.primary-menu-right {
+				float: right;
+				margin-right: cp(10px, 320px);
+
+				li:last-of-type {
+					margin-right: -12px;
+				}
+
+				a {
+					font-size: ce(16px);
+				}
+			}
 		}
 	}
 
@@ -40,7 +62,7 @@
 			border-bottom: 1px solid mix(#fff, $gray, 20%);
 			color: #fff;
 			display: block;
-			font-size: ce(18px, $default-font-size);
+			font-size: ce(18px);
 			font-weight: $light;
 			padding: 0.5em cp(10px, 320px);
 			text-decoration: none;
@@ -57,9 +79,10 @@
 
 			@include bp(medium) {
 				border-bottom: none;
+				font-size: ce(24px);
 				height: 60px;
 				line-height: 60px;
-				padding: 0 1ex;
+				padding: 0 12px;
 			}
 		}
 	}
