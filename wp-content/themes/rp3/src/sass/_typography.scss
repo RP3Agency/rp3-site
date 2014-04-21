@@ -1,4 +1,4 @@
-@import "http://fonts.googleapis.com/css?family=Roboto:100,400|Lato:400,700,400italic";
+@import "http://fonts.googleapis.com/css?family=Roboto:400,300,100|Lato:400,700,400italic";
 
 // Font Stacks
 $lato:		"Lato", sans-serif;
@@ -43,6 +43,9 @@ $bold:		700;
 
 %genericon-menu:before {            content: '\f419'; }
 %genericon-search:before {          content: '\f400'; }
+%genericon-facebook:before {    content: '\f204'; }
+%genericon-twitter:before {         content: '\f202'; }
+%genericon-linkedin:before {        content: '\f207'; }
 
 
 /*--------------------------------------------------------------
