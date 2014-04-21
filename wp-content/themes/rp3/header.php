@@ -23,26 +23,25 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
+		<!-- <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rp3' ); ?></a> -->
+
 		<!-- Site Branding -->
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rp3' ); ?></a>
+
+			<a href="#!" id="menu-open" class="menu-open">Menu</a>
+
+			<!-- Header Aux -->
+
+			<div class="header-aux">
+				<a href="#!" class="search-toggle">Search</a>
+				<?php wp_nav_menu( array( 'theme_location' => 'header-auxiliary' ) ); ?>
+			</div>
+			<!-- // .header-aux -->
+
 		</div>
 		<!-- // .site-branding -->
-
-		<!-- Header Aux -->
-
-		<div class="header-aux">
-
-			<?php wp_nav_menu( array( 'theme_location' => 'header_aux' ) ); ?>
-
-			<!-- <div class="search">Search</div> -->
-
-		</div>
-		<!-- // .header-aux -->
-
-		<a href="#!" id="menu-open" class="menu-open">Menu</a>
 
 	</header>
 	<!-- // #masthead -->
@@ -53,8 +52,14 @@
 
 		<div id="main-nav" class="main-nav">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" rel="home"><?php bloginfo( 'name' ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary-left' ) ); ?>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary-right' ) ); ?>
+			<?php wp_nav_menu( array(
+				'theme_location'	=> 'primary-left',
+				'menu_class'		=> 'primary-menu-left'
+			) ); ?>
+			<?php wp_nav_menu( array(
+				'theme_location'	=> 'primary-right',
+				'menu_class'		=> 'primary-menu-right'
+			) ); ?>
 		</div>
 		<!-- // #main-nav -->
 
