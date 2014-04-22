@@ -25,6 +25,7 @@
     "wordpress": "3.9",
     "fancyguy/webroot-installer": "1.0.0",
     "wpackagist-plugin/add-from-server":"dev-trunk",
+    "wpackagist-plugin/advanced-custom-fields":"dev-trunk",
     "wpackagist-plugin/admin-post-navigation":"dev-trunk",
     "wpackagist-plugin/co-authors-plus":"dev-trunk",
     "wpackagist-plugin/debug-bar":"dev-trunk",
