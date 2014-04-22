@@ -1,2 +1,4 @@
 plugins/*
 !plugins/category-post-list-widget/
+!plugins/wp-migrate-db-pro/
+!plugins/wp-migrate-db-pro-media-files/
