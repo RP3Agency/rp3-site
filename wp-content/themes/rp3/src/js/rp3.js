@@ -19,6 +19,13 @@ var rp3 = (function($) {
 			showMainNav();
 		});
 	},
+	forcePrimaryNav = function() {
+		var $siteNavigation = $('#site-navigation');
+
+		if ( Modernizr.mq( '(min-width: 40em)' ) ) {
+			$siteNavigation.removeAttr('style');
+		}
+	},
 
 	/**
 	 * Navigation Anchor
@@ -43,11 +50,37 @@ var rp3 = (function($) {
 
 		}
 	},
+
+	/**
+	 * Show/Hide Search in Header Auxiliary
+	 */
+	showHideSearch = function() {
+		var $masthead = $('#masthead'),
+			$searchForm = $masthead.find('form'),
+			$searchClose = $masthead.find('.close'),
+			$searchOpen = $masthead.find('.search-toggle');
+
+		$searchOpen.on( 'click', function(e) {
+			e.preventDefault();
+			$searchForm.fadeIn();
+		})
+
+		$searchClose.on( 'click', function(e) {
+			e.preventDefault();
+			$searchForm.fadeOut();
+		});
+	},
+
 	init = function() {
 		toggleNavigation();
+		showHideSearch();
 		
 		$(window).on( 'scroll', function() {
 			navigationAnchor();
+		});
+
+		$(window).on( 'resize', function() {
+			forcePrimaryNav();
 		});
 	};
 
