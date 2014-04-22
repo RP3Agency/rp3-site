@@ -1,25 +1,77 @@
 .people .content {
-	background-color: rgba(255, 0, 255, 0.2);
 	margin: 0 auto;
 	max-width: ce(1280px);
 
 	.row {
-		align-items: stretch;
-		display: flex;
-		justify-content: space-between;
 		margin-bottom: 0;
+
+		@include bp(medium) {
+			align-items: stretch;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&:last-of-type article,
+		&:last-of-type .spacer {
+			border-bottom-width: 1px;
+		}
 	}
 
 	article,
 	.spacer {
 		background-color: $gray;
-		border: 1px solid mix(#000, $gray, 50%);
+		border: solid mix(#000, $gray, 50%);
+		border-width: 1px 1px 0 0;
 		flex: 1;
-		height: 150px;
+		height: 300px;
+
+		&:first-child {
+			border-left-width: 1px;
+		}
 	}
 
 	article {
 		background-repeat: no-repeat;
 		background-size: auto 100%;
+
+		a {
+			display: block;
+			height: 100%;
+			position: relative;
+			width: 100%;
+		}
+
+		.caption {
+			background-color: rgba(0, 0, 0, 0.5);
+			bottom: 0;
+			left: 0;
+			padding: 10px;
+			position: absolute;
+			right: 0;
+			top: 75%;
+		}
+
+		span {
+			display: block;
+			font-family: $roboto;
+
+			&.name {
+				color: #fff;
+				font-size: ce(18px);
+				font-weight: 700;
+			}
+
+			&.title {
+				color: #e5e5e5;
+			}
+		}
+	}
+
+	.spacer {
+		display: none;
+
+		@include bp(medium) {
+			display: block;
+		}
 	}
 }
