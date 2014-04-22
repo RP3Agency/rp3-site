@@ -26,6 +26,11 @@
 		}
 	}
 
+	.main-nav {
+		margin: 0 auto;
+		max-width: ce(1280px);
+	}
+
 	ul {
 		@extend %clear-ul-formatting;
 
@@ -82,55 +87,6 @@
 
 			@include responsive("min-width: 700px") {
 				font-size: ce(24px);
-			}
-		}
-	}
-
-	/**
-	 * Search Form
-	 */
-	form {
-		@extend %clearfix;
-		padding: 1em cp(10px, 320px);
-
-		@include bp(medium) {
-			display: none;
-		}
-
-		.screen-reader-text {
-			@extend %assistive;
-		}
-
-		input[type="search"] {
-			border: 0;
-			float: left;
-			font-family: Roboto, sans-serif;
-			font-size: ce(18px, $default-font-size);
-			font-weight: 300;
-			margin-right: 1ex;
-			padding: 0.25em;
-			width: 60%;
-		}
-
-		button[type="submit"] {
-			@extend %genericon;
-			@extend %genericon-search;
-			@extend %ir;
-
-			background: none;
-			border: none;
-			color: #fff;
-			display: inline;
-			font-size: ce(40px, $default-font-size);
-			height: 40px;
-			line-height: 40px;
-			padding: 0;
-			width: 40px;
-
-			@include appearance(none);
-
-			&:before {
-				width: auto;
 			}
 		}
 	}
