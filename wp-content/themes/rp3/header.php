@@ -25,23 +25,30 @@
 
 		<!-- <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rp3' ); ?></a> -->
 
-		<!-- Site Branding -->
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		<div class="header-wrapper">
 
-			<a href="#!" id="menu-open" class="menu-open">Menu</a>
+			<!-- Site Branding -->
+			<div class="site-branding">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 
-			<!-- Header Aux -->
+				<a href="#!" id="menu-open" class="menu-open">Menu</a>
 
-			<div class="header-aux">
-				<a href="#!" class="search-toggle">Search</a>
-				<?php wp_nav_menu( array( 'theme_location' => 'header-auxiliary' ) ); ?>
+				<!-- Header Aux -->
+
+				<div class="header-aux">
+					<a href="#!" class="search-toggle">Search</a>
+					<?php wp_nav_menu( array( 'theme_location' => 'header-auxiliary' ) ); ?>
+				</div>
+				<!-- // .header-aux -->
+
 			</div>
-			<!-- // .header-aux -->
+			<!-- // .site-branding -->
 
 		</div>
-		<!-- // .site-branding -->
+		<!-- // .header-wrapper -->
+
+		<?php get_template_part( 'searchform', 'header-aux' ); ?>
 
 	</header>
 	<!-- // #masthead -->
@@ -63,7 +70,7 @@
 		</div>
 		<!-- // #main-nav -->
 
-		<?php get_search_form(); ?>
+		<?php get_template_part( 'searchform', 'nav' ); ?>
 
 	</nav>
 	<!-- // #site-navigation -->
