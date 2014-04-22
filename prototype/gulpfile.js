@@ -5,15 +5,10 @@ var gulp = require( 'gulp' ),
 	minifycss = require( 'gulp-minify-css' ),
 	jshint = require( 'gulp-jshint' ),
 	uglify = require( 'gulp-uglify' ),
-	imagemin = require( 'gulp-imagemin' ),
 	rename = require( 'gulp-rename' ),
 	clean = require( 'gulp-clean' ),
 	concat = require( 'gulp-concat' ),
-	notify = require( 'gulp-notify' ),
-	cache = require( 'gulp-cache' ),
-	livereload = require( 'gulp-livereload' ),
-	lr = require( 'tiny-lr' ),
-	server = lr();
+	notify = require( 'gulp-notify' );
 
 // Sass & CSS processing
 gulp.task( 'styles', function() {
