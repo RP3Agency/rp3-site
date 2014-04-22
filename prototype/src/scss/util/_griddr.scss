@@ -17,27 +17,33 @@ $max-width: 1280px;	// Max width of row (i.e. context) in pixels
  * based on the number of columns, the max-width context, and the
  * target margin.
  */
-@function griddr-column-width($cols-to-span) {
-	$column-width: ( $max-width - ( $margin * ( $columns - 1 ) ) ) / $columns;
+@function griddr-column-width($cols-to-span, $mymargin) {
+	$column-width: ( $max-width - ( $mymargin * ( $columns - 1 ) ) ) / $columns;
 	
 	// Now, do some target / context * 100% magic to make it all fluid and responsive-like
-	@return ( $column-width / $max-width * 100% * $cols-to-span ) + ( $margin / $max-width * 100% ) * ( $cols-to-span - 1 );
+	@return ( $column-width / $max-width * 100% * $cols-to-span ) + ( $mymargin / $max-width * 100% ) * ( $cols-to-span - 1 );
 }
 
 
 /**
  * Build our grid system because MATH
  */
-@mixin griddr($cols-to-span) {
+@mixin griddr($cols-to-span, $mymargin: $margin) {
+
+	// Correct for a unitless entry
+	@if ( $mymargin == 0 ) {
+		$mymargin: 0px;
+	}
+
 	float: left;
 
 	// Easy enough to set the right margin: target / context * 100% = resulting percentage
 	// Be sure to invoke the griddr-last mixin on the last column in your row
-	margin-right: $margin / $max-width * 100%;
+	margin-right: $mymargin / $max-width * 100%;
 
 	// Use the same target / context = result formula times the number of columns we're spanning,
 	// and add to that the margins that will get swallowed up by that span.
-	width: griddr-column-width($cols-to-span);
+	width: griddr-column-width($cols-to-span, $mymargin);
 }
 
 

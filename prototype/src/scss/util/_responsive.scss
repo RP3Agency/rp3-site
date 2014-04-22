@@ -176,13 +176,13 @@ $default-font-size: 16px !default;
 // Remember to define your context!  Your context will be
 // the font-size of the parent element.
 
-@function calc-em( $target, $context ) {
+@function calc-em( $target, $context: $default-font-size ) {
 	@return $target / $context * 1em;
 }
 
 // Shorthand redeclaration of the above
 
-@function ce( $target, $context ) {
+@function ce( $target, $context: $default-font-size ) {
 	@return calc-em( $target, $context );
 }
 
