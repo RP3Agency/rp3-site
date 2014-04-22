@@ -1,6 +1,37 @@
-.people .content {
-	margin: 0 auto;
-	max-width: ce(1280px);
+.people,
+.people-single {
+	.content {
+		margin: 0 auto;
+		max-width: ce(1280px);
+	}
+
+	.caption {
+		background-color: rgba(0, 0, 0, 0.5);
+		bottom: 0;
+		left: 0;
+		padding: 10px;
+		position: absolute;
+		right: 0;
+		top: 75%;
+
+		span {
+			display: block;
+			font-family: $roboto;
+
+			&.name {
+				color: #fff;
+				font-size: ce(18px);
+				font-weight: 700;
+			}
+
+			&.title {
+				color: #e5e5e5;
+			}
+		}
+	}
+}
+
+.people {
 
 	.row {
 		margin-bottom: 0;
@@ -42,28 +73,6 @@
 		}
 
 		.caption {
-			background-color: rgba(0, 0, 0, 0.5);
-			bottom: 0;
-			left: 0;
-			padding: 10px;
-			position: absolute;
-			right: 0;
-			top: 75%;
-		}
-
-		span {
-			display: block;
-			font-family: $roboto;
-
-			&.name {
-				color: #fff;
-				font-size: ce(18px);
-				font-weight: 700;
-			}
-
-			&.title {
-				color: #e5e5e5;
-			}
 		}
 	}
 
@@ -73,5 +82,18 @@
 		@include bp(medium) {
 			display: block;
 		}
+	}
+}
+
+.people-single {
+
+	.hero {
+		background: $gray no-repeat 0 0;
+		height: ce(450px);
+		position: relative;
+	}
+
+	.caption {
+		// top: 66%;
 	}
 }
