@@ -45,7 +45,7 @@ gulp.task('scripts-plugins', function() {
 		.pipe(uglify())
 		.on('error', gutil.log)
 		.pipe(gulp.dest('js'))
-		.pipe(notify({message: 'Scripts task complete'}));
+		.pipe(notify({message: 'Scripts (plugins) task complete'}));
 });
 
 // Scripts task: Vendor
@@ -56,7 +56,7 @@ gulp.task('scripts-vendor', function() {
 		.pipe(uglify())
 		.on('error', gutil.log)
 		.pipe(gulp.dest('js'))
-		.pipe(notify({message: 'Scripts task complete'}));
+		.pipe(notify({message: 'Scripts (vendor) task complete'}));
 });
 
 // Clean
