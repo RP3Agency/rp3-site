@@ -24,6 +24,7 @@ function rp3_get_people() {
 			$people[$id]['display_order']	= $meta['display_order'][0];
 			$people[$id]['first_name']		= $meta['first_name'][0];
 			$people[$id]['last_name']		= $meta['last_name'][0];
+			$people[$id]['biography']		= $meta['description'][0];
 			$people[$id]['title']			= $meta['title'][0];
 			$people[$id]['email']			= $person->user_email;
 			$people[$id]['photo']			= $meta['photo'][0];
@@ -41,6 +42,14 @@ function rp3_get_people() {
 			if ( ! $people[$id]['photo'] ) {
 				$people[$id]['photo']		= get_avatar( $id );
 			}
+
+			// Get the person's last 3 blog posts
+			$people[$id]['blogs'] = new WP_Query( array(
+				'post_type'			=> 'post',
+				'category_name'		=> 'blog',
+				'posts_per_page'	=> 3,
+				'author'			=> $id
+			) );
 		}
 	}
 
@@ -48,8 +57,6 @@ function rp3_get_people() {
 	array_multisort( $display_order, SORT_ASC, $people );
 
 	// Insert spacer blocks into the sorted array
-	// $people = array_slice( $people, 0, 3, true ) + array( 'spacer' => true ) + array_slice( $people, 3, count( $people ) - 1, true );
-	// $people = array_slice( $people, 0, 7, true ) + array( 'spacer' => true ) + array_slice( $people, 7, count( $people ) - 1, true );
 	$people = rp3_get_people_insert_spacer( $people, array( 3, 7, 8, 13, 15 ) );
 
 	return $people;

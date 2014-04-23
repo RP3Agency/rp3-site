@@ -8,25 +8,24 @@
 	.caption {
 		background-color: rgba(0, 0, 0, 0.5);
 		bottom: 0;
+		color: #fff;
 		left: 0;
 		padding: 10px;
 		position: absolute;
 		right: 0;
 		top: 75%;
 
-		span {
-			display: block;
+		.name {
 			font-family: $roboto;
+			font-size: 18px;
+			font-weight: 700;
+			margin: 0;
+		}
 
-			&.name {
-				color: #fff;
-				font-size: ce(18px);
-				font-weight: 700;
-			}
-
-			&.title {
-				color: #e5e5e5;
-			}
+		.title {
+			font-family: $roboto;
+			font-size: 14px;
+			margin: 0;
 		}
 	}
 }
@@ -64,15 +63,12 @@
 	article {
 		background-repeat: no-repeat;
 		background-size: auto 100%;
+		position: relative;
 
-		a {
-			display: block;
-			height: 100%;
-			position: relative;
-			width: 100%;
-		}
-
-		.caption {
+		&.active {
+			.caption {
+				top: 0;
+			}
 		}
 	}
 
