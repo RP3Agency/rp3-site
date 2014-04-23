@@ -80,6 +80,7 @@
 		display: none;
 
 		@include bp(medium) {
+			background: url("../images/grid-bg-dark.gif");
 			display: block;
 		}
 	}
