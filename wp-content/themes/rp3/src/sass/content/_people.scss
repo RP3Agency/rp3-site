@@ -32,15 +32,13 @@
 	article {
 		background-repeat: no-repeat;
 		background-size: auto 100%;
+		cursor: pointer;
 		position: relative;
 
 		@each $person, $anchor in $people {
 			&.#{$person} {
 				background-position: $anchor top;
 			}
-		}
-
-		.caption {
 		}
 	}
 
@@ -62,6 +60,7 @@
 		position: absolute;
 		right: 0;
 		top: 75%;
+		transition: top 0.5s ease;
 
 		.name {
 			color: #fff;
@@ -72,7 +71,7 @@
 		.subcontent {
 			margin-top: 1em;
 			opacity: 0;
-			transition: opacity 0.2s linear;
+			transition: opacity 0.5s ease;
 		}
 	}
 

@@ -71,9 +71,23 @@ var rp3 = (function($) {
 		});
 	},
 
+	/**
+	 * Show/Hide People Information
+	 */
+	showHidePeople = function() {
+		var $articles		= $('#people article');
+
+		$articles.each( function() {
+			$(this).on( "click", function() {
+				$(this).toggleClass('active');
+			});
+		});
+	},
+
 	init = function() {
 		toggleNavigation();
 		showHideSearch();
+		showHidePeople();
 		
 		$(window).on( 'scroll', function() {
 			navigationAnchor();
