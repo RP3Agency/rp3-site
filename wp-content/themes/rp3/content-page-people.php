@@ -44,7 +44,7 @@ $counter = 0;
 
 		<?php else: ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class( $person['user_login'] . ' active' ); ?> style="background-image:url(<?php echo $background_image; ?>)">
+		<article id="post-<?php the_ID(); ?>" <?php post_class( $person['user_login'] ); ?> style="background-image:url(<?php echo $background_image; ?>)">
 			<div class="caption">
 				<h1 class="name"><?php echo $person['first_name'] . ' ' . $person['last_name']; ?></h1>
 				<h2 class="title"><?php echo $person['title']; ?></h2>
@@ -66,6 +66,7 @@ $counter = 0;
 
 					<?php // Latest blog posts, if any
 
+						/*
 						if ( $person['blogs']->post_count > 0 ) {
 							echo '<h2>Latest blog posts:</h2>';
 
@@ -79,6 +80,7 @@ $counter = 0;
 
 							echo '</ul>';
 						}
+						*/
 
 					?>
 				</div>
