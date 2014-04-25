@@ -1,0 +1,16 @@
+.site-footer {
+	background-color: $gray;
+	margin-top: 1em;
+
+	.top {
+		background-color: $blue;
+	}
+
+	.site-info {
+		@extend %wrapper;
+	}
+
+	.address {
+		// background-color: $gray;
+	}
+}

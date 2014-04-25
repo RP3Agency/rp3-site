@@ -11,13 +11,43 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'rp3' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'rp3' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'rp3' ), 'rp3', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+
+			<div class="top">
+
+				<div class="site-info">
+
+					<h1>RP3 Agency</h1>
+
+					<ul class="social">
+						<li class="facebook"><a href="https://www.facebook.com/rp3agency">Facebook</a></li>
+						<li class="twitter"><a href="https://twitter.com/rp3agency">Twitter</a></li>
+						<li class="linkedin"><a href="https://www.linkedin.com/company/rp3-agency">LinkedIn</a></li>
+						<li class="github"><a href="https://github.com/RP3Agency">Github</a></li>
+						<li class="instagram"><a href="http://instagram.com/rp3agency">Instagram</a></li>
+						<li class="pinterest"><a href="http://www.pinterest.com/rp3agency/">Pinterest</a></li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="site-info">
+
+				<div class="address">
+					7316 Wisconsin Avenue<br>
+					Suite 450<br>
+					Bethesda, Maryland 20814
+				</div>
+
+			</div>
+
+		</div>
+
+	</footer>
+	<!-- #colophon -->
+
+</div>
+<!-- #page -->
 
 <?php wp_footer(); ?>
 
