@@ -15,17 +15,17 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<!-- People -->
-
-			<?php get_template_part( 'content', 'page-people' ); ?>
-
-			<!-- // People -->
-
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', 'page' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
+
+			<!-- People -->
+
+			<?php get_template_part( 'content', 'page-people' ); ?>
+
+			<!-- // People -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
