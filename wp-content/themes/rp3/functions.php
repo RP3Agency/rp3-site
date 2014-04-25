@@ -122,6 +122,11 @@ require get_template_directory() . '/inc/filters.php';
 require get_template_directory() . '/inc/image-sizes.php';
 
 /**
+ * Display people on the "About" page
+ */
+require get_template_directory() . '/inc/display-people.php';
+
+/**
  * Miscellaneous
  */
 

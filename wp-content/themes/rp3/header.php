@@ -38,7 +38,10 @@
 
 				<div class="header-aux">
 					<a href="#!" class="search-toggle">Search</a>
-					<?php wp_nav_menu( array( 'theme_location' => 'header-auxiliary' ) ); ?>
+					<?php wp_nav_menu( array(
+						'theme_location'	=> 'header-auxiliary',
+						'menu_class'		=> 'menu social'
+					) ); ?>
 				</div>
 				<!-- // .header-aux -->
 

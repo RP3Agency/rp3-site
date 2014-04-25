@@ -12,3 +12,19 @@ $gray-light:	#e3e3e3;
    Miscellaneous Common Variables
    ========================================================================== */
 $border-radius: 3px;
+
+// To which end should the photos of people be anchored?
+$people: (
+	bjohnson: center,
+	lansbury: center,
+	kroberts: left,
+	jhannigan: left,
+	oquinones: left,
+	tbacon: right,
+	wqueener: left,
+	nparo: right,
+	trotton: left,
+	shasten: left,
+	equinn: right,
+	aantosh: right
+);
