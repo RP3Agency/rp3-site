@@ -16,6 +16,34 @@
 		background-image: url("../images/logo-color.svg");
 		background-position: center top;
 		margin-bottom: 0.5em;
+
+		@include bp(medium) {
+			display: none;
+		}
+	}
+
+	h2 {
+		color: $blue;
+		font-size: ce(18px);
+		font-weight: $bold;
+		text-transform: uppercase;
+	}
+
+	.footer-blurb {
+		display: none;
+
+		@include bp(medium) {
+			display: block;
+			// float: left;
+			// width: 35%;
+		}
+	}
+
+	.social-media {
+		// @include bp(medium) {
+		// 	float: left;
+		// 	width: 35%;
+		// }
 	}
 
 	.social {
@@ -23,7 +51,6 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		margin: 0 auto;
-		// width: 80%;
 
 		li {
 			float: none;
@@ -34,12 +61,25 @@
 				margin: 10px;
 				width: 64px;
 
+				@include bp(medium) {
+					height: 48px;
+					margin: 4px;
+					width: 48px;
+				}
+
 				&:before {
 					color: #fff;
 					font-size: 37px;
 					height: 64px;
 					line-height: 64px;
 					width: 64px;
+
+					@include bp(medium) {
+						font-size: 28px;
+						height: 48px;
+						line-height: 48px;
+						width: 48px;
+					}
 				}
 
 				&:hover {
@@ -55,6 +95,13 @@
 		font-weight: 700;
 		margin: 1em 0;
 		text-align: center;
+
+		@include bp(medium) {
+			// display: inline;
+			font-size: ce($default-font-size);
+			margin: 0 0 1em;
+			text-align: left;
+		}
 	}
 
 	.site-info {
@@ -88,6 +135,52 @@
 			top: 50%;
 			transform: translate(0, -50%);
 			width: 42px
+		}
+	}
+
+	.right .address {
+		display: none;
+
+		@include bp(medium) {
+			color: $black;
+			display: block;
+			margin-bottom: 1em;
+			position: static;
+			transform: translate(0);
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	.phone {
+		display: none;
+
+		@include bp(medium) {
+			display: block;
+			margin-bottom: 1em;
+		}
+	}
+}
+
+
+@include bp(medium) {
+	div.site-info {
+		align-items: flex-start;
+		display: flex;
+
+		.left {
+			flex: 35;
+		}
+
+		.center {
+			align-self: center;
+			flex: 35;
+		}
+
+		.right {
+			flex: 30;
 		}
 	}
 }
