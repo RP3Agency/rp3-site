@@ -23,7 +23,7 @@
 
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
 
-					<p><a href="#!">Download our fact sheet.</a></p>
+					<?php dynamic_sidebar( 'fact-sheet' ); ?>
 				</section>
 				<!-- // .footer-blurb -->
 
@@ -60,21 +60,26 @@
 
 			<div class="site-info">
 
-				<div class="phone">
-					t. 301.718.0333<br>
-					f. 301.718.9333<br>
-					<span class="copyright">© <?php echo date('Y'); ?> RP3 Agency</span>
-				</div>
-				<!-- // .phone -->
+				<div class="address-phone-combined">
 
-				<div class="address">
-					<a href="https://www.google.com/maps/place/7316+Wisconsin+Ave/@38.982666,-77.094007,18z/data=!3m1!4b1!4m2!3m1!1s0x89b7c97b02dc5265:0x1dfbc833b8797b9b">
-					7316 Wisconsin Avenue<br>
-					Suite 450<br>
-					Bethesda, Maryland 20814
-					</a>
+					<div class="address">
+						<a href="https://www.google.com/maps/place/7316+Wisconsin+Ave/@38.982666,-77.094007,18z/data=!3m1!4b1!4m2!3m1!1s0x89b7c97b02dc5265:0x1dfbc833b8797b9b">
+						7316 Wisconsin Avenue<br>
+						Suite 450<br>
+						Bethesda, Maryland 20814
+						</a>
+					</div>
+					<!-- // .address -->
+
+					<div class="phone">
+						t. 301.718.0333<br>
+						f. 301.718.9333<br>
+						<span class="copyright">© <?php echo date('Y'); ?> RP3 Agency</span>
+					</div>
+					<!-- // .phone -->
+
 				</div>
-				<!-- // .address -->
+				<!-- // .address-phone-combined -->
 
 			</div>
 			<!-- // .site-info -->
