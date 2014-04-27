@@ -2,6 +2,10 @@
 	background-color: $gray;
 	margin-top: 1em;
 
+	/**
+	 * Top Section
+	 */
+
 	.top {
 		background: #fff url("../images/grid-bg-light.gif");
 		border: solid $blue;
@@ -29,21 +33,12 @@
 		text-transform: uppercase;
 	}
 
-	.footer-blurb {
+	.left {
 		display: none;
 
 		@include bp(medium) {
 			display: block;
-			// float: left;
-			// width: 35%;
 		}
-	}
-
-	.social-media {
-		// @include bp(medium) {
-		// 	float: left;
-		// 	width: 35%;
-		// }
 	}
 
 	.social {
@@ -51,6 +46,17 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		margin: 0 auto;
+		max-width: ce(280px);
+
+		&:before,
+		&:after {
+			display: none;
+		}
+
+		@include bp(medium) {
+			margin: 0;
+			max-width: ce(210px);
+		}
 
 		li {
 			float: none;
@@ -97,9 +103,6 @@
 		text-align: center;
 
 		@include bp(medium) {
-			// display: inline;
-			font-size: ce($default-font-size);
-			margin: 0 0 1em;
 			text-align: left;
 		}
 	}
@@ -108,19 +111,55 @@
 		@extend %wrapper;
 	}
 
-	a.site-info {
+	form {
+		display: none;
+
+		@include bp(medium) {
+			display: block;
+		}
+	}
+
+	/**
+	 * Bottom Section
+	 */
+
+	.bottom .site-info {
+		color: #fff;
 		display: block;
 		height: ce(100px);
 		position: relative;
 	}
 
+	.phone {
+		display: none;
+
+		@include bp(medium) {
+			display: block;
+			left: 0;
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+	}
+
+	.copyright {
+		font-size: ce(11px);
+	}
+
 	.address {
-		color: #fff;
 		left: 50%;
 		position: absolute;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		white-space: nowrap;
+
+		@include bp(medium) {
+			float: right;
+			left: auto;
+			position: absolute;
+			right: 0;
+			transform: translate(0, -50%);
+		}
 
 		&:before {
 			@extend %genericon;
@@ -136,51 +175,32 @@
 			transform: translate(0, -50%);
 			width: 42px
 		}
-	}
 
-	.right .address {
-		display: none;
-
-		@include bp(medium) {
-			color: $black;
+		a {
+			color: #fff;
 			display: block;
-			margin-bottom: 1em;
-			position: static;
-			transform: translate(0);
-
-			&:before {
-				display: none;
-			}
-		}
-	}
-
-	.phone {
-		display: none;
-
-		@include bp(medium) {
-			display: block;
-			margin-bottom: 1em;
+			text-decoration: none;
 		}
 	}
 }
 
 
+/**
+ * Layout
+ */
 @include bp(medium) {
 	div.site-info {
-		align-items: flex-start;
+		align-items: stretch;
 		display: flex;
+		justify-content: space-between;
 
 		.left {
-			flex: 35;
-		}
-
-		.center {
-			align-self: center;
-			flex: 35;
+			flex: 1;
+			margin-right: cp(50px, 1280px);
 		}
 
 		.right {
-			flex: 30;
+			flex: 1;
 		}
 	}
 }
