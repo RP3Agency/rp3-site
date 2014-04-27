@@ -14,6 +14,10 @@
 			inset 0 10px 5px -4px transparentize(#000, 0.8),
 			inset 0 -7px 15px -4px transparentize(#000, 0.4);
 		padding: 1em 0;
+
+		a {
+			color: $blue;
+		}
 	}
 
 	h1 {
@@ -95,6 +99,11 @@
 		}
 	}
 
+	.fact-sheet {
+		font-size: ce(24px);
+		font-weight: 700;
+	}
+
 	a.email {
 		display: block;
 		font-size: ce(24px);
@@ -126,27 +135,19 @@
 	.bottom .site-info {
 		color: #fff;
 		display: block;
-		height: ce(100px);
+		height: ce(150px);
 		position: relative;
-	}
-
-	.phone {
-		display: none;
 
 		@include bp(medium) {
-			display: block;
-			left: 0;
-			position: absolute;
-			top: 50%;
-			transform: translate(0, -50%);
+			height: ce(100px);
+		}
+
+		a {
+			color: #fff;
 		}
 	}
 
-	.copyright {
-		font-size: ce(11px);
-	}
-
-	.address {
+	.address-phone-combined {
 		left: 50%;
 		position: absolute;
 		top: 50%;
@@ -154,10 +155,38 @@
 		white-space: nowrap;
 
 		@include bp(medium) {
-			float: right;
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transform: none;
+		}
+	}
+
+	.phone {
+		@include bp(medium) {
+			display: block;
+			left: 0;
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+
+		.copyright {
+			font-size: ce(11px);
+		}
+	}
+
+	.address {
+		margin-bottom: 0.5em;
+		position: relative;
+
+		@include bp(medium) {
 			left: auto;
 			position: absolute;
 			right: 0;
+			top: 50%;
 			transform: translate(0, -50%);
 		}
 
@@ -177,7 +206,6 @@
 		}
 
 		a {
-			color: #fff;
 			display: block;
 			text-decoration: none;
 		}
