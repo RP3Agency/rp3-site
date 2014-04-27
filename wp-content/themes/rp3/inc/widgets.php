@@ -13,3 +13,15 @@ function rp3_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'rp3_widgets_init' );
+
+// "Fact Sheet" widget for footer
+register_sidebar( array(
+	'name'				=> __( 'Fact Sheet Area', 'rp3' ),
+	'id'				=> 'fact-sheet',
+	'class'				=> 'fact-sheet',
+	'description'		=> __( 'Where the fact sheet lives.', 'rp3' ),
+	'before_widget'		=> '<div id="fact-sheet" class="widget-container fact-sheet %2$s">',
+	'after_widget'		=> '</div>',
+	'before_title'		=> '',
+	'after_title'		=> ''
+) );
