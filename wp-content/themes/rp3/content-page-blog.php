@@ -47,27 +47,29 @@ global $more;
 
 			<?php the_post_thumbnail( 'full' ); ?>
 
-			<header class="entry-header">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+			<div class="entry-wrapper">
 
-				<?php if ( 'post' == get_post_type() ) : ?>
-				<div class="entry-meta">
-					<span class="entry-meta-date"><?php echo get_the_date(); ?></span>
-					<span class="entry-meta-author">By <?php coauthors(); ?></span>
-				</div><!-- .entry-meta -->
-				<?php endif; ?>
-			</header><!-- .entry-header -->
+				<header class="entry-header">
+					<h1 class="entry-title"><?php the_title(); ?></h1>
 
-			<div class="entry-content">
-				<?php // echo apply_filters( 'rp3_strip_anchor_filter', get_the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'rp3' ) ) ); ?>
-				<?php echo rp3_strip_anchor_filter( get_the_content( '' ) ); ?>
-				<?php
-					wp_link_pages( array(
-						'before' => '<div class="page-links">' . __( 'Pages:', 'rp3' ),
-						'after'  => '</div>',
-					) );
-				?>
-			</div><!-- .entry-content -->
+					<div class="entry-meta">
+						<?php echo get_the_date(); ?> by <?php coauthors(); ?>
+					</div><!-- .entry-meta -->
+				</header><!-- .entry-header -->
+
+				<div class="entry-content">
+					<?php // echo apply_filters( 'rp3_strip_anchor_filter', get_the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'rp3' ) ) ); ?>
+					<?php echo rp3_strip_anchor_filter( get_the_content( '' ) ); ?>
+					<?php
+						wp_link_pages( array(
+							'before' => '<div class="page-links">' . __( 'Pages:', 'rp3' ),
+							'after'  => '</div>',
+						) );
+					?>
+				</div><!-- .entry-content -->
+
+			</div>
+			<!-- // .entry-wrapper -->
 
 		</a>
 
