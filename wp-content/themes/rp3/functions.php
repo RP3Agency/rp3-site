@@ -87,6 +87,20 @@ function rp3_scripts() {
 add_action( 'wp_enqueue_scripts', 'rp3_scripts' );
 
 /**
+ * Add page slug into body class
+ */
+function rp3_add_slug_body_class( $classes ) {
+	global $post;
+
+	if ( isset ( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'rp3_add_slug_body_class' );
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
