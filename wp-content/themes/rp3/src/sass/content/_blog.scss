@@ -8,103 +8,114 @@ body.page-blog {
 		background:
 			linear-gradient(to bottom, $white, $white),
 			url("../images/magnetisms.png") no-repeat center center;
-		min-height: ce(345px);
+		background-size: auto 100%;
 
 		@include retina {
 			background-image:
 				linear-gradient(to bottom, $white, $white),
 				url("../images/magnetisms@2x.png");
-			background-size: 320px auto;
 		}
 
 		@include bp(medium) {
 			background: none;
-			display: table-row;
-		}
-
-		.entry-content {
-			@include bp(medium) {
-				display: table-cell;
-				height: ce(345px);
-				padding-right: 40px;
-				vertical-align: top;
-			}
 		}
 
 		.magnetisms {
 			display: none;
 
 			@include bp(medium) {
-				display: table-cell;
-				background: url("../images/magnetisms.png") no-repeat center center;
-				width: 320px;
+				display: block;
+				background: url("../images/magnetisms.png") no-repeat center top;
+				background-size: 100% auto;
+				float: left;
+				height: 215px;
+				margin-right: 20px;
+				width: 200px;
 			}
 		}
 	}
+}
 
-	/**
-	 * The actual blog archive listing
-	 */
-	.blog-archive {
+/**
+ * The actual blog archive listing
+ */
+.blog-archive {
+	@include bp(large) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	article {
+		@extend %clearfix;
+		border: 8px solid #ededed;
+		border-radius: 8px;
+
 		@include bp(large) {
-			display: flex;
-			justify-content: space-between;
+			width: 32%;
+		}
+	}
+
+	.wp-post-image {
+		display: block;
+		height: auto;
+		width: 100%;
+
+		@include bp(bp-768) {
+			float: left;
+			margin-right: cp(20px, 768px);
+			width: cp(320px, 768px);
 		}
 
-		article {
-			@extend %clearfix;
-			border: 8px solid #ededed;
-			border-radius: 8px;
-
-			@include bp(large) {
-				width: 32%;
-			}
-		}
-
-		.wp-post-image {
-			display: block;
-			height: auto;
+		@include bp(large) {
+			float: none;
+			margin-right: 0;
 			width: 100%;
+		}
+	}
 
-			@include bp(bp-768) {
-				float: left;
-				margin-right: cp(20px, 768px);
-				width: cp(320px, 768px);
-			}
+	.entry-wrapper {
+		padding: 5px;
 
-			@include bp(large) {
-				float: none;
-				margin-right: 0;
-				width: 100%;
-			}
+		@include bp(bp-768) {
+			float: left;
+			width: cp(428px, 768px);
 		}
 
-		.entry-wrapper {
-			padding: 5px;
-
-			@include bp(bp-768) {
-				float: left;
-				width: cp(428px, 768px);
-			}
-
-			@include bp(large) {
-				float: none;
-				width: 100%;
-			}
+		@include bp(large) {
+			float: none;
+			width: 100%;
 		}
+	}
 
-		.entry-title {
-			font-size: ce(24px);
-			text-transform: none;
-		}
+	.entry-title {
+		font-size: ce(24px);
+		text-transform: none;
+	}
 
-		.entry-meta {
-			margin-bottom: 1em;
-		}
+	.entry-meta {
+		margin-bottom: 1em;
+	}
 
-		.entry-meta-date,
-		.entry-meta-author {
-			display: block;
+	.entry-meta-date,
+	.entry-meta-author {
+		display: block;
+	}
+}
+
+/**
+ * Blog archive page widget area
+ */
+.site-content .blog-archive-widget-area {
+	width: 100%;
+
+	@include bp(bp-768) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.widget {
+		@include bp(bp-768) {
+			width: 32%;
 		}
 	}
 }

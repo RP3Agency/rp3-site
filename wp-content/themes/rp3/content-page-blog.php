@@ -18,6 +18,9 @@ global $more;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<div class="magnetisms"></div>
+
 	<?php /*
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -27,8 +30,6 @@ global $more;
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
-
-	<div class="magnetisms"></div>
 
 </article><!-- #post-## -->
 

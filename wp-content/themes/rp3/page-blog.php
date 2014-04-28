@@ -36,5 +36,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php // get_sidebar( 'news' ); ?>
+<?php get_sidebar( 'blog-archive' ); ?>
 <?php get_footer(); ?>
