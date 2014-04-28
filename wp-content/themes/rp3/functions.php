@@ -101,6 +101,13 @@ function rp3_add_slug_body_class( $classes ) {
 add_filter( 'body_class', 'rp3_add_slug_body_class' );
 
 /**
+ * Add filter for stripping out <a href=""> tags from content (for the blog archives).
+ */
+function rp3_strip_anchor_filter( $content ) {
+	return preg_replace( '/<\/?a[^>]*>/', '', $content );
+}
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
