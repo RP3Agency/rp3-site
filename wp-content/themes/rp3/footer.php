@@ -19,9 +19,9 @@
 				<h1 class="logo">RP3 Agency</h1>
 
 				<section class="left">
-					<h2>Heading 2</h2>
+					<h2 class="logo">RP3 Agency</h2>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
+					<p>Our mission is to tell the story inside every brand and help establish its purpose in people's lives through humanity, technology and creativity. In today's connected world, the lines between these areas have blurred. RP3 Agency has embraced this new paradigm by building an interdisciplinary team adept at leveraging them all in concert to accomplish our client's business objectives.</p>
 
 					<?php dynamic_sidebar( 'fact-sheet' ); ?>
 				</section>
@@ -32,14 +32,14 @@
 						<li class="facebook"><a href="https://www.facebook.com/rp3agency">Facebook</a></li>
 						<li class="twitter"><a href="https://twitter.com/rp3agency">Twitter</a></li>
 						<li class="linkedin"><a href="https://www.linkedin.com/company/rp3-agency">LinkedIn</a></li>
+						<li class="googleplus"><a href="https://plus.google.com/+RP3agency">Google+</a></li>
 					</ul>
 					<ul class="social">
 						<li class="github"><a href="https://github.com/RP3Agency">Github</a></li>
 						<li class="instagram"><a href="http://instagram.com/rp3agency">Instagram</a></li>
 						<li class="pinterest"><a href="http://www.pinterest.com/rp3agency/">Pinterest</a></li>
+						<li class="email"><a href="mailto:info@rp3agency.com">Email info@rp3agency.com</a></li>
 					</ul>
-
-					<a href="mailto:info@rp3agency.com" class="email">info@rp3agency.com</a>
 
 					<form>
 						<label>Sign up for our newsletter:
