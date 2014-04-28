@@ -1,0 +1,44 @@
+body.page-blog {
+
+	/**
+	 * Insert "Magnetisms" background behind introductory content (mobile)
+	 */
+	.type-page {
+		$white: transparentize( #fff, 0.2 );
+		background:
+			linear-gradient(to bottom, $white, $white),
+			url("../images/magnetisms.png") no-repeat center center;
+		min-height: ce(345px);
+
+		@include retina {
+			background-image:
+				linear-gradient(to bottom, $white, $white),
+				url("../images/magnetisms@2x.png");
+			background-size: 320px auto;
+		}
+
+		@include bp(medium) {
+			background: none;
+			display: table-row;
+		}
+
+		.entry-content {
+			@include bp(medium) {
+				display: table-cell;
+				height: ce(345px);
+				padding-right: 40px;
+				vertical-align: top;
+			}
+		}
+
+		.magnetisms {
+			display: none;
+
+			@include bp(medium) {
+				display: table-cell;
+				background: url("../images/magnetisms.png") no-repeat center center;
+				width: 320px;
+			}
+		}
+	}
+}
