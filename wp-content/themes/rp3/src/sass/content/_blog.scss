@@ -41,4 +41,34 @@ body.page-blog {
 			}
 		}
 	}
+
+	/**
+	 * The actual blog archive listing
+	 */
+	.blog-archive {
+		@include bp(medium) {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		article {
+			@include bp(medium) {
+				width: 30%;
+			}
+		}
+
+		.entry-title {
+			font-size: ce(24px);
+			text-transform: none;
+		}
+
+		.entry-meta {
+			margin-bottom: 1em;
+		}
+
+		.entry-meta-date,
+		.entry-meta-author {
+			display: block;
+		}
+	}
 }
