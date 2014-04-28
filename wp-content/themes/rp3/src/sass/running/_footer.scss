@@ -31,10 +31,7 @@
 	}
 
 	h2 {
-		color: $blue;
-		font-size: ce(18px);
-		font-weight: $bold;
-		text-transform: uppercase;
+		font-size: ce(24px);
 	}
 
 	.left {
@@ -49,8 +46,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		margin: 0 auto;
-		max-width: ce(280px);
+		margin: 20px auto;
+		max-width: ce(300px);
 
 		&:before,
 		&:after {
@@ -59,7 +56,6 @@
 
 		@include bp(medium) {
 			margin: 0;
-			max-width: ce(210px);
 		}
 
 		li {
@@ -68,7 +64,6 @@
 			a {
 				background-color: $gray;
 				height: 64px;
-				margin: 10px;
 				width: 64px;
 
 				@include bp(medium) {
@@ -100,7 +95,7 @@
 	}
 
 	.fact-sheet {
-		font-size: ce(24px);
+		font-size: ce(18px);
 		font-weight: 700;
 	}
 
@@ -125,6 +120,7 @@
 
 		@include bp(medium) {
 			display: block;
+			margin-top: 2em;
 		}
 	}
 
