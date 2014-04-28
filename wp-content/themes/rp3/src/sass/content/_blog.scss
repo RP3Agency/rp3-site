@@ -46,14 +46,50 @@ body.page-blog {
 	 * The actual blog archive listing
 	 */
 	.blog-archive {
-		@include bp(medium) {
+		@include bp(large) {
 			display: flex;
 			justify-content: space-between;
 		}
 
 		article {
-			@include bp(medium) {
-				width: 30%;
+			@extend %clearfix;
+			border: 8px solid #ededed;
+			border-radius: 8px;
+
+			@include bp(large) {
+				width: 32%;
+			}
+		}
+
+		.wp-post-image {
+			display: block;
+			height: auto;
+			width: 100%;
+
+			@include bp(bp-768) {
+				float: left;
+				margin-right: cp(20px, 768px);
+				width: cp(320px, 768px);
+			}
+
+			@include bp(large) {
+				float: none;
+				margin-right: 0;
+				width: 100%;
+			}
+		}
+
+		.entry-wrapper {
+			padding: 5px;
+
+			@include bp(bp-768) {
+				float: left;
+				width: cp(428px, 768px);
+			}
+
+			@include bp(large) {
+				float: none;
+				width: 100%;
 			}
 		}
 
