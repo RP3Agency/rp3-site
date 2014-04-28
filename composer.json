@@ -27,6 +27,7 @@
     "wpackagist-plugin/add-from-server":"dev-trunk",
     "wpackagist-plugin/advanced-custom-fields":"dev-trunk",
     "wpackagist-plugin/admin-post-navigation":"dev-trunk",
+    "wpackagist-plugin/black-studio-tiny-mce-widget":"dev-trunk",
     "wpackagist-plugin/co-authors-plus":"dev-trunk",
     "wpackagist-plugin/debug-bar":"dev-trunk",
     "wpackagist-plugin/fv-top-level-cats":"dev-trunk",

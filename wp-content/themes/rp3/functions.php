@@ -64,7 +64,7 @@ endif; // rp3_setup
 add_action( 'after_setup_theme', 'rp3_setup' );
 
 /**
- * Widgets for this theme.
+ * Widget areas for this theme.
  */
 require get_template_directory() . '/inc/widgets.php';
 

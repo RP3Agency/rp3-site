@@ -29,6 +29,7 @@ $social: (
 
 .social {
 	@extend %clear-ul-formatting;
+	@extend %clearfix;
 
 	li {
 		float: left;

@@ -82,3 +82,9 @@
 	color: $gray;
 	font-style: italic;
 }
+
+%wrapper {
+	margin: 0 auto;
+	max-width: ce(1280px, $default-font-size);
+	width: 95%;
+}
