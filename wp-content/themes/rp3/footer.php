@@ -78,7 +78,7 @@
 						t. 301.718.0333<br>
 						f. 301.718.9333<br>
 						<span class="copyright">© <?php echo date('Y'); ?> RP3 Agency,<br>
-							<a href="http://www.aaaa.org/news/agency/Pages/RP3AgencyReceivesCertificationAsaWomen-OwnedSmallBusiness.aspx">A certified woman-owned business.</span>
+							<a href="http://www.aaaa.org/news/agency/Pages/RP3AgencyReceivesCertificationAsaWomen-OwnedSmallBusiness.aspx">a certified woman-owned business.</a></span>
 					</div>
 					<!-- // .phone -->
 
