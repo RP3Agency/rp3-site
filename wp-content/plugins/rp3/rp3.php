@@ -7,3 +7,7 @@ Author: Tracy Rotton
 Author URI: http://rp3agency.com
 */
 
+define( 'RP3_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'RP3_PLUGIN_INC_DIR', RP3_PLUGIN_DIR . 'inc/' );
+
+require_once( RP3_PLUGIN_INC_DIR . 'custom-post-types.php' );
