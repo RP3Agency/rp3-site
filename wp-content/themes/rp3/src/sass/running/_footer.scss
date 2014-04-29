@@ -49,13 +49,14 @@
 		margin: 20px auto;
 		max-width: ce(300px);
 
+		@include bp(medium) {
+			margin: 0;
+			max-width: ce(220px);
+		}
+
 		&:before,
 		&:after {
 			display: none;
-		}
-
-		@include bp(medium) {
-			margin: 0;
 		}
 
 		li {
@@ -131,7 +132,7 @@
 	.bottom .site-info {
 		color: #fff;
 		display: block;
-		height: ce(150px);
+		height: ce(175px);
 		position: relative;
 
 		@include bp(medium) {
@@ -171,6 +172,12 @@
 
 		.copyright {
 			font-size: ce(11px);
+
+			@include bp(medium) {
+				br {
+					display: none;
+				}
+			}
 		}
 	}
 

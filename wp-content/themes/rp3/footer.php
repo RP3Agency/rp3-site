@@ -32,11 +32,14 @@
 						<li class="facebook"><a href="https://www.facebook.com/rp3agency">Facebook</a></li>
 						<li class="twitter"><a href="https://twitter.com/rp3agency">Twitter</a></li>
 						<li class="linkedin"><a href="https://www.linkedin.com/company/rp3-agency">LinkedIn</a></li>
-						<li class="googleplus"><a href="https://plus.google.com/+RP3agency">Google+</a></li>
 					</ul>
 					<ul class="social">
+						<li class="googleplus"><a href="https://plus.google.com/+RP3agency">Google+</a></li>
 						<li class="github"><a href="https://github.com/RP3Agency">Github</a></li>
 						<li class="instagram"><a href="http://instagram.com/rp3agency">Instagram</a></li>
+					</ul>
+					<ul class="social">
+						<li class="youtube"><a href="https://www.youtube.com/user/RP3Agency">YouTube</a></li>
 						<li class="pinterest"><a href="http://www.pinterest.com/rp3agency/">Pinterest</a></li>
 						<li class="email"><a href="mailto:info@rp3agency.com">Email info@rp3agency.com</a></li>
 					</ul>
@@ -74,7 +77,8 @@
 					<div class="phone">
 						t. 301.718.0333<br>
 						f. 301.718.9333<br>
-						<span class="copyright">© <?php echo date('Y'); ?> RP3 Agency</span>
+						<span class="copyright">© <?php echo date('Y'); ?> RP3 Agency,<br>
+							<a href="http://www.aaaa.org/news/agency/Pages/RP3AgencyReceivesCertificationAsaWomen-OwnedSmallBusiness.aspx">A certified woman-owned business.</span>
 					</div>
 					<!-- // .phone -->
 
