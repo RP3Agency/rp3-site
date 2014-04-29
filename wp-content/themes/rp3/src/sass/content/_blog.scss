@@ -80,7 +80,7 @@ body.page-blog {
 	}
 
 	.entry-wrapper {
-		padding: 5px;
+		padding: 10px;
 
 		@include bp(bp-768) {
 			float: left;
@@ -118,6 +118,8 @@ body.page-blog {
 	}
 
 	.widget-area {
+		margin-bottom: 2em;
+
 		@include bp(bp-768) {
 			width: 32%;
 		}
