@@ -1,6 +1,5 @@
 <?php
 
-
 function rp3_register_nav_menus() {
 
 	register_nav_menus( array(

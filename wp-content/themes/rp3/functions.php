@@ -1,4 +1,3 @@
-
 <?php
 /**
  * RP3 functions and definitions
