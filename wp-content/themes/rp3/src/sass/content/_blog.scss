@@ -109,6 +109,65 @@ body.page-blog {
 }
 
 /**
+ * Navigation Links
+ */
+.nav-links {
+	@extend %clearfix;
+	border-bottom: 1px dotted $gray-light;
+	line-height: 48px;
+	margin: 0 0 3em;
+	padding: 1em 0;
+
+	a {
+		display: block;
+		font-size: ce(22px);
+		font-style: italic;
+		line-height: 48px;
+		position: relative;
+
+		&:before {
+			background-color: $blue;
+			border-radius: 100%;
+			color: #fff;
+			font-family: Genericons;
+			font-size: 48px;
+			font-style: normal;
+			height: 48px;
+			line-height: 48px;
+			position: absolute;
+			text-align: center;
+			width: 48px;
+		}
+
+		@include hover-state {
+			&:before {
+				background-color: $pink;
+			}
+		}
+	}
+
+	.nav-next a {
+		float: left;
+		margin-left: 54px;
+
+		&:before {
+			content: '\f430';
+			left: -54px;
+		}
+	}
+
+	.nav-prev a {
+		float: right;
+		margin-right: 54px;
+
+		&:before {
+			content: '\f429';
+			right: -54px;
+		}
+	}
+}
+
+/**
  * Blog archive page widget area
  */
 .site-content .blog-archive-widget-area {

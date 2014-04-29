@@ -82,7 +82,7 @@ global $more;
 
 		<div class="nav-next"><?php echo get_next_posts_link( 'Older', $blog->max_num_pages ); ?></div>
 
-		<div class="nav-next"><?php echo get_previous_posts_link( 'Newer' ); ?></div>
+		<div class="nav-prev"><?php echo get_previous_posts_link( 'Newer' ); ?></div>
 
 	</div><!-- .nav-links -->
 </nav><!-- .navigation -->
