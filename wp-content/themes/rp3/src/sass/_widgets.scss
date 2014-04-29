@@ -58,3 +58,41 @@
 		@extend %meta-date;
 	}
 }
+
+/**
+ * Latest Tweets Widget
+ */
+.widget_latest_tweets_widget {
+	ul {
+		@extend %clear-ul-formatting;
+
+		li {
+			background-color: $gray-light;
+			border-width: 8px 8px 8px 9px;
+			border-image: url("../images/tweet-border.gif") 14 25 16 17 repeat;
+			margin-bottom: 1em;
+			padding: 5px;
+		}
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+/**
+ * Tags
+ */
+.tw-tag {
+	@extend %category-tag;
+	display: inline-block;
+	margin-bottom: 4px;
+
+	&:visited {
+		color: #fff;
+	}
+
+	@include hover-state {
+		color: #fff;
+	}
+}

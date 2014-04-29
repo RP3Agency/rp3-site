@@ -86,16 +86,7 @@ body.category-news {
 		}
 
 		a[rel="category tag"] {
-			background-color: mix(#fff, $blue, 33%);
-			border-radius: $border-radius;
-			color: #fff;
-			padding: 5px 10px;
-			text-decoration: none;
-			transition: background-color 0.2s;
-
-			@include hover-state {
-				background-color: $blue;
-			}
+			@extend %category-tag;
 		}
 	}
 }
