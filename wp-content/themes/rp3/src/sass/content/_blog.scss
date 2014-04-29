@@ -51,13 +51,19 @@ body.page-blog {
 		border-radius: 8px;
 
 		@include bp(large) {
+			display: flex;
 			width: 32%;
+		}
+
+		> a {
+			@extend %clearfix;
 		}
 	}
 
 	.wp-post-image {
 		display: block;
 		height: auto;
+		margin-bottom: 1em;
 		width: 100%;
 
 		@include bp(bp-768) {
@@ -88,7 +94,7 @@ body.page-blog {
 	}
 
 	.entry-title {
-		font-size: ce(24px);
+		font-size: ce(18px);
 		text-transform: none;
 	}
 
