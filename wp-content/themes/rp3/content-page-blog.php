@@ -80,9 +80,9 @@ global $more;
 	<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'rp3' ); ?></h1>
 	<div class="nav-links">
 
-		<div class="nav-next"><?php echo get_next_posts_link( 'Olderisms', $blog->max_num_pages ); ?></div>
+		<div class="nav-next"><?php echo get_next_posts_link( 'Older', $blog->max_num_pages ); ?></div>
 
-		<div class="nav-next"><?php echo get_previous_posts_link( 'Newerisms' ); ?></div>
+		<div class="nav-next"><?php echo get_previous_posts_link( 'Newer' ); ?></div>
 
 	</div><!-- .nav-links -->
 </nav><!-- .navigation -->
