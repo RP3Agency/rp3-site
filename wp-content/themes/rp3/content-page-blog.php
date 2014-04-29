@@ -11,7 +11,8 @@
 $blog = new WP_Query( array(
 	'post_type'			=> 'post',
 	'category_name'		=> 'blog',
-	'posts_per_page'	=> 3
+	'posts_per_page'	=> 3,
+	'paged'				=> $paged
 ) );
 
 global $more;
@@ -21,12 +22,6 @@ global $more;
 
 	<div class="magnetisms"></div>
 
-	<?php /*
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
-	*/ ?>
-
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
@@ -35,9 +30,9 @@ global $more;
 
 <!-- Blog archive -->
 
-<div class="blog-archive">
+<?php if ( $blog->have_posts() ) : ?>
 
-	<?php if ( $blog->have_posts() ) : ?>
+<div class="blog-archive">
 
 	<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
 
@@ -76,7 +71,23 @@ global $more;
 
 	</article><!-- #post-## -->
 
-	<?php endwhile; endif; ?>
+	<?php endwhile; ?>
 
 </div>
 <!-- // .blog-archive -->
+
+<nav class="navigation paging-navigation" role="navigation">
+	<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'rp3' ); ?></h1>
+	<div class="nav-links">
+
+		<div class="nav-next"><?php echo get_next_posts_link( 'Olderisms', $blog->max_num_pages ); ?></div>
+
+		<div class="nav-next"><?php echo get_previous_posts_link( 'Newerisms' ); ?></div>
+
+	</div><!-- .nav-links -->
+</nav><!-- .navigation -->
+
+<?php endif; ?>
+
+<?php wp_reset_postdata(); ?>
+
