@@ -1,0 +1,119 @@
+body.page-blog {
+
+	/**
+	 * Insert "Magnetisms" background behind introductory content (mobile)
+	 */
+	.type-page {
+		$white: transparentize( #fff, 0.2 );
+		background:
+			linear-gradient(to bottom, $white, $white),
+			url("../images/magnetisms.png") no-repeat center center;
+		background-size: auto 100%;
+
+		@include retina {
+			background-image:
+				linear-gradient(to bottom, $white, $white),
+				url("../images/magnetisms@2x.png");
+		}
+
+		@include bp(medium) {
+			background: none;
+		}
+
+		.magnetisms {
+			display: none;
+
+			@include bp(medium) {
+				display: block;
+				background: url("../images/magnetisms.png") no-repeat center top;
+				background-size: 100% auto;
+				float: left;
+				height: 215px;
+				margin-right: 20px;
+				width: 200px;
+			}
+		}
+	}
+}
+
+/**
+ * The actual blog archive listing
+ */
+.blog-archive {
+	@include bp(large) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	article {
+		@extend %clearfix;
+		border: 8px solid #ededed;
+		border-radius: 8px;
+
+		@include bp(large) {
+			width: 32%;
+		}
+	}
+
+	.wp-post-image {
+		display: block;
+		height: auto;
+		width: 100%;
+
+		@include bp(bp-768) {
+			float: left;
+			margin-right: cp(20px, 768px);
+			width: cp(320px, 768px);
+		}
+
+		@include bp(large) {
+			float: none;
+			margin-right: 0;
+			width: 100%;
+		}
+	}
+
+	.entry-wrapper {
+		padding: 5px;
+
+		@include bp(bp-768) {
+			float: left;
+			width: cp(428px, 768px);
+		}
+
+		@include bp(large) {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	.entry-title {
+		font-size: ce(24px);
+		text-transform: none;
+	}
+
+	.entry-meta {
+		color: $gray;
+		font-size: ce(12px);
+		margin-bottom: 1em;
+		text-transform: uppercase;
+	}
+}
+
+/**
+ * Blog archive page widget area
+ */
+.site-content .blog-archive-widget-area {
+	width: 100%;
+
+	@include bp(bp-768) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.widget-area {
+		@include bp(bp-768) {
+			width: 32%;
+		}
+	}
+}

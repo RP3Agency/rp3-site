@@ -10,14 +10,7 @@
 get_header(); ?>
 
 	<header class="page-header">
-		<h1 class="page-title">News</h1>
-		<?php
-			// Show an optional term description.
-			$term_description = term_description();
-			if ( ! empty( $term_description ) ) :
-				printf( '<div class="taxonomy-description">%s</div>', $term_description );
-			endif;
-		?>
+		<h1 class="page-title">Blog</h1>
 	</header><!-- .page-header -->
 
 	<section id="primary" class="content-area">
@@ -28,7 +21,7 @@ get_header(); ?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'news' ); ?>
+				<?php get_template_part( 'content', 'page-blog' ); ?>
 
 			<?php endwhile; ?>
 
@@ -43,5 +36,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar( 'news' ); ?>
+<?php get_sidebar( 'blog-archive' ); ?>
 <?php get_footer(); ?>
