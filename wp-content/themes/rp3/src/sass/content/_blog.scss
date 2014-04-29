@@ -93,12 +93,10 @@ body.page-blog {
 	}
 
 	.entry-meta {
+		color: $gray;
+		font-size: ce(12px);
 		margin-bottom: 1em;
-	}
-
-	.entry-meta-date,
-	.entry-meta-author {
-		display: block;
+		text-transform: uppercase;
 	}
 }
 
@@ -113,7 +111,7 @@ body.page-blog {
 		justify-content: space-between;
 	}
 
-	.widget {
+	.widget-area {
 		@include bp(bp-768) {
 			width: 32%;
 		}
