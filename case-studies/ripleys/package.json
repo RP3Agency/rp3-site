@@ -1,0 +1,30 @@
+{
+  "name": "ripleys-case-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@rp3agency.beanstalkapp.com:/rp3agency/rp3-rp31-website.git"
+  },
+  "author": "Tracy Rotton, Julie Smith",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-clean": "^0.2.4",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-concat": "^2.2.0",
+    "gulp-jshint": "^1.5.5",
+    "gulp-notify": "^1.2.5",
+    "gulp-ruby-sass": "^0.4.3",
+    "gulp-uglify": "^0.2.1",
+    "gulp-minify-css": "^0.3.3",
+    "gulp-cache": "^0.1.3",
+    "gulp-imagemin": "^0.2.0",
+    "gulp-util": "^2.2.14"
+  }
+}

@@ -1,0 +1,30 @@
+/**
+ * Utility partials, which must be defined in a particular order.
+ * Nothing in the /util/ directory should print directly to the compiled CSS,
+ * but rather be available for other styling to take advantage of.
+ */
+
+/**
+ * Variables
+ */
+@import "variables";
+
+/**
+ * Mixins
+ */
+@import "mixins";
+
+/**
+ * Responsive
+ */
+@import "responsive";
+
+/**
+ * Extend
+ */
+@import "extend";
+
+/**
+ * Griddr
+ */
+@import "griddr";
