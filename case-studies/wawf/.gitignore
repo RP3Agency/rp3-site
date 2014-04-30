@@ -3,3 +3,4 @@ npm-debug.log
 css/*.css
 js/*.js
 !src/js/*.js
+.sass-cache
