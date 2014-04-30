@@ -7,12 +7,28 @@
  * WAWF-specific sections and properties
  */
 
-@import "splash";
+.background {
+	picture {
+		text-align: center;
+	}
+}
 
-@import "background";
+.interstitial {
+	@extend %RobotoBoldItalic;
 
-@import "interstitial";
+	background-color: $blue-rp3;
+	color: #fff;
+	margin-bottom: 1em;
+	padding: 1em 0;
+	text-align: center;
+	text-transform: uppercase;
 
-@import "assets";
+	@include font-size(30px);
+}
 
-@import "results"
+.assets {
+	.screens,
+	.video {
+		margin-bottom: 2em;
+	}
+}
