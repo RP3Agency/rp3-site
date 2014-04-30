@@ -11,7 +11,7 @@ var wawf = (function($) {
 			heroWidth = 0;
 
 		heroWidth = $hero.width();
-		$hero.height( heroWidth / ratio );
+		$hero.height( Math.floor( heroWidth / ratio ) );
 	},
 
 	/**
