@@ -39,7 +39,6 @@
 
 		color: mix(#fff, $gray, 60%);
 		float: right;
-		transition: color 0.1s linear;
 
 		@include hover-state {
 			color: #fff;

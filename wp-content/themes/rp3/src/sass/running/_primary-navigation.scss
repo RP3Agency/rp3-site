@@ -69,7 +69,6 @@
 			padding: 0.5em cp(10px, 320px);
 			text-decoration: none;
 			text-transform: uppercase;
-			transition: background-color 0.1s linear;
 
 			@include modernizr(touch) {
 				font-weight: $normal;
