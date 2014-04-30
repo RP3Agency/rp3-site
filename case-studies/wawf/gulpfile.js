@@ -79,7 +79,7 @@ gulp.task( 'default', ['clean'], function() {
  */
 gulp.task( 'watch', function() {
 	gulp.start( 'default' );
-	gulp.watch( 'src/scss/**/*.scss', ['styles'] );
+	gulp.watch( 'src/sass/**/*.scss', ['styles'] );
 	gulp.watch( '../src/sass/**/*.scss', ['styles'] );
 	gulp.watch( 'src/js/*.js', ['scripts'] );
 	gulp.watch( 'src/js/plugins/*.js', ['scripts-plugins'] );

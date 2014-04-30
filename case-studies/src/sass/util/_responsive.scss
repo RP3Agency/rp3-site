@@ -22,9 +22,9 @@ $default-font-size: 14px !default;
 // the content.
 
 // Example:
-// $context-small: 420px;
-
-
+$context-small:		320px;
+$context-medium:	728px;
+$context-large:		1280px;
 
 // Mixins
 
@@ -73,26 +73,15 @@ $default-font-size: 14px !default;
 @mixin breakpoint($breakpoint, $media: all) {
 
 	// Change these values as required
-	$small: 480px / 16px * 1em;
 	$medium: 690px / 16px * 1em;
 	$large: 1024px / 16px * 1em;
-	$xlarge: 1280px / 16px * 1em;
 
-	@if $breakpoint == small {
-		@media only #{$media} and (min-width: $small) {
-			@content;
-		}
-	}
-	@else if $breakpoint == medium {
+	@if $breakpoint == medium {
 		@media only #{$media} and (min-width: $medium) {
 			@content;
 		}
 	} @else if $breakpoint == large {
 		@media only #{$media} and (min-width: $large) {
-			@content;
-		}
-	} @else if $breakpoint == xlarge {
-		@media only #{$media} and (min-width: $xlarge) {
 			@content;
 		}
 	}

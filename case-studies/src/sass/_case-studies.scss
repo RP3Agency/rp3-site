@@ -13,4 +13,19 @@
  * font treatment. If that turns out to not be the case, I'll remove this file from the
  * common Sass.)
  */
-@import "fonts";
+@import "typography";
+
+/**
+ * Base styling
+ */
+@import "base";
+
+
+/**
+ * Common stylings for the different case study sections
+ */
+@import "splash";
+
+@import "data-point";
+
+@import "related";

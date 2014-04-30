@@ -1,0 +1,33 @@
+html {
+	background-color: $blue-light;
+}
+
+/**
+ * Content margins
+ */
+.site-content {
+	margin: 0 cp(10px, $context-small);
+
+	@include bp(medium) {
+		margin: 0 cp(10px, $context-medium);
+	}
+
+	@include bp(large) {
+		margin: 0 cp(15px, $context-large);
+	}
+}
+
+/**
+ * Panel Headers (in the background and results panels)
+ */
+.panel-header {
+	margin-bottom: 1em;
+}
+
+
+/**
+ * Data points (in the background and results panels)
+ */
+.data-point {
+	margin-bottom: 1em;
+}

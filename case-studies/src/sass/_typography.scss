@@ -1,0 +1,74 @@
+/**
+ * Fonts
+ */
+
+@import url("http://fonts.googleapis.com/css?family=Lato:300,300italic|Roboto:500,700,700italic");
+
+$roboto:		Roboto, sans-serif;
+$lato:			Lato, sans-serif;
+
+$light:			300;
+$medium:		500;
+$bold:			700;
+
+%RobotoMedium {
+	font-family: $roboto;
+	font-weight: $medium;
+}
+
+%RobotoBold {
+	font-family: $roboto;
+	font-weight: $bold;
+}
+
+%RobotoBoldItalic {
+	@extend %RobotoBold;
+	font-style: italic;
+}
+
+%LatoLight {
+	font-family: $lato;
+	font-weight: $light;
+}
+
+%LatoLightItalic {
+	@extend %LatoLight;
+	font-style: italic;
+}
+
+
+/**
+ * Base typography
+ */
+html {
+	@extend %LatoLight;
+	color: $gray-medium;
+	font-size: cp( $default-font-size, 16px );
+}
+
+body {
+	line-height: 1.2;
+}
+
+
+/**
+ * Common typographical treatments
+ */
+.panel-header {
+	h1 {
+		@extend %RobotoMedium;
+		font-size: ce(24px);
+		text-transform: uppercase;
+	}
+
+	.subtitle {
+		@extend %LatoLightItalic;
+		font-size: ce(21px);
+	}
+}
+
+.data-point {
+	h2 {
+		@extend %RobotoBold;
+	}
+}
