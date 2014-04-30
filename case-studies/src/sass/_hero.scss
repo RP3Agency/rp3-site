@@ -1,0 +1,16 @@
+.hero {
+	@extend %ir;
+
+	background: url("../images/hero-small.jpg") no-repeat top left;
+	background-size: cover;
+	margin-bottom: 1em;
+	width: 100%;
+
+	@include responsive("min-width: 400px") {
+		background-image: url("../images/hero-medium.jpg");
+	}
+
+	@include responsive("min-width: 800px") {
+		background-image: url("../images/hero-large.jpg");
+	}
+}

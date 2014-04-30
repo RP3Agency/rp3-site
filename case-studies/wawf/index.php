@@ -27,7 +27,7 @@ document.createElement( "picture" );
 
 	<!-- Splash Screen -->
 
-	<section id="splash" class="splash">
+	<section id="hero" class="hero">
 		<h1>RP3 Case Study: Washington Area Women's Foundation</h1>
 	</section>
 	<!-- // #splash -->
