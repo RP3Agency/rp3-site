@@ -12,6 +12,13 @@
 <link rel="stylesheet" href="css/wawf.min.css">
 <script src="../common-js/modernizr.min.js"></script>
 <script src="../common-js/respond.min.js"></script>
+
+<!-- Picturefill.js (http://scottjehl.github.io/picturefill/) -->
+<script>
+// Picture element HTML5 shiv
+document.createElement( "picture" );
+</script>
+<script src="../common-js/picturefill.min.js" async></script>
 </head>
 <body>
 
@@ -26,10 +33,17 @@
 	<!-- // #splash -->
 
 
-	<div class="site-content">
+	<div class="wrapper">
 
 		<!-- Background -->
 		<section id="background" class="background">
+
+			<picture>
+				<!--[if IE 9]><video style="display: none;"><![endif]-->
+				<source srcset="images/lady-in-profile-small.jpg">
+				<!--[if IE 9]></video><![endif]-->
+				<img srcset="images/lady-in-profile-small.jgp" alt="Woman in profile">
+			</picture>
 
 			<header class="panel-header">
 				<h1>Washington Area Women's Foundation:</h1>
@@ -54,7 +68,7 @@
 		<!-- // #background -->
 
 	</div>
-	<!-- // .site-content -->
+	<!-- // .wrapper -->
 
 
 	<!-- "Be That Woman" Interstitial -->
@@ -65,20 +79,41 @@
 	<!-- // #be-that-woman -->
 
 
-	<div class="site-content">
-
 		<!-- Display of assets (web, video, etc) -->
 
-		<section id="assets" class="assets">
+	<section id="assets" class="assets">
 
-			<div class="website"></div>
+		<div class="wrapper">
 
-			<div class="video"></div>
+			<div class="screens">
+				<picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/screens-small.jpg">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/screens-small.jgp" alt="Examples of digital work">
+				</picture>
+			</div>
 
-			<div class="photo"></div>
+			<div class="video">
+				<iframe src="//player.vimeo.com/video/48956225" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
 
-		</section>
+		</div>
+		<!-- // .wrapper -->
 
+			<div class="photo">
+				<picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/people-small.jpg">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/people-small.jgp" alt="People working in a warehouse">
+				</picture>
+			</div>
+
+	</section>
+
+
+	<div class="wrapper">
 
 		<!-- Results -->
 
@@ -103,11 +138,18 @@
 			</div>
 			<!-- // .data-point.outcome -->
 
+			<picture>
+				<!--[if IE 9]><video style="display: none;"><![endif]-->
+				<source srcset="images/two-women-small.jpg">
+				<!--[if IE 9]></video><![endif]-->
+				<img srcset="images/two-women-small.jgp" alt="Two women">
+			</picture>
+
 		</section>
 		<!-- // #results -->
 
 	</div>
-	<!-- // .site-content -->
+	<!-- // .wrapper -->
 
 
 	<!-- Related -->

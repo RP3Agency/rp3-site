@@ -51,8 +51,8 @@ gulp.task('scripts', function() {
  */
 gulp.task( 'scripts-plugins', function() {
 	return gulp.src( 'src/js/plugins/*.js' )
-		.pipe( concat( 'plugins.js' ) )
 		.pipe( gulp.dest( 'js/plugins' ) )
+		.pipe( concat( 'plugins.js' ) )
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( uglify() )
 		.pipe( gulp.dest( 'js' ) )

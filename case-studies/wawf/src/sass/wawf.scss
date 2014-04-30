@@ -27,8 +27,24 @@
 }
 
 .assets {
+	margin-bottom: 2em;
+
 	.screens,
 	.video {
 		margin-bottom: 2em;
+	}
+
+	.photo {
+		img,
+		picture {
+			width: 100%;
+		}
+	}
+}
+
+.results {
+	img {
+		display: block;
+		margin: 0 auto;
 	}
 }

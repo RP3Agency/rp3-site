@@ -5,7 +5,7 @@ html {
 /**
  * Content margins
  */
-.site-content {
+.wrapper {
 	margin: 0 cp(10px, $context-small);
 
 	@include bp(medium) {
@@ -30,4 +30,23 @@ html {
  */
 .data-point {
 	margin-bottom: 1em;
+}
+
+
+/**
+ * Set maximum picture & image width to 100% so they don't
+ * overflow their containers
+ */
+img,
+picture {
+	height: auto;
+	max-width: 100%;
+}
+
+/**
+ * Ditto, iframe
+ */
+iframe {
+	height: auto;
+	max-width: 100%;
 }
