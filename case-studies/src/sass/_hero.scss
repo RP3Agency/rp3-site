@@ -1,9 +1,8 @@
 .hero {
-	@extend %ir;
-
 	background: url("../images/hero-small.jpg") no-repeat top left;
 	background-size: cover;
 	margin-bottom: 1em;
+	position: relative;
 	width: 100%;
 
 	@include responsive("min-width: 400px") {
@@ -12,5 +11,45 @@
 
 	@include responsive("min-width: 800px") {
 		background-image: url("../images/hero-large.jpg");
+	}
+
+	h1 {
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 3px;
+		left: 12px;
+		padding: 8px;
+		position: absolute;
+		top: 30px;
+
+		span {
+			@extend %ir;
+
+			background: url("../images/logo.png") no-repeat top left;
+			background-size: 180px auto;
+			display: block;
+			height: 70px;
+			width: 180px;
+		}
+
+		@include responsive("min-width: 768px") {
+			background-color: transparent;
+
+			span {
+				background-size: 300px auto;
+				height: 115px;
+				width: 300px;
+			}
+		}
+
+		@include responsive("min-width: 1142px") {
+			left: 73px;
+			top: 48px;
+
+			span {
+				background-size: 400px auto;
+				height: 154px;
+				width: 400px;
+			}
+		}
 	}
 }
