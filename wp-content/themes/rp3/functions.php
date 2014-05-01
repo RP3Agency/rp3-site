@@ -154,8 +154,9 @@ require get_template_directory() . '/inc/display-people.php';
  * Miscellaneous
  */
 
-// Dequeue the stylesheet for Category Post List Widget
-function rp3_dequeue_CPLW_css() {
+// Dequeue stylesheets that come with plugins
+function rp3_dequeue_plugin_css() {
 	wp_dequeue_style( 'main-style' );
+	wp_dequeue_style( 'rpbcStyle' );
 }
-add_action( 'wp_enqueue_scripts', 'rp3_dequeue_CPLW_css' );
+add_action( 'wp_enqueue_scripts', 'rp3_dequeue_plugin_css' );
