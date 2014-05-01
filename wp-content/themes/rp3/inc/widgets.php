@@ -42,8 +42,8 @@ function rp3_widgets_init() {
 		'id'				=> 'blog-single-post',
 		'class'				=> 'blog-single-post',
 		'description'		=> __( 'Sidebar for the single blog posts', 'rp3' ),
-		'before_widget'		=> '<div id="blog-single-widget-area" class="widget-container blog-single-post %2$s">',
-		'after_widget'		=> '</div>',
+		'before_widget'		=> '<aside id="blog-single-widget-area" class="widget %2$s">',
+		'after_widget'		=> '</aside>',
 		'before_title'		=> '<h1 class="widget-title">',
 		'after_title'		=> '</h1>'
 	) );
