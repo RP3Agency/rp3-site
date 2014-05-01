@@ -3,6 +3,8 @@
  * Register widgetized area and update sidebar with default widgets.
  */
 function rp3_widgets_init() {
+
+	// News Sidebar
 	register_sidebar( array(
 		'name'          => __( 'News Sidebar', 'rp3' ),
 		'id'            => 'news-sidebar',
@@ -24,7 +26,7 @@ function rp3_widgets_init() {
 		'after_title'		=> '</h1>'
 	) );
 
-	// Widget areas for blog archive page
+	// 3 Widget areas for blog archive page
 	register_sidebars( 3, array(
 		'name'				=> __( 'Blog Archive %d' ),
 		'id'				=> 'blog-archive',
@@ -32,6 +34,18 @@ function rp3_widgets_init() {
 		'after_widget'		=> '</aside>',
 		'before_title'		=> '<h1 class="widget-title">',
 		'after_title'		=> '</h1>',
+	) );
+
+	// Blog single post
+	register_sidebar( array(
+		'name'				=> __( 'Blog Single Post', 'rp3' ),
+		'id'				=> 'blog-single-post',
+		'class'				=> 'blog-single-post',
+		'description'		=> __( 'Sidebar for the single blog posts', 'rp3' ),
+		'before_widget'		=> '<div id="blog-single-widget-area" class="widget-container blog-single-post %2$s">',
+		'after_widget'		=> '</div>',
+		'before_title'		=> '<h1 class="widget-title">',
+		'after_title'		=> '</h1>'
 	) );
 }
 add_action( 'widgets_init', 'rp3_widgets_init' );

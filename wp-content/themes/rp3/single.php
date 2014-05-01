@@ -55,9 +55,17 @@ get_header(); ?>
 <?php 
 
 if ( has_category('news') ) {
+
 	get_sidebar( 'news' );
+
+} elseif ( has_category( 'blog' ) ) {
+
+	get_sidebar( 'blog' );
+
 } else {
+
 	get_sidebar();
+
 }
 
 ?>
