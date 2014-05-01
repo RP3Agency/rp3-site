@@ -16,6 +16,9 @@ $people = rp3_get_people();
 
 // Initialize a counter.
 $counter = 0;
+
+// and another counter for our spacer images
+$spacer_counter = 0;
 ?>
 
 
@@ -38,9 +41,9 @@ $counter = 0;
 
 	<?php if ( ( $counter == 0 ) || ( ( $counter % 3 == 2 ) ) ) echo '<div class="row">'; ?>
 
-		<?php if ( ! is_array( $person ) ): // This is actually a spacer entry ?>
+		<?php if ( ! is_array( $person ) ): $spacer_counter++; // This is actually a spacer entry ?>
 
-		<div class="spacer"></div>
+		<div class="spacer space-<?php echo $spacer_counter; ?>"></div>
 
 		<?php else: ?>
 

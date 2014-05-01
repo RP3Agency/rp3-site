@@ -47,8 +47,19 @@
 		display: none;
 
 		@include bp(medium) {
-			background: url("../images/grid-bg-dark.gif");
+			background: url("../images/grid-bg-light.gif");
 			display: block;
+
+			@for $i from 1 through 9 {
+				&.space-#{$i} {
+					background-image: 
+						linear-gradient( to bottom, transparentize( #000, 0.5 ), transparentize( #000, 0.5 ) ),
+						url("../images/space/space-#{$i}.jpg");
+					background-position: left top, left center;
+					background-repeat: repeat, no-repeat;
+					background-size: auto auto, auto 100%;
+				}
+			}
 		}
 	}
 
@@ -67,6 +78,12 @@
 			color: #fff;
 			font-size: ce(18px);
 			font-weight: 700;
+		}
+
+		.title {
+			font-size: ce(13px);
+			font-weight: $normal;
+			text-transform: none;
 		}
 
 		.subcontent {
