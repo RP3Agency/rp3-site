@@ -88,7 +88,7 @@
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
-					$meta_text = __( '%2$s', 'rp3' );
+					$meta_text = __( '<span class="entry-categories">Tagged:</span> %2$s', 'rp3' );
 				} else {
 					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'rp3' );
 				}

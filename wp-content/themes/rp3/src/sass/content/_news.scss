@@ -78,11 +78,7 @@ body.category-news {
 		padding-top: 1em;
 
 		.entry-categories {
-			color: $blue;
-			font-size: ce(16px);
-			font-weight: $bold;
-			margin-right: 1ex;
-			text-transform: uppercase;
+			@extend %category-label;
 		}
 
 		a[rel="category tag"] {

@@ -89,6 +89,14 @@
 	width: 95%;
 }
 
+%category-label {
+	color: $blue;
+	font-size: ce(16px);
+	font-weight: $bold;
+	margin-right: 1ex;
+	text-transform: uppercase;
+}
+
 %category-tag {
 	background-color: mix(#fff, $blue, 33%);
 	border-radius: $border-radius;

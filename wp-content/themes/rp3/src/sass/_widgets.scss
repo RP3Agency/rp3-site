@@ -115,3 +115,13 @@
 		}
 	}
 }
+
+
+/**
+ * Hide sharedaddy from appearing inside widget areas
+ */
+.widget {
+	.sharedaddy {
+		display: none;
+	}
+}
