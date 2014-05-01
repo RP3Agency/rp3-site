@@ -1,3 +1,10 @@
+%blog-entry-meta {
+	color: $gray;
+	font-size: ce(12px);
+	margin-bottom: 1em;
+	text-transform: uppercase;
+}
+
 body.page-blog {
 
 	/**
@@ -101,10 +108,30 @@ body.page-blog {
 	}
 
 	.entry-meta {
-		color: $gray;
-		font-size: ce(12px);
-		margin-bottom: 1em;
-		text-transform: uppercase;
+		@extend %blog-entry-meta;
+	}
+}
+
+/**
+ * Single blog page
+ */
+.single-post-blog {
+	.entry-meta {
+		@extend %blog-entry-meta;
+	}
+
+	.entry-footer a[rel="tag"] {
+		@extend %category-tag;
+		display: inline-block;
+		margin-bottom: 4px;
+
+		&:visited {
+			color: #fff;
+		}
+
+		@include hover-state {
+			color: #fff;
+		}
 	}
 }
 
