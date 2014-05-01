@@ -89,6 +89,10 @@
 				font-size: ce(24px);
 			}
 		}
+
+		&.current-menu-item a {
+			background-color: $blue;
+		}
 	}
 
 	/**
