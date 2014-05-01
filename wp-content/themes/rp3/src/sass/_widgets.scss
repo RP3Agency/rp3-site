@@ -97,3 +97,21 @@
 		color: #fff;
 	}
 }
+
+
+/**
+ * Related Posts By Category
+ */
+.widget_rpbc {
+	ul {
+		@extend %clear-ul-formatting;
+
+		.rpbc_content {
+			margin-bottom: 1.5em;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+}

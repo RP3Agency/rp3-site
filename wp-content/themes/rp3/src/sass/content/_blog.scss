@@ -118,6 +118,7 @@ body.page-blog {
 .single-post-blog {
 	.entry-meta {
 		@extend %blog-entry-meta;
+		@include font-size(14px);
 	}
 
 	.entry-footer a[rel="tag"] {
