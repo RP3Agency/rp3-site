@@ -57,7 +57,8 @@
 						//print_r($author);
 						echo get_avatar( $author->user_email, '70' );
 						print '<div class="author-info"><div class="author-title">';
-						echo '<a href="' . get_author_posts_url( $author->ID ) . '">' . get_the_author_meta( 'display_name', $author->ID ) . '</a>';
+						// echo '<a href="' . get_author_posts_url( $author->ID ) . '">' . get_the_author_meta( 'display_name', $author->ID ) . '</a>';
+						echo get_the_author_meta( 'display_name', $author->ID );
 						print '</div><div class="author-description">'.$desc[$author->ID].'</div>';
 						print '</div>';
 						print '</div>';
