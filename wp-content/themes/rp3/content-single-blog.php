@@ -9,8 +9,21 @@
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
-			<?php rp3_posted_on(); ?>
-		</div><!-- .entry-meta -->
+			<?php the_time( get_option('date_format') ); ?>
+			<span><?php _e('by', 'rp3') ?></span> 
+			<?php
+				$i = new CoAuthorsIterator();
+			    $i->iterate();
+			    // the_author_posts_link();
+			    the_author();
+			    while($i->iterate()){
+			    	print $i->is_last() ? '<span> and </span>' : '<span>, </span>';
+			    	// the_author_posts_link();
+			    	the_author();
+			    }
+			?>
+		<!-- // .entry-meta -->
+		</div>
 	</header><!-- .entry-header -->
 
 	<?php the_post_thumbnail(); ?>
@@ -26,6 +39,37 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
+
+
+		<!--BEGIN .author-bio-->
+		<div class="author-bio">
+
+			<!-- BEGIN .author-inner -->
+			<div class="author-inner clearfix">
+
+				<?php
+					$links = get_the_coauthor_meta('user_url');
+					$desc = get_the_coauthor_meta('description');
+					$i = new CoAuthorsIterator();
+					$authors = $i->get_all();
+					foreach($authors as $author){
+						print '<div class="author-wrap clearfix">';
+						//print_r($author);
+						echo get_avatar( $author->user_email, '70' );
+						print '<div class="author-info"><div class="author-title">';
+						echo '<a href="' . get_author_posts_url( $author->ID ) . '">' . get_the_author_meta( 'display_name', $author->ID ) . '</a>';
+						print '</div><div class="author-description">'.$desc[$author->ID].'</div>';
+						print '</div>';
+						print '</div>';
+					}
+				?>
+
+			<!-- END .author-inner -->
+			</div>
+
+		<!--END .author-bio-->
+		</div>
+
 		<?php
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', 'rp3' ) );
@@ -58,5 +102,6 @@
 				get_permalink()
 			);
 		?>
+
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -134,6 +134,22 @@ body.page-blog {
 			color: #fff;
 		}
 	}
+
+	/**
+	 * Author Bios
+	 */
+	
+	.author-wrap {
+		background: url("/wp-content/themes/rp3/images/bg_lines.gif") repeat-x 0 0;
+		border: 1px solid $gray-light;
+		margin-bottom: 1em;
+		padding: 20px 10px 10px;
+
+		.avatar {
+			float: left;
+			margin-right: 20px;
+		}
+	}
 }
 
 /**
