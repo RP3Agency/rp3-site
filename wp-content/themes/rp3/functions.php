@@ -95,6 +95,10 @@ function rp3_add_slug_body_class( $classes ) {
 		$classes[] = $post->post_type . '-' . $post->post_name;
 	}
 
+	if ( is_single() && in_category( 'blog' ) ) {
+		$classes[] = 'single-post-blog';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'rp3_add_slug_body_class' );
