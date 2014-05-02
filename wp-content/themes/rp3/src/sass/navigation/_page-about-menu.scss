@@ -2,23 +2,24 @@
 	@extend %clear-ul-formatting;
 
 	border: 1px solid $gray-light;
+	font-family: $roboto;
+	font-size: ce(18px);
+	font-weight: 700;
+	margin-bottom: 1.5em;
+	text-transform: uppercase;
 	width: 100%;
 
 	@include bp(medium) {
 		display: flex;
 		justify-content: space-around;
+		margin: 3em 0;
 	}
 
 	a {
 		border-top: 1px solid $gray-light;
-		padding: 0.5em;
-
 		display: block;
-		font-family: $roboto;
-		font-size: ce(18px);
-		font-weight: 700;
+		padding: 0.5em;
 		text-decoration: none;
-		text-transform: uppercase;
 
 		@include bp(medium) {
 			border-top-width: 0;

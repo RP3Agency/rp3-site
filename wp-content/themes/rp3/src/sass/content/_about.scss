@@ -1,3 +1,17 @@
 @import "../navigation/page-about-menu";
 
 @import "people";
+
+
+.page-about {
+
+	.entry-content {
+		font-size: ce(21px);
+		margin: 0 auto;
+		max-width: ce(800px, 21px);
+
+		@include bp(medium) {
+			
+		}
+	}
+}
