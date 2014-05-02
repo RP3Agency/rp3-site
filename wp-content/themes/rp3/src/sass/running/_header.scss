@@ -2,6 +2,10 @@
 @import "header-aux";
 @import "search";
 
+.header-container {
+	margin-bottom: 1em;
+}
+
 .site-header {
 	background-color: #6b747c;
 	font-family: $roboto;
