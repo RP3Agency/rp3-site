@@ -2,23 +2,40 @@
 	@extend %clear-ul-formatting;
 
 	border: 1px solid $gray-light;
-	display: flex;
-	justify-content: space-around;
 	width: 100%;
 
+	@include bp(medium) {
+		display: flex;
+		justify-content: space-around;
+	}
+
 	a {
-		border-bottom: 3px solid transparent;
+		border-top: 1px solid $gray-light;
+		padding: 0.5em;
+
 		display: block;
 		font-family: $roboto;
 		font-size: ce(18px);
 		font-weight: 700;
-		padding: 0.5em 0;
 		text-decoration: none;
 		text-transform: uppercase;
 
+		@include bp(medium) {
+			border-top-width: 0;
+			border-bottom: 3px solid transparent;
+			padding: 0.5em 0;
+
+			@include hover-state {
+				border-bottom-color: $blue;
+			}
+		}
+
 		@include hover-state {
 			color: $blue;
-			border-bottom: 3px solid $blue;
 		}
+	}
+
+	li:first-child a {
+		border-top-width: 0;
 	}
 }
