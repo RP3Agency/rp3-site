@@ -21,9 +21,11 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php wp_nav_menu( array(
-		'theme_location'	=> 'about-page',
-		'menu_class'		=> 'menu page-about'
-	) ); ?>
+	<?php if ( is_page( 'about' ) ) {
+		wp_nav_menu( array(
+			'theme_location'	=> 'about-page',
+			'menu_class'		=> 'menu page-about'
+		) );
+	} ?>
 
 </article><!-- #post-## -->
