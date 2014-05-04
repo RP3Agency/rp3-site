@@ -27,6 +27,12 @@ get_header(); ?>
 
 			<!-- // People -->
 
+			<!-- Capabilities -->
+
+			<?php get_template_part( 'content', 'page-capabilities' ); ?>
+
+			<!-- // Capabilities -->
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
