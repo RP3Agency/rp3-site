@@ -7,13 +7,6 @@
 
 $people = rp3_get_people();
 
-// echo '<pre>';
-
-// foreach ( $people as $person ) {
-// 	var_dump( $person );
-// }
-// exit();
-
 // Initialize a counter.
 $counter = 0;
 
@@ -60,14 +53,13 @@ $spacer_counter = 0;
 						<?php if ( $person['twitter'] != '' ): ?><li class="twitter"><a href="<?php echo $person['twitter']; ?>">Twitter</a></li><?php endif; ?>
 						<?php if ( $person['linkedin'] != '' ): ?><li class="linkedin"><a href="<?php echo $person['linkedin']; ?>">LinkedIn</a></li><?php endif; ?>
 						<?php if ( $person['github'] != '' ): ?><li class="github"><a href="<?php echo $person['github']; ?>">Github</a></li><?php endif; ?>
-						<?php if ( $person['behance'] != '' ): ?><li class="behance"><a href="<?php echo $person['behance']; ?>">Behance</a></li><?php endif; ?>
 						<?php if ( $person['dribbble'] != '' ): ?><li class="dribbble"><a href="<?php echo $person['dribbble']; ?>">Dribbble</a></li><?php endif; ?>
 						<?php if ( $person['instagram'] != '' ): ?><li class="instagram"><a href="<?php echo $person['instagram']; ?>">Instagram</a></li><?php endif; ?>
 						<?php if ( $person['pinterest'] != '' ): ?><li class="pinterest"><a href="<?php echo $person['pinterest']; ?>">Pinterest</a></li><?php endif; ?>
 						<li class="email"><a href="mailto:<?php echo $person['email']; ?>">Email</a></li>
 					</ul>
 
-					<?php // Latest blog posts, if any
+					<?php // Latest blog posts, if any; commented out for now because of space issues
 
 						/*
 						if ( $person['blogs']->post_count > 0 ) {
