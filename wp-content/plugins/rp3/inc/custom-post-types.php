@@ -26,8 +26,8 @@ function rp3_cpt_capabilities() {
 		'show_in_menu'			=> true,
 		'show_in_admin_bar'		=> false,
 		'menu_position'			=> 20,
-		'hierarchical'			=> false,
-		'supports'				=> array( 'title', 'editor' ),
+		'hierarchical'			=> true,
+		'supports'				=> array( 'title', 'page-attributes' ),
 		'taxonomies'			=> array( 'rp3_capabilities_types' )
 	);
 
