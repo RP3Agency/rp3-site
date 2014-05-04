@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "568948048d8cb3539fcaffa591e319d7",
+    "hash": "60cdcab1cfb480456c5d34331b87ab19",
     "packages": [
         {
             "name": "composer/installers",
@@ -506,6 +506,30 @@
             "time": "2014-04-06 21:31:46"
         },
         {
+            "name": "wpackagist-plugin/tc-custom-taxonomy-filter",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/tc-custom-taxonomy-filter/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/tc-custom-taxonomy-filter.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/tc-custom-taxonomy-filter": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/tc-custom-taxonomy-filter/",
+            "time": "2013-11-08 16:39:50"
+        },
+        {
             "name": "wpackagist-plugin/theme-check",
             "version": "dev-trunk",
             "source": {
@@ -601,6 +625,7 @@
         "wpackagist-plugin/regenerate-thumbnails": 20,
         "wpackagist-plugin/show-template": 20,
         "wpackagist-plugin/simple-page-ordering": 20,
+        "wpackagist-plugin/tc-custom-taxonomy-filter": 20,
         "wpackagist-plugin/theme-check": 20,
         "wpackagist-plugin/wordpress-importer": 20,
         "wpackagist-plugin/wp-siren-recent-posts-by-category": 20

@@ -39,6 +39,7 @@
     "wpackagist-plugin/regenerate-thumbnails":"dev-trunk",
     "wpackagist-plugin/show-template":"dev-trunk",
     "wpackagist-plugin/simple-page-ordering":"dev-trunk",
+    "wpackagist-plugin/tc-custom-taxonomy-filter":"dev-trunk",
     "wpackagist-plugin/theme-check":"dev-trunk",
     "wpackagist-plugin/wordpress-importer":"dev-trunk",
     "wpackagist-plugin/wp-siren-recent-posts-by-category":"dev-trunk"
