@@ -46,7 +46,15 @@ $capabilities = new WP_Query( array(
 
 			<?php if ( has_term( $term->slug, 'rp3_capabilities_types' ) ) : ?>
 
+				<?php if ( $post->post_parent > 0 ) : ?>
+
+				<li class="child"><?php the_title(); ?></li>
+
+				<?php else : ?>
+
 				<li><?php the_title(); ?></li>
+
+				<?php endif; ?>
 
 			<?php endif; ?>
 
