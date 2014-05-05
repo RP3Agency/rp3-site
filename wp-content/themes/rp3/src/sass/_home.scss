@@ -1,0 +1,27 @@
+body.home {
+
+	background-image: url("../images/splash.jpg");
+
+	.introduction {
+		// background: url("../images/logo-white.svg") no-repeat center center;
+		// background-size: 50% auto;
+		color: #fff;
+		font-size: ce(48px);
+		font-family: $roboto;
+		font-weight: $bold;
+		position: relative;
+		text-align: center;
+
+		p {
+			position: relative;
+
+			&:before {
+				left: 50%;
+				position: absolute;
+				top: 0;
+				transform: translate(-50%, -100%);
+			}
+		}
+	}
+
+}
