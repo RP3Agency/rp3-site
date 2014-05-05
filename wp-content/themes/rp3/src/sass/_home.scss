@@ -1,27 +1,49 @@
 body.home {
 
-	background-image: url("../images/splash.jpg");
+	.site-content {
+		margin: 0;
+		width: 100%;
 
-	.introduction {
-		// background: url("../images/logo-white.svg") no-repeat center center;
-		// background-size: 50% auto;
-		color: #fff;
-		font-size: ce(48px);
-		font-family: $roboto;
-		font-weight: $bold;
-		position: relative;
-		text-align: center;
-
-		p {
-			position: relative;
-
-			&:before {
-				left: 50%;
-				position: absolute;
-				top: 0;
-				transform: translate(-50%, -100%);
-			}
+		&:before,
+		&:after {
+			display: none;
 		}
 	}
 
+	.introduction {
+		background-image: url("../images/splash.jpg");
+		color: $gray;
+		font-family: $roboto;
+		font-size: ce(24px);
+		font-weight: $bold;
+		text-align: center;
+
+		// Flexbox
+		display: flex;
+		flex-direction: column;
+
+		@include bp(medium) {
+			font-size: ce(48px);
+			text-shadow: 3px 3px 0 transparentize( mix( #000, $gray, 50% ), 0.7);
+		}
+
+		.logo {
+			background-image: url("../images/logo-color.svg");
+			background-position: center center;
+			background-size: 75% auto;
+			flex: 1;
+		}
+
+		p {
+			flex: 1;
+			position: relative;
+
+			span {
+				bottom: 0;
+				left: 0;
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
 }

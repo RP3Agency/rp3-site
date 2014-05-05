@@ -10,17 +10,46 @@
  * @package RP3
  */
 
+/**
+ * Get our home panels
+ */
+$panels = new WP_Query( array(
+	'post_type'			=> 'rp3_home_panels',
+	'posts_per_page'	=> 3,
+) );
+
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<section id="introduction" class="introduction full-screen">
+		<h1 class="logo">RP3 Agency</h1>
+		<p>
+			<span>Instead of the “agency” line, something introducing the philosophy driving this project.</span>
+		</p>
+	</section>
 
-			<div class="introduction">
+	<section id="home-panels" class="home-panels">
 
-				<p>Instead of the “agency” line, something introducing the philosophy driving this project.</p>
-			</div>
+	<?php if ( $panels->have_posts() ) : while ( $panels->have_posts() ) : $panels->the_post(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<?php
+	$small		= get_field( 'small_image' );
+	$medium		= get_field( 'medium_image' );
+	$large		= get_field( 'large_image' );
+
+	// var_dump( $small );
+	?>
+
+		<article class="full-screen">
+			<picture>
+				<source srcset="<?php echo $large['url']; ?>" media="(min-width: 1024px)" />
+				<source srcset="<?php echo $medium['url']; ?>" media="(min-width: 690px)" />
+				<source srcset="<?php echo $small['url']; ?>" />
+				<img srcset="<?php echo $small['url']; ?>" alt="<?php the_title(); ?>" />
+			</picture>
+		</article>
+
+	<?php endwhile; endif; ?>
+
+	</section>
 
 <?php get_footer(); ?>

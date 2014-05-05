@@ -84,13 +84,29 @@ var rp3 = (function($) {
 		});
 	},
 
+	/**
+	 * Home Page Panel Sizes
+	 */
+	homePagePanelSizes = function() {
+		var windowHeight = $(window).outerHeight(true),
+			headerHeight = $("#header-container").outerHeight(true),
+			panelHeight = 0,
+			$panels = $(".full-screen");
+
+		panelHeight = windowHeight - headerHeight;
+
+		$panels.height( panelHeight );
+	},
+
 	init = function() {
 		toggleNavigation();
 		showHideSearch();
 		showHidePeople();
+		homePagePanelSizes();
 		
 		$(window).on( 'scroll', function() {
 			navigationAnchor();
+			homePagePanelSizes();
 		});
 
 		$(window).on( 'resize', function() {

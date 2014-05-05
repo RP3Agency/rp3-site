@@ -15,3 +15,8 @@
         @content;
     }
 }
+
+@mixin highlight($adjustment: 0) {
+	$color-test: rgba(255, 0, 255, 0.2);
+	background-color: adjust-hue($color-test, $adjustment * 1deg);
+}
