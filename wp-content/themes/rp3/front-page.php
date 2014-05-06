@@ -16,6 +16,8 @@
 $panels = new WP_Query( array(
 	'post_type'			=> 'rp3_home_panels',
 	'posts_per_page'	=> 3,
+	'orderby'			=> 'menu_order',
+	'order'				=> 'ASC'
 ) );
 
 get_header(); ?>
@@ -35,17 +37,17 @@ get_header(); ?>
 	$small		= get_field( 'small_image' );
 	$medium		= get_field( 'medium_image' );
 	$large		= get_field( 'large_image' );
-
-	// var_dump( $small );
 	?>
 
 		<article class="full-screen">
-			<picture>
-				<source srcset="<?php echo $large['url']; ?>" media="(min-width: 1024px)" />
-				<source srcset="<?php echo $medium['url']; ?>" media="(min-width: 690px)" />
-				<source srcset="<?php echo $small['url']; ?>" />
-				<img srcset="<?php echo $small['url']; ?>" alt="<?php the_title(); ?>" />
-			</picture>
+			<a href="<?php the_field('url'); ?>">
+				<picture>
+					<source srcset="<?php echo $large['url']; ?>" media="(min-width: 1024px)" />
+					<source srcset="<?php echo $medium['url']; ?>" media="(min-width: 690px)" />
+					<source srcset="<?php echo $small['url']; ?>" />
+					<img srcset="<?php echo $small['url']; ?>" alt="<?php the_title(); ?>" />
+				</picture>
+			</a>
 		</article>
 
 	<?php endwhile; endif; ?>

@@ -91,7 +91,10 @@ var rp3 = (function($) {
 		var windowHeight = $(window).outerHeight(true),
 			headerHeight = $("#header-container").outerHeight(true),
 			panelHeight = 0,
-			$panels = $(".full-screen");
+			$panels = $("#introduction");
+
+// console.log( 'windowHeight : ' + windowHeight );
+// console.log( 'headerHeight : ' + headerHeight );
 
 		panelHeight = windowHeight - headerHeight;
 
