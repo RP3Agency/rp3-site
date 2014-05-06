@@ -68,7 +68,7 @@ function rp3_cpt_home_panels() {
 		'show_in_menu'			=> true,
 		'show_in_admin_bar'		=> false,
 		'menu_position'			=> 20,
-		'hierarchical'			=> false,
+		'hierarchical'			=> true,
 		'supports'				=> array( 'title' )
 	);
 
