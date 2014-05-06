@@ -80,3 +80,146 @@ body.home {
 // 		}
 // 	}
 // }
+
+
+/**
+ * Home Featured Area
+ */
+/* Article Tiles */
+/* Can be news posts or blog posts; position determined on edit post page in administration dashboard */
+
+.home-featured {
+	padding: 3em 0;
+
+	@include bp(large) {
+		display: flex;
+		justify-content: space-around;
+		margin: 0 auto;
+		max-width: ce(1024px);
+	}
+
+	article.tile {
+	    background-color: #fff;
+	    border: 8px solid #ededed;
+	    border-radius: 7px;
+	    box-sizing: content-box; // because this is ported over from the legacy site.
+	    margin: 50px auto 0;
+	    position: relative;
+	    width: 272px;
+		height: auto;
+	}
+
+	article.tile header {
+	    background: none;
+	    height: auto;
+	    position: static;
+	    width: auto;
+	}
+
+	article.tile header .thumbnail {
+	    border-bottom: 1px solid #c5c5c5;
+	    height: 146px;
+	    margin-bottom: 63px;
+	    width: 272px;
+	}
+
+	article.tile header .thumbnail a {
+		@extend %ir;
+	    background-position: 0 0;
+	    display: block;
+	    height: 100%;
+	    width: 100%;
+	}
+
+	/*article.tile header .thumbnail a:hover,
+	article.tile header .thumbnail a:active,
+	article.tile header .thumbnail a:focus {
+	    background-position: 0 -146px;
+	}*/
+
+	article.tile .headline {
+		height: 140px;
+	}
+
+	article.tile h1 {
+	    background: none;
+	    color: #353535;
+	    float: none;
+	    font-size: 18px;
+	    font-weight: 400;
+	    height: auto;
+	    margin: 0 0 12px 0;
+	    padding: 0 20px;
+	    position: static;
+	    text-align: center;
+	    text-transform: none;
+	}
+
+	article.tile .link {
+	    font-size: 14px;
+	    line-height: 1.2;
+	    text-align: center;
+	}
+
+	article.tile footer {
+	    border-top: 1px solid #ededed;
+	    bottom: 0;
+	    font-size: 12px;
+	    height: 27px;
+	    line-height: 27px;
+	    overflow: hidden;
+	    position: absolute;
+	    width: 100%;
+		margin-top: 10px;
+	}
+
+	article.tile footer .date {
+	    color: #a8a8a8;
+	    float: left;
+	    padding-left: 11px;
+	}
+
+	article.tile footer .post_type_link {
+	    float: right;
+	    padding-right: 14px;
+	}
+
+	article.tile footer .post_type_link a {
+	    background: transparent url('../images/homesprite.png') no-repeat 53px -1116px;
+	    color: #a8a8a8;
+	    cursor: pointer;
+	    display: block;
+	    height: 27px;
+	    line-height: 27px;
+	    padding-right: 19px;
+	    text-decoration: underline;
+	}
+
+	article.tile footer .post_type_link a:hover,
+	article.tile footer .post_type_link a:active,
+	article.tile footer .post_type_link a:focus {
+	    color: #353535;
+	}
+
+	article.tile .icon {
+	    background: transparent url('../images/homesprite.png') no-repeat;
+	    color: #a8a8a8;
+	    font-size: 12px;
+	    height: 12px;
+	    left: 99px;
+	    padding-top: 81px;
+	    position: absolute;
+	    text-align: center;
+	    text-transform: uppercase;
+	    top: 109px;
+	    width: 75px;
+	}
+
+	article.tile.news .icon {
+	    background-position: 0 -1160px;
+	}
+
+	article.tile.blog .icon {
+	    background-position: 0 -1259px;
+	}
+}
