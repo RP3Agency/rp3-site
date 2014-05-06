@@ -25,7 +25,7 @@ get_header(); ?>
 	<section id="introduction" class="introduction full-screen">
 		<h1 class="logo">RP3 Agency</h1>
 		<p>
-			<span>Instead of the “agency” line, something introducing the philosophy driving this project.</span>
+			<!-- <span>Instead of the “agency” line, something introducing the philosophy driving this project.</span> -->
 		</p>
 	</section>
 
@@ -34,18 +34,18 @@ get_header(); ?>
 	<?php if ( $panels->have_posts() ) : while ( $panels->have_posts() ) : $panels->the_post(); ?>
 
 	<?php
-	$small		= get_field( 'small_image' );
-	$medium		= get_field( 'medium_image' );
-	$large		= get_field( 'large_image' );
+	$image_small		= get_field( 'image_small' );
+	$image_medium		= get_field( 'image_medium' );
+	$image_large		= get_field( 'image_large' );
 	?>
 
 		<article class="full-screen">
 			<a href="<?php the_field('url'); ?>">
 				<picture>
-					<source srcset="<?php echo $large['url']; ?>" media="(min-width: 1024px)" />
-					<source srcset="<?php echo $medium['url']; ?>" media="(min-width: 690px)" />
-					<source srcset="<?php echo $small['url']; ?>" />
-					<img srcset="<?php echo $small['url']; ?>" alt="<?php the_title(); ?>" />
+					<source srcset="<?php echo $image_large['url']; ?>" media="(min-width: 1024px)" />
+					<source srcset="<?php echo $image_medium['url']; ?>" media="(min-width: 690px)" />
+					<source srcset="<?php echo $image_small['url']; ?>" />
+					<img srcset="<?php echo $image_small['url']; ?>" alt="<?php the_title(); ?>" />
 				</picture>
 			</a>
 		</article>
@@ -53,5 +53,17 @@ get_header(); ?>
 	<?php endwhile; endif; ?>
 
 	</section>
+
+
+	<section class="home-featured">
+
+	<?php
+    rp3_display_homepage_post( 'left' );
+    rp3_display_homepage_post( 'center' );
+    rp3_display_homepage_post( 'right' );
+	?>
+
+	</section>
+	<!-- // home-featured -->
 
 <?php get_footer(); ?>
