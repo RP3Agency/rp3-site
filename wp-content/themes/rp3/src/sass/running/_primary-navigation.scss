@@ -4,11 +4,13 @@
 	background-color: $gray;
 	display: none;
 	font-family: $roboto;
+	margin-top: 3px;
 
 	@include bp(medium) {
 		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 		display: block;
 		margin-bottom: 2em;
+		margin-top: 0;
 		position: relative;
 
 		&.fixed {

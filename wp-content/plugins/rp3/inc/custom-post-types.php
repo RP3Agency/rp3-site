@@ -46,6 +46,37 @@ function rp3_cpt_capabilities() {
 }
 
 
+/**
+ * Home Panels
+ * 3 featured panels to display on the home page.
+ * Will eventually link to case studies, etc.
+ */
+function rp3_cpt_home_panels() {
+
+	// Custom Post Type
+	$args = array(
+		'labels'				=> array(
+			'name'					=> 'Home Panels',
+			'singular_name'			=> 'Panel'
+		),
+		'description'			=> 'Panels that appear on the home page',
+		'public'				=> true,
+		'exclude_from_search'	=> true,
+		'publicly_queryable'	=> false,
+		'show_ui'				=> true,
+		'show_in_nav_menus'		=> false,
+		'show_in_menu'			=> true,
+		'show_in_admin_bar'		=> false,
+		'menu_position'			=> 20,
+		'hierarchical'			=> true,
+		'supports'				=> array( 'title' )
+	);
+
+	register_post_type( 'rp3_home_panels', $args );
+}
+
+
+
 
 
 
@@ -54,5 +85,6 @@ function rp3_cpt_capabilities() {
  */
 function rp3_cpt() {
 	rp3_cpt_capabilities();
+	rp3_cpt_home_panels();
 }
 add_action( 'init', 'rp3_cpt' );

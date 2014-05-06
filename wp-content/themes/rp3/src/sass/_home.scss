@@ -1,0 +1,82 @@
+body.home {
+
+	.header-container {
+		margin-bottom: 0;
+	}
+
+	.site-content {
+		margin: 0;
+		max-width: none;
+		width: 100%;
+
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+
+	.introduction {
+		background-image: url("../images/splash.jpg");
+		color: $gray;
+		font-family: $roboto;
+		font-size: ce(24px);
+		font-weight: $bold;
+		padding-top: ce(28px, 24px);
+		text-align: center;
+
+		// Flexbox
+		display: flex;
+		flex-direction: column;
+
+		@include bp(medium) {
+			font-size: ce(48px);
+			text-shadow: 3px 3px 0 transparentize( mix( #000, $gray, 50% ), 0.7);
+		}
+
+		.logo {
+			background-image: url("../images/logo-color.svg");
+			background-position: center center;
+			background-size: auto 100%;
+			flex: 1;
+			margin: 0 auto;
+			max-width: 1024px;
+		}
+
+		p {
+			flex: 1;
+			position: relative;
+
+			span {
+				bottom: 0;
+				left: 0;
+				margin: 0 auto;
+				max-width: 1024px;
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
+}
+
+
+/**
+ * Home Panels
+ */
+// .home-panels {
+// 	article {
+// 		// position: relative;
+
+// 		picture,
+// 		picture img {
+// 			display: block;
+// 		}
+
+// 		picture {
+// 			left: 0;
+// 			margin: 0 auto;
+// 			// position: absolute;
+// 			top: 50%;
+// 			transform: translate(0, -50%);
+// 		}
+// 	}
+// }

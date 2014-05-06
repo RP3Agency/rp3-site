@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<div class="header-container">
+	<div id="header-container" class="header-container">
 
 		<header id="masthead" class="site-header" role="banner">
 

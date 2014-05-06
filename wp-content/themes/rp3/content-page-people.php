@@ -24,7 +24,7 @@ $spacer_counter = 0;
 	// test to see if our "photo" information is the ID of an object in the database,
 	// or a straight-up <img> html tag
 	if ( preg_match( '/^\d+$/', $person['photo'] ) ) {
-		$image_array = wp_get_attachment_image_src( $person['photo'] );
+		$image_array = wp_get_attachment_image_src( $person['photo'], 'full' );
 		$background_image = $image_array[0];
 	} else {
 		preg_match( '/http:\/\/([^\'"]+)/', $person['photo'], $matches );
