@@ -235,3 +235,23 @@
 		}
 	}
 }
+
+
+/**
+ * Mailchimp Form
+ */
+.mc_merge_var {
+	float: left;
+}
+.mc_var_label {
+	@extend .screen-reader-text;
+}
+.mc_signup_submit {
+	text-align: left;
+	float: left;
+	margin-left: 1em;
+}
+input[type="text"].mc_input {
+	padding: 7px;
+	width: 200px;
+}
