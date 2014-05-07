@@ -30,7 +30,7 @@ body.home {
 
 		@include bp(medium) {
 			font-size: ce(48px);
-			text-shadow: 3px 3px 0 transparentize( mix( #000, $gray, 50% ), 0.7);
+			// text-shadow: 3px 3px 0 transparentize( mix( #000, $gray, 50% ), 0.7);
 		}
 
 		.logo {
