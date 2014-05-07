@@ -44,12 +44,13 @@
 						<li class="email"><a href="mailto:info@rp3agency.com">Email info@rp3agency.com</a></li>
 					</ul>
 
-					<form>
-						<label>Sign up for our newsletter:
-							<input type="email" name="newsletter">
-						</label>
-					</form>
-
+					<?php $mailchimp_custom_css = false; ?>
+					<?php mailchimpSF_signup_form(array(
+						'mc_use_javascript'         => true,
+						'mc_header_content'         => '',
+						'mc_subheader_content'      => 'Sign up for newsletter updates',
+						'mc_submit_text'            => 'GO'
+					)); ?>
 				</div>
 				<!-- // .social-media -->
 
