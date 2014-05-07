@@ -1,0 +1,57 @@
+.page-contact {
+	h2 {
+		color: $gray;
+		font-size: ce(18px);
+		font-weight: $normal;
+		margin-bottom: 1em;
+	}
+
+	.telephone {
+		margin-bottom: 2em;
+
+		.blue {
+			color: $blue;
+			font-size: ce(30px);
+			line-height: ( 47 / 30 );
+			text-transform: lowercase;
+		}
+
+		.gray {
+			color: $gray;
+			font-size: ce(30px);
+			line-height: ( 47 / 30 );
+		}
+	}
+
+	.inquiries {
+		color: $gray;
+		font-size: ce(15px);
+		margin-bottom: 2em;
+	}
+
+	.address {
+		color: $gray;
+	}
+}
+
+/**
+ * Layout
+ */
+@include bp(medium) {
+
+	.contact-wrapper {
+		border-bottom: 1px solid $gray-light;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 2em;
+
+		.contact-form,
+		.contact-info {
+			flex: 1;
+		}
+
+		.contact-form {
+			margin-right: 20px;
+		}
+	}
+}
