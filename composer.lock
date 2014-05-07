@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "60cdcab1cfb480456c5d34331b87ab19",
+    "hash": "d4c4cb0f4b59d2189871fd438ee752f7",
     "packages": [
         {
             "name": "composer/installers",
@@ -264,6 +264,30 @@
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/co-authors-plus/",
             "time": "2014-03-20 15:10:27"
+        },
+        {
+            "name": "wpackagist-plugin/contact-form-7",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/contact-form-7/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/contact-form-7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/contact-form-7": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/contact-form-7/",
+            "time": "2014-04-29 01:16:20"
         },
         {
             "name": "wpackagist-plugin/custom-tag-widget",
@@ -615,6 +639,7 @@
         "wpackagist-plugin/admin-post-navigation": 20,
         "wpackagist-plugin/black-studio-tinymce-widget": 20,
         "wpackagist-plugin/co-authors-plus": 20,
+        "wpackagist-plugin/contact-form-7": 20,
         "wpackagist-plugin/custom-tag-widget": 20,
         "wpackagist-plugin/debug-bar": 20,
         "wpackagist-plugin/flipboard-magazine-widget": 20,
