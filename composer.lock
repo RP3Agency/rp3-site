@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d4c4cb0f4b59d2189871fd438ee752f7",
+    "hash": "e57f481c996b757303bf895558690a5c",
     "packages": [
         {
             "name": "composer/installers",
@@ -386,6 +386,30 @@
             "time": "2012-11-06 10:15:07"
         },
         {
+            "name": "wpackagist-plugin/google-analytics-for-wordpress",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/google-analytics-for-wordpress": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/google-analytics-for-wordpress/",
+            "time": "2014-04-16 23:33:08"
+        },
+        {
             "name": "wpackagist-plugin/latest-tweets-widget",
             "version": "dev-trunk",
             "source": {
@@ -644,6 +668,7 @@
         "wpackagist-plugin/debug-bar": 20,
         "wpackagist-plugin/flipboard-magazine-widget": 20,
         "wpackagist-plugin/fv-top-level-cats": 20,
+        "wpackagist-plugin/google-analytics-for-wordpress": 20,
         "wpackagist-plugin/latest-tweets-widget": 20,
         "wpackagist-plugin/list-category-posts": 20,
         "wpackagist-plugin/markdown-on-save": 20,
