@@ -25,7 +25,7 @@ get_header(); ?>
 	<section id="introduction" class="introduction full-screen">
 		<h1 class="logo">RP3 Agency</h1>
 		<p>
-			<!-- <span>Instead of the “agency” line, something introducing the philosophy driving this project.</span> -->
+			<span>Welcome to the prototype of our new <a href="http://rp3agency.com">website.</a></span>
 		</p>
 	</section>
 
