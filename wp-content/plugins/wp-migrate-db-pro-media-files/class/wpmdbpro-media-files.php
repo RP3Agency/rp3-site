@@ -9,13 +9,14 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 		$this->plugin_slug = 'wp-migrate-db-pro-media-files';
 		$this->plugin_version = $GLOBALS['wpmdb_meta']['wp-migrate-db-pro-media-files']['version'];
 
-		if( ! $this->meets_version_requirements( '1.3.3' ) ) return;
+		if( ! $this->meets_version_requirements( '1.3.5' ) ) return;
 
 		add_action( 'wpmdb_after_advanced_options', array( $this, 'migration_form_controls' ) );
 		add_action( 'wpmdb_load_assets', array( $this, 'load_assets' ) );
 		add_action( 'wpmdb_js_variables', array( $this, 'js_variables' ) );
 		add_filter( 'wpmdb_accepted_profile_fields', array( $this, 'accepted_profile_fields' ) );
 		add_filter( 'wpmdb_establish_remote_connection_data', array( $this, 'establish_remote_connection_data' ) );
+		add_filter( 'wpmdb_nonces', array( $this, 'add_nonces' ) );
 
 		// internal AJAX handlers
 		add_action( 'wp_ajax_wpmdbmf_determine_media_to_migrate', array( $this, 'ajax_determine_media_to_migrate' ) );
@@ -151,6 +152,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 	}
 
 	function ajax_migrate_media() {
+		$this->check_ajax_referer( 'migrate-media' );
 		$this->set_time_limit();
 
 		if( $_POST['intent'] == 'pull' ) {
@@ -304,6 +306,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 	}
 
 	function ajax_determine_media_to_migrate() {
+		$this->check_ajax_referer( 'determine-media-to-migrate' );
 		$this->set_time_limit();
 
 		$local_attachments = $this->get_local_attachments();
@@ -590,6 +593,12 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 		}
 
 		return $response;
+	}
+
+	function add_nonces( $nonces ) {
+		$nonces['migrate_media'] = wp_create_nonce( 'migrate-media' );
+		$nonces['determine_media_to_migrate'] = wp_create_nonce( 'determine-media-to-migrate' );
+		return $nonces;
 	}
 
 }

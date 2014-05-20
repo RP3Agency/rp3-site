@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "e57f481c996b757303bf895558690a5c",
+    "hash": "7319914306fe4517deeb0d2e78c80dbc",
     "packages": [
         {
             "name": "composer/installers",
@@ -133,10 +133,10 @@
         },
         {
             "name": "wordpress",
-            "version": "3.9",
+            "version": "3.9.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/3.9.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/3.9.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -195,7 +195,7 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "dev-trunk",
+            "version": "4.3.8",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/advanced-custom-fields/",
@@ -214,8 +214,7 @@
                 "wpackagist/advanced-custom-fields": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/advanced-custom-fields/",
-            "time": "2014-04-18 03:32:53"
+            "homepage": "http://wordpress.org/plugins/advanced-custom-fields/"
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
@@ -267,15 +266,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "dev-trunk",
+            "version": "3.8.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "trunk"
+                "reference": "tags/3.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/contact-form-7.zip",
+                "url": "http://downloads.wordpress.org/plugin/contact-form-7.3.8.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -286,8 +285,7 @@
                 "wpackagist/contact-form-7": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/contact-form-7/",
-            "time": "2014-04-29 01:16:20"
+            "homepage": "http://wordpress.org/plugins/contact-form-7/"
         },
         {
             "name": "wpackagist-plugin/custom-tag-widget",
@@ -411,15 +409,15 @@
         },
         {
             "name": "wpackagist-plugin/latest-tweets-widget",
-            "version": "dev-trunk",
+            "version": "1.1.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/latest-tweets-widget/",
-                "reference": "trunk"
+                "reference": "tags/1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/latest-tweets-widget.zip",
+                "url": "http://downloads.wordpress.org/plugin/latest-tweets-widget.1.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -430,8 +428,7 @@
                 "wpackagist/latest-tweets-widget": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/latest-tweets-widget/",
-            "time": "2014-04-17 11:13:46"
+            "homepage": "http://wordpress.org/plugins/latest-tweets-widget/"
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
@@ -659,17 +656,14 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "wpackagist-plugin/add-from-server": 20,
-        "wpackagist-plugin/advanced-custom-fields": 20,
         "wpackagist-plugin/admin-post-navigation": 20,
         "wpackagist-plugin/black-studio-tinymce-widget": 20,
         "wpackagist-plugin/co-authors-plus": 20,
-        "wpackagist-plugin/contact-form-7": 20,
         "wpackagist-plugin/custom-tag-widget": 20,
         "wpackagist-plugin/debug-bar": 20,
         "wpackagist-plugin/flipboard-magazine-widget": 20,
         "wpackagist-plugin/fv-top-level-cats": 20,
         "wpackagist-plugin/google-analytics-for-wordpress": 20,
-        "wpackagist-plugin/latest-tweets-widget": 20,
         "wpackagist-plugin/list-category-posts": 20,
         "wpackagist-plugin/markdown-on-save": 20,
         "wpackagist-plugin/regenerate-thumbnails": 20,
