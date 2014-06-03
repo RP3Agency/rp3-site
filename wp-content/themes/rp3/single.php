@@ -62,6 +62,10 @@ if ( has_category('news') ) {
 
 	get_sidebar( 'blog' );
 
+} elseif ( has_category( 'careers' ) ) {
+
+	get_sidebar( 'careers' );
+
 } else {
 
 	get_sidebar();
