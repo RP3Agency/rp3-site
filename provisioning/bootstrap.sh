@@ -3,7 +3,7 @@
 # Update MySQL variables here. We'll get to them later in the script.
 MYSQL_PASS="password"
 MYSQL_DB="rp3agency"
-MYSQL_FILE="rp3agency-migrate-20140603125725-duuev.sql"
+MYSQL_FILE="rp3agency-migrate-20140603140829-67jk7.sql"
 
 
 # Now go forth and provision...
