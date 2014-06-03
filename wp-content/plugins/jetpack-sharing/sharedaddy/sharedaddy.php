@@ -11,19 +11,19 @@ Plugin URI: http://en.blog.wordpress.com/2010/08/24/more-ways-to-share/
 require_once plugin_dir_path( __FILE__ ).'sharing.php';
 
 function sharing_email_send_post( $data ) {
-	$content  = sprintf( __( '%1$s (%2$s) thinks you may be interested in the following post:', 'jetpack-sharing' ), $data['name'], $data['source'] );
+	$content  = sprintf( __( '%1$s (%2$s) thinks you may be interested in the following post:', 'jetpack' ), $data['name'], $data['source'] );
 	$content .= "\n\n";
 	$content .= $data['post']->post_title."\n";
 	$content .= get_permalink( $data['post']->ID )."\n";
 
 	$headers[] = sprintf( 'From: %1$s <%2$s>', $data['name'], $data['source'] );
 
-	wp_mail( $data['target'], '['.__( 'Shared Post', 'jetpack-sharing' ).'] '.$data['post']->post_title, $content, $headers);
+	wp_mail( $data['target'], '['.__( 'Shared Post', 'jetpack' ).'] '.$data['post']->post_title, $content, $headers );
 }
 
 function sharing_add_meta_box() {
 	$post_types = get_post_types( array( 'public' => true ) );
-	$title = apply_filters( 'sharing_meta_box_title', __( 'Sharing', 'jetpack-sharing' ) );
+	$title = apply_filters( 'sharing_meta_box_title', __( 'Sharing', 'jetpack' ) );
 	foreach( $post_types as $post_type ) {
 		add_meta_box( 'sharing_meta', $title, 'sharing_meta_box_content', $post_type, 'advanced', 'high' );
 	}
@@ -37,7 +37,7 @@ function sharing_meta_box_content( $post ) {
 	<p>
 		<label for="enable_post_sharing">
 			<input type="checkbox" name="enable_post_sharing" id="enable_post_sharing" value="1" <?php checked( !$disabled ); ?>>
-			<?php _e( 'Show sharing buttons.' , 'jetpack-sharing');  ?>
+			<?php _e( 'Show sharing buttons.' , 'jetpack'); ?>
 		</label>
 		<input type="hidden" name="sharing_status_hidden" value="1" />
 	</p>
@@ -76,22 +76,22 @@ function sharing_meta_box_protected( $protected, $meta_key, $meta_type ) {
 add_filter( 'is_protected_meta', 'sharing_meta_box_protected', 10, 3 );
 
 function sharing_plugin_settings( $links ) {
-	$settings_link = '<a href="options-general.php?page=sharing.php">'.__( 'Settings', 'jetpack-sharing' ).'</a>';
+	$settings_link = '<a href="options-general.php?page=sharing.php">'.__( 'Settings', 'jetpack' ).'</a>';
 	array_unshift( $links, $settings_link );
 	return $links;
 }
 
 function sharing_add_plugin_settings($links, $file) {
 	if ( $file == basename( dirname( __FILE__ ) ).'/'.basename( __FILE__ ) ) {
-		$links[] = '<a href="options-general.php?page=sharing.php">' . __( 'Settings', 'jetpack-sharing' ) . '</a>';
-		$links[] = '<a href="http://support.wordpress.com/sharing/">' . __( 'Support', 'jetpack-sharing' ) . '</a>';
+		$links[] = '<a href="options-general.php?page=sharing.php">' . __( 'Settings', 'jetpack' ) . '</a>';
+		$links[] = '<a href="http://support.wordpress.com/sharing/">' . __( 'Support', 'jetpack' ) . '</a>';
 	}
 
 	return $links;
 }
 
 function sharing_restrict_to_single( $services ) {
-	// This removes Press This from non-multisite blogs - doesnt make much sense
+	// This removes Press This from non-multisite blogs - doesn't make much sense
 	if ( is_multisite() === false ) {
 		unset( $services['press-this'] );
 	}
@@ -114,9 +114,9 @@ function sharing_global_resources() {
 	$disable = get_option( 'sharedaddy_disable_resources' );
 ?>
 <tr valign="top">
-	<th scope="row"><label for="disable_css"><?php _e( 'Disable CSS and JS', 'jetpack-sharing' );  ?></label></th>
+	<th scope="row"><label for="disable_css"><?php _e( 'Disable CSS and JS', 'jetpack' ); ?></label></th>
 	<td>
-		<input id="disable_css" type="checkbox" name="disable_resources" <?php if ( $disable == 1 ) echo ' checked="checked"'; ?>/>  <small><em><?php _e( 'Advanced.  If this option is checked, you must include these files in your theme manually for the sharing links to work.', 'jetpack-sharing' );  ?></em></small>
+		<input id="disable_css" type="checkbox" name="disable_resources" <?php if ( $disable == 1 ) echo ' checked="checked"'; ?>/>  <small><em><?php _e( 'Advanced.  If this option is checked, you must include these files in your theme manually for the sharing links to work.', 'jetpack' ); ?></em></small>
 	</td>
 </tr>
 <?php
@@ -152,8 +152,3 @@ if ( defined( 'RECAPTCHA_PRIVATE_KEY' ) ) {
 	add_action( 'sharing_email_dialog', 'sharing_email_dialog' );
 	add_filter( 'sharing_email_check', 'sharing_email_check', 10, 3 );
 }
-
-/*
-Edits by Anas H. Sulaiman:
-E-1: replace text domain
-*/

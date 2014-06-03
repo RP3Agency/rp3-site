@@ -205,7 +205,7 @@ class Share_Email extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return _x( 'Email', 'as sharing source', 'jetpack-sharing' );
+		return _x( 'Email', 'as sharing source', 'jetpack' );
 	}
 
 	// Default does nothing
@@ -247,9 +247,9 @@ class Share_Email extends Sharing_Source {
 				if ( $ajax ) {
 ?>
 <div class="response">
-	<div class="response-title"><?php _e( 'This post has been shared!', 'jetpack-sharing' ); ?></div>
- 	<div class="response-sub"><?php printf( __( 'You have shared this post with %s', 'jetpack-sharing' ), esc_html( $target_email ) ); ?></div>
- 	<div class="response-close"><a href="#" class="sharing_cancel"><?php _e( 'Close', 'jetpack-sharing' ); ?></a></div>
+	<div class="response-title"><?php _e( 'This post has been shared!', 'jetpack' ); ?></div>
+ 	<div class="response-sub"><?php printf( __( 'You have shared this post with %s', 'jetpack' ), esc_html( $target_email ) ); ?></div>
+ 	<div class="response-close"><a href="#" class="sharing_cancel"><?php _e( 'Close', 'jetpack' ); ?></a></div>
 </div>
 <?php
 				}
@@ -271,7 +271,7 @@ class Share_Email extends Sharing_Source {
 	}
 
 	public function get_display( $post ) {
-		return $this->get_link( get_permalink( $post->ID ), _x( 'Email', 'share to', 'jetpack-sharing' ), __( 'Click to email this to a friend', 'jetpack-sharing' ), 'share=email' );
+		return $this->get_link( get_permalink( $post->ID ), _x( 'Email', 'share to', 'jetpack' ), __( 'Click to email this to a friend', 'jetpack' ), 'share=email' );
 	}
 
 	/**
@@ -284,7 +284,7 @@ class Share_Email extends Sharing_Source {
 ?>
 	<div id="sharing_email" style="display: none;">
 		<form action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ); ?>" method="post">
-			<label for="target_email"><?php _e( 'Send to Email Address', 'jetpack-sharing' ) ?></label>
+			<label for="target_email"><?php _e( 'Send to Email Address', 'jetpack' ) ?></label>
 			<input type="email" name="target_email" id="target_email" value="" />
 
 			<?php if ( is_user_logged_in() ) : ?>
@@ -292,30 +292,30 @@ class Share_Email extends Sharing_Source {
 				<input type="hidden" name="source_email" value="<?php echo esc_attr( $current_user->user_email ); ?>" />
 			<?php else : ?>
 
-				<label for="source_name"><?php _e( 'Your Name', 'jetpack-sharing' ) ?></label>
+				<label for="source_name"><?php _e( 'Your Name', 'jetpack' ) ?></label>
 				<input type="text" name="source_name" id="source_name" value="" />
 
-				<label for="source_email"><?php _e( 'Your Email Address', 'jetpack-sharing' ) ?></label>
+				<label for="source_email"><?php _e( 'Your Email Address', 'jetpack' ) ?></label>
 				<input type="email" name="source_email" id="source_email" value="" />
 
 			<?php endif; ?>
 
-			<?php do_action( 'sharing_email_dialog', 'jetpack-sharing' ); ?>
+			<?php do_action( 'sharing_email_dialog', 'jetpack' ); ?>
 
 			<img style="float: right; display: none" class="loading" src="<?php echo apply_filters( 'jetpack_static_url', plugin_dir_url( __FILE__ ) . 'images/loading.gif' ); ?>" alt="loading" width="16" height="16" />
-			<input type="submit" value="<?php _e( 'Send Email', 'jetpack-sharing' ); ?>" class="sharing_send" />
-			<a href="#cancel" class="sharing_cancel"><?php _e( 'Cancel', 'jetpack-sharing' );?></a>
+			<input type="submit" value="<?php esc_attr_e( 'Send Email', 'jetpack' ); ?>" class="sharing_send" />
+			<a href="#cancel" class="sharing_cancel"><?php _e( 'Cancel', 'jetpack' ); ?></a>
 
 			<div class="errors errors-1" style="display: none;">
-				<?php _e( 'Post was not sent - check your email addresses!', 'jetpack-sharing' ); ?>
+				<?php _e( 'Post was not sent - check your email addresses!', 'jetpack' ); ?>
 			</div>
 
 			<div class="errors errors-2" style="display: none;">
-				<?php _e( 'Email check failed, please try again', 'jetpack-sharing' ); ?>
+				<?php _e( 'Email check failed, please try again', 'jetpack' ); ?>
 			</div>
 
 			<div class="errors errors-3" style="display: none;">
-				<?php _e( 'Sorry, your blog cannot share posts by email.', 'jetpack-sharing' ); ?>
+				<?php _e( 'Sorry, your blog cannot share posts by email.', 'jetpack' ); ?>
 			</div>
 		</form>
 	</div>
@@ -338,12 +338,26 @@ class Share_Twitter extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'Twitter', 'jetpack-sharing' );
+		return __( 'Twitter', 'jetpack' );
 	}
 
 	function sharing_twitter_via( $post ) {
 		// Allow themes to customize the via
-		return apply_filters( 'jetpack_sharing_twitter_via', '', $post->ID );
+		$twitter_site_tag_value = apply_filters( 'jetpack_twitter_cards_site_tag', '' );
+
+		/*
+		 * Hack to remove the unwanted behavior of adding 'via @jetpack' which
+		 * was introduced with the adding of the Twitter cards. 
+		 * This should be a temporary solution until a better method is setup.
+		 */
+		if( 'jetpack' == $twitter_site_tag_value ) {
+			$twitter_site_tag_value = '';
+		}
+
+		// Strip out anything other than a letter, number, or underscore.
+		// This will prevent the inadvertent inclusion of an extra @, as well as normalizing the handle.
+		$twitter_site_tag_value = preg_replace( '/[^\da-z_]+/i', '', $twitter_site_tag_value );
+		return apply_filters( 'jetpack_sharing_twitter_via', $twitter_site_tag_value, $post->ID );
 	}
 
 	public function get_related_accounts( $post ) {
@@ -383,9 +397,10 @@ class Share_Twitter extends Sharing_Source {
 		if ( $this->smart ) {
 			return '<div class="twitter_button"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="' . esc_url( $this->http() . '://platform.twitter.com/widgets/tweet_button.html?url=' . rawurlencode( $share_url ) . '&counturl=' . rawurlencode( str_replace( 'https://', 'http://', get_permalink( $post->ID ) ) ) . '&count=horizontal&text=' . rawurlencode( $post_title . ':' ) . $via ) . '" style="width:101px; height:20px;"></iframe></div>';
 		} else {
-			if ( 'icon-text' == $this->button_style || 'text' == $this->button_style )
+			if ( apply_filters( 'jetpack_register_post_for_share_counts', true, $post->ID, 'twitter' ) ) {
 				sharing_register_post_for_share_counts( $post->ID );
-			return $this->get_link( get_permalink( $post->ID ), _x( 'Twitter', 'share to', 'jetpack-sharing' ), __( 'Click to share on Twitter', 'jetpack-sharing' ), 'share=twitter', 'sharing-twitter-' . $post->ID );
+			}
+			return $this->get_link( get_permalink( $post->ID ), _x( 'Twitter', 'share to', 'jetpack' ), __( 'Click to share on Twitter', 'jetpack' ), 'share=twitter', 'sharing-twitter-' . $post->ID );
 		}
 	}
 
@@ -460,7 +475,7 @@ class Share_Stumbleupon extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'StumbleUpon', 'jetpack-sharing' );
+		return __( 'StumbleUpon', 'jetpack' );
 	}
 
 	public function has_custom_button_style() {
@@ -471,7 +486,7 @@ class Share_Stumbleupon extends Sharing_Source {
 		if ( $this->smart )
 			return '<div class="stumbleupon_button"><iframe src="http://www.stumbleupon.com/badge/embed/1/?url=' . rawurlencode( $this->get_share_url( $post->ID ) ) . '&amp;title=' . rawurlencode( $this->get_share_title( $post->ID ) ) . '" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:74px; height: 18px;" allowTransparency="true"></iframe></div>';
 		else
-			return $this->get_link( get_permalink( $post->ID ), _x( 'StumbleUpon', 'share to', 'jetpack-sharing' ), __( 'Click to share on StumbleUpon', 'jetpack-sharing' ), 'share=stumbleupon' );
+			return $this->get_link( get_permalink( $post->ID ), _x( 'StumbleUpon', 'share to', 'jetpack' ), __( 'Click to share on StumbleUpon', 'jetpack' ), 'share=stumbleupon' );
 	}
 
 	public function process_request( $post, array $post_data ) {
@@ -498,14 +513,14 @@ class Share_Reddit extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'Reddit', 'jetpack-sharing' );
+		return __( 'Reddit', 'jetpack' );
 	}
 
 	public function get_display( $post ) {
 		if ( $this->smart )
 			return '<div class="reddit_button"><iframe src="http://www.reddit.com/static/button/button1.html?width=120&amp;url=' . rawurlencode( $this->get_share_url( $post->ID ) ) . '&amp;title=' . rawurlencode( $this->get_share_title( $post->ID ) ) . '" height="22" width="120" scrolling="no" frameborder="0"></iframe></div>';
 		else
-			return $this->get_link( get_permalink( $post->ID ), _x( 'Reddit', 'share to', 'jetpack-sharing' ), __( 'Click to share on Reddit', 'jetpack-sharing' ), 'share=reddit' );
+			return $this->get_link( get_permalink( $post->ID ), _x( 'Reddit', 'share to', 'jetpack' ), __( 'Click to share on Reddit', 'jetpack' ), 'share=reddit' );
 	}
 
 	public function process_request( $post, array $post_data ) {
@@ -532,7 +547,7 @@ class Share_Digg extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'Digg', 'jetpack-sharing' );
+		return __( 'Digg', 'jetpack' );
 	}
 
 	public function has_custom_button_style() {
@@ -541,10 +556,10 @@ class Share_Digg extends Sharing_Source {
 
 	public function get_display( $post ) {
 		if ( $this->smart ) {
-			$url = $this->get_link( 'http://digg.com/submit?url='. rawurlencode( $this->get_share_url( $post->ID ) ) . '&amp;title=' . rawurlencode( $this->get_share_title( $post->ID ) ), 'Digg', __( 'Click to Digg this post', 'jetpack-sharing' ) );
+			$url = $this->get_link( 'http://digg.com/submit?url='. rawurlencode( $this->get_share_url( $post->ID ) ) . '&amp;title=' . rawurlencode( $this->get_share_title( $post->ID ) ), 'Digg', __( 'Click to Digg this post', 'jetpack' ) );
 			return '<div class="digg_button">' . str_replace( 'class="', 'class="DiggThisButton DiggCompact ', $url ) . '</div>';
 		} else {
-			return $this->get_link( get_permalink( $post->ID ), _x( 'Digg', 'share to', 'jetpack-sharing' ), __( 'Click to Digg this post', 'jetpack-sharing' ), 'share=digg' );
+			return $this->get_link( get_permalink( $post->ID ), _x( 'Digg', 'share to', 'jetpack' ), __( 'Click to Digg this post', 'jetpack' ), 'share=digg' );
 		}
 	}
 
@@ -567,7 +582,7 @@ class Share_Digg extends Sharing_Source {
 	var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];
 	s.type = 'text/javascript';
 	s.async = true;
-	s.src = 'http://widgets.digg.com/buttons.js';
+	s.src = '//widgets.digg.com/buttons.js';
 	s1.parentNode.insertBefore(s, s1);
 })();
 </script>
@@ -588,7 +603,7 @@ class Share_LinkedIn extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'LinkedIn', 'jetpack-sharing' );
+		return __( 'LinkedIn', 'jetpack' );
 	}
 
 	public function has_custom_button_style() {
@@ -602,10 +617,11 @@ class Share_LinkedIn extends Sharing_Source {
 		if ( $this->smart )
 			$display .= sprintf( '<div class="linkedin_button"><script type="in/share" data-url="%s" data-counter="right"></script></div>', esc_url( $share_url ) );
 		else
-			$display = $this->get_link( get_permalink( $post->ID ), _x( 'LinkedIn', 'share to', 'jetpack-sharing' ), __( 'Click to share on LinkedIn', 'jetpack-sharing' ), 'share=linkedin', 'sharing-linkedin-' . $post->ID );
+			$display = $this->get_link( get_permalink( $post->ID ), _x( 'LinkedIn', 'share to', 'jetpack' ), __( 'Click to share on LinkedIn', 'jetpack' ), 'share=linkedin', 'sharing-linkedin-' . $post->ID );
 
-		if ( 'icon-text' == $this->button_style || 'text' == $this->button_style )
+		if ( apply_filters( 'jetpack_register_post_for_share_counts', true, $post->ID, 'linkedin' ) ) {
 			sharing_register_post_for_share_counts( $post->ID );
+		}
 
 		return $display;
 	}
@@ -635,7 +651,7 @@ class Share_LinkedIn extends Sharing_Source {
 		} else {
 			?><script type="text/javascript">
 			jQuery( document ).ready( function() {
-			    jQuery.getScript( 'http://platform.linkedin.com/in.js?async=true', function success() {
+			    jQuery.getScript( '//platform.linkedin.com/in.js?async=true', function success() {
 			        IN.init();
 			    });
 			});
@@ -665,7 +681,7 @@ class Share_Facebook extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'Facebook', 'jetpack-sharing' );
+		return __( 'Facebook', 'jetpack' );
 	}
 
 	public function display_header() {
@@ -710,6 +726,7 @@ class Share_Facebook extends Sharing_Source {
 			// Locale-specific widths/overrides
 			$widths = array(
 				'bg_BG' => 120,
+				'bn_IN' => 100,
 				'cs_CZ' => 135,
 				'de_DE' => 120,
 				'da_DK' => 120,
@@ -739,9 +756,10 @@ class Share_Facebook extends Sharing_Source {
 			return '<div class="like_button"><iframe src="'.$url.'" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:'.( $inner_w + 6 ).'px; height:21px;" allowTransparency="true"></iframe></div>';
 		}
 
-		if ( 'icon-text' == $this->button_style || 'text' == $this->button_style )
+		if ( apply_filters( 'jetpack_register_post_for_share_counts', true, $post->ID, 'facebook' ) ) {
 			sharing_register_post_for_share_counts( $post->ID );
-		return $this->get_link( get_permalink( $post->ID ), _x( 'Facebook', 'share to', 'jetpack-sharing' ), __( 'Share on Facebook', 'jetpack-sharing' ), 'share=facebook', 'sharing-facebook-' . $post->ID );
+		}
+		return $this->get_link( get_permalink( $post->ID ), _x( 'Facebook', 'share to', 'jetpack' ), __( 'Share on Facebook', 'jetpack' ), 'share=facebook', 'sharing-facebook-' . $post->ID );
 	}
 
 	public function process_request( $post, array $post_data ) {
@@ -772,11 +790,11 @@ class Share_Print extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'Print', 'jetpack-sharing' );
+		return __( 'Print', 'jetpack' );
 	}
 
 	public function get_display( $post ) {
-		return $this->get_link( get_permalink( $post->ID ) . ( ( is_single() || is_page() ) ? '#print': '' ), _x( 'Print', 'share to', 'jetpack-sharing' ), __( 'Click to print', 'jetpack-sharing' ) );
+		return $this->get_link( get_permalink( $post->ID ) . ( ( is_single() || is_page() ) ? '#print': '' ), _x( 'Print', 'share to', 'jetpack' ), __( 'Click to print', 'jetpack' ) );
 	}
 }
 
@@ -792,7 +810,7 @@ class Share_PressThis extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'Press This', 'jetpack-sharing' );
+		return __( 'Press This', 'jetpack' );
 	}
 
 	public function process_request( $post, array $post_data ) {
@@ -820,7 +838,7 @@ class Share_PressThis extends Sharing_Source {
 	}
 
 	public function get_display( $post ) {
-		return $this->get_link( get_permalink( $post->ID ), _x( 'Press This', 'share to', 'jetpack-sharing' ), __( 'Click to Press This!', 'jetpack-sharing' ), 'share=press-this' );
+		return $this->get_link( get_permalink( $post->ID ), _x( 'Press This', 'share to', 'jetpack' ), __( 'Click to Press This!', 'jetpack' ), 'share=press-this' );
 	}
 }
 
@@ -838,7 +856,7 @@ class Share_GooglePlus1 extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'Google', 'jetpack-sharing' );
+		return __( 'Google', 'jetpack' );
 	}
 
 	public function has_custom_button_style() {
@@ -851,7 +869,7 @@ class Share_GooglePlus1 extends Sharing_Source {
 		if ( $this->smart ) {
 			return '<div class="googleplus1_button"><div class="g-plus" data-action="share" data-annotation="bubble" data-href="' . esc_url( $share_url ) . '"></div></div>';
 		} else {
-			return $this->get_link( get_permalink( $post->ID ), _x( 'Google', 'share to', 'jetpack-sharing' ), __( 'Click to share on Google+', 'jetpack-sharing' ), 'share=google-plus-1', 'sharing-google-' . $post->ID );
+			return $this->get_link( get_permalink( $post->ID ), _x( 'Google', 'share to', 'jetpack' ), __( 'Click to share on Google+', 'jetpack' ), 'share=google-plus-1', 'sharing-google-' . $post->ID );
 		}
 	}
 
@@ -938,7 +956,7 @@ class Share_Custom extends Sharing_Advanced_Source {
 	}
 
 	public function get_display( $post ) {
-		$str = $this->get_link( get_permalink( $post->ID ), esc_html( $this->name ), __( 'Click to share', 'jetpack-sharing' ), 'share='.$this->id );
+		$str = $this->get_link( get_permalink( $post->ID ), esc_html( $this->name ), __( 'Click to share', 'jetpack' ), 'share='.$this->id );
 		return str_replace( '<span>', '<span style="' . esc_attr( 'background-image:url("' . addcslashes( esc_url_raw( $this->icon ), '"' ) . '");' ) . '">', $str );
 	}
 
@@ -988,25 +1006,25 @@ class Share_Custom extends Sharing_Advanced_Source {
 	<table class="form-table">
 		<tbody>
 			<tr>
-				<th scope="row"><?php _e( 'Label', 'jetpack-sharing' );  ?></th>
+				<th scope="row"><?php _e( 'Label', 'jetpack' ); ?></th>
 				<td><input type="text" name="name" value="<?php echo esc_attr( $this->name ); ?>" /></td>
 			</tr>
 
 			<tr>
-				<th scope="row"><?php _e( 'URL', 'jetpack-sharing' );  ?></th>
+				<th scope="row"><?php _e( 'URL', 'jetpack' ); ?></th>
 				<td><input type="text" name="url" value="<?php echo esc_attr( $this->url ); ?>" /></td>
 			</tr>
 
 			<tr>
-				<th scope="row"><?php _e( 'Icon', 'jetpack-sharing' );  ?></th>
+				<th scope="row"><?php _e( 'Icon', 'jetpack' ); ?></th>
 				<td><input type="text" name="icon" value="<?php echo esc_attr( $this->icon ); ?>" /></td>
 			</tr>
 
 			<tr>
 				<th scope="row"></th>
 				<td>
-					<input class="button-secondary" type="submit" value="<?php _e( 'Save', 'jetpack-sharing' );  ?>" />
-					<a href="#" class="remove"><small><?php _e( 'Remove Service', 'jetpack-sharing' );  ?></small></a>
+					<input class="button-secondary" type="submit" value="<?php esc_attr_e( 'Save', 'jetpack' ); ?>" />
+					<a href="#" class="remove"><small><?php _e( 'Remove Service', 'jetpack' ); ?></small></a>
 				</td>
 			</tr>
 		</tbody>
@@ -1085,7 +1103,7 @@ class Share_Tumblr extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'Tumblr', 'jetpack-sharing' );
+		return __( 'Tumblr', 'jetpack' );
 	}
 
 	public function get_display( $post ) {
@@ -1094,9 +1112,9 @@ class Share_Tumblr extends Sharing_Source {
 			if ( 'new' == $this->open_links )
 				$target = '_blank';
 
-			return '<a target="' . $target . '" href="http://www.tumblr.com/share/link/?url=' . rawurlencode( $this->get_share_url( $post->ID ) ) . '&name=' . rawurlencode( $this->get_share_title( $post->ID ) ) . '" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:62px; height:20px; background:url(\'http://platform.tumblr.com/v1/share_2.png\') top left no-repeat transparent;">Share on Tumblr</a>';
+			return '<a target="' . $target . '" href="http://www.tumblr.com/share/link/?url=' . rawurlencode( $this->get_share_url( $post->ID ) ) . '&name=' . rawurlencode( $this->get_share_title( $post->ID ) ) . '" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:62px; height:20px; background:url(\'//platform.tumblr.com/v1/share_2.png\') top left no-repeat transparent;">Share on Tumblr</a>';
 		 } else {
-			return $this->get_link( get_permalink( $post->ID ), _x( 'Tumblr', 'share to', 'jetpack-sharing' ), __( 'Click to share on Tumblr', 'jetpack-sharing' ), 'share=tumblr' );
+			return $this->get_link( get_permalink( $post->ID ), _x( 'Tumblr', 'share to', 'jetpack' ), __( 'Click to share on Tumblr', 'jetpack' ), 'share=tumblr' );
 		}
 	}
 
@@ -1112,7 +1130,7 @@ class Share_Tumblr extends Sharing_Source {
 	// http://www.tumblr.com/share?v=3&u=URL&t=TITLE&s=
 	public function display_footer() {
 		if ( $this->smart ) {
-			?><script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script><?php
+			?><script type="text/javascript" src="//platform.tumblr.com/v1/share.js"></script><?php 
 		} else {
 			$this->js_dialog( $this->shortname, array( 'width' => 450, 'height' => 450 ) );
 		}
@@ -1132,53 +1150,14 @@ class Share_Pinterest extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'Pinterest', 'jetpack-sharing' );
-	}
-
-	public function get_post_image( $content ) {
-		$image = '';
-
-		if ( class_exists( 'Jetpack_PostImages' ) ) {
-			// Use the full stack of methods to find an image, except for HTML, which can cause loops
-			$img = Jetpack_PostImages::get_image( $content->ID );
-			if ( !empty( $img['src'] ) )
-				return $img['src'];
-		}
-
-		// If we have to fall back to the following, we only do a few basic image checks
-		$content = $content->post_content;
-		if ( function_exists('has_post_thumbnail') && has_post_thumbnail() ) {
-			$thumb_id = get_post_thumbnail_id();
-			$thumb = wp_get_attachment_image_src( $thumb_id, 'full' );
-
-			// This shouldn't be necessary, since has_post_thumbnail() is true,
-			// but... see http://wordpress.org/support/topic/jetpack-youtube-embeds
-			if ( ! $thumb ) return '';
-
-			$image = remove_query_arg( array('w', 'h'), $thumb[0] );
-		} else if ( preg_match_all('/<img (.+?)>/', $content, $matches) ) {
-			foreach ( $matches[1] as $attrs ) {
-				$media = $img = array();
-				foreach ( wp_kses_hair( $attrs, array( 'http', 'https' ) ) as $attr )
-					$img[$attr['name']] = $attr['value'];
-				if ( !isset( $img['src'] ) || 0 !== strpos( $img['src'], 'http' ) ) {
-					continue;
-				}
-				else {
-					$image = htmlspecialchars_decode( $img['src'] );
-					break;
-				}
-			}
-		}
-
-		return $image;
+		return __( 'Pinterest', 'jetpack' );
 	}
 
 	public function get_display( $post ) {
 		if ( $this->smart )
-			return '<div class="pinterest_button"><a href="' . esc_url( 'http://pinterest.com/pin/create/button/?url='. rawurlencode( $this->get_share_url( $post->ID ) ) . '&description=' . rawurlencode( $this->get_share_title( $post->ID ) ) . '&media=' . rawurlencode( esc_url_raw( $this->get_post_image( $post ) ) ) ) . '" class="pin-it-button" count-layout="horizontal"> '. __( 'Pin It', 'jetpack-sharing') .'</a></div>';
+			return '<div class="pinterest_button"><a href="' . esc_url( 'http://pinterest.com/pin/create/button/?url=' . rawurlencode( $this->get_share_url( $post->ID ) ) . '&description=' . rawurlencode( $post->post_title ) ) .'" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a></div>';
 		else
-			return $this->get_link( get_permalink( $post->ID ), _x( 'Pinterest', 'share to', 'jetpack-sharing' ), __( 'Click to share on Pinterest', 'jetpack-sharing' ), 'share=pinterest' );
+			return $this->get_link( get_permalink( $post->ID ), _x( 'Pinterest', 'share to', 'jetpack' ), __( 'Click to share on Pinterest', 'jetpack' ), 'share=pinterest' );
 	}
 
 	public function process_request( $post, array $post_data ) {
@@ -1187,7 +1166,7 @@ class Share_Pinterest extends Sharing_Source {
 
 		// If we're triggering the multi-select panel, then we don't need to redirect to Pinterest
 		if ( !isset( $_GET['js_only'] ) ) {
-			$pinterest_url = esc_url_raw( 'http://pinterest.com/pin/create/button/?url=' . rawurlencode( $this->get_share_url( $post->ID ) ) . '&description=' . rawurlencode( $this->get_share_title( $post->ID ) ) . '&media=' . rawurlencode( esc_url_raw( $this->get_post_image( $post ) ) ) );
+			$pinterest_url = esc_url_raw( 'http://pinterest.com/pin/create/button/?url=' . rawurlencode( $this->get_share_url( $post->ID ) ) . '&description=' . rawurlencode( $this->get_share_title( $post->ID ) ) );
 			wp_redirect( $pinterest_url );
 		} else {
 			echo '// share count bumped';
@@ -1249,7 +1228,7 @@ class Share_Pocket extends Sharing_Source {
 	}
 
 	public function get_name() {
-		return __( 'Pocket', 'jetpack-sharing' );
+		return __( 'Pocket', 'jetpack' );
 	}
 
 	public function process_request( $post, array $post_data ) {
@@ -1267,12 +1246,12 @@ class Share_Pocket extends Sharing_Source {
 
 			$button = '';
 			$button .= '<div class="pocket_button">';
-			$button .= sprintf( '<a href="https://getpocket.com/save" class="pocket-btn" data-lang="%s" data-save-url="%s" data-pocket-count="%s" >%s</a>', 'en', esc_attr( $this->get_share_url( $post->ID ) ), $post_count, esc_attr__( 'Pocket', 'jetpack-sharing' ) );
+			$button .= sprintf( '<a href="https://getpocket.com/save" class="pocket-btn" data-lang="%s" data-save-url="%s" data-pocket-count="%s" >%s</a>', 'en', esc_attr( $this->get_share_url( $post->ID ) ), $post_count, esc_attr__( 'Pocket', 'jetpack' ) );
 			$button .= '</div>';
 
 			return $button;
 		} else {
-			return $this->get_link( get_permalink( $post->ID ), _x( 'Pocket', 'share to', 'jetpack-sharing' ), __( 'Click to share on Pocket', 'jetpack-sharing' ), 'share=pocket' );
+			return $this->get_link( get_permalink( $post->ID ), _x( 'Pocket', 'share to', 'jetpack' ), __( 'Click to share on Pocket', 'jetpack' ), 'share=pocket' );
 		}
 
 	}
@@ -1297,7 +1276,3 @@ class Share_Pocket extends Sharing_Source {
 
 }
 
-/*
-Edits by Anas H. Sulaiman:
-E-1: replace text domain
-*/

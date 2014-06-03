@@ -2,15 +2,15 @@
 
 include_once dirname( __FILE__ ).'/sharing-sources.php';
 
-// define( 'WP_SHARING_PLUGIN_VERSION', JETPACK__VERSION ); // E-2
-define( 'WP_SHARING_PLUGIN_VERSION', JETPACK_SHARING_VERSION ); // E-2
+// define( 'WP_SHARING_PLUGIN_VERSION', JETPACK__VERSION ); // E-1
+define( 'WP_SHARING_PLUGIN_VERSION', JETPACK_SHARING_VERSION ); // E-1
 
 class Sharing_Service {
 	private $global = false;
 	var $default_sharing_label = '';
 
 	public function __construct() {
-		$this->default_sharing_label = __( 'Share this:', 'jetpack-sharing' );
+		$this->default_sharing_label = __( 'Share this:', 'jetpack' );
 	}
 
 	/**
@@ -438,8 +438,11 @@ function sharing_add_header() {
 		$service->display_header();
 	}
 
-	if ( count( $enabled['all'] ) > 0 )
-		wp_enqueue_style( 'sharedaddy', plugin_dir_url( __FILE__ ) .'sharing.css', array(), WP_SHARING_PLUGIN_VERSION );
+	if ( count( $enabled['all'] ) > 0 ) {
+		wp_enqueue_style( 'sharedaddy', plugin_dir_url( __FILE__ ) .'sharing.css', array(), WP_SHARING_PLUGIN_VERSION ); // E-1
+		wp_enqueue_style( 'genericons' );
+	}
+			
 }
 add_action( 'wp_head', 'sharing_add_header', 1 );
 
@@ -549,9 +552,9 @@ function sharing_display( $text = '', $echo = false ) {
 			$parts[] = $visible;
 			if ( count( $enabled['hidden'] ) > 0 ) {
 				if ( count( $enabled['visible'] ) > 0 )
-					$expand = __( 'More', 'jetpack-sharing' );
+					$expand = __( 'More', 'jetpack' );
 				else
-					$expand = __( 'Share', 'jetpack-sharing' );
+					$expand = __( 'Share', 'jetpack' );
 				$parts[] = '<li><a href="#" class="sharing-anchor sd-button share-more"><span>'.$expand.'</span></a></li>';
 			}
 
@@ -634,6 +637,5 @@ function get_base_recaptcha_lang_code() {
 
 /*
 Edits by Anas H. Sulaiman:
-E-1: replace text domain
-E-2: disconnect from jetpack
+E-1: disconnect from jetpack
 */
