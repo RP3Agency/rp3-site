@@ -7,7 +7,6 @@ var gulp			= require('gulp'),
 	rename			= require('gulp-rename'),
 	clean			= require('gulp-clean'),
 	concat			= require('gulp-concat'),
-	notify			= require('gulp-notify'),
 	gutil			= require('gulp-util');
 
 // Styles
@@ -19,8 +18,7 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('wp-content/themes/rp3/css'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
-		.pipe(gulp.dest('wp-content/themes/rp3/css'))
-		.pipe(notify({ message: 'Styles task complete' }));
+		.pipe(gulp.dest('wp-content/themes/rp3/css'));
 });
 
 // Scripts task: JSHint & minify
@@ -32,8 +30,7 @@ gulp.task('scripts', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest('wp-content/themes/rp3/js'))
-		.pipe(notify({message: 'Scripts task complete'}));
+		.pipe(gulp.dest('wp-content/themes/rp3/js'));
 });
 
 // Scripts task: Plugins
@@ -43,8 +40,7 @@ gulp.task('scripts-plugins', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest('wp-content/themes/rp3/js'))
-		.pipe(notify({message: 'Scripts (plugins) task complete'}));
+		.pipe(gulp.dest('wp-content/themes/rp3/js'));
 });
 
 // Scripts task: Vendor
@@ -54,8 +50,7 @@ gulp.task('scripts-vendor', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest('wp-content/themes/rp3/js'))
-		.pipe(notify({message: 'Scripts (vendor) task complete'}));
+		.pipe(gulp.dest('wp-content/themes/rp3/js'));
 });
 
 // Clean
