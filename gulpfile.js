@@ -16,10 +16,10 @@ gulp.task('styles', function() {
 		.pipe(sass({ style: 'expanded' }))
 		.on( 'error', gutil.log )
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-		.pipe(gulp.dest('css'))
+		.pipe(gulp.dest('wp-content/themes/rp3/css'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
-		.pipe(gulp.dest('css'))
+		.pipe(gulp.dest('wp-content/themes/rp3/css'))
 		.pipe(notify({ message: 'Styles task complete' }));
 });
 
@@ -32,7 +32,7 @@ gulp.task('scripts', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest('js'))
+		.pipe(gulp.dest('wp-content/themes/rp3/js'))
 		.pipe(notify({message: 'Scripts task complete'}));
 });
 
@@ -43,7 +43,7 @@ gulp.task('scripts-plugins', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest('js'))
+		.pipe(gulp.dest('wp-content/themes/rp3/js'))
 		.pipe(notify({message: 'Scripts (plugins) task complete'}));
 });
 
@@ -54,13 +54,13 @@ gulp.task('scripts-vendor', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest('js'))
+		.pipe(gulp.dest('wp-content/themes/rp3/js'))
 		.pipe(notify({message: 'Scripts (vendor) task complete'}));
 });
 
 // Clean
 gulp.task('clean', function() {
-	return gulp.src(['css'], {read: false})
+	return gulp.src(['wp-content/themes/rp3/css', 'wp-content/themes/rp3/js'], {read: false})
 		.pipe(clean());
 });
 
