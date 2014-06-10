@@ -3,6 +3,5 @@ plugins/*
 !plugins/jetpack-sharing/
 !plugins/rp3/
 !plugins/rp3-mailchimp/
-!plugins/worker/
 !plugins/wp-migrate-db-pro/
 !plugins/wp-migrate-db-pro-media-files/
