@@ -1,12 +1,5 @@
 body.home {
-
-	// .header-container {
-	// 	margin-bottom: 0;
-
-	// 	.main-navigation {
-	// 		margin-bottom: 0;
-	// 	}
-	// }
+	background-color: #f8f8f8;
 
 	.site-content {
 		margin: 0;
@@ -20,35 +13,37 @@ body.home {
 	}
 
 	.introduction {
-		// background-image: url("../images/splash.jpg");
-		color: $gray;
-		font-family: $roboto;
-		font-size: ce(24px);
-		font-weight: $bold;
-		padding-top: ce(28px, 24px);
-		text-align: center;
+		position: relative;
 
-		@include bp(medium) {
-			font-size: ce(48px);
-			// text-shadow: 3px 3px 0 transparentize( mix( #000, $gray, 50% ), 0.7);
-		}
+		.bug {
+			background-color: #fff;
+			bottom: ce( -62px, 16px );
+			left: 50%;
+			padding: ce(30px, 16px) cp(18px, 250px) ce(62px, 16px);
+			position: absolute;
+			transform: translate( -50%, 0 );
+			width: 80%;
+			@include font-size(16px);
 
-		.logo {
-			background-image: url("../images/logo-color.svg");
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			height: 216px;
-			margin: 0 auto 1em;
-			width: 300px;
-		}
+			h1 {
+				font-family: $roboto;
+				font-size: ce(22px, 16px);
+				font-weight: $thin;
+			}
 
-		p {
-			position: relative;
-
-			span {
-				margin: 0 auto;
-				max-width: 1024px;
+			a {
+				background-color: #fbbe31;
+				bottom: 0;
+				color: #fff;
+				display: block;
+				font-size: ce(12px, 16px);
+				height: ce(62px, 12px);
+				left: 0;
+				line-height: ( 62px / 12px );
+				padding: 0 cp(18px, 250px);
+				position: absolute;
+				right: 0;
+				text-decoration: none;
 			}
 		}
 	}

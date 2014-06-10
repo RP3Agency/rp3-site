@@ -105,11 +105,11 @@ var rp3 = (function($) {
 		toggleNavigation();
 		showHideSearch();
 		showHidePeople();
-		homePagePanelSizes();
+		// homePagePanelSizes();
 		
 		$(window).on( 'scroll', function() {
 			navigationAnchor();
-			homePagePanelSizes();
+			// homePagePanelSizes();
 		});
 
 		$(window).on( 'resize', function() {

@@ -4,6 +4,10 @@
 
 .header-container {
 	margin-bottom: 1em;
+
+	body.home & {
+		margin-bottom: 0;
+	}
 }
 
 .site-header {
@@ -13,7 +17,7 @@
 	width: 100%;
 
 	@include bp(medium) {
-		background-color: #fff;
+		background-color: #f8f8f8;
 		height: ce(60px);
 		margin-bottom: 0;
 		position: relative;
@@ -40,6 +44,7 @@
 		display: block;
 		float: left;
 		height: 100%;
+		width: 50%;
 
 		@include bp(medium) {
 			width: 87px;
