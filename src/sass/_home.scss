@@ -15,6 +15,11 @@ body.home {
 	.introduction {
 		position: relative;
 
+		picture,
+		picture img {
+			width: 100%;
+		}
+
 		.bug {
 			background-color: #fff;
 			bottom: ce( -62px, 16px );
