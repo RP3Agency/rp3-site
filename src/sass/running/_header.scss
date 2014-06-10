@@ -14,6 +14,7 @@
 
 	@include bp(medium) {
 		background-color: #fff;
+		height: ce(60px);
 		margin-bottom: 0;
 		position: relative;
 	}
@@ -22,7 +23,7 @@
 		display: block;
 		height: 100%;
 		margin: 0 auto;
-		max-width: ce(1280px);
+		max-width: ce(1000px);
 		width: 100%;
 	}
 

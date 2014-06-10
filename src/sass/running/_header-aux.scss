@@ -13,10 +13,10 @@
 	display: none;
 
 	@include bp(medium) {
-		display: table-cell;
-		text-align: right;
-		vertical-align: middle;
-		width: 48px * 5;
+		display: block;
+		float: right;
+		height: 100%;
+		padding: ce(14px) 0;
 	}
 
 	.menu-header-auxiliary-container {
