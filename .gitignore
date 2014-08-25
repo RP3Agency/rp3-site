@@ -5,3 +5,5 @@ uploads
 vendor
 _wp
 *.sql
+.composer
+.subversion
