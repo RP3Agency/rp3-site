@@ -35,6 +35,7 @@
     "wpackagist-plugin/flipboard-magazine-widget":"*",
     "wpackagist-plugin/fv-top-level-cats":"*",
     "wpackagist-plugin/google-analytics-for-wordpress":"*",
+    "wpackagist-plugin/jetpack":"*",
     "wpackagist-plugin/latest-tweets-widget":"*",
     "wpackagist-plugin/list-category-posts":"*",
     "wpackagist-plugin/markdown-on-save":"*",
