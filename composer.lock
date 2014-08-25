@@ -1,30 +1,32 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "e57f481c996b757303bf895558690a5c",
+    "hash": "104124c990099dcf9f1a5e2cd39736c8",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.13",
+            "version": "v1.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "26d37e307f9aa6e2e81806a6525666f8ab5ba0ff"
+                "reference": "74fb0a7a1a23696d9c8cc2fba5903f6711cdd067"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/26d37e307f9aa6e2e81806a6525666f8ab5ba0ff",
-                "reference": "26d37e307f9aa6e2e81806a6525666f8ab5ba0ff",
+                "url": "https://api.github.com/repos/composer/installers/zipball/74fb0a7a1a23696d9c8cc2fba5903f6711cdd067",
+                "reference": "74fb0a7a1a23696d9c8cc2fba5903f6711cdd067",
                 "shasum": ""
             },
             "replace": {
+                "roundcube/plugin-installer": "*",
                 "shama/baton": "*"
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.1.*"
             },
             "type": "composer-installer",
             "extra": {
@@ -46,21 +48,23 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama",
-                    "role": "Developer"
+                    "homepage": "https://github.com/shama"
                 }
             ],
             "description": "A multi-framework Composer library installer",
             "homepage": "http://composer.github.com/installers/",
             "keywords": [
                 "Craft",
+                "Dolibarr",
                 "Hurad",
                 "MODX Evo",
                 "OXID",
                 "WolfCMS",
                 "agl",
                 "annotatecms",
+                "bitrix",
                 "cakephp",
+                "chef",
                 "codeigniter",
                 "concrete5",
                 "croogo",
@@ -76,9 +80,12 @@
                 "mako",
                 "mediawiki",
                 "modulework",
+                "moodle",
                 "phpbb",
                 "piwik",
                 "ppi",
+                "puppet",
+                "roundcube",
                 "shopware",
                 "silverstripe",
                 "symfony",
@@ -87,7 +94,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-04-09 16:12:43"
+            "time": "2014-08-18 20:00:12"
         },
         {
             "name": "fancyguy/webroot-installer",
@@ -133,10 +140,10 @@
         },
         {
             "name": "wordpress",
-            "version": "3.9",
+            "version": "3.9.2",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/3.9.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/3.9.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -147,15 +154,15 @@
         },
         {
             "name": "wpackagist-plugin/add-from-server",
-            "version": "dev-trunk",
+            "version": "3.2.0.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/add-from-server/",
-                "reference": "trunk"
+                "reference": "tags/3.2.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/add-from-server.zip",
+                "url": "http://downloads.wordpress.org/plugin/add-from-server.3.2.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -166,20 +173,19 @@
                 "wpackagist/add-from-server": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/add-from-server/",
-            "time": "2014-04-13 12:58:25"
+            "homepage": "http://wordpress.org/plugins/add-from-server/"
         },
         {
             "name": "wpackagist-plugin/admin-post-navigation",
-            "version": "dev-trunk",
+            "version": "1.8",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/admin-post-navigation/",
-                "reference": "trunk"
+                "reference": "tags/1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/admin-post-navigation.zip",
+                "url": "http://downloads.wordpress.org/plugin/admin-post-navigation.1.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -190,12 +196,11 @@
                 "wpackagist/admin-post-navigation": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/admin-post-navigation/",
-            "time": "2013-12-29 22:34:01"
+            "homepage": "http://wordpress.org/plugins/admin-post-navigation/"
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "dev-trunk",
+            "version": "4.3.8",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/advanced-custom-fields/",
@@ -214,20 +219,19 @@
                 "wpackagist/advanced-custom-fields": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/advanced-custom-fields/",
-            "time": "2014-04-18 03:32:53"
+            "homepage": "http://wordpress.org/plugins/advanced-custom-fields/"
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
-            "version": "dev-trunk",
+            "version": "1.4.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/black-studio-tinymce-widget/",
-                "reference": "trunk"
+                "reference": "tags/1.4.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.zip",
+                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.1.4.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -238,20 +242,19 @@
                 "wpackagist/black-studio-tinymce-widget": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/black-studio-tinymce-widget/",
-            "time": "2014-04-03 23:45:51"
+            "homepage": "http://wordpress.org/plugins/black-studio-tinymce-widget/"
         },
         {
             "name": "wpackagist-plugin/co-authors-plus",
-            "version": "dev-trunk",
+            "version": "3.1.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/co-authors-plus/",
-                "reference": "trunk"
+                "reference": "tags/3.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/co-authors-plus.zip",
+                "url": "http://downloads.wordpress.org/plugin/co-authors-plus.3.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -262,20 +265,19 @@
                 "wpackagist/co-authors-plus": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/co-authors-plus/",
-            "time": "2014-03-20 15:10:27"
+            "homepage": "http://wordpress.org/plugins/co-authors-plus/"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "dev-trunk",
+            "version": "3.9.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "trunk"
+                "reference": "tags/3.9.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/contact-form-7.zip",
+                "url": "http://downloads.wordpress.org/plugin/contact-form-7.3.9.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -286,12 +288,11 @@
                 "wpackagist/contact-form-7": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/contact-form-7/",
-            "time": "2014-04-29 01:16:20"
+            "homepage": "http://wordpress.org/plugins/contact-form-7/"
         },
         {
             "name": "wpackagist-plugin/custom-tag-widget",
-            "version": "dev-trunk",
+            "version": "1.0.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/custom-tag-widget/",
@@ -310,20 +311,19 @@
                 "wpackagist/custom-tag-widget": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/custom-tag-widget/",
-            "time": "2013-04-12 03:26:30"
+            "homepage": "http://wordpress.org/plugins/custom-tag-widget/"
         },
         {
             "name": "wpackagist-plugin/debug-bar",
-            "version": "dev-trunk",
+            "version": "0.8.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/debug-bar/",
-                "reference": "trunk"
+                "reference": "tags/0.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar.zip",
+                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -334,20 +334,19 @@
                 "wpackagist/debug-bar": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/debug-bar/",
-            "time": "2013-05-15 13:06:43"
+            "homepage": "http://wordpress.org/plugins/debug-bar/"
         },
         {
             "name": "wpackagist-plugin/flipboard-magazine-widget",
-            "version": "dev-trunk",
+            "version": "1.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/flipboard-magazine-widget/",
-                "reference": "trunk"
+                "reference": "tags/1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/flipboard-magazine-widget.zip",
+                "url": "http://downloads.wordpress.org/plugin/flipboard-magazine-widget.1.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -358,12 +357,11 @@
                 "wpackagist/flipboard-magazine-widget": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/flipboard-magazine-widget/",
-            "time": "2014-01-26 16:48:56"
+            "homepage": "http://wordpress.org/plugins/flipboard-magazine-widget/"
         },
         {
             "name": "wpackagist-plugin/fv-top-level-cats",
-            "version": "dev-trunk",
+            "version": "1.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/fv-top-level-cats/",
@@ -382,20 +380,19 @@
                 "wpackagist/fv-top-level-cats": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/fv-top-level-cats/",
-            "time": "2012-11-06 10:15:07"
+            "homepage": "http://wordpress.org/plugins/fv-top-level-cats/"
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "dev-trunk",
+            "version": "4.3.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "trunk"
+                "reference": "tags/4.3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.4.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -406,20 +403,19 @@
                 "wpackagist/google-analytics-for-wordpress": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/google-analytics-for-wordpress/",
-            "time": "2014-04-16 23:33:08"
+            "homepage": "http://wordpress.org/plugins/google-analytics-for-wordpress/"
         },
         {
             "name": "wpackagist-plugin/latest-tweets-widget",
-            "version": "dev-trunk",
+            "version": "1.1.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/latest-tweets-widget/",
-                "reference": "trunk"
+                "reference": "tags/1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/latest-tweets-widget.zip",
+                "url": "http://downloads.wordpress.org/plugin/latest-tweets-widget.1.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -430,20 +426,19 @@
                 "wpackagist/latest-tweets-widget": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/latest-tweets-widget/",
-            "time": "2014-04-17 11:13:46"
+            "homepage": "http://wordpress.org/plugins/latest-tweets-widget/"
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "dev-trunk",
+            "version": "0.50.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "trunk"
+                "reference": "tags/0.50.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/list-category-posts.zip",
+                "url": "http://downloads.wordpress.org/plugin/list-category-posts.0.50.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -454,20 +449,19 @@
                 "wpackagist/list-category-posts": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/list-category-posts/",
-            "time": "2014-03-09 01:45:50"
+            "homepage": "http://wordpress.org/plugins/list-category-posts/"
         },
         {
             "name": "wpackagist-plugin/markdown-on-save",
-            "version": "dev-trunk",
+            "version": "1.2.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/markdown-on-save/",
-                "reference": "trunk"
+                "reference": "tags/1.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/markdown-on-save.zip",
+                "url": "http://downloads.wordpress.org/plugin/markdown-on-save.1.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -478,20 +472,19 @@
                 "wpackagist/markdown-on-save": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/markdown-on-save/",
-            "time": "2013-04-24 15:43:19"
+            "homepage": "http://wordpress.org/plugins/markdown-on-save/"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
-            "version": "dev-trunk",
+            "version": "2.2.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/regenerate-thumbnails/",
-                "reference": "trunk"
+                "reference": "tags/2.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/regenerate-thumbnails.zip",
+                "url": "http://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -502,20 +495,19 @@
                 "wpackagist/regenerate-thumbnails": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/regenerate-thumbnails/",
-            "time": "2014-04-01 02:48:53"
+            "homepage": "http://wordpress.org/plugins/regenerate-thumbnails/"
         },
         {
             "name": "wpackagist-plugin/show-template",
-            "version": "dev-trunk",
+            "version": "1.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/show-template/",
-                "reference": "trunk"
+                "reference": "tags/1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/show-template.zip",
+                "url": "http://downloads.wordpress.org/plugin/show-template.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -526,20 +518,19 @@
                 "wpackagist/show-template": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/show-template/",
-            "time": "2010-09-12 16:14:35"
+            "homepage": "http://wordpress.org/plugins/show-template/"
         },
         {
             "name": "wpackagist-plugin/simple-page-ordering",
-            "version": "dev-trunk",
+            "version": "2.2.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/simple-page-ordering/",
-                "reference": "trunk"
+                "reference": "tags/2.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/simple-page-ordering.zip",
+                "url": "http://downloads.wordpress.org/plugin/simple-page-ordering.2.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -550,20 +541,19 @@
                 "wpackagist/simple-page-ordering": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/simple-page-ordering/",
-            "time": "2014-04-06 21:31:46"
+            "homepage": "http://wordpress.org/plugins/simple-page-ordering/"
         },
         {
             "name": "wpackagist-plugin/tc-custom-taxonomy-filter",
-            "version": "dev-trunk",
+            "version": "1.3.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/tc-custom-taxonomy-filter/",
-                "reference": "trunk"
+                "reference": "tags/1.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/tc-custom-taxonomy-filter.zip",
+                "url": "http://downloads.wordpress.org/plugin/tc-custom-taxonomy-filter.1.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -574,20 +564,19 @@
                 "wpackagist/tc-custom-taxonomy-filter": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/tc-custom-taxonomy-filter/",
-            "time": "2013-11-08 16:39:50"
+            "homepage": "http://wordpress.org/plugins/tc-custom-taxonomy-filter/"
         },
         {
             "name": "wpackagist-plugin/theme-check",
-            "version": "dev-trunk",
+            "version": "20131213.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/theme-check/",
-                "reference": "trunk"
+                "reference": "tags/20131213.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/theme-check.zip",
+                "url": "http://downloads.wordpress.org/plugin/theme-check.20131213.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -598,20 +587,19 @@
                 "wpackagist/theme-check": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/theme-check/",
-            "time": "2014-01-16 23:19:13"
+            "homepage": "http://wordpress.org/plugins/theme-check/"
         },
         {
             "name": "wpackagist-plugin/wordpress-importer",
-            "version": "dev-trunk",
+            "version": "0.6.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wordpress-importer/",
-                "reference": "trunk"
+                "reference": "tags/0.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wordpress-importer.zip",
+                "url": "http://downloads.wordpress.org/plugin/wordpress-importer.0.6.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -622,20 +610,19 @@
                 "wpackagist/wordpress-importer": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/wordpress-importer/",
-            "time": "2014-01-14 20:31:13"
+            "homepage": "http://wordpress.org/plugins/wordpress-importer/"
         },
         {
             "name": "wpackagist-plugin/wp-siren-recent-posts-by-category",
-            "version": "dev-trunk",
+            "version": "1.0.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wp-siren-recent-posts-by-category/",
-                "reference": "trunk"
+                "reference": "tags/1.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wp-siren-recent-posts-by-category.zip",
+                "url": "http://downloads.wordpress.org/plugin/wp-siren-recent-posts-by-category.1.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -646,8 +633,7 @@
                 "wpackagist/wp-siren-recent-posts-by-category": "self.version"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/wp-siren-recent-posts-by-category/",
-            "time": "2013-04-12 09:17:39"
+            "homepage": "http://wordpress.org/plugins/wp-siren-recent-posts-by-category/"
         }
     ],
     "packages-dev": [
@@ -657,29 +643,10 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "wpackagist-plugin/add-from-server": 20,
-        "wpackagist-plugin/advanced-custom-fields": 20,
-        "wpackagist-plugin/admin-post-navigation": 20,
-        "wpackagist-plugin/black-studio-tinymce-widget": 20,
-        "wpackagist-plugin/co-authors-plus": 20,
-        "wpackagist-plugin/contact-form-7": 20,
-        "wpackagist-plugin/custom-tag-widget": 20,
-        "wpackagist-plugin/debug-bar": 20,
-        "wpackagist-plugin/flipboard-magazine-widget": 20,
-        "wpackagist-plugin/fv-top-level-cats": 20,
-        "wpackagist-plugin/google-analytics-for-wordpress": 20,
-        "wpackagist-plugin/latest-tweets-widget": 20,
-        "wpackagist-plugin/list-category-posts": 20,
-        "wpackagist-plugin/markdown-on-save": 20,
-        "wpackagist-plugin/regenerate-thumbnails": 20,
-        "wpackagist-plugin/show-template": 20,
-        "wpackagist-plugin/simple-page-ordering": 20,
-        "wpackagist-plugin/tc-custom-taxonomy-filter": 20,
-        "wpackagist-plugin/theme-check": 20,
-        "wpackagist-plugin/wordpress-importer": 20,
-        "wpackagist-plugin/wp-siren-recent-posts-by-category": 20
-    },
+    "stability-flags": [
+
+    ],
+    "prefer-stable": false,
     "platform": {
         "php": ">=5.3.0"
     },
