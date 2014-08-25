@@ -86,6 +86,11 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', true);
 
+/**
+ * Run Jetpack in development mode
+ */
+define( 'JETPACK_DEV_DEBUG', true);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
