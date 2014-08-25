@@ -2,7 +2,8 @@
  * News Archives & Single Page
  * (common properties)
  */
-.category-news {
+.category-news,
+.category-careers {
 
 	.entry-title {
 		color: $blue;
@@ -18,7 +19,8 @@
 /**
  * News Archives
  */
-body.category-news {
+body.category-news,
+body.page-careers {
 
 	.post {
 		min-height: 175px;
@@ -85,4 +87,13 @@ body.category-news {
 			@extend %category-tag;
 		}
 	}
+}
+
+
+/**
+ * Category Adjustment
+ */
+body.page-careers .post .entry-wrapper {
+	float: none;
+	width: 100%;
 }

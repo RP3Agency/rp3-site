@@ -391,8 +391,11 @@ var execute_next_step;
 					key		:	connection_info[1],
 					intent	:	intent,
 					nonce	:	wpmdb_nonces.verify_connection_to_remote_site,
+<<<<<<< HEAD
 					convert_post_type_selection		: wpmdb_convert_post_type_selection,
 					profile							: wpmdb_profile
+=======
+>>>>>>> 633807eab235841a44effd368e7a93cbb20dd659
 				},
 				error: function(jqXHR, textStatus, errorThrown){
 					$('.connection-status').html( wpmdb_i10n.connection_local_server_problem + ' (#102)' );

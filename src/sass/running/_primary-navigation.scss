@@ -1,10 +1,16 @@
 .main-navigation {
 	@extend %clearfix;
 	@extend %ir;
-	background-color: $gray;
+	background-color: map-get($blue_map, "normal");
+	border-top: 1px solid transparentize(#fff, 0.8);
 	display: none;
 	font-family: $roboto;
-	margin-top: 3px;
+	// height: ce(40px);
+	margin: 0 auto;
+	max-width: ce(1000px);
+	position: absolute;
+	width: 100%;
+	z-index: 1;
 
 	@include bp(medium) {
 		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
@@ -27,18 +33,17 @@
 				display: none;
 			}
 		}
-	}
 
-	.main-nav {
-		margin: 0 auto;
-		max-width: ce(1280px);
+		body.home & {
+			margin-bottom: 0;
+		}
 	}
 
 	ul {
 		@extend %clear-ul-formatting;
 
 		@include bp(medium) {
-			height: 70px;
+			height: ce(40px);
 
 			&.primary-menu-left {
 				float: left;
@@ -46,12 +51,6 @@
 
 			&.primary-menu-right {
 				float: right;
-			}
-		}
-
-		@include responsive("min-width: 700px") {
-			&.primary-menu-right a {
-				font-size: ce(16px);
 			}
 		}
 	}
@@ -63,11 +62,11 @@
 		}
 
 		a {
-			border-bottom: 1px solid mix(#fff, $gray, 20%);
+			border-bottom: 1px solid transparentize(#fff, 0.8);
 			color: #fff;
 			display: block;
-			font-size: ce(18px);
-			font-weight: $light;
+			font-size: ce(14px);
+			font-weight: $bold;
 			margin-right: 1px;
 			padding: 0.5em cp(10px, 320px);
 			text-decoration: none;
@@ -82,19 +81,20 @@
 			}
 
 			@include bp(medium) {
-				border-bottom: none;
-				height: 70px;
-				line-height: 70px;
-				padding: 0 12px;
-			}
+				border-bottom: 4px solid transparent;
+				height: ce(40px);
+				line-height: ce(40px);
+				margin: 0 12px;
+				padding: 0;
 
-			@include responsive("min-width: 700px") {
-				font-size: ce(24px);
+				@include hover-state {
+					border-bottom-color: map-get($blue_map, "darker");
+				}
 			}
 		}
 
 		&.current-menu-item a {
-			background-color: $blue;
+			border-bottom-color: map-get($blue_map, "darker");
 		}
 	}
 
@@ -105,8 +105,8 @@
 		background-image: url("../images/logo-white.svg");
 		display: none;
 		float: left;
-		height: 60px;
+		height: ce( 40px * 0.67 );
 		margin: 5px 0 5px 10px;
-		width: 83px;
+		// width: 83px;
 	}
 }

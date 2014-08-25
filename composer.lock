@@ -636,6 +636,29 @@
             "homepage": "http://wordpress.org/plugins/wordpress-importer/"
         },
         {
+            "name": "wpackagist-plugin/worker",
+            "version": "3.9.29",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/worker/",
+                "reference": "tags/3.9.29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/worker.3.9.29.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/worker": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/worker/"
+        },
+        {
             "name": "wpackagist-plugin/wp-siren-recent-posts-by-category",
             "version": "1.0.3",
             "source": {

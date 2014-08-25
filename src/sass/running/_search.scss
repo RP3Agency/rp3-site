@@ -10,7 +10,7 @@
 		border: 0;
 		float: left;
 		font-family: Roboto, sans-serif;
-		font-size: ce(18px, $default-font-size);
+		font-size: 1em;
 		font-weight: 300;
 		margin-right: 1ex;
 		padding: 0.25em 0.75em;
@@ -26,11 +26,11 @@
 		border: none;
 		color: #fff;
 		display: inline;
-		font-size: ce(40px, $default-font-size);
-		height: 40px;
-		line-height: 40px;
+		font-size: ce(25px);
+		height: 25px;
+		line-height: 25px;
 		padding: 0;
-		width: 40px;
+		width: 25px;
 
 		@include appearance(none);
 

@@ -1148,8 +1148,12 @@ class WPMDBPro extends WPMDBPro_Base {
 
 	function ajax_delete_migration_profile() {
 		$this->check_ajax_referer( 'delete-migration-profile' );
+<<<<<<< HEAD
 		$key = absint( $_POST['profile_id'] );
 		--$key;
+=======
+		$key = $_POST['profile_id'];
+>>>>>>> 633807eab235841a44effd368e7a93cbb20dd659
 		$return = '';
 		if ( isset( $this->settings['profiles'][$key] ) ) {
 			unset( $this->settings['profiles'][$key] );
@@ -1174,6 +1178,7 @@ class WPMDBPro extends WPMDBPro_Base {
 	// Responsible for contacting the remote website and retrieving info and testing the verification string
 	function ajax_verify_connection_to_remote_site() {
 		$this->check_ajax_referer( 'verify-connection-to-remote-site' );
+<<<<<<< HEAD
 		if ( !$this->is_valid_licence() ) {
 			$message = __( 'Please activate your license before attempting a pull or push migration.', 'wp-migrate-db-pro' );
 			$return = array( 'wpmdb_error' => 1, 'body' => $message );
@@ -1181,6 +1186,8 @@ class WPMDBPro extends WPMDBPro_Base {
 			return $result;
 		}
 
+=======
+>>>>>>> 633807eab235841a44effd368e7a93cbb20dd659
 		$data = array(
 			'action'  => 'wpmdb_verify_connection_to_remote_site',
 			'intent' => $_POST['intent']
@@ -2523,8 +2530,11 @@ class WPMDBPro extends WPMDBPro_Base {
 			var wpmdb_has_licence = '<?php echo ( $this->get_licence_key() == '' ? '0' : '1' ); ?>';
 			var wpmdb_write_permission = <?php echo ( is_writeable( $this->get_upload_info( 'path' ) ) ? 'true' : 'false' ); ?>;
 			var wpmdb_nonces = <?php echo json_encode( $nonces ); ?>;
+<<<<<<< HEAD
 			var wpmdb_valid_licence = '<?php echo ( $this->is_valid_licence() ) ? '1' : '0'; ?>';
 			var wpmdb_profile = '<?php echo ( isset( $_GET['wpmdb-profile'] ) ? $_GET['wpmdb-profile'] : '-1' ); ?>';
+=======
+>>>>>>> 633807eab235841a44effd368e7a93cbb20dd659
 			<?php do_action( 'wpmdb_js_variables' ); ?>
 		</script>
 		<?php
