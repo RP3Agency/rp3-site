@@ -5,22 +5,20 @@ var gulp			= require('gulp'),
 	jshint			= require('gulp-jshint'),
 	uglify			= require('gulp-uglify'),
 	rename			= require('gulp-rename'),
-	clean			= require('gulp-clean'),
+	rimraf			= require('gulp-rimraf'),
 	concat			= require('gulp-concat'),
-	notify			= require('gulp-notify'),
 	gutil			= require('gulp-util');
 
 // Styles
 gulp.task('styles', function() {
-	return gulp.src('src/sass/rp3.scss')
+	return gulp.src('src/sass/*.scss')
 		.pipe(sass({ style: 'expanded' }))
 		.on( 'error', gutil.log )
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-		.pipe(gulp.dest('css'))
+		.pipe(gulp.dest('wp-content/themes/rp3/css'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
-		.pipe(gulp.dest('css'))
-		.pipe(notify({ message: 'Styles task complete' }));
+		.pipe(gulp.dest('wp-content/themes/rp3/css'));
 });
 
 // Scripts task: JSHint & minify
@@ -32,8 +30,7 @@ gulp.task('scripts', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest('js'))
-		.pipe(notify({message: 'Scripts task complete'}));
+		.pipe(gulp.dest('wp-content/themes/rp3/js'));
 });
 
 // Scripts task: Plugins
@@ -43,8 +40,7 @@ gulp.task('scripts-plugins', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest('js'))
-		.pipe(notify({message: 'Scripts (plugins) task complete'}));
+		.pipe(gulp.dest('wp-content/themes/rp3/js'));
 });
 
 // Scripts task: Vendor
@@ -54,18 +50,17 @@ gulp.task('scripts-vendor', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest('js'))
-		.pipe(notify({message: 'Scripts (vendor) task complete'}));
+		.pipe(gulp.dest('wp-content/themes/rp3/js'));
 });
 
 // Clean
-gulp.task('clean', function() {
-	return gulp.src(['css'], {read: false})
-		.pipe(clean());
+gulp.task('rimraf', function() {
+	return gulp.src(['wp-content/themes/rp3/css', 'wp-content/themes/rp3/js'], { read: false })
+		.pipe(rimraf());
 });
 
 // Default
-gulp.task('default', ['clean'], function() {
+gulp.task('default', ['rimraf'], function() {
 	gulp.start('styles');
 	gulp.start('scripts');
 	gulp.start('scripts-plugins');
