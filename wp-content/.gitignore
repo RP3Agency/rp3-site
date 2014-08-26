@@ -4,3 +4,4 @@ plugins/*
 !plugins/rp3-mailchimp/
 !plugins/wp-migrate-db-pro/
 !plugins/wp-migrate-db-pro-media-files/
+debug.log
