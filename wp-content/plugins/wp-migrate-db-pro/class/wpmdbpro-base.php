@@ -28,17 +28,12 @@ class WPMDBPro_Base {
 		$this->addons = array(
 			'wp-migrate-db-pro-media-files/wp-migrate-db-pro-media-files.php' => array(
 				'name'				=> 'Media Files',
-<<<<<<< HEAD
 				'required_version'	=> '1.1.4',
 			),
 			'wp-migrate-db-pro-cli/wp-migrate-db-pro-cli.php' => array(
 				'name'				=> 'CLI',
 				'required_version'	=> '1.0',
 			)
-=======
-				'required_version'	=> '1.1.3',
-			) 
->>>>>>> 633807eab235841a44effd368e7a93cbb20dd659
 		);
 
 		$this->invalid_content_verification_error = __( 'Invalid content verification signature, please verify the connection information on the remote site and try again.', 'wp-migrate-db-pro' );
@@ -746,7 +741,6 @@ class WPMDBPro_Base {
 		return $this->plugin_file_path;
 	}
 
-<<<<<<< HEAD
 	function get_licence_status_message() {
 		$licence = $this->get_licence_key();
 		if( empty( $licence ) ) {
@@ -806,31 +800,14 @@ class WPMDBPro_Base {
 		if ( false === $result ) {
 			$return = array( 'wpmdb_error' => 1, 'body' => sprintf( __( 'Invalid nonce for: %s', 'wp-migrate-db-pro' ), $action ) );
 			$this->end_ajax( json_encode( $return ) );
-=======
-	function check_ajax_referer( $action ) {
-		$result = check_ajax_referer( $action, 'nonce', false );
-		if ( false === $result ) {
-			$return = array( 'wpmdb_error' => 1, 'body' => sprintf( __( 'Invalid nonce for: %s', 'wp-migrate-db-pro' ), $action ) );
-			$result = $this->end_ajax( json_encode( $return ) );
-			return $result;
->>>>>>> 633807eab235841a44effd368e7a93cbb20dd659
 		}
 
 		$cap = ( is_multisite() ) ? 'manage_network_options' : 'export';
 		$cap = apply_filters( 'wpmdb_ajax_cap', $cap );
 		if ( !current_user_can( $cap ) ) {
 			$return = array( 'wpmdb_error' => 1, 'body' => sprintf( __( 'Access denied for: %s', 'wp-migrate-db-pro' ), $action ) );
-<<<<<<< HEAD
 			$this->end_ajax( json_encode( $return ) );
 		}
 	}
 
 }
-=======
-			$result = $this->end_ajax( json_encode( $return ) );
-			return $result;
-		}
-	}
-
-}
->>>>>>> 633807eab235841a44effd368e7a93cbb20dd659

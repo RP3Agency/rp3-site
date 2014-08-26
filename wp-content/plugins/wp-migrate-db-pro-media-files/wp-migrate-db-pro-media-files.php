@@ -4,11 +4,7 @@ Plugin Name: WP Migrate DB Pro Media Files
 Plugin URI: http://deliciousbrains.com/wp-migrate-db-pro/
 Description: An extension to WP Migrate DB Pro, allows the migration of media files.
 Author: Delicious Brains
-<<<<<<< HEAD
-Version: 1.1.4
-=======
 Version: 1.1.3
->>>>>>> 633807eab235841a44effd368e7a93cbb20dd659
 Author URI: http://deliciousbrains.com
 Network: True
 */
@@ -24,15 +20,11 @@ Network: True
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // **********************************************************************
 
-<<<<<<< HEAD
-require_once 'version.php';
-=======
 $GLOBALS['wpmdb_meta']['wp-migrate-db-pro-media-files']['version'] = '1.1.3';
->>>>>>> 633807eab235841a44effd368e7a93cbb20dd659
 $GLOBALS['wpmdb_meta']['wp-migrate-db-pro-media-files']['folder'] = basename( plugin_dir_path( __FILE__ ) );
 
-function wp_migrate_db_pro_media_files_loaded() {
-	if ( ! class_exists( 'WPMDBPro_Addon' ) ) return;
+function wp_migrate_db_pro_media_files_init() {
+	if ( ! is_admin() || ! class_exists( 'WPMDBPro_Addon' ) ) return;
 
 	require_once 'class/wpmdbpro-media-files.php';
 
@@ -40,12 +32,4 @@ function wp_migrate_db_pro_media_files_loaded() {
 	$wpmdbpro_media_files = new WPMDBPro_Media_Files( __FILE__ );
 }
 
-add_action( 'plugins_loaded', 'wp_migrate_db_pro_media_files_loaded', 20 );
-
-function wp_migrate_db_pro_media_files_init() {
-	if ( ! class_exists( 'WPMDBPro_Addon' ) ) return;
-
-	load_plugin_textdomain( 'wp-migrate-db-pro-media-files', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-}
-
-add_action( 'admin_init', 'wp_migrate_db_pro_media_files_init', 20 );
+add_action( 'admin_init', 'wp_migrate_db_pro_media_files_init' );
