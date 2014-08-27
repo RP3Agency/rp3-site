@@ -59,13 +59,13 @@ gulp.task('scripts-vendor', function() {
 });
 
 // Clean
-gulp.task('rimraf', function() {
+gulp.task('clean', function() {
 	return gulp.src(['wp-content/themes/rp3/css', 'wp-content/themes/rp3/js'], { read: false })
 		.pipe(rimraf());
 });
 
 // Default
-gulp.task('default', ['rimraf'], function() {
+gulp.task('default', ['clean'], function() {
 	gulp.start('styles');
 	gulp.start('scripts');
 	gulp.start('scripts-plugins');
