@@ -1,5 +1,6 @@
 var gulp			= require('gulp'),
-	sass			= require('gulp-ruby-sass'),
+	// sass			= require('gulp-ruby-sass'),
+	compass			= require('gulp-compass'),
 	autoprefixer	= require('gulp-autoprefixer'),
 	minifycss		= require('gulp-minify-css'),
 	jshint			= require('gulp-jshint'),
@@ -12,7 +13,11 @@ var gulp			= require('gulp'),
 // Styles
 gulp.task('styles', function() {
 	return gulp.src('src/sass/*.scss')
-		.pipe(sass({ style: 'expanded' }))
+		.pipe(compass({
+			config_file: './config.rb',
+			css: 'wp-content/themes/rp3/css',
+			sass: 'src/sass'
+		}))
 		.on( 'error', gutil.log )
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
 		.pipe(gulp.dest('wp-content/themes/rp3/css'))
