@@ -4,25 +4,30 @@
 
 .header-container {
 	margin-bottom: 1em;
+
+	body.home & {
+		margin-bottom: 0;
+	}
 }
 
 .site-header {
-	background-color: #6b747c;
+	background-color: map-get($blue_map, "normal");
 	font-family: $roboto;
-	height: ce(76px);
+	height: ce(40px);
 	width: 100%;
 
 	@include bp(medium) {
-		background-color: #fff;
+		background-color: #f8f8f8;
+		height: ce(60px);
 		margin-bottom: 0;
 		position: relative;
 	}
 
 	.header-wrapper {
-		display: table;
+		display: block;
 		height: 100%;
 		margin: 0 auto;
-		max-width: ce(1280px);
+		max-width: ce(1000px);
 		width: 100%;
 	}
 
@@ -31,72 +36,43 @@
 	 */
 	
 	.site-branding {
-		display: table-row;
+		display: block;
+		height: 100%;
 	}
 
 	.site-title {
-		display: table-cell;
-		vertical-align: middle;
+		display: block;
+		float: left;
+		height: 100%;
+		width: 50%;
 
 		@include bp(medium) {
 			width: 87px;
 		}
 
 		.logo {
-			margin: 0 15px 0 10px;
-			width: 78px;
+			height: 67%;
+			margin: 6px 15px 0 10px;
 		}
 	}
 
-	.site-description {
-		color: #fff;
-		display: table-cell;
-		font-weight: $light;
-		padding-right: 10px;
-		text-transform: uppercase;
-		vertical-align: middle;
-
-	 	@include bp(medium) {
-	 		color: $black;
-	 		font-size: ce(18px);
-	 	}
-	}
-
 	.menu-open {
-		border-left: 1px solid mix(#fff, $gray, 20%);
+		@extend %genericon;
+		@extend %genericon-menu;
+		@extend %ir;
 		color: #fff;
-		display: table-cell;
+		display: block;
 		float: right;
-		font-size: ce(18px);
+		font-size: ce(24px);
 		height: 100%;
-		line-height: ( 76px / 18px );
+		line-height: (40px / 24px);
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
-		vertical-align: middle;
 		width: 80px;
 
 		&:before {
 			width: auto;
-		}
-
-		&.use-genericons {
-			@extend %genericon;
-			@extend %genericon-menu;
-			@extend %ir;
-			font-size: ce(36px);
-			height: ce(76px, 36px);
-			line-height: ( 76px / 36px );
-			text-align: center;
-			width: 90px;
-
-			&:before {
-				width: auto;
-			}
-		}
-
-		@include hover-state {
-			background-color: $blue;
 		}
 
 		@include bp(medium) {
