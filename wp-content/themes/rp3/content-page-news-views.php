@@ -50,7 +50,7 @@ $blog = new WP_Query( array(
 						<header class="entry-meta">
 							<div class="entry-category">Blog</div>
 
-							<?php if ( $counter == 0 ) : ?>
+							<?php if ( $counter < 2 ) : ?>
 								<div class="entry-featured-image"><?php the_post_thumbnail('thumb'); ?></div>
 							<?php endif; ?>
 
