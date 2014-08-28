@@ -9,7 +9,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 		$this->plugin_slug = 'wp-migrate-db-pro-media-files';
 		$this->plugin_version = $GLOBALS['wpmdb_meta']['wp-migrate-db-pro-media-files']['version'];
 
-		if( ! $this->meets_version_requirements( '1.4' ) ) return;
+		if( ! $this->meets_version_requirements( '1.4.2' ) ) return;
 
 		add_action( 'wpmdb_after_advanced_options', array( $this, 'migration_form_controls' ) );
 		add_action( 'wpmdb_load_assets', array( $this, 'load_assets' ) );
@@ -38,12 +38,12 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 
 		/*
 		* We determine which media files need migrating BEFORE the database migration is finalized.
-		* Because of this we need to scan the *_post & *_postmeta that are prefixed using the temporary prefix. 
+		* Because of this we need to scan the *_post & *_postmeta that are prefixed using the temporary prefix.
 		* Though this should only happen when we're responding to a get_remote_media_listing() call AND it's a push OR
 		* we're scanning local files AND it's a pull.
 		*/
 
-		if( 
+		if(
 			( true == $this->responding_to_get_remote_media_listing && $_POST['intent'] == 'push' ) ||
 			( false == $this->responding_to_get_remote_media_listing && $_POST['intent'] == 'pull' )
 		) {
@@ -131,7 +131,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 	function uploads_dir() {
 		if( defined( 'UPLOADBLOGSDIR' ) ) {
 			$upload_dir = trailingslashit( ABSPATH ) . UPLOADBLOGSDIR;
-		} 
+		}
 		else {
 			$upload_dir = wp_upload_dir();
 			$upload_dir = $upload_dir['basedir'];
@@ -147,7 +147,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 		$local_media = array();
 
 		foreach( $files as $name => $object ){
-			$name = str_replace( array( $upload_dir . DS, '\\' ), array( '', '/' ), $name );
+			$name = str_replace( array( $upload_dir . DIRECTORY_SEPARATOR, '\\' ), array( '', '/' ), $name );
 			$local_media[$name] = $object->getSize();
 		}
 
@@ -181,7 +181,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 		$errors = array();
 		foreach( $files_to_download as $file_to_download ) {
 			$temp_file_path = $this->download_url( $remote_uploads_url . $file_to_download );
-			
+
 			if( is_wp_error( $temp_file_path ) ) {
 				$download_error = $temp_file_path->get_error_message();
 				$errors[] = __( sprintf( 'Could not download file: %1$s - %2$s', $remote_uploads_url . $file_to_download, $download_error ), 'wp-migrate-db-pro-media-files' );
@@ -409,7 +409,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 			if( false === isset( $allowed_mime_types[$filetype['type']] ) ) continue;
 			// don't remove files that exist on the remote site
 			if( true === isset( $flat_remote_attachments[$local_media_file] ) ) continue;
-			
+
 			@unlink( $upload_dir . $local_media_file );
 		}
 	}
@@ -499,7 +499,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 		$src = $plugins_url . 'asset/js/script.js';
 		$version = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? time() : $this->plugin_version;
 		wp_enqueue_script( 'wp-migrate-db-pro-media-files-script', $src, array( 'jquery', 'wp-migrate-db-pro-common', 'wp-migrate-db-pro-hook', 'wp-migrate-db-pro-script' ), $version, true );
-	
+
 		wp_localize_script( 'wp-migrate-db-pro-media-files-script', 'wpmdbmf_strings', array(
 			'determining'				=> __( "Determining which media files to migrate, please wait...", 'wp-migrate-db-pro-media-files' ),
 			'error_determining'			=> __( "Error while attempting to determine which media files to migrate.", 'wp-migrate-db-pro-media-files' ),
@@ -535,7 +535,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 		return false;
 	}
 
-	function get_blogs() { 
+	function get_blogs() {
 		global $wpdb;
 
 		$blogs = $wpdb->get_results(
@@ -567,7 +567,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 		}
 
 		$sslverify = ( 1 == $this->settings['verify_ssl'] ) ? true : false;
-		$args = array( 
+		$args = array(
 			'timeout' => $timeout,
 			'stream' => true,
 			'filename' => $tmpfname,
@@ -637,7 +637,7 @@ class WPMDBPro_Media_Files extends WPMDBPro_Addon {
 		$this->set_time_limit();
 		$wpmdbpro->set_cli_migration();
 		$this->set_cli_migration();
-		
+
 		$connection_info = explode( "\n", $profile['connection_info'] );
 
 		$_POST['intent'] = $profile['action'];
