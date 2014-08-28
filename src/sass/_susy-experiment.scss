@@ -26,7 +26,9 @@ body.page-news-views {
 	// Styling (typography, borders, etc.)
 	@extend %roboto-thin;
 	color: #333;
+	// font-family: $roboto;
 	font-size: cr(12px);
+	// font-weight: 300;
 
 	strong {
 		font-weight: $medium;
@@ -93,6 +95,7 @@ body.page-news-views {
 
 		&-title {
 			margin-bottom: 1em;
+			text-transform: none;
 		}
 	}
 
