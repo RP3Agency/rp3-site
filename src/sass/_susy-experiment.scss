@@ -1,0 +1,53 @@
+@import "susy";
+
+
+/* ==========================================================================
+   Susy variables
+   ========================================================================== */
+$susy: (
+	columns: 24,
+	container: 1000px,
+	gutters: 0
+);
+
+body.page-news-views {
+
+	// Styling (typography, borders, etc.)
+
+	.articles article {
+		border: solid gray;
+		border-width: 1px 1px 0 0;
+	}
+
+	.blog a {
+		color: $black;
+		display: block;
+		padding: cp(30px, 1000px);
+		text-decoration: none;
+		transition: background-color 0.1s linear;
+
+		@include hover-state {
+			background-color: transparentize(black, 0.8);
+		}
+	}
+
+
+	// Susy layout
+
+	.row {
+		@include container;
+	}
+
+	.blog {
+		@include span(16);
+
+		.row:nth-of-type(3) article {
+			@include span(12);
+		}
+	}
+
+	.news.twitter {
+		@include span(last 8);
+	}
+}
+
