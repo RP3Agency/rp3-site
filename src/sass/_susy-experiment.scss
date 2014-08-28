@@ -1,0 +1,128 @@
+@import "susy";
+@import "breakpoint";
+
+
+/* ==========================================================================
+   Susy settings
+   ========================================================================== */
+$susy: (
+	columns: 24,
+	container: 1000px,
+	gutters: 0
+);
+
+
+/* ==========================================================================
+   Breakpoint settings
+   ========================================================================== */
+
+$breakpoint-to-ems: true;
+
+
+
+
+body.page-news-views {
+
+	// Styling (typography, borders, etc.)
+	@extend %roboto-thin;
+	color: #333;
+	// font-family: $roboto;
+	font-size: cr(12px);
+	// font-weight: 300;
+
+	strong {
+		font-weight: $medium;
+	}
+
+	.page-title {
+		color: $black;
+		font-size: cr(36px);
+		font-weight: 300;
+		text-transform: none;
+	}
+
+	.articles article {
+		border: solid #ccc;
+		border-width: 1px 0 0 0;
+
+		@include breakpoint(600px) {
+			border-right-width: 1px;
+		}
+
+		&.twitter {
+			background-color: transparentize(#55acee, 0.95);
+			padding: cp(30px, 1000px);
+		}
+
+		&.blog a,
+		&.news a {
+			color: $black;
+			display: block;
+			padding: cp(30px, 1000px);
+			text-decoration: none;
+		}
+
+		&.blog a {
+			transition: background-color 0.1s linear;
+
+			@include hover-state {
+				background-color: transparentize(black, 0.95);
+			}
+		}
+
+		&.news a {
+			background-color: #f8f8f8;
+		}
+	}
+
+
+	.entry {
+		&-content {
+			font-size: cr(16px);
+		}
+
+		&-category {
+			font-size: cr(9px);
+			font-weight: $medium;
+			margin: 2em 0;
+			text-transform: uppercase;
+		}
+
+		&-featured-image,
+		&-gravatar {
+			margin-bottom: 1em;
+		}
+
+		&-title {
+			margin-bottom: 1em;
+			text-transform: none;
+		}
+	}
+
+	footer.entry-meta {
+		margin: 4em 0 2em;
+	}
+
+
+	// Susy layout
+
+	.row {
+		@include container;
+	}
+
+
+	@include breakpoint(600px) {
+		.blog-column {
+			@include span(16);
+
+			.row:nth-of-type(3) article {
+				@include span(12);
+			}
+		}
+
+		.news-twitter-column {
+			@include span(last 8);
+		}
+	}
+}
+

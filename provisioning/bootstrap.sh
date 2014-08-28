@@ -31,8 +31,11 @@ echo "Installing Ruby"
 apt-get install -y ruby-full build-essential
 apt-get install -y rubygems
 
-echo "Installing Sass"
+echo "Installing Sass and other Sass-related things"
 gem install sass
+gem install susy
+gem install compass
+gem install breakpoint
 
 # echo "Running gulp for build compilation"
 # cd /vagrant
