@@ -100,7 +100,7 @@ $blog = new WP_Query( array(
 
 			<article class="news">
 
-				<a href="<?php get_the_permalink(); ?>">
+				<a href="<?php echo esc_url( get_the_permalink() ); ?>">
 
 					<header class="entry-meta">
 						<div class="entry-category">News</div>
