@@ -155,3 +155,21 @@ function rp3_category_transient_flusher() {
 }
 add_action( 'edit_category', 'rp3_category_transient_flusher' );
 add_action( 'save_post',     'rp3_category_transient_flusher' );
+
+
+
+/**
+ * Custom "Written by..." template tag
+ */
+function rp3_written_by( $post_type, $post_id ) {
+
+	$written_by = 'Written by ';
+
+	$written_by .= '<strong>' . get_the_author() . '</strong> ';
+
+	$written_by .= 'on ' . get_the_date() . '.';
+
+	return $written_by;
+
+	// Written by <strong>the_author()</strong> on get_the_date() in get_the_category_list(', ').
+}
