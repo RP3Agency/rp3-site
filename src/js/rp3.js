@@ -108,7 +108,7 @@ var rp3 = (function($) {
 		// homePagePanelSizes();
 		
 		$(window).on( 'scroll', function() {
-			navigationAnchor();
+			// navigationAnchor();
 			// homePagePanelSizes();
 		});
 
