@@ -36,6 +36,25 @@
 %genericon-location:before {        content: '\f417'; }
 
 
+
+
+$roboto: Roboto, sans-serif;
+
+$thin: 100;
+$medium: 500;
+
+
+%roboto-thin {
+	font-family: $roboto;
+	font-weight: $thin;
+}
+
+%roboto-medium {
+	font-family: $roboto;
+	font-weight: $medium;
+}
+
+
 /*--------------------------------------------------------------
 General Typography
 --------------------------------------------------------------*/
