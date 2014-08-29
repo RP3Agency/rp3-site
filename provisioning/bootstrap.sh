@@ -4,9 +4,9 @@
 MYSQL_PASS="password"
 DEV_URL="http://rp3-website.dev/_wp"
 DEV_TITLE="RP3 Agency"
-DEV_ADMIN_USER=trotton
+DEV_ADMIN_USER=admin
 DEV_ADMIN_PASSWORD=password
-DEV_ADMIN_EMAIL=trotton@rp3agency.com
+DEV_ADMIN_EMAIL=analytics@rp3agency.com
 
 
 
@@ -48,6 +48,7 @@ rm -rf /var/www
 ln -fs /vagrant /var/www
 a2enmod rewrite
 sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/sites-enabled/000-default
+sed -i 's/www-data/vagrant/' /etc/apache2/envvars
 
 echo "Installing php5..."
 apt-get install -y php5 >/dev/null 2>&1
@@ -64,7 +65,6 @@ mv composer.phar /usr/bin/composer
 
 echo "Installing packages from composer"
 cd /var/www
-composer update
 composer install
 
 echo "Installing mysql..."
