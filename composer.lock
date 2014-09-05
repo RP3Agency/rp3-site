@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0a771adc5a95c294b4490a79870834af",
+    "hash": "f6ed3d42e25448fe2ebdbcec19c11945",
     "packages": [
         {
             "name": "composer/installers",
@@ -140,10 +140,10 @@
         },
         {
             "name": "wordpress",
-            "version": "3.9.2",
+            "version": "4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/3.9.2.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -269,15 +269,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "3.9.1",
+            "version": "3.9.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/3.9.1"
+                "reference": "tags/3.9.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/contact-form-7.3.9.1.zip",
+                "url": "http://downloads.wordpress.org/plugin/contact-form-7.3.9.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -315,15 +315,15 @@
         },
         {
             "name": "wpackagist-plugin/debug-bar",
-            "version": "0.8.1",
+            "version": "0.8.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/debug-bar/",
-                "reference": "tags/0.8.1"
+                "reference": "tags/0.8.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.1.zip",
+                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -384,15 +384,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "4.3.5",
+            "version": "5.0.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/4.3.5"
+                "reference": "tags/5.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.4.3.5.zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.0.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -453,15 +453,15 @@
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.50.3",
+            "version": "0.51",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.50.3"
+                "reference": "tags/0.51"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/list-category-posts.0.50.3.zip",
+                "url": "http://downloads.wordpress.org/plugin/list-category-posts.0.51.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -637,15 +637,15 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "3.9.29",
+            "version": "3.9.30",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
-                "reference": "tags/3.9.29"
+                "reference": "tags/3.9.30"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/worker.3.9.29.zip",
+                "url": "http://downloads.wordpress.org/plugin/worker.3.9.30.zip",
                 "reference": null,
                 "shasum": null
             },
