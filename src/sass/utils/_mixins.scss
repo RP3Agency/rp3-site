@@ -20,3 +20,8 @@
 	$color-test: rgba(255, 0, 255, 0.2);
 	background-color: adjust-hue($color-test, $adjustment * 1deg);
 }
+
+@mixin side-padding {
+    padding-left: percentage(60px / 2000px);
+    padding-right: percentage(60px / 2000px);
+}

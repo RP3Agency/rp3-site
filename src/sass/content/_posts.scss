@@ -4,45 +4,45 @@
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-}
-.hentry {
-	margin: 0 0 1.5em;
-}
-.byline,
-.updated {
-	display: none;
-}
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-.page-content,
-// .entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
+// .sticky {
+// }
+// .hentry {
+// 	margin: 0 0 1.5em;
+// }
+// .byline,
+// .updated {
+// 	display: none;
+// }
+// .single .byline,
+// .group-blog .byline {
+// 	display: inline;
+// }
+// .page-content,
+// // .entry-content,
+// .entry-summary {
+// 	margin: 1.5em 0 0;
+// }
+// .page-links {
+// 	clear: both;
+// 	margin: 0 0 1.5em;
+// }
 
-.post {
-	> a {
-		color: inherit;
-		display: block;
-		text-decoration: none;
+// .post {
+// 	> a {
+// 		color: inherit;
+// 		display: block;
+// 		text-decoration: none;
 
-		.entry-title {
-			color: $blue;
-		}
+// 		.entry-title {
+// 			color: $blue;
+// 		}
 
-		&:hover,
-		&:active,
-		&:focus {
-			.entry-title {
-				color: $pink;
-			}
-		}
-	}
-}
+// 		&:hover,
+// 		&:active,
+// 		&:focus {
+// 			.entry-title {
+// 				color: $pink;
+// 			}
+// 		}
+// 	}
+// }

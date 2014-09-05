@@ -42,14 +42,14 @@ input,
 select,
 textarea {
 	color: $black;
-	font-family: $lato;
-	line-height: 1.5;
+	line-height: (44 / 24);
+	@include font($roboto, $light);
 }
 p {
-	margin-bottom: 1.5em;
+	margin: 1.5em 0;
 }
 b, strong {
-	font-weight: $bold;
+	font-weight: $normal;
 }
 dfn, cite, em, i {
 	font-style: italic;
@@ -63,7 +63,6 @@ address {
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
 	font-size: 1.5rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
@@ -103,5 +102,5 @@ big {
 	font-size: 125%;
 }
 
-@import "headers";
 @import "genericons";
+@import "headers";
