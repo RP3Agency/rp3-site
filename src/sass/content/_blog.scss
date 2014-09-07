@@ -15,14 +15,19 @@
 
 	.post.category-blog {
 
-		// Add left margin
-		.entry-header,
-		.entry-content,
-		.entry-footer {
-			margin-left: percentage(60px / 2000px);
+		// Add left padding
+		@include breakpoint($bp-medium) {
+			.entry-header,
+			.entry-content,
+			.entry-footer {
+				padding-left: percentage(60px / 2000px);
+			}
 		}
 
-		border-bottom: 1px solid map-get($gray_map, light);
+		.entry-content {
+			border-bottom: 1px solid map-get($gray_map, light);
+			margin-bottom: 1.5em;
+		}
 
 		p {
 			width: percentage( 1100px / 1880px );
@@ -30,6 +35,25 @@
 	}
 }
 
+
+/**
+ * Author
+ */
+.author-wrap {
+	@include container;
+
+	.author-gravatar {
+		@include span(3);
+	}
+
+	.author-info {
+		@include span(21 last);
+
+		.author-title {
+			font-weight: $normal;
+		}
+	}
+}
 
 
 

@@ -32,19 +32,14 @@ get_header(); ?>
 
 			endif;
 
-			?>
+			// if ( has_category('blog') ) :
 
-			<?php rp3_post_nav(); ?>
+			// 	// If comments are open or we have at least one comment, load up the comment template
+			// 	if ( comments_open() || '0' != get_comments_number() ) :
+			// 		comments_template();
+			// 	endif;
 
-			<?php
-				if ( has_category('blog') ) :
-
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
-					endif;
-
-				endif;
+			// endif;
 			?>
 
 		<?php endwhile; // end of the loop. ?>
@@ -60,7 +55,7 @@ if ( has_category('news') ) {
 
 } elseif ( has_category( 'blog' ) ) {
 
-	get_sidebar( 'blog' );
+	// get_sidebar( 'blog' );
 
 } elseif ( has_category( 'careers' ) ) {
 
