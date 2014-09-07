@@ -70,32 +70,32 @@ $default-font-size: 14px !default;
 // You'll need to change "min-width" to "max-width" if you're
 // working from the desktop down.
 
-@mixin breakpoint($breakpoint, $media: all) {
+// @mixin breakpoint($breakpoint, $media: all) {
 
-	// Change these values as required
-	$medium: 640px / 16px * 1em;
-	$bp-768: 768px / 16px * 1em;
-	$large: 1024px / 16px * 1em;
-	$xlarge: 1280px / 16px * 1em;
+// 	// Change these values as required
+// 	$medium: 640px / 16px * 1em;
+// 	$bp-768: 768px / 16px * 1em;
+// 	$large: 1024px / 16px * 1em;
+// 	$xlarge: 1280px / 16px * 1em;
 
-	@if $breakpoint == medium {
-		@media only #{$media} and (min-width: $medium) {
-			@content;
-		}
-	} @else if $breakpoint == bp-768 {
-		@media only #{$media} and (min-width: $bp-768) {
-			@content;
-		}
-	} @else if $breakpoint == large {
-		@media only #{$media} and (min-width: $large) {
-			@content;
-		}
-	} @else if $breakpoint == xlarge {
-		@media only #{$media} and (min-width: $xlarge) {
-			@content;
-		}
-	}
-}
+// 	@if $breakpoint == medium {
+// 		@media only #{$media} and (min-width: $medium) {
+// 			@content;
+// 		}
+// 	} @else if $breakpoint == bp-768 {
+// 		@media only #{$media} and (min-width: $bp-768) {
+// 			@content;
+// 		}
+// 	} @else if $breakpoint == large {
+// 		@media only #{$media} and (min-width: $large) {
+// 			@content;
+// 		}
+// 	} @else if $breakpoint == xlarge {
+// 		@media only #{$media} and (min-width: $xlarge) {
+// 			@content;
+// 		}
+// 	}
+// }
 
 
 // bp: alias for breakpoint
