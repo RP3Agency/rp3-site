@@ -39,7 +39,6 @@ $lightGray: #666;
 		@include breakpoint($bp-large) {
 			bottom: 0;
 			left: 0;
-			position: absolute;
 			right: 0;
 			top: 0;
 			transform: none;
@@ -141,8 +140,6 @@ $lightGray: #666;
 		}		
 
 		@include breakpoint($bp-large) {
-			margin-bottom: 0.5em;
-			position: absolute;
 			left: 70%;
 			top: 85%;
 		}
