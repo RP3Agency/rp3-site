@@ -7,9 +7,9 @@ var rp3 = (function($) {
 	var 
 
 	showMainNav = function() {
-		var $siteNavigation = $('#site-navigation');
+		var $primaryMenu = $('#primary-menu');
 
-		$siteNavigation.slideToggle();
+		$primaryMenu.slideToggle();
 	},
 	toggleNavigation = function() {
 		var $menuOpen = $("#menu-open");
@@ -20,10 +20,10 @@ var rp3 = (function($) {
 		});
 	},
 	forcePrimaryNav = function() {
-		var $siteNavigation = $('#site-navigation');
+		var $primaryMenu = $('#primary-menu');
 
 		if ( Modernizr.mq( '(min-width: 40em)' ) ) {
-			$siteNavigation.removeAttr('style');
+			$primaryMenu.removeAttr('style');
 		}
 	},
 
@@ -93,8 +93,8 @@ var rp3 = (function($) {
 			panelHeight = 0,
 			$panels = $("#introduction");
 
-// console.log( 'windowHeight : ' + windowHeight );
-// console.log( 'headerHeight : ' + headerHeight );
+		// console.log( 'windowHeight : ' + windowHeight );
+		// console.log( 'headerHeight : ' + headerHeight );
 
 		panelHeight = windowHeight - headerHeight;
 
@@ -103,8 +103,8 @@ var rp3 = (function($) {
 
 	init = function() {
 		toggleNavigation();
-		showHideSearch();
-		showHidePeople();
+		// showHideSearch();
+		// showHidePeople();
 		// homePagePanelSizes();
 		
 		$(window).on( 'scroll', function() {
