@@ -1,0 +1,13 @@
+/**
+ * Headers (H1, H2, etc.)
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	line-height: 1.2;
+}
+
+h1 {
+	margin: ce(15px, 30px) 0;
+	@include font($roboto, $thin, ce(30px));
+}

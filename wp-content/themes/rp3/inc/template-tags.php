@@ -160,16 +160,107 @@ add_action( 'save_post',     'rp3_category_transient_flusher' );
 
 /**
  * Custom "Written by..." template tag
+ *
+ * $type: news (default) or blog. news posts have (sub)categories, blogs have tags.
+ * 
+ * $page_type: if 'single', link the author(s) and categories (if any).
+ * Otherwise, assume this is an archive page and don't link them
+ * (because the whole tile will be linked to the article)
  */
-function rp3_written_by( $post_type, $post_id ) {
+if ( ! function_exists( 'rp3_byline' ) ) {
 
-	$written_by = 'Written by ';
+	function rp3_byline( $type = 'news', $page_type = false ) {
 
-	$written_by .= '<strong>' . get_the_author() . '</strong> ';
+		// Author(s)
 
-	$written_by .= 'on ' . get_the_date() . '.';
+		$byline = 'Written by ';
 
-	return $written_by;
+		if ( $page_type == 'single' ) {
+			// Check if we're using Co-Authors Plus
+			if ( class_exists( 'CoAuthorsIterator' ) ) {
+				$i = new CoAuthorsIterator();
+				$i->iterate();
+				$byline .= rp3_link_to_author_posts( get_the_author_meta( 'ID' ) );
+				while($i->iterate()){
+					$byline .= $i->is_last() ? '<span> and </span>' : '<span>, </span>';
+					$byline .= rp3_link_to_author_posts( get_the_author_meta( 'ID' ) );
+				}
+			} else {
+				$byline .= rp3_link_to_author_posts( get_the_author_meta( 'ID' ) );
+			}
+		} else {
+			if ( class_exists( 'CoAuthorsIterator' ) ) {
+				$i = new CoAuthorsIterator();
+				$i->iterate();
+				$byline .= get_the_author();
+				while($i->iterate()){
+					$byline .= $i->is_last() ? '<span> and </span>' : '<span>, </span>';
+					$byline .= get_the_author();
+				}
+			} else {
+				$byline .= get_the_author();
+			}
+		}
 
-	// Written by <strong>the_author()</strong> on get_the_date() in get_the_category_list(', ').
+		// Date
+
+		$byline .= ' on ' . get_the_date();
+
+		// Taxonomy
+
+		if ( $type == 'blog' ) {
+			$byline .= ' in ';
+
+			$tags = get_the_tags();
+
+			$counter = 0;
+
+			if ( $page_type == 'single' ) {
+				foreach( $tags as $tag ) {
+					if ( $counter > 0 ) {
+						$byline .= ', <a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a>';
+					} else {
+						$byline .= '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a>';
+					}
+
+					$counter++;
+				}
+			} else {
+				foreach( $tags as $tag ) {
+					if ( $counter > 0 ) {
+						$byline .= ', ' . $tag->name;
+					} else {
+						$byline .= $tag->name;
+					}
+
+					$counter++;
+				}
+			}
+
+			$byline .= '.';
+		} else {
+			$byline .= ' in [categories TK].';
+		}
+
+		return $byline;
+	}
+
 }
+
+
+if ( ! function_exists( 'rp3_link_to_author_posts' ) ) {
+	function rp3_link_to_author_posts( $id ) {
+		$link  = '<a href="' . esc_url( get_author_posts_url( $id ) ) . '">';
+		$link .= get_the_author_meta( 'user_firstname' ) . ' ' . get_the_author_meta( 'user_lastname' );
+		$link .= '</a>';
+
+		return $link;
+	}
+}
+
+/*
+<?php the_time( get_option('date_format') ); ?>
+<span><?php _e('by', 'rp3') ?></span> 
+<?php
+?>
+*/

@@ -60,7 +60,7 @@ $blog = new WP_Query( array(
 						<?php the_excerpt(); ?>
 
 						<footer class="entry-meta">
-							<div><?php echo rp3_written_by( get_the_ID() ); ?></div>
+							<div><?php echo rp3_byline( 'blog', 'archive' ); ?></div>
 						</footer>
 
 					</a>

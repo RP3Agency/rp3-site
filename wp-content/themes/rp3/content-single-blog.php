@@ -5,26 +5,22 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<!-- Article Header -->
+
 	<header class="entry-header">
+
+		<a href="<?php echo esc_url( home_url( '/news-views/' ) ); ?>" class="entry-back">Back to Articles</a>
+
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
-			<?php the_time( get_option('date_format') ); ?>
-			<span><?php _e('by', 'rp3') ?></span> 
-			<?php
-				$i = new CoAuthorsIterator();
-			    $i->iterate();
-			    // the_author_posts_link();
-			    the_author();
-			    while($i->iterate()){
-			    	print $i->is_last() ? '<span> and </span>' : '<span>, </span>';
-			    	// the_author_posts_link();
-			    	the_author();
-			    }
-			?>
-		<!-- // .entry-meta -->
+			<?php echo rp3_byline( 'blog', 'single' ); ?>
 		</div>
-	</header><!-- .entry-header -->
+		<!-- // .entry-meta -->
+
+	</header>
+	<!-- .entry-header -->
 
 	<?php the_post_thumbnail(); ?>
 
@@ -36,40 +32,10 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
+	</div>
+	<!-- .entry-content -->
 
 	<footer class="entry-footer">
-
-
-		<!--BEGIN .author-bio-->
-		<div class="author-bio">
-
-			<!-- BEGIN .author-inner -->
-			<div class="author-inner clearfix">
-
-				<?php
-					$links = get_the_coauthor_meta('user_url');
-					$desc = get_the_coauthor_meta('description');
-					$i = new CoAuthorsIterator();
-					$authors = $i->get_all();
-					foreach($authors as $author){
-						print '<div class="author-wrap clearfix">';
-						//print_r($author);
-						echo get_avatar( $author->user_email, '70' );
-						print '<div class="author-info"><div class="author-title">';
-						// echo '<a href="' . get_author_posts_url( $author->ID ) . '">' . get_the_author_meta( 'display_name', $author->ID ) . '</a>';
-						echo get_the_author_meta( 'display_name', $author->ID );
-						print '</div><div class="author-description">'.$desc[$author->ID].'</div>';
-						print '</div>';
-						print '</div>';
-					}
-				?>
-
-			<!-- END .author-inner -->
-			</div>
-
-		<!--END .author-bio-->
-		</div>
 
 		<?php
 			/* translators: used between list items, there is a space after the comma */
@@ -89,7 +55,7 @@
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
-					$meta_text = __( '<span class="entry-categories">Tagged:</span> %2$s', 'rp3' );
+					$meta_text = __( '<p><span class="entry-categories">Tagged:</span> %2$s</p>', 'rp3' );
 				} else {
 					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'rp3' );
 				}
@@ -104,5 +70,46 @@
 			);
 		?>
 
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+		<!--BEGIN .author-bio-->
+		<div class="author-bio">
+
+			<!-- BEGIN .author-inner -->
+			<div class="author-inner">
+
+				<?php
+				if ( class_exists( CoAuthorsIterator ) ) {
+					$links = get_the_coauthor_meta('user_url');
+					$desc = get_the_coauthor_meta('description');
+					$i = new CoAuthorsIterator();
+					$authors = $i->get_all();
+					foreach($authors as $author){
+						print '<div class="author-wrap">';
+						echo '<div class="author-gravatar">' . get_avatar( $author->user_email, '70' ) . '</div>';
+						print '<div class="author-info"><div class="author-title">';
+						echo get_the_author_meta( 'display_name', $author->ID );
+						print '</div><div class="author-description">'.$desc[$author->ID].'</div>';
+						print '</div>';
+						print '</div>';
+					}
+				} else {
+					print '<div class="author-wrap">';
+					echo '<div class="author-gravatar">' . get_avatar( get_the_author_meta( 'email', get_the_author_id() ), '70' ) . '</div>';
+					print '<div class="author-info"><div class="author-title">';
+					echo get_the_author_meta( 'display_name', get_the_author_id() );
+					print '</div><div class="author-description">' . get_the_author_meta( 'description', get_the_author_id() ) . '</div>';
+					print '</div>';
+					print '</div>';
+				}
+				?>
+
+			</div>
+			<!-- // .author-inner -->
+
+		</div>
+		<!--// .author-bio-->
+
+	</footer>
+	<!-- // .entry-footer -->
+
+</article>
+<!-- #post-## -->

@@ -1,104 +1,104 @@
-.people {
-	margin-bottom: 2em;
+// .people {
+// 	margin-bottom: 2em;
 
-	.row {
-		margin-bottom: 0;
+// 	.row {
+// 		margin-bottom: 0;
 
-		@include bp(medium) {
-			align-items: stretch;
-			display: flex;
-			justify-content: space-between;
-		}
+// 		@include bp(medium) {
+// 			align-items: stretch;
+// 			display: flex;
+// 			justify-content: space-between;
+// 		}
 
-		&:last-of-type article,
-		&:last-of-type .spacer {
-			border-bottom-width: 1px;
-		}
-	}
+// 		&:last-of-type article,
+// 		&:last-of-type .spacer {
+// 			border-bottom-width: 1px;
+// 		}
+// 	}
 
-	article,
-	.spacer {
-		background-color: $gray;
-		border: solid mix(#000, $gray, 50%);
-		border-width: 1px 1px 0 0;
-		flex: 1;
-		height: 300px;
-		margin-bottom: 0;
-		overflow: hidden;
+// 	article,
+// 	.spacer {
+// 		background-color: $gray;
+// 		border: solid mix(#000, $gray, 50%);
+// 		border-width: 1px 1px 0 0;
+// 		flex: 1;
+// 		height: 300px;
+// 		margin-bottom: 0;
+// 		overflow: hidden;
 
-		&:first-child {
-			border-left-width: 1px;
-		}
-	}
+// 		&:first-child {
+// 			border-left-width: 1px;
+// 		}
+// 	}
 
-	article {
-		background-repeat: no-repeat;
-		background-size: auto 100%;
-		cursor: pointer;
-		position: relative;
+// 	article {
+// 		background-repeat: no-repeat;
+// 		background-size: auto 100%;
+// 		cursor: pointer;
+// 		position: relative;
 
-		@each $person, $anchor in $people {
-			&.#{$person} {
-				background-position: $anchor top;
-			}
-		}
-	}
+// 		@each $person, $anchor in $people {
+// 			&.#{$person} {
+// 				background-position: $anchor top;
+// 			}
+// 		}
+// 	}
 
-	.spacer {
-		display: none;
+// 	.spacer {
+// 		display: none;
 
-		@include bp(medium) {
-			background: url("../images/grid-bg-light.gif");
-			display: block;
+// 		@include bp(medium) {
+// 			background: url("../images/grid-bg-light.gif");
+// 			display: block;
 
-			@for $i from 1 through 9 {
-				&.space-#{$i} {
-					background-image: 
-						linear-gradient( to bottom, transparentize( #000, 0.5 ), transparentize( #000, 0.5 ) ),
-						url("../images/space/space-#{$i}.jpg");
-					background-position: left top, left center;
-					background-repeat: repeat, no-repeat;
-					background-size: auto auto, auto 100%;
-				}
-			}
-		}
-	}
+// 			@for $i from 1 through 9 {
+// 				&.space-#{$i} {
+// 					background-image: 
+// 						linear-gradient( to bottom, transparentize( #000, 0.5 ), transparentize( #000, 0.5 ) ),
+// 						url("../images/space/space-#{$i}.jpg");
+// 					background-position: left top, left center;
+// 					background-repeat: repeat, no-repeat;
+// 					background-size: auto auto, auto 100%;
+// 				}
+// 			}
+// 		}
+// 	}
 
-	.caption {
-		background-color: rgba(0, 0, 0, 0.5);
-		bottom: 0;
-		color: #fff;
-		left: 0;
-		padding: 10px;
-		position: absolute;
-		right: 0;
-		top: 75%;
-		transition: top 0.5s ease;
+// 	.caption {
+// 		background-color: rgba(0, 0, 0, 0.5);
+// 		bottom: 0;
+// 		color: #fff;
+// 		left: 0;
+// 		padding: 10px;
+// 		position: absolute;
+// 		right: 0;
+// 		top: 75%;
+// 		transition: top 0.5s ease;
 
-		.name {
-			color: #fff;
-			font-size: ce(18px);
-			font-weight: 700;
-		}
+// 		.name {
+// 			color: #fff;
+// 			font-size: ce(18px);
+// 			font-weight: 700;
+// 		}
 
-		.title {
-			font-size: ce(13px);
-			font-weight: $normal;
-			text-transform: none;
-		}
+// 		.title {
+// 			font-size: ce(13px);
+// 			font-weight: $normal;
+// 			text-transform: none;
+// 		}
 
-		.subcontent {
-			margin-top: 1em;
-			opacity: 0;
-			transition: opacity 0.5s ease;
-		}
-	}
+// 		.subcontent {
+// 			margin-top: 1em;
+// 			opacity: 0;
+// 			transition: opacity 0.5s ease;
+// 		}
+// 	}
 
-	.active .caption {
-		top: 0;
+// 	.active .caption {
+// 		top: 0;
 
-		.subcontent {
-			opacity: 1;
-		}
-	}
-}
+// 		.subcontent {
+// 			opacity: 1;
+// 		}
+// 	}
+// }

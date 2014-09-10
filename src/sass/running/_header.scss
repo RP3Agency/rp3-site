@@ -1,82 +1,95 @@
 @import "logo";
-@import "header-aux";
-@import "search";
-
-.header-container {
-	margin-bottom: 1em;
-
-	body.home & {
-		margin-bottom: 0;
-	}
-}
 
 .site-header {
-	background-color: map-get($blue_map, "normal");
-	font-family: $roboto;
-	height: ce(40px);
-	width: 100%;
+	@extend %clearfix;
+	background-color: #fff;
+	padding: 0 percentage(5px / 320px);
+	@include container;
 
-	@include bp(medium) {
-		background-color: #f8f8f8;
-		height: ce(60px);
-		margin-bottom: 0;
-		position: relative;
+	@include bp($bp-large) {
+		padding: 0;
 	}
 
-	.header-wrapper {
+	// Make all links in the primary nav blocks
+	// Set the font size, weight and styling
+	a {
+		color: $black;
 		display: block;
-		height: 100%;
-		margin: 0 auto;
-		max-width: ce(1000px);
-		width: 100%;
-	}
-
-	/**
-	 * Site Branding (.site-branding)
-	 */
-	
-	.site-branding {
-		display: block;
-		height: 100%;
-	}
-
-	.site-title {
-		display: block;
-		float: left;
-		height: 100%;
-		width: 50%;
-
-		@include bp(medium) {
-			width: 87px;
+		font: {
+			size: ce(16px);
+			weight: $medium;
 		}
+		text-decoration: none;
+		text-transform: uppercase;
 
-		.logo {
-			height: 67%;
-			margin: 6px 15px 0 10px;
+		@include breakpoint($bp-navigation) {
+			font-weight: $light;
+		}
+	}
+
+	.skip-link {
+		@extend %assistive;
+	}
+
+	.site-branding {
+		@extend %clearfix;
+
+		.site-title {
+			float: left;
+			margin: 0;
+			padding: cr(15px) 0;
 		}
 	}
 
 	.menu-open {
-		@extend %genericon;
-		@extend %genericon-menu;
-		@extend %ir;
-		color: #fff;
-		display: block;
+		border: 1px solid $black;
 		float: right;
-		font-size: ce(24px);
-		height: 100%;
-		line-height: (40px / 24px);
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		width: 80px;
+		line-height: 1;
+		margin-top: 15px;
+		padding: 8px;
 
-		&:before {
-			width: auto;
+		@include breakpoint($bp-navigation) {
+			display: none;
+		}
+	}
+
+	[role="navigation"] {
+		clear: both;
+
+		@include breakpoint($bp-navigation) {
+			clear: none;
+			float: left;
+		}
+	}
+
+	.primary-menu {
+		@extend %clearfix;
+		display: none;
+		list-style: none;
+		margin: 0;
+
+		@include breakpoint($bp-navigation) {
+			display: block;
+			margin-top: 12px;
 		}
 
-		@include bp(medium) {
-			display: none;
+		li {
+			text-align: right;
+
+			@include breakpoint($bp-navigation) {
+				float: left;
+				padding: 8px;
+
+				a {
+					@include hover-state {
+						border-bottom: 4px solid mix(#fff, $black, 33%);
+					}
+				}
+
+				&.current-menu-item a {
+					font-weight: $medium;
+				}
+			}
 		}
 	}
 }

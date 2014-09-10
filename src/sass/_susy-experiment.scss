@@ -1,5 +1,4 @@
 @import "susy";
-@import "breakpoint";
 
 
 /* ==========================================================================
@@ -16,7 +15,7 @@ $susy: (
    Breakpoint settings
    ========================================================================== */
 
-$breakpoint-to-ems: true;
+// $breakpoint-to-ems: true;
 
 
 
@@ -29,10 +28,6 @@ body.page-news-views {
 	// font-family: $roboto;
 	font-size: cr(12px);
 	// font-weight: 300;
-
-	strong {
-		font-weight: $medium;
-	}
 
 	.page-title {
 		color: $black;
