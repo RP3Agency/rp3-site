@@ -1,17 +1,13 @@
 $darkGray: #1a1a1a;
 $lightGray: #666;
 
-@import url("http://fonts.googleapis.com/css?family=Roboto:400,300,100|Lato:400,700,400italic");
-
-$roboto: Roboto, sans-serif;
-
 .site-footer {
 	margin-top: 1em;
 	font-family: $roboto;
 	font-weight: 300;
 	font-size: 15px;
 
-	@include bp(large) {
+	@include breakpoint($bp-large) {
 		height: ce(400px);
 		display: block;
 		clear: both;
@@ -28,7 +24,7 @@ $roboto: Roboto, sans-serif;
 		height: ce(450px);
 		position: relative;
 
-		@include bp(large) {
+		@include breakpoint($bp-large) {
 			height: ce(400px);
 		}
 	}
@@ -40,7 +36,7 @@ $roboto: Roboto, sans-serif;
 		transform: translate(-50%, -50%);
 		white-space: nowrap;
 
-		@include bp(large) {
+		@include breakpoint($bp-large) {
 			bottom: 0;
 			left: 0;
 			position: absolute;
@@ -61,13 +57,13 @@ $roboto: Roboto, sans-serif;
 			visibility: hidden;
 		}
 
-		@include bp(medium){
+		@include breakpoint($bp-medium){
 			margin-left: 0%;
 			transform: translate(-20%,0%);
 
 		}
 
-		@include bp(large) {
+		@include breakpoint($bp-large) {
 			display: block;
 			left: 10%;
 			right: 10%;
@@ -120,12 +116,12 @@ $roboto: Roboto, sans-serif;
 			text-decoration: none;
 		}
 
-		@include bp(medium) {
+		@include breakpoint($bp-medium) {
 			right: 0;
 			transform: translate(40%, -50%);
 		}
 
-		@include bp(large) {
+		@include breakpoint($bp-large) {
 			top: 25%;
 			right: 15%;
 		}
@@ -137,14 +133,14 @@ $roboto: Roboto, sans-serif;
 		left: 15%;
 		top: .5em;
 
-		@include bp(medium) {
+		@include breakpoint($bp-medium) {
 			margin-bottom: 0.5em;
 			position: absolute;
 			left: 65%;
 			top: 95%;
 		}		
 
-		@include bp(large) {
+		@include breakpoint($bp-large) {
 			margin-bottom: 0.5em;
 			position: absolute;
 			left: 70%;
