@@ -1,128 +1,20 @@
+$darkGray: #1a1a1a;
+$lightGray: #666;
+
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,300,100|Lato:400,700,400italic");
+
+$roboto: Roboto, sans-serif;
+
 .site-footer {
-	background-color: $gray;
-	margin-top: 3em;
+	margin-top: 1em;
+	font-family: $roboto;
+	font-weight: 300;
+	font-size: 15px;
 
-	/**
-	 * Top Section
-	 */
-
-	.top {
-		background: #fff url("../images/grid-bg-light.gif");
-		border: solid $blue;
-		border-width: 3px 0;
-		box-shadow:
-			inset 0 10px 5px -4px transparentize(#000, 0.8),
-			inset 0 -7px 15px -4px transparentize(#000, 0.4);
-		padding: 1em 0;
-
-		a {
-			color: $blue;
-		}
-	}
-
-	h1 {
-		background-image: url("../images/logo-color.svg");
-		background-position: center top;
-		margin-bottom: 0.5em;
-
-		@include bp(medium) {
-			display: none;
-		}
-	}
-
-	h2 {
-		font-size: ce(24px);
-	}
-
-	.left {
-		display: none;
-
-		@include bp(medium) {
-			display: block;
-		}
-	}
-
-	.social {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		margin: 20px auto;
-		max-width: ce(300px);
-
-		@include bp(medium) {
-			margin: 0;
-			max-width: ce(220px);
-		}
-
-		&:before,
-		&:after {
-			display: none;
-		}
-
-		li {
-			float: none;
-
-			a {
-				background-color: $gray;
-				height: 64px;
-				width: 64px;
-
-				@include bp(medium) {
-					height: 48px;
-					margin: 4px;
-					width: 48px;
-				}
-
-				&:before {
-					color: #fff;
-					font-size: 37px;
-					height: 64px;
-					line-height: 64px;
-					width: 64px;
-
-					@include bp(medium) {
-						font-size: 28px;
-						height: 48px;
-						line-height: 48px;
-						width: 48px;
-					}
-				}
-
-				&:hover {
-					background-color: $blue;
-				}
-			}
-		}
-	}
-
-	.fact-sheet {
-		font-size: ce(18px);
-		font-weight: 700;
-	}
-
-	a.email {
+	@include bp(large) {
+		height: ce(400px);
 		display: block;
-		font-size: ce(24px);
-		font-weight: 700;
-		margin: 1em 0;
-		text-align: center;
-
-		@include bp(medium) {
-			text-align: left;
-		}
-	}
-
-	.site-info {
-		@extend %wrapper;
-	}
-
-	form {
-		display: none;
-
-		@include bp(medium) {
-			display: block;
-			margin-top: 2em;
-		}
+		clear: both;
 	}
 
 	/**
@@ -130,17 +22,14 @@
 	 */
 
 	.bottom .site-info {
+		background-color: $darkGray;
 		color: #fff;
 		display: block;
-		height: ce(175px);
+		height: ce(450px);
 		position: relative;
 
-		@include bp(medium) {
-			height: ce(100px);
-		}
-
-		a {
-			color: #fff;
+		@include bp(large) {
+			height: ce(400px);
 		}
 	}
 
@@ -151,7 +40,7 @@
 		transform: translate(-50%, -50%);
 		white-space: nowrap;
 
-		@include bp(medium) {
+		@include bp(large) {
 			bottom: 0;
 			left: 0;
 			position: absolute;
@@ -159,99 +48,119 @@
 			top: 0;
 			transform: none;
 		}
-	}
 
-	.phone {
-		@include bp(medium) {
-			display: block;
-			left: 0;
-			position: absolute;
-			top: 50%;
-			transform: translate(0, -50%);
-		}
-
-		.copyright {
-			// font-size: ce(11px);
-
-			@include bp(medium) {
-				br {
-					display: none;
-				}
-			}
+		h6 {
+			color: $lightGray;
 		}
 	}
 
 	.address {
-		margin-bottom: 0.5em;
-		position: relative;
+		margin-left: 15%;
 
-		@include bp(medium) {
-			left: auto;
-			position: absolute;
-			right: 0;
-			top: 50%;
-			transform: translate(0, -50%);
+		.navLink {
+			visibility: hidden;
 		}
 
-		&:before {
-			@extend %genericon;
-			@extend %genericon-location;
-			color: #fc0;
+		@include bp(medium){
+			margin-left: 0%;
+			transform: translate(-20%,0%);
+
+		}
+
+		@include bp(large) {
 			display: block;
-			font-size: ce(48px);
-			height: 42px;
-			left: -48px;
-			line-height: 1;
+			left: 10%;
+			right: 10%;
 			position: absolute;
 			top: 50%;
 			transform: translate(0, -50%);
-			width: 42px
+
+			.navLink {
+				visibility: visible;
+
+				a {
+					text-decoration: none;
+				}
+			}
 		}
+
+		.miniNav {
+			margin-bottom: 2em;
+
+			ul {
+				margin: 0;
+			}
+
+			li {
+				display: inline-block;
+				text-decoration: none;
+				margin-right: 1em;
+
+				a {
+					color: #fff;
+				}
+			}
+
+			.minilogo {
+				margin-right: 0%;
+			}
+		}
+	}
+
+	.social {
+		margin-bottom: 0.5em;
+		left: auto;
+		position: absolute;
+		right: 13%;
+		top: 5%;
+		transform: translate(0, -50%);
 
 		a {
 			display: block;
 			text-decoration: none;
 		}
-	}
-}
 
-
-/**
- * Layout
- */
-@include bp(medium) {
-	div.site-info {
-		align-items: stretch;
-		display: flex;
-		justify-content: space-between;
-
-		.left {
-			flex: 1;
-			margin-right: cp(50px, 1280px);
+		@include bp(medium) {
+			right: 0;
+			transform: translate(40%, -50%);
 		}
 
-		.right {
-			flex: 1;
+		@include bp(large) {
+			top: 25%;
+			right: 15%;
 		}
 	}
-}
 
+	.copy {
+		margin-bottom: 0.5em;
+		position: relative;
+		left: 15%;
+		top: .5em;
 
-/**
- * Mailchimp Form
- */
-.mc_merge_var {
-	float: left;
-}
-.mc_var_label {
-	@extend .screen-reader-text;
-}
-.mc_signup_submit {
-	text-align: left;
-	float: left;
-	margin-left: 1em;
-}
-input[type="text"].mc_input {
-	padding: 7px;
-	width: 200px;
+		@include bp(medium) {
+			margin-bottom: 0.5em;
+			position: absolute;
+			left: 65%;
+			top: 95%;
+		}		
+
+		@include bp(large) {
+			margin-bottom: 0.5em;
+			position: absolute;
+			left: 70%;
+			top: 85%;
+		}
+
+		span {
+			display: block;
+			font-size: 10px;
+			color: $lightGray;
+
+			a {
+				text-decoration: none;
+				color: $lightGray ;
+			}
+		}
+
+	}
 }
