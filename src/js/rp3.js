@@ -22,7 +22,7 @@ var rp3 = (function($) {
 	forcePrimaryNav = function() {
 		var $primaryMenu = $('#primary-menu');
 
-		if ( Modernizr.mq( '(min-width: 40em)' ) ) {
+		if ( Modernizr.mq( '(min-width: 31.25em)' ) ) {
 			$primaryMenu.removeAttr('style');
 		}
 	},
