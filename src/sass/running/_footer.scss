@@ -35,6 +35,8 @@ $lightGray: #666;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		white-space: nowrap;
+		max-width: 1000px;
+		margin: auto;
 
 		@include breakpoint($bp-large) {
 			bottom: 0;
