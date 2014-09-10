@@ -5,7 +5,7 @@ $lightGray: #666;
 	margin-top: 1em;
 	font-family: $roboto;
 	font-weight: 300;
-	font-size: 15px;
+	font-size: 11px;
 
 	@include breakpoint($bp-large) {
 		height: ce(400px);
@@ -105,6 +105,7 @@ $lightGray: #666;
 	}
 
 	.social {
+		visibility: hidden;
 		margin-bottom: 0.5em;
 		left: auto;
 		position: absolute;
@@ -118,6 +119,7 @@ $lightGray: #666;
 		}
 
 		@include breakpoint($bp-medium) {
+			visibility: visible;
 			right: 0;
 			transform: translate(40%, -50%);
 		}
