@@ -101,6 +101,30 @@ $default-font-size: 14px !default;
 // bp: alias for breakpoint
 
 @mixin bp($breakpoint, $media: all) {
+// 	// Change these values as required
+// 	$medium: 640px / 16px * 1em;
+// 	$bp-768: 768px / 16px * 1em;
+// 	$large: 1024px / 16px * 1em;
+// 	$xlarge: 1280px / 16px * 1em;
+
+// 	@if $breakpoint == medium {
+// 		@media only #{$media} and (min-width: $medium) {
+// 			@content;
+// 		}
+// 	} @else if $breakpoint == bp-768 {
+// 		@media only #{$media} and (min-width: $bp-768) {
+// 			@content;
+// 		}
+// 	} @else if $breakpoint == large {
+// 		@media only #{$media} and (min-width: $large) {
+// 			@content;
+// 		}
+// 	} @else if $breakpoint == xlarge {
+// 		@media only #{$media} and (min-width: $xlarge) {
+// 			@content;
+// 		}
+// 	}
+
 	@include breakpoint($breakpoint, $media) {
 		@content;
 	}

@@ -1,20 +1,6 @@
-// Import breakpoint
 @import "breakpoint";
-@import "utils/breakpoint-config";
 
-// Import SingularityGS
-// @import "singularitygs";
-
-// Import Susy
 @import "susy";
-$susy: (
-	columns: 24,
-	container: 1000px,
-	gutters: 1/3
-);
-
-
-
 
 @import "utils/utils";
 
@@ -33,8 +19,6 @@ $susy: (
 @import "social";
 
 @import "running/header";
-
-@import "running/primary-navigation";
 
 @import "a11y";
 
