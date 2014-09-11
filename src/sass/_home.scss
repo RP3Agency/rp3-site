@@ -1,5 +1,4 @@
 body.home {
-	background-color: #f8f8f8;
 
 	.site-content {
 		margin: 0;
@@ -13,27 +12,65 @@ body.home {
 	}
 
 	.introduction {
-		position: relative;
 
 		picture,
 		picture img {
+			display: block;
+			height: 100%;
+			left: 50%;
+			max-width: 320px;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: auto;
+
+			@include breakpoint($bp-small) {
+				max-width: 640px;
+			}
+
+			@include breakpoint($bp-medium) {
+				max-width: 1600px
+			}
+
+			@include breakpoint($bp-large) {
+				height: auto;
+				max-width: none;
+				position: static;
+				transform: translate(0);
+				width: 100%;
+			}
+		}
+
+		a {
+			color: #fff;
+			display: block;
+			height: cr(450px);
+			overflow: hidden;
+			position: relative;
+			text-decoration: none;
 			width: 100%;
+
+			@include breakpoint($bp-medium) {
+				height: cr(608px);
+			}
+
+			@include breakpoint($bp-large) {
+				height: auto;
+			}
+		}
+
+		.wrapper {
+			position: relative;
 		}
 
 		.headline {
 			background-color: transparentize(#111215, 0.05);
 			bottom: 0;
+			font-size: cr(11px);
 			left: 0;
 			padding: ce(30px, 11px) percentage(18px / 250px);
 			position: absolute;
 			width: 50%;
-			@include font-size(11px);
-
-			a {
-				color: #fff;
-				display: block;
-				text-decoration: none;
-			}
 
 			h1 {
 				@include font($roboto, $thin, ce(25px, 11px));
@@ -42,6 +79,20 @@ body.home {
 			h1,
 			p {
 				margin: 0;
+			}
+
+			/**
+			 * Responsify with breakpoint and susy
+			 * and let's throw some font adjustments in there, too
+			 */
+			@include breakpoint($bp-medium) {
+				font-size: cr(12px);
+				padding: ce(30px, 12px) percentage(30px / 589px);
+				@include span(9);
+
+				h1 {
+					font-size: ce(36px, 12px);
+				}
 			}
 		}
 	}
