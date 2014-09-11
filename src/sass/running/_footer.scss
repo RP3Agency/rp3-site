@@ -1,5 +1,6 @@
 $darkGray: #1a1a1a;
 $lightGray: #666;
+$container-width: 1000px;
 
 .site-footer {
 	margin-top: 1em;
@@ -30,12 +31,12 @@ $lightGray: #666;
 	}
 
 	.address-phone-combined {
+		@include container;
 		left: 50%;
 		position: absolute;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		white-space: nowrap;
-		max-width: 1000px;
 		margin: auto;
 
 		h6 {
@@ -72,6 +73,8 @@ $lightGray: #666;
 		}
 
 		.phone {
+			margin-bottom:0px;
+
 			a {
 				text-decoration: none;
 				color: #FFF;
@@ -81,19 +84,21 @@ $lightGray: #666;
 		@include breakpoint($bp-medium){
 			margin-left: 0%;
 			transform: translate(-20%,0%);
+		}
 
+		@include breakpoint($bp-medium + 200){
+			.footer-navigation {
+				visibility: visible;
+			}
 		}
 
 		@include breakpoint($bp-large) {
 			left: 10%;
 			right: 10%;
 			position: absolute;
-			top: 50%;
+			top: 58%;
 			transform: translate(0, -50%);
 
-			.footer-navigation {
-				visibility: visible;
-			}
 		}
 
 		.miniNav {
@@ -153,7 +158,7 @@ $lightGray: #666;
 
 		@include breakpoint($bp-large) {
 			left: 60%;
-			top: 25%;
+			top: 19%;
 			right: 15%;
 			transform: translate(0, -50%);
 		}
@@ -169,7 +174,7 @@ $lightGray: #666;
 			margin-bottom: 0.5em;
 			position: absolute;
 			left: 130%;
-			top: 95%;
+			top: 83%;
 		}
 
 		@include breakpoint($bp-medium + 200) {	

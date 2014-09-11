@@ -25,6 +25,7 @@
 						<div class='miniNav'>
 
 							<ul>
+
 								<li><img class='minilogo' alt="RP3 Agency" src="<?php echo get_template_directory_uri(); ?>/images/logo-white.svg" /></li>
 								<nav class="footer-navigation" >
 									<?php wp_nav_menu( array(
@@ -33,23 +34,29 @@
 										'menu_id'			=> 'footer-navigation'
 									) ); ?>
 								</nav>
+								<!--- // .footer-navigation -->
+
 							</ul>
+
 						</div>
 						<!-- //.miniNav -->
+
 						<div class='office-address'>
 							<h6>Offices</h6><br>
 							7316 Wisconsin Avenue<br>
 							Suite 450<br>
 							Bethesda, Maryland 20814<br>
 						</div>
+						<!-- //.office-address -->
 
 						<div class='phone'>
-							<h6>Phone</h6><br>
+							<h6>Phone</h6>
 							<p>301.718.0333</p><br>
 						</div>
+						<!-- // .phone -->
 						
 					</div>
-					<!-- // .phone -->
+					<!--- // .address -->
 
 					<div class="copy">
 						<span class="copyright">© <?php echo date('Y'); ?> RP3 Agency.
@@ -68,7 +75,6 @@
 		
 					</div>
 					<!-- // .social -->
-
 
 				</div>
 				<!-- // .address-phone-combined -->
