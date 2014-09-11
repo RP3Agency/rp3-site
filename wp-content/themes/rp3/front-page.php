@@ -29,10 +29,11 @@ get_header(); ?>
 			<img srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small@2x.jpg 2x" alt="City of Possibilities">
 		</picture>
 
-		<div class="bug norfolk-southern">
-			<h1>City of Possibilities</h1>
-			<p class="subtitle">for <strong>Norfolk Southern</strong></p>
-			<a href="#!">View the Project</a>
+		<div class="headline norfolk-southern">
+			<a href="#!">
+				<h1>City of Possibilities</h1>
+				<p class="subtitle">for <strong>Norfolk Southern</strong></p>
+			</a>
 		</div>
 	</section>
 
