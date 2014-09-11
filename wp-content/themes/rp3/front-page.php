@@ -23,17 +23,28 @@
 get_header(); ?>
 
 	<section id="introduction" class="introduction">
-		<picture>
-			<source srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities@2x.jpg 2x" media="(min-width: 40em)">
-			<source srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small@2x.jpg 2x">
-			<img srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small@2x.jpg 2x" alt="City of Possibilities">
-		</picture>
 
-		<div class="bug norfolk-southern">
-			<h1>City of Possibilities</h1>
-			<p class="subtitle">for <strong>Norfolk Southern</strong></p>
-			<a href="#!">View the Project</a>
-		</div>
+		<a href="#!">
+
+			<picture>
+				<source srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities@2x.jpg 2x" media="(min-width: 37.5em)">
+				<source srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-medium.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-medium@2x.jpg 2x" media="(min-width: 20.0625em)">
+				<source srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small@2x.jpg 2x">
+				<img srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small@2x.jpg 2x" alt="City of Possibilities">
+			</picture>
+
+			<div class="wrapper">
+
+				<div class="headline norfolk-southern">
+					<h1>City of Possibilities</h1>
+					<p class="subtitle">for <strong>Norfolk Southern</strong></p>
+				</div>
+
+			</div>
+			<!-- // .wrapper -->
+
+		</a>
+
 	</section>
 
 	<!-- <section id="home-panels" class="home-panels"> -->
