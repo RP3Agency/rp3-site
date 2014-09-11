@@ -3,9 +3,12 @@
    ========================================================================== */
 
 $breakpoint-to-ems: true;
+$hidpi: min-resolution 1.5dppx;
+
 $bp-navigation: 500px;
+$bp-small: 321px;
 $bp-medium: 600px;
-$bp-large: 1000px;
+$bp-large: 1600px;
 
 
 /* ==========================================================================
@@ -14,6 +17,6 @@ $bp-large: 1000px;
 
 $susy: (
 	columns: 24,
-	container: 1000px,
+	container: $bp-large,
 	gutters: 1/3
 );
