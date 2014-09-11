@@ -1,11 +1,12 @@
 $darkGray: #1a1a1a;
 $lightGray: #666;
+$container-width: 1000px;
 
 .site-footer {
 	margin-top: 1em;
 	font-family: $roboto;
 	font-weight: 300;
-	font-size: 15px;
+	font-size: 11px;
 
 	@include breakpoint($bp-large) {
 		height: ce(400px);
@@ -30,54 +31,74 @@ $lightGray: #666;
 	}
 
 	.address-phone-combined {
+		@include container;
 		left: 50%;
 		position: absolute;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		white-space: nowrap;
-
-		@include breakpoint($bp-large) {
-			bottom: 0;
-			left: 0;
-			position: absolute;
-			right: 0;
-			top: 0;
-			transform: none;
-		}
+		margin: auto;
 
 		h6 {
 			color: $lightGray;
 		}
+
+		@include breakpoint($bp-medium) {
+			left: 25%;
+		}
+
+		@include breakpoint($bp-large) {
+			bottom: 0;
+			left: 0;
+			right: 0;
+			top: 0;
+			transform: none;
+		}
 	}
 
 	.address {
-		margin-left: 15%;
+		margin-left: 10%;
+		display: block;
 
-		.navLink {
+		.footer-navigation {
 			visibility: hidden;
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		.office-address {
+			margin-bottom: 3em;
+		}
+
+		.phone {
+			margin-bottom:0px;
+
+			a {
+				text-decoration: none;
+				color: #FFF;
+			}
 		}
 
 		@include breakpoint($bp-medium){
 			margin-left: 0%;
 			transform: translate(-20%,0%);
+		}
 
+		@include breakpoint($bp-medium + 200){
+			.footer-navigation {
+				visibility: visible;
+			}
 		}
 
 		@include breakpoint($bp-large) {
-			display: block;
 			left: 10%;
 			right: 10%;
 			position: absolute;
-			top: 50%;
+			top: 58%;
 			transform: translate(0, -50%);
 
-			.navLink {
-				visibility: visible;
-
-				a {
-					text-decoration: none;
-				}
-			}
 		}
 
 		.miniNav {
@@ -85,6 +106,10 @@ $lightGray: #666;
 
 			ul {
 				margin: 0;
+
+				li, nav{
+					display: inline-block;
+				}
 			}
 
 			li {
@@ -104,12 +129,15 @@ $lightGray: #666;
 	}
 
 	.social {
+		visibility: hidden;
 		margin-bottom: 0.5em;
 		left: auto;
 		position: absolute;
 		right: 13%;
 		top: 5%;
 		transform: translate(0, -50%);
+		width: 240px;
+		display: block;
 
 		a {
 			display: block;
@@ -117,33 +145,44 @@ $lightGray: #666;
 		}
 
 		@include breakpoint($bp-medium) {
+			transform: translate(60%, -50%);
+			visibility: visible;
+			left: 60%;
+		}
+
+		@include breakpoint($bp-medium+200) {
+			transform: translate(80%, -50%);
+			left: 80%;
 			right: 0;
-			transform: translate(40%, -50%);
 		}
 
 		@include breakpoint($bp-large) {
-			top: 25%;
+			left: 60%;
+			top: 19%;
 			right: 15%;
+			transform: translate(0, -50%);
 		}
 	}
 
 	.copy {
 		margin-bottom: 0.5em;
 		position: relative;
-		left: 15%;
+		left: 10%;
 		top: .5em;
 
 		@include breakpoint($bp-medium) {
 			margin-bottom: 0.5em;
 			position: absolute;
-			left: 65%;
-			top: 95%;
-		}		
+			left: 130%;
+			top: 83%;
+		}
+
+		@include breakpoint($bp-medium + 200) {	
+			left: 180%;
+		}	
 
 		@include breakpoint($bp-large) {
-			margin-bottom: 0.5em;
-			position: absolute;
-			left: 70%;
+			left: 60%;
 			top: 85%;
 		}
 
