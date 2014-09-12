@@ -11,256 +11,152 @@ body.home {
 		}
 	}
 
-	.introduction {
+	article {
+		@include container;
+	}
 
-		picture,
-		picture img {
-			display: block;
-			height: 100%;
-			left: 50%;
-			max-width: 320px;
-			position: absolute;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			width: auto;
+	.entry-content {
+		font-size: cr(16px);
+		padding: ce(70px, 16px) 0;
+		@include span(isolate 18 at 4);
 
-			@include breakpoint($bp-small) {
-				max-width: 640px;
-			}
-
-			@include breakpoint($bp-medium) {
-				max-width: 1600px
-			}
-
-			@include breakpoint($bp-large) {
-				height: auto;
-				max-width: none;
-				position: static;
-				transform: translate(0);
-				width: 100%;
-			}
+		@include breakpoint(730px) {
+			@include span(isolate 14 at 6);
 		}
 
 		a {
-			color: #fff;
-			display: block;
-			height: cr(450px);
-			overflow: hidden;
-			position: relative;
+			font-size: ce(12px, 16px);
+			font-weight: $medium;
 			text-decoration: none;
-			width: 100%;
-
-			@include breakpoint($bp-medium) {
-				height: cr(608px);
-			}
-
-			@include breakpoint($bp-large) {
-				height: auto;
-			}
+			text-transform: uppercase;
 		}
+	}
+}
 
-		.wrapper {
-			height: 100%;
-			position: relative;
-		}
+.home-hero,
+.home-work {
 
-		.headline {
-			background-color: transparentize(#111215, 0.05);
-			bottom: 0;
-			font-size: cr(11px);
-			left: 0;
-			padding: ce(30px, 11px) percentage(18px / 250px);
-			position: absolute;
-			width: 50%;
+	a {
+		display: block;
+		position: relative;
+		text-decoration: none;
+		width: 100%;
+	}
+
+	.headline {
+		bottom: 0;
+		font-size: cr(11px);
+		left: 0;
+		padding: ce(30px, 11px) percentage(18px / 250px);
+		position: absolute;
+		width: 50%;
+
+		@include breakpoint($bp-medium) {
+			font-size: cr(12px);
+			padding: ce(30px, 12px) percentage(30px / 589px);
 
 			h1 {
-				@include font($roboto, $thin, ce(25px, 11px));
+				font-size: ce(36px, 12px);
 			}
+		}
 
-			h1,
-			p {
-				margin: 0;
-			}
+		/**
+		 * Responsify with breakpoint and susy
+		 */
+		@include breakpoint($bp-medium) {
+			@include span(9);
+		}
 
-			/**
-			 * Responsify with breakpoint and susy
-			 * and let's throw some font adjustments in there, too
-			 */
-			@include breakpoint($bp-medium) {
-				font-size: cr(12px);
-				padding: ce(30px, 12px) percentage(30px / 589px);
-				@include span(9);
+		h1 {
+			@include font($roboto, $thin, ce(25px, 11px));
+		}
 
-				h1 {
-					font-size: ce(36px, 12px);
-				}
-			}
+		h1,
+		p {
+			margin: 0;
 		}
 	}
 }
 
+.home-hero {
 
-/**
- * Home Panels
- */
-.home-panels {
-// 	article {
-// 		// position: relative;
+	picture,
+	picture img {
+		display: block;
+		height: 100%;
+		left: 50%;
+		max-width: 320px;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: auto;
 
-		picture,
-		picture img {
-			display: block;
-			margin: 0 auto;
+		@include breakpoint($bp-small) {
+			max-width: 640px;
 		}
 
-		// picture {
-// 			left: 0;
-// 			// position: absolute;
-// 			top: 50%;
-// 			transform: translate(0, -50%);
-// 		}
-// 	}
+		@include breakpoint($bp-medium) {
+			max-width: 1600px
+		}
+
+		@include breakpoint($bp-large) {
+			height: auto;
+			max-width: none;
+			position: static;
+			transform: translate(0);
+			width: 100%;
+		}
+	}
+
+	a {
+		color: #fff;
+		height: cr(450px);
+		overflow: hidden;
+
+		@include breakpoint($bp-medium) {
+			height: cr(608px);
+		}
+
+		@include breakpoint($bp-large) {
+			height: auto;
+		}
+	}
+
+	.wrapper {
+		height: 100%;
+		position: relative;
+	}
+
+	.headline {
+		background-color: transparentize(#111215, 0.05);
+	}
 }
 
+.home-work {
+	@include container;
+	@include highlight;
 
-/**
- * Home Featured Area
- */
-/* Article Tiles */
-/* Can be news posts or blog posts; position determined on edit post page in administration dashboard */
+	a {
+		color: $black;
+		height: cr(400px);
 
-.home-featured {
-	padding: 3em 0;
+		/**
+		 * For dev only
+		 */
+		&:nth-child(1) {
+			background-color: $green;
+		}
 
-	@include bp(large) {
-		display: flex;
-		justify-content: space-around;
-		margin: 0 auto;
-		max-width: ce(1024px);
+		&:nth-child(2) {
+			background-color: $gold;
+		}
+
+		&:nth-child(3) {
+			background-color: $mauve;
+		}
 	}
 
-	article.tile {
-	    background-color: #fff;
-	    border: 8px solid #ededed;
-	    border-radius: 7px;
-	    box-sizing: content-box; // because this is ported over from the legacy site.
-	    margin: 50px auto 0;
-	    position: relative;
-	    width: 272px;
-		height: auto;
-	}
-
-	article.tile header {
-	    background: none;
-	    height: auto;
-	    position: static;
-	    width: auto;
-	}
-
-	article.tile header .thumbnail {
-	    border-bottom: 1px solid #c5c5c5;
-	    height: 146px;
-	    margin-bottom: 63px;
-	    width: 272px;
-	}
-
-	article.tile header .thumbnail a {
-		@extend %ir;
-	    background-position: 0 0;
-	    display: block;
-	    height: 100%;
-	    width: 100%;
-	}
-
-	/*article.tile header .thumbnail a:hover,
-	article.tile header .thumbnail a:active,
-	article.tile header .thumbnail a:focus {
-	    background-position: 0 -146px;
-	}*/
-
-	article.tile .headline {
-		height: 140px;
-	}
-
-	article.tile h1 {
-	    background: none;
-	    color: #353535;
-	    float: none;
-	    font-size: 18px;
-	    font-weight: 400;
-	    height: auto;
-	    margin: 0 0 12px 0;
-	    padding: 0 20px;
-	    position: static;
-	    text-align: center;
-	    text-transform: none;
-	}
-
-	article.tile .link {
-	    font-size: 14px;
-	    line-height: 1.2;
-	    text-align: center;
-	}
-
-	article.tile footer {
-	    border-top: 1px solid #ededed;
-	    bottom: 0;
-	    font-size: 12px;
-	    height: 27px;
-	    line-height: 27px;
-	    overflow: hidden;
-	    position: absolute;
-	    width: 100%;
-		margin-top: 10px;
-	}
-
-	article.tile footer .date {
-	    color: #a8a8a8;
-	    float: left;
-	    padding-left: 11px;
-	}
-
-	article.tile footer .post_type_link {
-	    float: right;
-	    padding-right: 14px;
-	}
-
-	article.tile footer .post_type_link a {
-	    background: transparent url('../images/homesprite.png') no-repeat 53px -1116px;
-	    color: #a8a8a8;
-	    cursor: pointer;
-	    display: block;
-	    height: 27px;
-	    line-height: 27px;
-	    padding-right: 19px;
-	    text-decoration: underline;
-	}
-
-	article.tile footer .post_type_link a:hover,
-	article.tile footer .post_type_link a:active,
-	article.tile footer .post_type_link a:focus {
-	    color: #353535;
-	}
-
-	article.tile .icon {
-	    background: transparent url('../images/homesprite.png') no-repeat;
-	    color: #a8a8a8;
-	    font-size: 12px;
-	    height: 12px;
-	    left: 99px;
-	    padding-top: 81px;
-	    position: absolute;
-	    text-align: center;
-	    text-transform: uppercase;
-	    top: 109px;
-	    width: 75px;
-	}
-
-	article.tile.news .icon {
-	    background-position: 0 -1160px;
-	}
-
-	article.tile.blog .icon {
-	    background-position: 0 -1259px;
+	.headline {
+		background-color: transparentize(#fff, 0.1);
 	}
 }
