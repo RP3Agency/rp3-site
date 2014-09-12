@@ -1,77 +1,31 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying the home page.
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This is the template for displaying the home page. The
+ * home page will consist of a curated hero image that links
+ * to work or a case study, editable content, smaller links
+ * to more work and case studies, followed by tweets, news
+ * items, blog posts, etc.
  *
  * @package RP3
  */
 
-/**
- * Get our home panels
- */
-// $panels = new WP_Query( array(
-// 	'post_type'			=> 'rp3_home_panels',
-// 	'posts_per_page'	=> 3,
-// 	'orderby'			=> 'menu_order',
-// 	'order'				=> 'ASC'
-// ) );
-
 get_header(); ?>
 
-	<section id="introduction" class="introduction">
+<?php get_template_part( 'components/home-page', 'hero' ); ?>
 
-		<a href="#!">
 
-			<picture>
-				<source srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities@2x.jpg 2x" media="(min-width: 37.5em)">
-				<source srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-medium.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-medium@2x.jpg 2x" media="(min-width: 20.0625em)">
-				<source srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small@2x.jpg 2x">
-				<img srcset="<?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small.jpg, <?php echo get_template_directory_uri(); ?>/images/city-of-possibilities-small@2x.jpg 2x" alt="City of Possibilities">
-			</picture>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<div class="wrapper">
+	<div class="entry-content">
+		<?php the_content(); ?>
+	</div>
+	<!-- .entry-content -->
 
-				<div class="headline norfolk-southern">
-					<h1>City of Possibilities</h1>
-					<p class="subtitle">for <strong>Norfolk Southern</strong></p>
-				</div>
+</article>
+<!-- #post-## -->
 
-			</div>
-			<!-- // .wrapper -->
-
-		</a>
-
-	</section>
-
-	<!-- <section id="home-panels" class="home-panels"> -->
-
-	<?php // if ( $panels->have_posts() ) : while ( $panels->have_posts() ) : $panels->the_post(); ?>
-
-	<?php
-	// $image_small		= get_field( 'image_small' );
-	// $image_medium		= get_field( 'image_medium' );
-	// $image_large		= get_field( 'image_large' );
-	?>
-
-		<?php /*
-		<article class="full-screen">
-			<a href="<?php the_field('url'); ?>">
-				<picture>
-					<source srcset="<?php echo $image_large['url']; ?>" media="(min-width: 1024px)" />
-					<source srcset="<?php echo $image_medium['url']; ?>" media="(min-width: 690px)" />
-					<source srcset="<?php echo $image_small['url']; ?>" />
-					<img srcset="<?php echo $image_small['url']; ?>" alt="<?php the_title(); ?>" />
-				</picture>
-			</a>
-		</article>
-		*/ ?>
-
-	<?php // endwhile; endif; ?>
-
-	<!-- </section> -->
+<?php get_template_part( 'components/home-page', 'work' ); ?>
 
 <?php get_footer(); ?>
