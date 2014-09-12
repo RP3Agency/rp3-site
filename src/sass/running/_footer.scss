@@ -59,6 +59,7 @@ $container-width: 1000px;
 	.address {
 		margin-left: 10%;
 		display: block;
+		max-width: 300px;
 
 		.footer-navigation {
 			visibility: hidden;
