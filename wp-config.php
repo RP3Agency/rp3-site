@@ -14,18 +14,30 @@
  * @package WordPress
  */
 
+if ( file_exists( dirname( __FILE__ ) . '/wp-config-dev.php' ) ) {
+	include( dirname( __FILE__ ) . '/wp-config-dev.php' );
+}
+ 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'rp3agency');
+if ( ! defined( 'DB_NAME' ) ) {
+	define('DB_NAME', 'rp3agency');
+}
 
 /** MySQL database username */
-define('DB_USER', 'root');
+if ( ! defined( 'DB_USER' ) ) {
+	define('DB_USER', 'root');
+}
 
 /** MySQL database password */
-define('DB_PASSWORD', 'password');
+if ( ! defined( 'DB_PASSWORD' ) ) {
+	define('DB_PASSWORD', 'password');
+}
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+if ( ! defined( 'DB_HOST' ) ) {
+	define('DB_HOST', 'localhost');
+}
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -36,8 +48,13 @@ define('DB_COLLATE', '');
 // ========================
 // Custom Content Directory
 // ========================
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+if ( ! defined( 'WP_CONTENT_DIR' ) ) {
+	define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
+}
+
+if ( ! defined( 'WP_CONTENT_URL' ) ) {
+	define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.
