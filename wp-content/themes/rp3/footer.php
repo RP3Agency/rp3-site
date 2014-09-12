@@ -22,35 +22,27 @@
 
 					<div class="address">
 
-						<div class='miniNav'>
-
-							<ul>
-
-								<li><img class='minilogo' alt="RP3 Agency" src="<?php echo get_template_directory_uri(); ?>/images/logo-white.svg" /></li>
-								<nav class="footer-navigation" >
+						<img class='minilogo' alt="RP3 Agency" src="<?php echo get_template_directory_uri(); ?>/images/logo-white.svg" />	
+						
+						<nav class="footer-navigation" >
 									<?php wp_nav_menu( array(
 										'theme_location'	=> 'primary',
 										'menu_class'		=> 'footer-navigation',
 										'menu_id'			=> 'footer-navigation'
 									) ); ?>
-								</nav>
-								<!--- // .footer-navigation -->
-
-							</ul>
-
-						</div>
-						<!-- //.miniNav -->
-
+						</nav>
+						<!--- // .footer-navigation -->
+						
 						<div class='office-address'>
-							<h6>Offices</h6><br>
-							7316 Wisconsin Avenue<br>
+							<h6>OFFICES</h6>
+							<p>7316 Wisconsin Avenue<br>
 							Suite 450<br>
-							Bethesda, Maryland 20814<br>
+							Bethesda, Maryland 20814<br></p>
 						</div>
 						<!-- //.office-address -->
 
 						<div class='phone'>
-							<h6>Phone</h6>
+							<h6>PHONE</h6>
 							<p>301.718.0333</p><br>
 						</div>
 						<!-- // .phone -->
@@ -58,11 +50,11 @@
 					</div>
 					<!--- // .address -->
 
-					<div class="copy">
-						<span class="copyright">© <?php echo date('Y'); ?> RP3 Agency.
-							<a href="http://www.aaaa.org/news/agency/Pages/RP3AgencyReceivesCertificationAsaWomen-OwnedSmallBusiness.aspx"> a certified woman-owned business.</a></span>
+					<div class='email'>
+							<h6> EMAIL </h6>
+							<p>info@rp3agency.com</p>
 					</div>
-					<!-- // .copy -->
+					<!-- // .email -->
 
 					<div class="social">
 						<ul>
@@ -75,6 +67,12 @@
 		
 					</div>
 					<!-- // .social -->
+
+					<div class="copy">
+						<span class="copyright">© <?php echo date('Y'); ?> RP3 Agency.
+							<a href="http://www.aaaa.org/news/agency/Pages/RP3AgencyReceivesCertificationAsaWomen-OwnedSmallBusiness.aspx"> a certified woman-owned business.</a></span>
+					</div>
+					<!-- // .copy -->
 
 				</div>
 				<!-- // .address-phone-combined -->
