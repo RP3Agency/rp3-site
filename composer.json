@@ -25,7 +25,6 @@
     "wordpress": "4.0",
     "fancyguy/webroot-installer": "1.0.0",
     "wpackagist-plugin/add-from-server":"*",
-    "wpackagist-plugin/advanced-custom-fields":"*",
     "wpackagist-plugin/admin-post-navigation":"*",
     "wpackagist-plugin/black-studio-tinymce-widget":"*",
     "wpackagist-plugin/co-authors-plus":"*",
