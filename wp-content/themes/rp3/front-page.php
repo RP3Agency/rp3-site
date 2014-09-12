@@ -74,16 +74,4 @@ get_header(); ?>
 
 	<!-- </section> -->
 
-
-	<section class="home-featured">
-
-	<?php
-    rp3_display_homepage_post( 'left' );
-    rp3_display_homepage_post( 'center' );
-    rp3_display_homepage_post( 'right' );
-	?>
-
-	</section>
-	<!-- // home-featured -->
-
 <?php get_footer(); ?>
