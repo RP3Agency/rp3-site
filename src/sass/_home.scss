@@ -137,6 +137,7 @@ body.home {
 	@include highlight;
 
 	a {
+		box-shadow: inset 0px 0px 55px rgba(0, 0, 0, 0.3);
 		color: $black;
 		height: cr(400px);
 
@@ -158,5 +159,10 @@ body.home {
 
 	.headline {
 		background-color: transparentize(#fff, 0.1);
+	}
+
+	a:nth-child(even) .headline {
+		left: auto;
+		right: 0;
 	}
 }
