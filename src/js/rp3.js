@@ -138,7 +138,7 @@ jQuery(document).ready(function($) {
 	var has_touch = 'ontouchstart' in document.documentElement;
 	var accX, accY, width, height, xA, yA, movement;
 	
-	if(has_touch || screen.width <= 699) {
+	if(has_touch) {
 
 		(resize = function() {
 			
@@ -168,12 +168,13 @@ jQuery(document).ready(function($) {
 	
 	function run() {
 		    
-	    $('picture').css({'left' : xA+'px', 'top' : yA+'px', 'box-shadow' : ''+xA+'px '+yA+'px 10px rgba(0,0,0,0.3)'});
+	    $('#home-work picture').css({'left' : xA+'px', 'top' : yA+'px',
+			'box-shadow' : ''+xA+'px '+yA+'px 10px rgba(0,0,0,0.3)'});
 	    
 	    bX = -(xA*2)-100;
 	    bY = -(yA*2)-300;
 	    
-	    $('#home-work a').css({'background-position' : bX+'px '+bY+'px'});
+	    // $('#home-work a').css({'background-position' : bX+'px '+bY+'px'});
 	
 	}
 	
