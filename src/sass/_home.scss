@@ -43,6 +43,11 @@ body.home {
 		width: 100%;
 	}
 
+	picture,
+	picture img {
+		position: absolute;
+	}
+
 	.headline {
 		bottom: 0;
 		font-size: cr(11px);
@@ -86,7 +91,6 @@ body.home {
 		height: 100%;
 		left: 50%;
 		max-width: 320px;
-		position: absolute;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		width: auto;
