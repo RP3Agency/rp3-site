@@ -1,235 +1,237 @@
-$darkGray: #1a1a1a;
-$lightGray: #666;
-$container-width: 1000px;
+// $darkGray: #1a1a1a;
+// $lightGray: #666;
+// $container-width: 1000px;
 
 .site-footer {
-	margin-top: 1em;
-	font-family: $roboto;
-	font-weight: 100;
-	font-size: 8px;
+	background-color: $black;
+	padding-top: cr(70px);
 
-	@include breakpoint( $bp-medium){
-		font-size: 10px;
+	&__logo path {
+		fill: #fff;
 	}
 
-	@include breakpoint($bp-large) {
-		height: ce(400px);
-		display: block;
-		clear: both;
-	}
+// 	@include breakpoint( $bp-medium){
+// 		font-size: 10px;
+// 	}
 
-	/**
-	 * Bottom Section
-	 */
+// 	@include breakpoint($bp-large) {
+// 		height: ce(400px);
+// 		display: block;
+// 		clear: both;
+// 	}
 
-	.bottom .site-info {
-		background-color: $darkGray;
-		color: #fff;
-		display: block;
-		height: ce(740px);
-		position: relative;
+// 	/**
+// 	 * Bottom Section
+// 	 */
 
-		@include breakpoint($bp-large) {
-			height: ce(400px);
-		}
-	}
+// 	.bottom .site-info {
+// 		background-color: $darkGray;
+// 		color: #fff;
+// 		display: block;
+// 		height: ce(740px);
+// 		position: relative;
 
-	.address-phone-combined {
-		@include container;
-		left: 35%;
-		position: absolute;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		white-space: nowrap;
-		margin: auto;
-		height: 100%
+// 		@include breakpoint($bp-large) {
+// 			height: ce(400px);
+// 		}
+// 	}
 
-		h6 {
-			color: $lightGray;
-		}
+// 	.address-phone-combined {
+// 		@include container;
+// 		left: 35%;
+// 		position: absolute;
+// 		top: 50%;
+// 		transform: translate(-50%, -50%);
+// 		white-space: nowrap;
+// 		margin: auto;
+// 		height: 100%
 
-		.email {
-			position: absolute;
-			text-align: right;
-			left: 91%;
-			top: 54%;
+// 		h6 {
+// 			color: $lightGray;
+// 		}
 
-			@include breakpoint ($bp-medium) {
-				position: relative;
-				text-align: left;
-				left: -17%;
-			}
-		}
+// 		.email {
+// 			position: absolute;
+// 			text-align: right;
+// 			left: 91%;
+// 			top: 54%;
 
-		@include breakpoint($bp-medium) {
-			left: 25%;
-		}
+// 			@include breakpoint ($bp-medium) {
+// 				position: relative;
+// 				text-align: left;
+// 				left: -17%;
+// 			}
+// 		}
 
-		@include breakpoint($bp-large) {
-			bottom: 0;
-			left: 0;
-			right: 0;
-			top: 0;
-			transform: none;
-		}
-	}
+// 		@include breakpoint($bp-medium) {
+// 			left: 25%;
+// 		}
 
-	.address {
-		margin-left: 10%;
-		display: block;
-		max-width: 300px;
+// 		@include breakpoint($bp-large) {
+// 			bottom: 0;
+// 			left: 0;
+// 			right: 0;
+// 			top: 0;
+// 			transform: none;
+// 		}
+// 	}
 
-		img {
-			max-width: 15%;
-			margin-bottom: 3em;
+// 	.address {
+// 		margin-left: 10%;
+// 		display: block;
+// 		max-width: 300px;
+
+// 		img {
+// 			max-width: 15%;
+// 			margin-bottom: 3em;
 			
-			@include breakpoint($bp-medium) {
-				max-width: 100%;
-			}
-		}
+// 			@include breakpoint($bp-medium) {
+// 				max-width: 100%;
+// 			}
+// 		}
 
-		.footer-navigation {
-			position: absolute;
-			text-align: right;
-			left: 95%;
-			top: 0%;
+// 		.footer-navigation {
+// 			position: absolute;
+// 			text-align: right;
+// 			left: 95%;
+// 			top: 0%;
 
-			li {
-				list-style: none;
+// 			li {
+// 				list-style: none;
 				
-				a {
-					color: #fff;
-					text-decoration: none;
-				}
-			}
+// 				a {
+// 					color: #fff;
+// 					text-decoration: none;
+// 				}
+// 			}
 
-			@include breakpoint($bp-medium) {
-				position: relative;
-				left: 0%;
-				top: 0%;
-				text-align: left;
+// 			@include breakpoint($bp-medium) {
+// 				position: relative;
+// 				left: 0%;
+// 				top: 0%;
+// 				text-align: left;
 
-				li {
-					display: inline-block;
-					margin-left: 1em;
-				}
-			}
-		}
+// 				li {
+// 					display: inline-block;
+// 					margin-left: 1em;
+// 				}
+// 			}
+// 		}
 
-		.office-address {
-			margin-bottom: 3em;
-		}
+// 		.office-address {
+// 			margin-bottom: 3em;
+// 		}
 
-		.phone {
-			margin-bottom:0px;
-			margin-top: 25%;
+// 		.phone {
+// 			margin-bottom:0px;
+// 			margin-top: 25%;
 
-			a {
-				text-decoration: none;
-				color: #FFF;
-			}
-		}
+// 			a {
+// 				text-decoration: none;
+// 				color: #FFF;
+// 			}
+// 		}
 
-		@include breakpoint($bp-medium){
-			margin-left: 0%;
-			transform: translate(-20%,0%);
+// 		@include breakpoint($bp-medium){
+// 			margin-left: 0%;
+// 			transform: translate(-20%,0%);
 
-			img, .footer-navigation {
-				display: inline-block;
-			}
-		}
+// 			img, .footer-navigation {
+// 				display: inline-block;
+// 			}
+// 		}
 
-		@include breakpoint($bp-medium + 200){
-			.footer-navigation {
-				visibility: visible;
-			}
-		}
+// 		@include breakpoint($bp-medium + 200){
+// 			.footer-navigation {
+// 				visibility: visible;
+// 			}
+// 		}
 
-		@include breakpoint($bp-large) {
-			left: 10%;
-			right: 10%;
-			position: absolute;
-			top: 58%;
-			transform: translate(0, -50%);
+// 		@include breakpoint($bp-large) {
+// 			left: 10%;
+// 			right: 10%;
+// 			position: absolute;
+// 			top: 58%;
+// 			transform: translate(0, -50%);
 
-		}
-	}
+// 		}
+// 	}
 
-	.social {
-		margin-bottom: 0.5em;
-		margin-left: 21%;
-		right: 13%;
-		margin-top: 18%;
-		transform: translate(0, -50%);
-		width: 240px;
-		display: block;
+// 	.social {
+// 		margin-bottom: 0.5em;
+// 		margin-left: 21%;
+// 		right: 13%;
+// 		margin-top: 18%;
+// 		transform: translate(0, -50%);
+// 		width: 240px;
+// 		display: block;
 		
-		li {
-			margin-left: 1em;
+// 		li {
+// 			margin-left: 1em;
 
-			a {
-				display: block;
-				text-decoration: none;
-				height: 15px;
-				width: 15px;
+// 			a {
+// 				display: block;
+// 				text-decoration: none;
+// 				height: 15px;
+// 				width: 15px;
 
-			}
-		}
+// 			}
+// 		}
 
-		@include breakpoint($bp-medium) {
-			position: absolute;
-			transform: translate(60%, -50%);
-			left: 85%;
-			top: 0%;
-		}
+// 		@include breakpoint($bp-medium) {
+// 			position: absolute;
+// 			transform: translate(60%, -50%);
+// 			left: 85%;
+// 			top: 0%;
+// 		}
 
-		@include breakpoint($bp-medium+200) {
-			transform: translate(80%, -50%);
-			left: 143%;
-		}
+// 		@include breakpoint($bp-medium+200) {
+// 			transform: translate(80%, -50%);
+// 			left: 143%;
+// 		}
 
-		@include breakpoint($bp-large - 600) {
-			left: 322%;
-			transform: translate(0, -50%);
-		}
-	}
+// 		@include breakpoint($bp-large - 600) {
+// 			left: 322%;
+// 			transform: translate(0, -50%);
+// 		}
+// 	}
 
-	.copy {
-		margin-bottom: 0.5em;
-		position: relative;
-		left: 25%;
-		top: .5em;
+// 	.copy {
+// 		margin-bottom: 0.5em;
+// 		position: relative;
+// 		left: 25%;
+// 		top: .5em;
 
-		@include breakpoint($bp-medium) {
-			margin-bottom: 0.5em;
-			position: absolute;
-			left: 160%;
-			top: 90%;
-		}
+// 		@include breakpoint($bp-medium) {
+// 			margin-bottom: 0.5em;
+// 			position: absolute;
+// 			left: 160%;
+// 			top: 90%;
+// 		}
 
-		@include breakpoint($bp-medium + 200) {	
-			left: 240%;
-		}	
+// 		@include breakpoint($bp-medium + 200) {	
+// 			left: 240%;
+// 		}	
 
-		@include breakpoint($bp-large - 600) {
-			left: 320%;
-			top: 85%;
-		}
+// 		@include breakpoint($bp-large - 600) {
+// 			left: 320%;
+// 			top: 85%;
+// 		}
 
-		span {
-			display: block;
-			font-size: 8px;
-			color: $lightGray;
+// 		span {
+// 			display: block;
+// 			font-size: 8px;
+// 			color: $lightGray;
 
-			a {
-				text-decoration: none;
-				color: $lightGray ;
-			}
+// 			a {
+// 				text-decoration: none;
+// 				color: $lightGray ;
+// 			}
 
-			@include breakpoint($bp-medium) {
-				font-size: 10px;
-			}
-		}
+// 			@include breakpoint($bp-medium) {
+// 				font-size: 10px;
+// 			}
+// 		}
 
-	}
+// 	}
 }
