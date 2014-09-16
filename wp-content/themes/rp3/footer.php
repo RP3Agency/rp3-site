@@ -57,7 +57,7 @@
 		</div>
 		<!-- // .site-footer__email -->
 
-		<nav class="site-footer__social">
+		<nav class="site-footer__social social">
 			<?php wp_nav_menu( array(
 				'theme_location'	=> 'footer-social'
 			) ); ?>
