@@ -40,19 +40,19 @@
 
 			<p>7316 Wisconsin Avenue<br>
 			Suite 450<br>
-			Bethesda, Maryland 20814<br></p>
+			Bethesda, Maryland 20814</p>
 		</div>
 		<!-- //.office-address -->
 
 		<div class="site-footer__phone">
-			<h1 class="site-footer__subheader">Phone</div>
+			<h1 class="site-footer__subheader">Phone</h1>
 
-			<p>301.718.0333</p><br>
+			<p>301.718.0333</p>
 		</div>
 		<!-- // .site-footer__phone -->
 
 		<div class="site-footer__email">
-			<h1 class="site-footer__subheader">Email</div>
+			<h1 class="site-footer__subheader">Email</h1>
 			<p>info@rp3agency.com</p>
 		</div>
 		<!-- // .site-footer__email -->
