@@ -15,7 +15,9 @@ if ( true === get_field( 'case_study' ) ) {
 
 		<header class="<?php echo esc_attr( $class ); ?>__entry-header">
 
-			<?php the_content(); ?>
+			<h1><?php the_title(); ?></h1>
+
+			<div class="<?php echo esc_attr( $class ); ?>__tagline"><?php the_field( 'tagline' ); ?></div>
 
 		</header>
 		<!-- // .<?php echo esc_attr( $class ); ?>__entry-header -->
@@ -23,12 +25,10 @@ if ( true === get_field( 'case_study' ) ) {
 
 		<?php
 		$image = get_field( 'image_1' );
-		if ( ( is_array( $image ) && ( count( $image ) > 0 ) ) ) :
+		if ( is_int( $image ) && ( $image > 0 ) ) {
+			echo rp3_picture_element( $image, 'case-study', '' );
+		}
 		?>
-
-		<img src="<?php echo esc_url( $image['url'] ); ?>">
-
-		<?php endif; ?>
 
 		<section class="<?php echo esc_attr( $class ); ?>__section">
 
@@ -46,12 +46,10 @@ if ( true === get_field( 'case_study' ) ) {
 
 		<?php
 		$image = get_field( 'image_2' );
-		if ( ( is_array( $image ) && ( count( $image ) > 0 ) ) ) :
+		if ( is_int( $image ) && ( $image > 0 ) ) {
+			echo rp3_picture_element( $image, 'case-study', '' );
+		}
 		?>
-
-		<img src="<?php echo esc_url( $image['url'] ); ?>">
-
-		<?php endif; ?>
 
 
 		<section class="<?php echo esc_attr( $class ); ?>__section">
