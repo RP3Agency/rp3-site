@@ -264,3 +264,30 @@ if ( ! function_exists( 'rp3_link_to_author_posts' ) ) {
 <?php
 ?>
 */
+
+/**
+ * Create a picture element
+ */
+if ( ! function_exists( 'rp3_picture_element' ) ) {
+	function rp3_picture_element( $id, $size_tag, $title = '' ) {
+
+		$size_tags = array( 'large', 'medium', 'small' );
+		$images = array();
+
+		foreach ( $size_tags as $tag ) {
+			$images[] = wp_get_attachment_image_src( $id, $size_tag . '-' . $tag );
+			$images[] = wp_get_attachment_image_src( $id, $size_tag . '-' . $tag . '-2x' );
+		}
+
+		$picture  = '<picture>';
+		$picture .= '<!--[if IE 9]><video style="display: none;"><![endif]-->'; // For IE9 compatibility + Picturefill.js
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: 37.5em)">', $images[0][0], $images[1][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: 20.0625em)">', $images[2][0], $images[3][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x">', $images[4][0], $images[5][0] );
+		$picture .= '<!--[if IE 9]></video><![endif]-->';
+		$picture .= sprintf( '<img srcset="%s, %s 2x" alt="%s">', $images[4][0], $images[5][0], $title );
+		$picture .= '</picture>';
+
+		return $picture;
+	}
+}

@@ -46,7 +46,7 @@ textarea {
 	@include font($roboto, $light);
 }
 p {
-	margin: 1.5em 0;
+	margin-bottom: 1.5em;
 }
 b, strong {
 	font-weight: $normal;

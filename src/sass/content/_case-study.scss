@@ -1,0 +1,41 @@
+// Cheap fix for now until I figure out a better alternative [TFR]
+body.single-rp3_cpt_work .site-content {
+	max-width: none;
+}
+
+.case-study {
+	&__entry-header,
+	&__section {
+		margin: ce(70px) 0;
+		@include container;
+	}
+
+	&__entry-header {
+
+		@include breakpoint($medium) {
+			h1 {
+				font-size: ce(36px);
+			}
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	&__section {
+	}
+
+	&__subhead {
+		font-weight: $medium;
+		margin-bottom: 1.5em;
+		text-transform: uppercase;
+	}
+
+	&__content {
+		@include breakpoint($bp-medium) {
+			column-count: 2;
+			column-gap: 2em;
+		}
+	}
+}

@@ -26,6 +26,10 @@ get_header(); ?>
 
 				get_template_part( 'content', 'single-careers' );
 
+			elseif ( 'rp3_cpt_work' == get_post_type() ) :
+
+				get_template_part( 'content', 'single-work' );
+
 			else :
 
 				get_template_part( 'content', 'single' );
@@ -49,23 +53,23 @@ get_header(); ?>
 
 <?php 
 
-if ( has_category('news') ) {
+// if ( has_category('news') ) {
 
-	get_sidebar( 'news' );
+// 	get_sidebar( 'news' );
 
-} elseif ( has_category( 'blog' ) ) {
+// } elseif ( has_category( 'blog' ) ) {
 
-	// get_sidebar( 'blog' );
+// 	// get_sidebar( 'blog' );
 
-} elseif ( has_category( 'careers' ) ) {
+// } elseif ( has_category( 'careers' ) ) {
 
-	get_sidebar( 'careers' );
+// 	get_sidebar( 'careers' );
 
-} else {
+// } else {
 
-	get_sidebar();
+// 	get_sidebar();
 
-}
+// }
 
 ?>
 <?php get_footer(); ?>
