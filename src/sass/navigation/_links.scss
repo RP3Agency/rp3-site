@@ -14,3 +14,13 @@ a {
 		color: $pink;
 	}
 }
+
+
+/**
+ * Linked blocks
+ */
+a.block {
+	color: $black;
+	display: block;
+	text-decoration: none;
+}
