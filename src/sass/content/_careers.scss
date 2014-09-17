@@ -1,0 +1,31 @@
+.careers {
+	margin-top: 3em;
+
+	&__header--section {
+		border-bottom: 1px solid map-get($gray_map, light);
+		margin-bottom: 3em;
+
+		h1 {
+			font: {
+				size: ce(12px);
+				weight: $medium;
+			}
+			line-height: 3;
+			text-transform: uppercase;
+		}
+	}
+
+	&__header--article {
+
+		h2 {
+			font: {
+				size: ce(22px);
+			}
+			margin-bottom: 1em;
+		}
+	}
+
+	&__summary {
+		color: map-get($gray_map, normal);
+	}
+}
