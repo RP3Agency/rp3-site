@@ -26,6 +26,23 @@
 	}
 
 	&__summary {
-		color: map-get($gray_map, normal);
+		// color: map-get($gray_map, normal);
+	}
+
+	/**
+	 * Layout
+	 */
+	&__row {
+		@include container;
+	}
+
+	&__article {
+		@include breakpoint($bp-medium) {
+			@include gallery(12 of 24);
+		}
+
+		@include breakpoint($bp-large) {
+			@include gallery(8 of 24);
+		}
 	}
 }

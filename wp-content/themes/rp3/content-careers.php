@@ -54,49 +54,45 @@ if ( is_array( $jobs ) && ( count( $jobs ) > 0 ) ) :
 	<header class="careers__header--section">
 		<h1>Job Openings</h1>
 	</header>
-	<!-- .careers__header—section -->
+	<!-- // .careers__header—section -->
+
+	<div class="careers__row">
 
 <?php
-	$counter = 0;
 	foreach ( $jobs as $post ) :
 		setup_postdata( $post );
 ?>
 
-	<?php if ( ( $counter % 2 ) == 0 ) {
-		echo '<div class="careers__row">';
-	} ?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
+			<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
 
-		<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
+				<header class="careers__header--article">
+					<h2 class="careers__title"><?php the_title(); ?></h2>
+				</header>
+				<!-- // .careers__header—article -->
 
-			<header class="careers__header--article">
-				<h2 class="careers__title"><?php the_title(); ?></h2>
-			</header>
-			<!-- // .careers__header—article -->
+				<div class="careers__summary">
+					<?php // We don't want sharing links here, exactly. ?>
+					<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
+					<?php the_excerpt(); ?>
+				</div>
+				<!-- // .careers__summary -->
 
-			<div class="careers__summary">
-				<?php // We don't want sharing links here, exactly. ?>
-				<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
-				<?php the_excerpt(); ?>
-			</div>
-			<!-- // .careers__summary -->
+				<footer class="careers__footer">
+					<p class="link">Learn more</p>
+				</footer>
+				<!-- // .careers__footer -->
 
-			<footer class="careers__footer">
-				<p>Learn more</p>
-			</footer>
-			<!-- // .careers__footer -->
+			</a>
 
-		</a>
+		</article>
+		<!-- #post-## -->
 
-	</article>
-	<!-- #post-## -->
+<?php endforeach; ?>
 
-	<?php if ( ( ( ( $counter + 1 ) % 2 ) == 0 ) || ( ( $counter + 1 ) == count( $jobs ) ) ) {
-		echo '</div>';
-	} ?>
-
-<?php $counter++; endforeach; ?>
+	</div>
+	<!-- // .careers__row -->
 
 </section>
 <!-- // .careers -->
@@ -115,49 +111,45 @@ if ( is_array( $internships ) && ( count( $internships ) > 0 ) ) :
 	<header class="careers__header--section">
 		<h1>Internships</h1>
 	</header>
-	<!-- .careers__header—section -->
+	<!-- // .careers__header—section -->
+
+	<div class="careers__row">
 
 <?php
-	$counter = 0;
 	foreach ( $internships as $post ) :
 		setup_postdata( $post );
 ?>
 
-	<?php if ( ( $counter % 2 ) == 0 ) {
-		echo '<div class="careers__row">';
-	} ?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
+			<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
 
-		<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
+				<header class="careers__header--article">
+					<h2 class="careers__title"><?php the_title(); ?></h2>
+				</header>
+				<!-- // .careers__header—article -->
 
-			<header class="careers__header--article">
-				<h2 class="careers__title"><?php the_title(); ?></h2>
-			</header>
-			<!-- // .careers__header—article -->
+				<div class="careers__summary">
+					<?php // We don't want sharing links here, exactly. ?>
+					<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
+					<?php the_excerpt(); ?>
+				</div>
+				<!-- // .careers__summary -->
 
-			<div class="careers__summary">
-				<?php // We don't want sharing links here, exactly. ?>
-				<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
-				<?php the_excerpt(); ?>
-			</div>
-			<!-- // .careers__summary -->
+				<footer class="careers__footer">
+					<p class="link">Learn more</p>
+				</footer>
+				<!-- // .careers__footer -->
 
-			<footer class="careers__footer">
-				<p>Learn more</p>
-			</footer>
-			<!-- // .careers__footer -->
+			</a>
 
-		</a>
+		</article>
+		<!-- #post-## -->
 
-	</article>
-	<!-- #post-## -->
+<?php endforeach; ?>
 
-	<?php if ( ( ( ( $counter + 1 ) % 2 ) == 0 ) || ( ( $counter + 1 ) == count( $internships ) ) ) {
-		echo '</div>';
-	} ?>
-
-<?php $counter++; endforeach; ?>
+	</div>
+	<!-- // .careers__row -->
 
 </section>
 <!-- // .careers -->
