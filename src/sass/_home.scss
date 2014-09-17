@@ -43,11 +43,6 @@ body.home {
 		width: 100%;
 	}
 
-	picture,
-	picture img {
-		position: absolute;
-	}
-
 	.headline {
 		bottom: 0;
 		font-size: cr(11px);
@@ -84,33 +79,6 @@ body.home {
 }
 
 .home-hero {
-
-	picture,
-	picture img {
-		display: block;
-		height: 100%;
-		left: 50%;
-		max-width: 320px;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		width: auto;
-
-		@include breakpoint($bp-small) {
-			max-width: 640px;
-		}
-
-		@include breakpoint($bp-medium) {
-			max-width: 1600px
-		}
-
-		@include breakpoint($bp-large) {
-			height: auto;
-			max-width: none;
-			position: static;
-			transform: translate(0);
-			width: 100%;
-		}
-	}
 
 	a {
 		color: #fff;

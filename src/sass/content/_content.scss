@@ -15,3 +15,10 @@
 @import "case-study";
 
 @import "careers";
+
+/**
+ * Generic page content
+ */
+.page-content {
+	@extend %wrapper;
+}

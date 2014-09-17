@@ -285,7 +285,7 @@ if ( ! function_exists( 'rp3_picture_element' ) ) {
 		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: 20.0625em)">', $images[2][0], $images[3][0] );
 		$picture .= sprintf( '<source srcset="%s, %s 2x">', $images[4][0], $images[5][0] );
 		$picture .= '<!--[if IE 9]></video><![endif]-->';
-		$picture .= sprintf( '<img srcset="%s, %s 2x" alt="%s">', $images[4][0], $images[5][0], $title );
+		$picture .= sprintf( '<img srcset="%s, %s 2x" alt="%s">', $images[4][0], $images[5][0], esc_attr( $title ) );
 		$picture .= '</picture>';
 
 		return $picture;
