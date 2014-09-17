@@ -44,6 +44,12 @@
 		color: map-get($gray_map, normal);
 	}
 
+	&__secondary-copy {
+		@extend %wrapper;
+		margin-bottom: 3em;
+		margin-top: 3em;
+	}
+
 	/**
 	 * Layout
 	 */
