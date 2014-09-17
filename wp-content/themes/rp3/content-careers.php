@@ -3,38 +3,163 @@
  * @package RP3
  */
 
+// Query all of our "careers" post (by category name)
 $careers = new WP_Query( array(
-	'category_name'			=> 'careers'
+	'category_name'			=> 'careers',
+	'posts_per_page'		=> -1
 ));
-?>
 
-<?php if ( $careers->have_posts() ): while ( $careers->have_posts() ): $careers->the_post(); ?>
+// Feed the results into two arrays, one for jobs and one for internships
+if ( $careers->have_posts() ) {
+	while ( $careers->have_posts() ) {
+		$careers->the_post();
+
+		if ( has_category( 'internships' ) ) {
+			$internships[] = $post;
+		} else {
+			$jobs[] = $post;
+		}
+	}
+}
+
+// Reset the query before moving on.
+wp_reset_query();
+?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<a href="<?php the_permalink(); ?>" rel="bookmark">
+	<div class="entry-content">
+		<?php the_content(); ?>
+	</div>
+	<!-- .entry-content -->
 
-		<div class="entry-wrapper">
+</article>
+<!-- #post-## -->
 
-			<header class="entry-header">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			</header><!-- .entry-header -->
 
-			<div class="entry-summary">
+<?php
+if ( '' !== get_the_post_thumbnail() ) {
+	echo rp3_picture_element( get_post_thumbnail_id(), 'home-page-hero', '' );
+}
+?>
+
+
+<?php
+// Jobs
+if ( is_array( $jobs ) && ( count( $jobs ) > 0 ) ) :
+?>
+
+<section class="careers">
+
+	<header class="careers__header--section">
+		<h1>Job Openings</h1>
+	</header>
+	<!-- .careers__header—section -->
+
+<?php
+	$counter = 0;
+	foreach ( $jobs as $post ) :
+		setup_postdata( $post );
+?>
+
+	<?php if ( ( $counter % 2 ) == 0 ) {
+		echo '<div class="careers__row">';
+	} ?>
+
+	<article id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
+
+		<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
+
+			<header class="careers__header--article">
+				<h2 class="careers__title"><?php the_title(); ?></h2>
+			</header>
+			<!-- // .careers__header—article -->
+
+			<div class="careers__summary">
 				<?php // We don't want sharing links here, exactly. ?>
 				<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
 				<?php the_excerpt(); ?>
-			</div><!-- .entry-summary -->
+			</div>
+			<!-- // .careers__summary -->
 
-			<footer class="entry-footer">
-				<p><i>Learn more &rarr;</i></p>
-			</footer><!-- .entry-footer -->
+			<footer class="careers__footer">
+				<p>Learn more</p>
+			</footer>
+			<!-- // .careers__footer -->
 
-		</div>
-		<!-- // .entry-wrapper -->
+		</a>
 
-	</a>
+	</article>
+	<!-- #post-## -->
 
-</article><!-- #post-## -->
+	<?php if ( ( ( ( $counter + 1 ) % 2 ) == 0 ) || ( ( $counter + 1 ) == count( $jobs ) ) ) {
+		echo '</div>';
+	} ?>
 
-<?php endwhile; endif; ?>
+<?php $counter++; endforeach; ?>
+
+</section>
+<!-- // .careers -->
+
+<?php endif; wp_reset_postdata(); ?>
+
+
+
+<?php
+// Internships
+if ( is_array( $internships ) && ( count( $internships ) > 0 ) ) :
+?>
+
+<section class="careers">
+
+	<header class="careers__header--section">
+		<h1>Internships</h1>
+	</header>
+	<!-- .careers__header—section -->
+
+<?php
+	$counter = 0;
+	foreach ( $internships as $post ) :
+		setup_postdata( $post );
+?>
+
+	<?php if ( ( $counter % 2 ) == 0 ) {
+		echo '<div class="careers__row">';
+	} ?>
+
+	<article id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
+
+		<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
+
+			<header class="careers__header--article">
+				<h2 class="careers__title"><?php the_title(); ?></h2>
+			</header>
+			<!-- // .careers__header—article -->
+
+			<div class="careers__summary">
+				<?php // We don't want sharing links here, exactly. ?>
+				<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
+				<?php the_excerpt(); ?>
+			</div>
+			<!-- // .careers__summary -->
+
+			<footer class="careers__footer">
+				<p>Learn more</p>
+			</footer>
+			<!-- // .careers__footer -->
+
+		</a>
+
+	</article>
+	<!-- #post-## -->
+
+	<?php if ( ( ( ( $counter + 1 ) % 2 ) == 0 ) || ( ( $counter + 1 ) == count( $internships ) ) ) {
+		echo '</div>';
+	} ?>
+
+<?php $counter++; endforeach; ?>
+
+</section>
+<!-- // .careers -->
+
+<?php endif; wp_reset_postdata(); ?>
