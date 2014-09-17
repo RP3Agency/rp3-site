@@ -46,6 +46,21 @@ if ( '' !== get_the_post_thumbnail() ) {
 </div>
 
 
+
+<?php // Additional content about our awesome culture ?>
+
+<?php if ( '' !== get_field( 'secondary_copy' ) ) : ?>
+
+	<section class="careers__secondary-copy">
+
+		<?php the_field( 'secondary_copy' ); ?>
+
+	</section>
+
+<?php endif; ?>
+
+
+
 <?php
 // Jobs
 if ( is_array( $jobs ) && ( count( $jobs ) > 0 ) ) :
