@@ -24,3 +24,16 @@ a.block {
 	display: block;
 	text-decoration: none;
 }
+
+// Make something _look_ like a link, even if it's not really
+// (mostly for "learn more" type copy inside 'blocked' anchors)
+.link {
+	color: $blue;
+	text-decoration: underline;
+
+	a:hover &,
+	a:active &,
+	a:focus & {
+		color: $pink;
+	}
+}
