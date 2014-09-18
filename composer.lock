@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "782a98fd6263e8a64bd6f152ab8ca89e",
+    "hash": "794ae86817599b6ec5f9d0838022c86c",
     "packages": [
         {
             "name": "composer/installers",
@@ -266,6 +266,29 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/contact-form-7/"
+        },
+        {
+            "name": "wpackagist-plugin/custom-menu-wizard",
+            "version": "3.0.4",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/custom-menu-wizard/",
+                "reference": "tags/3.0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/custom-menu-wizard.3.0.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/custom-menu-wizard": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/custom-menu-wizard/"
         },
         {
             "name": "wpackagist-plugin/custom-tag-widget",
