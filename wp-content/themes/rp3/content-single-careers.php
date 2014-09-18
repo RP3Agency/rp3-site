@@ -61,5 +61,7 @@
 	</div>
 	<!-- // .wrapper -->
 
+	<p class="careers__back"><a href="<?php echo esc_url( home_url( '/careers/' ) ); ?>">Back to Careers</a></p>
+
 </article>
 <!-- // #post-## -->

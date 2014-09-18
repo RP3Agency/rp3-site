@@ -85,6 +85,14 @@
 		}
 	}
 
+	&__back {
+		line-height: 5;
+
+		&::before {
+			content: '<\00A0';
+		}
+	}
+
 	/**
 	 * Layout
 	 */
