@@ -62,7 +62,10 @@
 
 	&__entry-content--larger {
 		font-size: ce(16px);
-		@include span(16 of 24);
+
+		@include breakpoint($bp-medium) {
+			@include span(16 of 24);
+		}
 	}
 
 	&__tagline {
@@ -93,11 +96,15 @@
 		}
 	}
 
-	&__details {
-		@include span(16 of 24);
+	@include breakpoint($bp-medium) {
+		&__details {
+			@include span(16 of 24);
+		}
 	}
 
-	&__sidebar {
-		@include span(8 of 24 at 17);
+	@include breakpoint($bp-medium) {
+		&__sidebar {
+			@include span(8 of 24 at 17);
+		}
 	}
 }
