@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "63cd710b63ea689ef7b45d6cbc7b8321",
+    "hash": "782a98fd6263e8a64bd6f152ab8ca89e",
     "packages": [
         {
             "name": "composer/installers",
@@ -361,15 +361,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.0.5",
+            "version": "5.0.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.0.5"
+                "reference": "tags/5.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.0.5.zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.0.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -588,6 +588,29 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/theme-check/"
+        },
+        {
+            "name": "wpackagist-plugin/widget-logic",
+            "version": "0.57",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/widget-logic/",
+                "reference": "tags/0.57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/widget-logic.0.57.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/widget-logic": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/widget-logic/"
         },
         {
             "name": "wpackagist-plugin/wordpress-importer",
