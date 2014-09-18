@@ -47,5 +47,18 @@ function rp3_widgets_init() {
 		'before_title'		=> '<h1 class="widget-title">',
 		'after_title'		=> '</h1>'
 	) );
+
+
+	// Career listing
+	register_sidebar( array(
+		'name'				=> __( 'Career Listing Sidebar', 'rp3' ),
+		'id'				=> 'career__sidebar',
+		'class'				=> 'career__sidebar',
+		'description'		=> __( 'Sidebar for career listing pages', 'rp3' ),
+		'before_widget'		=> '<aside id="career__single-widget-area" class="widget %2$s">',
+		'after_widget'		=> '</aside>',
+		'before_title'		=> '<h1 class="widget-title">',
+		'after_title'		=> '</h1>'
+	) );
 }
 add_action( 'widgets_init', 'rp3_widgets_init' );

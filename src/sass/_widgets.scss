@@ -2,15 +2,7 @@
 9.0 Widgets
 --------------------------------------------------------------*/
 .widget {
-	border-bottom: 1px dotted $gray;
-	margin: 0 0 1.5em;
-	padding-bottom: 0.5em;
-
-	&:last-of-type {
-		border-bottom: none;
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
+	margin: 0 0 3em;
 
 	/* Make sure select elements fit in widgets */
 	select {
@@ -29,9 +21,12 @@
 }
 
 .widget-title {
-	color: $gray;
-	font-size: ce(19px);
-	margin-bottom: 1em;
+	font: {
+		size: ce(12px);
+		weight: $medium;
+	}
+	line-height: 3;
+	text-transform: uppercase;
 }
 
 /**
@@ -124,4 +119,8 @@
 	.sharedaddy {
 		display: none;
 	}
+}
+
+.widget ul {
+	margin: 0 0 3em 1em;
 }

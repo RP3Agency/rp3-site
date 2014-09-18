@@ -5,6 +5,9 @@
  * @package RP3
  */
 ?>
-	<div id="secondary" class="widget-area" role="complementary">
-		<?php /* something goes in here eventually, probably copy from richard on how great it is to work here */ ?>
-	</div><!-- #secondary -->
+<div id="secondary" class="widget-area careers__sidebar" role="complementary">
+
+	<?php dynamic_sidebar( 'career__sidebar' ); ?>
+
+</div>
+<!-- #secondary -->

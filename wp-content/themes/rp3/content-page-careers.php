@@ -46,6 +46,21 @@ if ( '' !== get_the_post_thumbnail() ) {
 </div>
 
 
+
+<?php // Additional content about our awesome culture ?>
+
+<?php if ( '' !== get_field( 'secondary_copy' ) ) : ?>
+
+	<section class="careers__secondary-copy">
+
+		<?php the_field( 'secondary_copy' ); ?>
+
+	</section>
+
+<?php endif; ?>
+
+
+
 <?php
 // Jobs
 if ( is_array( $jobs ) && ( count( $jobs ) > 0 ) ) :
@@ -113,7 +128,7 @@ if ( is_array( $internships ) && ( count( $internships ) > 0 ) ) :
 	<header class="careers__header--section">
 		<h1>Internships</h1>
 	</header>
-	<!-- // .careers__header—section -->
+	<!-- // .careers__header -->
 
 	<div class="careers__row">
 
