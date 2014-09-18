@@ -20,7 +20,13 @@
 		border-bottom: 1px solid map-get($gray_map, light);
 		margin-bottom: 3em;
 
-		h1 {
+		&.no-bottom-margin {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+
+		h1,
+		h2 {
 			font: {
 				size: ce(12px);
 				weight: $medium;
@@ -40,6 +46,10 @@
 		}
 	}
 
+	&__title {
+		margin-bottom: 0.5em;
+	}
+
 	&__summary {
 		color: map-get($gray_map, normal);
 	}
@@ -48,6 +58,22 @@
 		@extend %wrapper;
 		margin-bottom: 3em;
 		margin-top: 3em;
+	}
+
+	&__entry-content--larger {
+		font-size: ce(16px);
+		@include span(16 of 24);
+	}
+
+	&__tagline {
+		color: map-get($gray_map, normal);
+		font-size: ce(16px);
+	}
+
+	&__details {
+		ul {
+			margin: 0 0 3em 1em;
+		}
 	}
 
 	/**
@@ -65,5 +91,13 @@
 		@include breakpoint($bp-large) {
 			@include gallery(8 of 24);
 		}
+	}
+
+	&__details {
+		@include span(16 of 24);
+	}
+
+	&__sidebar {
+		@include span(8 of 24 at 17);
 	}
 }

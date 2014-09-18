@@ -10,6 +10,7 @@
 get_header(); ?>
 
 <section id="primary" class="content-area">
+
 	<main id="main" class="site-main" role="main">
 
 	<?php if ( have_posts() ) : ?>
@@ -17,7 +18,7 @@ get_header(); ?>
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'careers' ); ?>
+			<?php get_template_part( 'content', 'page-careers' ); ?>
 
 		<?php endwhile; ?>
 
@@ -27,7 +28,10 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-	</main><!-- #main -->
-</section><!-- #primary -->
+	</main>
+	<!-- // #main -->
+
+</section>
+<!-- // #primary -->
 
 <?php get_footer(); ?>

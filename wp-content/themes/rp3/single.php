@@ -51,7 +51,13 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php 
+<?php
+
+if ( has_category( 'careers' ) ) {
+
+	get_sidebar( 'careers' );
+
+}
 
 // if ( has_category('news') ) {
 

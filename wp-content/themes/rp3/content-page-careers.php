@@ -128,7 +128,7 @@ if ( is_array( $internships ) && ( count( $internships ) > 0 ) ) :
 	<header class="careers__header--section">
 		<h1>Internships</h1>
 	</header>
-	<!-- // .careers__header—section -->
+	<!-- // .careers__header -->
 
 	<div class="careers__row">
 
