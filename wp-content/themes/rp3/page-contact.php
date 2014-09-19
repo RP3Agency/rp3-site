@@ -135,3 +135,10 @@ get_header(); ?>
 	<!-- // #primary -->
 
 <?php get_footer(); ?>
+
+
+<?php
+/*
+Want to learn more? Tell us what you need and we'll show you what you can do.
+ */
+?>
