@@ -13,3 +13,11 @@ h1 {
 		weight: $thin;
 	}
 }
+
+%section-header {
+	font: {
+		size: ce(12px);
+		weight: $medium;
+	}
+	text-transform: uppercase;
+}

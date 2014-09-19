@@ -75,7 +75,8 @@ get_header(); ?>
 						<div class="contact__info__social">
 							<h2>Social</h2>
 							<?php wp_nav_menu( array(
-								'theme_location'	=> 'contact-social'
+								'theme_location'	=> 'contact-social',
+								'menu_class'		=> 'social'
 							) ); ?>
 						</div>
 						<!-- // .contact__info__social -->
@@ -88,9 +89,9 @@ get_header(); ?>
 
 						<div class="contact__info__phone-fax">
 							<h2>Phone & Fax</h2>
-							<p class="contact__info__phone-fax">
-								<?php echo esc_html( get_field( 'telephone' ) ); ?><br>
-								<?php echo esc_html( get_field( 'fax' ) ); ?>
+							<p class="contact__info__phone-fax-numbers">
+								t. <?php echo esc_html( get_field( 'telephone' ) ); ?><br>
+								f. <?php echo esc_html( get_field( 'fax' ) ); ?>
 							</p>
 						</div>
 

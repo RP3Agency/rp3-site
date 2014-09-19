@@ -1,57 +1,38 @@
-// .page-contact {
-// 	h2 {
-// 		color: $gray;
-// 		font-size: ce(18px);
-// 		font-weight: $normal;
-// 		margin-bottom: 1em;
-// 	}
+.contact__info {
+	@include container;
 
-// 	.telephone {
-// 		margin-bottom: 2em;
+	> div {
+		@include gallery(12 of 24);
 
-// 		.blue {
-// 			color: $blue;
-// 			font-size: ce(30px);
-// 			line-height: ( 47 / 30 );
-// 			text-transform: lowercase;
-// 		}
+		@include breakpoint($bp-medium) {
+			@include gallery(8 of 24);
+		}
 
-// 		.gray {
-// 			color: $gray;
-// 			font-size: ce(30px);
-// 			line-height: ( 47 / 30 );
-// 		}
-// 	}
+		@include breakpoint($bp-large) {
+			@include gallery(6 of 24);
+		}
+	}
 
-// 	.inquiries {
-// 		color: $gray;
-// 		font-size: ce(15px);
-// 		margin-bottom: 2em;
-// 	}
+	h2 {
+		@extend %section-header;
+		margin-bottom: 1em;
+	}
 
-// 	.address {
-// 		color: $gray;
-// 	}
-// }
+	&__email,
+	&__phone-fax-numbers,
+	&__fact-sheet-link {
+		font-weight: $regular;
+	}
 
-// /**
-//  * Layout
-//  */
-// @include bp(medium) {
+	&__social {
+		li a {
+			border: 1px solid $blue;
+			border-radius: 0;
+			color: $blue;
+		}
 
-// 	.contact-wrapper {
-// 		border-bottom: 1px solid $gray-light;
-// 		display: flex;
-// 		justify-content: space-between;
-// 		margin-bottom: 2em;
-
-// 		.contact-form,
-// 		.contact-info {
-// 			flex: 1;
-// 		}
-
-// 		.contact-form {
-// 			margin-right: 20px;
-// 		}
-// 	}
-// }
+		li:first-child a {
+			margin-left: 0;
+		}
+	}
+}
