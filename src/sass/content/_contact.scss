@@ -29,10 +29,11 @@
 			border: 1px solid $blue;
 			border-radius: 0;
 			color: $blue;
+			margin: 0.25em 8px 0.25em 0;
 		}
 
-		li:first-child a {
-			margin-left: 0;
+		li:last-child a {
+			margin-right: 0;
 		}
 	}
 }
