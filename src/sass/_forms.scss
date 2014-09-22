@@ -15,10 +15,11 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	background-color: #fff;
-	border: 1px solid $blue;
+	border: 2px solid $blue;
 	border-radius: 0;
 	color: $blue;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	font-weight: $normal;
 	line-height: 1;
 	padding: 10px;
 	text-transform: uppercase;
@@ -26,14 +27,8 @@ input[type="submit"] {
 	@include appearance(none);
 	@include font-size(16px);
 
-	&:hover {
+	@include hover-state {
 		background-color: $blue;
-		color: #fff;
-	}
-
-	&:focus,
-	&:active {
-		background-color: mix(#000, $blue, 25%);
 		color: #fff;
 	}
 }
@@ -78,4 +73,12 @@ textarea {
 	padding-left: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 98%;
+}
+
+label {
+	font: {
+		size: ce(12px);
+		weight: $bold;
+	}
+	text-transform: uppercase;
 }
