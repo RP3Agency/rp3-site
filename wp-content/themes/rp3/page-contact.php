@@ -49,7 +49,7 @@ get_header(); ?>
 						<?php if ( '' != get_field( 'general_inquiries_email' ) ) : ?>
 
 						<div class="contact__info__general-inquiries">
-							<h2>Work With Us</h2>
+							<h2>General Inquiries</h2>
 							<p class="contact__info__email"><a href="mailto:<?php echo esc_url( get_field( 'general_inquiries_email' ) ); ?>"><?php echo esc_html( get_field( 'general_inquiries_email' ) ); ?></a></p>
 						</div>
 
@@ -62,7 +62,7 @@ get_header(); ?>
 						<?php if ( '' != get_field( 'careers_email' ) ) : ?>
 
 						<div class="contact__info__careers">
-							<h2>Work With Us</h2>
+							<h2>Careers</h2>
 							<p class="contact__info__email"><a href="mailto:<?php echo esc_url( get_field( 'careers_email' ) ); ?>"><?php echo esc_html( get_field( 'careers_email' ) ); ?></a></p>
 						</div>
 
