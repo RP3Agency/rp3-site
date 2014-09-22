@@ -21,7 +21,7 @@ get_header(); ?>
 
 				<div class="contact__wrapper">
 
-					<section class="contact__content">
+					<section class="contact__content entry-content wrapper">
 
 						<?php the_content(); ?>
 
@@ -117,14 +117,15 @@ get_header(); ?>
 				<!-- // .contact__wrapper -->
 
 
-				<section class="contact__map">
-
-					<iframe width="960" height="340" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=RP3+Agency,+7316+Wisconsin+Ave+%23450,+Bethesda,+MD+20814&amp;hl=en&amp;ie=UTF8&amp;view=map&amp;cid=9706010344331859619&amp;t=m&amp;vpsrc=6&amp;ll=38.98535,-77.093575&amp;spn=0.005671,0.020578&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
-
-	            </section>
+				<section id="contact__map" class="contact__map"></section>
 	            <!-- // .contact__map -->
 
-	            <?php // do_shortcode( '[contact-form-7 id="8285" title="Contact form 1"]' ); ?>
+	            <section class="contact__form wrapper entry-content">
+
+		            <?php echo do_shortcode( '[contact-form-7 id="8285" title="Contact form 1"]' ); ?>
+
+		        </section>
+		        <!-- // .contact__form -->
 
 			<?php endwhile; // end of the loop. ?>
 
@@ -135,10 +136,3 @@ get_header(); ?>
 	<!-- // #primary -->
 
 <?php get_footer(); ?>
-
-
-<?php
-/*
-Want to learn more? Tell us what you need and we'll show you what you can do.
- */
-?>
