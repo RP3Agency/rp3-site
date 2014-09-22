@@ -22,3 +22,13 @@
 .page-content {
 	@extend %wrapper;
 }
+
+.entry-content {
+	> h1 {
+		margin-bottom: 1em;
+	}
+
+	> p {
+		font-size: ce(16px);
+	}
+}
