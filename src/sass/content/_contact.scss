@@ -1,3 +1,7 @@
+.page-contact .site-content {
+	max-width: none;
+}
+
 .contact__info {
 	@include container;
 
@@ -35,5 +39,39 @@
 		li:last-child a {
 			margin-right: 0;
 		}
+	}
+}
+
+.contact__form {
+	input[type="text"],
+	input[type="url"],
+	input[type="email"] {
+		width: 90%;
+	}
+
+	@include breakpoint($bp-medium) {
+		.form-left,
+		.form-right {
+			@include span(12 of 24);
+		}
+
+		.form-right {
+			@include last;
+		}
+	}
+}
+
+.contact__map {
+	height: cr(300px);
+	margin-bottom: 3em;
+	width: 100%;
+
+	@include breakpoint($bp-medium) {
+		height: cr(608px);
+	}
+
+	// Fixes distorted zoom controls in Google maps
+	img {
+		max-width: none;
 	}
 }
