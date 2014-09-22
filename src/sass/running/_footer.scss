@@ -1,237 +1,142 @@
-// $darkGray: #1a1a1a;
-// $lightGray: #666;
-// $container-width: 1000px;
-
 .site-footer {
 	background-color: $black;
-	padding-top: cr(70px);
+	color: #fff;
+	font-size: cr(12px);
+	padding: cr(70px) percentage(25px / 320px) cr(95px);
+	position: relative;
 
-	&__logo path {
-		fill: #fff;
+	@include breakpoint($bp-footer) {
+		font-size: cr(14px);
+		padding-left: 0;
+		padding-right: 0;
 	}
 
-// 	@include breakpoint( $bp-medium){
-// 		font-size: 10px;
-// 	}
+	h1 {
+		color: #888;
+		font-size: 1em;
+		font-weight: $medium;
+		text-transform: uppercase;
+	}
 
-// 	@include breakpoint($bp-large) {
-// 		height: ce(400px);
-// 		display: block;
-// 		clear: both;
-// 	}
+	a {
+		color: #fff;
+		text-decoration: none;
 
-// 	/**
-// 	 * Bottom Section
-// 	 */
+		@include hover-state {
+			text-decoration: underline;
+		}
+	}
 
-// 	.bottom .site-info {
-// 		background-color: $darkGray;
-// 		color: #fff;
-// 		display: block;
-// 		height: ce(740px);
-// 		position: relative;
+	&__logo {
+		margin-bottom: 2em;
 
-// 		@include breakpoint($bp-large) {
-// 			height: ce(400px);
-// 		}
-// 	}
+		@include breakpoint($bp-footer) {
+			float: left;
+		}
 
-// 	.address-phone-combined {
-// 		@include container;
-// 		left: 35%;
-// 		position: absolute;
-// 		top: 50%;
-// 		transform: translate(-50%, -50%);
-// 		white-space: nowrap;
-// 		margin: auto;
-// 		height: 100%
+		svg {
+			height: 21px;
+			width: 30px;
+		}
 
-// 		h6 {
-// 			color: $lightGray;
-// 		}
+		path {
+			fill: #fff;
+		}
+	}
 
-// 		.email {
-// 			position: absolute;
-// 			text-align: right;
-// 			left: 91%;
-// 			top: 54%;
+	&__navigation {
+		position: absolute;
+		right: percentage(25px / 320px);
+		top: cr(70px) - 1rem;
 
-// 			@include breakpoint ($bp-medium) {
-// 				position: relative;
-// 				text-align: left;
-// 				left: -17%;
-// 			}
-// 		}
+		@include breakpoint($bp-footer) {
+			float: left;
+			position: static;
+		}
 
-// 		@include breakpoint($bp-medium) {
-// 			left: 25%;
-// 		}
+		ul {
+			list-style: none;
+			margin: 0;
+		}
 
-// 		@include breakpoint($bp-large) {
-// 			bottom: 0;
-// 			left: 0;
-// 			right: 0;
-// 			top: 0;
-// 			transform: none;
-// 		}
-// 	}
+		li {
+			@include breakpoint($bp-footer) {
+				float: left;
+			}
+		}
 
-// 	.address {
-// 		margin-left: 10%;
-// 		display: block;
-// 		max-width: 300px;
+		a {
+			display: block;
+			padding: 1em 0;
+			text-align: right;
+			text-transform: uppercase;
 
-// 		img {
-// 			max-width: 15%;
-// 			margin-bottom: 3em;
-			
-// 			@include breakpoint($bp-medium) {
-// 				max-width: 100%;
-// 			}
-// 		}
+			@include breakpoint($bp-footer) {
+				padding: 0 1em;
+			}
+		}
+	}
 
-// 		.footer-navigation {
-// 			position: absolute;
-// 			text-align: right;
-// 			left: 95%;
-// 			top: 0%;
+	&__social {
+		margin: 3em 0;
 
-// 			li {
-// 				list-style: none;
-				
-// 				a {
-// 					color: #fff;
-// 					text-decoration: none;
-// 				}
-// 			}
+		@include breakpoint($bp-footer) {
+			margin: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
 
-// 			@include breakpoint($bp-medium) {
-// 				position: relative;
-// 				left: 0%;
-// 				top: 0%;
-// 				text-align: left;
+		.menu-social-container {
+			text-align: center;
+		}
 
-// 				li {
-// 					display: inline-block;
-// 					margin-left: 1em;
-// 				}
-// 			}
-// 		}
+		ul {
+			display: inline-block;
+			margin: 0;
+		}
 
-// 		.office-address {
-// 			margin-bottom: 3em;
-// 		}
+		li {
+			a {
+				background-color: transparent;
+				border: 1px solid #fff;
+				border-radius: 0;
+				color: #fff;
+				height: 40px;
+				width: 40px;
 
-// 		.phone {
-// 			margin-bottom:0px;
-// 			margin-top: 25%;
+				&:before {
+					line-height: 40px;
+				}
 
-// 			a {
-// 				text-decoration: none;
-// 				color: #FFF;
-// 			}
-// 		}
+				@include hover-state {
+					background-color: #fff;
+					color: $black;
+				}
+			}
+		}
+	}
 
-// 		@include breakpoint($bp-medium){
-// 			margin-left: 0%;
-// 			transform: translate(-20%,0%);
+	&__copyright {
+		font-size: ce(12px);
+		color: #888;
+		text-align: center;
 
-// 			img, .footer-navigation {
-// 				display: inline-block;
-// 			}
-// 		}
+		a {
+			color: #888;
+		}
 
-// 		@include breakpoint($bp-medium + 200){
-// 			.footer-navigation {
-// 				visibility: visible;
-// 			}
-// 		}
+		@include breakpoint($bp-footer) {
+			bottom: 0;
+			position: absolute;
+			right: 0;
+		}
+	}
 
-// 		@include breakpoint($bp-large) {
-// 			left: 10%;
-// 			right: 10%;
-// 			position: absolute;
-// 			top: 58%;
-// 			transform: translate(0, -50%);
-
-// 		}
-// 	}
-
-// 	.social {
-// 		margin-bottom: 0.5em;
-// 		margin-left: 21%;
-// 		right: 13%;
-// 		margin-top: 18%;
-// 		transform: translate(0, -50%);
-// 		width: 240px;
-// 		display: block;
-		
-// 		li {
-// 			margin-left: 1em;
-
-// 			a {
-// 				display: block;
-// 				text-decoration: none;
-// 				height: 15px;
-// 				width: 15px;
-
-// 			}
-// 		}
-
-// 		@include breakpoint($bp-medium) {
-// 			position: absolute;
-// 			transform: translate(60%, -50%);
-// 			left: 85%;
-// 			top: 0%;
-// 		}
-
-// 		@include breakpoint($bp-medium+200) {
-// 			transform: translate(80%, -50%);
-// 			left: 143%;
-// 		}
-
-// 		@include breakpoint($bp-large - 600) {
-// 			left: 322%;
-// 			transform: translate(0, -50%);
-// 		}
-// 	}
-
-// 	.copy {
-// 		margin-bottom: 0.5em;
-// 		position: relative;
-// 		left: 25%;
-// 		top: .5em;
-
-// 		@include breakpoint($bp-medium) {
-// 			margin-bottom: 0.5em;
-// 			position: absolute;
-// 			left: 160%;
-// 			top: 90%;
-// 		}
-
-// 		@include breakpoint($bp-medium + 200) {	
-// 			left: 240%;
-// 		}	
-
-// 		@include breakpoint($bp-large - 600) {
-// 			left: 320%;
-// 			top: 85%;
-// 		}
-
-// 		span {
-// 			display: block;
-// 			font-size: 8px;
-// 			color: $lightGray;
-
-// 			a {
-// 				text-decoration: none;
-// 				color: $lightGray ;
-// 			}
-
-// 			@include breakpoint($bp-medium) {
-// 				font-size: 10px;
-// 			}
-// 		}
-
-// 	}
+	&__wrapper {
+		@include breakpoint($bp-footer) {
+			position: relative;
+			@include container;
+		}
+	}
 }
