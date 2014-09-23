@@ -59,45 +59,36 @@
 	}
 
 	[role="navigation"] {
-		clear: both;
-
-		@include breakpoint($bp-navigation) {
-			clear: none;
-			float: left;
-		}
+		clear: none;
+		float: left;
 	}
 
 	.primary-menu {
 		@extend %clearfix;
 		display: none;
 		list-style: none;
-		margin: 0;
+		margin: 12px 0 0 0;
 
 		@include breakpoint($bp-navigation) {
 			display: block;
-			margin-top: 12px;
 		}
 
 		li {
+			float: left;
+			padding: 8px;
 			text-align: right;
 
-			@include breakpoint($bp-navigation) {
-				float: left;
-				padding: 8px;
-
-				a {
-					@include hover-state {
-						border-bottom: 4px solid mix(#fff, $black, 33%);
-					}
+			a {
+				@include hover-state {
+					border-bottom: 4px solid mix(#fff, $black, 33%);
 				}
+			}
 
-				&.current-menu-item a {
-					font-weight: $medium;
-				}
+			&.current-menu-item a {
+				font-weight: $medium;
 			}
 		}
 	}
 }
-
 
 @import "mobile-nav";
