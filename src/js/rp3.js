@@ -7,24 +7,29 @@ var rp3 = (function($) {
 	var 
 
 	showMainNav = function() {
-		var $primaryMenu = $('#primary-menu');
+		var $mobileNav = $('#mobile-nav'),
+			$menuClose = $("#menu-close");
 
-		$primaryMenu.slideToggle();
+		$mobileNav.fadeIn();
+	},
+	hideMainNav = function() {
+		var $mobileNav = $('#mobile-nav');
+
+		$mobileNav.fadeOut();
 	},
 	toggleNavigation = function() {
-		var $menuOpen = $("#menu-open");
+		var $menuOpen = $("#menu-open"),
+			$menuClose = $("#menu-close");
 
 		$menuOpen.on('click', function(e) {
 			e.preventDefault();
 			showMainNav();
 		});
-	},
-	forcePrimaryNav = function() {
-		var $primaryMenu = $('#primary-menu');
 
-		if ( Modernizr.mq( '(min-width: 31.25em)' ) ) {
-			$primaryMenu.removeAttr('style');
-		}
+		$menuClose.on('click', function(e) {
+			e.preventDefault();
+			hideMainNav();
+		});
 	},
 
 	/**
@@ -113,7 +118,6 @@ var rp3 = (function($) {
 		});
 
 		$(window).on( 'resize', function() {
-			forcePrimaryNav();
 		});
 	};
 
@@ -333,4 +337,6 @@ function initialize() {
 		}
 	}
 }
-google.maps.event.addDomListener(window, 'load', initialize);
+if (typeof google !== 'undefined') {
+	google.maps.event.addDomListener(window, 'load', initialize);
+}

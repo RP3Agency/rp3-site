@@ -38,7 +38,7 @@
 			<!--- // .site-footer__navigation -->
 
 			<div class="site-footer__address">
-				<h1 class="site-footer__subheader">Offices</h1>
+				<h1 class="site-footer__subheader">Address</h1>
 
 				<p>7316 Wisconsin Avenue<br>
 				Suite 450<br>
