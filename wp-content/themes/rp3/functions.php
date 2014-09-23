@@ -79,13 +79,13 @@ function rp3_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-		wp_enqueue_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', array( 'jquery', 'rp3-google-maps' ), '20120206', true );
-	} else {
-		wp_enqueue_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', array( 'jquery' ), '20120206', true );
 	}
 
 	if ( is_page( 'contact' ) ) {
 		wp_enqueue_script( 'rp3-google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDbQMhVNXn8QRMNJoiWJeemZ63O4NN75kI');
+		wp_enqueue_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', array( 'jquery', 'rp3-google-maps' ), '20120206', true );
+	} else {
+		wp_enqueue_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', array( 'jquery' ), '20120206', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rp3_scripts' );

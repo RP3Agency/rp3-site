@@ -19,6 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="hfeed site">
 
 	<div id="header-container" class="header-container">
@@ -71,5 +72,34 @@
 
 	</div>
 	<!-- // header-container -->
+
+	<div id="mobile-nav" class="mobile-nav">
+
+		<!-- Primary Navigation -->
+
+		<nav id="site-navigation-mobile" class="mobile-nav__menu">
+
+			<?php wp_nav_menu( array(
+				'theme_location'	=> 'primary',
+				'menu_class'		=> 'primary-menu',
+				'menu_id'			=> 'primary-menu'
+			) ); ?>
+
+		</nav>
+		<!-- // #site-navigation -->
+
+		<?php /*
+		<div class="mobile-nav__address">
+			<h1>Address</h1>
+			7316 Wisconsin Avenue<br>
+			Suite 450<br>
+			Bethesda, Maryland 20814
+		</div>
+		*/ ?>
+
+		<a href="#!" id="menu-close" class="mobile-nav__close">Close</a>
+
+	</div>
+	<!-- // #mobile-nav -->
 
 	<div id="content" class="site-content">

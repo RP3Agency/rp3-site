@@ -42,11 +42,16 @@
 	}
 
 	.menu-open {
-		border: 1px solid $black;
+		@extend %genericon;
+		@extend %genericon-menu;
+		@extend %ir;
+		color: $blue;
 		float: right;
+		font-size: 32px;
+		height: 32px;
 		line-height: 1;
 		margin-top: 15px;
-		padding: 8px;
+		width: 32px;
 
 		@include breakpoint($bp-navigation) {
 			display: none;
@@ -93,3 +98,6 @@
 		}
 	}
 }
+
+
+@import "mobile-nav";
