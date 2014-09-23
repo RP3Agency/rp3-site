@@ -4,7 +4,7 @@
 
 @import "blog";
 
-@import "about";
+@import "agency";
 
 @import "asides";
 
@@ -24,6 +24,8 @@
 }
 
 .entry-content {
+	@extend %wrapper;
+
 	> h1 {
 		margin-bottom: 1em;
 	}

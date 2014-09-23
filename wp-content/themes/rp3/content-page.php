@@ -7,25 +7,19 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="page-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'rp3' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+	</div>
+	<!-- .entry-content -->
 
-	<?php if ( is_page( 'about' ) ) {
-		wp_nav_menu( array(
-			'theme_location'	=> 'about-page',
-			'menu_class'		=> 'menu page-about'
-		) );
-	} ?>
+	<div class="page__hero-image hero-image">
+	<?php
+	if ( is_page( 'agency' ) && ( get_the_post_thumbnail() !== '' ) ) {
+		echo rp3_picture_element( get_post_thumbnail_id(), 'home-page-hero', '' );
+	}
+	?>
+	</div>
+
 
 </article><!-- #post-## -->
