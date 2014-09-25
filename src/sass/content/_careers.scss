@@ -102,23 +102,23 @@
 
 	&__article {
 		@include breakpoint($bp-medium) {
-			@include gallery(12 of 24);
+			@include gallery(12);
 		}
 
 		@include breakpoint($bp-large) {
-			@include gallery(8 of 24);
+			@include gallery(8);
 		}
 	}
 
 	@include breakpoint($bp-medium) {
 		&__details {
-			@include span(16 of 24);
+			@include span(16);
 		}
 	}
 
 	@include breakpoint($bp-medium) {
 		&__sidebar {
-			@include span(8 of 24 at 17);
+			@include span(8 last);
 		}
 	}
 }
