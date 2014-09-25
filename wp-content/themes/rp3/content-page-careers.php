@@ -37,13 +37,9 @@ wp_reset_query();
 <!-- #post-## -->
 
 
-<div class="page__hero-image hero-image">
-<?php
-if ( '' !== get_the_post_thumbnail() ) {
-	echo rp3_picture_element( get_post_thumbnail_id(), 'home-page-hero', '' );
-}
-?>
-</div>
+<?php if ( '' != get_post_thumbnail_id() ) {
+	echo rp3_full_bleed_hero_image( get_post_thumbnail_id() );
+} ?>
 
 
 

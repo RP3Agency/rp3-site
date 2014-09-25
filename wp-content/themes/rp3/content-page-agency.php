@@ -13,23 +13,15 @@
 	</div>
 	<!-- .entry-content -->
 
-	<div class="page__hero-image hero-image">
-	<?php
-	if ( is_page( 'agency' ) && ( get_the_post_thumbnail() !== '' ) ) {
-		echo rp3_picture_element( get_post_thumbnail_id(), 'home-page-hero', '' );
-	}
-	?>
-	</div>
+	<?php if ( '' != get_post_thumbnail_id() ) {
+		echo rp3_full_bleed_hero_image( get_post_thumbnail_id(), '', get_the_permalink() );
+	} ?>
 
 	<?php get_template_part( 'components/leadership' ); ?>
 
-	<div class="page__hero-image hero-image">
-	<?php
-	if ( is_page( 'agency' ) && ( get_the_post_thumbnail() !== '' ) ) {
-		echo rp3_picture_element( get_post_thumbnail_id(), 'home-page-hero', '' );
-	}
-	?>
-	</div>
+	<?php if ( '' != get_post_thumbnail_id() ) {
+		echo rp3_full_bleed_hero_image( get_post_thumbnail_id(), '', get_the_permalink() );
+	} ?>
 
 	<?php get_template_part( 'components/clients' ); ?>
 

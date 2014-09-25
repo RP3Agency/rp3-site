@@ -78,32 +78,6 @@ body.home {
 	}
 }
 
-.home-hero {
-
-	a {
-		color: #fff;
-		height: cr(450px);
-		overflow: hidden;
-
-		@include breakpoint($bp-medium) {
-			height: cr(608px);
-		}
-
-		@include breakpoint($bp-large) {
-			height: auto;
-		}
-	}
-
-	.wrapper {
-		height: 100%;
-		position: relative;
-	}
-
-	.headline {
-		background-color: transparentize(#111215, 0.05);
-	}
-}
-
 .home-work {
 	@include container;
 	@include highlight;

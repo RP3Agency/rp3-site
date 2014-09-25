@@ -2,16 +2,6 @@
 	max-width: none;
 }
 
-.page__hero-image {
-	height: cr(500px);
-	position: relative;
-
-	@include breakpoint($bp-large) {
-		height: auto;
-		position: static;
-	}
-}
-
 .careers {
 	@extend %wrapper;
 	margin-top: 3em;

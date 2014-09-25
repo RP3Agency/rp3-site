@@ -291,3 +291,53 @@ if ( ! function_exists( 'rp3_picture_element' ) ) {
 		return $picture;
 	}
 }
+
+
+/**
+ * Full Bleed Hero Image
+ */
+if ( ! function_exists( 'rp3_full_bleed_hero_image' ) ) {
+	function rp3_full_bleed_hero_image( $image_id, $id = '', $permalink = '', $image_size = 'home-page-hero', $title = '', $headline = '' ) {
+
+		$html = '';
+
+		// <section>
+		if ( is_front_page() ) {
+			$classes = 'hero-image';
+		} else {
+			$classes = 'page__hero-image hero-image';
+		}
+
+		if ( '' != $id ) {
+			$html = '<section id="' . esc_attr( $id ) . '" class="' . esc_attr( $id ) . ' hero">';
+		} else {
+			$html = '<section class="hero">';
+		}
+
+		// <a>
+		if ( '' != $permalink ) {
+			$html .= '<a href="' . esc_url( $permalink ) . '" class="hero__container">';
+		} else {
+			$html .= '<div class="hero__container">';
+		}
+
+		$html .= '<div class="hero__image">' . rp3_picture_element( $image_id, $image_size, $title ) . '</div>';
+
+		if ( '' != $headline ) {
+			$html .= '<div class="wrapper"><div class="hero__headline">' . $headline . '</div></div>';
+		}
+
+		// </a>
+		if ( '' != $permalink ) {
+			$html .= '</a>';
+		} else {
+			$html .= '</div>';
+		}
+
+		// </section>
+		$html .= '</section>';
+
+		return $html;
+
+	}
+}

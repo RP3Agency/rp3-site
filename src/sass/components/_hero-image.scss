@@ -1,0 +1,106 @@
+/**
+ * Hero images
+ */
+.hero {
+
+	a {
+		color: #fff;
+		display: block;
+		height: cr(450px);
+		text-decoration: none;
+
+		@include breakpoint($bp-medium) {
+			height: cr(608px);
+		}
+
+		@include breakpoint($bp-large) {
+			height: auto;
+		}
+	}
+
+	&__container {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+	}
+
+	&__image {
+
+		picture img {
+			display: block;
+			height: 100%;
+			left: 50%;
+			max-width: 320px;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: auto;
+
+			@include breakpoint($bp-small) {
+				max-width: 640px;
+			}
+
+			@include breakpoint($bp-medium) {
+				max-width: 1600px
+			}
+
+			@include breakpoint($bp-large) {
+				height: auto;
+				max-width: none;
+				position: static;
+				transform: translate(0);
+				width: 100%;
+			}
+		}
+	}
+
+	.wrapper {
+		height: 100%;
+		position: relative;
+	}
+
+	&__headline {
+		background-color: transparentize(#111215, 0.05);
+		bottom: 0;
+		font-size: cr(11px);
+		left: 0;
+		padding: ce(30px, 11px) percentage(18px / 250px);
+		position: absolute;
+		width: 50%;
+
+		@include breakpoint($bp-medium) {
+			font-size: cr(12px);
+			padding: ce(30px, 12px) percentage(30px / 589px);
+
+			h1 {
+				font-size: ce(36px, 12px);
+			}
+		}
+
+		/**
+		 * Responsify with breakpoint and susy
+		 */
+		@include breakpoint($bp-medium) {
+			@include span(9);
+		}
+
+		h1 {
+			@include font($roboto, $thin, ce(25px, 11px));
+		}
+
+		h1,
+		p {
+			margin: 0;
+		}
+	}
+}
+
+// .page__hero-image {
+// 	height: cr(500px);
+// 	position: relative;
+
+// 	@include breakpoint($bp-large) {
+// 		height: auto;
+// 		position: static;
+// 	}
+// }

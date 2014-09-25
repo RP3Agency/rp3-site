@@ -6,33 +6,7 @@
 
 	<?php setup_postdata( $post ); ?>
 
-		<section id="home-hero" class="home-hero page__hero-image hero-image">
-
-			<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-
-				<?php if ( get_the_post_thumbnail( get_the_ID() ) != '' ) : ?>
-
-				<div class="hero-image">
-
-					<?php echo rp3_picture_element( get_post_thumbnail_id( get_the_ID() ), 'home-page-hero', get_the_title() ); ?>
-
-				</div>
-				<!-- // .hero-image -->
-
-				<?php endif; ?>
-
-				<div class="wrapper">
-
-					<div class="headline">
-						<?php the_field( 'headline' ); ?>
-					</div>
-
-				</div>
-				<!-- // .wrapper -->
-
-			</a>
-
-		</section>
+	<?php echo rp3_full_bleed_hero_image( get_post_thumbnail_id( get_the_ID() ), 'home-hero', get_the_permalink(), 'home-page-hero', get_the_title(), get_field( 'headline' ) ); ?>
 
 	<?php endforeach; wp_reset_postdata(); ?>
 
