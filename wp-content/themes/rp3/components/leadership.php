@@ -1,49 +1,74 @@
 <?php
+$leadership = new WP_Query( array(
+	'post_type'			=> 'rp3_cpt_leadership',
+	'order'				=> 'ASC',
+	'orderby'			=> 'menu_order',
+	'posts_per_page'	=> -1
+) );
 ?>
+
+<?php if ( $leadership->have_posts() ) : ?>
 
 <section class="leadership">
 
-	<h1>Leadership</h1>
-
 	<div class="wrapper">
 
-		<?php for ( $i = 0; $i < 8; $i++ ) : ?>
+		<h1>Leadership</h1>
 
-		<article class="leadership__person">
+		<div class="leadership__content">
 
-			<div class="leadership__photo">
+			<?php while ( $leadership->have_posts() ) : $leadership->the_post(); ?>
 
-				<img src="http://placekitten.com/g/150/150">
+			<article class="leadership__person">
 
-			</div>
-			<!-- // .leadership__photo -->
+				<div class="leadership__photo">
 
-			<div class="leadership__content">
+					<img src="http://placekitten.com/g/150/150">
 
-				<h2 class="leadership__name">Beth Johnson</h2>
+				</div>
+				<!-- // .leadership__photo -->
 
-				<div class="leadership__title">Principal, President</div>
+				<div class="leadership__content">
 
-				<div class="leadership__biography--wide">bio for wide pages</div>
+					<h2 class="leadership__name"><?php the_title(); ?></h2>
 
-				<ul class="leadership__social social">
-					<li class="email"><a href="#!">Email</a></li>
-					<li class="linkedin"><a href="#!">LinkedIn</a></li>
-					<li class="twitter"><a href="#!">Twitter</a></li>
-				</ul>
+					<div class="leadership__title"><?php the_field( 'position' ); ?></div>
 
-			</div>
-			<!-- // .leadership__content -->
+					<div class="leadership__biography--wide"><?php the_field( 'biography' ); ?></div>
 
-			<div class="leadership__biography--narrow">bio for narrow pages</div>
+					<ul class="leadership__social social">
 
-		</article>
-		<!-- // .leadership__person -->
+						<?php if ( '' != get_field( 'email' ) ) : ?>
+						<li class="email"><a href="<?php echo esc_url( 'mailto:' . get_field( 'email' ) ); ?>">Email</a></li>
+						<?php endif; ?>
 
-		<?php endfor; ?>
+						<?php if ( '' != get_field( 'linkedin' ) ) : ?>
+						<li class="linkedin"><a href="<?php echo esc_url( get_field( 'linkedin' ) ); ?>">LinkedIn</a></li>
+						<?php endif; ?>
+
+						<?php if ( '' != get_field( 'twitter' ) ) : ?>
+						<li class="twitter"><a href="<?php echo esc_url( get_field( 'twitter' ) ); ?>">Twitter</a></li>
+						<?php endif; ?>
+
+					</ul>
+
+				</div>
+				<!-- // .leadership__content -->
+
+				<div class="leadership__biography--narrow"><?php the_field( 'biography' ); ?></div>
+
+			</article>
+			<!-- // .leadership__person -->
+
+			<?php endwhile; ?>
+
+		</div>
+		<!-- // .leadership__content -->
 
 	</div>
 	<!-- // .wrapper -->
 
 </section>
 <!-- // .leadership -->
+
+<?php endif; wp_reset_query(); ?>
