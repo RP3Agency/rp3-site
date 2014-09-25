@@ -36,7 +36,7 @@
 
 		.site-title {
 			float: left;
-			margin: 0;
+			margin: 8px 0 0;
 			padding: cr(15px) 0;
 		}
 	}
@@ -50,7 +50,7 @@
 		font-size: 32px;
 		height: 32px;
 		line-height: 1;
-		margin-top: 15px;
+		margin-top: 21px;
 		width: 32px;
 
 		@include breakpoint($bp-navigation) {
@@ -75,12 +75,16 @@
 
 		li {
 			float: left;
-			padding: 8px;
+			padding: 8px 12px;
 			text-align: right;
 
 			a {
+				border-bottom: 4px solid transparent;
+				margin-bottom: 0.5em;
+				padding-top: 0.5em;
+
 				@include hover-state {
-					border-bottom: 4px solid mix(#fff, $black, 75%);
+					border-color: mix(#fff, $black, 75%);
 				}
 			}
 
