@@ -6,7 +6,7 @@
 
 	<?php setup_postdata( $post ); ?>
 
-		<section id="home-hero" class="home-hero">
+		<section id="home-hero" class="home-hero page__hero-image hero-image">
 
 			<a href="<?php echo esc_url( get_the_permalink() ); ?>">
 
