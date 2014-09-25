@@ -37,9 +37,9 @@ $social: (
 
 		a {
 			@extend %social;
-			background-color: #fff;
-			color: $gray;
-			margin: 0 4px;
+			border: 1px solid $blue;
+			color: $blue;
+			margin-right: 8px;
 
 			@include hover-state {
 				background-color: $blue;
