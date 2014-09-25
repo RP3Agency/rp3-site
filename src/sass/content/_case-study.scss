@@ -33,9 +33,6 @@ body.single-rp3_cpt_work .site-content {
 	}
 
 	&__content {
-		@include breakpoint($bp-medium) {
-			column-count: 2;
-			column-gap: 2em;
-		}
+		@include span(24 / 2);
 	}
 }
