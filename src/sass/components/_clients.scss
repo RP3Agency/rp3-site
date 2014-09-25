@@ -1,0 +1,7 @@
+.clients {
+
+	&__client {
+		@include gallery(24 / 2);
+	}
+
+}

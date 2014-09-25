@@ -17,7 +17,15 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php if ( is_page( 'agency' ) ) : ?>
+
+					<?php get_template_part( 'content', 'page-agency' ); ?>
+
+				<?php else: ?>
+
+					<?php get_template_part( 'content', 'page' ); ?>
+
+				<?php endif; ?>
 
 			<?php endwhile; // end of the loop. ?>
 

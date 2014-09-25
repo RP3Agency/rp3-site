@@ -1,0 +1,69 @@
+.leadership {
+	&__person {
+		margin-bottom: 2em;
+		@include container;
+
+		@include breakpoint($bp-medium) {
+			@include gallery(24 / 3)
+		}
+
+		@include breakpoint($bp-large) {
+			@include gallery(24 / 4);
+		}
+	}
+
+	&__photo {
+		@include span(12);
+
+		@include breakpoint($bp-medium) {
+			margin-bottom: 1em;
+			@include span(24);
+		}
+
+		img {
+			height: auto;
+			width: 100%;
+		}
+	}
+
+	&__content {
+		@include span(12 last);
+
+		@include breakpoint($bp-medium) {
+			@include span(24);
+		}
+	}
+
+	&__name {
+		font: {
+			size: ce(12px);
+			weight: $bold;
+		}
+	}
+
+	&__title {
+		font-size: ce(16px);
+		margin-bottom: 1em;
+	}
+
+	&__biography {
+		&--wide {
+			@extend %roboto-light-gray;
+			display: none;
+
+			@include breakpoint($bp-medium) {
+				display: block;
+				margin-bottom: 1em;
+			}
+		}
+
+		&--narrow {
+			@extend %roboto-light-gray;
+			@include span(24 of 24);
+
+			@include breakpoint($bp-medium) {
+				display: none;
+			}
+		}
+	}
+}

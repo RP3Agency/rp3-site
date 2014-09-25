@@ -29,6 +29,17 @@ $thin:		100;
 	@include font($roboto, $medium);
 }
 
+/**
+ * Typography placeholder selectors for styling
+ */
+%roboto-light-gray {
+	color: #888;
+	font: {
+		family: $roboto;
+		weight: $light;
+	}
+}
+
 
 /*--------------------------------------------------------------
 General Typography
