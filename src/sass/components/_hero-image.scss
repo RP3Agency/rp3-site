@@ -2,6 +2,7 @@
  * Hero images
  */
 .hero {
+	margin-bottom: 3em;
 
 	a {
 		color: #fff;
@@ -94,13 +95,3 @@
 		}
 	}
 }
-
-// .page__hero-image {
-// 	height: cr(500px);
-// 	position: relative;
-
-// 	@include breakpoint($bp-large) {
-// 		height: auto;
-// 		position: static;
-// 	}
-// }
