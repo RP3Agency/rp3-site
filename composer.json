@@ -32,6 +32,7 @@
     "wpackagist-plugin/custom-menu-wizard":"*",
     "wpackagist-plugin/custom-tag-widget":"*",
     "wpackagist-plugin/debug-bar":"*",
+    "wpackagist-plugin/disable-comments":"*",
     "wpackagist-plugin/flipboard-magazine-widget":"*",
     "wpackagist-plugin/fv-top-level-cats":"*",
     "wpackagist-plugin/google-analytics-for-wordpress":"*",

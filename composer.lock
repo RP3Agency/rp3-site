@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "794ae86817599b6ec5f9d0838022c86c",
+    "hash": "886dc3803c1bfe6fd4f25118fec3bee0",
     "packages": [
         {
             "name": "composer/installers",
@@ -335,6 +335,29 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/debug-bar/"
+        },
+        {
+            "name": "wpackagist-plugin/disable-comments",
+            "version": "1.1.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/disable-comments/",
+                "reference": "tags/1.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/disable-comments.1.1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/disable-comments": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/disable-comments/"
         },
         {
             "name": "wpackagist-plugin/flipboard-magazine-widget",
