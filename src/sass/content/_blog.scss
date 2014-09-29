@@ -2,6 +2,10 @@
 	margin-bottom: 3em;
 	@include container;
 
+	&__entry-header {
+		@extend %side-padding;
+	}
+
 	&__primary {
 		@include breakpoint($bp-medium) {
 			@include span(16);
