@@ -6,11 +6,12 @@
 }
 
 .entry-content {
+	@extend %side-padding;
 	margin-bottom: 3em;
 	@include container;
 
 	&__container {
-		@include breakpoint($bp-medium) {
+		@include breakpoint($bp-large) {
 			@include span(16);
 		}
 	}

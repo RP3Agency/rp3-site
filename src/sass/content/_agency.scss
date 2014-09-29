@@ -1,6 +1,6 @@
 .agency__intro {
 	font-size: ce(16px);
-	@include breakpoint($bp-medium) {
+	@include breakpoint($bp-large) {
 		@include span(16);
 	}
 }

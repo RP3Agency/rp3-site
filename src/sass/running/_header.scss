@@ -2,13 +2,9 @@
 
 .site-header {
 	@extend %clearfix;
+	@extend %side-padding;
 	background-color: #fff;
-	padding: 0 percentage(5px / 320px);
 	@include container;
-
-	@include bp($bp-large) {
-		padding: 0;
-	}
 
 	// Make all links in the primary nav blocks
 	// Set the font size, weight and styling

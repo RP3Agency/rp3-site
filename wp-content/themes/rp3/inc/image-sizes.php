@@ -25,12 +25,18 @@ function rp3_image_sizes() {
 	) );
 
 
-	// Case Studies
-	rp3_add_image_size( 'case-study', array(
+	$smaller_hero_images = array(
 		'small'			=> array( 320, 200 ),
 		'medium'		=> array( 600, 400 ),
 		'large'			=> array( 1600, 500 )
-	) );
+	);
+
+	// Sub Page Hero
+	rp3_add_image_size( 'sub-page-hero', $smaller_hero_images );
+
+
+	// Case Studies
+	rp3_add_image_size( 'case-study', $smaller_hero_images );
 }
 
 add_action( 'init', 'rp3_image_sizes' );

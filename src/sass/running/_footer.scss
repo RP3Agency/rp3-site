@@ -1,14 +1,16 @@
 .site-footer {
+	@extend %side-padding;
 	background-color: $black;
 	color: #fff;
 	font-size: cr(12px);
-	padding: cr(70px) percentage(25px / 320px) cr(95px);
+	padding: {
+		top: cr(70px);
+		bottom: cr(95px);
+	}
 	position: relative;
 
 	@include breakpoint($bp-footer) {
 		font-size: cr(14px);
-		padding-left: 0;
-		padding-right: 0;
 	}
 
 	h1 {

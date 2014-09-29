@@ -1,39 +1,9 @@
 .leadership {
-	&__person {
-		margin-bottom: 2em;
-		@include container;
+	@extend %side-padding;
 
-		@include breakpoint($bp-medium) {
-			@include gallery(24 / 3)
-		}
-
-		@include breakpoint($bp-large) {
-			@include gallery(24 / 4);
-		}
-	}
-
-	&__photo {
-		@include span(12);
-
-		@include breakpoint($bp-medium) {
-			margin-bottom: 1em;
-			@include span(24);
-		}
-
-		img {
-			height: auto;
-			width: 100%;
-		}
-	}
-
-	&__content {
-		@include span(12 last);
-
-		@include breakpoint($bp-medium) {
-			@include span(24);
-		}
-	}
-
+	/**
+	 * Styling
+	 */
 	&__name {
 		font: {
 			size: ce(12px);
@@ -64,6 +34,48 @@
 			@include breakpoint($bp-medium) {
 				display: none;
 			}
+		}
+	}
+
+	/**
+	 * Layout
+	 */
+	.leadership__container {
+		@include container;
+	}
+	
+	.leadership__person {
+		margin-bottom: 2em;
+		@include container;
+
+		@include breakpoint($bp-medium) {
+			@include gallery(24 / 3)
+		}
+
+		@include breakpoint($bp-large) {
+			@include gallery(24 / 4);
+		}
+	}
+
+	.leadership__photo {
+		@include span(12);
+
+		@include breakpoint($bp-medium) {
+			margin-bottom: 1em;
+			@include span(24);
+		}
+
+		img {
+			height: auto;
+			width: 100%;
+		}
+	}
+
+	.leadership__content {
+		@include span(12 last);
+
+		@include breakpoint($bp-medium) {
+			@include span(24);
 		}
 	}
 }

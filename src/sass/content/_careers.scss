@@ -1,4 +1,5 @@
 .careers {
+	@extend %side-padding;
 	@extend %wrapper;
 	margin-top: 3em;
 
@@ -64,6 +65,8 @@
 	}
 
 	&__details {
+		@extend %side-padding;
+
 		ul {
 			margin: 0 0 3em 1em;
 		}
@@ -71,6 +74,11 @@
 
 	&__back {
 		@extend %back;
+		@extend %side-padding;
+	}
+
+	&__sidebar {
+		@extend %side-padding;
 	}
 
 	/**

@@ -13,11 +13,11 @@ $leadership = new WP_Query( array(
 
 	<h1>Leadership</h1>
 
-	<div class="leadership__content">
+	<div class="leadership__container">
 
 		<?php while ( $leadership->have_posts() ) : $leadership->the_post(); ?>
 
-		<article class="leadership__person">
+		<div class="leadership__person">
 
 			<div class="leadership__photo">
 
@@ -53,9 +53,9 @@ $leadership = new WP_Query( array(
 			</div>
 			<!-- // .leadership__content -->
 
-			<div class="leadership__biography--narrow"><?php the_field( 'biography' ); ?></div>
+			<?php /* <div class="leadership__biography--narrow"><?php the_field( 'biography' ); ?></div> */ ?>
 
-		</article>
+		</div>
 		<!-- // .leadership__person -->
 
 		<?php endwhile; ?>

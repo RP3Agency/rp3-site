@@ -41,8 +41,8 @@ wp_reset_query();
 	<!-- .entry-content -->
 
 
-	<?php if ( '' != get_post_thumbnail_id() ) {
-		echo rp3_full_bleed_hero_image( get_post_thumbnail_id() );
+	<?php if ( '' != get_field( 'hero_image' ) ) {
+		echo rp3_full_bleed_hero_image( get_field( 'hero_image' ), '', '', 'sub-page-hero' );
 	} ?>
 
 
