@@ -9,10 +9,13 @@
 			size: ce(12px);
 			weight: $bold;
 		}
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
 	}
 
 	&__title {
 		font-size: ce(16px);
+		line-height: 1.5;
 		margin-bottom: 1em;
 	}
 
@@ -23,7 +26,6 @@
 
 			@include breakpoint($bp-medium) {
 				display: block;
-				margin-bottom: 1em;
 			}
 		}
 
@@ -34,21 +36,25 @@
 			@include breakpoint($bp-medium) {
 				display: none;
 			}
+
+			p {
+				margin: 0;
+			}
 		}
 	}
 
 	/**
 	 * Layout
 	 */
-	.leadership__container {
+	&__container {
 		@include container;
 	}
 	
-	.leadership__person {
+	&__person {
 		@extend %clearfix;
+		margin-bottom: 1em;
 
 		@include breakpoint($bp-medium) {
-			margin-bottom: 2em;
 			@include gallery(24 / 3)
 		}
 
@@ -57,11 +63,11 @@
 		}
 	}
 
-	.leadership__photo {
+	&__photo {
 		@include span(12);
+		margin-bottom: 1em;
 
 		@include breakpoint($bp-medium) {
-			margin-bottom: 1em;
 			@include span(24);
 		}
 
@@ -71,7 +77,7 @@
 		}
 	}
 
-	.leadership__content {
+	&__content {
 		@include span(12 last);
 
 		@include breakpoint($bp-medium) {
