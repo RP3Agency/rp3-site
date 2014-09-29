@@ -5,15 +5,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'careers--single' ); ?>>
-	<header class="careers__header">
-		<h1 class="careers__title"><?php the_title(); ?></h1>
 
-		<p class="careers__tagline"><?php the_field( 'tagline' ); ?></p>
-	</header>
-	<!-- // .careers__header -->
+	<div class="careers--single__entry-content entry-content">
+		<header class="careers__header">
+			<h1 class="careers__title"><?php the_title(); ?></h1>
+			<p class="careers__tagline"><?php the_field( 'tagline' ); ?></p>
+		</header>
+		<!-- // .careers__header -->
 
-	<div class="careers__entry-content--larger">
-		<?php the_content(); ?>
+		<div class="entry-content__container">
+
+			<?php the_content(); ?>
+
+		</div>
+		<!-- // .entry-content__container -->
+
 	</div>
 	<!-- // .entry-content -->
 
@@ -58,10 +64,10 @@
 
 		<?php get_sidebar( 'careers' ); ?>
 
+		<a href="<?php echo esc_url( home_url( '/careers/' ) ); ?>" class="careers__back">Back to Careers</a>
+
 	</div>
 	<!-- // .wrapper -->
-
-	<p class="careers__back"><a href="<?php echo esc_url( home_url( '/careers/' ) ); ?>">Back to Careers</a></p>
 
 </article>
 <!-- // #post-## -->

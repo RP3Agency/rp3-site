@@ -29,142 +29,150 @@ wp_reset_query();
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-content' ); ?>>
 
 	<div class="entry-content">
-		<?php the_content(); ?>
+
+		<div class="entry-content__container">
+
+			<?php the_content(); ?>
+
+		</div>
+		<!-- // .entry-content__container -->
+
 	</div>
 	<!-- .entry-content -->
 
-</article>
-<!-- #post-## -->
 
-
-<?php if ( '' != get_post_thumbnail_id() ) {
-	echo rp3_full_bleed_hero_image( get_post_thumbnail_id() );
-} ?>
+	<?php if ( '' != get_post_thumbnail_id() ) {
+		echo rp3_full_bleed_hero_image( get_post_thumbnail_id() );
+	} ?>
 
 
 
-<?php // Additional content about our awesome culture ?>
+	<?php // Additional content about our awesome culture ?>
 
-<?php if ( '' !== get_field( 'secondary_copy' ) ) : ?>
 
-	<section class="careers__secondary-copy">
+	<?php if ( '' !== get_field( 'secondary_copy' ) ) : ?>
 
-		<?php the_field( 'secondary_copy' ); ?>
+		<section class="careers__secondary-copy">
+
+			<?php the_field( 'secondary_copy' ); ?>
+
+		</section>
+
+	<?php endif; ?>
+
+
+
+	<?php
+	// Jobs
+	if ( isset( $jobs ) && is_array( $jobs ) && ( count( $jobs ) > 0 ) ) :
+	?>
+
+	<section class="careers">
+
+		<header class="careers__header--section">
+			<h1>Job Openings</h1>
+		</header>
+		<!-- // .careers__header—section -->
+
+		<div class="careers__row">
+
+	<?php
+		foreach ( $jobs as $post ) :
+			setup_postdata( $post );
+	?>
+
+			<div id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
+
+				<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
+
+					<header class="careers__header--article">
+						<h2 class="careers__title"><?php the_title(); ?></h2>
+					</header>
+					<!-- // .careers__header—article -->
+
+					<div class="careers__summary">
+						<?php // We don't want sharing links here, exactly. ?>
+						<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
+						<?php the_excerpt(); ?>
+					</div>
+					<!-- // .careers__summary -->
+
+					<footer class="careers__footer">
+						<p class="link">Learn more</p>
+					</footer>
+					<!-- // .careers__footer -->
+
+				</a>
+
+			</div>
+			<!-- #post-## -->
+
+	<?php endforeach; ?>
+
+		</div>
+		<!-- // .careers__row -->
 
 	</section>
+	<!-- // .careers -->
 
-<?php endif; ?>
-
-
-
-<?php
-// Jobs
-if ( is_array( $jobs ) && ( count( $jobs ) > 0 ) ) :
-?>
-
-<section class="careers">
-
-	<header class="careers__header--section">
-		<h1>Job Openings</h1>
-	</header>
-	<!-- // .careers__header—section -->
-
-	<div class="careers__row">
-
-<?php
-	foreach ( $jobs as $post ) :
-		setup_postdata( $post );
-?>
-
-		<article id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
-
-			<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
-
-				<header class="careers__header--article">
-					<h2 class="careers__title"><?php the_title(); ?></h2>
-				</header>
-				<!-- // .careers__header—article -->
-
-				<div class="careers__summary">
-					<?php // We don't want sharing links here, exactly. ?>
-					<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
-					<?php the_excerpt(); ?>
-				</div>
-				<!-- // .careers__summary -->
-
-				<footer class="careers__footer">
-					<p class="link">Learn more</p>
-				</footer>
-				<!-- // .careers__footer -->
-
-			</a>
-
-		</article>
-		<!-- #post-## -->
-
-<?php endforeach; ?>
-
-	</div>
-	<!-- // .careers__row -->
-
-</section>
-<!-- // .careers -->
-
-<?php endif; wp_reset_postdata(); ?>
+	<?php endif; wp_reset_postdata(); ?>
 
 
 
-<?php
-// Internships
-if ( is_array( $internships ) && ( count( $internships ) > 0 ) ) :
-?>
+	<?php
+	// Internships
+	if ( isset( $internships ) && is_array( $internships ) && ( count( $internships ) > 0 ) ) :
+	?>
 
-<section class="careers">
+	<section class="careers">
 
-	<header class="careers__header--section">
-		<h1>Internships</h1>
-	</header>
-	<!-- // .careers__header -->
+		<header class="careers__header--section">
+			<h1>Internships</h1>
+		</header>
+		<!-- // .careers__header -->
 
-	<div class="careers__row">
+		<div class="careers__row">
 
-<?php
-	foreach ( $internships as $post ) :
-		setup_postdata( $post );
-?>
+	<?php
+		foreach ( $internships as $post ) :
+			setup_postdata( $post );
+	?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
+			<div id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
 
-			<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
+				<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
 
-				<header class="careers__header--article">
-					<h2 class="careers__title"><?php the_title(); ?></h2>
-				</header>
-				<!-- // .careers__header—article -->
+					<header class="careers__header--article">
+						<h2 class="careers__title"><?php the_title(); ?></h2>
+					</header>
+					<!-- // .careers__header—article -->
 
-				<div class="careers__summary">
-					<?php // We don't want sharing links here, exactly. ?>
-					<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
-					<?php the_excerpt(); ?>
-				</div>
-				<!-- // .careers__summary -->
+					<div class="careers__summary">
+						<?php // We don't want sharing links here, exactly. ?>
+						<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
+						<?php the_excerpt(); ?>
+					</div>
+					<!-- // .careers__summary -->
 
-				<footer class="careers__footer">
-					<p class="link">Learn more</p>
-				</footer>
-				<!-- // .careers__footer -->
+					<footer class="careers__footer">
+						<p class="link">Learn more</p>
+					</footer>
+					<!-- // .careers__footer -->
 
-			</a>
+				</a>
 
-		</article>
-		<!-- #post-## -->
+			</div>
+			<!-- #post-## -->
 
-<?php endforeach; ?>
+	<?php endforeach; ?>
 
-	</div>
-	<!-- // .careers__row -->
+		</div>
+		<!-- // .careers__row -->
 
-</section>
-<!-- // .careers -->
+	</section>
+	<!-- // .careers -->
 
-<?php endif; wp_reset_postdata(); ?>
+	<?php endif; wp_reset_postdata(); ?>
+
+</article>
+<!-- #post-## -->
