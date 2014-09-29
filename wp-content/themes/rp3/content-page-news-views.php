@@ -23,9 +23,6 @@ $blog = new WP_Query( array(
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="page-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -82,20 +79,6 @@ $blog = new WP_Query( array(
 
 		<div class="news-twitter-column">
 
-			<article class="twitter">
-
-				<header class="entry-meta">
-					<div class="entry-category">Twitter</div>
-				</header>
-
-				<p>What happens if you actually 'like' everything in your News Feed for 48 hrs? <a href="http://ow.ly/Acy7d">http://ow.ly/Acy7d</a> via <a href="https://twitter.com/wired">@WIRED</a></p>
-
-				<footer class="entry-meta">
-					<div class="account"><a href="https://twitter.com/rp3agency">@rp3agency</a></div>
-				</footer>
-
-			</article>
-
 			<?php $counter = 0; if ( $news->have_posts() ) : while ( $news->have_posts() ) : $news->the_post(); ?>
 
 			<article class="news">
@@ -121,24 +104,6 @@ $blog = new WP_Query( array(
 
 			</article>
 
-			<?php if ( $counter == 1 ) : ?>
-
-			<article class="twitter">
-
-				<header class="entry-meta">
-					<div class="entry-category">Twitter</div>
-				</header>
-
-				<p>What happens if you actually 'like' everything in your News Feed for 48 hrs? <a href="http://ow.ly/Acy7d">http://ow.ly/Acy7d</a> via <a href="https://twitter.com/wired">@WIRED</a></p>
-
-				<footer class="entry-meta">
-					<div class="account"><a href="https://twitter.com/rp3agency">@rp3agency</a></div>
-				</footer>
-
-			</article>
-
-			<?php endif; ?>
-
 			<?php $counter++; endwhile; endif; wp_reset_query(); ?>
 
 		</div>
@@ -147,4 +112,5 @@ $blog = new WP_Query( array(
 	</section>
 	<!-- // .articles -->
 
-</article><!-- #post-## -->
+</article>
+<!-- #post-## -->
