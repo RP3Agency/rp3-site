@@ -12,7 +12,7 @@
 
 			<article class="clients__client">
 
-				<div class="clients__logo">
+				<div class="clients__logo" style="background-image: url(<?php echo esc_url( get_sub_field( 'client_logo' ) ); ?>)">
 
 					<?php the_sub_field( 'client_name' ); ?>
 

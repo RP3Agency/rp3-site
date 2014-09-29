@@ -2,6 +2,23 @@
 
 	&__client {
 		@include gallery(24 / 2);
+
+		@include breakpoint($bp-medium) {
+			@include gallery(24 / 3);
+		}
+
+		@include breakpoint($bp-large) {
+			@include gallery(24 / 4);
+		}
 	}
 
+	&__logo {
+		@extend %ir;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 50% auto;
+		height: 100px;
+		margin-bottom: 1em;
+		width: 100%;
+	}
 }
