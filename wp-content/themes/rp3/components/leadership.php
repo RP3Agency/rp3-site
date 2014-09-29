@@ -53,7 +53,7 @@ $leadership = new WP_Query( array(
 			</div>
 			<!-- // .leadership__content -->
 
-			<?php /* <div class="leadership__biography--narrow"><?php the_field( 'biography' ); ?></div> */ ?>
+			<div class="leadership__biography--narrow"><?php the_field( 'biography' ); ?></div>
 
 		</div>
 		<!-- // .leadership__person -->

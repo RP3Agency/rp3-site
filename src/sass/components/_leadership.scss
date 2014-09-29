@@ -45,10 +45,10 @@
 	}
 	
 	.leadership__person {
-		margin-bottom: 2em;
-		@include container;
+		@extend %clearfix;
 
 		@include breakpoint($bp-medium) {
+			margin-bottom: 2em;
 			@include gallery(24 / 3)
 		}
 
