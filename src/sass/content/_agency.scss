@@ -1,7 +1,14 @@
+.agency__intro {
+	font-size: ce(16px);
+	@include breakpoint($bp-medium) {
+		@include span(16);
+	}
+}
+
 .agency__left,
 .agency__right {
 	@include breakpoint($bp-medium) {
-		@include span(12 of 24);
+		@include span(12);
 	}
 
 	h2 {
@@ -9,9 +16,6 @@
 		font-weight: $normal;
 		text-transform: uppercase;
 	}
-}
-
-.agency__left {
 }
 
 .agency__right {

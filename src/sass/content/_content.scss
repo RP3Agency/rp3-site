@@ -1,3 +1,25 @@
+/**
+ * Entry Content
+ */
+.entry-meta {
+	margin-bottom: 1em;
+}
+
+.entry-content {
+	margin-bottom: 3em;
+	@include container;
+
+	&__container {
+		@include breakpoint($bp-medium) {
+			@include span(16);
+		}
+	}
+
+	h1 {
+		margin-bottom: 0.5em;
+	}
+}
+
 @import "posts";
 
 @import "news";
@@ -15,22 +37,3 @@
 @import "case-study";
 
 @import "careers";
-
-/**
- * Generic page content
- */
-.page-content {
-	@extend %wrapper;
-}
-
-.entry-content {
-	@extend %wrapper;
-
-	> h1 {
-		margin-bottom: 1em;
-	}
-
-	> p {
-		font-size: ce(16px);
-	}
-}

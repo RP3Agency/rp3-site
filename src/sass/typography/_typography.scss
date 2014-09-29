@@ -40,6 +40,14 @@ $thin:		100;
 	}
 }
 
+%roboto-medium-black {
+	color: $black;
+	font: {
+		family: $roboto;
+		weight: $medium;
+	}
+}
+
 
 /*--------------------------------------------------------------
 General Typography
@@ -83,7 +91,7 @@ pre {
 	padding: 1.6em;
 }
 code, kbd, tt, var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font: ce(12px) Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 abbr, acronym {
 	border-bottom: 1px dotted #666;

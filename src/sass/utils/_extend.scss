@@ -107,3 +107,23 @@
 		background-color: $blue;
 	}
 }
+
+// Back link
+%back {
+	clear: both;
+	display: block;
+	font: {
+		family: Roboto, sans-serif;
+		size: ce(10px);
+		weight: 400;
+	}
+	line-height: 5;
+	margin-bottom: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:before {
+		content: '< ';
+		display: inline;
+	}
+}

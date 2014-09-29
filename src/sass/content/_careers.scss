@@ -1,15 +1,9 @@
-.page-careers .site-content {
-	max-width: none;
-}
-
 .careers {
 	@extend %wrapper;
 	margin-top: 3em;
 
-	&__header {
-		border-bottom: 1px solid map-get($gray_map, light);
-		margin-bottom: 3em;
-		padding-bottom: 1em;
+	&--single__entry-content {
+		margin-bottom: 1em;
 	}
 
 	&__header--section {
@@ -76,11 +70,7 @@
 	}
 
 	&__back {
-		line-height: 5;
-
-		&::before {
-			content: '<\00A0';
-		}
+		@extend %back;
 	}
 
 	/**

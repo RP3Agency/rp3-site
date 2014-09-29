@@ -1,12 +1,16 @@
 .awards {
 	background-color: $blue;
 	color: #fff;
-	margin: 3em 0 0;
+	margin-top: 3em;
 	padding: 3em 0;
 
 	&__content {
-		@include breakpoint($bp-medium) {
-			@include span(16);
+		@include container;
+
+		.entry-content {
+			@include breakpoint($bp-medium) {
+				@include span(16);
+			}
 		}
 	}
 }
