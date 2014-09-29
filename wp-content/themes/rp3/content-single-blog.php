@@ -49,7 +49,7 @@
 
 
 			<aside class="blog__social-media">
-				social media sharing TK
+				<?php sharing_display( '', true ); ?>
 			</aside>
 
 			<?php
