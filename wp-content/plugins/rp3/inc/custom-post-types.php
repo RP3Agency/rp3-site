@@ -129,7 +129,7 @@ function rp3_cpt_leadership() {
  * Activate all the custom post types in one fell swoop
  */
 function rp3_cpt() {
-	rp3_cpt_capabilities();
+	// rp3_cpt_capabilities();
 	rp3_cpt_work();
 	rp3_cpt_leadership();
 }
