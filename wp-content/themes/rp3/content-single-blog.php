@@ -4,112 +4,256 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class( 'blog' ); ?>>
 
-	<!-- Article Header -->
+	<div id="primary" class="blog__primary">
 
-	<header class="entry-header">
+		<article>
 
-		<a href="<?php echo esc_url( home_url( '/news-views/' ) ); ?>" class="entry-back">Back to Articles</a>
+			<!-- Article Header -->
 
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+			<header class="blog__entry-header entry-header">
 
-		<div class="entry-meta">
-			<?php echo rp3_byline( 'blog', 'single' ); ?>
-		</div>
-		<!-- // .entry-meta -->
+				<a href="<?php echo esc_url( home_url( '/news-views/' ) ); ?>" class="blog__back">Back to Articles</a>
 
-	</header>
-	<!-- .entry-header -->
+				<h1 class="blog__entry_title entry-title"><?php the_title(); ?></h1>
 
-	<?php the_post_thumbnail(); ?>
+				<div class="blog__entry-meta entry-meta">
+					<?php echo rp3_byline( 'blog', 'single' ); ?>
+				</div>
+				<!-- // .entry-meta -->
 
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'rp3' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div>
-	<!-- .entry-content -->
+			</header>
+			<!-- .entry-header -->
 
-	<footer class="entry-footer">
 
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'rp3' ) );
 
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ' ', 'rp3' ) );
+			<?php the_post_thumbnail(); ?>
 
-			if ( ! rp3_categorized_blog() ) {
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'rp3' );
-				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'rp3' );
-				}
 
-			} else {
-				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
-					$meta_text = __( '<p><span class="entry-categories">Tagged:</span> %2$s</p>', 'rp3' );
-				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'rp3' );
-				}
+			<div class="blog__entry-content entry-content">
 
-			} // end check for categories on this blog
+				<div class="entry-content__container">
 
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink()
-			);
-		?>
+					<?php the_content(); ?>
+					<?php
+						wp_link_pages( array(
+							'before' => '<div class="page-links">' . __( 'Pages:', 'rp3' ),
+							'after'  => '</div>',
+						) );
+					?>
 
-		<!--BEGIN .author-bio-->
-		<div class="author-bio">
-
-			<!-- BEGIN .author-inner -->
-			<div class="author-inner">
-
-				<?php
-				if ( class_exists( CoAuthorsIterator ) ) {
-					$links = get_the_coauthor_meta('user_url');
-					$desc = get_the_coauthor_meta('description');
-					$i = new CoAuthorsIterator();
-					$authors = $i->get_all();
-					foreach($authors as $author){
-						print '<div class="author-wrap">';
-						echo '<div class="author-gravatar">' . get_avatar( $author->user_email, '70' ) . '</div>';
-						print '<div class="author-info"><div class="author-title">';
-						echo get_the_author_meta( 'display_name', $author->ID );
-						print '</div><div class="author-description">'.$desc[$author->ID].'</div>';
-						print '</div>';
-						print '</div>';
-					}
-				} else {
-					print '<div class="author-wrap">';
-					echo '<div class="author-gravatar">' . get_avatar( get_the_author_meta( 'email', get_the_author_id() ), '70' ) . '</div>';
-					print '<div class="author-info"><div class="author-title">';
-					echo get_the_author_meta( 'display_name', get_the_author_id() );
-					print '</div><div class="author-description">' . get_the_author_meta( 'description', get_the_author_id() ) . '</div>';
-					print '</div>';
-					print '</div>';
-				}
-				?>
+				</div>
+				<!-- // .entry-content__container -->
 
 			</div>
-			<!-- // .author-inner -->
+			<!-- .entry-content -->
+
+
+			<aside class="blog__social-media">
+				social media sharing TK
+			</aside>
+
+			<?php
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || '0' != get_comments_number() ) :
+				comments_template();
+			endif;
+			?>
+
+		</article>
+		<!-- #post-## -->
+
+	</div>
+
+	<div id="secondary" class="blog__secondary">
+
+		<!-- Author(s) -->
+
+		<section class="blog__author">
+
+			<?php
+			if ( class_exists( 'CoAuthorsIterator' ) ) :
+				$links = get_the_coauthor_meta('user_url');
+				$desc = get_the_coauthor_meta('description');
+				$i = new CoAuthorsIterator();
+				$authors = $i->get_all();
+				foreach($authors as $author) :
+			?>
+
+
+			<header class="blog__author__header">
+
+				<div class="blog__author__image">
+
+					<img src="http://placekitten.com/g/150/150">
+
+				</div>
+				<!-- // .author__image -->
+
+				<div class="blog__author__meta">
+
+					<h1 class="blog__author__name"><?php echo get_the_author_meta( 'display_name', $author->ID ); ?></h1>
+
+					<ul class="blog__author__social social">
+
+						<?php if ( '' != get_the_author_meta( 'user_email', $author->ID ) ) : ?>
+						<li class="email"><a href="<?php echo esc_url( 'mailto:' . get_the_author_meta( 'user_email', $author->ID ) ); ?>">Email</a></li>
+						<?php endif; ?>
+
+						<?php if ( '' != get_the_author_meta( 'facebook', $author->ID ) ) : ?>
+						<li class="facebook"><a href="<?php echo esc_url( get_the_author_meta( 'facebook', $author->ID ) ); ?>">Facebook</a></li>
+						<?php endif; ?>
+
+						<?php if ( '' != get_the_author_meta( 'twitter', $author->ID ) ) : ?>
+						<li class="twitter"><a href="<?php echo esc_url( get_the_author_meta( 'twitter', $author->ID ) ); ?>">Twitter</a></li>
+						<?php endif; ?>
+
+						<?php if ( '' != get_the_author_meta( 'linkedin', $author->ID ) ) : ?>
+						<li class="linkedin"><a href="<?php echo esc_url( get_the_author_meta( 'twitter', $author->ID ) ); ?>">LinkedIn</a></li>
+						<?php endif; ?>
+
+					</ul>
+
+				</div>
+				<!-- // .author__meta -->
+
+			</header>
+			<!-- // .author__header -->
+
+			<div class="blog__author__bio">
+
+				<?php echo wpautop( get_the_author_meta( 'description', $author->ID ) ); ?>
+
+			</div>
+			<!-- // .author__bio -->
+
+			<?php
+			// Get other blog posts by this author, if any
+
+			$user_info = get_userdata( $author->ID );
+
+			$other_posts = new WP_Query( array(
+				// 'author__in'		=> array( $author->ID ),
+				'post_type'			=> 'post',
+				'category_name'		=> 'blog',
+				'post__not_in'		=> array( get_the_ID() ),
+				'posts_per_page'	=> -1,
+				'author_name'		=> $user_info->user_login
+			) );
+			?>
+
+			<?php if ( $other_posts->have_posts() ) : ?>
+
+			<div class="blog__author__posts">
+
+				<h2>Other Posts by <?php echo get_the_author_meta( 'display_name', $author->ID ); ?>:</h2>
+
+				<ul>
+
+					<?php while ( $other_posts->have_posts() ) : $other_posts->the_post(); ?>
+
+					<li><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></li>
+
+					<?php endwhile; ?>
+
+				</ul>
+
+			</div>
+
+			<?php endif; wp_reset_query(); ?>
+
+			<?php endforeach;
+
+			else :
+			?>
+
+			<header class="blog__author__header">
+
+				<div class="blog__author__image">
+
+					<img src="http://placekitten.com/g/150/150">
+
+				</div>
+				<!-- // .author__image -->
+
+				<div class="blog__author__meta">
+
+					<h1 class="blog__author__name"><?php echo get_the_author_meta( 'display_name', $author->ID ); ?></h1>
+
+					<ul class="blog__author__social social">
+
+						<?php if ( '' != get_the_author_meta( 'user_email', $author->ID ) ) : ?>
+						<li class="email"><a href="<?php echo esc_url( 'mailto:' . get_the_author_meta( 'user_email', $author->ID ) ); ?>">Email</a></li>
+						<?php endif; ?>
+
+						<?php if ( '' != get_the_author_meta( 'facebook', $author->ID ) ) : ?>
+						<li class="facebook"><a href="<?php echo esc_url( get_the_author_meta( 'facebook', $author->ID ) ); ?>">Facebook</a></li>
+						<?php endif; ?>
+
+						<?php if ( '' != get_the_author_meta( 'twitter', $author->ID ) ) : ?>
+						<li class="twitter"><a href="<?php echo esc_url( get_the_author_meta( 'twitter', $author->ID ) ); ?>">Twitter</a></li>
+						<?php endif; ?>
+
+						<?php if ( '' != get_the_author_meta( 'linkedin', $author->ID ) ) : ?>
+						<li class="linkedin"><a href="<?php echo esc_url( get_the_author_meta( 'twitter', $author->ID ) ); ?>">LinkedIn</a></li>
+						<?php endif; ?>
+
+					</ul>
+
+				</div>
+				<!-- // .author__meta -->
+
+			</header>
+			<!-- // .author__header -->
+
+			<div class="blog__author__bio">
+
+				<?php echo wpautop( get_the_author_meta( 'description', $author->ID ) ); ?>
+
+			</div>
+			<!-- // .author__bio -->
+
+			<?php
+			// Get other blog posts by this author, if any
+
+			$user_info = get_userdata( $author->ID );
+
+			$other_posts = new WP_Query( array(
+				// 'author__in'		=> array( $author->ID ),
+				'post_type'			=> 'post',
+				'category_name'		=> 'blog',
+				'post__not_in'		=> array( get_the_ID() ),
+				'posts_per_page'	=> -1,
+				'author_name'		=> $user_info->user_login
+			) );
+			?>
+
+			<?php if ( $other_posts->have_posts() ) : ?>
+
+			<div class="blog__author__posts">
+
+				<h2>Other Posts by <?php echo get_the_author_meta( 'display_name', $author->ID ); ?>:</h2>
+
+				<ul>
+
+					<?php while ( $other_posts->have_posts() ) : $other_posts->the_post(); ?>
+
+					<li><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></li>
+
+					<?php endwhile; ?>
+
+				</ul>
+
+			</div>
+
+			<?php endif; wp_reset_query(); ?>
+
+			<?php endif; ?>
 
 		</div>
-		<!--// .author-bio-->
+		<!--// .blog__author -->
 
-	</footer>
-	<!-- // .entry-footer -->
+	</div>
 
-</article>
-<!-- #post-## -->
+</div>
