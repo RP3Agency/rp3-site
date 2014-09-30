@@ -9,7 +9,7 @@
 
 	&__header--section {
 		border-bottom: 1px solid map-get($gray_map, light);
-		margin-bottom: 3em;
+		margin-bottom: 3rem;
 
 		&.no-bottom-margin {
 			border-bottom: none;
@@ -47,8 +47,8 @@
 
 	&__secondary-copy {
 		@extend %wrapper;
-		margin-bottom: 3em;
-		margin-top: 3em;
+		margin-bottom: 3rem;
+		margin-top: 3rem;
 	}
 
 	&__entry-content--larger {
