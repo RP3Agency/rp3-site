@@ -2,10 +2,6 @@
 	margin-bottom: 3rem;
 	@include container;
 
-	&__entry-content {
-		margin-bottom: 0;
-	}
-
 	&__entry-header {
 		@extend %side-padding;
 	}
@@ -19,8 +15,12 @@
 	&__secondary {
 		@extend %side-padding;
 		border-top: 1px solid map-get($gray_map, light);
+		margin-top: 3rem;
+		padding-top: 3rem;
 
 		@include breakpoint($bp-medium) {
+			border: none;
+			margin: 0;
 			padding: 0;
 			@include span(8 last);
 		}
@@ -28,6 +28,10 @@
 
 	&__entry-meta {
 		@extend %roboto-light-gray;
+	}
+
+	&__thumbnail {
+		margin-bottom: 2rem;
 	}
 
 	/**
@@ -49,6 +53,10 @@
 
 		&__meta {
 			@include span( (24 / 3 * 2) last);
+		}
+
+		&__bio {
+			margin-bottom: 3rem;
 		}
 
 		&__posts {
@@ -78,7 +86,11 @@
 	 * Fix grid system for paragraphs on the blog page
 	 */
 	.entry-content__container {
-		@include span(22);
+		@include span(24);
+
+		@include breakpoint(1200px) {
+			columns: 2;
+		}
 	}
 
 	/**

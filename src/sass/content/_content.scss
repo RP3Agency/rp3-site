@@ -19,6 +19,17 @@
 	h1 {
 		margin-bottom: 0.5em;
 	}
+
+	&__archive-title {
+		@extend %roboto-medium-black;
+		font-size: cr(14px);
+		text-transform: uppercase;
+	}
+
+	&__meta {
+		@extend %roboto-light-gray;
+		margin-bottom: 1rem;
+	}
 }
 
 @import "posts";

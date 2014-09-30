@@ -1,0 +1,30 @@
+.paging-navigation {
+	@extend %clearfix;
+	@extend %side-padding;
+	margin: {
+		top: 3rem;
+		bottom: 3rem;
+	}
+	@include container;
+
+	.nav-links {
+		@include highlight;
+
+		@include breakpoint($bp-large/2) {
+			width: span(16 of 24);
+		}
+	}
+
+	.nav-previous {
+		float: left;
+	}
+
+	.nav-next {
+		float: right;
+	}
+
+	a {
+		@extend %button;
+		text-decoration: none;
+	}
+}
