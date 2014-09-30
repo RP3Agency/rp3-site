@@ -110,6 +110,7 @@
 
 // Back link
 %back {
+	@extend %side-padding;
 	clear: both;
 	display: block;
 	font: {

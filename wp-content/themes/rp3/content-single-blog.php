@@ -6,27 +6,25 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'blog' ); ?>>
 
+	<a href="<?php echo esc_url( home_url( '/news-views/' ) ); ?>" class="blog__back">Back to Articles</a>
+
+	<!-- Article Header -->
+
+	<header class="blog__entry-header entry-header">
+
+		<h1 class="blog__entry_title entry-title"><?php the_title(); ?></h1>
+
+		<div class="blog__entry-meta entry-meta">
+			<?php echo rp3_byline( 'blog', 'single' ); ?>
+		</div>
+		<!-- // .entry-meta -->
+
+	</header>
+	<!-- .entry-header -->
+
 	<div id="primary" class="blog__primary">
 
 		<article>
-
-			<!-- Article Header -->
-
-			<header class="blog__entry-header entry-header">
-
-				<a href="<?php echo esc_url( home_url( '/news-views/' ) ); ?>" class="blog__back">Back to Articles</a>
-
-				<h1 class="blog__entry_title entry-title"><?php the_title(); ?></h1>
-
-				<div class="blog__entry-meta entry-meta">
-					<?php echo rp3_byline( 'blog', 'single' ); ?>
-				</div>
-				<!-- // .entry-meta -->
-
-			</header>
-			<!-- .entry-header -->
-
-
 
 			<?php the_post_thumbnail(); ?>
 
@@ -51,7 +49,7 @@
 
 
 			<aside class="blog__social-media">
-				social media sharing TK
+				<?php sharing_display( '', true ); ?>
 			</aside>
 
 			<?php
