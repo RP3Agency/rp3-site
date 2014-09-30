@@ -156,6 +156,11 @@ require get_template_directory() . '/inc/image-sizes.php';
 require get_template_directory() . '/inc/display-people.php';
 
 /**
+ * Pre-get-post filters
+ */
+require get_template_directory() . '/inc/pre-get-posts.php';
+
+/**
  * Miscellaneous
  */
 
