@@ -37,6 +37,9 @@ function rp3_image_sizes() {
 
 	// Case Studies
 	rp3_add_image_size( 'case-study', $smaller_hero_images );
+
+	// News & Blog Thumbnails
+	add_image_size( 'news-blog-thumbnail', 511, 9999 );
 }
 
 add_action( 'init', 'rp3_image_sizes' );

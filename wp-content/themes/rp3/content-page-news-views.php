@@ -64,7 +64,17 @@ $blog = new WP_Query( array(
 
 					<div class="news-listing__date"><?php echo get_the_date(); ?></div>
 
-					<?php the_excerpt(); ?>
+					<div class="news-listing__excerpt">
+
+						<?php the_excerpt(); ?>
+
+					</div>
+
+					<?php if ( '' != get_the_post_thumbnail() ) : ?>
+
+						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+
+					<?php endif; ?>
 
 					<p class="link continue">Continue reading</p>
 
@@ -121,7 +131,17 @@ $blog = new WP_Query( array(
 
 					<div class="blog-listing__byline"><?php echo rp3_byline(); ?></div>
 
-					<?php the_excerpt(); ?>
+					<?php if ( '' != get_the_post_thumbnail() ) : ?>
+
+						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+
+					<?php endif; ?>
+
+					<div class="blog-listing__excerpt">
+
+						<?php the_excerpt(); ?>
+
+					</div>
 
 					<p class="link continue">Continue reading</p>
 
