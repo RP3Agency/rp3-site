@@ -196,6 +196,10 @@ function initialize() {
 		var mapOptions = {
 			center: myLatLng,
 			zoom: 11,
+			scrollwheel: false,
+			streetViewControl: false,
+			mapTypeControl: false,
+			panControl: false,
 			styles: [
 				{
 					"stylers": [
