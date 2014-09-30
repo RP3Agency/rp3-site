@@ -48,3 +48,19 @@ a.block {
 		display: inline;
 	}
 }
+
+
+// "View All" links for news & blogs
+.all-news-link {
+	margin: {
+		top: 3em;
+		bottom: 3em;
+	}
+	text-align: center;
+	@include container;
+
+	a {
+		@extend %button;
+		display: inline-block;
+	}
+}
