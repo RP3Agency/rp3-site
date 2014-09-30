@@ -27,8 +27,8 @@ function rp3_widgets_init() {
 	) );
 
 	// 3 Widget areas for blog archive page
-	register_sidebars( 3, array(
-		'name'				=> __( 'Blog Archive %d' ),
+	register_sidebar( array(
+		'name'				=> __( 'Blog Archive' ),
 		'id'				=> 'blog-archive',
 		'before_widget'		=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'		=> '</aside>',

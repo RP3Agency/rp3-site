@@ -140,6 +140,22 @@
 
 
 
+/**
+ * Widget Area
+ */
+.blog-archive-widget-area {
+	@extend %side-padding;
+	@include container;
+
+	aside {
+		@include breakpoint($bp-medium) {
+			@include gallery(24/2);
+		}
+	}
+}
+
+
+
 
 
 

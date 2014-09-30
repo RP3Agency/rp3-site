@@ -147,6 +147,16 @@ $blog = new WP_Query( array(
 
 	<!-- Related Content -->
 
+	<?php if ( is_active_sidebar( 'blog-archive' ) ) : ?>
+
+	<div id="blog-archive-widget-area" class="widget-area blog-archive-widget-area" role="complementary">
+
+		<?php dynamic_sidebar( 'blog-archive' ); ?>
+
+	</div>
+
+	<?php endif; ?>
+
 </article>
 <!-- #post-## -->
 

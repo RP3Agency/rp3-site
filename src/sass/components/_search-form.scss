@@ -1,11 +1,16 @@
-.search-form {
+section.search-form {
+	@extend %side-padding;
 	margin-bottom: 3rem;
 	@include container;
 
 	label {
 		display: block;
 		float: left;
-		width: span(16 of 24);
+		width: 100%;
+
+		@include breakpoint($bp-large) {
+			width: span(16 of 24);
+		}
 	}
 
 	.search-field {
