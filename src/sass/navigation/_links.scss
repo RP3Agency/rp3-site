@@ -1,9 +1,3 @@
-/*--------------------------------------------------------------
-5.0 Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-5.1 Links
---------------------------------------------------------------*/
 a {
 	&,
 	&:visited {
@@ -35,5 +29,38 @@ a.block {
 	a:active &,
 	a:focus & {
 		color: $pink;
+	}
+}
+
+// Add a right-facing caret (er, greater than sign) on "continue" type Links
+// (as opposed to "back" type links that get a left-facing caret (er, less than sign))
+.continue {
+	clear: both;
+	display: block;
+	font-weight: $medium;
+	line-height: 5;
+	margin-bottom: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:after {
+		content: ' >';
+		display: inline;
+	}
+}
+
+
+// "View All" links for news & blogs
+.all-news-link {
+	margin: {
+		top: 3em;
+		bottom: 3em;
+	}
+	text-align: center;
+	@include container;
+
+	a {
+		@extend %button;
+		display: inline-block;
 	}
 }

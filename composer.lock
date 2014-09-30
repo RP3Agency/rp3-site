@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "886dc3803c1bfe6fd4f25118fec3bee0",
+    "hash": "7a2a3989c72fa13afa4eeb2122286e15",
     "packages": [
         {
             "name": "composer/installers",
@@ -498,6 +498,29 @@
             "homepage": "http://wordpress.org/plugins/list-category-posts/"
         },
         {
+            "name": "wpackagist-plugin/mailchimp-for-wp",
+            "version": "2.1.3",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
+                "reference": "tags/2.1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.1.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/mailchimp-for-wp": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/mailchimp-for-wp/"
+        },
+        {
             "name": "wpackagist-plugin/markdown-on-save",
             "version": "1.2.1",
             "source": {
@@ -614,15 +637,15 @@
         },
         {
             "name": "wpackagist-plugin/theme-check",
-            "version": "20131213.1",
+            "version": "20140929.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/theme-check/",
-                "reference": "tags/20131213.1"
+                "reference": "tags/20140929.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/theme-check.20131213.1.zip",
+                "url": "http://downloads.wordpress.org/plugin/theme-check.20140929.1.zip",
                 "reference": null,
                 "shasum": null
             },

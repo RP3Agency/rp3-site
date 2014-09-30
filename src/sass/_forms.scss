@@ -14,23 +14,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: #fff;
-	border: 2px solid $blue;
-	border-radius: 0;
-	color: $blue;
-	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	font-weight: $normal;
-	line-height: 1;
-	padding: 10px;
-	text-transform: uppercase;
-
-	@include appearance(none);
-	@include font-size(16px);
-
-	@include hover-state {
-		background-color: $blue;
-		color: #fff;
-	}
+	@extend %button;
 }
 input[type="checkbox"],
 input[type="radio"] {

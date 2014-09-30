@@ -173,7 +173,7 @@ if ( ! function_exists( 'rp3_byline' ) ) {
 
 		// Author(s)
 
-		$byline = 'Written by ';
+		$byline = 'By ';
 
 		if ( $page_type == 'single' ) {
 			// Check if we're using Co-Authors Plus

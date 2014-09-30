@@ -1,0 +1,51 @@
+section.search-form {
+	@extend %clearfix;
+	@extend %side-padding;
+	margin-bottom: 3rem;
+	@include container;
+
+	label {
+		display: block;
+		float: left;
+		width: 100%;
+
+		@include breakpoint($bp-large/2) {
+			width: span(16 of 24);
+		}
+	}
+
+	.search-field {
+		box-sizing: border-box;
+		display: inline-block;
+		font-size: cr(16px);
+		padding: 10px;
+		width: 100%;
+
+		&:focus {
+			box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.1);
+			outline: none;
+		}
+	}
+
+	.search-submit {
+		background: {
+			color: transparent;
+			image: url("../images/search.png");
+			position: center 11px;
+			repeat: no-repeat;
+		}
+		border: 0;
+		display: block;
+		float: left;
+		margin-left: -50px;
+		overflow: hidden;
+		padding: 17px 10px 16px;
+		text-indent: 200%;
+		white-space: nowrap;
+		width: 50px;
+
+		@include hover-state {
+			background-color: transparent;
+		}
+	}
+}

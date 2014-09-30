@@ -39,6 +39,7 @@
     "wpackagist-plugin/jetpack":"*",
     "wpackagist-plugin/latest-tweets-widget":"*",
     "wpackagist-plugin/list-category-posts":"*",
+    "wpackagist-plugin/mailchimp-for-wp":"*",
     "wpackagist-plugin/markdown-on-save":"*",
     "wpackagist-plugin/regenerate-thumbnails":"*",
     "wpackagist-plugin/show-template":"*",

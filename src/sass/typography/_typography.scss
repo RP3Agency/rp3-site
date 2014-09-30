@@ -67,6 +67,10 @@ textarea {
 }
 p {
 	margin-bottom: 1.5em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 b, strong {
 	font-weight: $normal;

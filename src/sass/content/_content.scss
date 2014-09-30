@@ -7,17 +7,28 @@
 
 .entry-content {
 	@extend %side-padding;
-	margin-bottom: 3em;
+	margin-bottom: 3rem;
 	@include container;
 
 	&__container {
-		@include breakpoint($bp-large) {
+		@include breakpoint($bp-large/2) {
 			@include span(16);
 		}
 	}
 
 	h1 {
 		margin-bottom: 0.5em;
+	}
+
+	&__archive-title {
+		@extend %roboto-medium-black;
+		font-size: cr(14px);
+		text-transform: uppercase;
+	}
+
+	&__meta {
+		@extend %roboto-light-gray;
+		margin-bottom: 1rem;
 	}
 }
 
