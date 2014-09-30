@@ -33,6 +33,14 @@
 			}
 		}
 	}
+
+	&__excerpt {
+		margin-bottom: 1rem;
+
+		@include breakpoint($bp-large) {
+			columns: 2;
+		}
+	}
 }
 
 

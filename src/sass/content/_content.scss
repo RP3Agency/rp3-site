@@ -11,7 +11,7 @@
 	@include container;
 
 	&__container {
-		@include breakpoint($bp-large) {
+		@include breakpoint($bp-large/2) {
 			@include span(16);
 		}
 	}

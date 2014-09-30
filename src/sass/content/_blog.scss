@@ -136,6 +136,12 @@
 			}
 		}
 	}
+
+	&__excerpt {
+		@include breakpoint($bp-large) {
+			columns: 2;
+		}
+	}
 }
 
 
@@ -150,6 +156,10 @@
 	aside {
 		@include breakpoint($bp-medium) {
 			@include gallery(24/2);
+		}
+
+		@include breakpoint($bp-large) {
+			@include gallery(24/3);
 		}
 	}
 }
