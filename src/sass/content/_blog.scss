@@ -1,6 +1,10 @@
 .blog {
-	margin-bottom: 3em;
+	margin-bottom: 3rem;
 	@include container;
+
+	&__entry-content {
+		margin-bottom: 0;
+	}
 
 	&__entry-header {
 		@extend %side-padding;
@@ -13,7 +17,11 @@
 	}
 
 	&__secondary {
+		@extend %side-padding;
+		border-top: 1px solid map-get($gray_map, light);
+
 		@include breakpoint($bp-medium) {
+			padding: 0;
 			@include span(8 last);
 		}
 	}
@@ -74,14 +82,59 @@
 	}
 
 	/**
-	 * Social Media placeholder
+	 * Social Media sharing
 	 */
 	&__social-media {
-		background-color: #f5f5f5;
+		@extend %side-padding;
 		clear: both;
-		height: 5em;
 		margin-bottom: 2em;
-		padding: 1.5em 1em 0 1em;
+	}
+
+	/**
+	 * comments area
+	 */
+	.comments-area {
+		@extend %side-padding;
+	}
+}
+
+
+/**
+ * Blog Listing
+ */
+.blog-listing {
+
+	/**
+	 * Styling
+	 */
+	&__headline {
+		@extend %roboto-medium-black;
+		font-size: ce(12px, 12px);
+		text-transform: uppercase;
+	}
+
+	&__byline {
+		@extend %roboto-light-gray;
+		margin-bottom: 1em;
+	}
+
+	/**
+	 * Layout
+	 */
+	@extend %side-padding;
+	@include container;
+
+	&__article {
+		margin-bottom: 3rem;
+
+		@include breakpoint($bp-medium) {
+			margin-bottom: 0;
+			@include span(24/3);
+
+			&:last-child {
+				@include last;
+			}
+		}
 	}
 }
 

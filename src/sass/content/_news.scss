@@ -1,3 +1,41 @@
+.news-listing {
+
+	/**
+	 * Styling
+	 */
+	&__headline {
+		@extend %roboto-medium-black;
+		font-size: ce(12px, 12px);
+		text-transform: uppercase;
+	}
+
+	&__date {
+		@extend %roboto-light-gray;
+		margin-bottom: 1em;
+	}
+
+
+	/**
+	 * Layout
+	 */
+	@extend %side-padding;
+	@include container;
+
+	&__article {
+		margin-bottom: 3rem;
+
+		@include breakpoint($bp-medium) {
+			margin-bottom: 0;
+			@include span(24/3);
+
+			&:last-child {
+				@include last;
+			}
+		}
+	}
+}
+
+
 /**
  * News Archives & Single Page
  * (common properties)
