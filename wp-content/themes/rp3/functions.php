@@ -170,3 +170,10 @@ function rp3_dequeue_plugin_css() {
 	wp_dequeue_style( 'rpbcStyle' );
 }
 add_action( 'wp_enqueue_scripts', 'rp3_dequeue_plugin_css' );
+
+
+// Add Favicon
+function rp3_favicon() {
+	echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri() . '/images/favicon.ico">';
+}
+add_action( 'wp_head', 'rp3_favicon' );
