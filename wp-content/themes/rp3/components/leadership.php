@@ -21,7 +21,11 @@ $leadership = new WP_Query( array(
 
 			<div class="leadership__photo">
 
-				<img src="http://placekitten.com/g/150/150">
+				<?php if ( '' != get_the_post_thumbnail() ) : ?>
+
+				<?php echo rp3_picture_element( get_post_thumbnail_id(), 'leadership', get_the_title() ); ?>
+
+				<?php endif; ?>
 
 			</div>
 			<!-- // .leadership__photo -->

@@ -40,6 +40,14 @@ function rp3_image_sizes() {
 
 	// News & Blog Thumbnails
 	add_image_size( 'news-blog-thumbnail', 511, 9999 );
+
+
+	// Leadership
+	rp3_add_image_size( 'leadership', array(
+		'small'			=> array( 152, 121 ),
+		'medium'		=> array( 309, 247 ),
+		'large'			=> array( 374, 300 )
+	) );
 }
 
 add_action( 'init', 'rp3_image_sizes' );

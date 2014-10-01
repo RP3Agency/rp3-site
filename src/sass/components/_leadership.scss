@@ -26,6 +26,7 @@
 
 			@include breakpoint($bp-medium) {
 				display: block;
+				margin-bottom: 1em;
 			}
 		}
 
@@ -52,13 +53,18 @@
 	
 	&__person {
 		@extend %clearfix;
-		margin-bottom: 1em;
+		margin-bottom: 3rem;
+		// @include highlight;
 
 		@include breakpoint($bp-medium) {
+			@include gallery(24 / 2)
+		}
+
+		@include breakpoint($bp-large/2) {
 			@include gallery(24 / 3)
 		}
 
-		@include breakpoint($bp-large) {
+		@include breakpoint($bp-marge) {
 			@include gallery(24 / 4);
 		}
 	}
@@ -74,6 +80,12 @@
 		img {
 			height: auto;
 			width: 100%;
+		}
+	}
+
+	&__social {
+		li {
+			margin-bottom: 0.5em;
 		}
 	}
 
