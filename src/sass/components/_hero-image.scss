@@ -80,7 +80,15 @@
 
 	.wrapper {
 		height: 100%;
-		position: relative;
+		position: absolute;
+		left: 0;
+		max-width: $container-width;
+		top: 0;
+		width: 100%;
+
+		@include breakpoint($bp-large) {
+			position: relative;
+		}
 	}
 
 	&__headline {
