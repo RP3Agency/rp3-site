@@ -48,6 +48,10 @@ $leadership = new WP_Query( array(
 					<li class="twitter"><a href="<?php echo esc_url( get_field( 'twitter' ) ); ?>">Twitter</a></li>
 					<?php endif; ?>
 
+					<?php if ( '' != get_field( 'github' ) ) : ?>
+					<li class="github"><a href="<?php echo esc_url( get_field( 'github' ) ); ?>">GitHub</a></li>
+					<?php endif; ?>
+
 				</ul>
 
 			</div>
