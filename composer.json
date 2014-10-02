@@ -44,6 +44,7 @@
     "wpackagist-plugin/regenerate-thumbnails":"*",
     "wpackagist-plugin/show-template":"*",
     "wpackagist-plugin/simple-page-ordering":"*",
+    "wpackagist-plugin/simple-twitter-tweets":"*",
     "wpackagist-plugin/tc-custom-taxonomy-filter":"*",
     "wpackagist-plugin/theme-check":"*",
     "wpackagist-plugin/widget-logic":"*",
