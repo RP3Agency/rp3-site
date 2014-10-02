@@ -318,27 +318,11 @@ function initialize() {
 		};
 		var map = new google.maps.Map(document.getElementById('contact__map'), mapOptions);
 
-		var contentString = '<div id="content">'+
-			'<div id="siteNotice">'+
-			'</div>'+
-			'<h1 id="firstHeading" class="firstHeading">RP3 Agency</h1>'+
-			'<div id="bodyContent">'+
-			'<p>7318 Wisconsin Avenue<br>Suite 450<br>Bethesda, Maryland 20814</p>'+
-			'</div>'+
-			'</div>';
-		var infowindow = new google.maps.InfoWindow({
-			content: contentString
-		});
-
 		var marker = new google.maps.Marker({
 			position: myLatLng,
 			map: map,
 			title: 'RP3 Agency'
 		});
-
-		if ( window.matchMedia( '(min-width: 600px)' ).matches ) {
-			infowindow.open(map, marker);
-		}
 	}
 }
 if (typeof google !== 'undefined') {

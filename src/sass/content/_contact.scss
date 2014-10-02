@@ -65,16 +65,34 @@
 }
 
 .contact__map {
-	height: cr(300px);
-	margin-bottom: 3rem;
-	width: 100%;
+	position: relative;
 
-	@include breakpoint($bp-medium) {
-		height: cr(608px);
+	&__container {
+		height: cr(300px);
+		margin-bottom: 3rem;
+		width: 100%;
+
+		@include breakpoint($bp-medium) {
+			height: cr(608px);
+		}
+
+		// Fixes distorted zoom controls in Google maps
+		img {
+			max-width: none;
+		}
 	}
 
-	// Fixes distorted zoom controls in Google maps
-	img {
-		max-width: none;
+	&__inset {
+		background-color: #fff;
+		border: 1px solid #ccc;
+		display: none;
+		left: 10%;
+		padding: 1rem;
+		position: absolute;
+		top: 10%;
+
+		@include breakpoint($bp-medium) {
+			display: block;
+		}
 	}
 }
