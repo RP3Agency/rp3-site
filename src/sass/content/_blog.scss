@@ -31,7 +31,15 @@
 	}
 
 	&__thumbnail {
+		@extend %side-padding;
 		margin-bottom: 2rem;
+
+		@include breakpoint($bp-large + 30px) {
+			padding: {
+				right: 0;
+				left: 0;
+			}
+		}
 	}
 
 	/**
@@ -90,6 +98,7 @@
 
 		@include breakpoint(1200px) {
 			columns: 2;
+			column-gap: 4em;
 		}
 	}
 
@@ -148,12 +157,6 @@
 			}
 		}
 	}
-
-	&__excerpt {
-		@include breakpoint($bp-large) {
-			columns: 2;
-		}
-	}
 }
 
 
@@ -175,286 +178,3 @@
 		}
 	}
 }
-
-
-
-
-
-
-
-
-// .entry-back {
-// }
-
-// .single-post-blog {
-
-// 	.post.category-blog {
-
-// 		// Add left padding
-// 		@include breakpoint($bp-medium) {
-// 			.entry-header,
-// 			.entry-content,
-// 			.entry-footer {
-// 				padding-left: percentage(60px / 2000px);
-// 			}
-// 		}
-
-// 		.entry-content {
-// 			border-bottom: 1px solid map-get($gray_map, light);
-// 			margin-bottom: 1.5em;
-// 		}
-
-// 		p {
-// 			width: percentage( 1100px / 1880px );
-// 		}
-// 	}
-// }
-
-
-
-
-
-
-// %blog-entry-meta {
-// 	color: $gray;
-// 	font-size: ce(12px);
-// 	margin-bottom: 1em;
-// 	text-transform: uppercase;
-// }
-
-// body.page-blog {
-
-// 	/**
-// 	 * Insert "Magnetisms" background behind introductory content (mobile)
-// 	 */
-// 	.type-page {
-// 		$white: transparentize( #fff, 0.2 );
-// 		background:
-// 			linear-gradient(to bottom, $white, $white),
-// 			url("../images/magnetisms.png") no-repeat center center;
-// 		background-size: auto 100%;
-
-// 		@include retina {
-// 			background-image:
-// 				linear-gradient(to bottom, $white, $white),
-// 				url("../images/magnetisms@2x.png");
-// 		}
-
-// 		@include bp(medium) {
-// 			background: none;
-// 		}
-
-// 		.magnetisms {
-// 			display: none;
-
-// 			@include bp(medium) {
-// 				display: block;
-// 				background: url("../images/magnetisms.png") no-repeat center top;
-// 				background-size: 100% auto;
-// 				float: left;
-// 				height: 215px;
-// 				margin-right: 20px;
-// 				width: 200px;
-// 			}
-// 		}
-// 	}
-
-// 	/**
-// 	 * Navigation Links
-// 	 */
-// 	.nav-links {
-// 		@extend %clearfix;
-// 		border-bottom: 1px dotted $gray-light;
-// 		line-height: 48px;
-// 		margin: 0 0 3em;
-// 		padding: 1em 0;
-
-// 		a {
-// 			display: block;
-// 			font-size: ce(22px);
-// 			font-style: italic;
-// 			line-height: 48px;
-// 			position: relative;
-
-// 			&:before {
-// 				background-color: $blue;
-// 				border-radius: 100%;
-// 				color: #fff;
-// 				font-family: Genericons;
-// 				font-size: 48px;
-// 				font-style: normal;
-// 				height: 48px;
-// 				line-height: 48px;
-// 				position: absolute;
-// 				text-align: center;
-// 				width: 48px;
-// 			}
-
-// 			@include hover-state {
-// 				&:before {
-// 					background-color: $pink;
-// 				}
-// 			}
-// 		}
-
-// 		.nav-next a {
-// 			float: left;
-// 			margin-left: 54px;
-
-// 			&:before {
-// 				content: '\f430';
-// 				left: -54px;
-// 			}
-// 		}
-
-// 		.nav-prev a {
-// 			float: right;
-// 			margin-right: 54px;
-
-// 			&:before {
-// 				content: '\f429';
-// 				right: -54px;
-// 			}
-// 		}
-// 	}
-// }
-
-// /**
-//  * The actual blog archive listing
-//  */
-// .blog-archive {
-// 	@include bp(large) {
-// 		display: flex;
-// 		justify-content: space-between;
-// 	}
-
-// 	article {
-// 		@extend %clearfix;
-// 		// border: 8px solid #ededed;
-// 		border-radius: 8px;
-// 		box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
-
-// 		@include bp(large) {
-// 			display: flex;
-// 			width: 32%;
-// 		}
-
-// 		> a {
-// 			@extend %clearfix;
-// 		}
-// 	}
-
-// 	.wp-post-image {
-// 		border-radius: 8px 8px 0 0;
-// 		display: block;
-// 		height: auto;
-// 		margin-bottom: 1em;
-// 		width: 100%;
-
-// 		@include bp(bp-768) {
-// 			float: left;
-// 			margin-right: cp(20px, 768px);
-// 			width: cp(320px, 768px);
-// 		}
-
-// 		@include bp(large) {
-// 			float: none;
-// 			margin-right: 0;
-// 			width: 100%;
-// 		}
-// 	}
-
-// 	.entry-wrapper {
-// 		padding: 10px;
-
-// 		@include bp(bp-768) {
-// 			float: left;
-// 			width: cp(428px, 768px);
-// 		}
-
-// 		@include bp(large) {
-// 			float: none;
-// 			width: 100%;
-// 		}
-// 	}
-
-// 	.entry-title {
-// 		font-size: ce(18px);
-// 		text-transform: none;
-// 	}
-
-// 	.entry-meta {
-// 		@extend %blog-entry-meta;
-// 	}
-// }
-
-// /**
-//  * Single blog page
-//  */
-// .single-post-blog {
-// 	.entry-meta {
-// 		@extend %blog-entry-meta;
-// 		@include font-size(14px);
-// 	}
-
-// 	.entry-footer a[rel="tag"] {
-// 		@extend %category-tag;
-// 		display: inline-block;
-// 		margin-bottom: 4px;
-
-// 		&:visited {
-// 			color: #fff;
-// 		}
-
-// 		@include hover-state {
-// 			color: #fff;
-// 		}
-// 	}
-
-// 	/**
-// 	 * Author Bios
-// 	 */
-	
-// 	.author-wrap {
-// 		background: url("/wp-content/themes/rp3/images/bg_lines.gif") repeat-x 0 0;
-// 		border: 1px solid $gray-light;
-// 		margin-bottom: 1em;
-// 		padding: 20px 10px 10px;
-
-// 		.avatar {
-// 			float: left;
-// 			margin-right: 20px;
-// 		}
-// 	}
-
-// 	/**
-// 	 * Nav Links
-// 	 */
-// 	.nav-links {
-// 		margin: 1em 0;
-// 	}
-
-// 	.entry-categories {
-// 		@extend %category-label;
-// 	}
-// }
-
-// /**
-//  * Blog archive page widget area
-//  */
-// .site-content .blog-archive-widget-area {
-// 	width: 100%;
-
-// 	@include bp(bp-768) {
-// 		display: flex;
-// 		justify-content: space-between;
-// 	}
-
-// 	.widget-area {
-// 		margin-bottom: 2em;
-
-// 		@include bp(bp-768) {
-// 			width: 32%;
-// 		}
-// 	}
-// }
