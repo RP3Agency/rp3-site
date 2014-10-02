@@ -1,11 +1,14 @@
-.page-contact .site-content {
-	max-width: none;
-}
+// .page-contact .site-content {
+// 	max-width: none;
+// }
 
 .contact__info {
+	@extend %side-padding;
+	margin-bottom: 2rem;
 	@include container;
 
 	> div {
+		margin-bottom: 1rem;
 		@include gallery(12 of 24);
 
 		@include breakpoint($bp-medium) {
