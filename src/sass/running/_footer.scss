@@ -144,4 +144,9 @@
 			@include container;
 		}
 	}
+
+	&__address,
+	&__phone {
+		margin-bottom: 1rem;
+	}
 }
