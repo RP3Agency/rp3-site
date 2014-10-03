@@ -1,6 +1,14 @@
-.work {
-
+%work__container {
 	// $container-width: 1000px;
+
+	margin: {
+		left: auto;
+		right: auto;
+	}
+	max-width: $container-width;
+}
+
+.work {
 
 	img {
 		height: auto;
@@ -8,7 +16,7 @@
 	}
 
 	&__full-width {
-		@include container($container-width);
+		@extend %work__container;
 	}
 
 	&__half {
@@ -20,15 +28,16 @@
 	}
 
 	&__container {
+		@extend %work__container;
 		align-items: stretch;
 		display: flex;
-		@include container($container-width);
 
 		&--half {
 			align-items: stretch;
 			display: flex;
+			flex-direction: column;
 			flex-wrap: wrap;
-			@include container($container-width / 2);
+			width: 50%;
 
 			&--inner {
 				align-items: stretch;

@@ -38,13 +38,9 @@
 
 			<div class="work__container--half--inner">
 
-				<div class="work__gray">
-					&nbsp;
-				</div>
+				<div class="work__gray"></div>
 
-				<div class="work__blank">
-					&nbsp;
-				</div>
+				<div class="work__blank"></div>
 
 			</div>
 
@@ -68,27 +64,32 @@
 
 		<div class="work__container--half">
 
-			<div id="wit" class="work__quarter">
-				<img src="<?php echo esc_url( wp_get_attachment_url( 8638 ) ); ?>" width="250" height="200">
-			</div>
+			<div class="work__container--half--inner">
 
-			<div class="work__blank">
+				<div id="wit" class="work__quarter">
+					<img src="<?php echo esc_url( wp_get_attachment_url( 8638 ) ); ?>" width="250" height="200">
+				</div>
+
+				<div class="work__blank">
+				</div>
+
 			</div>
+			<!-- // .work__container- -half- -inner -->
+
+			<div class="work__container--half--inner">
+
+				<div class="work__blank">
+				</div>
+
+				<div id="united-way" class="work__quarter">
+					<img src="<?php echo esc_url( wp_get_attachment_url( 8637 ) ); ?>" width="250" height="200">
+				</div>
+
+			</div>
+			<!-- // .work__container- -half- -inner -->
 
 		</div>
-		<!-- // .container -->
-
-		<div class="work__container--half">
-
-			<div class="work__blank">
-			</div>
-
-			<div id="united-way" class="work__quarter">
-				<img src="<?php echo esc_url( wp_get_attachment_url( 8637 ) ); ?>" width="250" height="200">
-			</div>
-
-		</div>
-		<!-- // .container -->
+		<!-- // .work_container -->
 
 		<div id="woolly" class="work__half">
 			<img src="<?php echo esc_url( wp_get_attachment_url( 8640 ) ); ?>" width="500" height="400">
@@ -103,6 +104,7 @@
 		<img src="<?php echo esc_url( wp_get_attachment_url( 8633 ) ); ?>" width="1000" height="400">
 	</div>
 
+
 	<!-- Row 6 -->
 
 	<div class="work__container">
@@ -113,26 +115,32 @@
 
 		<div class="work__container--half">
 
-			<div id="norfolk-southern-2" class="work__quarter">
-				<img src="<?php echo esc_url( wp_get_attachment_url( 8634 ) ); ?>" width="250" height="200">
-			</div>
+			<div class="work__container--half--inner">
 
-			<div class="work__blank">
+				<div id="norfolk-southern-2" class="work__quarter">
+					<img src="<?php echo esc_url( wp_get_attachment_url( 8634 ) ); ?>" width="250" height="200">
+				</div>
+
+				<div class="work__blank">
+				</div>
+
 			</div>
+			<!-- // .work__container- -half- -inner -->
+
+			<div class="work__container--half--inner">
+
+				<div class="work__blank">
+				</div>
+
+				<div class="work__gray">
+				</div>
+
+			</div>
+			<!-- // .work__container- -half- -inner -->
 
 		</div>
-
-		<div class="work__container--half">
-
-			<div class="work__blank">
-			</div>
-
-			<div class="work__gray">
-			</div>
-
-		</div>
+		<!-- // .work__container- -half -->
 
 	</div>
-
 
 </article><!-- #post-## -->
