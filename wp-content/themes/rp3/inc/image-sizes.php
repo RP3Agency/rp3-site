@@ -48,6 +48,25 @@ function rp3_image_sizes() {
 		'medium'		=> array( 309, 247 ),
 		'large'			=> array( 374, 300 )
 	) );
+
+	// Work
+	rp3_add_image_size( 'work-full-width', array(
+		'small'			=> array( 320, 320, true ),
+		'medium'		=> array( 599, 400, true ),
+		'large'			=> array( 1000, 400, true )
+	) );
+
+	rp3_add_image_size( 'work-half-width', array(
+		'small'			=> array( 320, 320, true ),
+		'medium'		=> array( 320, 320, true ),
+		'large'			=> array( 500, 400, true )
+	) );
+
+	rp3_add_image_size( 'work-quarter-width', array(
+		'small'			=> array( 320, 320, true ),
+		'medium'		=> array( 320, 320, true ),
+		'large'			=> array( 250, 200, true )
+	) );
 }
 
 add_action( 'init', 'rp3_image_sizes' );
