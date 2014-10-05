@@ -269,15 +269,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-menu-wizard",
-            "version": "3.0.4",
+            "version": "3.1.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/custom-menu-wizard/",
-                "reference": "tags/3.0.4"
+                "reference": "tags/3.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/custom-menu-wizard.3.0.4.zip",
+                "url": "http://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -774,21 +774,13 @@
             "homepage": "http://wordpress.org/plugins/wp-siren-recent-posts-by-category/"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
     "prefer-stable": false,
     "platform": {
         "php": ">=5.3.0"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
