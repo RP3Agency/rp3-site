@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7a2a3989c72fa13afa4eeb2122286e15",
+    "hash": "9aea74abe1d0d0eb1605ab67ec446b41",
     "packages": [
         {
             "name": "composer/installers",
@@ -269,15 +269,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-menu-wizard",
-            "version": "3.0.4",
+            "version": "3.1.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/custom-menu-wizard/",
-                "reference": "tags/3.0.4"
+                "reference": "tags/3.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/custom-menu-wizard.3.0.4.zip",
+                "url": "http://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -613,6 +613,29 @@
             "homepage": "http://wordpress.org/plugins/simple-page-ordering/"
         },
         {
+            "name": "wpackagist-plugin/simple-twitter-tweets",
+            "version": "3.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/simple-twitter-tweets/",
+                "reference": "tags/3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/simple-twitter-tweets.3.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/simple-twitter-tweets": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/simple-twitter-tweets/"
+        },
+        {
             "name": "wpackagist-plugin/tc-custom-taxonomy-filter",
             "version": "1.3.1",
             "source": {
@@ -751,21 +774,13 @@
             "homepage": "http://wordpress.org/plugins/wp-siren-recent-posts-by-category/"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
     "prefer-stable": false,
     "platform": {
         "php": ">=5.3.0"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }

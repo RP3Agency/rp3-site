@@ -32,6 +32,10 @@ get_header(); ?>
 
 		<?php get_template_part( 'content', 'page-careers' ); ?>
 
+	<?php elseif( is_page( 'work' ) ) : ?>
+
+		<?php get_template_part( 'content', 'page-work' ); ?>
+
 	<?php else: ?>
 
 		<?php get_template_part( 'content', 'page' ); ?>
