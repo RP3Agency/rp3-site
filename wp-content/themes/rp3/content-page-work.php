@@ -13,7 +13,7 @@
 
 	<!-- NS365 -->
 	<div id="ns365" class="work__full-width">
-		<a href="#!" class="block">
+		<a href="<?php echo esc_url( get_permalink( 8362 ) ); ?>" class="block">
 			<?php echo rp3_picture_element( 8636, 'work-full-width', 'NS365' ); ?>
 
 			<div class="work__headline">

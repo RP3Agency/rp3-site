@@ -25,7 +25,15 @@ get_header(); ?>
 
 	elseif ( 'rp3_cpt_work' == get_post_type() ) :
 
-		get_template_part( 'content', 'single-work' );
+		if ( true == get_field( 'case_study' ) ) :
+
+			get_template_part( 'content', 'single-case-study' );
+
+		else :
+
+			get_template_part( 'content', 'single-work' );
+
+		endif;
 
 	else :
 
