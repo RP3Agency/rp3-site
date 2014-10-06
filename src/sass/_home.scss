@@ -91,6 +91,7 @@ body.home {
 		box-shadow: inset 0px 0px 55px rgba(0, 0, 0, 0.3);
 		color: $black;
 		height: cr(400px);
+		overflow: hidden;
 
 		/**
 		 * For dev only
@@ -121,5 +122,73 @@ body.home {
 	a:nth-child(even) .headline {
 		left: auto;
 		right: 0;
+	}
+}
+
+
+.home-errata {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1600px;
+
+	&__row {
+		display: flex;
+
+		&:nth-child(2) {
+			align-items: flex-end;
+		}
+
+		&:nth-child(3) {
+			justify-content: space-between;
+		}
+	}
+
+	&__event {
+		background-color: #445fc2;
+		color: #fff;
+		height: 200px;
+		padding: 1em;
+		width: 50%;
+	}
+
+	&__twitter {
+		background-color: #2ebefa;
+		color: #fff;
+		height: 200px;
+		padding: 1em;
+		width: 25%;
+	}
+
+	&__sandbox {
+		background-color: #fbbe31;
+		color: #fff;
+		height: 100px;
+		margin-left: 25%;
+		margin-right: 12.5%;
+		padding: 1em;
+		width: 12.5%;
+	}
+
+	&__blog--gray {
+		background-color: #e0eaf0;
+		height: 200px;
+		padding: 1em;
+		width: 50%;
+	}
+
+	&__blog--green {
+		background-color: #33cd7f;
+		color: #fff;
+		height: 200px;
+		padding: 1em;
+		width: 25%;
+	}
+
+	&__news {
+		background-color: #f36d2c;
+		color: #fff;
+		height: 200px;
+		padding: 1em;
+		width: 25%;
 	}
 }
