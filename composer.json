@@ -44,13 +44,13 @@
     "wpackagist-plugin/regenerate-thumbnails":"*",
     "wpackagist-plugin/show-template":"*",
     "wpackagist-plugin/simple-page-ordering":"*",
-    "wpackagist-plugin/simple-twitter-tweets":"*",
     "wpackagist-plugin/tc-custom-taxonomy-filter":"*",
     "wpackagist-plugin/theme-check":"*",
     "wpackagist-plugin/widget-logic":"*",
     "wpackagist-plugin/wordpress-importer":"*",
     "wpackagist-plugin/worker":"*",
-    "wpackagist-plugin/wp-siren-recent-posts-by-category":"*"
+    "wpackagist-plugin/wp-siren-recent-posts-by-category":"*",
+    "wpackagist-plugin/xhanch-my-twitter":"*"
   },
   "extra": {
     "webroot-dir": "_wp",
