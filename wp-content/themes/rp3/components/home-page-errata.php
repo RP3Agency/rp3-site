@@ -48,17 +48,21 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 	<div class="home-errata__row">
 
 		<div class="home-errata__sandbox home-errata__block">
-			Sandbox
+			&nbsp;
 		</div>
 
 
 		<div class="home-errata__blog--gray home-errata__block">
 
-			<div class="home-errata__subhead">Recent Work</div>
+			<a href="#!" class="block">
 
-			<h1 class="home-errata__header">Lorem ipsum dolar sit title theater.</h1>
+				<div class="home-errata__subhead">Recent Work</div>
 
-			<div class="home-errata__date">August 14, 2014</div>
+				<h1 class="home-errata__header">Lorem ipsum dolar sit title theater.</h1>
+
+				<div class="home-errata__date">August 14, 2014</div>
+
+			</a>
 
 		</div>
 

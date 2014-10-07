@@ -65,7 +65,7 @@ body.home {
 		 * Responsify with breakpoint and susy
 		 */
 		@include breakpoint($bp-medium) {
-			@include span(9);
+			@include span(9 last);
 		}
 
 		h1 {
@@ -116,6 +116,11 @@ body.home {
 
 	@extend %side-padding;
 	font-size: cr($font-context);
+	margin: {
+		left: auto;
+		right: auto;
+	}
+	max-width: $container-width;
 
 	&__row {
 		@extend %clearfix;
@@ -142,24 +147,26 @@ body.home {
 
 	&__block {
 		color: #fff;
-		padding: 2em;
-		position: relative;
+		min-height: 100px;
+		overflow: hidden;
 
 		@include breakpoint($bp-medium) {
-			height: 200px;
+			min-height: 200px;
+		}
+
+		.widget {
+			margin-bottom: 0;
 		}
 	}
 
 	// Adjust the font color of block links
 	a.block {
 		color: #fff;
-		padding: 2em;
+		padding: 1rem;
 
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
+		@include breakpoint($bp-medium) {
+			padding: 2rem;
+		}
 	}
 
 	&__general-widget {
@@ -203,6 +210,10 @@ body.home {
 
 		@include breakpoint($bp-medium) {
 			width: 50%;
+		}
+
+		a.block {
+			color: $black;
 		}
 	}
 

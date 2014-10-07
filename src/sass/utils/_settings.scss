@@ -2,7 +2,8 @@
    Breakpoint settings
    ========================================================================== */
 
-$container-width: 1600px;
+// $container-width: 1600px;
+$container-width: 1600px + 90px * 2;
 
 $breakpoint-to-ems: true;
 $hidpi: min-resolution 1.5dppx;

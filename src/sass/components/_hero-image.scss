@@ -67,9 +67,12 @@
 					max-width: 1600px
 				}
 
+				@include breakpoint(1600px) {
+					max-width: none;
+				}
+
 				@include breakpoint($bp-large) {
 					height: auto;
-					max-width: none;
 					position: static;
 					transform: translate(0);
 					width: 100%;
@@ -79,12 +82,15 @@
 	}
 
 	.wrapper {
-		height: 100%;
-		position: absolute;
+		bottom: 0;
 		left: 0;
-		max-width: $container-width;
+		position: absolute;
+		margin: {
+			left: auto;
+			right: auto;
+		}
+		right: 0;
 		top: 0;
-		width: 100%;
 
 		@include breakpoint($bp-large) {
 			position: relative;
@@ -103,13 +109,11 @@
 		@include breakpoint($bp-medium) {
 			font-size: cr(12px);
 			padding: ce(30px, 12px) percentage(30px / 589px);
+			@include span(9);
 		}
 
-		/**
-		 * Responsify with breakpoint and susy
-		 */
-		@include breakpoint($bp-medium) {
-			@include span(9);
+		@include breakpoint(1600px) {
+			margin-left: 5.625%;
 		}
 
 		h1 {
