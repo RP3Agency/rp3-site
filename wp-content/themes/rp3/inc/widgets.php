@@ -60,5 +60,17 @@ function rp3_widgets_init() {
 		'before_title'		=> '<h1 class="widget-title">',
 		'after_title'		=> '</h1>'
 	) );
+
+	// Home page: dark blue widget block
+	register_sidebar( array(
+		'name'				=> __( 'Home Page Widget', 'rp3' ),
+		'id'				=> 'home-errata__widget',
+		'class'				=> 'home-errata__widget home-errata__block',
+		'description'		=> __( 'Blue block in the home page errata (bottom of the page)', 'rp3' ),
+		'before_widget'		=> '<aside id="home-errata__widget-area" class="widget %2$s">',
+		'after_widget'		=> '</aside>',
+		'before_title'		=> '<h1 class="widget-title">',
+		'after_title'		=> '</h1>'
+	) );
 }
 add_action( 'widgets_init', 'rp3_widgets_init' );
