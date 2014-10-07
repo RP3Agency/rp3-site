@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9aea74abe1d0d0eb1605ab67ec446b41",
+    "hash": "61ee90142d8a41bfd70000c47645cedd",
     "packages": [
         {
             "name": "composer/installers",
@@ -613,29 +613,6 @@
             "homepage": "http://wordpress.org/plugins/simple-page-ordering/"
         },
         {
-            "name": "wpackagist-plugin/simple-twitter-tweets",
-            "version": "3.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/simple-twitter-tweets/",
-                "reference": "tags/3.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/simple-twitter-tweets.3.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "replace": {
-                "wpackagist/simple-twitter-tweets": "self.version"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/simple-twitter-tweets/"
-        },
-        {
             "name": "wpackagist-plugin/tc-custom-taxonomy-filter",
             "version": "1.3.1",
             "source": {
@@ -772,6 +749,29 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/wp-siren-recent-posts-by-category/"
+        },
+        {
+            "name": "wpackagist-plugin/xhanch-my-twitter",
+            "version": "2.7.8",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/xhanch-my-twitter/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/xhanch-my-twitter.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/xhanch-my-twitter": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/xhanch-my-twitter/"
         }
     ],
     "packages-dev": [],

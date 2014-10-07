@@ -130,17 +130,17 @@
 }
 
 %side-padding {
-	padding: {
-		left: percentage(5px/320px);
-		right: percentage(5px/320px);
-	}
+	// padding: {
+	// 	left: percentage(5px/320px);
+	// 	right: percentage(5px/320px);
+	// }
 
-	@include breakpoint($bp-xlarge) {
+	// @include breakpoint($bp-medium) {
 		padding: {
-			left: 0;
-			right: 0;
+			left: percentage(90px/1600px);
+			right: percentage(90px/1600px);
 		}
-	}
+	// }
 }
 
 %button {
