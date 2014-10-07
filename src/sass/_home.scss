@@ -176,6 +176,11 @@ body.home {
 			float: none;
 			width: 25%;
 		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+		}
 	}
 
 	&__sandbox {
@@ -229,6 +234,7 @@ body.home {
 	&__subhead {
 		font-size: ce(7px, $font-context);
 		font-weight: $bold;
+		margin-bottom: 1rem;
 		text-transform: uppercase;
 	}
 
