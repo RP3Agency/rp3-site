@@ -7,3 +7,4 @@ plugins/*
 !plugins/wp-migrate-db-pro-media-files/
 !plugins/wp-migrate-db-pro-cli/
 debug.log
+xhc-xmt
