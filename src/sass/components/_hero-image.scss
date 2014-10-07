@@ -103,10 +103,6 @@
 		@include breakpoint($bp-medium) {
 			font-size: cr(12px);
 			padding: ce(30px, 12px) percentage(30px / 589px);
-
-			h1 {
-				font-size: ce(36px, 12px);
-			}
 		}
 
 		/**
@@ -117,7 +113,11 @@
 		}
 
 		h1 {
-			@include font($roboto, $thin, ce(25px, 11px));
+			@include font($roboto, $thin, ce(21px, 11px));
+
+			@include breakpoint($bp-medium) {
+				font-size: ce(36px, 12px);
+			}
 		}
 
 		h1,
