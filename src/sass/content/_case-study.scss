@@ -33,13 +33,50 @@
 
 
 	&--single__entry-content--indented {
+		margin-bottom: 6rem;
+		margin-top: 3rem;
 		@include breakpoint($bp-large / 2) {
-			@include span(percentage(940px / 3200px));
-			@include pre(percentage(660px / 3200px));
+			padding-right: 0;
+			@include span(percentage(1420px / 2840px));
+			margin-right: 0;
+		}
+
+		&--full-width {
+			@include breakpoint($bp-large / 2) {
+				@include span(percentage( 1420px * 2 / 2840px ) );
+				margin-right: 0;
+			}
 		}
 	}
 
 	.hero {
 		clear: both;
+	}
+
+
+	// Related Work
+	&__related-work {
+		list-style-type: none;
+		margin: 0;
+		@include container;
+	}
+
+	&__related-work-item {
+		@include breakpoint($bp-medium) {
+			@include span((24/3) of 24);
+
+			&:last-child {
+				@include last;
+			}
+		}
+
+		img {
+			display: block;
+			margin-bottom: 1rem;
+		}
+	}
+
+	h2 {
+		margin-bottom: 1rem;
 	}
 }

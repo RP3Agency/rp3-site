@@ -271,6 +271,9 @@ if ( ! function_exists( 'rp3_link_to_author_posts' ) ) {
 if ( ! function_exists( 'rp3_picture_element' ) ) {
 	function rp3_picture_element( $id, $size_tag, $title = '' ) {
 
+		$bp_small	= 321 / 16;
+		$bp_medium	= 600 / 16;
+
 		$size_tags = array( 'large', 'medium', 'small' );
 		$images = array();
 
@@ -281,8 +284,8 @@ if ( ! function_exists( 'rp3_picture_element' ) ) {
 
 		$picture  = '<picture>';
 		$picture .= '<!--[if IE 9]><video style="display: none;"><![endif]-->'; // For IE9 compatibility + Picturefill.js
-		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: 37.5em)">', $images[0][0], $images[1][0] );
-		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: 20.0625em)">', $images[2][0], $images[3][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_medium . 'em)">', $images[0][0], $images[1][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_small . 'em)">', $images[2][0], $images[3][0] );
 		$picture .= sprintf( '<source srcset="%s, %s 2x">', $images[4][0], $images[5][0] );
 		$picture .= '<!--[if IE 9]></video><![endif]-->';
 		$picture .= sprintf( '<img srcset="%s, %s 2x" alt="%s">', $images[4][0], $images[5][0], esc_attr( $title ) );
@@ -297,38 +300,49 @@ if ( ! function_exists( 'rp3_picture_element' ) ) {
  * Full Bleed Hero Image
  */
 if ( ! function_exists( 'rp3_full_bleed_hero_image' ) ) {
-	function rp3_full_bleed_hero_image( $image_id, $id = '', $permalink = '', $image_size = 'home-page-hero', $title = '', $headline = '' ) {
+	function rp3_full_bleed_hero_image( $image_id, $args ) {
+
+		$defaults = array(
+			'id'			=> '',
+			'classes'		=> 'hero-image',
+			'permalink'		=> '',
+			'image_size'	=> 'home-page-hero',
+			'title'			=> '',
+			'headline'		=> ''
+		);
+
+		$args = wp_parse_args( $args, $defaults );
 
 		$html = '';
 
 		// <section>
-		if ( is_front_page() ) {
-			$classes = 'hero-image';
-		} else {
-			$classes = 'page__hero-image hero-image';
-		}
+		// if ( is_front_page() ) {
+		// 	$classes = 'hero-image';
+		// } else {
+		// 	$classes = 'page__hero-image hero-image';
+		// }
 
-		if ( '' != $id ) {
-			$html = '<section id="' . esc_attr( $id ) . '" class="' . esc_attr( $id ) . ' hero">';
+		if ( '' != $args['id'] ) {
+			$html = '<section id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $args['id'] ) . ' hero ' . esc_attr( $args['classes'] ) . '">';
 		} else {
-			$html = '<section class="hero">';
+			$html = '<section class="hero ' . esc_attr( $args['classes'] ) . '">';
 		}
 
 		// <a>
-		if ( '' != $permalink ) {
-			$html .= '<a href="' . esc_url( $permalink ) . '" class="hero__container">';
+		if ( '' != $args['permalink'] ) {
+			$html .= '<a href="' . esc_url( $args['permalink'] ) . '" class="hero__container">';
 		} else {
 			$html .= '<div class="hero__container">';
 		}
 
-		$html .= '<div class="hero__image">' . rp3_picture_element( $image_id, $image_size, $title ) . '</div>';
+		$html .= '<div class="hero__image">' . rp3_picture_element( $image_id, $args['image_size'], $args['title'] ) . '</div>';
 
-		if ( '' != $headline ) {
-			$html .= '<div class="wrapper"><div class="hero__headline">' . $headline . '</div></div>';
+		if ( '' != $args['headline'] ) {
+			$html .= '<div class="wrapper"><div class="hero__headline">' . $args['headline'] . '</div></div>';
 		}
 
 		// </a>
-		if ( '' != $permalink ) {
+		if ( '' != $args['permalink'] ) {
 			$html .= '</a>';
 		} else {
 			$html .= '</div>';

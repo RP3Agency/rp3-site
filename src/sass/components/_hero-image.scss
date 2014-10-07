@@ -129,4 +129,9 @@
 			margin: 0;
 		}
 	}
+
+	// Case Study Hero Images
+	&.case-study-hero-image picture img {
+		height: auto;
+	}
 }

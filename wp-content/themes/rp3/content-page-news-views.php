@@ -98,7 +98,9 @@ $blog = new WP_Query( array(
 
 	<!-- Hero Image -->
 	<?php if ( '' != get_field( 'hero_image_1' ) ) :
-		echo rp3_full_bleed_hero_image( get_field( 'hero_image_1' ), '', '', 'sub-page-hero' );
+		echo rp3_full_bleed_hero_image( get_field( 'hero_image_1' ), array(
+			'image_size'	=> 'sub-page-hero',
+		) );
 	endif; ?>
 
 
@@ -171,7 +173,9 @@ $blog = new WP_Query( array(
 
 	<!-- Hero Image -->
 	<?php if ( '' != get_field( 'hero_image_2' ) ) :
-		echo rp3_full_bleed_hero_image( get_field( 'hero_image_2' ), '', '', 'sub-page-hero' );
+		echo rp3_full_bleed_hero_image( get_field( 'hero_image_2' ), array(
+			'image_size'	=> 'sub-page-hero',
+		) );
 	endif; ?>
 
 

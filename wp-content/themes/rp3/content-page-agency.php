@@ -14,13 +14,17 @@
 	<!-- .entry-content -->
 
 	<?php if ( '' != get_field( 'image_1' ) ) {
-		echo rp3_full_bleed_hero_image( get_field( 'image_1' ), '', '', 'sub-page-hero' );
+		echo rp3_full_bleed_hero_image( get_field( 'image_1' ), array(
+			'image_size'	=> 'sub-page-hero',
+		) );
 	} ?>
 
 	<?php get_template_part( 'components/leadership' ); ?>
 
 	<?php if ( '' != get_field( 'image_2' ) ) {
-		echo rp3_full_bleed_hero_image( get_field( 'image_2' ), '', '', 'sub-page-hero' );
+		echo rp3_full_bleed_hero_image( get_field( 'image_2' ), array(
+			'image_size'	=> 'sub-page-hero',
+		) );
 	} ?>
 
 	<?php get_template_part( 'components/clients' ); ?>

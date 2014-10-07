@@ -4,6 +4,12 @@
  *
  * @package RP3
  */
+
+// Get the list of related tags in an array
+$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
+foreach ( $terms as $term ) {
+	$work_tags[] = $term->name;
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'case-study' ); ?>>
@@ -18,8 +24,13 @@
 
 	</div>
 
+	<?php if ( '' != get_field( 'intro_image' ) ) : ?>
 
-	<?php echo rp3_full_bleed_hero_image( get_field( 'image_1' ) ); ?>
+	<?php echo rp3_full_bleed_hero_image( get_field( 'intro_image' ), array(
+		'classes'		=> 'hero-image case-study-hero-image'
+	) ); ?>
+
+	<?php endif; ?>
 
 
 	<div class="case-study--single__entry-content--indented entry-content">
@@ -31,7 +42,13 @@
 	</div>
 
 
-	<?php echo rp3_full_bleed_hero_image( get_field( 'image_2' ) ); ?>
+	<?php if ( '' != get_field( 'think_image' ) ) : ?>
+
+	<?php echo rp3_full_bleed_hero_image( get_field( 'think_image' ), array(
+		'classes'		=> 'hero-image case-study-hero-image'
+	) ); ?>
+
+	<?php endif; ?>
 
 
 	<div class="case-study--single__entry-content--indented entry-content">
@@ -43,7 +60,14 @@
 	</div>
 
 
-	<?php echo rp3_full_bleed_hero_image( get_field( 'image_3' ) ); ?>
+	<?php if ( '' != get_field( 'feel_image' ) ) : ?>
+
+	<?php echo rp3_full_bleed_hero_image( get_field( 'feel_image' ), array(
+		'image_size'	=> 'case-study-tall',
+		'classes'		=> 'hero-image case-study-hero-image'
+	) ); ?>
+
+	<?php endif; ?>
 
 
 	<div class="case-study--single__entry-content--indented entry-content">
@@ -55,11 +79,13 @@
 	</div>
 
 
-	<?php if ( have_rows( 'image_4' ) ) : ?>
+	<?php if ( have_rows( 'build_images' ) ) : ?>
 
-		<?php while ( have_rows( 'image_4' ) ) : the_row(); ?>
+		<?php while ( have_rows( 'build_images' ) ) : the_row(); ?>
 
-			<?php echo rp3_full_bleed_hero_image( get_sub_field( 'image' ) ); ?>
+			<?php echo rp3_full_bleed_hero_image( get_sub_field( 'build_image' ), array(
+				'classes'	=> 'hero-image case-study-hero-image'
+			) ); ?>
 
 		<?php endwhile; ?>
 
@@ -75,8 +101,52 @@
 	</div>
 
 
-	<?php echo rp3_full_bleed_hero_image( get_field( 'image_5' ) ); ?>
+	<?php if ( '' != get_field( 'results_image' ) ) : ?>
 
+	<?php echo rp3_full_bleed_hero_image( get_field( 'results_image' ), array(
+		'classes'		=> 'hero-image case-study-hero-image'
+	) ); ?>
+
+	<?php endif; ?>
+
+
+	<div class="case-study--single__entry-content--indented entry-content">
+
+		<h2>Related Tags:</h2>
+
+		<?php echo join( ', ', $work_tags ); ?>
+
+	</div>
+
+
+	<?php $related_work = get_field( 'related_work_items' ); ?>
+
+	<?php if ( $related_work ) : ?>
+
+		<div class="case-study--single__entry-content--indented--full-width entry-content">
+
+			<h2>Related Work:</h2>
+
+			<ul class="case-study__related-work">
+
+				<?php foreach ( $related_work as $post ) : ?>
+
+					<?php setup_postdata( $post ); ?>
+
+					<li class="case-study__related-work-item">
+						<?php if ( '' != get_the_post_thumbnail() ) :
+							echo get_the_post_thumbnail();
+						endif; ?>
+						<h2><?php the_title(); ?></h2>
+					</li>
+
+				<?php endforeach; ?>
+				
+			</ul>
+
+		</div>
+
+	<?php endif; wp_reset_postdata(); ?>	
 
 </article>
 <!-- #post-## -->

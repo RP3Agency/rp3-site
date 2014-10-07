@@ -42,7 +42,9 @@ wp_reset_query();
 
 
 	<?php if ( '' != get_field( 'hero_image' ) ) {
-		echo rp3_full_bleed_hero_image( get_field( 'hero_image' ), '', '', 'sub-page-hero' );
+		echo rp3_full_bleed_hero_image( get_field( 'hero_image' ), array(
+			'image_size'	=> 'sub-page-hero',
+		) );
 	} ?>
 
 
