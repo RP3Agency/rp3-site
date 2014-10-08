@@ -1,5 +1,7 @@
 .agency__intro {
+	@extend %clearfix;
 	font-size: ce(16px);
+	margin-bottom: 3rem;
 	@include breakpoint($bp-large) {
 		@include span(16);
 	}
