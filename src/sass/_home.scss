@@ -313,6 +313,20 @@ body.home {
 	@include breakpoint($bp-medium) {
 		&__row {
 			display: block;
+
+			&:last-child {
+				.home-errata__block {
+					&:first-child {
+						clear: none;
+						float: left;
+					}
+
+					&:last-child {
+						clear: none;
+						float: right;
+					}
+				}
+			}
 		}
 
 		&__block {
