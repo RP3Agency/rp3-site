@@ -44,7 +44,7 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 	</div>
 	<!-- // .home-errata__row -->
 
-
+	<?php /*
 	<div class="home-errata__row">
 
 		<div class="home-errata__sandbox home-errata__block">
@@ -68,6 +68,7 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 
 	</div>
 	<!-- // .home-errata__row -->
+	*/ ?>
 
 
 	<div class="home-errata__row">

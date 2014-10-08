@@ -4,7 +4,6 @@
 
 	<?php setup_postdata( $post ); ?>
 
-	<?php // echo rp3_full_bleed_hero_image( get_post_thumbnail_id( get_the_ID() ), 'home-hero', get_the_permalink(), 'home-page-hero', get_the_title(), get_field( 'headline' ) ); ?>
 	<?php echo rp3_full_bleed_hero_image( get_post_thumbnail_id( get_the_ID() ), array(
 		'id'			=> 'home-hero',
 		'permalink'		=> get_the_permalink(),

@@ -323,9 +323,9 @@ if ( ! function_exists( 'rp3_full_bleed_hero_image' ) ) {
 		// }
 
 		if ( '' != $args['id'] ) {
-			$html = '<section id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $args['id'] ) . ' hero ' . esc_attr( $args['classes'] ) . '">';
+			$html = '<section id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $args['id'] ) . ' hero ' . esc_attr( $args['classes'] ) . '">' . "\n";
 		} else {
-			$html = '<section class="hero ' . esc_attr( $args['classes'] ) . '">';
+			$html = '<section class="hero ' . esc_attr( $args['classes'] ) . '">' . "\n";
 		}
 
 		// <a>

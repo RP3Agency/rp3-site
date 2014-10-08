@@ -79,6 +79,12 @@ function rp3_image_sizes() {
 		'medium'		=> array( 600, 337.5, true ),
 		'large'			=> array( 1600, 900, true )
 	) );
+
+	rp3_add_image_size( 'home-page-other-work', array(
+		'small'			=> array( 284, 400, true ),
+		'medium'		=> array( 534, 600, true ),
+		'large'			=> array( 1600, 800, true )
+	) );
 }
 
 add_action( 'init', 'rp3_image_sizes' );
