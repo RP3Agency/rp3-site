@@ -1,27 +1,31 @@
 .blog {
+	@extend %side-padding;
 	margin-bottom: 3rem;
 	@include container;
 
-	&__entry-header {
-		@extend %side-padding;
-	}
+	// &__entry-header {
+	// 	@extend %side-padding;
+	// }
 
 	&__primary {
-		@include breakpoint($bp-medium) {
+		@include breakpoint($bp-large / 2) {
 			@include span(16);
 		}
 	}
 
 	&__secondary {
-		@extend %side-padding;
+		// @extend %side-padding;
 		border-top: 1px solid map-get($gray_map, light);
 		margin-top: 3rem;
 		padding-top: 3rem;
 
-		@include breakpoint($bp-medium) {
+		@include breakpoint($bp-large / 2) {
 			border: none;
 			margin: 0;
 			padding: 0;
+		}
+
+		@include breakpoint($bp-large / 2) {
 			@include span(8 last);
 		}
 	}
@@ -40,6 +44,10 @@
 				left: 0;
 			}
 		}
+	}
+
+	&__entry-content {
+		padding: 0;
 	}
 
 	/**
@@ -88,25 +96,28 @@
 
 	&__back {
 		@extend %back;
+		padding: 0;
 	}
 
 	/**
 	 * Fix grid system for paragraphs on the blog page
 	 */
 	.entry-content__container {
-		@include span(24);
-
-		@include breakpoint(1200px) {
-			columns: 2;
-			column-gap: 4em;
+		@include breakpoint($bp-large) {
+			@include span(12);
 		}
+
+		// @include breakpoint(1200px) {
+		// 	columns: 2;
+		// 	column-gap: 4em;
+		// }
 	}
 
 	/**
 	 * Social Media sharing
 	 */
 	&__social-media {
-		@extend %side-padding;
+		// @extend %side-padding;
 		clear: both;
 		margin-bottom: 2em;
 	}
@@ -114,9 +125,9 @@
 	/**
 	 * comments area
 	 */
-	.comments-area {
-		@extend %side-padding;
-	}
+	// .comments-area {
+	// 	@extend %side-padding;
+	// }
 }
 
 
@@ -173,7 +184,7 @@
 			@include gallery(24/2);
 		}
 
-		@include breakpoint($bp-large) {
+		@include breakpoint(1600px) {
 			@include gallery(24/3);
 		}
 	}
