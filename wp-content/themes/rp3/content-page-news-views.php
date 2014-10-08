@@ -72,7 +72,11 @@ $blog = new WP_Query( array(
 
 					<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
-						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+						<div class="blog__thumbnail">
+
+							<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+
+						</div>
 
 					<?php endif; ?>
 
@@ -140,7 +144,11 @@ $blog = new WP_Query( array(
 
 					<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
-						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+						<div class="blog__thumbnail">
+
+							<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+
+						</div>
 
 					<?php endif; ?>
 

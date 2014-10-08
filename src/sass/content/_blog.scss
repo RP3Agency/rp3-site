@@ -35,15 +35,7 @@
 	}
 
 	&__thumbnail {
-		@extend %side-padding;
 		margin-bottom: 2rem;
-
-		@include breakpoint($bp-large + 30px) {
-			padding: {
-				right: 0;
-				left: 0;
-			}
-		}
 	}
 
 	&__entry-content {
