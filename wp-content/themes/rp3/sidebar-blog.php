@@ -16,13 +16,6 @@
 
 		<header class="blog__author__header">
 
-			<div class="blog__author__image">
-
-				<img src="http://placekitten.com/g/150/150">
-
-			</div>
-			<!-- // .author__image -->
-
 			<div class="blog__author__meta">
 
 				<h1 class="blog__author__name"><?php echo get_the_author_meta( 'display_name', $author->ID ); ?></h1>

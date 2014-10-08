@@ -55,13 +55,13 @@
 			margin-bottom: 0.5em;
 		}
 
-		&__image {
-			@include span(24 / 3);
-		}
+		// &__image {
+		// 	@include span(24 / 3);
+		// }
 
-		&__meta {
-			@include span( (24 / 3 * 2) last);
-		}
+		// &__meta {
+		// 	@include span( (24 / 3 * 2) last);
+		// }
 
 		&__bio {
 			margin-bottom: 3rem;
