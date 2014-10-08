@@ -75,12 +75,12 @@
 			text-align: right;
 
 			a {
+				@extend %hover-transition;
 				color: #000;
 				padding: 8px;
-				transition: color 0.2s linear;
 
 				@include hover-state {
-					color: #999;
+					color: #888;
 				}
 			}
 

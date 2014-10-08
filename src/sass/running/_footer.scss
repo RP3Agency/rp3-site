@@ -9,10 +9,6 @@
 	}
 	position: relative;
 
-	@include breakpoint($bp-footer) {
-		font-size: cr(14px);
-	}
-
 	h1 {
 		color: #888;
 		font-size: 1em;
@@ -31,6 +27,7 @@
 
 	&__logo {
 		margin-bottom: 2em;
+		margin-right: 1em;
 
 		@include breakpoint($bp-footer) {
 			float: left;
@@ -48,7 +45,7 @@
 
 	&__navigation {
 		position: absolute;
-		right: percentage(5px / 320px);
+		right: percentage(90px/1600px);
 		top: cr(70px) - 1rem;
 
 		@include breakpoint($bp-footer) {
@@ -59,16 +56,18 @@
 		ul {
 			@extend %clearfix;
 			list-style: none;
-			margin: 0;
+			margin: 2px 0 0;
 		}
 
 		li {
 			@include breakpoint($bp-footer) {
 				float: left;
+				padding: 0 7px;
 			}
 		}
 
 		a {
+			@extend %hover-transition;
 			display: block;
 			padding: 1em 0;
 			text-align: right;
@@ -77,7 +76,12 @@
 			@include breakpoint($bp-footer) {
 				line-height: 1;
 				margin-top: cr(3px);
-				padding: 0 1em;
+				padding: 0 8px;
+			}
+
+			@include hover-state {
+				color: #888;
+				text-decoration: none;
 			}
 		}
 	}
@@ -103,7 +107,8 @@
 
 		li {
 			a {
-				border-color: #fff;
+				@extend %hover-transition;
+				border-color: transparent;
 				color: #fff;
 				height: 40px;
 				margin: 0 4px;
@@ -114,8 +119,8 @@
 				}
 
 				@include hover-state {
-					background-color: #fff;
-					color: $black;
+					background-color: transparent;
+					color: #888;
 					text-decoration: none;
 				}
 			}
@@ -148,5 +153,16 @@
 	&__address,
 	&__phone {
 		margin-bottom: 1rem;
+	}
+
+	@include breakpoint($bp-footer) {
+		&__phone,
+		&__email {
+			float: left;
+		}
+
+		&__email {
+			margin-left: 2em;
+		}
 	}
 }
