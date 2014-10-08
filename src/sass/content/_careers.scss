@@ -35,6 +35,7 @@
 
 		h2 {
 			@extend %roboto-thin;
+			font-size: ce(22px, 14px);
 			margin-bottom: 1em;
 			text-transform: none;
 		}
@@ -70,6 +71,13 @@
 	&__details {
 		@extend %side-padding;
 
+		.careers__header--section {
+			margin: {
+				left: 0;
+				right: 0;
+			}
+		}
+
 		ul {
 			margin: 0 0 3em 1em;
 		}
@@ -95,7 +103,6 @@
 	&__article {
 		@include breakpoint($bp-medium) {
 			@include gallery(12);
-			@include gutter(2em);
 		}
 
 		@include breakpoint($bp-large) {
