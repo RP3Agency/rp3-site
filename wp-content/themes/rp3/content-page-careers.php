@@ -100,7 +100,7 @@ wp_reset_query();
 					<!-- // .careers__summary -->
 
 					<footer class="careers__footer">
-						<p class="link">Learn more</p>
+						<p class="link continue">Learn more</p>
 					</footer>
 					<!-- // .careers__footer -->
 
@@ -157,7 +157,7 @@ wp_reset_query();
 					<!-- // .careers__summary -->
 
 					<footer class="careers__footer">
-						<p class="link">Learn more</p>
+						<p class="link continue">Learn more</p>
 					</footer>
 					<!-- // .careers__footer -->
 
