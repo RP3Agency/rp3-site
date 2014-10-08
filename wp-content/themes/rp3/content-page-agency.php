@@ -29,7 +29,7 @@
 
 	<?php get_template_part( 'components/clients' ); ?>
 
-	<?php get_template_part( 'components/awards' ); ?>
+	<?php // get_template_part( 'components/awards' ); ?>
 
 </article>
 <!-- #post-## -->
