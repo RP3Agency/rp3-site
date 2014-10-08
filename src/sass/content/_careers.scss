@@ -1,6 +1,6 @@
 .careers {
 	@extend %side-padding;
-	@extend %wrapper;
+	// @extend %wrapper;
 	margin-top: 3em;
 
 	&--single__entry-content {
@@ -9,7 +9,11 @@
 
 	&__header--section {
 		border-bottom: 1px solid map-get($gray_map, light);
-		margin-bottom: 3rem;
+		margin: {
+			left: percentage(90px/1600px);
+			right: percentage(90px/1600px);
+			bottom: 3rem;
+		}
 
 		&.no-bottom-margin {
 			border-bottom: none;
@@ -30,10 +34,10 @@
 	&__header--article {
 
 		h2 {
-			font: {
-				size: ce(22px);
-			}
+			@extend %roboto-thin;
+			font-size: ce(22px, 14px);
 			margin-bottom: 1em;
+			text-transform: none;
 		}
 	}
 
@@ -67,6 +71,13 @@
 	&__details {
 		@extend %side-padding;
 
+		.careers__header--section {
+			margin: {
+				left: 0;
+				right: 0;
+			}
+		}
+
 		ul {
 			margin: 0 0 3em 1em;
 		}
@@ -84,6 +95,8 @@
 	 * Layout
 	 */
 	&__row {
+		@extend %side-padding;
+		margin-bottom: 3rem;
 		@include container;
 	}
 
