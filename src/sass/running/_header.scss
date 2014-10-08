@@ -43,10 +43,10 @@
 		@extend %ir;
 		color: $blue;
 		float: right;
-		font-size: 32px;
+		font-size: 28px;
 		height: 32px;
 		line-height: 1;
-		margin-top: 21px;
+		margin-top: 23px;
 		width: 32px;
 
 		@include breakpoint($bp-navigation) {
