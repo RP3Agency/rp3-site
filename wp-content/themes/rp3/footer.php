@@ -49,8 +49,8 @@
 			<div class="site-footer__phone">
 				<h1 class="site-footer__subheader">Phone</h1>
 
-				<p>t. 301.718.0333<br>
-					f. 301.718.9333</p>
+				<p>t. 301.718.0333<?php /*<br>
+					f. 301.718.9333*/ ?></p>
 			</div>
 			<!-- // .site-footer__phone -->
 
