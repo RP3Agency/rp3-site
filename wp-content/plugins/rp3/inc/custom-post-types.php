@@ -83,17 +83,17 @@ function rp3_cpt_work() {
 	register_post_type( 'rp3_cpt_work', $args );
 
 	// Custom Taxonomy
-	$tax_args = array(
-		'labels'				=> array(
-			'name'					=> 'Work Tags',
-			'singular_name'			=> 'Work Tag',
-		),
-		'public'				=> false,
-		'show_ui'				=> true,
-		'hierarchical'			=> false
-	);
+	// $tax_args = array(
+	// 	'labels'				=> array(
+	// 		'name'					=> 'Work Tags',
+	// 		'singular_name'			=> 'Work Tag',
+	// 	),
+	// 	'public'				=> false,
+	// 	'show_ui'				=> true,
+	// 	'hierarchical'			=> false
+	// );
 
-	register_taxonomy( 'rp3_tax_work_tags', 'rp3_cpt_work', $tax_args );
+	// register_taxonomy( 'rp3_tax_work_tags', 'rp3_cpt_work', $tax_args );
 }
 
 

@@ -68,9 +68,15 @@ function rp3_image_sizes() {
 		'large'			=> array( 250, 200, true )
 	) );
 
+	rp3_add_image_size( 'case-study', array(
+		'small'			=> array( 320, 120, true ),
+		'medium'		=> array( 600, 225, true ),
+		'large'			=> array( 1600, 600, true )
+	) );
+
 	rp3_add_image_size( 'case-study-tall', array(
-		'small'			=> array( 320, 320, true ),
-		'medium'		=> array( 800, 450, true ),
+		'small'			=> array( 320, 180, true ),
+		'medium'		=> array( 600, 337.5, true ),
 		'large'			=> array( 1600, 900, true )
 	) );
 }

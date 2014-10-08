@@ -71,7 +71,7 @@
 					max-width: none;
 				}
 
-				@include breakpoint($bp-large) {
+				@include breakpoint(1600px) {
 					height: auto;
 					position: static;
 					transform: translate(0);
@@ -92,7 +92,7 @@
 		right: 0;
 		top: 0;
 
-		@include breakpoint($bp-large) {
+		@include breakpoint(1600px) {
 			position: relative;
 		}
 	}
@@ -131,7 +131,44 @@
 	}
 
 	// Case Study Hero Images
-	&.case-study-hero-image picture img {
-		height: auto;
+	&.case-study-hero-image {
+		height: cr(120px);
+
+		@include breakpoint($bp-small) {
+			height: cr(225px);
+		}
+
+		@include breakpoint($bp-medium) {
+			height: cr(600px);
+		}
+	}
+
+	&.case-study-hero-image-tall {
+		height: cr(180px);
+
+		@include breakpoint($bp-small) {
+			height: cr(337.5px);
+		}
+
+		@include breakpoint($bp-medium) {
+			height: cr(900px);
+		}
+	}
+
+	&.case-study-hero-image,
+	&.case-study-hero-image-tall {
+		margin-bottom: 6rem;
+
+		@include breakpoint(1600px) {
+			height: auto;
+		}
+
+		picture img {
+			height: auto;
+		}
+
+		+ .case-study-hero-image {
+			margin-top: -6rem;
+		}
 	}
 }

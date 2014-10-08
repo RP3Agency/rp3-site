@@ -27,6 +27,7 @@ foreach ( $terms as $term ) {
 	<?php if ( '' != get_field( 'intro_image' ) ) : ?>
 
 	<?php echo rp3_full_bleed_hero_image( get_field( 'intro_image' ), array(
+		'image_size'	=> 'case-study',
 		'classes'		=> 'hero-image case-study-hero-image'
 	) ); ?>
 
@@ -45,6 +46,7 @@ foreach ( $terms as $term ) {
 	<?php if ( '' != get_field( 'think_image' ) ) : ?>
 
 	<?php echo rp3_full_bleed_hero_image( get_field( 'think_image' ), array(
+		'image_size'	=> 'case-study',
 		'classes'		=> 'hero-image case-study-hero-image'
 	) ); ?>
 
@@ -64,7 +66,7 @@ foreach ( $terms as $term ) {
 
 	<?php echo rp3_full_bleed_hero_image( get_field( 'feel_image' ), array(
 		'image_size'	=> 'case-study-tall',
-		'classes'		=> 'hero-image case-study-hero-image'
+		'classes'		=> 'hero-image case-study-hero-image-tall'
 	) ); ?>
 
 	<?php endif; ?>
@@ -84,6 +86,7 @@ foreach ( $terms as $term ) {
 		<?php while ( have_rows( 'build_images' ) ) : the_row(); ?>
 
 			<?php echo rp3_full_bleed_hero_image( get_sub_field( 'build_image' ), array(
+			'image_size'	=> 'case-study',
 				'classes'	=> 'hero-image case-study-hero-image'
 			) ); ?>
 
@@ -104,12 +107,14 @@ foreach ( $terms as $term ) {
 	<?php if ( '' != get_field( 'results_image' ) ) : ?>
 
 	<?php echo rp3_full_bleed_hero_image( get_field( 'results_image' ), array(
+		'image_size'	=> 'case-study',
 		'classes'		=> 'hero-image case-study-hero-image'
 	) ); ?>
 
 	<?php endif; ?>
 
 
+	<?php /*
 	<div class="case-study--single__entry-content--indented entry-content">
 
 		<h2>Related Tags:</h2>
@@ -117,8 +122,10 @@ foreach ( $terms as $term ) {
 		<?php echo join( ', ', $work_tags ); ?>
 
 	</div>
+	*/ ?>
 
 
+	<?php /*
 	<?php $related_work = get_field( 'related_work_items' ); ?>
 
 	<?php if ( $related_work ) : ?>
@@ -146,7 +153,8 @@ foreach ( $terms as $term ) {
 
 		</div>
 
-	<?php endif; wp_reset_postdata(); ?>	
+	<?php endif; wp_reset_postdata(); ?>
+	*/ ?>
 
 </article>
 <!-- #post-## -->
