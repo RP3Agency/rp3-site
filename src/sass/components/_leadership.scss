@@ -60,9 +60,9 @@
 			@include gallery(24 / 2)
 		}
 
-		@include breakpoint($bp-large/2) {
-			@include gallery(24 / 3)
-		}
+		// @include breakpoint($bp-large/2) {
+		// 	@include gallery(24 / 3)
+		// }
 
 		@include breakpoint($bp-marge) {
 			@include gallery(24 / 4);
