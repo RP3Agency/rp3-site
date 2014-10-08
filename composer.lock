@@ -430,15 +430,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.1.1",
+            "version": "3.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.1.1"
+                "reference": "tags/3.2-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/jetpack.3.1.1.zip",
+                "url": "http://downloads.wordpress.org/plugin/jetpack.3.2.zip",
                 "reference": null,
                 "shasum": null
             },
