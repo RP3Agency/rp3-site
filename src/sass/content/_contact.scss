@@ -5,7 +5,10 @@
 
 	> div {
 		margin-bottom: 1rem;
-		@include gallery(12 of 24);
+
+		@include breakpoint(400px) {
+			@include gallery(12 of 24);
+		}
 
 		@include breakpoint($bp-medium) {
 			@include gallery(8 of 24);
