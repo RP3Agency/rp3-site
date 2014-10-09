@@ -85,6 +85,13 @@ function rp3_image_sizes() {
 		'medium'		=> array( 534, 600, true ),
 		'large'			=> array( 1600, 800, true )
 	) );
+
+	rp3_add_image_size( 'interstitial', array(
+		// 'small'			=> array( 320, 128, true ),
+		'small'			=> array( 600, 240, true ),
+		'medium'		=> array( 1600, 640, true ),
+		'large'			=> array( 1600, 640, true )
+	) );
 }
 
 add_action( 'init', 'rp3_image_sizes' );

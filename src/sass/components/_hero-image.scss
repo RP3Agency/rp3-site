@@ -184,3 +184,16 @@
 		}
 	}
 }
+
+
+// fixes to get this out the door (shame.css)
+.interstitial .hero__image picture img {
+	max-width: none;
+}
+
+@include breakpoint(1000px) {
+	.hero.hero-image.interstitial {
+		height: 640px;
+	}
+}
+
