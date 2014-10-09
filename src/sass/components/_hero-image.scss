@@ -6,7 +6,7 @@
 	margin-bottom: 3rem;
 
 	&.home-hero {
-		height: cr(450px);
+		height: cr(400px);
 	}
 
 	@include breakpoint($bp-medium) {
@@ -59,8 +59,8 @@
 				width: auto;
 
 				@include breakpoint($bp-small) {
-					height: auto;
-					max-width: 640px;
+					height: 100%;
+					max-width: 600px;
 				}
 
 				@include breakpoint($bp-medium) {
