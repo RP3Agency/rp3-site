@@ -26,6 +26,7 @@
     "fancyguy/webroot-installer": "1.0.0",
     "wpackagist-plugin/add-from-server":"*",
     "wpackagist-plugin/admin-post-navigation":"*",
+    "wpackagist-plugin/akismet":"*",
     "wpackagist-plugin/black-studio-tinymce-widget":"*",
     "wpackagist-plugin/co-authors-plus":"*",
     "wpackagist-plugin/contact-form-7":"*",
