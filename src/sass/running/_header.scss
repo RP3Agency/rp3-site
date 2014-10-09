@@ -12,7 +12,7 @@
 		color: $black;
 		display: block;
 		font: {
-			size: cr(14px);
+			size: cr(12px);
 			weight: $medium;
 		}
 		text-decoration: none;
@@ -63,7 +63,7 @@
 		@extend %clearfix;
 		display: none;
 		list-style: none;
-		margin: cr(23px) 0 0 0;
+		margin: cr(21px) 0 0 0;
 
 		@include breakpoint($bp-navigation) {
 			display: block;
