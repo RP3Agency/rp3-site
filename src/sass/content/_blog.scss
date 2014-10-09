@@ -173,6 +173,12 @@
  */
 .blog-archive-widget-area {
 	@extend %side-padding;
+	background-color: map-get($gray_map, light);
+	margin-top: 5rem;
+	padding: {
+		top: 5rem;
+		bottom: 2rem;
+	}
 	@include container;
 
 	aside {
@@ -182,6 +188,16 @@
 
 		@include breakpoint(1600px) {
 			@include gallery(24/3);
+		}
+	}
+
+	// make the background of the subscribe field transparent normally,
+	// and white on :focus
+	input[type="email"] {
+		background-color: transparent;
+
+		&:focus {
+			background-color: #fff;
 		}
 	}
 }
