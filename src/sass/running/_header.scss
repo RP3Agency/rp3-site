@@ -6,6 +6,10 @@
 	background-color: #fff;
 	@include container;
 
+	@include breakpoint($bp-navigation) {
+		height: cr(75px);
+	}
+
 	// Make all links in the primary nav blocks
 	// Set the font size, weight and styling
 	a {
