@@ -70,7 +70,7 @@
 			<!-- // .site-footer__social -->
 
 			<div class="site-footer__copyright">
-				<span class="copyright">© <?php echo date('Y'); ?> RP3 Agency, <a href="http://www.aaaa.org/news/agency/Pages/RP3AgencyReceivesCertificationAsaWomen-OwnedSmallBusiness.aspx">A Certified Women-Owned Small Business</a></span>
+				<span class="copyright">© <?php echo date('Y'); ?> RP3 Agency, <a href="http://www.aaaa.org/news/agency/Pages/RP3AgencyReceivesCertificationAsaWomen-OwnedSmallBusiness.aspx">A Certified Woman-Owned Small Business</a></span>
 			</div>
 			<!-- // .copy -->
 
