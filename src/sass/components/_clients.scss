@@ -1,4 +1,19 @@
 .clients {
+	&__content {
+		@extend %clearfix;
+		margin: {
+			right: auto;
+			bottom: 3rem;
+			left: auto;
+		}
+		max-width: cr(1000px);
+	}
+
+	&__entry-content {
+		@include breakpoint($bp-large / 2) {
+			@include span(18 of 24);
+		}
+	}
 
 	&__client {
 		@include gallery(24 / 2);
@@ -18,7 +33,7 @@
 		background-position: center center;
 		background-size: 50% auto;
 		height: 100px;
-		margin-bottom: 1em;
+		margin-bottom: 2rem;
 		width: 100%;
 	}
 }

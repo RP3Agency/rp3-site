@@ -1,8 +1,12 @@
 <?php if ( '' != get_field( 'clients_introduction' ) ) : ?>
 
-<section class="clients entry-content">
+<section class="clients">
 
-	<?php the_field( 'clients_introduction' ); ?>
+	<div class="clients__entry-content entry-content">
+
+		<?php the_field( 'clients_introduction' ); ?>
+
+	</div>
 
 	<?php if ( have_rows( 'clients' ) ) : ?>
 
