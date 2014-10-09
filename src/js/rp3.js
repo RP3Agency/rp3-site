@@ -144,15 +144,15 @@ jQuery(document).ready(function($) {
 	
 	if(has_touch) {
 
-		(resize = function() {
+		// (resize = function() {
 
-			height = $(window).height();
-			width = $(window).width();
+		// 	height = $(window).height();
+		// 	width = $(window).width();
 
-			$('#home-work a').width(width).height(height);
+		// 	$('#home-work a').width(width).height(height);
 
 
-		})();
+		// })();
 
 		window.ondevicemotion = function(event) {
 
