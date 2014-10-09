@@ -1,27 +1,33 @@
-.agency__intro {
-	@extend %clearfix;
-	font-size: ce(16px);
-	margin-bottom: 3rem;
-	@include breakpoint($bp-large) {
-		@include span(16);
-	}
-}
-
-.agency__left,
-.agency__right {
-	@include breakpoint($bp-medium) {
-		@include span(12);
+.agency {
+	&__intro {
+		@extend %clearfix;
+		font-size: ce(16px);
+		margin-bottom: 3rem;
+		@include breakpoint($bp-large) {
+			@include span(16);
+		}
 	}
 
-	h2 {
-		font-size: ce(12px);
-		font-weight: $normal;
-		text-transform: uppercase;
-	}
-}
+	&__left,
+	&__right {
+		@include breakpoint($bp-medium) {
+			@include span(12);
+		}
 
-.agency__right {
-	@include breakpoint($bp-medium) {
-		@include last;
+		h2 {
+			font-size: ce(12px);
+			font-weight: $normal;
+			text-transform: uppercase;
+		}
+	}
+
+	&__left {
+		margin-bottom: 1.5em;
+	}
+
+	&__right {
+		@include breakpoint($bp-medium) {
+			@include last;
+		}
 	}
 }
