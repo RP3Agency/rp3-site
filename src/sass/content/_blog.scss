@@ -40,6 +40,10 @@
 
 	&__entry-content {
 		padding: 0;
+
+		@include breakpoint($bp-medium) {
+			font-size: cr(16px);
+		}
 	}
 
 	/**
