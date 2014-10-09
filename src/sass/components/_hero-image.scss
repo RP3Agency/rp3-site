@@ -6,23 +6,25 @@
 	margin-bottom: 3rem;
 
 	&.home-hero {
-		height: cr(400px);
+		height: cr(450px);
 	}
 
 	@include breakpoint($bp-medium) {
 		height: cr(400px);
 
 		&.home-hero {
-			height: cr(450px);
+			height: cr(608px);
+		}
+	}
+
+	@include breakpoint(1600px) {
+		&.home-hero {
+			height: auto;
 		}
 	}
 
 	@include breakpoint($bp-large) {
 		height: auto;
-
-		&.home-hero {
-			height: auto;
-		}
 	}
 
 	a {
@@ -68,11 +70,8 @@
 				}
 
 				@include breakpoint(1600px) {
-					max-width: none;
-				}
-
-				@include breakpoint(1600px) {
 					height: auto;
+					max-width: none;
 					position: static;
 					transform: translate(0);
 					width: 100%;
@@ -80,6 +79,19 @@
 			}
 		}
 	}
+
+	// &.home-hero {
+	// 	&__image {
+	// 		picture {
+	// 			img {
+	// 				@include breakpoint(1200px) {
+	// 					height: auto;
+	// 					width: 100%;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	.wrapper {
 		bottom: 0;

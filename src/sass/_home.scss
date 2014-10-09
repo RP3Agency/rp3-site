@@ -121,6 +121,7 @@ body.home {
 		}
 
 		@include breakpoint($bp-large / 2) {
+			margin: 0;
 			width: 33%;
 		}
 	}
