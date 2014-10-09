@@ -1,5 +1,6 @@
 .contact__info {
 	@extend %side-padding;
+	line-height: 1.2;
 	margin-bottom: 2rem;
 	@include container;
 
@@ -27,7 +28,13 @@
 	&__email,
 	&__phone-fax-numbers,
 	&__fact-sheet-link {
-		font-weight: $regular;
+		span {
+			display: none;
+
+			@include breakpoint($bp-medium) {
+				display: inline;
+			}
+		}
 	}
 
 	&__social {
