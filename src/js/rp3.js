@@ -196,6 +196,7 @@ function initialize() {
 		var mapOptions = {
 			center: myLatLng,
 			zoom: 11,
+			draggable: false,
 			scrollwheel: false,
 			streetViewControl: false,
 			mapTypeControl: false,
