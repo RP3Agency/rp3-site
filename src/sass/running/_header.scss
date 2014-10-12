@@ -7,7 +7,7 @@
 	@include container;
 
 	@include breakpoint($bp-navigation) {
-		height: cr(75px);
+		height: cr(100px);
 	}
 
 	// Make all links in the primary nav blocks
@@ -31,13 +31,25 @@
 		@extend %assistive;
 	}
 
+	.header-wrapper {
+		height: 100%;
+	}
+
 	.site-branding {
 		@extend %clearfix;
+		height: 100%;
 
 		.site-title {
 			float: left;
-			margin: 8px 0 0;
+			margin: cr(8px) 0;
 			padding: cr(15px) 0;
+
+			@include breakpoint($bp-navigation) {
+				margin: {
+					top: cr(24px);
+					bottom: 0;
+				}
+			}
 		}
 	}
 
@@ -67,7 +79,7 @@
 		@extend %clearfix;
 		display: none;
 		list-style: none;
-		margin: cr(21px) 0 0 0;
+		margin: cr(37px) 0 0 0;
 
 		@include breakpoint($bp-navigation) {
 			display: block;
