@@ -18,7 +18,7 @@ var rp3 = (function($) {
 
 		setTimeout( function() {
 			$mobileNav.removeAttr('style');
-		}, 500);
+		}, 300);
 	},
 	toggleNavigation = function() {
 		var $menuOpen = $("#menu-open"),

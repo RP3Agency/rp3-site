@@ -10,7 +10,10 @@
 	visibility: hidden;
 	z-index: 1000;
 
-	transition: opacity 0.5s linear;
+	// If you change the transition timing here, make sure
+	// you change the setTimeout() timing in rp3.js to the
+	// same amount.
+	transition: opacity 300ms linear;
 
 	&.visible {
 		opacity: 1;
