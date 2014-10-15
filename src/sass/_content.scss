@@ -439,18 +439,26 @@
 		@include container;
 	}
 
-	&__entry-header {
 
-		@include breakpoint($medium) {
-			h1 {
-				font-size: ce(36px);
-			}
-		}
-
-		p {
-			margin: 0;
-		}
+	// Case Study Header
+	&__header {
+		font-size: cr(16px);
+		margin-bottom: 2em;
 	}
+
+	&__title {
+		font-size: ce(36px, 16px);
+		line-height: 1;
+		margin-bottom: 0 !important; // Need to correct this ~TFR
+	}
+
+	&__client {
+		font-size: ce(12px, 16px);
+		margin-bottom: 1em;
+	}
+
+
+
 
 	&__section {
 	}
