@@ -18,15 +18,16 @@ foreach ( $terms as $term ) {
 
 		<header class="case-study__header">
 			<h1 class="case-study__title"><?php the_title(); ?></h1>
-			<p class="case-study__tagline"><?php the_field( 'tagline' ); ?></p>
+			<div class="case-study__client">for <strong><?php the_field( 'client' ); ?></strong></div>
+			<div class="case-study__tagline"><?php the_field( 'tagline' ); ?></div>
 		</header>
 		<!-- // .case-study__header -->
 
 	</div>
 
-	<?php if ( '' != get_field( 'intro_image' ) ) : ?>
+	<?php if ( '' != get_field( 'hero_image' ) ) : ?>
 
-	<?php echo rp3_full_bleed_hero_image( get_field( 'intro_image' ), array(
+	<?php echo rp3_full_bleed_hero_image( get_field( 'hero_image' ), array(
 		'image_size'	=> 'case-study',
 		'classes'		=> 'hero-image case-study-hero-image'
 	) ); ?>
@@ -38,17 +39,21 @@ foreach ( $terms as $term ) {
 
 		<h2>Think:</h2>
 
-		<?php the_field( 'think' ); ?>
+		<?php the_field( 'think_copy' ); ?>
 
 	</div>
 
 
-	<?php if ( '' != get_field( 'think_image' ) ) : ?>
+	<?php if ( have_rows( 'think_images' ) ) : ?>
 
-	<?php echo rp3_full_bleed_hero_image( get_field( 'think_image' ), array(
-		'image_size'	=> 'case-study',
-		'classes'		=> 'hero-image case-study-hero-image'
-	) ); ?>
+		<?php while ( have_rows( 'think_images' ) ) : the_row(); ?>
+
+			<?php echo rp3_full_bleed_hero_image( get_sub_field( 'think_image' ), array(
+				'image_size'	=> 'case-study',
+				'classes'		=> 'hero-image case-study-hero-image'
+			) ); ?>
+
+		<?php endwhile; ?>
 
 	<?php endif; ?>
 
@@ -57,17 +62,21 @@ foreach ( $terms as $term ) {
 
 		<h2>Feel:</h2>
 
-		<?php the_field( 'feel' ); ?>
+		<?php the_field( 'feel_copy' ); ?>
 
 	</div>
 
 
-	<?php if ( '' != get_field( 'feel_image' ) ) : ?>
+	<?php if ( have_rows( 'feel_images' ) ) : ?>
 
-	<?php echo rp3_full_bleed_hero_image( get_field( 'feel_image' ), array(
-		'image_size'	=> 'case-study-tall',
-		'classes'		=> 'hero-image case-study-hero-image-tall'
-	) ); ?>
+		<?php while ( have_rows( 'feel_images' ) ) : the_row(); ?>
+
+			<?php echo rp3_full_bleed_hero_image( get_sub_field( 'feel_image' ), array(
+				'image_size'	=> 'case-study-tall',
+				'classes'		=> 'hero-image case-study-hero-image-tall'
+			) ); ?>
+
+		<?php endwhile; ?>
 
 	<?php endif; ?>
 
@@ -76,7 +85,7 @@ foreach ( $terms as $term ) {
 
 		<h2>Build:</h2>
 
-		<?php the_field( 'build' ); ?>
+		<?php the_field( 'build_copy' ); ?>
 
 	</div>
 
@@ -99,17 +108,21 @@ foreach ( $terms as $term ) {
 
 		<h2>Results:</h2>
 
-		<?php the_field( 'results' ); ?>
+		<?php the_field( 'results_copy' ); ?>
 
 	</div>
 
 
-	<?php if ( '' != get_field( 'results_image' ) ) : ?>
+	<?php if ( have_rows( 'results_images' ) ) : ?>
 
-	<?php echo rp3_full_bleed_hero_image( get_field( 'results_image' ), array(
-		'image_size'	=> 'case-study',
-		'classes'		=> 'hero-image case-study-hero-image'
-	) ); ?>
+		<?php while ( have_rows( 'results_images' ) ) : the_row(); ?>
+
+			<?php echo rp3_full_bleed_hero_image( get_sub_field( 'results_image' ), array(
+				'image_size'	=> 'case-study',
+				'classes'		=> 'hero-image case-study-hero-image'
+			) ); ?>
+
+		<?php endwhile; ?>
 
 	<?php endif; ?>
 
