@@ -16,7 +16,7 @@
 					'permalink'		=> get_the_permalink(),
 					'image_size'	=> 'home-page-other-work',
 					'title'			=> get_the_title(),
-					'headline'		=> get_field( 'headline' )
+					'client'		=> get_field( 'client' )
 				) );
 				?>
 

@@ -8,7 +8,7 @@
 		'id'			=> 'home-hero',
 		'permalink'		=> get_the_permalink(),
 		'title'			=> get_the_title(),
-		'headline'		=> get_field( 'headline' )
+		'client'		=> get_field( 'client' )
 	) ); ?>
 
 	<?php wp_reset_postdata(); ?>

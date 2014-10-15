@@ -308,19 +308,12 @@ if ( ! function_exists( 'rp3_full_bleed_hero_image' ) ) {
 			'permalink'		=> '',
 			'image_size'	=> 'home-page-hero',
 			'title'			=> '',
-			'headline'		=> ''
+			'client'		=> ''
 		);
 
 		$args = wp_parse_args( $args, $defaults );
 
 		$html = '';
-
-		// <section>
-		// if ( is_front_page() ) {
-		// 	$classes = 'hero-image';
-		// } else {
-		// 	$classes = 'page__hero-image hero-image';
-		// }
 
 		if ( '' != $args['id'] ) {
 			$html = '<section id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $args['id'] ) . ' hero ' . esc_attr( $args['classes'] ) . '">' . "\n";
@@ -337,8 +330,8 @@ if ( ! function_exists( 'rp3_full_bleed_hero_image' ) ) {
 
 		$html .= '<div class="hero__image">' . rp3_picture_element( $image_id, $args['image_size'], $args['title'] ) . '</div>';
 
-		if ( '' != $args['headline'] ) {
-			$html .= '<div class="wrapper"><div class="hero__headline">' . $args['headline'] . '</div></div>';
+		if ( ( '' != $args['title'] ) && ( '' != $args['client'] ) ) {
+			$html .= '<div class="wrapper"><div class="hero__headline"><h1>' . $args['title'] . '</h1>for <strong>' . $args['client'] . '</strong></div></div>';
 		}
 
 		// </a>
