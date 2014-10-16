@@ -92,6 +92,10 @@ function rp3_image_sizes() {
 		'medium'		=> array( 1600, 640, true ),
 		'large'			=> array( 1600, 640, true )
 	) );
+
+	// Related Work
+	add_image_size( 'related-work-thumbnail', 250, 200, true );
+	add_image_size( 'related-work-thumbnail-2x', 500, 400, true );
 }
 
 add_action( 'init', 'rp3_image_sizes' );
