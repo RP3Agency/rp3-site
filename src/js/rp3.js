@@ -4,8 +4,11 @@ var rp3 = (function($) {
 
 	'use strict';
 
-	var 
+	var
 
+	/**
+	 * Toggle the "visibility" class of the mobile nav to trigger the CSS fade in and fade out
+	 */
 	showMainNav = function() {
 		var $mobileNav = $('#mobile-nav'),
 			$menuClose = $("#menu-close");
@@ -35,92 +38,41 @@ var rp3 = (function($) {
 		});
 	},
 
-	/**
-	 * Navigation Anchor
-	 */
-	// navigationAnchor = function() {
-
-	// 	if ( ! Modernizr.touch ) {
-
-	// 		var $mastHead			= $('#masthead'),
-	// 			$siteNavigation		= $('#site-navigation'),
-	// 			$logo				= $siteNavigation.find('.logo'),
-	// 			mastHeight			= $mastHead.outerHeight(true),
-	// 			scrollY				= $(window).scrollTop();
-
-	// 		if ( scrollY >= mastHeight ) {
-	// 			$siteNavigation.addClass('fixed');
-	// 			$logo.fadeIn().css('display', 'block');
-	// 		} else {
-	// 			$siteNavigation.removeClass('fixed');
-	// 			$logo.fadeOut();
-	// 		}
-
-	// 	}
-	// },
 
 	/**
-	 * Show/Hide Search in Header Auxiliary
+	 * Equalize the height of elements of a given selector
 	 */
-	// showHideSearch = function() {
-	// 	var $masthead = $('#masthead'),
-	// 		$searchForm = $masthead.find('form'),
-	// 		$searchClose = $masthead.find('.close'),
-	// 		$searchOpen = $masthead.find('.search-toggle');
+	getMaxHeight = function( elements ) {
+		var maxHeight = 0;
 
-	// 	$searchOpen.on( 'click', function(e) {
-	// 		e.preventDefault();
-	// 		$searchForm.fadeIn();
-	// 	})
+		for ( var i = 0; i < elements.length; i++ ) {
+			if ( $(elements[i]).height() > maxHeight ) {
+				maxHeight = $(elements[i]).height();
+			}
+		}
 
-	// 	$searchClose.on( 'click', function(e) {
-	// 		e.preventDefault();
-	// 		$searchForm.fadeOut();
-	// 	});
-	// },
+		return maxHeight;
+	},
+	equalizeHeights = function() {
+		var maxHeight = 0,
+			$relatedWorkLabel = $('.related-work__label');
 
-	/**
-	 * Show/Hide People Information
-	 */
-	// showHidePeople = function() {
-	// 	var $articles		= $('#people article');
-
-	// 	$articles.each( function() {
-	// 		$(this).on( "click", function() {
-	// 			$(this).toggleClass('active');
-	// 		});
-	// 	});
-	// },
-
-	/**
-	 * Home Page Panel Sizes
-	 */
-	// homePagePanelSizes = function() {
-	// 	var windowHeight = $(window).outerHeight(true),
-	// 		headerHeight = $("#header-container").outerHeight(true),
-	// 		panelHeight = 0,
-	// 		$panels = $("#introduction");
-
-	// 	// console.log( 'windowHeight : ' + windowHeight );
-	// 	// console.log( 'headerHeight : ' + headerHeight );
-
-	// 	panelHeight = windowHeight - headerHeight;
-
-	// 	$panels.height( panelHeight );
-	// },
+		if ( $relatedWorkLabel.length > 0 ) {
+			$relatedWorkLabel.removeAttr('style');
+			maxHeight = getMaxHeight( $relatedWorkLabel );
+			$relatedWorkLabel.height(maxHeight);
+		}
+	},
 
 	init = function() {
 		toggleNavigation();
-		// showHideSearch();
-		// showHidePeople();
-		// homePagePanelSizes();
+		equalizeHeights();
 		
 		$(window).on( 'scroll', function() {
-			// navigationAnchor();
-			// homePagePanelSizes();
 		});
 
 		$(window).on( 'resize', function() {
+			equalizeHeights();
 		});
 	};
 
