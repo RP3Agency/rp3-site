@@ -1,0 +1,111 @@
+// Related Work
+.related-work {
+	@extend %clearfix;
+	@extend %side-padding;
+	background-color: $blue;
+	color: #fff;
+	padding: {
+		top: cr(75px);
+		bottom: cr(75px);
+	}
+
+	@include breakpoint($bp-medium) {
+		// flexbox
+		display: flex;
+		justify-content: center;
+		align-items: stretch;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+
+		// @include container(4);
+
+		header {
+			margin-right: 1em;
+			margin-bottom: 1em;
+			max-width: 250px;
+			position: relative;
+			width: 250px;
+		}
+	}
+
+	&__header {
+		color: #fff;
+		font-size: ce(16px);
+		margin: {
+			right: auto;
+			bottom: cr(75px);
+			left: auto;
+		}
+		width: 250px;
+
+		@include breakpoint($bp-medium) {
+			// 	@include span(1 of 4);
+			// 	@include gutter(1em);
+
+			left: 0;
+			margin: 0;
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+			width: auto;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		margin: 0;
+
+		@include breakpoint($bp-medium) {
+			// flexbox
+			display: flex;
+			justify-content: center;
+			align-items: stretch;
+		}
+	}
+
+	&__item {
+		margin: {
+			right: auto;
+			bottom: 1em;
+			left: auto;
+		}
+		max-width: 250px;
+		width: 250px;
+
+		@include breakpoint($bp-medium) {
+		// 	@include span(1 of 4);
+		// 	@include gutter(1em);
+
+			// flexbox
+			flex: 1;
+			margin-left: 0;
+			margin-right: 1em;
+			width: auto;
+
+			&:last-child {
+				// @include last;
+				margin-right: 0;
+			}
+
+			img {
+				height: auto;
+				width: 100%;
+			}
+		}
+	}
+
+	&__label {
+		background-color: #fff;
+		color: $black;
+		font-size: cr(12px);
+		overflow: hidden;
+		padding: ce(30px, 12px);
+	}
+
+	&__title {
+		font-size: ce(22px, 12px);
+	}
+}
