@@ -10,9 +10,35 @@ $terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
 foreach ( $terms as $term ) {
 	$work_tags[] = $term->name;
 }
+
+// Output the hero images
+function rp3_case_study_hero_images( $field, $subfield, $tall = false ) {
+
+	$rows = get_field( $field );
+
+	if ( 0 < sizeof( $rows ) ) {
+
+		$image_size = 'case-study';
+		$classes = 'hero-image case-study-hero-image';
+
+		if ( $tall ) {
+			$image_size .= '-tall';
+			$classes .= '-tall';
+		}
+
+		foreach ( $rows as $row ) {
+			echo rp3_full_bleed_hero_image( $row[$subfield], array(
+				'image_size'	=> $image_size,
+				'classes'		=> $classes
+			) );
+		}
+	}
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'case-study' ); ?>>
+
+	<!-- Introduction -->
 
 	<div class="case-study--single__entry-content entry-content">
 
@@ -35,6 +61,9 @@ foreach ( $terms as $term ) {
 	<?php endif; ?>
 
 
+	<!-- Think -->
+
+
 	<div class="case-study--single__entry-content--indented entry-content">
 
 		<h2>Think:</h2>
@@ -44,18 +73,10 @@ foreach ( $terms as $term ) {
 	</div>
 
 
-	<?php if ( have_rows( 'think_images' ) ) : ?>
+	<?php rp3_case_study_hero_images( 'think_images', 'think_image' ); ?>
 
-		<?php while ( have_rows( 'think_images' ) ) : the_row(); ?>
 
-			<?php echo rp3_full_bleed_hero_image( get_sub_field( 'think_image' ), array(
-				'image_size'	=> 'case-study',
-				'classes'		=> 'hero-image case-study-hero-image'
-			) ); ?>
-
-		<?php endwhile; ?>
-
-	<?php endif; ?>
+	<!-- Feel -->
 
 
 	<div class="case-study--single__entry-content--indented entry-content">
@@ -67,18 +88,10 @@ foreach ( $terms as $term ) {
 	</div>
 
 
-	<?php if ( have_rows( 'feel_images' ) ) : ?>
+	<?php rp3_case_study_hero_images( 'feel_images', 'feel_image', true ); ?>
 
-		<?php while ( have_rows( 'feel_images' ) ) : the_row(); ?>
 
-			<?php echo rp3_full_bleed_hero_image( get_sub_field( 'feel_image' ), array(
-				'image_size'	=> 'case-study-tall',
-				'classes'		=> 'hero-image case-study-hero-image-tall'
-			) ); ?>
-
-		<?php endwhile; ?>
-
-	<?php endif; ?>
+	<!-- Build -->
 
 
 	<div class="case-study--single__entry-content--indented entry-content">
@@ -90,18 +103,10 @@ foreach ( $terms as $term ) {
 	</div>
 
 
-	<?php if ( have_rows( 'build_images' ) ) : ?>
+	<?php rp3_case_study_hero_images( 'build_images', 'build_image' ); ?>
 
-		<?php while ( have_rows( 'build_images' ) ) : the_row(); ?>
 
-			<?php echo rp3_full_bleed_hero_image( get_sub_field( 'build_image' ), array(
-			'image_size'	=> 'case-study',
-				'classes'	=> 'hero-image case-study-hero-image'
-			) ); ?>
-
-		<?php endwhile; ?>
-
-	<?php endif; ?>
+	<!-- Results -->
 
 
 	<div class="case-study--single__entry-content--indented entry-content">
@@ -113,18 +118,10 @@ foreach ( $terms as $term ) {
 	</div>
 
 
-	<?php if ( have_rows( 'results_images' ) ) : ?>
+	<?php rp3_case_study_hero_images( 'results_images', 'results_image' ); ?>
 
-		<?php while ( have_rows( 'results_images' ) ) : the_row(); ?>
 
-			<?php echo rp3_full_bleed_hero_image( get_sub_field( 'results_image' ), array(
-				'image_size'	=> 'case-study',
-				'classes'		=> 'hero-image case-study-hero-image'
-			) ); ?>
-
-		<?php endwhile; ?>
-
-	<?php endif; ?>
+	<!-- Related Work -->
 
 
 	<?php get_template_part( 'components/work', 'related-work' ); ?>
