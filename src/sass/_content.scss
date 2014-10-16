@@ -494,35 +494,11 @@
 	.hero {
 		clear: both;
 	}
-
-
-	// Related Work
-	// &__related-work {
-	// 	list-style-type: none;
-	// 	margin: 0;
-	// 	@include container;
-	// }
-
-	// &__related-work-item {
-	// 	@include breakpoint($bp-medium) {
-	// 		@include span((24/3) of 24);
-
-	// 		&:last-child {
-	// 			@include last;
-	// 		}
-	// 	}
-
-	// 	img {
-	// 		display: block;
-	// 		margin-bottom: 1rem;
-	// 	}
-	// }
-
-	// h2 {
-	// 	margin-bottom: 1rem;
-	// }
 }
 
+
+
+@import "components/related-work";
 
 // Careers
 .careers {
