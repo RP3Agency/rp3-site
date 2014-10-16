@@ -127,47 +127,7 @@ foreach ( $terms as $term ) {
 	<?php endif; ?>
 
 
-	<?php /*
-	<div class="case-study--single__entry-content--indented entry-content">
-
-		<h2>Related Tags:</h2>
-
-		<?php echo join( ', ', $work_tags ); ?>
-
-	</div>
-	*/ ?>
-
-
-	<?php /*
-	<?php $related_work = get_field( 'related_work_items' ); ?>
-
-	<?php if ( $related_work ) : ?>
-
-		<div class="case-study--single__entry-content--indented--full-width entry-content">
-
-			<h2>Related Work:</h2>
-
-			<ul class="case-study__related-work">
-
-				<?php foreach ( $related_work as $post ) : ?>
-
-					<?php setup_postdata( $post ); ?>
-
-					<li class="case-study__related-work-item">
-						<?php if ( '' != get_the_post_thumbnail() ) :
-							echo get_the_post_thumbnail();
-						endif; ?>
-						<h2><?php the_title(); ?></h2>
-					</li>
-
-				<?php endforeach; ?>
-				
-			</ul>
-
-		</div>
-
-	<?php endif; wp_reset_postdata(); ?>
-	*/ ?>
+	<?php get_template_part( 'components/work', 'related-work' ); ?>
 
 </article>
 <!-- #post-## -->
