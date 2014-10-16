@@ -96,7 +96,7 @@ var rp3 = (function($) {
 
 // 	var has_touch = 'ontouchstart' in document.documentElement;
 // 	var accX, accY, width, height, xA, yA, movement;
-	
+
 // 	if(has_touch) {
 
 // 		// (resize = function() {

@@ -20,14 +20,17 @@
 			display: none;
 		}
 
-		// @include container(4);
-
 		header {
 			margin-right: 1em;
 			margin-bottom: 1em;
 			max-width: 250px;
-			position: relative;
 			width: 250px;
+		}
+	}
+
+	@include breakpoint($bp-marge) {
+		header {
+			position: relative;
 		}
 	}
 
@@ -41,10 +44,7 @@
 		}
 		width: 250px;
 
-		@include breakpoint($bp-medium) {
-			// 	@include span(1 of 4);
-			// 	@include gutter(1em);
-
+		@include breakpoint($bp-marge) {
 			left: 0;
 			margin: 0;
 			position: absolute;
@@ -58,7 +58,7 @@
 		list-style: none;
 		margin: 0;
 
-		@include breakpoint($bp-medium) {
+		@include breakpoint($bp-marge) {
 			// flexbox
 			display: flex;
 			justify-content: center;
@@ -75,10 +75,7 @@
 		max-width: 250px;
 		width: 250px;
 
-		@include breakpoint($bp-medium) {
-		// 	@include span(1 of 4);
-		// 	@include gutter(1em);
-
+		@include breakpoint($bp-marge) {
 			// flexbox
 			flex: 1;
 			margin-left: 0;
@@ -86,7 +83,6 @@
 			width: auto;
 
 			&:last-child {
-				// @include last;
 				margin-right: 0;
 			}
 
