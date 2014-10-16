@@ -69,8 +69,12 @@
 		@include breakpoint($bp-medium) {
 			// flexbox
 			display: flex;
-			justify-content: center;
+			justify-content: flex-start;
 			align-items: stretch;
+		}
+
+		@include breakpoint($bp-marge) {
+			justify-content: center;
 		}
 	}
 
