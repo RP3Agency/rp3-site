@@ -475,8 +475,10 @@
 
 
 	&--single__entry-content--indented {
+		clear: both;
 		margin-bottom: 6rem;
-		margin-top: 3rem;
+		margin-top: 6rem;
+
 		@include breakpoint($bp-large / 2) {
 			padding-right: 0;
 			@include span(percentage(1420px / 2840px));

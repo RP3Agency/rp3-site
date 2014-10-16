@@ -3,6 +3,7 @@
 	@extend %clearfix;
 	@extend %side-padding;
 	background-color: $blue;
+	clear: both;
 	color: #fff;
 	padding: {
 		top: cr(75px);

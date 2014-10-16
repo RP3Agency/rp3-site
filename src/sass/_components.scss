@@ -172,7 +172,7 @@
 
 	&.case-study-hero-image,
 	&.case-study-hero-image-tall {
-		margin-bottom: 6rem;
+		margin-bottom: 0;
 
 		@include breakpoint(1600px) {
 			height: auto;
@@ -180,10 +180,6 @@
 
 		picture img {
 			height: auto;
-		}
-
-		+ .case-study-hero-image {
-			margin-top: -6rem;
 		}
 	}
 }
