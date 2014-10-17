@@ -64,9 +64,51 @@ var rp3 = (function($) {
 		}
 	},
 
+	videoPause = function(player, url, action, value) {
+		var data = {
+			method: action
+		};
+
+		if (value) {
+			data.value = value;
+		}
+
+		var message = JSON.stringify(data);
+		player[0].contentWindow.postMessage(data, url);
+	},
+	videoToggle = function() {
+		var $videoModal = $('#video__modal'),
+			$videoTrigger = $('#video__trigger'),
+			$modalClose = $('#modal-close');
+
+		// Vimeo API
+		var player = $('iframe'),
+			url = window.location.protocol + player.attr('src').split('?')[0];
+
+		if ( 0 < $videoModal.length ) {
+			
+			$videoTrigger.on( 'click', function(e) {
+				e.preventDefault();
+				$videoModal.addClass('visible');
+			});
+
+			$modalClose.on( 'click', function(e) {
+				e.preventDefault();
+				
+				// Stop playback
+				videoPause(player, url, 'pause');
+				$videoModal.css('visibility', 'visible').removeClass('visible');
+				setTimeout( function() {
+					$videoModal.removeAttr('style');
+				}, 200);
+			})
+		}
+	},
+
 	init = function() {
 		toggleNavigation();
 		equalizeHeights();
+		videoToggle();
 		
 		$(window).on( 'scroll', function() {
 		});
