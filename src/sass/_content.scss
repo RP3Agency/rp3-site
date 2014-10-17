@@ -60,13 +60,9 @@
 	&__article {
 		margin-bottom: 3rem;
 
-		@include breakpoint($bp-medium) {
+		@include breakpoint($bp-large / 2) {
 			margin-bottom: 0;
-			@include span(24/3);
-
-			&:last-child {
-				@include last;
-			}
+			@include gallery(8 of 24);
 		}
 	}
 
@@ -234,13 +230,9 @@
 	&__article {
 		margin-bottom: 3rem;
 
-		@include breakpoint($bp-medium) {
+		@include breakpoint($bp-large / 2) {
 			margin-bottom: 0;
-			@include span(24/3);
-
-			&:last-child {
-				@include last;
-			}
+			@include gallery(8 of 24);
 		}
 	}
 }
