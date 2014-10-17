@@ -52,13 +52,13 @@ function rp3_image_sizes() {
 	// Work
 	rp3_add_image_size( 'work-full-width', array(
 		'small'			=> array( 320, 320, true ),
-		'medium'		=> array( 599, 400, true ),
+		'medium'		=> array( 532, 532, true ),
 		'large'			=> array( 1000, 400, true )
 	) );
 
 	rp3_add_image_size( 'work-half-width', array(
 		'small'			=> array( 320, 320, true ),
-		'medium'		=> array( 320, 320, true ),
+		'medium'		=> array( 532, 532, true ),
 		'large'			=> array( 500, 400, true )
 	) );
 
