@@ -18,7 +18,7 @@
 	<?php if ( $related_work ) : ?>
 
 		<header>
-			<h2 class="related-work__header">More<br>Projects:</h2>
+			<h2 class="related-work__header">More<br>Projects</h2>
 		</header>
 
 		<ul class="related-work__list">

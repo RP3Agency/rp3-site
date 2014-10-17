@@ -43,6 +43,7 @@
 			bottom: cr(75px);
 			left: auto;
 		}
+		text-transform: none;
 		width: 250px;
 
 		@include breakpoint($bp-medium) {
