@@ -1,0 +1,88 @@
+// Case Studies & Work: Introduction
+.case-study-introduction,
+.work-introduction {
+	&__title {
+		font-size: ce(36px);
+		margin-bottom: 0 !important;
+	}
+
+	&__client {
+		font-size: ce(12px);
+		margin-bottom: 2em;
+	}
+
+	&__tagline {
+		font-size: ce(16px);
+	}
+}
+
+
+
+
+
+// Case Studies
+// .case-study {
+// 	&__entry-header,
+// 	&__section {
+// 		margin: ce(70px) 0;
+// 		@include container;
+// 	}
+
+
+// 	// Case Study Header
+// 	&__header {
+// 		font-size: cr(16px);
+// 		margin-bottom: 2em;
+// 	}
+
+// 	&__title {
+// 		font-size: ce(36px, 16px);
+// 		line-height: 1;
+// 		margin-bottom: 0 !important; // Need to correct this ~TFR
+// 	}
+
+// 	&__client {
+// 		font-size: ce(12px, 16px);
+// 		margin-bottom: 1em;
+// 	}
+
+
+
+
+// 	&__section {
+// 	}
+
+// 	&__subhead {
+// 		font-weight: $medium;
+// 		margin-bottom: 1.5em;
+// 		text-transform: uppercase;
+// 	}
+
+// 	&__content {
+// 		@include span(24 / 2);
+// 	}
+
+
+// 	&--single__entry-content--indented {
+// 		clear: both;
+// 		margin-bottom: 6rem;
+// 		margin-top: 6rem;
+
+// 		@include breakpoint($bp-large / 2) {
+// 			padding-right: 0;
+// 			@include span(percentage(1420px / 2840px));
+// 			margin-right: 0;
+// 		}
+
+// 		&--full-width {
+// 			@include breakpoint($bp-large / 2) {
+// 				@include span(percentage( 1420px * 2 / 2840px ) );
+// 				margin-right: 0;
+// 			}
+// 		}
+// 	}
+
+// 	.hero {
+// 		clear: both;
+// 	}
+// }

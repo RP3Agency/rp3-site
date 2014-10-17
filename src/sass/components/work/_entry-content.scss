@@ -1,0 +1,53 @@
+.work,
+.case-study {
+
+	&__entry-content {
+		font-size: ce(16px);
+		line-height: (44px / 32px);
+		margin: {
+			top: 3em;
+			bottom: 9em;
+		}
+	}
+
+	&__subheader {
+		margin-bottom: 2em;
+	}
+}
+
+
+
+@include breakpoint($bp-large / 2) {
+	.work {
+		&__entry-content {
+			.wrapper {
+				@include span(16 of 24);
+			}
+		}
+	}
+
+	.case-study {
+		&__entry-content {
+			.wrapper {
+				@include span(8 of 24);
+			}
+		}
+	}
+}
+
+
+
+// The main copy area of the "work" area (mini study) can have a counter-image
+.work-main-copy {
+
+	@include breakpoint($bp-medium) {
+		align-items: stretch;
+		display: flex;
+		justify-content: space-between;
+
+		&__entry-content,
+		&__main-counter-image {
+			flex: 1;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+@include breakpoint($bp-medium) {
+	.work-images--grid {
+		display: flex;
+		flex-wrap: wrap;
+
+		&__image {
+			width: 50%;
+		}
+	}
+}
