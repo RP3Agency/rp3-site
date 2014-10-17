@@ -52,9 +52,13 @@
 			<!-- .entry-content -->
 
 
+			<?php if ( function_exists( 'sharing_display' ) ) : ?>
+
 			<aside class="blog__social-media">
 				<?php sharing_display( '', true ); ?>
 			</aside>
+
+			<?php endif; ?>
 
 			<?php
 			// If comments are open or we have at least one comment, load up the comment template
