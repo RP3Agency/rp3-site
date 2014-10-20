@@ -19,7 +19,7 @@
 	<?php endif; ?>
 
 
-<?php if ( '' != get_field( 'video' ) ) : ?>
+<?php if ( ( 'true' == get_field( 'case_study' ) ) && ( '' != get_field( 'video' ) ) ) : ?>
 
 	<div class="video__trigger">
 
