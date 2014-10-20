@@ -64,7 +64,7 @@ $blog = new WP_Query( array(
 
 					<div class="news-listing__date"><?php echo get_the_date(); ?></div>
 
-					<div class="news-listing__excerpt">
+					<div class="news-listing__excerpt equal-heights">
 
 						<?php the_excerpt(); ?>
 
@@ -153,7 +153,7 @@ $blog = new WP_Query( array(
 
 					<?php endif; ?>
 
-					<div class="blog-listing__excerpt">
+					<div class="blog-listing__excerpt equal-heights">
 
 						<?php the_excerpt(); ?>
 

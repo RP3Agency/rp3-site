@@ -55,12 +55,19 @@ var rp3 = (function($) {
 	},
 	equalizeHeights = function() {
 		var maxHeight = 0,
-			$relatedWorkLabel = $('.related-work__label');
+			$relatedWorkLabel = $('.related-work__label'),
+			$equalHeights = $('.equal-heights');
 
 		if ( $relatedWorkLabel.length > 0 ) {
 			$relatedWorkLabel.removeAttr('style');
 			maxHeight = getMaxHeight( $relatedWorkLabel );
 			$relatedWorkLabel.height(maxHeight);
+		}
+
+		if ( $equalHeights.length > 0 ) {
+			$equalHeights.removeAttr('style');
+			maxHeight = getMaxHeight( $equalHeights );
+			$equalHeights.height(maxHeight);
 		}
 	},
 
