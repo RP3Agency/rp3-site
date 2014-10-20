@@ -11,13 +11,15 @@ if ( 'true' == get_field( 'case_study' ) ) {
 	<header class="<?php echo $class; ?>__header">
 		<h1 class="<?php echo $class; ?>__title"><?php the_title(); ?></h1>
 
-		<?php if ( ( 'true' == get_field( 'case_study' ) ) && ( '' != get_field( 'client' ) ) ) : ?>
+		<?php // if the client field has content AND if that content doesn't exactly match the post title... ?>
+		<?php if ( ( '' != get_field( 'client' ) ) && ( get_the_title() != get_field( 'client' ) ) ) : ?>
 
 			<div class="<?php echo $class; ?>__client">for <strong><?php the_field( 'client' ); ?></strong></div>
 
 		<?php endif; ?>
 
-		<?php if ( ( 'true' == get_field( 'case_study' ) ) && ( '' != get_field( 'tagline' ) ) ) : ?>
+		<?php // if the tagline field has content ?>
+		<?php if ( '' != get_field( 'tagline' ) ) : ?>
 
 			<div class="<?php echo $class; ?>__tagline"><?php the_field( 'tagline' ); ?></div>
 
