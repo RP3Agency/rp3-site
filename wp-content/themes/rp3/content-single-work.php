@@ -4,12 +4,6 @@
  *
  * @package RP3
  */
-
-// Get the list of related tags in an array
-// $terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
-// foreach ( $terms as $term ) {
-// 	$work_tags[] = $term->name;
-// }
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'mini-study' ); ?>>

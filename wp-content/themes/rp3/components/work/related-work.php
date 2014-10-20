@@ -1,24 +1,32 @@
-<?php /* apparently we're not doing tags at the moment */
+<?php
+// Get the list of related tags in an array
+$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
+foreach ( $terms as $term ) {
+	$work_tags[] = $term->name;
+}
+?>
 
-/*
-<div class="case-study--single__entry-content--indented entry-content">
+<?php $related_work = get_field( 'related_work' ); ?>
 
-	<h2>Related Tags:</h2>
+<?php if ( $related_work ) : ?>
 
-	<?php echo join( ', ', $work_tags ); ?>
-
-</div>
-*/ ?>
-
-
-<aside class="related-work">
-
-	<?php $related_work = get_field( 'related_work' ); ?>
-
-	<?php if ( $related_work ) : ?>
+	<aside class="related-work">
 
 		<header>
-			<h2 class="related-work__header">More<br>Projects</h2>
+
+			<div class="related-work__header">
+
+				<h2>Related<br>Work</h2>
+
+				<div class="related-work__taxonomy">
+
+					<?php echo join( ', ', $work_tags ); ?>
+
+				</div>
+
+			</div>
+			<!-- // related-work header -->
+
 		</header>
 
 		<ul class="related-work__list">
@@ -54,7 +62,7 @@
 			
 		</ul>
 
-	<?php endif; wp_reset_postdata(); ?>
+	</aside>
+	<!-- // .related-work -->
 
-</aside>
-<!-- // .related-work -->
+<?php endif; wp_reset_postdata(); ?>

@@ -37,7 +37,7 @@
 
 	&__header {
 		color: #fff;
-		font-size: ce(16px);
+		font-size: ce(12px);
 		margin: {
 			right: auto;
 			bottom: cr(75px);
@@ -45,6 +45,16 @@
 		}
 		text-transform: none;
 		width: 250px;
+
+		h2 {
+			color: #fff;
+			font-size: ce(16px, 12px);
+			margin-bottom: 1em;
+		}
+
+		&__taxonomy {
+			width: 75%;
+		}
 
 		@include breakpoint($bp-medium) {
 			margin: {
