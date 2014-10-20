@@ -10,8 +10,19 @@ if ( 'true' == get_field( 'case_study' ) ) {
 
 	<header class="<?php echo $class; ?>__header">
 		<h1 class="<?php echo $class; ?>__title"><?php the_title(); ?></h1>
-		<div class="<?php echo $class; ?>__client">for <strong><?php the_field( 'client' ); ?></strong></div>
-		<div class="<?php echo $class; ?>__tagline"><?php the_field( 'tagline' ); ?></div>
+
+		<?php if ( ( 'true' == get_field( 'case_study' ) ) && ( '' != get_field( 'client' ) ) ) : ?>
+
+			<div class="<?php echo $class; ?>__client">for <strong><?php the_field( 'client' ); ?></strong></div>
+
+		<?php endif; ?>
+
+		<?php if ( ( 'true' == get_field( 'case_study' ) ) && ( '' != get_field( 'tagline' ) ) ) : ?>
+
+			<div class="<?php echo $class; ?>__tagline"><?php the_field( 'tagline' ); ?></div>
+
+		<?php endif; ?>
+
 	</header>
 	<!-- // .<?php echo $class; ?>__header -->
 
