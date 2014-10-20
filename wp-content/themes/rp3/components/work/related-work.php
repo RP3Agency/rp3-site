@@ -51,7 +51,12 @@ foreach ( $terms as $term ) {
 
 						<div class="related-work__label">
 							<h3 class="related-work__title"><?php the_title(); ?></h3>
-							<div class="related-work__client">for <strong><?php the_field( 'client' ); ?></strong></div>
+
+							<?php if ( ( get_field( 'client' ) != get_the_title() ) && ( '' != get_field( 'client' ) ) ) : ?>
+
+								<div class="related-work__client">for <strong><?php the_field( 'client' ); ?></strong></div>
+
+							<?php endif; ?>
 						</div>
 
 					</a>
