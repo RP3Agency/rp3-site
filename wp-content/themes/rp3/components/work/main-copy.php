@@ -10,11 +10,16 @@
 
 	</div>
 
+
+	<?php if ( '' != get_field( 'main_copy_counter_image' ) ) : ?>
+
 	<div class="work__main-counter-image work-main-copy__main-counter-image">
 
 		<img src="<?php echo esc_url( wp_get_attachment_url( get_field( 'main_copy_counter_image' ) ) ); ?>">
 
 	</div>
+
+	<?php endif; ?>
 
 </section>
 <!-- work main copy -->
