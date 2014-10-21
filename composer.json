@@ -50,6 +50,7 @@
     "wpackagist-plugin/widget-logic":"*",
     "wpackagist-plugin/wordpress-importer":"*",
     "wpackagist-plugin/worker":"*",
+    "wpackagist-plugin/wp-maintenance-mode":"*",
     "wpackagist-plugin/wp-siren-recent-posts-by-category":"*",
     "wpackagist-plugin/xhanch-my-twitter":"*"
   },
