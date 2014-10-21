@@ -88,12 +88,13 @@ var rp3 = (function($) {
 			$videoTrigger = $('#video__trigger'),
 			$modalClose = $('#modal-close');
 
-		// Vimeo API
-		var player = $('iframe'),
-			url = window.location.protocol + player.attr('src').split('?')[0];
-
 		if ( 0 < $videoModal.length ) {
-			
+
+			// Vimeo API
+			var player = $('iframe');
+
+			var url = window.location.protocol + player.attr('src').split('?')[0];
+
 			$videoTrigger.on( 'click', function(e) {
 				e.preventDefault();
 				$videoModal.addClass('visible');
@@ -108,7 +109,7 @@ var rp3 = (function($) {
 				setTimeout( function() {
 					$videoModal.removeAttr('style');
 				}, 200);
-			})
+			});
 		}
 	},
 
