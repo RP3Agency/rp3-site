@@ -11,4 +11,5 @@ _wp
 .sass-cache
 .ssh
 wp-content/managewp
-wp-config*.php
+wp-config.php
+wp-config-dev.php
