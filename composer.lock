@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "40cda5f7d3a6fe4ba4ffc65f7a0ad16c",
+    "hash": "7fc9af8424a3af96857b92d225a5744e",
     "packages": [
         {
             "name": "composer/installers",
@@ -223,15 +223,15 @@
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
-            "version": "2.1.4",
+            "version": "2.1.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/black-studio-tinymce-widget/",
-                "reference": "tags/2.1.4"
+                "reference": "tags/2.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.1.4.zip",
+                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.1.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -292,15 +292,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-menu-wizard",
-            "version": "3.1.1",
+            "version": "3.1.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/custom-menu-wizard/",
-                "reference": "tags/3.1.1"
+                "reference": "tags/3.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.1.zip",
+                "url": "http://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -361,15 +361,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.1.1",
+            "version": "1.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.1.1"
+                "reference": "tags/1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/disable-comments.1.1.1.zip",
+                "url": "http://downloads.wordpress.org/plugin/disable-comments.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -795,6 +795,29 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/wp-siren-recent-posts-by-category/"
+        },
+        {
+            "name": "wpackagist-plugin/wpclef",
+            "version": "2.2.5",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wpclef/",
+                "reference": "tags/2.2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/wpclef.2.2.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/wpclef": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/wpclef/"
         },
         {
             "name": "wpackagist-plugin/xhanch-my-twitter",
