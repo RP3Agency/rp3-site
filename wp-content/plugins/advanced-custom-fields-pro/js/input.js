@@ -1,3 +1,5 @@
+
+
 ( function( window, undefined ) {
 	"use strict";
 
@@ -243,6 +245,8 @@
 	window.wp.hooks = new EventManager();
 
 } )( window );
+
+
 var acf;
 
 (function($){
@@ -1533,6 +1537,40 @@ var acf;
 		
 		    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 					
+		},
+		
+		
+		/*
+		*  val
+		*
+		*  This function will update an elements value and trigger the change event if differene
+		*
+		*  @type	function
+		*  @date	16/10/2014
+		*  @since	5.0.9
+		*
+		*  @param	$el (jQuery)
+		*  @param	val (mixed)
+		*  @return	n/a
+		*/
+		
+		val: function( $el, val ){
+			
+			// vars
+			var orig = $el.val();
+			
+			
+			// update value
+			$el.val( val );
+			
+			
+			// trigger change
+			if( val != orig ) {
+				
+				$el.trigger('change');
+				
+			}
+			
 		}
 		
 	};
@@ -3040,7 +3078,9 @@ frame.on('all', function( e ) {
 		
 	};
 	
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	acf.ajax = acf.model.extend({
 		
@@ -3355,7 +3395,9 @@ frame.on('all', function( e ) {
 
 
 	
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	acf.fields.color_picker = acf.field.extend({
 		
@@ -3423,7 +3465,9 @@ frame.on('all', function( e ) {
 	});
 	
 
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	acf.fields.date_picker = acf.field.extend({
 		
@@ -3502,17 +3546,25 @@ frame.on('all', function( e ) {
 		
 	});
 	
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	acf.fields.file = acf.field.extend({
 		
 		type: 'file',
 		$el: null,
 		
+		actions: {
+			'ready':	'initialize',
+			'append':	'initialize'
+		},
+		
 		events: {
 			'click [data-name="add"]': 		'add',
 			'click [data-name="edit"]': 	'edit',
 			'click [data-name="remove"]':	'remove',
+			'change input[type="file"]':	'change'
 		},
 		
 		focus: function(){
@@ -3521,6 +3573,17 @@ frame.on('all', function( e ) {
 			
 			this.settings = acf.get_data( this.$el );
 			
+		},
+		
+		initialize: function(){
+			
+			// add attribute to form
+			if( this.$el.hasClass('basic') ) {
+				
+				this.$el.closest('form').attr('enctype', 'multipart/form-data');
+				
+			}
+				
 		},
 		
 		add : function() {
@@ -3701,12 +3764,20 @@ frame.on('all', function( e ) {
 			// remove class
 			this.$el.removeClass('has-value');
 			
+		},
+		
+		change: function( e ){
+			
+			this.$el.find('[data-name="id"]').val( e.$el.val() );
+			
 		}
 		
 	});
 	
 
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	/*
 	*  Location
@@ -3924,9 +3995,9 @@ frame.on('all', function( e ) {
 		    
 		    
 		    // update inputs
-			this.$el.find('.input-lat').val( lat );
-			this.$el.find('.input-lng').val( lng ).trigger('change');
-			
+		    acf.val( this.$el.find('.input-lat'), lat );
+		    acf.val( this.$el.find('.input-lng'), lng );
+		    
 			
 		    // update marker
 		    this.map.marker.setPosition( latlng );
@@ -4007,7 +4078,7 @@ frame.on('all', function( e ) {
 
 				
 				// update input
-				$el.find('.input-address').val( location.formatted_address ).trigger('change');
+				acf.val( $el.find('.input-address'), location.formatted_address );
 				
 			});
 			
@@ -4059,10 +4130,10 @@ frame.on('all', function( e ) {
 			
 			
 			// clear inputs
-			this.$el.find('.input-address').val('');
-			this.$el.find('.input-lat').val('');
-			this.$el.find('.input-lng').val('');
-			
+			acf.val( this.$el.find('.input-address'), '' );
+			acf.val( this.$el.find('.input-lat'), '' );
+			acf.val( this.$el.find('.input-lng'), '' );
+						
 			
 			// hide marker
 			this.map.marker.setVisible( false );
@@ -4236,17 +4307,25 @@ frame.on('all', function( e ) {
 	});
 	
 
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	acf.fields.image = acf.field.extend({
 		
 		type: 'image',
 		$el: null,
 		
+		actions: {
+			'ready':	'initialize',
+			'append':	'initialize'
+		},
+		
 		events: {
 			'click [data-name="add"]': 		'add',
 			'click [data-name="edit"]': 	'edit',
 			'click [data-name="remove"]':	'remove',
+			'change input[type="file"]':	'change'
 		},
 		
 		focus: function(){
@@ -4255,6 +4334,17 @@ frame.on('all', function( e ) {
 			
 			this.settings = acf.get_data( this.$el );
 			
+		},
+		
+		initialize: function(){
+			
+			// add attribute to form
+			if( this.$el.hasClass('basic') ) {
+				
+				this.$el.closest('form').attr('enctype', 'multipart/form-data');
+				
+			}
+				
 		},
 		
 		add: function() {
@@ -4432,12 +4522,20 @@ frame.on('all', function( e ) {
 			// remove class
 			this.$el.removeClass('has-value');
 			
+		},
+		
+		change: function( e ){
+			
+			this.$el.find('[data-name="id"]').val( e.$el.val() );
+			
 		}
 		
 	});
 	
 
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	acf.fields.oembed = {
 		
@@ -4698,7 +4796,11 @@ acf.add_action('ready append', function( $el ){
 		
 	
 
-})(jQuery);(function($){
+})(jQuery);
+
+
+
+(function($){
 	
 	acf.fields.radio = acf.field.extend({
 		
@@ -4738,7 +4840,9 @@ acf.add_action('ready append', function( $el ){
 		
 	});	
 
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	acf.fields.relationship = acf.field.extend({
 		
@@ -5183,7 +5287,9 @@ var scroll_timer = null;
 	});
 	
 
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	function add_select2( $select, settings ) {
 		
@@ -5575,7 +5681,9 @@ var scroll_timer = null;
 	});
 	
 
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	acf.fields.tab = acf.field.extend({
 		
@@ -5909,7 +6017,9 @@ var scroll_timer = null;
 	
 	
 
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	acf.fields.url = acf.field.extend({
 		
@@ -5945,7 +6055,9 @@ var scroll_timer = null;
 		
 	});
 
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
     
 	acf.validation = acf.model.extend({
 		
@@ -6079,16 +6191,18 @@ var scroll_timer = null;
 			
 			
 			// hide ajax stuff on submit button
-			if( $('#submitpost').exists() ) {
+			var $submit = $('#submitpost').exists() ? $('#submitpost') : $('#submitdiv');
+			
+			if( $submit.exists() ) {
 				
 				// remove disabled classes
-				$('#submitpost').find('.disabled').removeClass('disabled');
-				$('#submitpost').find('.button-disabled').removeClass('button-disabled');
-				$('#submitpost').find('.button-primary-disabled').removeClass('button-primary-disabled');
+				$submit.find('.disabled').removeClass('disabled');
+				$submit.find('.button-disabled').removeClass('button-disabled');
+				$submit.find('.button-primary-disabled').removeClass('button-primary-disabled');
 				
 				
 				// remove spinner
-				$('#submitpost .spinner').hide();
+				$submit.find('.spinner').hide();
 				
 			}
 			
@@ -6310,7 +6424,9 @@ var scroll_timer = null;
 	});
 	
 
-})(jQuery);(function($){
+})(jQuery);
+
+(function($){
 	
 	acf.fields.wysiwyg = acf.field.extend({
 		
@@ -6662,3 +6778,4 @@ var scroll_timer = null;
 
 
 })(jQuery);
+

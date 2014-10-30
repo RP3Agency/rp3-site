@@ -1070,12 +1070,8 @@
 						});
 						
 						
-						// remove field's ID to prevent it being deleted on save
-						self.update_field_meta( $field, 'ID', '');
-						
-						
-						// delete field (just for animation)
-						self.delete_field( $field );
+						// remove the field without actually deleting it
+						self.remove_field( $field );
 						
 					}
 				});
@@ -1132,15 +1128,33 @@
 			
 			
 			// bail early if no animation
-			if( !animation ) {
+			if( animation ) {
 				
-				return;
+				this.remove_field( $el );
 				
 			}
-			
+						
+		},
+		
+		
+		/*
+		*  remove_field
+		*
+		*  This function will visualy remove a field
+		*
+		*  @type	function
+		*  @date	24/10/2014
+		*  @since	5.0.9
+		*
+		*  @param	$el
+		*  @param	animation
+		*  @return	n/a
+		*/
+		
+		remove_field : function( $el ){
 			
 			// reference
-			var _this = this;
+			var self = this;
 			
 			
 			// vars
@@ -1177,17 +1191,24 @@
 			
 			$el.parent('.temp-field-wrap').animate({ height : end_height }, 250, function(){
 				
+				// show another element
 				if( $show ) {
 				
 					$show.show();
 					
 				}
 				
+				
+				// action for 3rd party customization 
 				acf.do_action('remove', $(this));
 				
+				
+				// remove $el
 				$(this).remove();
 				
-				_this.render_fields();
+				
+				// render fields becuase they have changed
+				self.render_fields();
 				
 			});
 						
