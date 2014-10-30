@@ -37,7 +37,7 @@
     "wpackagist-plugin/flipboard-magazine-widget":"*",
     "wpackagist-plugin/fv-top-level-cats":"*",
     "wpackagist-plugin/google-analytics-for-wordpress":"*",
-    "wpackagist-plugin/jetpack":"*",
+    "wpackagist-plugin/jetpack":">=3.2",
     "wpackagist-plugin/latest-tweets-widget":"*",
     "wpackagist-plugin/list-category-posts":"*",
     "wpackagist-plugin/mailchimp-for-wp":"*",
@@ -52,6 +52,7 @@
     "wpackagist-plugin/worker":"*",
     "wpackagist-plugin/wp-maintenance-mode":"*",
     "wpackagist-plugin/wp-siren-recent-posts-by-category":"*",
+    "wpackagist-plugin/wpclef":"*",
     "wpackagist-plugin/xhanch-my-twitter":"*"
   },
   "extra": {
