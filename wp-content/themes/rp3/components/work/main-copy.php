@@ -1,15 +1,32 @@
-<section class="work work-main-copy">
+<?php
+// Get the list of related tags in an array
+$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
+foreach ( $terms as $term ) {
+	$work_tags[] = $term->name;
+}
+?>
 
-	<div class="work__entry-content work-main-copy__entry-content entry-content">
+<section class="work-content">
 
-		<div class="wrapper">
+	<div class="work-content__container">
+
+		<div class="work-content__container--left">
 
 			<?php the_field( 'main_copy' ); ?>
 
+			<?php if ( count( $work_tags ) > 0 ) : ?>
+
+				<h2 class="work-content__subheader">Related Tags:</h2>
+
+				<?php echo join( ', ', $work_tags ); ?>
+
+			<?php endif; ?>
+
 		</div>
+		<!-- // .work-content container left -->
 
 	</div>
-
+	<!-- // .work-content container -->
 
 	<?php if ( '' != get_field( 'main_copy_counter_image' ) ) : ?>
 
@@ -22,4 +39,4 @@
 	<?php endif; ?>
 
 </section>
-<!-- work main copy -->
+<!-- // work-content -->

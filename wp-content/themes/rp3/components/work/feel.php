@@ -1,24 +1,24 @@
-<section class="case-study case-study__feel">
+<?php if ( '' != get_field( 'feel_copy' ) ) : ?>
 
-	<?php if ( '' != get_field( 'feel_copy' ) ) : ?>
+	<section class="work-content">
 
-		<div class="case-study__entry-content case-study__feel__entry-content entry-content">
+		<div class="work-content__container">
 
-			<div class="wrapper">
+			<div class="work-content__container--left">
 
-				<h2 class="case-study__subheader">Feel:</h2>
+				<h2 class="work-content__subheader">Feel:</h2>
 
 				<?php the_field( 'feel_copy' ); ?>
 
 			</div>
-			<!-- // .wrapper -->
+			<!-- // .work-content container left -->
 
 		</div>
-		<!-- // case-study entry-content -->
+		<!-- // .work-content container -->
 
-	<?php endif; ?>
+		<?php rp3_case_study_hero_images( 'feel_images', 'feel_image', true ); ?>
 
-	<?php rp3_case_study_hero_images( 'feel_images', 'feel_image', true ); ?>
+	</section>
+	<!-- case study feel -->
 
-</section>
-<!-- case study feel -->
+<?php endif; ?>

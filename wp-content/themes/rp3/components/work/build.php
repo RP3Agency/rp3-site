@@ -1,25 +1,24 @@
-<section class="case-study case-study__build">
+<?php if ( '' != get_field( 'build_copy' ) ) : ?>
 
-	<?php if ( '' != get_field( 'build_copy' ) ) : ?>
+	<section class="work-content">
 
-		<div class="case-study__entry-content case-study__build__entry-content entry-content">
+		<div class="work-content__container">
 
-			<div class="wrapper">
+			<div class="work-content__container--left">
 
-				<h2 class="case-study__subheader">Build:</h2>
+				<h2 class="work-content__subheader">Build:</h2>
 
 				<?php the_field( 'build_copy' ); ?>
 
 			</div>
-			<!-- // .wrapper -->
+			<!-- // .work-content container left -->
 
 		</div>
-		<!-- case-study entry-content -->
+		<!-- // work-content container -->
 
-	<?php endif; ?>
+		<?php rp3_case_study_hero_images( 'build_images', 'build_image' ); ?>
 
+	</section>
+	<!-- // .work-content -->
 
-	<?php rp3_case_study_hero_images( 'build_images', 'build_image' ); ?>
-
-</section>
-<!-- case-study build -->
+<?php endif; ?>

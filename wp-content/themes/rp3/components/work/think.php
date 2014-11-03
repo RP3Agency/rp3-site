@@ -1,50 +1,48 @@
-<section class="case-study case-study__think">
+<?php if ( '' != get_field( 'think_copy' ) ) : ?>
 
-	<?php if ( '' != get_field( 'think_copy' ) ) : ?>
+	<section class="work-content">
 
-		<div class="case-study__entry-content case-study__think__entry-content entry-content">
+		<div class="work-content__container">
 
-			<div class="wrapper">
+			<div class="work-content__container--left">
 
-				<h2 class="case-study__subheader">Think:</h2>
+				<h2 class="work-content__subheader">Think:</h2>
 
 				<?php the_field( 'think_copy' ); ?>
 
 			</div>
-			<!-- // .wrapper -->
+			<!-- // .work-content container left -->
 
 		</div>
-		<!-- // case-study entry-content -->
+		<!-- // .work-content container -->
 
-	<?php endif; ?>
+		<?php if ( ( 'true' == get_field( 'case_study' ) ) && ( '' != get_field( 'video' ) ) ) : ?>
 
+			<div class="video__trigger">
 
-<?php if ( ( 'true' == get_field( 'case_study' ) ) && ( '' != get_field( 'video' ) ) ) : ?>
+				<a href="#!" id="video__trigger" class="block">
 
-	<div class="video__trigger">
+					<?php rp3_case_study_hero_images( 'think_images', 'think_image' ); ?>
 
-		<a href="#!" id="video__trigger" class="block">
+				</a>
+
+				<div class="video__modal" id="video__modal">
+
+					<a href="#!" id="modal-close" class="modal-close">Close Video</a>
+
+					<?php echo wp_oembed_get( get_field( 'video' ) ); ?>
+
+				</div>
+
+			</div>
+
+		<?php else : ?>
 
 			<?php rp3_case_study_hero_images( 'think_images', 'think_image' ); ?>
 
-		</a>
+		<?php endif; ?>
 
-		<div class="video__modal" id="video__modal">
-
-			<a href="#!" id="modal-close" class="modal-close">Close Video</a>
-
-			<?php echo wp_oembed_get( get_field( 'video' ) ); ?>
-
-		</div>
-
-	</div>
-
-<?php else : ?>
-
-		<?php rp3_case_study_hero_images( 'think_images', 'think_image' ); ?>
+	</section>
+	<!-- // .work-content -->
 
 <?php endif; ?>
-
-
-</section>
-<!-- case-study think -->

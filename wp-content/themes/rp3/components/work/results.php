@@ -1,25 +1,45 @@
-<section class="case-study case-study__results">
+<?php
+// Get the list of related tags in an array
+$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
+foreach ( $terms as $term ) {
+	$work_tags[] = $term->name;
+}
+?>
 
-	<?php if ( '' != get_field( 'results_copy' ) ) : ?>
+<?php if ( ( '' != get_field( 'results_copy' ) ) && ( have_rows( 'results_images' ) ) ) : ?>
 
-		<div class="case-study__entry-content case-study__results__entry-content entry-content">
+	<section class="work-content">
 
-			<div class="wrapper">
+		<div class="work-content__container">
 
-				<h2 class="case-study__subheader">Results:</h2>
+			<div class="work-content__container--left">
+
+				<h2 class="work-content__subheader">Results:</h2>
 
 				<?php the_field( 'results_copy' ); ?>
 
 			</div>
-			<!-- // .wrapper -->
+			<!-- // work-content container left -->
+
+			<div class="work-content__container--right">
+
+				<h2 class="work-content__subheader">Related Tags:</h2>
+
+				<?php echo join( ', ', $work_tags ); ?>
+
+			</div>
+			<!-- // work-content container right -->
 
 		</div>
-		<!-- // case-study entry-content -->
+		<!-- // work-content container -->
 
-	<?php endif; ?>
+		<?php if ( have_rows( 'results_images' ) ) : ?>
 
+			<?php rp3_case_study_hero_images( 'results_images', 'results_image' ); ?>
 
-	<?php rp3_case_study_hero_images( 'results_images', 'results_image' ); ?>
+		<?php endif; ?>
 
-</section>
-<!-- case-study results -->
+	</section>
+	<!-- work-content -->
+
+<?php endif; ?>
