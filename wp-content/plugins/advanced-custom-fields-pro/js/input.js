@@ -2348,7 +2348,7 @@ frame.on('all', function( e ) {
 			
 			
 			// get targets
-			var $targets = acf.get_fields( {}, $el );
+			var $targets = acf.get_fields( {}, $el, true );
 			
 			
 			// render fields
@@ -2370,10 +2370,8 @@ frame.on('all', function( e ) {
 			});
 			
 			
-			// repeater hide column
-			
 			// action for 3rd party customization
-			//acf.do_action('conditional_logic_render_field');
+			acf.do_action('conditional_logic_complete');
 			
 		},
 		

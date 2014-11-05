@@ -107,6 +107,9 @@ http://support.advancedcustomfields.com/
 
 == Changelog ==
 
+= 5.1.2 =
+* API: Fixed various bugs with the have_rows() function
+
 = 5.1.1 =
 * Image field: Added basic file uploader for non logged in users
 * File field: Added basic file uploader for non logged in users

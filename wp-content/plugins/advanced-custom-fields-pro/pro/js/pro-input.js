@@ -25,15 +25,7 @@
 		show_field_cl : function( $field ){
 			
 			// bail early if not a sub field
-			if( ! acf.is_sub_field($field) ) {
-				
-				return;
-				
-			}
-			
-			
-			// bail early if not a td
-			if( ! $field.is('td') ) {
+			if( !$field.is('td') || !acf.is_sub_field($field) ) {
 				
 				return;
 				
@@ -66,16 +58,9 @@
 			// debug
 			//console.log('conditional_logic_hide_field %o', $field);
 			
+			
 			// bail early if not a sub field
-			if( ! acf.is_sub_field($field) ) {
-				
-				return;
-				
-			}
-			
-			
-			// bail early if not a td
-			if( ! $field.is('td') ) {
+			if( !$field.is('td') || !acf.is_sub_field($field) ) {
 				
 				return;
 				

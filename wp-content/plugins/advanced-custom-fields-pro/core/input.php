@@ -18,8 +18,8 @@ class acf_input {
 	
 	function __construct() {
 		
-		add_action('acf/save_post', 							array($this, 'save_files'), 1, 5);
-		add_action('acf/save_post', 							array($this, 'save_post'), 1, 10);
+		add_action('acf/save_post', 							array($this, 'save_files'), 5, 1);
+		add_action('acf/save_post', 							array($this, 'save_post'), 10, 1);
 		add_action('acf/input/admin_enqueue_scripts', 			array($this, 'admin_enqueue_scripts'), 0, 0);
 		add_action('acf/input/admin_footer', 					array($this, 'admin_footer'), 0, 0);
 		
