@@ -9,6 +9,3 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
-
-# Redirect legacy URLs
-Redirect 301 /jobs /careers

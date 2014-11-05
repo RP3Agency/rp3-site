@@ -43,6 +43,7 @@
     "wpackagist-plugin/mailchimp-for-wp":"*",
     "wpackagist-plugin/markdown-on-save":"*",
     "wpackagist-plugin/regenerate-thumbnails":"*",
+    "wpackagist-plugin/redirection":"*",
     "wpackagist-plugin/show-template":"*",
     "wpackagist-plugin/simple-page-ordering":"*",
     "wpackagist-plugin/tc-custom-taxonomy-filter":"*",
