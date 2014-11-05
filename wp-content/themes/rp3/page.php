@@ -20,9 +20,13 @@ get_header(); ?>
 
 		<?php get_template_part( 'content', 'page-agency' ); ?>
 
-	<?php elseif ( is_page( 'news-views' ) ) : ?>
+	<?php elseif ( is_page( 'news' ) ) : ?>
 
-		<?php get_template_part( 'content', 'page-news-views' ); ?>
+		<?php get_template_part( 'content', 'page-news' ); ?>
+
+	<?php elseif ( is_page( 'blog' ) ) : ?>
+
+		<?php get_template_part( 'content', 'page-blog' ); ?>
 
 	<?php elseif ( is_page( 'contact' ) ) : ?>
 

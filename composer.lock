@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7fc9af8424a3af96857b92d225a5744e",
+    "hash": "e995b0342201d9e3fadeb010029c8f77",
     "packages": [
         {
             "name": "composer/installers",
@@ -565,6 +565,29 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/markdown-on-save/"
+        },
+        {
+            "name": "wpackagist-plugin/redirection",
+            "version": "2.3.6",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/2.3.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/redirection": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/redirection/"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
