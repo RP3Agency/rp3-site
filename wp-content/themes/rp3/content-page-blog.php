@@ -8,7 +8,7 @@
 $blog = new WP_Query( array(
 	'post_type'			=> 'post',
 	'category_name'		=> 'blog',
-	'posts_per_page'	=> 3
+	'posts_per_page'	=> 6
 ) );
 ?>
 

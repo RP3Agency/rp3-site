@@ -65,9 +65,13 @@ var rp3 = (function($) {
 		}
 
 		if ( $equalHeights.length > 0 ) {
-			$equalHeights.removeAttr('style');
-			maxHeight = getMaxHeight( $equalHeights );
-			$equalHeights.height(maxHeight);
+			if ( window.matchMedia( '(min-width: 600px)' ).matches ) {
+				$equalHeights.removeAttr('style');
+				maxHeight = getMaxHeight( $equalHeights );
+				$equalHeights.height(maxHeight);
+			} else {
+				$equalHeights.css('height', 'auto');
+			}
 		}
 	},
 

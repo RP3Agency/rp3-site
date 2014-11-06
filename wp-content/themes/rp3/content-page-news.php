@@ -8,7 +8,7 @@
 $news = new WP_Query( array(
 	'post_type'			=> 'post',
 	'category_name'		=> 'news',
-	'posts_per_page'	=> 3
+	'posts_per_page'	=> 6
 ) );
 ?>
 
@@ -56,12 +56,6 @@ $news = new WP_Query( array(
 
 					<div class="news-listing__date"><?php echo get_the_date(); ?></div>
 
-					<div class="news-listing__excerpt equal-heights">
-
-						<?php the_excerpt(); ?>
-
-					</div>
-
 					<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
 						<div class="blog__thumbnail">
@@ -71,6 +65,12 @@ $news = new WP_Query( array(
 						</div>
 
 					<?php endif; ?>
+
+					<div class="news-listing__excerpt equal-heights">
+
+						<?php the_excerpt(); ?>
+
+					</div>
 
 					<p class="link continue">Continue reading</p>
 

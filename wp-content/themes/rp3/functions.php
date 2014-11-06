@@ -71,7 +71,7 @@ require get_template_directory() . '/inc/widgets.php';
  * Enqueue scripts and styles.
  */
 function rp3_scripts() {
-	wp_enqueue_style( 'rp3-style', get_stylesheet_directory_uri() . '/css/rp3.min.css' );
+	wp_enqueue_style( 'rp3-style', get_stylesheet_directory_uri() . '/css/rp3.css' );
 
 	wp_enqueue_script( 'rp3-vendor', get_template_directory_uri() . '/js/rp3-vendor.min.js', array(), '20120206' );
 

@@ -61,7 +61,6 @@
 		margin-bottom: 3rem;
 
 		@include breakpoint($bp-large / 2) {
-			margin-bottom: 0;
 			@include gallery(8 of 24);
 		}
 	}
