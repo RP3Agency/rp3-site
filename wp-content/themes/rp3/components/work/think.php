@@ -28,8 +28,6 @@
 
 				<div class="video__modal" id="video__modal">
 
-					<a href="#!" id="modal-close" class="modal-close">Close Video</a>
-
 					<?php echo wp_oembed_get( get_field( 'video' ) ); ?>
 
 				</div>
