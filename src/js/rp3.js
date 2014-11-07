@@ -89,8 +89,7 @@ var rp3 = (function($) {
 	},
 	videoToggle = function() {
 		var $videoModal = $('#video__modal'),
-			$videoTrigger = $('#video__trigger'),
-			$modalClose = $('#modal-close');
+			$videoTrigger = $('#video__trigger');
 
 		if ( 0 < $videoModal.length ) {
 
@@ -102,17 +101,6 @@ var rp3 = (function($) {
 			$videoTrigger.on( 'click', function(e) {
 				e.preventDefault();
 				$videoModal.addClass('visible');
-			});
-
-			$modalClose.on( 'click', function(e) {
-				e.preventDefault();
-				
-				// Stop playback
-				videoPause(player, url, 'pause');
-				$videoModal.css('visibility', 'visible').removeClass('visible');
-				setTimeout( function() {
-					$videoModal.removeAttr('style');
-				}, 200);
 			});
 		}
 	},
