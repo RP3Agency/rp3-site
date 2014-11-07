@@ -15,7 +15,8 @@
 		<h1 class="blog__entry_title entry-title"><?php the_title(); ?></h1>
 
 		<div class="blog__entry-meta entry-meta">
-			<?php echo rp3_byline( 'blog', 'single' ); ?>
+			<?php echo get_the_date(); ?>
+			<?php // echo rp3_byline( 'blog', 'single' ); ?>
 		</div>
 		<!-- // .entry-meta -->
 
@@ -36,6 +37,8 @@
 			<div class="blog__entry-content entry-content">
 
 				<div class="entry-content__container">
+
+					<?php get_sidebar( 'blog' ); ?>
 
 					<?php the_content(); ?>
 					<?php
@@ -72,7 +75,5 @@
 
 	</div>
 	<!-- // #primary -->
-
-	<?php get_sidebar( 'blog' ); ?>
 
 </div>
