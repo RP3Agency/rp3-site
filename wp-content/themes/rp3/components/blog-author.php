@@ -16,41 +16,20 @@
 
 		<div class="blog__author__meta">
 
-			<h2 class="blog__author__name"><?php echo get_the_author_meta( 'display_name', $author->ID ); ?></h2>
-
 			<div class="blog__author__image">
 
 				<?php
 
 				$meta = get_user_meta( $author->ID );
-				$img = wp_get_attachment_image_src( $meta['photo'][0] );
+				$img = wp_get_attachment_image_src( $meta['photo'][0], 'blog-author' );
+				$img2x = wp_get_attachment_image_src( $meta['photo'][0], 'blog-author-2x' );
 
 				?>
 
-				<img src="<?php echo $img[0]; ?>">
+				<img srcset="<?php echo $img[0]; ?>, <?php echo $img2x[0]; ?> 2x">
 
 			</div>
 			<!-- // .author__image -->
-
-			<ul class="blog__author__social social">
-
-				<?php if ( '' != get_the_author_meta( 'user_email', $author->ID ) ) : ?>
-				<li class="email"><a href="<?php echo esc_url( 'mailto:' . get_the_author_meta( 'user_email', $author->ID ) ); ?>">Email</a></li>
-				<?php endif; ?>
-
-				<?php if ( '' != get_the_author_meta( 'facebook', $author->ID ) ) : ?>
-				<li class="facebook"><a href="<?php echo esc_url( get_the_author_meta( 'facebook', $author->ID ) ); ?>">Facebook</a></li>
-				<?php endif; ?>
-
-				<?php if ( '' != get_the_author_meta( 'twitter', $author->ID ) ) : ?>
-				<li class="twitter"><a href="<?php echo esc_url( get_the_author_meta( 'twitter', $author->ID ) ); ?>">Twitter</a></li>
-				<?php endif; ?>
-
-				<?php if ( '' != get_the_author_meta( 'linkedin', $author->ID ) ) : ?>
-				<li class="linkedin"><a href="<?php echo esc_url( get_the_author_meta( 'twitter', $author->ID ) ); ?>">LinkedIn</a></li>
-				<?php endif; ?>
-
-			</ul>
 
 		</div>
 		<!-- // .author__meta -->
@@ -60,10 +39,35 @@
 
 	<div class="blog__author__bio">
 
+		<h2 class="blog__author__name"><?php echo get_the_author_meta( 'display_name', $author->ID ); ?></h2>
+
 		<?php echo wpautop( get_the_author_meta( 'description', $author->ID ) ); ?>
+
+		<!-- Social media presence -->
+
+		<ul class="blog__author__social social">
+
+			<?php if ( '' != get_the_author_meta( 'user_email', $author->ID ) ) : ?>
+			<li class="email"><a href="<?php echo esc_url( 'mailto:' . get_the_author_meta( 'user_email', $author->ID ) ); ?>">Email</a></li>
+			<?php endif; ?>
+
+			<?php if ( '' != get_the_author_meta( 'facebook', $author->ID ) ) : ?>
+			<li class="facebook"><a href="<?php echo esc_url( get_the_author_meta( 'facebook', $author->ID ) ); ?>">Facebook</a></li>
+			<?php endif; ?>
+
+			<?php if ( '' != get_the_author_meta( 'twitter', $author->ID ) ) : ?>
+			<li class="twitter"><a href="<?php echo esc_url( get_the_author_meta( 'twitter', $author->ID ) ); ?>">Twitter</a></li>
+			<?php endif; ?>
+
+			<?php if ( '' != get_the_author_meta( 'linkedin', $author->ID ) ) : ?>
+			<li class="linkedin"><a href="<?php echo esc_url( get_the_author_meta( 'twitter', $author->ID ) ); ?>">LinkedIn</a></li>
+			<?php endif; ?>
+
+		</ul>
 
 	</div>
 	<!-- // .author__bio -->
+
 
 	<?php
 	// Get other blog posts by this author, if any

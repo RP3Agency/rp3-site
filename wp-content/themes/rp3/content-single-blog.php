@@ -38,7 +38,12 @@
 
 				<div class="entry-content__container">
 
-					<?php get_sidebar( 'blog' ); ?>
+					<div class="blog__author--wide">
+
+						<?php get_template_part( 'components/blog', 'author' ); ?>
+
+					</div>
+					<!-- // .blog author wide -->
 
 					<?php the_content(); ?>
 					<?php
@@ -47,6 +52,13 @@
 							'after'  => '</div>',
 						) );
 					?>
+
+					<div class="blog__author--narrow">
+
+						<?php get_template_part( 'components/blog', 'author' ); ?>
+
+					</div>
+					<!-- // .blog author narrow -->
 
 				</div>
 				<!-- // .entry-content__container -->

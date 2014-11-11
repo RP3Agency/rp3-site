@@ -128,10 +128,10 @@
 	 * Author
 	 */
 	&__author {
+		@extend %clearfix;
 		background-color: mix(#fff, $gray-light, 50%);
 		font-size: 0.8em;
 		padding: 1em;
-		@include span(8 of 24 last);
 
 		&__header {
 			margin-bottom: 1em;
@@ -143,12 +143,10 @@
 		}
 
 		&__image {
-			@include span(24 / 3);
+			img {
+				width: 100%;
+			}
 		}
-
-		// &__meta {
-		// 	@include span( (24 / 3 * 2) last);
-		// }
 
 		&__posts {
 			h2 {
@@ -167,25 +165,49 @@
 				margin-bottom: 0.5em;
 			}
 		}
+
+		&__social {
+			margin-top: 1em;
+		}
+
+		&--wide {
+			display: none;
+			margin: {
+				left: 1em;
+				bottom: 1em;
+			}
+			@include span(8 of 24 last);
+
+			@include breakpoint(800px) {
+				display: block;
+			}
+		}
+
+		&--narrow {
+
+			.blog__author__header {
+				@include span( 16 of 24 );
+			}
+
+			@include breakpoint( 640px ) {
+				.blog__author__header {
+					@include span( 8 of 24 );
+				}
+
+				.blog__author__bio {
+					@include span( 16 of 24 last );
+				}
+			}
+
+			@include breakpoint(800px) {
+				display: none;
+			}
+		}
 	}
 
 	&__back {
 		@extend %back;
 		padding: 0;
-	}
-
-	/**
-	 * Fix grid system for paragraphs on the blog page
-	 */
-	.entry-content__container {
-		@include breakpoint($bp-large) {
-			@include span(12);
-		}
-
-		// @include breakpoint(1200px) {
-		// 	columns: 2;
-		// 	column-gap: 4em;
-		// }
 	}
 
 	/**
