@@ -1394,19 +1394,11 @@ function acf_form( $args = array() ) {
 		'nonce'		=> 'acf_form' 
 	));
 	
-	
 	?>
 	<div class="acf-hidden">
-		
-		<?php 
-		
-		acf_hidden_input(array( 'name' => '_acf_form', 'value' => base64_encode(json_encode($args)) ));
-		
-		?>
-			
+		<?php acf_hidden_input(array( 'name' => '_acf_form', 'value' => base64_encode(json_encode($args)) )); ?>
 	</div>
-	
-	<div class="acf-form-fields">
+	<div class="acf-fields acf-form-fields">
 	
 		<?php
 		
@@ -1415,8 +1407,8 @@ function acf_form( $args = array() ) {
 		
 		
 		// start table
-		if( $args['label_placement'] == 'left' )
-		{
+		if( $args['label_placement'] == 'left' ) {
+			
 			$args['field_el'] = 'tr';
 			
 			?><table class="acf-table"><tbody><?php
@@ -1427,9 +1419,10 @@ function acf_form( $args = array() ) {
 		
 		
 		// end table
-		if( $args['label_placement'] == 'left' )
-		{
+		if( $args['label_placement'] == 'left' ) {
+			
 			?></tbody></table><?php
+				
 		}
 		
 		
@@ -1439,7 +1432,6 @@ function acf_form( $args = array() ) {
 		?>
 	
 	</div><!-- acf-form-fields -->
-	
 	<?php if( $args['form'] ): ?>
 	
 	<!-- Submit -->
@@ -1451,7 +1443,6 @@ function acf_form( $args = array() ) {
 	<!-- / Submit -->
 	
 	</form>
-	
 	<?php endif;
 }
 

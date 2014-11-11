@@ -61,16 +61,18 @@ function acf_is_field_key( $field_key = '' ) {
 function acf_get_valid_field( $field = false ) {
 	
 	// $field must be an array
-	if( !is_array($field) )
-	{
+	if( !is_array($field) ) {
+		
 		$field = array();
+		
 	}
 	
 	
-	// bail ealry if field_name exists (only run this function once)
-	if( !empty($field['_valid']) )
-	{
+	// bail ealry if already valid
+	if( !empty($field['_valid']) ) {
+		
 		return $field;
+		
 	}
 	
 	
@@ -90,8 +92,11 @@ function acf_get_valid_field( $field = false ) {
 		'class'				=> '',
 		'conditional_logic'	=> 0,
 		'parent'			=> 0,
-		//'ancestors'			=> array(),
-		//'field_group'		=> 0,
+		'wrapper'			=> array(
+			'width'				=> '',
+			'class'				=> '',
+			'id'				=> ''
+		),
 		'_name'				=> '',
 		'_input'			=> '',
 		'_valid'			=> 0,
@@ -103,9 +108,10 @@ function acf_get_valid_field( $field = false ) {
 	
 	
 	// translate
-	foreach( array('label', 'instructions') as $s )
-	{
+	foreach( array('label', 'instructions') as $s ) {
+		
 		$field[ $s ] = __($field[ $s ]);
+		
 	}
 	
 	
