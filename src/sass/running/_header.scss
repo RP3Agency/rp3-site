@@ -108,3 +108,20 @@
 }
 
 @import "mobile-nav";
+
+.header-container {
+	top: cr(-100px);
+
+	&.fixed {
+		border-bottom: 1px solid map-get($gray_map, light);
+		position: fixed;
+		top: 0;
+		transition: top 0.2s ease-in-out;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.site-header {
+		background-color: transparentize(#fff, 0.2);
+	}
+}
