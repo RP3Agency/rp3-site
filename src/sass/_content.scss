@@ -75,20 +75,12 @@
 .blog {
 	@extend %side-padding;
 	margin-bottom: 3rem;
-	@include container;
 
-	// &__entry-header {
-	// 	@extend %side-padding;
-	// }
-
-	&__primary {
-		@include breakpoint($bp-large / 2) {
-			@include span(16);
-		}
+	@include breakpoint($bp-marge) {
+		@include span(20 of 24);
 	}
 
 	&__secondary {
-		// @extend %side-padding;
 		border-top: 1px solid map-get($gray_map, light);
 		margin-top: 3rem;
 		padding-top: 3rem;
@@ -118,49 +110,11 @@
 		@include breakpoint($bp-medium) {
 			font-size: cr(16px);
 		}
-	}
 
-	/**
-	 * Author
-	 */
-	&__author {
-		&__header {
-			margin-bottom: 1em;
-			@include container;
-		}
-
-		&__name {
-			margin-bottom: 0.5em;
-		}
-
-		// &__image {
-		// 	@include span(24 / 3);
-		// }
-
-		// &__meta {
-		// 	@include span( (24 / 3 * 2) last);
-		// }
-
-		&__bio {
-			margin-bottom: 3rem;
-		}
-
-		&__posts {
-			h2 {
-				@extend %roboto-medium-black;
-				font-size: ce(12px);
-				margin-bottom: 1em;
-				text-transform: uppercase;
-			}
-
-			ul {
-				list-style: none;
-				margin: 0;
-			}
-
-			li {
-				margin-bottom: 0.5em;
-			}
+		.entry-content__container {
+			float: none;
+			margin-right: 0;
+			width: 100%;
 		}
 	}
 
@@ -170,35 +124,15 @@
 	}
 
 	/**
-	 * Fix grid system for paragraphs on the blog page
-	 */
-	.entry-content__container {
-		@include breakpoint($bp-large) {
-			@include span(12);
-		}
-
-		// @include breakpoint(1200px) {
-		// 	columns: 2;
-		// 	column-gap: 4em;
-		// }
-	}
-
-	/**
 	 * Social Media sharing
 	 */
 	&__social-media {
-		// @extend %side-padding;
 		clear: both;
 		margin-bottom: 2em;
 	}
-
-	/**
-	 * comments area
-	 */
-	// .comments-area {
-	// 	@extend %side-padding;
-	// }
 }
+
+@import "components/blog-author";
 
 
 /**

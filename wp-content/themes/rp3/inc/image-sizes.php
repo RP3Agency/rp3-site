@@ -96,6 +96,10 @@ function rp3_image_sizes() {
 	// Related Work
 	add_image_size( 'related-work-thumbnail', 250, 200, true );
 	add_image_size( 'related-work-thumbnail-2x', 500, 400, true );
+
+	// Blog Authors
+	add_image_size( 'blog-author', 425, 425, true );
+	add_image_size( 'blog-author-2x', 425 * 2, 425 * 2, true );
 }
 
 add_action( 'init', 'rp3_image_sizes' );

@@ -15,7 +15,8 @@
 		<h1 class="blog__entry_title entry-title"><?php the_title(); ?></h1>
 
 		<div class="blog__entry-meta entry-meta">
-			<?php echo rp3_byline( 'blog', 'single' ); ?>
+			<?php echo get_the_date(); ?>
+			<?php // echo rp3_byline( 'blog', 'single' ); ?>
 		</div>
 		<!-- // .entry-meta -->
 
@@ -37,6 +38,13 @@
 
 				<div class="entry-content__container">
 
+					<div class="blog__author--wide">
+
+						<?php get_template_part( 'components/blog', 'author' ); ?>
+
+					</div>
+					<!-- // .blog author wide -->
+
 					<?php the_content(); ?>
 					<?php
 						wp_link_pages( array(
@@ -44,6 +52,13 @@
 							'after'  => '</div>',
 						) );
 					?>
+
+					<div class="blog__author--narrow">
+
+						<?php get_template_part( 'components/blog', 'author' ); ?>
+
+					</div>
+					<!-- // .blog author narrow -->
 
 				</div>
 				<!-- // .entry-content__container -->
@@ -72,7 +87,5 @@
 
 	</div>
 	<!-- // #primary -->
-
-	<?php get_sidebar( 'blog' ); ?>
 
 </div>
