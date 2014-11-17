@@ -75,20 +75,12 @@
 .blog {
 	@extend %side-padding;
 	margin-bottom: 3rem;
-	@include container(1160px);
 
-	// &__entry-header {
-	// 	@extend %side-padding;
-	// }
-
-	// &__primary {
-	// 	@include breakpoint($bp-large / 2) {
-	// 		@include span(16);
-	// 	}
-	// }
+	@include breakpoint($bp-marge) {
+		@include span(20 of 24);
+	}
 
 	&__secondary {
-		// @extend %side-padding;
 		border-top: 1px solid map-get($gray_map, light);
 		margin-top: 3rem;
 		padding-top: 3rem;
@@ -120,88 +112,9 @@
 		}
 
 		.entry-content__container {
+			float: none;
+			margin-right: 0;
 			width: 100%;
-		}
-	}
-
-	/**
-	 * Author
-	 */
-	&__author {
-		@extend %clearfix;
-		background-color: mix(#fff, $gray-light, 50%);
-		font-size: 0.8em;
-		padding: 1em;
-
-		&__header {
-			margin-bottom: 1em;
-			@include container;
-		}
-
-		&__name {
-			margin-bottom: 0.5em;
-		}
-
-		&__image {
-			img {
-				width: 100%;
-			}
-		}
-
-		&__posts {
-			h2 {
-				@extend %roboto-medium-black;
-				font-size: ce(12px);
-				margin-bottom: 1em;
-				text-transform: uppercase;
-			}
-
-			ul {
-				list-style: none;
-				margin: 0;
-			}
-
-			li {
-				margin-bottom: 0.5em;
-			}
-		}
-
-		&__social {
-			margin-top: 1em;
-		}
-
-		&--wide {
-			display: none;
-			margin: {
-				left: 1em;
-				bottom: 1em;
-			}
-			@include span(8 of 24 last);
-
-			@include breakpoint(800px) {
-				display: block;
-			}
-		}
-
-		&--narrow {
-
-			.blog__author__header {
-				@include span( 16 of 24 );
-			}
-
-			@include breakpoint( 640px ) {
-				.blog__author__header {
-					@include span( 8 of 24 );
-				}
-
-				.blog__author__bio {
-					@include span( 16 of 24 last );
-				}
-			}
-
-			@include breakpoint(800px) {
-				display: none;
-			}
 		}
 	}
 
@@ -214,18 +127,12 @@
 	 * Social Media sharing
 	 */
 	&__social-media {
-		// @extend %side-padding;
 		clear: both;
 		margin-bottom: 2em;
 	}
-
-	/**
-	 * comments area
-	 */
-	// .comments-area {
-	// 	@extend %side-padding;
-	// }
 }
+
+@import "components/blog-author";
 
 
 /**

@@ -98,8 +98,8 @@ function rp3_image_sizes() {
 	add_image_size( 'related-work-thumbnail-2x', 500, 400, true );
 
 	// Blog Authors
-	add_image_size( 'blog-author', 265, 265, true );
-	add_image_size( 'blog-author-2x', 265 * 2, 265 * 2, true );
+	add_image_size( 'blog-author', 425, 425, true );
+	add_image_size( 'blog-author-2x', 425 * 2, 425 * 2, true );
 }
 
 add_action( 'init', 'rp3_image_sizes' );
