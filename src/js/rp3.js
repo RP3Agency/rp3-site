@@ -43,23 +43,29 @@ var rp3 = (function($) {
 	 */
 	applyFixedHeader = function() {
 		// Sets the current scroll position
-		var st = $(window).scrollTop(),
+		var scrollTop = $(window).scrollTop(),
 			$body = $('body'),
 			$window = $(window);
 
 		// Determines up-or-down scrolling
-		if (st > lastScroll) {
-			$body.removeClass('fixed-nav')
-		} else {
-			$body.addClass('fixed-nav');
-		}
 
-		if ( $window.scrollTop() == 0 ) {
-			$body.removeClass('fixed-nav');
+		// Scrolling Down
+		if ( lastScroll > 0 ) {
+			if (scrollTop > lastScroll) {
+				$body.removeClass('fixed-nav');
+
+			// Scrolling Up
+			} else {
+				$body.addClass('fixed-nav');
+			}
+
+			if ( $window.scrollTop() == 0 ) {
+				$body.removeClass('fixed-nav');
+			}
 		}
 
 		// Updates scroll position
-		lastScroll = st;
+		lastScroll = scrollTop;
 	},
 
 

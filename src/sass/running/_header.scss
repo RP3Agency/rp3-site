@@ -3,7 +3,7 @@
 .site-header {
 	@extend %clearfix;
 	@extend %side-padding;
-	background-color: #fff;
+	// background-color: #fff;
 	@include container;
 
 	@include breakpoint($bp-navigation) {
@@ -110,26 +110,31 @@
 @import "mobile-nav";
 
 .header-container {
+	background-color: transparentize(#fff, 0.1);
 	top: cr(-100px);
 
-	body.fixed-nav & {
+	@include breakpoint($bp-navigation) {
+		body.fixed-nav & {
 
-		@include modernizr(no-touch) {
-			border-bottom: 1px solid map-get($gray_map, light);
-			position: fixed;
-			top: 0;
-			transition: top 500ms ease-in-out;
-			width: 100%;
-			z-index: 1;
+			@include modernizr(no-touch) {
+				border-bottom: 1px solid map-get($gray_map, light);
+				position: fixed;
+				top: 0;
+				transition: top 500ms ease-in-out;
+				width: 100%;
+				z-index: 1;
+			}
 		}
-	}
 
-	.site-header {
-		background-color: transparentize(#fff, 0.1);
+		// .site-header {
+		// 	background-color: transparentize(#fff, 0.1);
+		// }
 	}
 }
 
-// Content adjustments to accommodate the fixed nav
-body.fixed-nav .site-content {
-	margin-top: cr(100px) !important;
+@include breakpoint($bp-navigation) {
+	// Content adjustments to accommodate the fixed nav
+	body.fixed-nav .site-content {
+		margin-top: cr(100px) !important;
+	}
 }
