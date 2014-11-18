@@ -1,0 +1,169 @@
+/*
+ * Image replacement
+ */
+%ir {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+
+	/* IE 6/7 fallback */
+	*text-indent: -9999px;
+
+	&:before {
+		content: "";
+		display: block;
+		height: 150%;
+		width: 0;
+	}
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+%visuallyhidden,
+%assistive {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+
+	/*
+	 * Extends the .visuallyhidden class to allow the element to be focusable
+	 * when navigated to via the keyboard: h5bp.com/p
+	 */
+	&.focusable:active,
+	&.focusable:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
+
+%clearfix {
+	&:before,
+	&:after {
+		content: '';
+		display: table;		
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+%clear-ul-formatting {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+%fullscreen {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+%meta-date {
+	color: $gray;
+	font-style: italic;
+}
+
+%wrapper {
+	margin: 0 auto;
+	max-width: ce(1000px, $default-font-size);
+}
+
+%category-label {
+	color: $blue;
+	font-size: ce(16px);
+	font-weight: $bold;
+	margin-right: 1ex;
+	text-transform: uppercase;
+}
+
+%category-tag {
+	background-color: mix(#fff, $blue, 33%);
+	border-radius: $border-radius;
+	color: #fff;
+	padding: 5px 10px;
+	text-decoration: none;
+
+	@include hover-state {
+		background-color: $blue;
+	}
+}
+
+// Back link
+%back {
+	@extend %side-padding;
+	clear: both;
+	display: block;
+	font: {
+		family: Roboto, sans-serif;
+		size: ce(10px);
+		weight: 400;
+	}
+	line-height: 5;
+	margin-bottom: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:before {
+		content: '< ';
+		display: inline;
+	}
+}
+
+%side-padding {
+	// padding: {
+	// 	left: percentage(5px/320px);
+	// 	right: percentage(5px/320px);
+	// }
+
+	// @include breakpoint($bp-medium) {
+		padding: {
+			left: percentage(90px/1600px);
+			right: percentage(90px/1600px);
+		}
+	// }
+}
+
+%button {
+	background-color: transparent;
+	border: 2px solid $blue;
+	border-radius: 0;
+	color: $blue;
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	font-weight: $normal;
+	line-height: 1;
+	padding: 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	@include appearance(none);
+	@include font-size(16px);
+
+	@include hover-state {
+		background-color: $blue;
+		color: #fff;
+	}
+}
+
+%hover-transition {
+	transition: color 0.2s linear;
+}

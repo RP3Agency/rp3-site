@@ -1,0 +1,126 @@
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 3em;
+
+	/* Make sure select elements fit in widgets */
+	select {
+		max-width: 100%;
+	}
+
+	> ul {
+		list-style: none;
+		margin: 0;
+	}
+}
+
+/* Search widget */
+.widget_search .search-submit {
+	display: none;
+}
+
+.widget-title {
+	font: {
+		size: ce(12px);
+		weight: $medium;
+	}
+	line-height: 3;
+	text-transform: uppercase;
+}
+
+/**
+ * Category Post List Widget
+ */
+.widget_category_post_list_widget {
+	.newsdesc {
+		margin-bottom: 1em;
+	}
+
+	h2 {
+		font-size: ce(16px);
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.post_date {
+		@extend %meta-date;
+	}
+}
+
+/**
+ * Latest Tweets Widget
+ */
+.widget_latest_tweets_widget {
+	ul {
+		@extend %clear-ul-formatting;
+
+		li {
+			background-color: $gray-light;
+			border-style: solid;
+			border-width: 8px 8px 8px 9px;
+			border-image: url("../images/tweet-border.gif") 14 25 16 17 repeat;
+			margin-bottom: 1em;
+			padding: 5px;
+		}
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+/**
+ * Tags
+ */
+.tw-tag {
+	@extend %category-tag;
+	display: inline-block;
+	margin-bottom: 4px;
+
+	&:visited {
+		color: #fff;
+	}
+
+	@include hover-state {
+		color: #fff;
+	}
+}
+
+
+/**
+ * Related Posts By Category
+ */
+.widget_rpbc {
+	ul {
+		@extend %clear-ul-formatting;
+
+		.rpbc_content {
+			margin-bottom: 1.5em;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+}
+
+
+/**
+ * Hide sharedaddy from appearing inside widget areas
+ */
+.widget {
+	.sharedaddy {
+		display: none;
+	}
+}
+
+.widget ul {
+	margin: 0 0 3em 1em;
+}

@@ -1,6 +1,10 @@
 plugins/*
+!plugins/advanced-custom-fields-pro/
 !plugins/category-post-list-widget/
-!plugins/jetpack-sharing/
 !plugins/rp3/
+!plugins/rp3-mailchimp/
 !plugins/wp-migrate-db-pro/
 !plugins/wp-migrate-db-pro-media-files/
+!plugins/wp-migrate-db-pro-cli/
+debug.log
+xhc-xmt

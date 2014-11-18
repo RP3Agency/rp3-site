@@ -155,3 +155,225 @@ function rp3_category_transient_flusher() {
 }
 add_action( 'edit_category', 'rp3_category_transient_flusher' );
 add_action( 'save_post',     'rp3_category_transient_flusher' );
+
+
+
+/**
+ * Custom "Written by..." template tag
+ *
+ * $type: news (default) or blog. news posts have (sub)categories, blogs have tags.
+ * 
+ * $page_type: if 'single', link the author(s) and categories (if any).
+ * Otherwise, assume this is an archive page and don't link them
+ * (because the whole tile will be linked to the article)
+ */
+if ( ! function_exists( 'rp3_byline' ) ) {
+
+	function rp3_byline( $type = 'news', $page_type = false ) {
+
+		// Author(s)
+
+		$byline = 'By ';
+
+		if ( $page_type == 'single' ) {
+			// Check if we're using Co-Authors Plus
+			if ( class_exists( 'CoAuthorsIterator' ) ) {
+				$i = new CoAuthorsIterator();
+				$i->iterate();
+				$byline .= get_the_author_meta( 'display_name' );
+				while($i->iterate()){
+					$byline .= $i->is_last() ? '<span> and </span>' : '<span>, </span>';
+					$byline .= get_the_author_meta( 'display_name' );
+				}
+			} else {
+				$byline .= get_the_author_meta( 'display_name' );
+			}
+		} else {
+			if ( class_exists( 'CoAuthorsIterator' ) ) {
+				$i = new CoAuthorsIterator();
+				$i->iterate();
+				$byline .= get_the_author();
+				while($i->iterate()){
+					$byline .= $i->is_last() ? '<span> and </span>' : '<span>, </span>';
+					$byline .= get_the_author();
+				}
+			} else {
+				$byline .= get_the_author();
+			}
+		}
+
+		// Date
+
+		$byline .= ' on ' . get_the_date() . '.';
+
+		// Taxonomy
+
+		// if ( $type == 'blog' ) {
+		// 	$byline .= ' in ';
+
+		// 	$tags = get_the_tags();
+
+		// 	$counter = 0;
+
+		// 	if ( $page_type == 'single' ) {
+		// 		foreach( $tags as $tag ) {
+		// 			if ( $counter > 0 ) {
+		// 				$byline .= ', <a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a>';
+		// 			} else {
+		// 				$byline .= '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a>';
+		// 			}
+
+		// 			$counter++;
+		// 		}
+		// 	} else {
+		// 		foreach( $tags as $tag ) {
+		// 			if ( $counter > 0 ) {
+		// 				$byline .= ', ' . $tag->name;
+		// 			} else {
+		// 				$byline .= $tag->name;
+		// 			}
+
+		// 			$counter++;
+		// 		}
+		// 	}
+
+		// 	$byline .= '.';
+		// } else {
+		// 	$byline .= ' in [categories TK].';
+		// }
+
+		return $byline;
+	}
+
+}
+
+
+if ( ! function_exists( 'rp3_link_to_author_posts' ) ) {
+	function rp3_link_to_author_posts( $id ) {
+		$link  = '<a href="' . esc_url( get_author_posts_url( $id ) ) . '">';
+		$link .= get_the_author_meta( 'user_firstname' ) . ' ' . get_the_author_meta( 'user_lastname' );
+		$link .= '</a>';
+
+		return $link;
+	}
+}
+
+/*
+<?php the_time( get_option('date_format') ); ?>
+<span><?php _e('by', 'rp3') ?></span> 
+<?php
+?>
+*/
+
+/**
+ * Create a picture element
+ */
+if ( ! function_exists( 'rp3_picture_element' ) ) {
+	function rp3_picture_element( $id, $size_tag, $title = '' ) {
+
+		$bp_small	= 321 / 16;
+		$bp_medium	= 600 / 16;
+
+		$size_tags = array( 'large', 'medium', 'small' );
+		$images = array();
+
+		foreach ( $size_tags as $tag ) {
+			$images[] = wp_get_attachment_image_src( $id, $size_tag . '-' . $tag );
+			$images[] = wp_get_attachment_image_src( $id, $size_tag . '-' . $tag . '-2x' );
+		}
+
+		$picture  = '<picture>';
+		$picture .= '<!--[if IE 9]><video style="display: none;"><![endif]-->'; // For IE9 compatibility + Picturefill.js
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_medium . 'em)">', $images[0][0], $images[1][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_small . 'em)">', $images[2][0], $images[3][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x">', $images[4][0], $images[5][0] );
+		$picture .= '<!--[if IE 9]></video><![endif]-->';
+		$picture .= sprintf( '<img srcset="%s, %s 2x" alt="%s">', $images[4][0], $images[5][0], esc_attr( $title ) );
+		$picture .= '</picture>';
+
+		return $picture;
+	}
+}
+
+
+/**
+ * Full Bleed Hero Image
+ */
+if ( ! function_exists( 'rp3_full_bleed_hero_image' ) ) {
+	function rp3_full_bleed_hero_image( $image_id, $args ) {
+
+		$defaults = array(
+			'id'			=> '',
+			'classes'		=> 'hero-image',
+			'permalink'		=> '',
+			'image_size'	=> 'home-page-hero',
+			'title'			=> '',
+			'client'		=> ''
+		);
+
+		$args = wp_parse_args( $args, $defaults );
+
+		$html = '';
+
+		if ( '' != $args['id'] ) {
+			$html = '<section id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $args['id'] ) . ' hero ' . esc_attr( $args['classes'] ) . '">' . "\n";
+		} else {
+			$html = '<section class="hero ' . esc_attr( $args['classes'] ) . '">' . "\n";
+		}
+
+		// <a>
+		if ( '' != $args['permalink'] ) {
+			$html .= '<a href="' . esc_url( $args['permalink'] ) . '" class="hero__container">';
+		} else {
+			$html .= '<div class="hero__container">';
+		}
+
+		$html .= '<div class="hero__image">' . rp3_picture_element( $image_id, $args['image_size'], $args['title'] ) . '</div>';
+
+		if ( ( '' != $args['title'] ) && ( '' != $args['client'] ) ) {
+			$html .= '<div class="wrapper"><div class="hero__headline"><h1>' . $args['title'] . '</h1>for <strong>' . $args['client'] . '</strong></div></div>';
+		}
+
+		// </a>
+		if ( '' != $args['permalink'] ) {
+			$html .= '</a>';
+		} else {
+			$html .= '</div>';
+		}
+
+		// </section>
+		$html .= '</section>';
+
+		return $html;
+
+	}
+}
+
+
+
+// Output the hero images for the work & case study pages
+function rp3_case_study_hero_images( $field, $subfield, $tall = false ) {
+
+	$rows = get_field( $field );
+
+	if ( 0 < sizeof( $rows ) ) {
+
+		$image_size = 'case-study';
+		$classes = 'hero-image case-study-hero-image';
+
+		if ( $tall ) {
+			$image_size .= '-tall';
+			$classes .= '-tall';
+		}
+
+		foreach ( $rows as $row ) {
+
+			if ( '' != $row[$subfield] ) {
+				echo rp3_full_bleed_hero_image( $row[$subfield], array(
+					'image_size'	=> $image_size,
+					'classes'		=> $classes
+				) );
+			}
+		}
+	}
+}

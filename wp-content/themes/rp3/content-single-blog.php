@@ -4,105 +4,88 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+<div id="post-<?php the_ID(); ?>" <?php post_class( 'blog' ); ?>>
 
-		<div class="entry-meta">
-			<?php the_time( get_option('date_format') ); ?>
-			<span><?php _e('by', 'rp3') ?></span> 
-			<?php
-				$i = new CoAuthorsIterator();
-			    $i->iterate();
-			    // the_author_posts_link();
-			    the_author();
-			    while($i->iterate()){
-			    	print $i->is_last() ? '<span> and </span>' : '<span>, </span>';
-			    	// the_author_posts_link();
-			    	the_author();
-			    }
-			?>
+	<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>" class="blog__back">Back to Articles</a>
+
+	<!-- Article Header -->
+
+	<header class="blog__entry-header entry-header">
+
+		<h1 class="blog__entry_title entry-title"><?php the_title(); ?></h1>
+
+		<div class="blog__entry-meta entry-meta">
+			<?php echo get_the_date(); ?>
+			<?php // echo rp3_byline( 'blog', 'single' ); ?>
+		</div>
 		<!-- // .entry-meta -->
-		</div>
-	</header><!-- .entry-header -->
 
-	<?php the_post_thumbnail(); ?>
+	</header>
+	<!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'rp3' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+	<div id="primary" class="blog__primary">
 
-	<footer class="entry-footer">
+		<article>
+
+			<?php if ( '' != get_the_post_thumbnail() ) : ?>
+				<div class="blog__thumbnail">
+					<?php the_post_thumbnail(); ?>
+				</div>
+			<?php endif; ?>
 
 
-		<!--BEGIN .author-bio-->
-		<div class="author-bio">
+			<div class="blog__entry-content entry-content">
 
-			<!-- BEGIN .author-inner -->
-			<div class="author-inner clearfix">
+				<div class="entry-content__container">
 
-				<?php
-					$links = get_the_coauthor_meta('user_url');
-					$desc = get_the_coauthor_meta('description');
-					$i = new CoAuthorsIterator();
-					$authors = $i->get_all();
-					foreach($authors as $author){
-						print '<div class="author-wrap clearfix">';
-						//print_r($author);
-						echo get_avatar( $author->user_email, '70' );
-						print '<div class="author-info"><div class="author-title">';
-						// echo '<a href="' . get_author_posts_url( $author->ID ) . '">' . get_the_author_meta( 'display_name', $author->ID ) . '</a>';
-						echo get_the_author_meta( 'display_name', $author->ID );
-						print '</div><div class="author-description">'.$desc[$author->ID].'</div>';
-						print '</div>';
-						print '</div>';
-					}
-				?>
+					<div class="blog__author--wide">
 
-			<!-- END .author-inner -->
+						<?php get_template_part( 'components/blog', 'author' ); ?>
+
+					</div>
+					<!-- // .blog author wide -->
+
+					<?php the_content(); ?>
+					<?php
+						wp_link_pages( array(
+							'before' => '<div class="page-links">' . __( 'Pages:', 'rp3' ),
+							'after'  => '</div>',
+						) );
+					?>
+
+					<div class="blog__author--narrow">
+
+						<?php get_template_part( 'components/blog', 'author' ); ?>
+
+					</div>
+					<!-- // .blog author narrow -->
+
+				</div>
+				<!-- // .entry-content__container -->
+
 			</div>
+			<!-- .entry-content -->
 
-		<!--END .author-bio-->
-		</div>
 
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'rp3' ) );
+			<?php if ( function_exists( 'sharing_display' ) ) : ?>
 
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ' ', 'rp3' ) );
+			<aside class="blog__social-media">
+				<?php sharing_display( '', true ); ?>
+			</aside>
 
-			if ( ! rp3_categorized_blog() ) {
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'rp3' );
-				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'rp3' );
-				}
+			<?php endif; ?>
 
-			} else {
-				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
-					$meta_text = __( '<span class="entry-categories">Tagged:</span> %2$s', 'rp3' );
-				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'rp3' );
-				}
+			<?php
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || '0' != get_comments_number() ) :
+				comments_template();
+			endif;
+			?>
 
-			} // end check for categories on this blog
+		</article>
+		<!-- #post-## -->
 
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink()
-			);
-		?>
+	</div>
+	<!-- // #primary -->
 
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+</div>

@@ -1,0 +1,36 @@
+// Singularity settings
+// @include add-grid(24);
+// @include add-gutter(1/4);
+
+.site-content {
+	// @extend %wrapper;
+	// @include side-padding;
+
+// 	@include bp(large) {
+// 		> .content-area {
+// 			@include griddr(8);
+// 		}
+// 	}
+
+// 	> .widget-area {
+// 		@include bp(medium) {
+// 			padding: 0;
+// 		}
+
+// 		@include bp(large) {
+// 			@include griddr(4);
+// 			@include griddr-last;
+// 		}
+// 	}
+// }
+
+// .page:not(.page-careers) {
+// 	.content-area {
+// 		margin-right: 0;
+// 		width: 100%;
+// 	}
+}
+
+.wrapper {
+	@include container;
+}

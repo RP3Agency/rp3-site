@@ -12,17 +12,42 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+<?php while ( have_posts() ) : the_post(); // the loop ?>
 
-			<?php endwhile; // end of the loop. ?>
+	<?php if ( is_page( 'agency' ) ) : ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		<?php get_template_part( 'content', 'page-agency' ); ?>
 
-<?php get_sidebar(); ?>
+	<?php elseif ( is_page( 'news' ) ) : ?>
+
+		<?php get_template_part( 'content', 'page-news' ); ?>
+
+	<?php elseif ( is_page( 'blog' ) ) : ?>
+
+		<?php get_template_part( 'content', 'page-blog' ); ?>
+
+	<?php elseif ( is_page( 'contact' ) ) : ?>
+
+		<?php get_template_part( 'content', 'page-contact' ); ?>
+
+	<?php elseif ( is_page( 'careers' ) ) : ?>
+
+		<?php get_template_part( 'content', 'page-careers' ); ?>
+
+	<?php elseif( is_page( 'work' ) ) : ?>
+
+		<?php get_template_part( 'content', 'page-work' ); ?>
+
+	<?php else: ?>
+
+		<?php get_template_part( 'content', 'page' ); ?>
+
+	<?php endif; ?>
+
+<?php endwhile; // end of the loop. ?>
+
+
+
 <?php get_footer(); ?>

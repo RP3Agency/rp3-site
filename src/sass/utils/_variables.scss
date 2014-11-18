@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+$black:			#222; // (ok, it's _almost_ black)
+$blue:			#00bbe3;
+$pink:			#fe57a1;
+$gold:			#fbbe31;
+$gray:			#6b747c;
+$gray-light:	#e3e3e3;
+$green:			#b6ce16;
+$mauve:			#d770a3;
+
+$blue_map: (
+	lighter:	#00c8f2,
+	normal:		#00bbe3,
+	darker:		#008ba9
+);
+
+$gray_map: (
+	light:		$gray-light,
+	normal:		$gray,
+	dark:		#3a3d3c
+);
+
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+// Font Stacks
+$lato:		"Lato", sans-serif;
+$roboto:	"Roboto", sans-serif;
+
+// Font Weights
+$thin:		100;
+$light:		300;
+$normal:	400;
+$bold:		700;
+
+
+
+/* ==========================================================================
+   Miscellaneous Common Variables
+   ========================================================================== */
+$border-radius: 3px;
+
+// To which end should the photos of people be anchored?
+$people: (
+	bjohnson: center,
+	lansbury: center,
+	kroberts: left,
+	jhannigan: left,
+	oquinones: left,
+	tbacon: right,
+	wqueener: center,
+	nparo: right,
+	trotton: center,
+	shasten: left,
+	equinn: center,
+	aantosh: center
+);

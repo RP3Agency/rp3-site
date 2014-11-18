@@ -1,0 +1,140 @@
+@import "logo";
+
+.site-header {
+	@extend %clearfix;
+	@extend %side-padding;
+	// background-color: #fff;
+	@include container;
+
+	@include breakpoint($bp-navigation) {
+		height: cr(100px);
+	}
+
+	// Make all links in the primary nav blocks
+	// Set the font size, weight and styling
+	a {
+		color: $black;
+		display: block;
+		font: {
+			size: cr(12px);
+			weight: $medium;
+		}
+		text-decoration: none;
+		text-transform: uppercase;
+
+		@include breakpoint($bp-navigation) {
+			font-weight: $light;
+		}
+	}
+
+	.skip-link {
+		@extend %assistive;
+	}
+
+	.header-wrapper {
+		height: 100%;
+	}
+
+	.site-branding {
+		@extend %clearfix;
+		height: 100%;
+
+		.site-title {
+			float: left;
+			margin: cr(8px) 0;
+			padding: cr(15px) 0;
+
+			@include breakpoint($bp-navigation) {
+				margin: {
+					top: cr(24px);
+					bottom: 0;
+				}
+			}
+		}
+	}
+
+	.menu-open {
+		@extend %genericon;
+		@extend %genericon-menu;
+		@extend %ir;
+		color: $blue;
+		float: right;
+		font-size: 28px;
+		height: 32px;
+		line-height: 1;
+		margin-top: 23px;
+		width: 32px;
+
+		@include breakpoint($bp-navigation) {
+			display: none;
+		}
+	}
+
+	[role="navigation"] {
+		clear: none;
+		float: left;
+	}
+
+	.primary-menu {
+		@extend %clearfix;
+		display: none;
+		list-style: none;
+		margin: cr(37px) 0 0 0;
+
+		@include breakpoint($bp-navigation) {
+			display: block;
+		}
+
+		li {
+			float: left;
+			padding: 0 7px;
+			text-align: right;
+
+			a {
+				@extend %hover-transition;
+				color: #000;
+				padding: 8px;
+
+				@include hover-state {
+					color: #888;
+				}
+			}
+
+			&.current-menu-item a {
+				font-weight: $medium;
+			}
+		}
+	}
+}
+
+@import "mobile-nav";
+
+.header-container {
+	background-color: transparentize(#fff, 0.1);
+	top: cr(-100px);
+
+	@include breakpoint($bp-navigation) {
+		body.fixed-nav & {
+
+			@include modernizr(no-touch) {
+				border-bottom: 1px solid map-get($gray_map, light);
+				position: fixed;
+				top: 0;
+				transition: top 500ms ease-in-out;
+				width: 100%;
+				z-index: 1;
+			}
+		}
+
+		// .site-header {
+		// 	background-color: transparentize(#fff, 0.1);
+		// }
+	}
+}
+
+@include breakpoint($bp-navigation) {
+	// Content adjustments to accommodate the fixed nav
+	body.fixed-nav .site-content {
+		margin-top: cr(100px) !important;
+	}
+}

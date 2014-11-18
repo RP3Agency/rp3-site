@@ -27,8 +27,8 @@ function rp3_widgets_init() {
 	) );
 
 	// 3 Widget areas for blog archive page
-	register_sidebars( 3, array(
-		'name'				=> __( 'Blog Archive %d' ),
+	register_sidebar( array(
+		'name'				=> __( 'Blog Archive' ),
 		'id'				=> 'blog-archive',
 		'before_widget'		=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'		=> '</aside>',
@@ -43,6 +43,43 @@ function rp3_widgets_init() {
 		'class'				=> 'blog-single-post',
 		'description'		=> __( 'Sidebar for the single blog posts', 'rp3' ),
 		'before_widget'		=> '<aside id="blog-single-widget-area" class="widget %2$s">',
+		'after_widget'		=> '</aside>',
+		'before_title'		=> '<h1 class="widget-title">',
+		'after_title'		=> '</h1>'
+	) );
+
+
+	// Career listing
+	register_sidebar( array(
+		'name'				=> __( 'Career Listing Sidebar', 'rp3' ),
+		'id'				=> 'career__sidebar',
+		'class'				=> 'career__sidebar',
+		'description'		=> __( 'Sidebar for career listing pages', 'rp3' ),
+		'before_widget'		=> '<aside id="career__single-widget-area" class="widget %2$s">',
+		'after_widget'		=> '</aside>',
+		'before_title'		=> '<h1 class="widget-title">',
+		'after_title'		=> '</h1>'
+	) );
+
+	// Home page: dark blue widget block
+	register_sidebar( array(
+		'name'				=> __( 'Home Page General Info Widget', 'rp3' ),
+		'id'				=> 'home-errata__general-widget',
+		'class'				=> 'home-errata__general-widget home-errata__block',
+		'description'		=> __( 'Blue block in the home page errata (bottom of the page)', 'rp3' ),
+		'before_widget'		=> '<aside id="home-errata__widget-area" class="widget %2$s">',
+		'after_widget'		=> '</aside>',
+		'before_title'		=> '<h1 class="widget-title">',
+		'after_title'		=> '</h1>'
+	) );
+
+	// Home page: twitter widget
+	register_sidebar( array(
+		'name'				=> __( 'Home Page Twitter Widget', 'rp3' ),
+		'id'				=> 'home-errata__twitter-widget',
+		'class'				=> 'home-errata__twitter-widget home-errata__block',
+		'description'		=> __( 'Twitter block in the home page errata (bottom of the page)', 'rp3' ),
+		'before_widget'		=> '<aside id="home-errata__widget-area" class="widget %2$s">',
 		'after_widget'		=> '</aside>',
 		'before_title'		=> '<h1 class="widget-title">',
 		'after_title'		=> '</h1>'

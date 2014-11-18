@@ -7,66 +7,55 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+	<?php
 
-			<?php
+	if ( has_category( 'news' ) ) :
 
-			if ( has_category( 'news' ) ) :
+		get_template_part( 'content', 'single-news' );
 
-				get_template_part( 'content', 'single-news' );
+	elseif ( has_category( 'blog' ) ) :
 
-			elseif ( has_category( 'blog' ) ) :
+		get_template_part( 'content', 'single-blog' );
 
-				get_template_part( 'content', 'single-blog' );
+	elseif ( has_category( 'careers' ) ) :
 
-			elseif ( has_category( 'careers' ) ) :
+		get_template_part( 'content', 'single-careers' );
 
-				get_template_part( 'content', 'single-careers' );
+	elseif ( 'rp3_cpt_work' == get_post_type() ) :
 
-			else :
+		if ( true == get_field( 'case_study' ) ) :
 
-				get_template_part( 'content', 'single' );
+			get_template_part( 'content', 'single-case-study' );
 
-			endif;
+		else :
 
-			?>
+			get_template_part( 'content', 'single-work' );
 
-			<?php rp3_post_nav(); ?>
+		endif;
 
-			<?php
-				if ( has_category('blog') ) :
+	else :
 
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
-					endif;
+		get_template_part( 'content', 'single' );
 
-				endif;
-			?>
+	endif;
 
-		<?php endwhile; // end of the loop. ?>
+	if ( has_category('blog') ) :
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
-<?php 
+	endif;
+	?>
 
-if ( has_category('news') ) {
+<?php endwhile; // end of the loop. ?>
 
-	get_sidebar( 'news' );
+<?php
 
-} elseif ( has_category( 'blog' ) ) {
+if ( has_category( 'careers' ) ) {
 
-	get_sidebar( 'blog' );
-
-} else {
-
-	get_sidebar();
+	get_sidebar( 'careers' );
 
 }
-
 ?>
+
 <?php get_footer(); ?>

@@ -71,9 +71,7 @@ require get_template_directory() . '/inc/widgets.php';
  * Enqueue scripts and styles.
  */
 function rp3_scripts() {
-	wp_enqueue_style( 'rp3-style', get_stylesheet_directory_uri() . '/css/rp3.min.css' );
-
-	wp_enqueue_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', array( 'jquery' ), '20120206', true );
+	wp_enqueue_style( 'rp3-style', get_stylesheet_directory_uri() . '/css/rp3.css' );
 
 	wp_enqueue_script( 'rp3-vendor', get_template_directory_uri() . '/js/rp3-vendor.min.js', array(), '20120206' );
 
@@ -81,6 +79,13 @@ function rp3_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
+
+	if ( is_page( 'contact' ) ) {
+		wp_enqueue_script( 'rp3-google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDbQMhVNXn8QRMNJoiWJeemZ63O4NN75kI');
+		wp_enqueue_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', array( 'jquery', 'rp3-google-maps' ), '20120206', true );
+	} else {
+		wp_enqueue_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', array( 'jquery' ), '20120206', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rp3_scripts' );
@@ -151,6 +156,11 @@ require get_template_directory() . '/inc/image-sizes.php';
 require get_template_directory() . '/inc/display-people.php';
 
 /**
+ * Pre-get-post filters
+ */
+require get_template_directory() . '/inc/pre-get-posts.php';
+
+/**
  * Miscellaneous
  */
 
@@ -160,3 +170,10 @@ function rp3_dequeue_plugin_css() {
 	wp_dequeue_style( 'rpbcStyle' );
 }
 add_action( 'wp_enqueue_scripts', 'rp3_dequeue_plugin_css' );
+
+
+// Add Favicon
+function rp3_favicon() {
+	echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri() . '/images/favicon.ico">';
+}
+add_action( 'wp_head', 'rp3_favicon' );

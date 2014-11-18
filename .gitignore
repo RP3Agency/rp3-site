@@ -3,5 +3,13 @@ npm-debug.log
 .vagrant
 uploads
 vendor
+!src/js/vendor
 _wp
 *.sql
+.composer
+.subversion
+.sass-cache
+.ssh
+wp-content/managewp
+wp-config.php
+wp-config-dev.php

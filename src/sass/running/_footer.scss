@@ -1,0 +1,168 @@
+.site-footer {
+	@extend %side-padding;
+	background-color: $black;
+	color: #fff;
+	font-size: cr(12px);
+	padding: {
+		top: cr(70px);
+		bottom: cr(95px);
+	}
+	position: relative;
+
+	h1 {
+		color: #888;
+		font-size: 1em;
+		font-weight: $medium;
+		text-transform: uppercase;
+	}
+
+	a {
+		color: #fff;
+		text-decoration: none;
+
+		@include hover-state {
+			text-decoration: underline;
+		}
+	}
+
+	&__logo {
+		margin-bottom: 2em;
+		margin-right: 1em;
+
+		@include breakpoint($bp-footer) {
+			float: left;
+		}
+
+		svg {
+			height: 21px;
+			width: 30px;
+		}
+
+		path {
+			fill: #fff;
+		}
+	}
+
+	&__navigation {
+		position: absolute;
+		right: percentage(90px/1600px);
+		top: cr(70px) - 1rem;
+
+		@include breakpoint($bp-footer) {
+			float: left;
+			position: static;
+		}
+
+		ul {
+			@extend %clearfix;
+			list-style: none;
+			margin: 2px 0 0;
+		}
+
+		li {
+			@include breakpoint($bp-footer) {
+				float: left;
+				padding: 0 7px;
+			}
+		}
+
+		a {
+			@extend %hover-transition;
+			display: block;
+			padding: 1em 0;
+			text-align: right;
+			text-transform: uppercase;
+
+			@include breakpoint($bp-footer) {
+				line-height: 1;
+				margin-top: cr(3px);
+				padding: 0 8px;
+			}
+
+			@include hover-state {
+				color: #888;
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__social {
+		margin: 3em 0;
+
+		@include breakpoint($bp-footer) {
+			margin: cr(-14px) 0 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		.menu-social-container {
+			text-align: center;
+		}
+
+		ul {
+			display: inline-block;
+			margin: 0;
+		}
+
+		li {
+			a {
+				@extend %hover-transition;
+				border-color: transparent;
+				color: #fff;
+				height: 40px;
+				margin: 0 4px;
+				width: 40px;
+
+				&:before {
+					line-height: 40px;
+				}
+
+				@include hover-state {
+					background-color: transparent;
+					color: #888;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	&__copyright {
+		font-size: ce(12px);
+		color: #888;
+		text-align: center;
+
+		a {
+			color: #888;
+		}
+
+		@include breakpoint($bp-footer) {
+			bottom: 0;
+			position: absolute;
+			right: 0;
+		}
+	}
+
+	&__wrapper {
+		@include breakpoint($bp-footer) {
+			position: relative;
+			@include container;
+		}
+	}
+
+	&__address,
+	&__phone {
+		margin-bottom: 1rem;
+	}
+
+	@include breakpoint($bp-footer) {
+		&__phone,
+		&__email {
+			float: left;
+		}
+
+		&__email {
+			margin-left: 2em;
+		}
+	}
+}

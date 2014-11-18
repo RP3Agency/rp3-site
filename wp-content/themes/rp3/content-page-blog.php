@@ -5,89 +5,114 @@
  * @package RP3
  */
 
-/**
- * Pull 3 most recent blog posts
- */
 $blog = new WP_Query( array(
 	'post_type'			=> 'post',
 	'category_name'		=> 'blog',
-	'posts_per_page'	=> 3,
-	'paged'				=> $paged
+	'posts_per_page'	=> 6
 ) );
-
-global $more;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="magnetisms"></div>
-
 	<div class="entry-content">
-		<?php the_content(); ?>
-	</div><!-- .entry-content -->
 
-</article><!-- #post-## -->
+		<div class="entry-content__container">
 
-<!-- Blog archive -->
+			<?php the_content(); ?>
 
-<?php if ( $blog->have_posts() ) : ?>
+		</div>
 
-<div class="blog-archive">
+	</div>
+	<!-- .entry-content -->
 
-	<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
 
-	<?php $more = 0; // Sets the posts to appear as they would on an "archive" page ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<a href="<?php the_permalink(); ?>" rel="bookmark">
+	<?php /*
+	<!-- Search form -->
+	<section class="search-form">
 
-			<?php the_post_thumbnail( 'full' ); ?>
+		<?php get_search_form( true ); ?>
 
-			<div class="entry-wrapper">
+	</section>
+	<!-- // .search-form -->
+	*/ ?>
 
-				<header class="entry-header">
-					<h1 class="entry-title"><?php the_title(); ?></h1>
 
-					<div class="entry-meta">
-						<?php echo get_the_date(); ?> by <?php coauthors(); ?>
-					</div><!-- .entry-meta -->
-				</header><!-- .entry-header -->
 
-				<div class="entry-content">
-					<?php // echo apply_filters( 'rp3_strip_anchor_filter', get_the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'rp3' ) ) ); ?>
-					<?php echo rp3_strip_anchor_filter( get_the_content( '' ) ); ?>
-					<?php
-						wp_link_pages( array(
-							'before' => '<div class="page-links">' . __( 'Pages:', 'rp3' ),
-							'after'  => '</div>',
-						) );
-					?>
-				</div><!-- .entry-content -->
+
+	<!-- Blog Posts -->
+
+	<?php if ( $blog->have_posts() ) : ?>
+
+	<section id="blog-listing" class="blog-listing">
+
+		<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
+
+			<div class="blog-listing__article">
+
+				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
+
+					<h1 class="blog-listing__headline"><?php the_title(); ?></h1>
+
+					<div class="blog-listing__byline"><?php echo rp3_byline(); ?></div>
+
+					<?php if ( '' != get_the_post_thumbnail() ) : ?>
+
+						<div class="blog__thumbnail">
+
+							<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+
+						</div>
+
+					<?php endif; ?>
+
+					<div class="blog-listing__excerpt equal-heights">
+
+						<?php the_excerpt(); ?>
+
+					</div>
+
+					<p class="link continue">Continue reading</p>
+
+				</a>
 
 			</div>
-			<!-- // .entry-wrapper -->
 
-		</a>
 
-	</article><!-- #post-## -->
+		<?php endwhile; ?>
 
-	<?php endwhile; ?>
+	</section>
+	<!-- // #blog-listing -->
 
-</div>
-<!-- // .blog-archive -->
+	<?php endif; wp_reset_query(); ?>
 
-<nav class="navigation paging-navigation" role="navigation">
-	<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'rp3' ); ?></h1>
-	<div class="nav-links">
 
-		<div class="nav-next"><?php echo get_next_posts_link( 'Older', $blog->max_num_pages ); ?></div>
+	<div class="all-news-link">
+		<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>">View All Blog Posts</a>
+	</div>
 
-		<div class="nav-prev"><?php echo get_previous_posts_link( 'Newer' ); ?></div>
 
-	</div><!-- .nav-links -->
-</nav><!-- .navigation -->
 
-<?php endif; ?>
+	<!-- Hero Image -->
+	<?php if ( '' != get_field( 'hero_image_2' ) ) :
+		echo rp3_full_bleed_hero_image( get_field( 'hero_image_2' ), array(
+			'image_size'	=> 'sub-page-hero',
+		) );
+	endif; ?>
 
-<?php wp_reset_postdata(); ?>
 
+
+	<!-- Related Content -->
+
+	<?php if ( is_active_sidebar( 'blog-archive' ) ) : ?>
+
+	<div id="blog-archive-widget-area" class="widget-area blog-archive-widget-area" role="complementary">
+
+		<?php dynamic_sidebar( 'blog-archive' ); ?>
+
+	</div>
+
+	<?php endif; ?>
+
+</article>
+<!-- #post-## -->
