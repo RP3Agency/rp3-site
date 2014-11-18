@@ -4,7 +4,7 @@ var rp3 = (function($) {
 
 	'use strict';
 
-	var
+	var lastScroll = 0,
 
 	/**
 	 * Toggle the "visibility" class of the mobile nav to trigger the CSS fade in and fade out
@@ -36,6 +36,30 @@ var rp3 = (function($) {
 			e.preventDefault();
 			hideMainNav();
 		});
+	},
+
+	/**
+	 * Apply the "fixed" class to the desktop header if the user starts to scroll back up
+	 */
+	applyFixedHeader = function() {
+		// Sets the current scroll position
+		var st = $(window).scrollTop(),
+			$body = $('body'),
+			$window = $(window);
+
+		// Determines up-or-down scrolling
+		if (st > lastScroll) {
+			$body.removeClass('fixed-nav')
+		} else {
+			$body.addClass('fixed-nav');
+		}
+
+		if ( $window.scrollTop() == 0 ) {
+			$body.removeClass('fixed-nav');
+		}
+
+		// Updates scroll position
+		lastScroll = st;
 	},
 
 
@@ -110,7 +134,8 @@ var rp3 = (function($) {
 		equalizeHeights();
 		videoToggle();
 		
-		$(window).on( 'scroll', function() {
+		$(window).scroll(function() {
+			applyFixedHeader();
 		});
 
 		$(window).on( 'resize', function() {
