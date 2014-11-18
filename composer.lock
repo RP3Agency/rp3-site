@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e995b0342201d9e3fadeb010029c8f77",
+    "hash": "64f59a8a5410d2a4850ff537dba82e5e",
     "packages": [
         {
             "name": "composer/installers",
@@ -223,15 +223,15 @@
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
-            "version": "2.1.6",
+            "version": "2.2.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/black-studio-tinymce-widget/",
-                "reference": "tags/2.1.6"
+                "reference": "tags/2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.1.6.zip",
+                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -430,15 +430,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.0.7",
+            "version": "5.1.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.0.7"
+                "reference": "tags/5.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.0.7.zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -453,15 +453,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.2",
+            "version": "3.2.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.2-beta1"
+                "reference": "tags/3.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/jetpack.3.2.zip",
+                "url": "http://downloads.wordpress.org/plugin/jetpack.3.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -522,15 +522,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.1.5",
+            "version": "2.1.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.1.5"
+                "reference": "tags/2.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.1.5.zip",
+                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.1.6.zip",
                 "reference": null,
                 "shasum": null
             },
