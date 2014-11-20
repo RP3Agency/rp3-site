@@ -223,15 +223,15 @@
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/black-studio-tinymce-widget/",
-                "reference": "tags/2.2.0"
+                "reference": "tags/2.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.0.zip",
+                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -430,15 +430,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.1.1",
+            "version": "5.1.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.1.1"
+                "reference": "tags/5.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.1.1.zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -568,15 +568,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.3.10",
+            "version": "2.3.11",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.3.10"
+                "reference": "tags/2.3.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.10.zip",
+                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.11.zip",
                 "reference": null,
                 "shasum": null
             },
