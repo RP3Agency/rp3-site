@@ -8,3 +8,5 @@ plugins/*
 !plugins/wp-migrate-db-pro-cli/
 debug.log
 xhc-xmt
+uploads/*
+themes/*
