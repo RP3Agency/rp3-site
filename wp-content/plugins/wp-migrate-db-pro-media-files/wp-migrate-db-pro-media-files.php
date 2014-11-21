@@ -4,7 +4,7 @@ Plugin Name: WP Migrate DB Pro Media Files
 Plugin URI: http://deliciousbrains.com/wp-migrate-db-pro/
 Description: An extension to WP Migrate DB Pro, allows the migration of media files.
 Author: Delicious Brains
-Version: 1.1.5
+Version: 1.2
 Author URI: http://deliciousbrains.com
 Network: True
 */
@@ -44,9 +44,10 @@ function wp_migrate_db_pro_media_files() {
 		return $wpmdbpro_media_files;
 	}
 
-	if ( function_exists( 'wp_migrate_db_pro' ) ) {
-		wp_migrate_db_pro();
-	} else {
+	// Allows hooks to bypass the regular admin / ajax checks to force load the Media Files addon (required for the CLI addon)
+	$force_load = apply_filters( 'wp_migrate_db_pro_media_files_force_load', false );
+
+	if ( false === $force_load && ( ! function_exists( 'wp_migrate_db_pro_loaded' ) || ! wp_migrate_db_pro_loaded() ) ) {
 		return false;
 	}
 
@@ -66,6 +67,9 @@ add_action( 'plugins_loaded', 'wp_migrate_db_pro_media_files', 20 );
  * Loads up an instance of the WPMDBPro_Media_Files class, allowing media files to be migrated during CLI migrations.
  */
 function wp_migrate_db_pro_media_files_before_cli_load() {
+	// Force load the Media Files addon
+	add_filter( 'wp_migrate_db_pro_media_files_force_load', '__return_true' );
+
 	wp_migrate_db_pro_media_files();
 }
 add_action( 'wp_migrate_db_pro_cli_before_load', 'wp_migrate_db_pro_media_files_before_cli_load' );

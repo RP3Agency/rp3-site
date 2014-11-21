@@ -7,7 +7,7 @@ class WPMDBPro_CLI extends WPMDBPro_Addon {
 		$this->plugin_slug = 'wp-migrate-db-pro-cli';
 		$this->plugin_version = $GLOBALS['wpmdb_meta']['wp-migrate-db-pro-cli']['version'];
 
-		if( ! $this->meets_version_requirements( '1.4.2' ) ) {
+		if( ! $this->meets_version_requirements( '1.4.4' ) ) {
 			return;
 		}
 	}
@@ -15,7 +15,7 @@ class WPMDBPro_CLI extends WPMDBPro_Addon {
 	function cli_migration( $profile ) {
 		global $wpmdbpro;
 
-		$wpmdb_settings = get_option( 'wpmdb_settings' );
+		$wpmdb_settings = get_site_option( 'wpmdb_settings' );
 		--$profile;
 
 		if( ! $this->meets_version_requirements( '1.4.2' ) ) {
@@ -69,23 +69,31 @@ class WPMDBPro_CLI extends WPMDBPro_Addon {
 
 		// determine which tables to backup (if required)
 		$tables_to_backup = array();
-		if( 'backup' == $_POST['stage'] ) {
-			if( 'push' == $profile['action'] ) {
-				if( 'backup_only_with_prefix' == $profile['backup_option'] ) {
-					$tables_to_backup = $verify_connection_response['prefixed_tables'];
-				} elseif( 'backup_selected' == $profile['backup_option'] ) {
-					$tables_to_backup = array_intersect( $profile['select_backup'], $verify_connection_response['tables'] );
-				} elseif( 'backup_manual_select' == $profile['backup_option'] ) {
-					$tables_to_backup = array_intersect( $profile['select_backup'], $verify_connection_response['tables'] );
-				}
-			} else {
-				if( 'backup_only_with_prefix' == $profile['backup_option'] ) {
-					$tables_to_backup = $this->get_tables( 'prefix' );
-				} elseif( 'backup_selected' == $profile['backup_option'] ) {
-					$tables_to_backup = array_intersect( $profile['select_backup'], $this->get_tables() );
-				} elseif( 'backup_manual_select' == $profile['backup_option'] ) {
-					$tables_to_backup = array_intersect( $profile['select_backup'], $this->get_tables() );
-				}
+		if ( 'push' === $profile['action'] ) {
+			$all_tables      = $verify_connection_response['tables'];
+			$prefixed_tables = $verify_connection_response['prefixed_tables'];
+		} else {
+			$all_tables      = $this->get_tables();
+			$prefixed_tables = $this->get_tables( 'prefixed' );
+		}
+		if ( 'backup' == $_POST['stage'] ) {
+			$select_tables = ! empty( $profile['select_tables'] ) ? $profile['select_tables'] : array();
+			$select_backup = ! empty( $profile['select_backup'] ) ? $profile['select_backup'] : array();
+
+			switch ( $profile['backup_option'] ) {
+				case 'backup_only_with_prefix':
+					$tables_to_backup = $prefixed_tables;
+					break;
+				case 'backup_selected':
+					if ( 'migrate_only_with_prefix' ===  $profile['table_migrate_option'] ) {
+						$tables_to_backup = $prefixed_tables;
+					} else {
+						$tables_to_backup = array_intersect( $select_tables, $all_tables );
+					}
+					break;
+				case 'backup_manual_select':
+					$tables_to_backup = array_intersect( $select_backup, $all_tables );
+					break;
 			}
 		}
 		$tables_to_backup = apply_filters( 'wpmdb_cli_tables_to_backup', $tables_to_backup, $profile, $verify_connection_response, $initiate_migration_response );
@@ -111,6 +119,9 @@ class WPMDBPro_CLI extends WPMDBPro_Addon {
 		$_POST['gzip'] = ( '1' == $verify_connection_response['gzip'] ) ? 1 : 0;
 		$_POST['bottleneck'] = $verify_connection_response['bottleneck'];
 		$_POST['prefix'] = $verify_connection_response['prefix'];
+		$_POST['db_version'] = $initiate_migration_response['db_version'];
+		$_POST['site_url'] = $initiate_migration_response['site_url'];
+		$_POST['find_replace_pairs'] = $initiate_migration_response['find_replace_pairs'];
 
 		$tables_to_process = ( 'backup' == $_POST['stage'] ) ? $tables_to_backup : $tables_to_migrate;
 		$stage_interator = ( 'backup' == $_POST['stage'] ) ? 1 : 2;

@@ -6,7 +6,7 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'blog' ); ?>>
 
-	<a href="<?php echo esc_url( home_url( '/news-views/' ) ); ?>" class="blog__back">Back to Articles</a>
+	<a href="<?php echo esc_url( home_url( 'category/news' ) ); ?>" class="blog__back">Back to Articles</a>
 
 	<!-- Article Header -->
 

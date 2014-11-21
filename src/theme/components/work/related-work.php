@@ -1,11 +1,3 @@
-<?php
-// Get the list of related tags in an array
-$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
-foreach ( $terms as $term ) {
-	$work_tags[] = $term->name;
-}
-?>
-
 <?php $related_work = get_field( 'related_work' ); ?>
 
 <?php if ( $related_work ) : ?>
@@ -17,12 +9,6 @@ foreach ( $terms as $term ) {
 			<div class="related-work__header">
 
 				<h2>Related<br>Work</h2>
-
-				<div class="related-work__taxonomy">
-
-					<?php echo join( ', ', $work_tags ); ?>
-
-				</div>
 
 			</div>
 			<!-- // related-work header -->
