@@ -6,11 +6,11 @@ foreach ( $terms as $term ) {
 }
 ?>
 
-<section class="work-content">
+<section class="work-main-content">
 
-	<div class="work-content__container">
+	<div class="work-main-content__container work-content__container">
 
-		<div class="work-content__container--left">
+		<div class="work-main-content__container__inner work-content__container--left">
 
 			<?php the_field( 'main_copy' ); ?>
 
@@ -30,11 +30,22 @@ foreach ( $terms as $term ) {
 
 	<?php if ( '' != get_field( 'main_copy_counter_image' ) ) : ?>
 
-	<div class="work__main-counter-image work-main-copy__main-counter-image">
+	<div class="work-main-content__image work-main-copy__main-counter-image">
 
-		<img src="<?php echo esc_url( wp_get_attachment_url( get_field( 'main_copy_counter_image' ) ) ); ?>">
+		<div class="work-main-content__image__container">
+
+			<div class="work-main-content__image__container__inner">
+
+				<?php echo rp3_picture_element( get_field( 'main_copy_counter_image' ), 'main-copy-counter-image' ); ?>
+
+			</div>
+			<!-- // work main content image container inner -->
+
+		</div>
+		<!-- // work main content image container -->
 
 	</div>
+	<!-- // work main content image -->
 
 	<?php endif; ?>
 

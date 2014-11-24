@@ -87,10 +87,15 @@ function rp3_image_sizes() {
 	) );
 
 	rp3_add_image_size( 'interstitial', array(
-		// 'small'			=> array( 320, 128, true ),
 		'small'			=> array( 600, 240, true ),
 		'medium'		=> array( 1600, 640, true ),
 		'large'			=> array( 1600, 640, true )
+	) );
+
+	rp3_add_image_size( 'main-copy-counter-image', array(
+		'small'			=> array( 320, 180, true ),
+		'medium'		=> array( 600, 338, true ),
+		'large'			=> array( 800, 450, true )
 	) );
 
 	// Related Work
