@@ -27,11 +27,13 @@
 
 		<article>
 
+			<?php /*
 			<?php if ( '' != get_the_post_thumbnail() ) : ?>
 				<div class="blog__thumbnail">
 					<?php the_post_thumbnail(); ?>
 				</div>
 			<?php endif; ?>
+			*/ ?>
 
 
 			<div class="blog__entry-content entry-content">
