@@ -8,30 +8,30 @@ foreach ( $terms as $term ) {
 
 <?php if ( ( '' != get_field( 'results_copy' ) ) && ( have_rows( 'results_images' ) ) ) : ?>
 
-	<section class="work-content">
+	<section class="case-study-content">
 
-		<div class="work-content__container">
+		<div class="case-study-content__container">
 
-			<div class="work-content__container--left">
+			<div class="case-study-content__container--left">
 
-				<h2 class="work-content__subheader">Results:</h2>
+				<h2 class="case-study-content__subheader">Results:</h2>
 
 				<?php the_field( 'results_copy' ); ?>
 
 			</div>
-			<!-- // work-content container left -->
+			<!-- // case-study-content container left -->
 
-			<div class="work-content__container--right">
+			<div class="case-study-content__container--right">
 
-				<h2 class="work-content__subheader">Related Tags:</h2>
+				<h2 class="case-study-content__subheader">Related Tags:</h2>
 
 				<?php echo join( ', ', $work_tags ); ?>
 
 			</div>
-			<!-- // work-content container right -->
+			<!-- // case-study-content container right -->
 
 		</div>
-		<!-- // work-content container -->
+		<!-- // case-study-content container -->
 
 		<?php if ( have_rows( 'results_images' ) ) : ?>
 
@@ -40,6 +40,6 @@ foreach ( $terms as $term ) {
 		<?php endif; ?>
 
 	</section>
-	<!-- work-content -->
+	<!-- case-study-content -->
 
 <?php endif; ?>

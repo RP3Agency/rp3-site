@@ -1,41 +1,46 @@
-// .work-content {
+.case-study-content {
 
-// 	&__container {
-// 		@extend %side-padding;
-// 		margin-bottom: 7rem;
-// 		margin-top: 8rem;
-// 		@include container;
+	&__container {
+		@extend %side-padding;
+		margin-bottom: 7rem;
+		margin-top: 8rem;
+		@include container;
 
-// 		@include breakpoint($bp-medium) {
-// 			float: left;
-// 			margin-bottom: 11rem;
-// 			width: 50%;
-// 		}
+		@include breakpoint($bp-medium) {
+			float: left;
+			margin-bottom: 11rem;
+			// width: 50%;
+		}
 
-// 		&--left {
-// 			margin-bottom: 4rem;
+		&--left {
+			margin-bottom: 4rem;
 
-// 			@include breakpoint($bp-medium) {
-// 				margin-bottom: 0;
-// 				@include span(9);
-// 			}
-// 		}
+			@include breakpoint($bp-medium) {
+				margin-bottom: 0;
+				@include span(9);
+			}
+		}
 
-// 		&--right {
-// 			margin-bottom: 4rem;
+		&--right {
+			margin-bottom: 4rem;
 
-// 			@include breakpoint($bp-medium) {
-// 				margin-bottom: 0;
-// 				@include span(9);
-// 				@include push(3);
-// 			}
-// 		}
-// 	}
+			@include breakpoint($bp-medium) {
+				margin-bottom: 0;
+				@include span(9);
+				@include push(3);
+			}
+		}
+	}
 
-// 	&__subheader {
-// 		margin-bottom: 2.5rem;
-// 	}
-// }
+	&__subheader {
+		margin-bottom: 2.5rem;
+	}
+}
+
+.case-study-hero-image,
+.case-study-hero-image-tall {
+	clear: both;
+}
 
 
 .work-main-content {
