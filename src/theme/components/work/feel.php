@@ -1,20 +1,20 @@
 <?php if ( '' != get_field( 'feel_copy' ) ) : ?>
 
-	<section class="work-content">
+	<section class="case-study-content">
 
-		<div class="work-content__container">
+		<div class="case-study-content__container">
 
-			<div class="work-content__container--left">
+			<div class="case-study-content__container--left">
 
-				<h2 class="work-content__subheader">Feel:</h2>
+				<h2 class="case-study-content__subheader">Feel:</h2>
 
 				<?php the_field( 'feel_copy' ); ?>
 
 			</div>
-			<!-- // .work-content container left -->
+			<!-- // .case-study-content container left -->
 
 		</div>
-		<!-- // .work-content container -->
+		<!-- // .case-study-content container -->
 
 		<?php rp3_case_study_hero_images( 'feel_images', 'feel_image', true ); ?>
 
