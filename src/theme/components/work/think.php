@@ -1,20 +1,20 @@
 <?php if ( '' != get_field( 'think_copy' ) ) : ?>
 
-	<section class="work-content">
+	<section class="case-study-content">
 
-		<div class="work-content__container">
+		<div class="case-study-content__container">
 
-			<div class="work-content__container--left">
+			<div class="case-study-content__container--left">
 
-				<h2 class="work-content__subheader">Think:</h2>
+				<h2 class="case-study-content__subheader">Think:</h2>
 
 				<?php the_field( 'think_copy' ); ?>
 
 			</div>
-			<!-- // .work-content container left -->
+			<!-- // .case-study-content container left -->
 
 		</div>
-		<!-- // .work-content container -->
+		<!-- // .case-study-content container -->
 
 		<?php if ( ( 'true' == get_field( 'case_study' ) ) && ( '' != get_field( 'video' ) ) ) : ?>
 
@@ -41,6 +41,6 @@
 		<?php endif; ?>
 
 	</section>
-	<!-- // .work-content -->
+	<!-- // .case-study-content -->
 
 <?php endif; ?>
