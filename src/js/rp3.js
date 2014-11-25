@@ -135,10 +135,30 @@ var rp3 = (function($) {
 		}
 	},
 
+
+	/**
+	 * Raptor Jim
+	 */
+	raptorJim = function() {
+		var $body = $('body');
+
+		if ( $body.hasClass('error404') ) {
+			$body.raptorize({
+				'enterOn': 'konami-code'
+			});
+
+			$('#rp404').raptorize({
+				"enterOn" : "timer",
+				"delayTime": 300000
+			});
+		}
+	},
+
 	init = function() {
 		toggleNavigation();
 		equalizeHeights();
 		videoToggle();
+		raptorJim();
 		
 		$(window).scroll(function() {
 			applyFixedHeader();
