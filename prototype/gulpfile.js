@@ -7,8 +7,7 @@ var gulp = require( 'gulp' ),
 	uglify = require( 'gulp-uglify' ),
 	rename = require( 'gulp-rename' ),
 	clean = require( 'gulp-clean' ),
-	concat = require( 'gulp-concat' ),
-	notify = require( 'gulp-notify' );
+	concat = require( 'gulp-concat' );
 
 // Sass & CSS processing
 gulp.task( 'styles', function() {
