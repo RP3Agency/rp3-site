@@ -19,7 +19,6 @@ var gulp			= require('gulp'),
 	del				= require('del'),
 
 	// Notifications and error handling
-	notify			= require('gulp-notify'),
 	gutil			= require('gulp-util');
 
 /**
