@@ -23,7 +23,7 @@ foreach ( $terms as $term ) {
 
 			<div class="case-study-content__container--right">
 
-				<h2 class="case-study-content__subheader">Related Tags:</h2>
+				<h2 class="case-study-content__subheader related-tags">&nbsp;</h2>
 
 				<?php echo join( ', ', $work_tags ); ?>
 

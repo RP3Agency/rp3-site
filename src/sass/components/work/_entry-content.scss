@@ -34,6 +34,14 @@
 
 	&__subheader {
 		margin-bottom: 2.5rem;
+
+		&.related-tags {
+			display: none;
+
+			@include breakpoint($bp-medium) {
+				display: block;
+			}
+		}
 	}
 }
 
