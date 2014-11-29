@@ -1,5 +1,6 @@
 {
   "undef": true,
   "unused": true,
-  "predef": [ "MY_GLOBAL" ]
+  "predef": [ "MY_GLOBAL" ],
+  "browser": true
 }
