@@ -120,6 +120,7 @@
 
 	&__back {
 		@extend %back;
+		display: inline-block;;
 		padding: 0;
 	}
 
