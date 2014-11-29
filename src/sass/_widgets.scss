@@ -57,22 +57,25 @@
 /**
  * Latest Tweets Widget
  */
-.widget_latest_tweets_widget {
+.widget_reallysimpletwitterwidget {
 	ul {
 		@extend %clear-ul-formatting;
-
-		li {
-			background-color: $gray-light;
-			border-style: solid;
-			border-width: 8px 8px 8px 9px;
-			border-image: url("../images/tweet-border.gif") 14 25 16 17 repeat;
-			margin-bottom: 1em;
-			padding: 5px;
-		}
 	}
 
 	p {
 		margin: 0;
+	}
+
+	a {
+		color: #fff;
+	}
+
+	.rstw_comma {
+		display: none;
+	}
+
+	.twitter-timestamp {
+		display: block;
 	}
 }
 
