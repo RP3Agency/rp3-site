@@ -31,13 +31,9 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 
 		<div class="home-errata__twitter home-errata__block">
 
-			<a href="https://twitter.com/rp3agency" class="block">
+			<div class="home-errata__subhead"><a href="https://twitter.com/RP3Agency">@RP3Agency</a></div>
 
-				<div class="home-errata__subhead">Twitter</div>
-
-				<?php dynamic_sidebar( 'home-errata__twitter-widget' ); ?>
-
-			</a>
+			<?php dynamic_sidebar( 'home-errata__twitter-widget' ); ?>
 
 		</div>
 
