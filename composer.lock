@@ -433,15 +433,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.1.3",
+            "version": "5.1.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.1.3"
+                "reference": "tags/5.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.1.3.zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.1.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -502,15 +502,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.1.6",
+            "version": "2.1.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.1.6"
+                "reference": "tags/2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.1.6.zip",
+                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.1.7.zip",
                 "reference": null,
                 "shasum": null
             },
