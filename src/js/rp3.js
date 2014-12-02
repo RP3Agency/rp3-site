@@ -10,8 +10,7 @@ var rp3 = (function($) {
 	 * Toggle the "visibility" class of the mobile nav to trigger the CSS fade in and fade out
 	 */
 	showMainNav = function() {
-		var $mobileNav = $('#mobile-nav'),
-			$menuClose = $("#menu-close");
+		var $mobileNav = $('#mobile-nav');
 		$mobileNav.addClass('visible');
 	},
 	hideMainNav = function() {
@@ -59,7 +58,7 @@ var rp3 = (function($) {
 				$body.addClass('fixed-nav');
 			}
 
-			if ( $window.scrollTop() == 0 ) {
+			if ( $window.scrollTop() === 0 ) {
 				$body.removeClass('fixed-nav');
 			}
 		}
@@ -105,29 +104,11 @@ var rp3 = (function($) {
 		}
 	},
 
-	videoPause = function(player, url, action, value) {
-		var data = {
-			method: action
-		};
-
-		if (value) {
-			data.value = value;
-		}
-
-		var message = JSON.stringify(data);
-		player[0].contentWindow.postMessage(data, url);
-	},
 	videoToggle = function() {
 		var $videoModal = $('#video__modal'),
 			$videoTrigger = $('#video__trigger');
 
 		if ( 0 < $videoModal.length ) {
-
-			// Vimeo API
-			var player = $('iframe');
-
-			var url = window.location.protocol + player.attr('src').split('?')[0];
-
 			$videoTrigger.on( 'click', function(e) {
 				e.preventDefault();
 				$videoModal.addClass('visible');

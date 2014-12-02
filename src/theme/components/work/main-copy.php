@@ -16,7 +16,7 @@ foreach ( $terms as $term ) {
 
 			<?php if ( count( $work_tags ) > 0 ) : ?>
 
-				<h2 class="work-content__subheader">Related Tags:</h2>
+				<h2 class="work-content__subheader related-tags">&nbsp;</h2>
 
 				<?php echo join( ', ', $work_tags ); ?>
 

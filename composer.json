@@ -38,10 +38,10 @@
     "wpackagist-plugin/fv-top-level-cats":"*",
     "wpackagist-plugin/google-analytics-for-wordpress":"*",
     "wpackagist-plugin/jetpack":"*",
-    "wpackagist-plugin/latest-tweets-widget":"*",
     "wpackagist-plugin/list-category-posts":"*",
     "wpackagist-plugin/mailchimp-for-wp":"*",
     "wpackagist-plugin/markdown-on-save":"*",
+    "wpackagist-plugin/really-simple-twitter-feed-widget":"*",
     "wpackagist-plugin/regenerate-thumbnails":"*",
     "wpackagist-plugin/redirection":"*",
     "wpackagist-plugin/show-template":"*",
@@ -53,8 +53,7 @@
     "wpackagist-plugin/worker":"*",
     "wpackagist-plugin/wp-maintenance-mode":"*",
     "wpackagist-plugin/wp-siren-recent-posts-by-category":"*",
-    "wpackagist-plugin/wpclef":"*",
-    "wpackagist-plugin/xhanch-my-twitter":"*"
+    "wpackagist-plugin/wpclef":"*"
   },
   "extra": {
     "webroot-dir": "_wp",

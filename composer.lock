@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "280d5a850a402340a6748bb1bffedd4c",
+    "hash": "1cdc65b1e03b7809156c87567a67be53",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.18",
+            "version": "v1.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "74fb0a7a1a23696d9c8cc2fba5903f6711cdd067"
+                "reference": "89d77bfbee79e16653f7162c86e602cc188471db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/74fb0a7a1a23696d9c8cc2fba5903f6711cdd067",
-                "reference": "74fb0a7a1a23696d9c8cc2fba5903f6711cdd067",
+                "url": "https://api.github.com/repos/composer/installers/zipball/89d77bfbee79e16653f7162c86e602cc188471db",
+                "reference": "89d77bfbee79e16653f7162c86e602cc188471db",
                 "shasum": ""
             },
             "replace": {
@@ -59,6 +59,7 @@
                 "Hurad",
                 "MODX Evo",
                 "OXID",
+                "Thelia",
                 "WolfCMS",
                 "agl",
                 "annotatecms",
@@ -68,9 +69,11 @@
                 "codeigniter",
                 "concrete5",
                 "croogo",
+                "dokuwiki",
                 "drupal",
                 "elgg",
                 "fuelphp",
+                "grav",
                 "installer",
                 "joomla",
                 "kohana",
@@ -94,7 +97,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-08-18 20:00:12"
+            "time": "2014-11-29 01:29:17"
         },
         {
             "name": "fancyguy/webroot-installer",
@@ -430,15 +433,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.1.2",
+            "version": "5.1.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.1.2"
+                "reference": "tags/5.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.1.2.zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.1.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -473,29 +476,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/jetpack/"
-        },
-        {
-            "name": "wpackagist-plugin/latest-tweets-widget",
-            "version": "1.1.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/latest-tweets-widget/",
-                "reference": "tags/1.1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/latest-tweets-widget.1.1.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "replace": {
-                "wpackagist/latest-tweets-widget": "self.version"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/latest-tweets-widget/"
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
@@ -565,6 +545,29 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/markdown-on-save/"
+        },
+        {
+            "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
+            "version": "2.5.11",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/really-simple-twitter-feed-widget/",
+                "reference": "tags/2.5.11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.2.5.11.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/really-simple-twitter-feed-widget": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/really-simple-twitter-feed-widget/"
         },
         {
             "name": "wpackagist-plugin/redirection",
@@ -841,29 +844,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/wpclef/"
-        },
-        {
-            "name": "wpackagist-plugin/xhanch-my-twitter",
-            "version": "2.7.8",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/xhanch-my-twitter/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/xhanch-my-twitter.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "replace": {
-                "wpackagist/xhanch-my-twitter": "self.version"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/xhanch-my-twitter/"
         }
     ],
     "packages-dev": [],
