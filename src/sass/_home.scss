@@ -90,6 +90,7 @@ body.home {
 	.hero {
 		height: cr(400px);
 		margin-bottom: 0;
+		margin-top: -1px;
 
 		@include breakpoint($bp-small) {
 			height: cr(600px);
@@ -130,12 +131,15 @@ body.home {
 
 .home-errata {
 	@extend %side-padding;
+	background-color: #fff;
 	font-size: cr(12px);
 	margin: {
 		left: auto;
 		right: auto;
+		top: -1px;
 	}
 	max-width: $container-width;
+	position: relative;
 
 	@include breakpoint($bp-medium) {
 		font-size: cr(14px);

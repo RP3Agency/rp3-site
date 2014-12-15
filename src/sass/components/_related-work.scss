@@ -5,10 +5,12 @@
 	background-color: $blue;
 	clear: both;
 	color: #fff;
+	margin-top: -1px;
 	padding: {
 		top: cr(75px);
 		bottom: cr(75px);
 	}
+	position: relative;
 
 	@include breakpoint($bp-marge) {
 		// flexbox

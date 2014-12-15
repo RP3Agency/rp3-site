@@ -6,6 +6,11 @@
 		right: auto;
 	}
 	max-width: $container-width;
+
+	/** Thin white line hack */
+	background-color: #fff;
+	margin-top: -1px;
+	position: relative;
 }
 
 .work {
