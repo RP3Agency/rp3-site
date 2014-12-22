@@ -289,26 +289,23 @@
         },
         {
             "name": "wpackagist-plugin/custom-menu-wizard",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/custom-menu-wizard/",
-                "reference": "tags/3.1.2"
+                "reference": "tags/3.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.2.zip",
+                "url": "http://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.3.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/custom-menu-wizard": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/custom-menu-wizard/"
+            "homepage": "https://wordpress.org/plugins/custom-menu-wizard/"
         },
         {
             "name": "wpackagist-plugin/custom-tag-widget",
@@ -427,15 +424,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.2.3",
+            "version": "5.2.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.2.3"
+                "reference": "tags/5.2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.2.3.zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.2.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -443,7 +440,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/google-analytics-for-wordpress/"
+            "homepage": "https://wordpress.org/plugins/google-analytics-for-wordpress/"
         },
         {
             "name": "wpackagist-plugin/jetpack",
@@ -533,15 +530,15 @@
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
-            "version": "2.5.13",
+            "version": "2.5.14",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/really-simple-twitter-feed-widget/",
-                "reference": "tags/2.5.13"
+                "reference": "tags/2.5.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.2.5.13.zip",
+                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.2.5.14.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -549,7 +546,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/really-simple-twitter-feed-widget/"
+            "homepage": "https://wordpress.org/plugins/really-simple-twitter-feed-widget/"
         },
         {
             "name": "wpackagist-plugin/redirection",
@@ -806,26 +803,23 @@
         },
         {
             "name": "wpackagist-plugin/wpclef",
-            "version": "2.2.8",
+            "version": "2.2.9.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wpclef/",
-                "reference": "tags/2.2.8"
+                "reference": "tags/2.2.9.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wpclef.2.2.8.zip",
+                "url": "http://downloads.wordpress.org/plugin/wpclef.2.2.9.1.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/wpclef": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/wpclef/"
+            "homepage": "https://wordpress.org/plugins/wpclef/"
         }
     ],
     "packages-dev": [],
@@ -833,6 +827,7 @@
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.0"
     },
