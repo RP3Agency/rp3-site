@@ -2,5 +2,8 @@
   "undef": true,
   "unused": true,
   "predef": [ "MY_GLOBAL" ],
-  "browser": true
+  "browser": true,
+  "globals": {
+    "ScrollIntent": true
+  }
 }
