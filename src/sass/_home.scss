@@ -84,13 +84,39 @@ body.home {
 }
 
 .home-work {
-	@extend %side-padding;
-	@include container;
+	margin: {
+		left: percentage(90px/1600px);
+		right: percentage(90px/1600px);
+	}
+
+	// Scrolling experiment
+	height: cr(600px);
+	position: relative;
 
 	.hero {
 		height: cr(400px);
 		margin-bottom: 0;
 		margin-top: -1px;
+
+		// Scrolling experiment
+		@include breakpoint($bp-medium) {
+			display: none;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 200vh;
+			transition: top 300ms ease, opacity 300ms ease 150ms;
+			width: 100%;
+
+			&:first-child {
+				display: block;
+			}
+
+			&.active {
+				opacity: 1;
+				top: 0;
+			}
+		}
 
 		@include breakpoint($bp-small) {
 			height: cr(600px);
@@ -130,12 +156,11 @@ body.home {
 
 
 .home-errata {
-	@extend %side-padding;
 	background-color: #fff;
 	font-size: cr(12px);
 	margin: {
-		left: auto;
-		right: auto;
+		left: percentage(90px/1600px);
+		right: percentage(90px/1600px);
 		top: -1px;
 	}
 	max-width: $container-width;
