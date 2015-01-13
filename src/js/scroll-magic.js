@@ -1,4 +1,8 @@
-jQuery(document).ready( function($) {
+if ( rp3 === undefined ) { var rp3 = {}; }
+
+rp3.scrollMagic = (function($) {
+
+	'use strict';
 
 	// Get the viewport height so we can set our offset to 50%
 	var height = $(window).outerHeight();
@@ -12,33 +16,49 @@ jQuery(document).ready( function($) {
 	});
 
 	// build scenes
-	var $hero = $('#home-work .hero');
+	var $homeWork		= $('#home-work'),
+		$hero			= $homeWork.find('.hero'),
 
-	if ( $hero.length > 0 ) {
-		$hero.each( function(i) {
+	// This is where the scrollMagic happens :-)
+	scrollMagic = function() {
+		if ( $hero.length > 0 ) {
+			$hero.each( function(i) {
 
-			var j = i + 1;
+				var j				= i + 1,
+					triggerEl		= '.home-work-trigger-' + j,
+					targetEl		= '#home-work .hero-' + j,
+					targetClass		= 'active active-' + j;
 
-			var targetEl		= '#home-work .hero:nth-child(' + j + ')',
-				targetClass		= 'active active-' + j;
+				new ScrollScene({
+					triggerElement:		triggerEl,
+					reverse:			false
+				})
+				.setClassToggle( targetEl, targetClass )
+				.addTo( controller );
+			});
 
-			new ScrollScene({
-				triggerElement:		"#home-work",
-				reverse:			false
-			})
-			.setClassToggle( targetEl, targetClass )
-			.addTo( controller );
-		});
+			// Make sure our container has the proper height
+			$homeWork.height( 600 * $hero.length - $hero.length );
+		}
+	},
 
-		// Make sure our container has the proper height
-		$("#home-work").height( 600 * $hero.length - $hero.length );
-	}
+	init = function() {
+		scrollMagic();
 
-	// new ScrollScene({
-	// 		triggerElement: "#home-work .hero",
-	// 		reverse: false
-	// 	})
-	// 	.setClassToggle( "#home-work .hero", "active" )
-	// 	.addTo( controller );
+		// $(window).scroll(function() {
+		// });
+
+		// $(window).on( 'resize', function() {
+		// });
+	};
+
+	return {
+		init:init
+	};
 
 }(jQuery));
+
+(function() {
+	'use strict';
+	rp3.scrollMagic.init();
+}());
