@@ -88,9 +88,6 @@ body.home {
 		left: percentage(90px/1600px);
 		right: percentage(90px/1600px);
 	}
-
-	// Scrolling experiment
-	// height: cr(600px);
 	position: relative;
 
 	.hero {
@@ -98,7 +95,6 @@ body.home {
 		margin-bottom: 0;
 		margin-top: -1px;
 
-		// Scrolling experiment
 		@include breakpoint($bp-medium) {
 			left: 0;
 			opacity: 0;
@@ -124,6 +120,18 @@ body.home {
 
 		@include breakpoint(1600px) {
 			height: auto;
+		}
+	}
+
+	.home-work-trigger {
+		@include breakpoint($bp-medium) {
+			position: absolute;
+
+			@for $i from 1 through 10 {
+				&.home-work-trigger-#{$i} {
+					top: cr(600px * ( $i - 1 ) );
+				}
+			}
 		}
 	}
 
