@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1cdc65b1e03b7809156c87567a67be53",
+    "hash": "5657ebb538295b152a54aab5f9118379",
     "packages": [
         {
             "name": "composer/installers",
@@ -143,10 +143,10 @@
         },
         {
             "name": "wordpress",
-            "version": "4.0.1",
+            "version": "4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.0.1.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -223,26 +223,23 @@
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/black-studio-tinymce-widget/",
-                "reference": "tags/2.2.1"
+                "reference": "tags/2.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.1.zip",
+                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/black-studio-tinymce-widget": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/black-studio-tinymce-widget/"
+            "homepage": "https://wordpress.org/plugins/black-studio-tinymce-widget/"
         },
         {
             "name": "wpackagist-plugin/co-authors-plus",
@@ -424,15 +421,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.2.7",
+            "version": "5.2.8",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.2.7"
+                "reference": "tags/5.2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.2.7.zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.2.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -487,15 +484,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.2",
+            "version": "2.2.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.2"
+                "reference": "tags/2.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.zip",
+                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -503,7 +500,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/mailchimp-for-wp/"
+            "homepage": "https://wordpress.org/plugins/mailchimp-for-wp/"
         },
         {
             "name": "wpackagist-plugin/markdown-on-save",
@@ -550,26 +547,23 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.3.11",
+            "version": "2.3.12",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.3.11"
+                "reference": "tags/2.3.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.11.zip",
+                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.12.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/redirection": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/redirection/"
+            "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
@@ -665,26 +659,23 @@
         },
         {
             "name": "wpackagist-plugin/theme-check",
-            "version": "20140929.1",
+            "version": "20141222.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/theme-check/",
-                "reference": "tags/20140929.1"
+                "reference": "tags/20141222.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/theme-check.20140929.1.zip",
+                "url": "http://downloads.wordpress.org/plugin/theme-check.20141222.1.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/theme-check": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/theme-check/"
+            "homepage": "https://wordpress.org/plugins/theme-check/"
         },
         {
             "name": "wpackagist-plugin/widget-logic",
