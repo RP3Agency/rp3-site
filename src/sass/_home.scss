@@ -84,13 +84,35 @@ body.home {
 }
 
 .home-work {
-	@extend %side-padding;
-	@include container;
+	margin: {
+		left: percentage(90px/1600px);
+		right: percentage(90px/1600px);
+	}
+	position: relative;
 
 	.hero {
 		height: cr(400px);
 		margin-bottom: 0;
 		margin-top: -1px;
+
+		@include breakpoint($bp-medium) {
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 100%;
+			transition: top 1s ease, opacity 1s ease 500ms;
+			width: 100%;
+
+			&.active {
+				opacity: 1;
+
+				@for $i from 1 through 10 {
+					&.active-#{$i} {
+						top: cr(600px * ( $i - 1 ) - 1px );
+					}
+				}
+			}
+		}
 
 		@include breakpoint($bp-small) {
 			height: cr(600px);
@@ -98,6 +120,18 @@ body.home {
 
 		@include breakpoint(1600px) {
 			height: auto;
+		}
+	}
+
+	.home-work-trigger {
+		@include breakpoint($bp-medium) {
+			position: absolute;
+
+			@for $i from 1 through 10 {
+				&.home-work-trigger-#{$i} {
+					top: cr(600px * ( $i - 1 ) );
+				}
+			}
 		}
 	}
 
@@ -130,12 +164,11 @@ body.home {
 
 
 .home-errata {
-	@extend %side-padding;
 	background-color: #fff;
 	font-size: cr(12px);
 	margin: {
-		left: auto;
-		right: auto;
+		left: percentage(90px/1600px);
+		right: percentage(90px/1600px);
 		top: -1px;
 	}
 	max-width: $container-width;
