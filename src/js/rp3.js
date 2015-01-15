@@ -2,7 +2,7 @@ var rp3 = (function($) {
 
 	'use strict';
 
-	var lastScroll = 0,
+	var // lastScroll = 0,
 
 	/**
 	 * Toggle the "visibility" class of the mobile nav to trigger the CSS fade in and fade out
@@ -40,29 +40,43 @@ var rp3 = (function($) {
 	 */
 	applyFixedHeader = function() {
 		// Sets the current scroll position
-		var scrollTop = $(window).scrollTop(),
-			$body = $('body'),
-			$window = $(window);
+		// var scrollTop = $(window).scrollTop(),
+		// 	$body = $('body'),
+		// 	$window = $(window);
 
-		// Determines up-or-down scrolling
+		// // Determines up-or-down scrolling
 
-		// Scrolling Down
-		if ( lastScroll > 0 ) {
-			if (scrollTop > lastScroll) {
-				$body.removeClass('fixed-nav');
+		// // Scrolling Down
+		// if ( lastScroll > 0 ) {
+		// 	if (scrollTop > lastScroll) {
+		// 		$body.removeClass('fixed-nav');
 
-			// Scrolling Up
-			} else {
-				$body.addClass('fixed-nav');
+		// 	// Scrolling Up
+		// 	} else {
+		// 		$body.addClass('fixed-nav');
+		// 	}
+
+		// 	if ( $window.scrollTop() === 0 ) {
+		// 		$body.removeClass('fixed-nav');
+		// 	}
+		// }
+
+		// // Updates scroll position
+		// lastScroll = scrollTop;
+
+
+		var actions = {
+			direction: "down",
+			callback: function(scrollIntent) {
+				window.alert( 'condition met!' );
 			}
+		},
 
-			if ( $window.scrollTop() === 0 ) {
-				$body.removeClass('fixed-nav');
-			}
-		}
+		options = {
 
-		// Updates scroll position
-		lastScroll = scrollTop;
+		};
+
+		var scrollIntent = new ScrollIntent( window, actions, options );
 	},
 
 
@@ -146,6 +160,8 @@ var rp3 = (function($) {
 		$(window).on( 'resize', function() {
 			equalizeHeights();
 		});
+
+		scrollIntent;
 	};
 
 	return {
