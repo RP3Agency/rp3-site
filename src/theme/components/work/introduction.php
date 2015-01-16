@@ -29,14 +29,3 @@ if ( 'true' == get_field( 'case_study' ) ) {
 	<!-- // .<?php echo $class; ?>__header -->
 
 </div>
-
-
-<?php if ( '' != get_field( 'hero_image' ) ) : ?>
-
-
-	<?php echo rp3_full_bleed_hero_image( get_field( 'hero_image' ), array(
-		'image_size'	=> 'case-study',
-		'classes'		=> 'hero-image ' . $class . '-hero-image case-study-hero-image'
-	) ); ?>
-
-<?php endif; ?>
