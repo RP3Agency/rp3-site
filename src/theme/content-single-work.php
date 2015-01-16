@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying content for a single mini study
+ * The template used for displaying content for a single work item
  *
  * @package RP3
  */
@@ -12,28 +12,24 @@
 
 	<?php get_template_part( 'components/work/introduction' ); ?>
 
+	<?php
 
-	<!-- Main Copy -->
+	/**
+	 * Flexible Content Layouts
+	 */
 
-	<?php get_template_part( 'components/work/main-copy' ); ?>
+	if ( have_rows( 'panels' ) ) {
 
+		while ( have_rows( 'panels' ) ) {
 
-	<!-- Secondary Images -->
+			the_row();
 
-	<?php if ( have_rows( 'mini_study_images' ) ) : ?>
+			echo '<!-- Layout: ' . get_row_layout() . ' -->';
 
-		<?php if ( 'stacked' == get_field( 'layout' ) ) : ?>
-
-			<?php get_template_part( 'components/work/images-stacked' ); ?>
-
-		<?php elseif ( 'grid' == get_field( 'layout' ) ) : ?>
-
-			<?php get_template_part( 'components/work/images-grid' ); ?>
-
-		<?php endif; ?>
-
-	<?php endif; ?>
-
+			get_template_part( 'panels/' . get_row_layout() );
+		}
+	}
+	?>
 
 	<!-- Related Work -->
 
