@@ -1,17 +1,14 @@
 .six-up-image-panel {
 	clear: both;
+	display: flex;
+	flex-wrap: wrap;
 
-	@include breakpoint($bp-medium) {
-		display: flex;
-		flex-wrap: wrap;
+	&__image {
+		width: 50%;
 
-		&__image {
-			width: 50%;
-
-			img {
-				height: auto;
-				width: 100%;
-			}
+		img {
+			height: auto;
+			width: 100%;
 		}
 	}
 }
