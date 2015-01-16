@@ -6,7 +6,7 @@
  */
 ?>
 
-<?php if ( '' != get_field( 'video_link' ) ) : ?>
+<?php if ( '' != get_sub_field( 'video_link' ) ) : ?>
 
 	<div class="video__trigger">
 
