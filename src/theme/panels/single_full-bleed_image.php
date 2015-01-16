@@ -10,9 +10,9 @@
 
 	<div class="video__trigger">
 
-		<a href="#!" id="video__trigger" class="block">
+		<a href="<?php echo esc_url( get_sub_field( 'video_link' ) ); ?>" id="video__trigger" class="block">
 
-			<?php rp3_case_study_hero_image( get_sub_field( 'image' ) ); ?>
+			<?php rp3_case_study_hero_image( get_sub_field( 'image' ), get_sub_field( 'tall' ) ); ?>
 
 		</a>
 
@@ -26,6 +26,6 @@
 
 <?php else : ?>
 
-	<?php rp3_case_study_hero_image( get_sub_field( 'image' ) ); ?>
+	<?php rp3_case_study_hero_image( get_sub_field( 'image' ), get_sub_field( 'tall' ) ); ?>
 
 <?php endif; ?>
