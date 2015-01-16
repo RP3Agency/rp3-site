@@ -461,15 +461,15 @@
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.52",
+            "version": "0.53",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.52"
+                "reference": "tags/0.53"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/list-category-posts.0.52.zip",
+                "url": "http://downloads.wordpress.org/plugin/list-category-posts.0.53.zip",
                 "reference": null,
                 "shasum": null
             },

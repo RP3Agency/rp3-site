@@ -1,4 +1,5 @@
 plugins/*
+!plugins/acf-six-image-grid/
 !plugins/advanced-custom-fields-pro/
 !plugins/category-post-list-widget/
 !plugins/rp3/
