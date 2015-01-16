@@ -1,19 +1,21 @@
 .case-study-content {
 
 	&__container {
-		@extend %side-padding;
-		margin-bottom: 7rem;
-		margin-top: 8rem;
-		@include container;
+		width: 100%;
+		// @include container;
 
 		@include breakpoint($bp-medium) {
 			float: left;
-			margin-bottom: 11rem;
-			// width: 50%;
+			margin: {
+				bottom: 0;
+				top: 0;
+			}
+			padding: 0;
 		}
 
 		&--left {
-			margin-bottom: 4rem;
+			@extend %side-padding;
+			margin: 4rem 0;
 
 			@include breakpoint($bp-medium) {
 				margin-bottom: 0;
