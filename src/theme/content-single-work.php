@@ -24,8 +24,6 @@
 
 			the_row();
 
-			echo '<!-- Layout: ' . get_row_layout() . ' -->';
-
 			get_template_part( 'panels/' . get_row_layout() );
 		}
 	}

@@ -105,6 +105,10 @@ function rp3_image_sizes() {
 	// Blog Authors
 	add_image_size( 'blog-author', 425, 425, true );
 	add_image_size( 'blog-author-2x', 425 * 2, 425 * 2, true );
+
+	// Six-up Image Panel
+	add_image_size( 'six-up', 800, 300, true );
+	add_image_size( 'six-up-2x', 1600, 600, true );
 }
 
 add_action( 'init', 'rp3_image_sizes' );
