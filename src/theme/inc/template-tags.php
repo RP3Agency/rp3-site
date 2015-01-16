@@ -352,10 +352,15 @@ if ( ! function_exists( 'rp3_full_bleed_hero_image' ) ) {
 
 
 // Output the hero images for the work & case study pages
-function rp3_case_study_hero_image( $image_id ) {
+function rp3_case_study_hero_image( $image_id, $tall = false ) {
 
 	$image_size = 'case-study';
 	$classes = 'hero-image case-study-hero-image';
+
+    if ( $tall ) {
+        $image_size .= '-tall';
+        $classes .= '-tall';
+    }
 
 	echo rp3_full_bleed_hero_image( $image_id, array(
 		'image_size'	=> $image_size,
