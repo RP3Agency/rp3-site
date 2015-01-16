@@ -12,10 +12,7 @@
 
 		<div class="six-up-image-panel__image">
 
-			<?php printf( '<img srcset="%s, %s 2x">',
-				esc_url( wp_get_attachment_url( get_sub_field( 'image' ), 'six-up' ) ),
-				esc_url( wp_get_attachment_url( get_sub_field( 'image' ), 'six-up-2x' ) )
-			); ?>
+			<?php echo rp3_picture_element( get_sub_field( 'image' ), 'six-up' ); ?>
 
 		</div>
 
