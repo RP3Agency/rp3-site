@@ -18,15 +18,20 @@
 			margin: 4rem 0;
 
 			@include breakpoint($bp-medium) {
+				margin: 8rem 0;
 				@include span(9);
 			}
 		}
 
 		&--right {
-			margin-bottom: 4rem;
+			@extend %side-padding;
+			margin: 4rem 0;
 
 			@include breakpoint($bp-medium) {
-				margin-bottom: 0;
+				margin: {
+					top: 8rem;
+					bottom: 8rem;
+				}
 				@include span(9);
 				@include push(3);
 			}
