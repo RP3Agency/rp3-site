@@ -124,6 +124,7 @@ body.home {
 	}
 
 	.home-work-trigger {
+
 		@include breakpoint($bp-medium) {
 			position: absolute;
 
