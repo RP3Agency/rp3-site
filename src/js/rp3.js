@@ -63,6 +63,20 @@ var rp3 = (function($) {
 
 		// Updates scroll position
 		lastScroll = scrollTop;
+
+
+		// var actions = {
+		// 	direction: "down",
+		// 	callback: function(scrollIntent) {
+		// 		window.alert( 'condition met!' );
+		// 	}
+		// },
+
+		// options = {
+
+		// };
+
+		// var scrollIntent = new ScrollIntent( window, actions, options );
 	},
 
 
@@ -146,6 +160,8 @@ var rp3 = (function($) {
 		$(window).on( 'resize', function() {
 			equalizeHeights();
 		});
+
+		// scrollIntent;
 	};
 
 	return {
