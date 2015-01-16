@@ -22,7 +22,7 @@ rp3.scrollMagic = (function($) {
 					targetClass		= 'active active-' + j;
 
 				new ScrollScene({
-					triggerHook:		2 / 3,
+					triggerHook:		0.9,
 					triggerElement:		triggerEl,
 					reverse:			false
 				})
