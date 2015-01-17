@@ -31,7 +31,7 @@ rp3.woolly = (function($) {
 
 			setTimeout( function() {
 				$thisEl.removeClass('zombie puppet cherokee').addClass( posters[random2] ).removeClass( 'hidden' );
-			}, 2500 );
+			}, 2250 );
 
 			last = random1;
 		}
