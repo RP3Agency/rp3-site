@@ -30,8 +30,6 @@
 
 @import "widgets";
 
-@import "home";
-
 @import "content";
 
 @import "infinite-scroll";
@@ -47,6 +45,5 @@
 // Panels
 @import "panels/six-up-image-panel";
 
-// Snowflakes, sometimes literally
-// @import "rptree";
-@import "woolly";
+// Home page
+@import "home/home";
