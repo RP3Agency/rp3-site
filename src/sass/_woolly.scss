@@ -16,7 +16,7 @@ html.csstransforms {
 		height: (1540px / 2);
 		position: absolute;
 		transform: rotate(30deg);
-		transition: opacity 1000ms ease-in-out;
+		transition: opacity 2000ms ease-in-out;
 		width: (1020px / 2);
 
 		&.hidden {
@@ -24,18 +24,18 @@ html.csstransforms {
 		}
 
 		&.position-1 {
-			left: 58%;
-			top: 73%;
-		}
-
-		&.position-2 {
 			left: -34%;
 			top: 16%;
 		}
 
-		&.position-3 {
+		&.position-2 {
 			left: 89%;
 			top: -37%;
+		}
+
+		&.position-3 {
+			left: 58%;
+			top: 73%;
 		}
 
 		&.cherokee {

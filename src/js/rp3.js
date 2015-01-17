@@ -1,3 +1,8 @@
+/* global rp3:true */
+
+// Define our "rp3" object, if not already defined
+if ( rp3 === undefined ) { var rp3 = {}; }
+
 var rp3 = (function($) {
 
 	'use strict';
@@ -147,52 +152,11 @@ var rp3 = (function($) {
 		}
 	},
 
-	/**
-	 * Special animations for the Woolly Mammoth Home Page Hero
-	 */
-	woollyClassSwap = function() {
-		var startPos	= Math.floor( Math.random() * 5 ) + 1,
-			endPos		= startPos + 1,
-			$woolly		= $('#home-hero .woolly'),
-			$thisEl		= $woolly.filter( '.position-' + startPos ).eq(0);
-
-		// Only execute if our start position < 4
-		if ( startPos < 4 ) {
-			// Fix the endPos
-			if ( endPos > 3 ) {
-				endPos = 1;
-			}
-
-			$thisEl.addClass('hidden');
-
-			setTimeout( function() {
-				$thisEl
-					.removeClass('position-' + startPos)
-					.addClass('position-'+ endPos)
-					.removeClass('hidden');
-			}, 1000 );
-		}
-	},
-	woolly = function() {
-
-		var $homeHeroImage	= $('#home-hero .hero__image'),
-			$zombie			= $('<div>').addClass('woolly zombie position-2'),
-			$puppet			= $('<div>').addClass('woolly puppet position-3'),
-			$cherokee		= $('<div>').addClass('woolly cherokee position-1');
-
-		if ( $homeHeroImage.length > 0 ) {
-			$homeHeroImage.append( $zombie ).append( $puppet ).append( $cherokee );
-		}
-
-		setInterval( woollyClassSwap, 3000 );
-	},
-
 	init = function() {
 		toggleNavigation();
 		equalizeHeights();
 		videoToggle();
 		raptorJim();
-		woolly();
 		
 		$(window).scroll(function() {
 			applyFixedHeader();
