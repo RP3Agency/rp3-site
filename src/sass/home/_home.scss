@@ -111,14 +111,13 @@ body.home {
 	}
 
 	a.hero__container {
-		height: cr(400px);
 		overflow: hidden;
 
 		left: 0;
 		opacity: 0;
 		position: absolute;
 		top: 100%;
-		transition: top 1.5s linear, opacity 1.5s linear 0.75s;
+		transition: top 1s ease-out, opacity 1.5s ease-out 0.5s;
 
 		&.active {
 			opacity: 1;
