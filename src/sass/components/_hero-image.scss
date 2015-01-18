@@ -109,7 +109,7 @@
 
 	&__headline {
 		background-color: transparentize(#111215, 0.05);
-		bottom: 0;
+		bottom: 1px;
 		font-size: cr(11px);
 		left: 0;
 		padding: ce(30px, 11px) percentage(18px / 250px);
