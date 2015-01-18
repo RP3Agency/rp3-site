@@ -4,20 +4,12 @@ rp3.scrollMagic = (function($) {
 
 	'use strict';
 
-	// Get the viewport height so we can set our offset to 50%
-	var height = $(window).outerHeight();
-	height = Math.floor( height / 2 );
-
 	// init controller
-	var controller = new ScrollMagic({
-		globalSceneOptions: {
-			offset: 0
-		}
-	});
+	var controller = new ScrollMagic();
 
 	// build scenes
-	var $homeWork		= $('#home-work'),
-		$hero			= $homeWork.find('.hero'),
+	var $homeWork		= $( '#home-work' ),
+		$hero			= $homeWork.find( '.hero' ),
 
 	// This is where the scrollMagic happens :-)
 	scrollMagic = function() {
@@ -30,6 +22,7 @@ rp3.scrollMagic = (function($) {
 					targetClass		= 'active active-' + j;
 
 				new ScrollScene({
+					triggerHook:		0.9,
 					triggerElement:		triggerEl,
 					reverse:			false
 				})

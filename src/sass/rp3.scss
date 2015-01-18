@@ -30,8 +30,6 @@
 
 @import "widgets";
 
-@import "home";
-
 @import "content";
 
 @import "infinite-scroll";
@@ -47,5 +45,5 @@
 // Panels
 @import "panels/six-up-image-panel";
 
-// RPTree; delete after holidays
-@import "rptree";
+// Home page
+@import "home/home";
