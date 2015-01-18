@@ -167,6 +167,14 @@ body.home {
 		font-size: cr(14px);
 	}
 
+	@include breakpoint( 1600px ) {
+		margin: {
+			left: auto;
+			right: auto;
+		}
+		max-width: cr( 1600px );
+	}
+
 	// &__row {
 	// 	@extend %clearfix;
 
