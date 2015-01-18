@@ -6,8 +6,6 @@
 
 		<?php $i = 1; foreach ( $posts as $post ) : ?>
 
-			<div class="home-work-trigger home-work-trigger-<?php echo esc_attr( $i ); ?>"></div>
-
 			<?php setup_postdata( $post ); ?>
 
 			<?php if ( get_field( 'hero_image' ) != '' ) : ?>
