@@ -15,7 +15,7 @@ html.csstransforms {
 		}
 		height: (1540px / 2);
 		position: absolute;
-		transform: rotate(30deg);
+		top: 50%;
 		transition: opacity 2000ms ease-in-out;
 		width: (1020px / 2);
 		z-index: 2;
@@ -25,20 +25,40 @@ html.csstransforms {
 		}
 
 		&.position-1 {
-			// top: 16%;
+			right: 50%;
+			transform: rotate(30deg) translate(-560px, 83px);
 		}
 
 		&.position-2 {
-			// top: -37%;
+			left: 50%;
+			transform: rotate(30deg) translate(176px, -802px);
 		}
 
 		&.position-3 {
-			// top: 73%;
+			left: 50%;
+			transform: rotate(30deg) translate(174px, -22px);
 		}
 
 		@each $poster in ( 'cherokee', 'zombie', 'puppet' ) {
 			&.#{$poster} {
 				background-image: url("../images/woolly/#{$poster}.jpg");
+			}
+		}
+	}
+
+	/** Adjustments to the home hero image */
+	.woolly-hero {
+		@include breakpoint( 1600px ) {
+			background-color: #e9eaea;
+			height: cr(600px);
+
+			picture img {
+				height: cr(600px);
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: auto;
 			}
 		}
 	}

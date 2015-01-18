@@ -18,6 +18,7 @@ rp3.woolly = (function($) {
 	$homeHeroImage = $('#home-hero .hero__image'),
 	last = 0,
 
+	/** Animation via css transitions (default method) */
 	animation = function() {
 
 		var random1		= Math.floor( Math.random() * 3 ) + 1,
@@ -25,54 +26,26 @@ rp3.woolly = (function($) {
 			$woolly		= $('#home-hero .woolly'),
 			$thisEl		= $woolly.filter( '.position-' + random1 );
 
+		/**
+		 * Only perform the animation IF:
+		 * - The new poster is different than the poster it's replacing AND
+		 * - We're not animating the same poster twice in a row
+		 */
 		if ( ( ! $thisEl.hasClass( posters[random2] ) ) && ( last !== random1 ) ) {
 
 			$thisEl.addClass('hidden');
 
 			setTimeout( function() {
-				$thisEl.removeClass('zombie puppet cherokee').addClass( posters[random2] ).removeClass( 'hidden' );
+				$thisEl.removeClass('zombie puppet cherokee')
+					.addClass( posters[random2] )
+					.removeClass( 'hidden' );
 			}, 2250 );
 
 			last = random1;
 		}
 	},
 
-	// Adjust the positioning as the viewport changes
-	positioning = function() {
-
-		var $el1 = $homeHeroImage.find('.position-1'),
-			$el2 = $homeHeroImage.find('.position-2'),
-			$el3 = $homeHeroImage.find('.position-3'),
-
-			rightPos1 = 0,
-			leftPos2  = 0,
-			leftPos3  = 0,
-			topPos1   = 0,
-			topPos2   = 0,
-			topPos3   = 0,
-
-			halfWidth  = Math.floor( $(window).width() / 2 ),
-			halfHeight = Math.floor( $homeHeroImage.height() / 2 );
-
-		// Apply the proper offsets to each
-		rightPos1 = halfWidth + 546;
-		leftPos2  = halfWidth + 489;
-		leftPos3  = halfWidth + 99;
-
-		topPos1   = halfHeight - 208;
-		topPos2   = halfHeight - 535;
-		topPos3   = halfHeight + 129;
-
-		// Now position our elements accordingly
-		$el1.css('right', rightPos1 + 'px');
-		$el2.css('left', leftPos2 + 'px');
-		$el3.css('left', leftPos3 + 'px');
-
-		$el1.css('top', topPos1 + 'px');
-		$el2.css('top', topPos2 + 'px');
-		$el3.css('top', topPos3 + 'px');
-	},
-
+	/** Initialize our hero by creating the elements for the transitioning posters in the DOM */
 	initialize = function() {
 
 		if ( $homeHeroImage.length > 0 ) {
@@ -82,19 +55,42 @@ rp3.woolly = (function($) {
 				posterElements[i] = $('<div>').addClass( 'woolly position-' + j + ' ' + posters[i] );
 				$homeHeroImage.append( posterElements[i] );
 			}
-
-			positioning();
 		}
 	},
 
+	/** IE9 doesn't support transitions, so fade in and out via jQuery */
+	polyfill = function() {
+		var random1		= Math.floor( Math.random() * 3 ) + 1,
+			random2		= Math.floor( Math.random() * 3 ),
+			$woolly		= $('#home-hero .woolly'),
+			$thisEl		= $woolly.filter( '.position-' + random1 );
+
+		if ( ( ! $thisEl.hasClass( posters[random2] ) ) && ( last !== random1 ) ) {
+
+			$thisEl.fadeOut( 2000 );
+
+			setTimeout( function() {
+				$thisEl.removeClass('zombie puppet cherokee')
+					.addClass( posters[random2] )
+					.fadeIn( 2000 );
+			}, 2250 );
+
+			last = random1;
+		}
+	},
+
+	/** init */
 	init = function() {
 		initialize();
 
-		setInterval( animation, 3000 );
+		if ( Modernizr.mq( '( min-width: 768px )' ) ) {
 
-		$(window).on('resize', function() {
-			positioning();
-		});
+			if ( Modernizr.csstransforms ) {
+				setInterval( animation, 3000 );
+			} else {
+				setInterval( polyfill, 3000 );
+			}
+		}
 	};
 
 	return {
@@ -105,8 +101,5 @@ rp3.woolly = (function($) {
 
 (function() {
 	'use strict';
-
-	if ( Modernizr.csstransforms ) {
-		rp3.woolly.init();
-	}
+	rp3.woolly.init();
 }());
