@@ -8,8 +8,10 @@ rp3.scrollMagic = (function($) {
 	var controller = new ScrollMagic();
 
 	// build scenes
-	var $homeWork		= $( '#home-work' ),
-		$hero			= $homeWork.find( '.hero' ),
+	var $homeWork		= $('#home-work'),
+		$hero			= $homeWork.find('.hero'),
+		$homeErrata		= $('#home-errata'),
+		$homeErrataRow	= $homeErrata.find('.home-errata__row'),
 
 	// This is where the scrollMagic happens :-)
 	scrollMagic = function() {
@@ -29,14 +31,33 @@ rp3.scrollMagic = (function($) {
 				.setClassToggle( targetEl, targetClass )
 				.addTo( controller );
 			});
+		}
+	},
 
-			// Make sure our container has the proper height
-			// $homeWork.height( 600 * $hero.length - $hero.length );
+	/** Second verse, nearly same as the first */
+	scrollMagicErrata = function() {
+		if ( $homeErrata.length > 0 ) {
+			$homeErrataRow.each( function(i) {
+
+				var j				= i + 1,
+					triggerEl		= '#home-errata .home-errata__row-' + j,
+					targetEl		= '#home-errata .home-errata__row-' + j + ' .home-errata__block',
+					targetClass		= 'active';
+
+				new ScrollScene({
+					triggerHook:		0.9,
+					triggerElement:		triggerEl,
+					reverse:			false
+				})
+				.setClassToggle( targetEl, targetClass )
+				.addTo( controller );
+			});
 		}
 	},
 
 	init = function() {
 		scrollMagic();
+		scrollMagicErrata();
 
 		// $(window).scroll(function() {
 		// });

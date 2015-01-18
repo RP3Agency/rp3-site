@@ -18,9 +18,9 @@ $blog = new WP_Query( array_merge( $args, array( 'category_name' => 'blog' ) ) )
 $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) );
 ?>
 
-<div class="home-errata">
+<div id="home-errata" class="home-errata">
 
-	<div class="home-errata__row">
+	<div class="home-errata__row home-errata__row-1">
 
 		<div class="home-errata__general-widget home-errata__block">
 
@@ -67,7 +67,7 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 	*/ ?>
 
 
-	<div class="home-errata__row">
+	<div class="home-errata__row home-errata__row-2">
 
 		<?php if ( $blog->have_posts() ) : ?>
 

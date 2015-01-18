@@ -201,10 +201,16 @@ body.home {
 	&__block {
 		color: #fff;
 		min-height: 100px;
+		opacity: 0;
 		overflow: hidden;
+		transition: opacity 1.5s ease-out 0.5s;
 
 		@include breakpoint($bp-medium) {
 			min-height: 200px;
+		}
+
+		&.active {
+			opacity: 1;
 		}
 
 		.widget {
