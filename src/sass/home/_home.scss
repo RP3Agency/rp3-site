@@ -96,22 +96,9 @@ body.home {
 		margin-top: -1px;
 
 		@include breakpoint($bp-medium) {
-			left: 0;
-			opacity: 0;
-			position: absolute;
-			top: 100%;
-			transition: top 1.5s linear, opacity 2.5s linear 0.5s;
+			overflow: hidden;
+			position: relative;
 			width: 100%;
-
-			&.active {
-				opacity: 1;
-
-				@for $i from 1 through 10 {
-					&.active-#{$i} {
-						top: cr(600px * ( $i - 1 ) - 1px );
-					}
-				}
-			}
 		}
 
 		@include breakpoint($bp-small) {
@@ -123,22 +110,20 @@ body.home {
 		}
 	}
 
-	.home-work-trigger {
-
-		@include breakpoint($bp-medium) {
-			position: absolute;
-
-			@for $i from 1 through 10 {
-				&.home-work-trigger-#{$i} {
-					top: cr(600px * ( $i - 1 ) );
-				}
-			}
-		}
-	}
-
-	a {
+	a.hero__container {
 		height: cr(400px);
 		overflow: hidden;
+
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: 100%;
+		transition: top 1.5s linear, opacity 1.5s linear 0.75s;
+
+		&.active {
+			opacity: 1;
+			top: 0;
+		}
 	}
 
 	picture,

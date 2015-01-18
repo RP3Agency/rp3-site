@@ -17,9 +17,9 @@ rp3.scrollMagic = (function($) {
 			$hero.each( function(i) {
 
 				var j				= i + 1,
-					triggerEl		= '.home-work-trigger-' + j,
-					targetEl		= '#home-work .hero-' + j,
-					targetClass		= 'active active-' + j;
+					triggerEl		= '#home-work .hero-' + j,
+					targetEl		= '#home-work .hero-' + j + ' .hero__container',
+					targetClass		= 'active';
 
 				new ScrollScene({
 					triggerHook:		0.9,
