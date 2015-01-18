@@ -31,7 +31,7 @@ rp3.scrollMagic = (function($) {
 			});
 
 			// Make sure our container has the proper height
-			$homeWork.height( 600 * $hero.length - $hero.length );
+			// $homeWork.height( 600 * $hero.length - $hero.length );
 		}
 	},
 

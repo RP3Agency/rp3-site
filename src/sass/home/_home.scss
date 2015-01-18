@@ -102,10 +102,10 @@ body.home {
 		height: cr(400px);
 		margin-bottom: 0;
 		margin-top: -1px;
+		position: relative;
 
 		@include breakpoint($bp-medium) {
 			overflow: hidden;
-			position: relative;
 			width: 100%;
 		}
 
