@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.19",
+            "version": "v1.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "89d77bfbee79e16653f7162c86e602cc188471db"
+                "reference": "1bff8aa77a18f3616f468ed8000cf86a5725bac3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/89d77bfbee79e16653f7162c86e602cc188471db",
-                "reference": "89d77bfbee79e16653f7162c86e602cc188471db",
+                "url": "https://api.github.com/repos/composer/installers/zipball/1bff8aa77a18f3616f468ed8000cf86a5725bac3",
+                "reference": "1bff8aa77a18f3616f468ed8000cf86a5725bac3",
                 "shasum": ""
             },
             "replace": {
@@ -59,6 +59,7 @@
                 "Hurad",
                 "MODX Evo",
                 "OXID",
+                "SMF",
                 "Thelia",
                 "WolfCMS",
                 "agl",
@@ -97,7 +98,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-11-29 01:29:17"
+            "time": "2015-01-11 03:51:11"
         },
         {
             "name": "fancyguy/webroot-installer",
@@ -524,15 +525,15 @@
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
-            "version": "2.5.14",
+            "version": "2.5.15",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/really-simple-twitter-feed-widget/",
-                "reference": "tags/2.5.14"
+                "reference": "tags/2.5.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.2.5.14.zip",
+                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.2.5.15.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -544,15 +545,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.3.12",
+            "version": "2.3.13",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.3.12"
+                "reference": "tags/2.3.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.12.zip",
+                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.13.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -722,26 +723,23 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "3.9.30",
+            "version": "4.0.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
-                "reference": "tags/3.9.30"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/worker.3.9.30.zip",
+                "url": "http://downloads.wordpress.org/plugin/worker.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/worker": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/worker/"
+            "homepage": "https://wordpress.org/plugins/worker/"
         },
         {
             "name": "wpackagist-plugin/wp-maintenance-mode",
