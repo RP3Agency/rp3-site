@@ -24,6 +24,12 @@ function rp3_image_sizes() {
 		'large'			=> array( 1600, 608 )
 	) );
 
+	rp3_add_image_size( 'woolly-home-page-hero', array(
+		'small'			=> array( 320, 450 ),
+		'medium'		=> array( 640, 450 ),
+		'large'			=> array( 1638, 600 )
+	) );
+
 
 	$smaller_hero_images = array(
 		'small'			=> array( 320, 200 ),
