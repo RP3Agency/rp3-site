@@ -88,7 +88,15 @@ body.home {
 		left: percentage(90px/1600px);
 		right: percentage(90px/1600px);
 	}
+	max-width: cr(1600px);
 	position: relative;
+
+	@include breakpoint( 1600px ) {
+		margin: {
+			left: auto;
+			right: auto;
+		}
+	}
 
 	.hero {
 		height: cr(400px);
@@ -103,10 +111,6 @@ body.home {
 
 		@include breakpoint($bp-small) {
 			height: cr(600px);
-		}
-
-		@include breakpoint(1600px) {
-			height: auto;
 		}
 	}
 
