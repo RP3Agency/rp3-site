@@ -512,67 +512,22 @@ var acf;
 		*  @return	(mixed)
 		*/
 		
-		get_data : function( $el, name ){
+		get_data: function( $el, name ){
 			
 			//console.log('get_data(%o, %o)', name, $el);
-			// defaults
-			name = name || false;
 			
 			
-			// vars
-			var self = this,
-				data = false;
-			
-			
-			// specific data-name
-			if( name ) {
-			
-				data = $el.attr('data-' + name)
+			// get all datas
+			if( typeof name === 'undefined' ) {
 				
-				// convert ints (don't worry about floats. I doubt these would ever appear in data atts...)
-        		if( $.isNumeric(data) ) {
-        			
-        			if( data.match(/[^0-9]/) ) {
-	        			
-	        			// leave value if it contains such characters: . + - e
-	        			
-        			} else {
-	        			
-	        			data = parseInt(data);
-	        			
-        			}
-	        		
-        		}
-        		
-			} else {
+				return $el.data();
 				
-				// all data-names
-				data = {};
-				
-				$.each( $el[0].attributes, function( i, attr ) {
-			        
-			        // bail early if not data-
-		        	if( attr.name.substr(0, 5) !== 'data-' ) {
-		        	
-		        		return;
-		        		
-		        	}
-		        	
-		        	
-		        	// vars
-		        	name = attr.name.replace('data-', '');
-		        	
-		        	
-		        	// add to atts
-		        	data[ name ] = self.get_data( $el, name );
-		        	
-		        });
 			}
 			
 			
 			// return
-	        return data;
-				
+			return $el.data(name);
+							
 		},
 		
 		
@@ -974,6 +929,50 @@ var acf;
 		    }
 		    
 		    return true;	
+			
+		},
+		
+		
+		/*
+		*  maybe_get
+		*
+		*  This function will attempt to return a value and return null if not possible
+		*
+		*  @type	function
+		*  @date	8/09/2014
+		*  @since	5.0.0
+		*
+		*  @param	(object)
+		*  @param	key1 (string)
+		*  @param	key2 (string)
+		*  @param	...
+		*  @return	(mixed)
+		*/
+		
+		maybe_get: function(){
+			
+			var a = arguments,
+		        l = a.length,
+		        c = null,
+		        undef;
+			
+		    if (l === 0) {
+		        return null;
+		    }
+			
+			c = a[0];
+			
+		    for (i = 1; i < l; i++) {
+		    	
+		        if (a[i] === undef || c[ a[i] ] === undef) {
+		            return null;
+		        }
+		        
+		        c = c[ a[i] ];
+		        
+		    }
+		    
+		    return c;
 			
 		},
 		
@@ -2062,7 +2061,7 @@ frame.on('all', function( e ) {
 				
 					// set height
 					height = ($el.outerHeight() > height) ? $el.outerHeight() : height;
-				
+					
 					// append
 					$els = $els.add( $el );
 					
@@ -2078,6 +2077,14 @@ frame.on('all', function( e ) {
 					}
 					
 				});
+				
+				
+				// clean up
+				if( $els.exists() ) {
+					
+					$els.css({'min-height': (height+1)+'px'});
+					
+				}
 				
 				
 			});

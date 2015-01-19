@@ -1,6 +1,7 @@
 {
   "undef": true,
   "unused": true,
-  "predef": [ "MY_GLOBAL" ],
-  "browser": true
+  "predef": [ "MY_GLOBAL", "ScrollMagic", "ScrollScene", "ScrollIntent", "Modernizr" ],
+  "browser": true,
+  "jquery": true
 }

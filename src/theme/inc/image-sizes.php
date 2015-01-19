@@ -24,6 +24,12 @@ function rp3_image_sizes() {
 		'large'			=> array( 1600, 608 )
 	) );
 
+	rp3_add_image_size( 'woolly-home-page-hero', array(
+		'small'			=> array( 320, 450 ),
+		'medium'		=> array( 640, 450 ),
+		'large'			=> array( 1638, 600 )
+	) );
+
 
 	$smaller_hero_images = array(
 		'small'			=> array( 320, 200 ),
@@ -105,6 +111,13 @@ function rp3_image_sizes() {
 	// Blog Authors
 	add_image_size( 'blog-author', 425, 425, true );
 	add_image_size( 'blog-author-2x', 425 * 2, 425 * 2, true );
+
+	// Six-up Image Panel
+	rp3_add_image_size( 'six-up', array(
+		'small'			=> array( 160, 160, true ),
+		'medium'		=> array( 300, 300, true ),
+		'large'			=> array( 800, 300, true )
+	) );
 }
 
 add_action( 'init', 'rp3_image_sizes' );

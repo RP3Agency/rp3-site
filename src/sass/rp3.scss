@@ -30,7 +30,7 @@
 
 @import "widgets";
 
-@import "home";
+@import "home/home";
 
 @import "content";
 
@@ -42,7 +42,7 @@
 
 
 // Components
-@import "components";
+@import "components/components";
 
-// RPTree; delete after holidays
-@import "rptree";
+// Panels
+@import "panels/six-up-image-panel";

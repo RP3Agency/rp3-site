@@ -123,7 +123,7 @@ gulp.task('clean', function() {
 
 // build-theme: build template files to the wp-content directory
 // In the process, run our CSS & JS processing
-gulp.task('build-theme', ['styles', 'scripts'], function() {
+gulp.task('build-theme', function() {
 	var filesToMove = [
 		src_theme + '/**/*.*',
 		src_theme + '/**/.htaccess'
@@ -145,7 +145,7 @@ gulp.task('build-theme', ['styles', 'scripts'], function() {
 // });
 
 // build: combine build-theme and build-plugin
-gulp.task('build', function() {
+gulp.task('build', ['styles', 'scripts'], function() {
 	gulp.start('build-theme');
 	// gulp.start('build-plugin');
 });
@@ -164,8 +164,6 @@ gulp.task('default', function() {
 
 // Watch: watch our files and do things when they change
 gulp.task('watch', function() {
-	gulp.start('default');
-
 	// Watch .scss files
 	gulp.watch( src_sass + '/**/*.scss', ['styles'] );
 

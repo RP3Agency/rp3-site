@@ -761,67 +761,22 @@ var acf;
 		*  @return	(mixed)
 		*/
 		
-		get_data : function( $el, name ){
+		get_data: function( $el, name ){
 			
 			//console.log('get_data(%o, %o)', name, $el);
-			// defaults
-			name = name || false;
 			
 			
-			// vars
-			var self = this,
-				data = false;
-			
-			
-			// specific data-name
-			if( name ) {
-			
-				data = $el.attr('data-' + name)
+			// get all datas
+			if( typeof name === 'undefined' ) {
 				
-				// convert ints (don't worry about floats. I doubt these would ever appear in data atts...)
-        		if( $.isNumeric(data) ) {
-        			
-        			if( data.match(/[^0-9]/) ) {
-	        			
-	        			// leave value if it contains such characters: . + - e
-	        			
-        			} else {
-	        			
-	        			data = parseInt(data);
-	        			
-        			}
-	        		
-        		}
-        		
-			} else {
+				return $el.data();
 				
-				// all data-names
-				data = {};
-				
-				$.each( $el[0].attributes, function( i, attr ) {
-			        
-			        // bail early if not data-
-		        	if( attr.name.substr(0, 5) !== 'data-' ) {
-		        	
-		        		return;
-		        		
-		        	}
-		        	
-		        	
-		        	// vars
-		        	name = attr.name.replace('data-', '');
-		        	
-		        	
-		        	// add to atts
-		        	data[ name ] = self.get_data( $el, name );
-		        	
-		        });
 			}
 			
 			
 			// return
-	        return data;
-				
+			return $el.data(name);
+							
 		},
 		
 		
@@ -1223,6 +1178,50 @@ var acf;
 		    }
 		    
 		    return true;	
+			
+		},
+		
+		
+		/*
+		*  maybe_get
+		*
+		*  This function will attempt to return a value and return null if not possible
+		*
+		*  @type	function
+		*  @date	8/09/2014
+		*  @since	5.0.0
+		*
+		*  @param	(object)
+		*  @param	key1 (string)
+		*  @param	key2 (string)
+		*  @param	...
+		*  @return	(mixed)
+		*/
+		
+		maybe_get: function(){
+			
+			var a = arguments,
+		        l = a.length,
+		        c = null,
+		        undef;
+			
+		    if (l === 0) {
+		        return null;
+		    }
+			
+			c = a[0];
+			
+		    for (i = 1; i < l; i++) {
+		    	
+		        if (a[i] === undef || c[ a[i] ] === undef) {
+		            return null;
+		        }
+		        
+		        c = c[ a[i] ];
+		        
+		    }
+		    
+		    return c;
 			
 		},
 		
@@ -2311,7 +2310,7 @@ frame.on('all', function( e ) {
 				
 					// set height
 					height = ($el.outerHeight() > height) ? $el.outerHeight() : height;
-				
+					
 					// append
 					$els = $els.add( $el );
 					
@@ -2327,6 +2326,14 @@ frame.on('all', function( e ) {
 					}
 					
 				});
+				
+				
+				// clean up
+				if( $els.exists() ) {
+					
+					$els.css({'min-height': (height+1)+'px'});
+					
+				}
 				
 				
 			});
@@ -3962,6 +3969,10 @@ frame.on('all', function( e ) {
 		
 		is_ready: function(){ 
 			
+			// reference
+			var self = this;
+			
+			
 			// debug
 			//console.log('is_ready: %o', this.status);
 			
@@ -3976,11 +3987,7 @@ frame.on('all', function( e ) {
 				
 			} else if( typeof google === 'undefined' ) {
 				
-				// reference
-				var self = this;
-				
-				
-				// se tstatus
+				// set status
 				self.status = 'loading';
 				
 				
@@ -4000,6 +4007,27 @@ frame.on('all', function( e ) {
 				    }});
 				    
 				});
+				
+				return false;
+					
+			} else if( typeof google.maps === 'undefined' ) {
+				
+				
+				// set status
+				self.status = 'loading';
+				
+				
+				// load maps
+			    google.load('maps', '3', { other_params: 'sensor=false&libraries=places', callback: function(){
+			    	
+			    	// set status
+			    	self.status = 'ready';
+			    	
+			    	
+			    	// initialize pending
+			    	self.initialize_pending();
+			        
+			    }});
 				
 				return false;
 					
@@ -4909,8 +4937,6 @@ acf.add_action('ready append', function( $el ){
 
 })(jQuery);
 
-
-
 (function($){
 	
 	acf.fields.radio = acf.field.extend({
@@ -5030,11 +5056,12 @@ acf.add_action('ready append', function( $el ){
 				// Scrolled to bottom
 				if( $(this).scrollTop() + $(this).innerHeight() >= $(this).get(0).scrollHeight ) {
 					
-					var paged = parseInt( $el.attr('data-paged') );
+					// get paged
+					var paged = $el.data('paged') || 1;
 					
 					
 					// update paged
-					$el.attr('data-paged', (paged + 1) );
+					$el.data('paged', (paged+1) );
 					
 					
 					// fetch
@@ -5098,21 +5125,27 @@ var scroll_timer = null;
 			this.$el.addClass('is-loading');
 			
 			
-			// vars
-			var data = acf.prepare_for_ajax({
-				action:		'acf/fields/relationship/query',
-				field_key:	$field.data('key'),
-				post_id:	acf.get('post_id'),
-			});
+			// abort XHR if this field is already loading AJAX data
+			if( this.o.xhr ) {
+			
+				this.o.xhr.abort();
+				this.o.xhr = false;
+				
+			}
 			
 			
-			// merge in wrap data
-			// don't use this.o becuase they are outdated
-			$.extend(data, acf.get_data( this.$el ));
+			// add to this.o
+			this.o.action = 'acf/fields/relationship/query';
+			this.o.field_key = $field.data('key');
+			this.o.post_id = acf.get('post_id');
+			
+			
+			// ready for ajax
+			var ajax_data = acf.prepare_for_ajax( this.o );
 			
 			
 			// clear html if is new query
-			if( data.paged == 1 ) {
+			if( ajax_data.paged == 1 ) {
 				
 				this.$choices.children('.list').html('')
 				
@@ -5121,14 +5154,6 @@ var scroll_timer = null;
 			
 			// add message
 			this.$choices.children('.list').append('<p>' + acf._e('relationship', 'loading') + '...</p>');
-
-			
-			// abort XHR if this field is already loading AJAX data
-			if( this.$el.data('xhr') ) {
-			
-				this.$el.data('xhr').abort();
-				
-			}
 			
 			
 			// get results
@@ -5137,7 +5162,7 @@ var scroll_timer = null;
 		    	url:		acf.get('ajaxurl'),
 				dataType:	'json',
 				type:		'post',
-				data:		data,
+				data:		ajax_data,
 				
 				success: function( json ){
 					
@@ -5193,9 +5218,7 @@ var scroll_timer = null;
 			// apply .disabled to left li's
 			this.$values.find('.acf-rel-item').each(function(){
 				
-				var id = $(this).attr('data-id');
-				
-				$new.find('.acf-rel-item[data-id="' + id + '"]').addClass('disabled');
+				$new.find('.acf-rel-item[data-id="' +  $(this).data('id') + '"]').addClass('disabled');
 				
 			});
 			
@@ -5302,11 +5325,11 @@ var scroll_timer = null;
 			
 			// vars
 			var val = e.$el.val(),
-				filter = e.$el.attr('data-filter');
+				filter = e.$el.data('filter');
 				
 			
 			// Bail early if filter has not changed
-			if( this.$el.attr('data-' + filter) == val ) {
+			if( this.$el.data(filter) == val ) {
 			
 				return;
 				
@@ -5314,11 +5337,11 @@ var scroll_timer = null;
 			
 			
 			// update attr
-			this.$el.attr('data-' + filter, val);
+			this.$el.data(filter, val);
 			
 			
 			// reset paged
-			this.$el.attr('data-paged', 1);
+			this.$el.data('paged', 1);
 		    
 		    
 		    // fetch
@@ -5357,8 +5380,8 @@ var scroll_timer = null;
 			// template
 			var html = [
 				'<li>',
-					'<input type="hidden" name="' + this.$input.attr('name') + '[]" value="' + e.$el.attr('data-id') + '" />',
-					'<span data-id="' + e.$el.attr('data-id') + '" class="acf-rel-item">' + e.$el.html(),
+					'<input type="hidden" name="' + this.$input.attr('name') + '[]" value="' + e.$el.data('id') + '" />',
+					'<span data-id="' + e.$el.data('id') + '" class="acf-rel-item">' + e.$el.html(),
 						'<a href="#" class="acf-icon small dark" data-name="remove_item"><i class="acf-sprite-remove"></i></a>',
 					'</span>',
 				'</li>'].join('');
@@ -5381,7 +5404,7 @@ var scroll_timer = null;
 			
 			// vars
 			var $span = e.$el.parent(),
-				id = $span.attr('data-id');
+				id = $span.data('id');
 			
 			
 			// remove
@@ -5555,8 +5578,17 @@ var scroll_timer = null;
 				},
 				results: function(data, page){
 					
+					// allow null return
+					if( !data ) {
+						
+						data = [];
+						
+					}
+					
+					
+					// return
 					return {
-						results	: data || {}
+						results	: data
 					};
 					
 				}
@@ -5568,22 +5600,31 @@ var scroll_timer = null;
 					
 					var i = 0;
 					
-					$.each(data, function(k, v){
+					// allow null return
+					if( !data ) {
 						
-						l = 1;
+						data = [];
 						
-						if( typeof v.children !== 'undefined' ) {
+					} else {
+						
+						$.each(data, function(k, v){
 							
-							l = v.children.length;
+							l = 1;
 							
-						}
+							if( typeof v.children !== 'undefined' ) {
+								
+								l = v.children.length;
+								
+							}
+							
+							i += l;
+							
+						});
 						
-						i += l;
-						
-					});
+					}
 					
 					
-					// vars
+					// return
 					return {
 						results	: data,
 						more	: (i >= 20)
@@ -6357,6 +6398,10 @@ var scroll_timer = null;
 			}
 			
 			
+			// reset trigger
+			this.$trigger = null;
+			
+			
 			// vars
 			var $first_field = null;
 			
@@ -6440,56 +6485,21 @@ var scroll_timer = null;
 			});
 			
 			
-			// click save
-			if( $('#save-post').exists() ) {
+			// ignore validation
+			$(document).on('click', '#save-post, #post-preview', function(){
 				
-				$('#save-post').on('click', function(){
+				self.ignore = 1;
+				self.$trigger = $(this);
 				
-					self.ignore = 1;
-					self.$trigger = $(this);
-					
-				});
-				
-			}
+			});
 			
 			
-			
-			// click preview
-			if( $('#post-preview').exists() ) {
+			// save trigger
+			$(document).on('click', 'input[type="submit"]', function(){
 				
-				$('#post-preview').on('click', function(){
+				self.$trigger = $(this);
 				
-					self.ignore = 1;
-					self.$trigger = $(this);
-					
-				});
-				
-			}
-						
-			
-			// click submit
-			if( $('#submit').exists() ) {
-				
-				$('#submit').on('click', function(){
-				
-					self.$trigger = $(this);
-					
-				});
-				
-			}
-			
-			
-			// click publish
-			if( $('#publish').exists() ) {
-				
-				$('#publish').on('click', function(){
-				
-					self.$trigger = $(this);
-					
-				});
-				
-			}
-			
+			});
 			
 			
 			// submit
