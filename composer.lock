@@ -723,7 +723,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.0.0",
+            "version": "4.0.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
