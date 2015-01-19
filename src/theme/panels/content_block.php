@@ -42,24 +42,24 @@ if ( 'results' == get_sub_field( 'label' ) ) {
 			</div>
 			<!-- // case-study-content container right -->
 
-		<?php elseif ( '' != get_field( 'main_copy_counter_image' ) ) : ?>
+		<?php elseif ( '' != get_sub_field( 'image' ) ) : ?>
 
-		<div class="work-main-content__image work-main-copy__main-counter-image">
+			<div class="work-main-content__image work-main-copy__main-counter-image">
 
-			<div class="work-main-content__image__container">
+				<div class="work-main-content__image__container">
 
-				<div class="work-main-content__image__container__inner">
+					<div class="work-main-content__image__container__inner">
 
-					<?php echo rp3_picture_element( get_field( 'main_copy_counter_image' ), 'main-copy-counter-image' ); ?>
+						<?php echo rp3_picture_element( get_sub_field( 'image' ), 'main-copy-counter-image' ); ?>
+
+					</div>
+					<!-- // work main content image container inner -->
 
 				</div>
-				<!-- // work main content image container inner -->
+				<!-- // work main content image container -->
 
 			</div>
-			<!-- // work main content image container -->
-
-		</div>
-		<!-- // work main content image -->
+			<!-- // work main content image -->
 
 		<?php endif; ?>
 
