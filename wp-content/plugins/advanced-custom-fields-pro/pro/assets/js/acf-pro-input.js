@@ -180,12 +180,16 @@
 		}
 		
 	});
-	
-	
+
+})(jQuery);
+
+(function($){
+		
 	acf.fields.repeater = acf.field.extend({
 		
 		type: 'repeater',
 		$el: null,
+		$input: null,
 		$tbody: null,
 		$clone: null,
 		
@@ -203,6 +207,7 @@
 		focus: function(){
 			
 			this.$el = this.$field.find('.acf-repeater:first');
+			this.$input = this.$field.find('input:first');
 			this.$tbody = this.$el.find('tbody:first');
 			this.$clone = this.$tbody.children('tr.acf-clone');
 			
@@ -247,21 +252,30 @@
 						forcePlaceholderSize	: true,
 						scroll					: true,
 						
-						start : function (event, ui) {
+						start: function(event, ui) {
+							
+							// focus
+							self.doFocus($field);
 							
 							acf.do_action('sortstart', ui.item, ui.placeholder);
 							
 			   			},
 			   			
-			   			stop : function (event, ui) {
-						
-							acf.do_action('sortstop', ui.item, ui.placeholder);
-							
+			   			stop: function(event, ui) {
 							
 							// render
-							self.doFocus($field).render();
+							self.render();
 							
-			   			}
+							acf.do_action('sortstop', ui.item, ui.placeholder);
+							
+			   			},
+			   			
+			   			update: function(event, ui) {
+				   			
+				   			// trigger change
+							self.$input.trigger('change');
+							
+				   		}
 			   			
 					});
 				
@@ -420,6 +434,10 @@
 			}
 			
 			
+			// trigger change to allow attachmetn save
+			this.$input.trigger('change');
+				
+				
 			// animate out tr
 			acf.remove_tr( $tr, function(){
 				
@@ -446,11 +464,15 @@
 		
 	});	
 	
-	
+})(jQuery);
+
+(function($){
+		
 	acf.fields.flexible_content = acf.field.extend({
 		
 		type: 'flexible_content',
 		$el: null,
+		$input: null,
 		$values: null,
 		$clones: null,
 		
@@ -470,7 +492,8 @@
 		
 		focus: function(){
 			
-			this.$el = this.$field.find('.acf-flexible-content').first();
+			this.$el = this.$field.find('.acf-flexible-content:first');
+			this.$input = this.$field.find('input:first');
 			this.$values = this.$el.children('.values');
 			this.$clones = this.$el.children('.clones');
 			
@@ -512,36 +535,36 @@
 						forcePlaceholderSize	: true,
 						scroll					: true,
 						
-						start : function (event, ui) {
-						
+						start: function(event, ui) {
+							
+							// focus
+							self.doFocus($field);
+							
 							acf.do_action('sortstart', ui.item, ui.placeholder);
-			        		
+							
 			   			},
-			   			stop : function (event, ui) {
+			   			
+			   			stop: function(event, ui) {
+							
+							// render
+							self.render();
 							
 							acf.do_action('sortstop', ui.item, ui.placeholder);
 							
-							
-							// render
-							self.doFocus($field).render();
-			   			}
+			   			},
 			   			
+			   			update: function(event, ui) {
+				   			
+				   			// trigger change
+							self.$input.trigger('change');
+							
+				   		}
+				   		
 					});
 				
 				});
 				
 			}
-			
-			
-			// set column widths
-			// no longer needed due to refresh action in acf.pro model
-			/*
-this.$values.find('> .layout > .acf-table').each(function(){
-			
-				acf.pro.render_table( $(this) );
-				
-			});
-*/
 			
 			
 			// disable clone inputs
@@ -935,6 +958,10 @@ this.$values.find('> .layout > .acf-table').each(function(){
 			}
 			
 			
+			// trigger change
+			this.$input.trigger('change');
+			
+			
 			// remove
 			acf.remove_el( $layout, function(){
 				
@@ -996,16 +1023,10 @@ this.$values.find('> .layout > .acf-table').each(function(){
 		}
 	});	
 	
-	
-	/*
-	*  Gallery
-	*
-	*  static model for this field
-	*
-	*  @type	event
-	*  @date	18/08/13
-	*
-	*/
+
+})(jQuery);
+
+(function($){
 	
 	acf.fields.gallery = acf.field.extend({
 		
@@ -1735,7 +1756,11 @@ this.$values.find('> .layout > .acf-table').each(function(){
 		}
 		
 	});
-		
 	
-
 })(jQuery);
+
+// @codekit-prepend "../js/acf-pro.js";
+// @codekit-prepend "../js/acf-repeater.js";
+// @codekit-prepend "../js/acf-flexible-content.js";
+// @codekit-prepend "../js/acf-gallery.js";
+

@@ -124,7 +124,7 @@
     	update_field_parent : function( $el ){
 	    	
 	    	// bail early if not div.field (flexible content tr)
-	    	if( ! $el.hasClass('field') ) {
+	    	if( ! $el.hasClass('acf-field-object') ) {
 		    	
 		    	return;
 		    	
@@ -132,7 +132,7 @@
 	    	
 	    	
 	    	// vars
-	    	var $parent = $el.parent().closest('.field'),
+	    	var $parent = $el.parent().closest('.acf-field-object'),
 		    	val = 0;
 		    
 		    
@@ -184,7 +184,7 @@
     	duplicate_field : function( $el ) {
 	    	
 	    	// vars
-			var $fields = $el.find('.field').not('[data-key="acfcloneindex"]');
+			var $fields = $el.find('.acf-field-object').not('[data-key="acfcloneindex"]');
 				
 			
 			// bail early if $fields are empty
@@ -199,7 +199,7 @@
 	    	$fields.each(function(){
 		    	
 		    	// vars
-		    	var $parent = $(this).parent().closest('.field'),
+		    	var $parent = $(this).parent().closest('.acf-field-object'),
 		    		key = acf.field_group.get_field_meta( $parent, 'key');
 		    		
 		    	
@@ -239,7 +239,7 @@
     	
     	delete_field : function( $el ){
 	    	
-	    	$el.find('.field').each(function(){
+	    	$el.find('.acf-field-object').each(function(){
 		    	
 		    	acf.field_group.delete_field( $(this), false );
 		    	
@@ -263,7 +263,7 @@
 		
 		change_field_type : function( $el ) {
 			
-			$el.find('.field').each(function(){
+			$el.find('.acf-field-object').each(function(){
 		    	
 		    	acf.field_group.delete_field( $(this), false );
 		    	
@@ -305,7 +305,7 @@
 			// events	
 			$(document).on('change', '.acf-repeater-layout input', function(){
 				
-				_this.render_field( $(this).closest('.field') );
+				_this.render_field( $(this).closest('.acf-field-object') );
 				
 			});
 			
@@ -336,7 +336,7 @@
 			
 			
 			// vars
-			var $tbody = $el.find('> .field-settings > table > tbody'),
+			var $tbody = $el.find('> .settings > table > tbody'),
 				$field_list = $tbody.find('> [data-name="sub_fields"] .acf-field-list:first'),
 				layout = $tbody.find('> [data-name="layout"] input:checked').val();
 				
@@ -453,7 +453,7 @@
 		
 		
 			// remove sub fields
-			$new_tr.find('.field').not('[data-key="acfcloneindex"]').remove();
+			$new_tr.find('.acf-field-object').not('[data-key="acfcloneindex"]').remove();
 	
 			
 			// show add new message
@@ -556,7 +556,7 @@
 			
 			// vars
 			var new_parent_layout = $new_tr.attr('data-key'),
-				$fields = $new_tr.find('.field').not('[data-key="acfcloneindex"]');
+				$fields = $new_tr.find('.acf-field-object').not('[data-key="acfcloneindex"]');
 				
 			$fields.each(function(){
 				
@@ -626,7 +626,7 @@
 			
 			
 			// delete fields
-			$tr.find('.field').not('[data-key="acfcloneindex"]').each(function(){
+			$tr.find('.acf-field-object').not('[data-key="acfcloneindex"]').each(function(){
 				
 				// dlete without animation
 				acf.field_group.delete_field( $(this), false );
@@ -635,7 +635,7 @@
 			
 			
 			// save field
-			acf.field_group.save_field( $tr.closest('.field') );
+			acf.field_group.save_field( $tr.closest('.acf-field-object') );
 			
 			
 			// remove tr
@@ -727,7 +727,7 @@
 			
 			
 			// vars
-			var $tbody = $el.find('> .field-settings > table > tbody');
+			var $tbody = $el.find('> .settings > table > tbody');
 			
 			
 			// validate
@@ -806,7 +806,7 @@
 			// append parent_layout input
 			var layout_key = $tr.attr('data-key');
 			
-			$field_list.children('.field').each(function(){
+			$field_list.children('.acf-field-object').each(function(){
 				
 				acf.field_group.update_field_meta( $(this), 'parent_layout', layout_key );
 				
@@ -895,3 +895,6 @@
 	});
 
 })(jQuery);
+
+// @codekit-prepend "../js/field-group.js";
+
