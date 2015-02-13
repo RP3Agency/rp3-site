@@ -13,3 +13,5 @@ _wp
 wp-content/managewp
 wp-config.php
 wp-config-local.php
+builders
+!src/builders
