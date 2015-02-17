@@ -267,15 +267,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.0.3",
+            "version": "4.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.0.3"
+                "reference": "tags/4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/contact-form-7.4.0.3.zip",
+                "url": "http://downloads.wordpress.org/plugin/contact-form-7.4.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -283,7 +283,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/contact-form-7/"
+            "homepage": "https://wordpress.org/plugins/contact-form-7/"
         },
         {
             "name": "wpackagist-plugin/custom-menu-wizard",
@@ -422,15 +422,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.2.8",
+            "version": "5.3.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.2.8"
+                "reference": "tags/5.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.2.8.zip",
+                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -442,15 +442,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.3",
+            "version": "3.3.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.3-beta1"
+                "reference": "tags/3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/jetpack.3.3.zip",
+                "url": "http://downloads.wordpress.org/plugin/jetpack.3.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -458,19 +458,19 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/jetpack/"
+            "homepage": "https://wordpress.org/plugins/jetpack/"
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.53",
+            "version": "0.55",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.53"
+                "reference": "tags/0.55"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/list-category-posts.0.53.zip",
+                "url": "http://downloads.wordpress.org/plugin/list-category-posts.0.55.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -482,15 +482,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.2.2",
+            "version": "2.2.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.2.2"
+                "reference": "tags/2.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.2.zip",
+                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -525,15 +525,15 @@
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
-            "version": "2.5.15",
+            "version": "2.5.16",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/really-simple-twitter-feed-widget/",
-                "reference": "tags/2.5.15"
+                "reference": "tags/2.5.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.2.5.15.zip",
+                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.2.5.16.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -545,15 +545,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.3.13",
+            "version": "2.3.14",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.3.13"
+                "reference": "tags/2.3.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.13.zip",
+                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.14.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -611,26 +611,23 @@
         },
         {
             "name": "wpackagist-plugin/simple-page-ordering",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/simple-page-ordering/",
-                "reference": "tags/2.2.3"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/simple-page-ordering.2.2.3.zip",
+                "url": "http://downloads.wordpress.org/plugin/simple-page-ordering.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/simple-page-ordering": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/simple-page-ordering/"
+            "homepage": "https://wordpress.org/plugins/simple-page-ordering/"
         },
         {
             "name": "wpackagist-plugin/tc-custom-taxonomy-filter",
@@ -723,7 +720,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.0.2",
+            "version": "4.0.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",

@@ -118,6 +118,10 @@ gulp.task('clean', function() {
 		// console.log( 'Theme and plugin directories deleted.' );
 		console.log( 'Theme directory deleted.' );
 	});
+
+	del( [__dirname + '/builders'], function(err) {
+		console.log( '/builders/ directory deleted.' );
+	});
 });
 
 
@@ -172,4 +176,12 @@ gulp.task('watch', function() {
 
 	// Watch theme template files
 	gulp.watch( src_theme + '/**/*.*', ['build-theme'] );
+});
+
+
+
+// Build processes for reveal.js
+gulp.task('reveal', function() {
+	return gulp.src(src + '/builders/**/*')
+		.pipe(gulp.dest(__dirname + '/builders'));
 });
