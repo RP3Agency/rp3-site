@@ -152,6 +152,7 @@ gulp.task('build-theme', function() {
 gulp.task('build', ['styles', 'scripts'], function() {
 	gulp.start('build-theme');
 	// gulp.start('build-plugin');
+	gulp.start('reveal');
 });
 
 

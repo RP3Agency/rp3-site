@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'components/home-page', 'hero' ); ?>
+<?php get_template_part( 'components/home-page', 'hero-wawf' ); ?>
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

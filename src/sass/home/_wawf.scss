@@ -1,0 +1,278 @@
+$font-weights: (
+	'semibold':		600
+);
+
+$font-nexa: "Nexa W01", "Open Sans", sans-serif;
+
+%nexa-bold {
+	font-family: $font-nexa;
+	font-weight: map-get($font-weights, 'semibold');
+}
+
+.home-splash {
+
+	$plum: #7e5473;
+
+	height: 500px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+
+	@include breakpoint($bp-medium) {
+		height: 700px;
+	}
+
+	/** Responsive Cropping Effect */
+	&__inner {
+		height: 700px;
+		left: 50%;
+		overflow: hidden;
+		position: relative;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 1600px;
+	}
+
+
+
+	/** Blocks */
+	&__block {
+		position: absolute;
+
+		/** Block Dimensions */
+		&[data-block-dimensions="100x100"] {
+			width: 100px;
+			height: 100px;
+			background-size: 100px auto;
+		}
+
+		&[data-block-dimensions="100x200"] {
+			width: 100px;
+			height: 200px;
+			background-size: 100px auto;
+		}
+
+		&[data-block-dimensions="200x100"] {
+			width: 200px;
+			height: 100px;
+			background-size: 200px auto;
+		}
+
+		&[data-block-dimensions="200x200"] {
+			width: 200px;
+			height: 200px;
+			background-size: 200px auto;
+		}
+
+		&[data-block-dimensions="300x300"] {
+			width: 300px;
+			height: 300px;
+			background-size: 300px auto;
+		}
+
+		/** Positioning */
+		/** Each block has to be individually positioned according to the comp */
+		&--1 { top: 0; left: 0; }
+		&--2 { top: 0; left: 300px; }
+		&--3 { top: 0; left: 400px; }
+		&--4 { top: 0; left: 600px; }
+		&--5 { top: 0; left: 800px; }
+		&--6 { top: 0; left: 1000px; }
+		&--7 { top: 0; left: 1200px; }
+		&--8 { top: 0; left: 1400px; }
+
+		&--9 { top: 100px; left: 600px; }
+		&--10 { top: 100px; left: 700px; }
+		&--11 { top: 100px; left: 800px; }
+		&--12 { top: 100px; left: 900px; }
+		&--13 { top: 100px; left: 1100px; }
+		&--14 { top: 100px; left: 1200px; }
+		&--15 { top: 100px; left: 1400px; }
+		&--16 { top: 100px; left: 1500px; }
+
+		&--17 { top: 200px; left: 300px; }
+		&--18 { top: 200px; left: 400px; }
+		&--19 { top: 200px; left: 500px; }
+		&--20 { top: 200px; left: 1000px; }
+		&--21 { top: 200px; left: 1100px; }
+		&--22 { top: 200px; left: 1300px; }
+
+		&--23 { top: 300px; left: 0; }
+		&--24 { top: 300px; left: 200px; }
+		&--25 { top: 300px; left: 400px; }
+		&--26 { top: 300px; left: 1000px; }
+		&--27 { top: 300px; left: 1300px; }
+
+		&--28 { top: 400px; left: 0; }
+		&--29 { top: 400px; left: 100px; }
+		&--30 { top: 400px; left: 200px; }
+		&--31 { top: 400px; left: 500px; }
+		&--32 { top: 400px; left: 1100px; }
+
+		&--33 { top: 500px; left: 0; }
+		&--34 { top: 500px; left: 500px; }
+		&--35 { top: 500px; left: 600px; }
+		&--36 { top: 500px; left: 800px; }
+		&--37 { top: 500px; left: 1000px; }
+		&--38 { top: 500px; left: 1200px; }
+
+		&--39 { top: 600px; left: 100px; }
+		&--40 { top: 600px; left: 600px; }
+		&--41 { top: 600px; left: 1000px; }
+		&--42 { top: 600px; left: 1100px; }
+		&--43 { top: 600px; left: 1200px; }
+		&--44 { top: 600px; left: 1400px; }
+
+		/** Blur Colors */
+		@each $color in ('blue', 'gold', 'gray', 'green', 'pink') {
+			&[data-blur="#{$color}"] {
+				background-image: url("../images/wawf/blur-#{$color}.jpg");
+
+				// @include breakpoint($bp-hidpi) {
+				// 	background-image: url("../images/home-splash/blur-#{$color}@2x.jpg");
+				// }
+			}
+		}
+
+		/** Blur Background Positioning and sizing */
+		&[data-block-type="blur"] {
+			background-size: 200px auto;
+		}
+
+		/** Gold */
+		&--32 { background-position: 0 -200px; }
+		&--39 { background-position: 0 -300px; }
+
+		/** Pink */
+		&--6 { background-position: 0 -100px; }
+		&--28 { background-position: 0 -300px; }
+		&--40 { background-position: 0 -500px; }
+		&--41 { background-position: 0 -400px; }
+		&--44 { background-position: 0 -600px; }
+
+		/** Green */
+		&--12 { background-position: 0 -100px; }
+		&--19 { background-position: 0 -200px; }
+		&--22 { background-position: 0 -300px; }
+
+		/** Blue */
+		&--20 { background-position: 0 -100px; }
+		&--34 { background-position: 0 -200px; }
+		&--43 { background-position: 0 -400px; }
+
+		/** Gray */
+		&--16 { background-position: 0 -100px; }
+		&--24 { background-position: 0 -300px; }
+		&--25 { background-position: 0 -400px; }
+		&--37 { background-position: 0 -500px; }
+
+
+
+		/** Photo Backgrounds */
+
+		// Start the photo blocks off as opacity: 0, then fade them in via a combination of JS & CSS
+		&[data-photo] {
+			transition: opacity 1000ms linear;
+
+			&.no-transition {
+				transition: none;
+			}
+
+			@include breakpoint($bp-medium) {
+				opacity: 0;
+			}
+
+			&.visible,
+			html.no-csstransitions & {
+				opacity: 1;
+			}
+		}
+
+		@for $i from 1 through 22 {
+			&[data-photo="photo-#{$i}"] {
+				background-image: url("../images/wawf/photo-#{$i}.jpg");
+
+				// @include breakpoint($bp-hidpi) {
+				// 	background-image: url("../images/home-splash/photo-#{$i}@2x.jpg");
+				// }
+			}
+		}
+	}
+
+
+
+	/** Inset */
+	&__inset {
+		@extend %nexa-bold;
+		background-color: #fff;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+		height: 300px;
+		left: 600px;
+		padding: rem(15px);
+		position: absolute;
+		text-align: center;
+		top: 200px;
+		width: 400px;
+
+		&__container {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__header,
+	&__subheader {
+		@extend %nexa-bold;
+		color: $plum;
+	}
+
+	&__header {
+		font-size: rem(84px / 2);
+		line-height: (92 / 85);
+		text-transform: uppercase;
+	}
+
+	&__subheader {
+		font-size: rem(16px);
+		line-height: (68 / 32);
+		text-transform: none;
+	}
+
+	.button {
+		border-radius: 0;
+		-webkit-appearance: none;
+		   -moz-appearance: none;
+		        appearance: none;
+		
+		@extend %nexa-bold;
+		background-color: $plum;
+		border: 2px solid $plum;
+		color: #fff;
+		cursor: pointer;
+		display: inline-block;
+		font-size: rem(11px);
+		line-height: ( 34px / 9px );
+		margin: rem(10px) auto;
+		padding: 0 1em;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition:
+			background-color 100ms,
+			border-color 100ms,
+			color 100ms;
+
+		&:visited {
+			color: #fff;
+		}
+
+		@include hover-state {
+			background-color: mix(#000, $plum, 20%);
+			border-color: mix(#000, $plum, 20%);
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}

@@ -19,6 +19,10 @@
 		&.home-hero {
 			height: auto;
 		}
+
+		&.home-hero.wawf-hero {
+			height: cr(608px);
+		}
 	}
 
 	@include breakpoint($bp-large) {
