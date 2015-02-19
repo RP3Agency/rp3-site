@@ -4,7 +4,7 @@
 	margin-bottom: 3rem;
 
 	&.home-hero {
-		height: cr(450px);
+		height: cr(320px);
 	}
 
 	@include breakpoint($bp-medium) {
@@ -118,12 +118,12 @@
 		left: 0;
 		padding: ce(30px, 11px) percentage(18px / 250px);
 		position: absolute;
-		width: 50%;
+		width: 100%;
 
 		@include breakpoint($bp-medium) {
 			font-size: cr(12px);
 			padding: ce(30px, 12px) percentage(30px / 589px);
-			@include span(9);
+			@include span( 16 );
 		}
 
 		@include breakpoint(1600px) {
@@ -192,4 +192,12 @@
 	.hero.hero-image.interstitial {
 		height: 640px;
 	}
+}
+
+/** _shame.scss */
+.hero__image picture,
+.hero__image picture img {
+	display: block;
+	height: 100% !important;
+	width: auto !important;
 }

@@ -34,6 +34,7 @@ $blocks = array(
 	array( '100x100', 'photo', 'photo-10' ),	// 18
 	array( '100x100', 'blur', 'green' ),		// 19
 	array( '100x100', 'blur', 'blue' ),			// 20
+
 	array( '200x200', 'photo', 'photo-11' ),	// 21
 	array( '100x100', 'blur', 'green' ),		// 22
 
@@ -62,6 +63,16 @@ $blocks = array(
 	array( '100x100', 'photo', 'photo-22' ),	// 42
 	array( '200x100', 'blur', 'blue' ),			// 43
 	array( '200x100', 'blur', 'pink' ),			// 44
+
+
+	/** Customization for the RP3 home page hero */
+	array( '200x100', 'blur', 'gold' ),			// 45
+	array( '100x200', 'photo', 'photo-8' ),		// 46
+	array( '100x200', 'blur', 'gray' ),			// 47
+	array( '100x100', 'photo', 'photo-21' ),	// 48
+	array( '100x200', 'blur', 'blue' ),			// 49
+	array( '100x100', 'blur', 'green' ),		// 51
+	array( '200x100', 'blur', 'pink' ),			// 50
 );
 
 // Set a master counter and a photo counter
@@ -86,22 +97,6 @@ $counter = 1;
 					</div>
 
 				<?php $counter++; endforeach; ?>
-
-				<div class="home-splash__inset">
-
-					<div class="home-splash__inset__container">
-
-						<h1 class="home-splash__header">Stand together.</h1>
-
-						<h2 class="home-splash__subheader">So she can stand on her own.</h2>
-
-						<!-- a href="#!" class="button button--purplefill">Get Involved</a -->
-
-					</div>
-					<!-- home splash inset container -->
-
-				</div>
-				<!-- // home-splash__inset -->
 
 			</div>
 			<!-- // home-splash__inner -->
