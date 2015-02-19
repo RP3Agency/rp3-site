@@ -202,4 +202,24 @@
 			}
 		}
 	}
+
+	/** special accommodations for this unique header image */
+	.hero__image {
+		margin: 0 auto;
+		max-width: cr( 1600px );
+	}
+
+	.wrapper {
+		max-width: cr( 1600px );
+
+		@include breakpoint( 1600px ) {
+
+			.hero__headline {
+				margin: {
+					left: 0;
+					right: 0;
+				}
+			}
+		}
+	}
 }

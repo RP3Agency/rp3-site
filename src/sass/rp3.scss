@@ -30,8 +30,6 @@
 
 @import "widgets";
 
-@import "home/home";
-
 @import "content";
 
 @import "infinite-scroll";
@@ -46,3 +44,6 @@
 
 // Panels
 @import "panels/six-up-image-panel";
+
+// Home page
+@import "home/home";
