@@ -123,14 +123,23 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 		&--43 { top: 600px; left: 1200px; }
 		&--44 { top: 600px; left: 1400px; }
 
+		/** Customizations for the RP3 home page hero */
+		&--45 { top: 200px; left: 600px; }
+		&--46 { top: 200px; left: 900px; }
+		&--47 { top: 200px; left: 800px; }
+		&--48 { top: 300px; left: 700px; }
+		&--49 { top: 300px; left: 600px; }
+		&--50 { top: 400px; left: 700px; }
+		&--51 { top: 400px; left: 800px; }
+
 		/** Blur Colors */
 		@each $color in ('blue', 'gold', 'gray', 'green', 'pink') {
 			&[data-blur="#{$color}"] {
 				background-image: url("../images/wawf/blur-#{$color}.jpg");
 
-				// @include breakpoint($bp-hidpi) {
-				// 	background-image: url("../images/home-splash/blur-#{$color}@2x.jpg");
-				// }
+				@include breakpoint($hidpi) {
+					background-image: url("../images/wawf/blur-#{$color}@2x.jpg");
+				}
 			}
 		}
 
@@ -142,6 +151,7 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 		/** Gold */
 		&--32 { background-position: 0 -200px; }
 		&--39 { background-position: 0 -300px; }
+		&--45 { background-position: 0 -200px; }
 
 		/** Pink */
 		&--6 { background-position: 0 -100px; }
@@ -149,22 +159,26 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 		&--40 { background-position: 0 -500px; }
 		&--41 { background-position: 0 -400px; }
 		&--44 { background-position: 0 -600px; }
+		&--51 { background-position: 0 -600px; }
 
 		/** Green */
 		&--12 { background-position: 0 -100px; }
 		&--19 { background-position: 0 -200px; }
 		&--22 { background-position: 0 -300px; }
+		&--50 { background-position: 0 -300px; }
 
 		/** Blue */
 		&--20 { background-position: 0 -100px; }
 		&--34 { background-position: 0 -200px; }
 		&--43 { background-position: 0 -400px; }
+		&--49 { background-position: 0 -200px; }
 
 		/** Gray */
 		&--16 { background-position: 0 -100px; }
 		&--24 { background-position: 0 -300px; }
 		&--25 { background-position: 0 -400px; }
 		&--37 { background-position: 0 -500px; }
+		&--47 { background-position: 0 -100px; }
 
 
 
@@ -192,9 +206,9 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 			&[data-photo="photo-#{$i}"] {
 				background-image: url("../images/wawf/photo-#{$i}.jpg");
 
-				// @include breakpoint($bp-hidpi) {
-				// 	background-image: url("../images/home-splash/photo-#{$i}@2x.jpg");
-				// }
+				@include breakpoint($hidpi) {
+					background-image: url("../images/wawf/photo-#{$i}@2x.jpg");
+				}
 			}
 		}
 	}
