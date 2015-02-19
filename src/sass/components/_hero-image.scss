@@ -118,11 +118,12 @@
 		left: 0;
 		padding: ce(30px, 11px) percentage(18px / 250px);
 		position: absolute;
+		width: 100%;
 
 		@include breakpoint($bp-medium) {
 			font-size: cr(12px);
 			padding: ce(30px, 12px) percentage(30px / 589px);
-			@include span(9);
+			@include span( 16 );
 		}
 
 		@include breakpoint(1600px) {

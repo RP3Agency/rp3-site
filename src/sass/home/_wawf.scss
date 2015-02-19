@@ -15,8 +15,12 @@
 		overflow: hidden;
 		position: relative;
 		top: 50%;
-		transform: translate(-50%, -50%) scale(0.5);
+		transform: translate( -50%, -50% ) scale( 0.5 );
 		width: 1600px;
+
+		@include breakpoint( $bp-medium ) {
+			transform: translate( -50%, -50% ) scale( 1 );
+		}
 	}
 
 
