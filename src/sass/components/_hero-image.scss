@@ -195,11 +195,9 @@
 }
 
 /** _shame.scss */
-@include breakpoint( $bp-small ) {
-	.hero__image picture,
-	.hero__image picture img {
-		display: block;
-		height: 100% !important;
-		width: auto !important;
-	}
+.hero__image picture,
+.hero__image picture img {
+	display: block;
+	height: 100% !important;
+	width: auto !important;
 }
