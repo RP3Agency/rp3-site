@@ -1,18 +1,4 @@
-$font-weights: (
-	'semibold':		600
-);
-
-$font-nexa: "Nexa W01", "Open Sans", sans-serif;
-
-%nexa-bold {
-	font-family: $font-nexa;
-	font-weight: map-get($font-weights, 'semibold');
-}
-
 .home-splash {
-
-	$plum: #7e5473;
-
 	height: 500px;
 	margin: 0 auto;
 	overflow: hidden;
@@ -29,7 +15,7 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 		overflow: hidden;
 		position: relative;
 		top: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%) scale(0.5);
 		width: 1600px;
 	}
 
@@ -210,83 +196,6 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 					background-image: url("../images/wawf/photo-#{$i}@2x.jpg");
 				}
 			}
-		}
-	}
-
-
-
-	/** Inset */
-	&__inset {
-		@extend %nexa-bold;
-		background-color: #fff;
-		box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-		height: 300px;
-		left: 600px;
-		padding: rem(15px);
-		position: absolute;
-		text-align: center;
-		top: 200px;
-		width: 400px;
-
-		&__container {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-	}
-
-	&__header,
-	&__subheader {
-		@extend %nexa-bold;
-		color: $plum;
-	}
-
-	&__header {
-		font-size: rem(84px / 2);
-		line-height: (92 / 85);
-		text-transform: uppercase;
-	}
-
-	&__subheader {
-		font-size: rem(16px);
-		line-height: (68 / 32);
-		text-transform: none;
-	}
-
-	.button {
-		border-radius: 0;
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-		        appearance: none;
-		
-		@extend %nexa-bold;
-		background-color: $plum;
-		border: 2px solid $plum;
-		color: #fff;
-		cursor: pointer;
-		display: inline-block;
-		font-size: rem(11px);
-		line-height: ( 34px / 9px );
-		margin: rem(10px) auto;
-		padding: 0 1em;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		transition:
-			background-color 100ms,
-			border-color 100ms,
-			color 100ms;
-
-		&:visited {
-			color: #fff;
-		}
-
-		@include hover-state {
-			background-color: mix(#000, $plum, 20%);
-			border-color: mix(#000, $plum, 20%);
-			color: #fff;
-			text-decoration: none;
 		}
 	}
 }

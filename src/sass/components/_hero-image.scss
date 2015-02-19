@@ -4,7 +4,7 @@
 	margin-bottom: 3rem;
 
 	&.home-hero {
-		height: cr(450px);
+		height: cr(320px);
 	}
 
 	@include breakpoint($bp-medium) {
@@ -118,7 +118,6 @@
 		left: 0;
 		padding: ce(30px, 11px) percentage(18px / 250px);
 		position: absolute;
-		width: 50%;
 
 		@include breakpoint($bp-medium) {
 			font-size: cr(12px);
