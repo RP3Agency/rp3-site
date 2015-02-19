@@ -176,14 +176,11 @@
 
 		// Start the photo blocks off as opacity: 0, then fade them in via a combination of JS & CSS
 		&[data-photo] {
+			opacity: 0;
 			transition: opacity 1000ms linear;
 
 			&.no-transition {
 				transition: none;
-			}
-
-			@include breakpoint($bp-medium) {
-				opacity: 0;
 			}
 
 			&.visible,
