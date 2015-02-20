@@ -36,7 +36,7 @@ a.block {
 // (as opposed to "back" type links that get a left-facing caret (er, less than sign))
 .continue {
 	clear: both;
-	display: block;
+	// display: block;
 	font-weight: $medium;
 	line-height: 5;
 	margin-bottom: 1em;

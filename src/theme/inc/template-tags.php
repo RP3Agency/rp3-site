@@ -367,3 +367,21 @@ function rp3_case_study_hero_image( $image_id, $tall = false ) {
 		'classes'		=> $classes
 	) );
 }
+
+
+
+/**
+ * Custom function to return an excerpt with an inline "Continue Reading" tag
+ */
+if ( ! function_exists( 'rp3_get_the_excerpt' ) ) {
+
+	function rp3_get_the_excerpt() {
+		global $post;
+
+		$excerpt = get_the_content() . ' <span class="link continue">Continue Reading</span>';
+
+		$excerpt = apply_filters( 'get_the_excerpt', $excerpt );
+
+		return $excerpt;
+	}
+}

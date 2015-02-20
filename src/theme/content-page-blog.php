@@ -68,11 +68,11 @@ $blog = new WP_Query( array(
 
 					<div class="blog-listing__excerpt equal-heights">
 
-						<?php the_excerpt(); ?>
+						<?php echo rp3_get_the_excerpt(); ?>
 
 					</div>
 
-					<p class="link continue">Continue reading</p>
+					<!-- <p class="link continue">Continue reading</p> -->
 
 				</a>
 
