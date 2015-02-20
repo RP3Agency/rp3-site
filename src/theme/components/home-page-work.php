@@ -8,9 +8,9 @@
 
 			<?php setup_postdata( $post ); ?>
 
-			<?php if ( get_field( 'hero_image' ) != '' ) : ?>
+			<?php if ( '' != get_post_thumbnail_id() ) : ?>
 
-				<?php echo rp3_full_bleed_hero_image( get_field( 'hero_image' ), array(
+				<?php echo rp3_full_bleed_hero_image( get_post_thumbnail_id(), array(
 					'id'			=> '',
 					'classes'		=> 'hero-' . $i,
 					'permalink'		=> get_the_permalink(),
