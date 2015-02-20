@@ -24,11 +24,40 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 
 		<div class="home-errata__general-widget home-errata__block">
 
-			<?php dynamic_sidebar( 'home-errata__general-widget' ); ?>
+			<?php if ( '' != get_field( 'link' ) ) : ?>
+
+				<a href="<?php echo esc_url( get_field( 'link' ) ); ?>" class="block">
+
+			<?php else: ?>
+
+				<div class="block">
+
+			<?php endif; ?>
+
+					<div class="home-errata__subhead"><?php the_field( 'label' ); ?></div>
+
+					<?php echo get_field( 'content' ); ?>
+
+					<div class="home-errata__date">
+
+						<?php the_field( 'date' ); ?>
+
+					</div>
+
+			<?php if ( '' != get_field( 'link' ) ) : ?>
+
+				</a>
+
+			<?php else: ?>
+
+				</div>
+
+			<?php endif; ?>
 
 		</div>
-		<!-- // .home-errata__widget -->
+		<!-- // .home-errata__general-widget -->
 
+		<!-- Twitter Widget -->
 		<div class="home-errata__twitter home-errata__block">
 
 			<div class="home-errata__subhead"><a href="https://twitter.com/RP3Agency">@RP3Agency</a></div>
@@ -36,6 +65,7 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 			<?php dynamic_sidebar( 'home-errata__twitter-widget' ); ?>
 
 		</div>
+		<!-- // .home-errata__twitter -->
 
 	</div>
 	<!-- // .home-errata__row -->
