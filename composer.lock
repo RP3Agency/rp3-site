@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4008589fe648fba00fa72d467b45ad41",
+    "hash": "5ea907d6e887299b12e8487345baa147",
     "packages": [
         {
             "name": "composer/installers",
@@ -523,6 +523,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/markdown-on-save/"
+        },
+        {
+            "name": "wpackagist-plugin/public-post-preview",
+            "version": "2.4",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/public-post-preview/",
+                "reference": "tags/2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/public-post-preview.2.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/public-post-preview/"
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
