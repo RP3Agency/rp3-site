@@ -38,11 +38,15 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 
 					<?php echo get_field( 'content' ); ?>
 
-					<div class="home-errata__date">
+					<?php if ( '' != get_field( 'date' ) ) : ?>
 
-						<?php the_field( 'date' ); ?>
+						<div class="home-errata__date">
 
-					</div>
+							<?php the_field( 'date' ); ?>
+
+						</div>
+
+					<?php endif; ?>
 
 			<?php if ( '' != get_field( 'link' ) ) : ?>
 
