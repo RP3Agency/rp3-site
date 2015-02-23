@@ -57,12 +57,22 @@
 		margin-bottom: 1rem;
 	}
 
+	&__label,
+	&__number {
+		line-height: 1;
+	}
+
 	&__label {
 		@extend %roboto-bold;
 		background-color: $black;
 		color: $white;
 		padding: 0 0.5em;
 		text-transform: uppercase;
+	}
+
+	&__number {
+		@extend %robotocondensed-bold;
+		font-size: em( 90px );
 	}
 
 	/** Chapter Content */
