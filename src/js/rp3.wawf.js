@@ -21,25 +21,13 @@ rp3.wawf = (function($) {
 			});
 
 
-		// If we're in a mobile viewport, or we've set our home-splash cookie,
-		// then skip the opening animation
-		// if ( ( window.matchMedia( '(min-width: 600px)' ).matches ) || ( $.cookie( 'home-splash' ) === 'true' ) ) {
-		if ( ! window.matchMedia( '(min-width: 600px)' ).matches ) {
-			$photos.addClass('no-transition').addClass( 'visible' );
-		} else {
-			$photos.each( function(i) {
-				var that = $(this);
-				window.setTimeout( function() {
-					that.addClass('visible');
-				}, 100 * i);
-			});
-
-			// Set a cookie so that we only do this once per day
-			// $.cookie( 'home-splash', 'true', {
-			// 	expires:	1,
-			// 	path:		'/'
-			// });
-		}
+		// Animate all the things, all the time!
+		$photos.each( function(i) {
+			var that = $(this);
+			window.setTimeout( function() {
+				that.addClass('visible');
+			}, 100 * i);
+		});
 	},
 
 	/** init */

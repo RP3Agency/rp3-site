@@ -1,18 +1,4 @@
-$font-weights: (
-	'semibold':		600
-);
-
-$font-nexa: "Nexa W01", "Open Sans", sans-serif;
-
-%nexa-bold {
-	font-family: $font-nexa;
-	font-weight: map-get($font-weights, 'semibold');
-}
-
 .home-splash {
-
-	$plum: #7e5473;
-
 	height: 500px;
 	margin: 0 auto;
 	overflow: hidden;
@@ -29,8 +15,12 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 		overflow: hidden;
 		position: relative;
 		top: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate( -50%, -50% ) scale( 0.5 );
 		width: 1600px;
+
+		@include breakpoint( $bp-medium ) {
+			transform: translate( -50%, -50% ) scale( 1 );
+		}
 	}
 
 
@@ -123,14 +113,23 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 		&--43 { top: 600px; left: 1200px; }
 		&--44 { top: 600px; left: 1400px; }
 
+		/** Customizations for the RP3 home page hero */
+		&--45 { top: 200px; left: 600px; }
+		&--46 { top: 200px; left: 900px; }
+		&--47 { top: 200px; left: 800px; }
+		&--48 { top: 300px; left: 700px; }
+		&--49 { top: 300px; left: 600px; }
+		&--50 { top: 400px; left: 700px; }
+		&--51 { top: 400px; left: 800px; }
+
 		/** Blur Colors */
 		@each $color in ('blue', 'gold', 'gray', 'green', 'pink') {
 			&[data-blur="#{$color}"] {
 				background-image: url("../images/wawf/blur-#{$color}.jpg");
 
-				// @include breakpoint($bp-hidpi) {
-				// 	background-image: url("../images/home-splash/blur-#{$color}@2x.jpg");
-				// }
+				@include breakpoint($hidpi) {
+					background-image: url("../images/wawf/blur-#{$color}@2x.jpg");
+				}
 			}
 		}
 
@@ -142,6 +141,7 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 		/** Gold */
 		&--32 { background-position: 0 -200px; }
 		&--39 { background-position: 0 -300px; }
+		&--45 { background-position: 0 -200px; }
 
 		/** Pink */
 		&--6 { background-position: 0 -100px; }
@@ -149,22 +149,26 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 		&--40 { background-position: 0 -500px; }
 		&--41 { background-position: 0 -400px; }
 		&--44 { background-position: 0 -600px; }
+		&--51 { background-position: 0 -600px; }
 
 		/** Green */
 		&--12 { background-position: 0 -100px; }
 		&--19 { background-position: 0 -200px; }
 		&--22 { background-position: 0 -300px; }
+		&--50 { background-position: 0 -300px; }
 
 		/** Blue */
 		&--20 { background-position: 0 -100px; }
 		&--34 { background-position: 0 -200px; }
 		&--43 { background-position: 0 -400px; }
+		&--49 { background-position: 0 -200px; }
 
 		/** Gray */
 		&--16 { background-position: 0 -100px; }
 		&--24 { background-position: 0 -300px; }
 		&--25 { background-position: 0 -400px; }
 		&--37 { background-position: 0 -500px; }
+		&--47 { background-position: 0 -100px; }
 
 
 
@@ -172,14 +176,11 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 
 		// Start the photo blocks off as opacity: 0, then fade them in via a combination of JS & CSS
 		&[data-photo] {
+			opacity: 0;
 			transition: opacity 1000ms linear;
 
 			&.no-transition {
 				transition: none;
-			}
-
-			@include breakpoint($bp-medium) {
-				opacity: 0;
 			}
 
 			&.visible,
@@ -192,87 +193,30 @@ $font-nexa: "Nexa W01", "Open Sans", sans-serif;
 			&[data-photo="photo-#{$i}"] {
 				background-image: url("../images/wawf/photo-#{$i}.jpg");
 
-				// @include breakpoint($bp-hidpi) {
-				// 	background-image: url("../images/home-splash/photo-#{$i}@2x.jpg");
-				// }
+				@include breakpoint($hidpi) {
+					background-image: url("../images/wawf/photo-#{$i}@2x.jpg");
+				}
 			}
 		}
 	}
 
-
-
-	/** Inset */
-	&__inset {
-		@extend %nexa-bold;
-		background-color: #fff;
-		box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-		height: 300px;
-		left: 600px;
-		padding: rem(15px);
-		position: absolute;
-		text-align: center;
-		top: 200px;
-		width: 400px;
-
-		&__container {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
+	/** special accommodations for this unique header image */
+	.hero__image {
+		margin: 0 auto;
+		max-width: cr( 1600px );
 	}
 
-	&__header,
-	&__subheader {
-		@extend %nexa-bold;
-		color: $plum;
-	}
+	.wrapper {
+		max-width: cr( 1600px );
 
-	&__header {
-		font-size: rem(84px / 2);
-		line-height: (92 / 85);
-		text-transform: uppercase;
-	}
+		@include breakpoint( 1600px ) {
 
-	&__subheader {
-		font-size: rem(16px);
-		line-height: (68 / 32);
-		text-transform: none;
-	}
-
-	.button {
-		border-radius: 0;
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-		        appearance: none;
-		
-		@extend %nexa-bold;
-		background-color: $plum;
-		border: 2px solid $plum;
-		color: #fff;
-		cursor: pointer;
-		display: inline-block;
-		font-size: rem(11px);
-		line-height: ( 34px / 9px );
-		margin: rem(10px) auto;
-		padding: 0 1em;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		transition:
-			background-color 100ms,
-			border-color 100ms,
-			color 100ms;
-
-		&:visited {
-			color: #fff;
-		}
-
-		@include hover-state {
-			background-color: mix(#000, $plum, 20%);
-			border-color: mix(#000, $plum, 20%);
-			color: #fff;
-			text-decoration: none;
+			.hero__headline {
+				margin: {
+					left: 0;
+					right: 0;
+				}
+			}
 		}
 	}
 }
