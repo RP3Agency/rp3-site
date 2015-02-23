@@ -1,2 +1,44 @@
+/** Google Fonts */
+
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700|Roboto+Condensed:700);
 
+/** Typography placeholder selectors */
+
+%roboto-light {
+	font-family: $font__roboto;
+	font-weight: map-get( $font__weights, "light" );
+}
+
+%roboto-normal {
+	font-family: $font__roboto;
+	font-weight: map-get( $font__weights, "normal" );
+}
+
+%roboto-regular {
+	@extend %roboto-normal;
+}
+
+%roboto-bold {
+	font-family: $font__roboto;
+	font-weight: map-get( $font__weights, "bold" );
+}
+
+%robotocondensed-bold {
+	font-family: $font__roboto-condensed;
+	font-weight: map-get( $font__weights, "bold" );
+}
+
+/** Base typographical treatments */
+
+html {
+	@extend %roboto-light;
+	font-size: percentage( $font__default-size / 16px );
+}
+
+body {
+	line-height: ( 22px / $font__default-size );
+}
+
+p {
+	margin: 1rem 0;
+}

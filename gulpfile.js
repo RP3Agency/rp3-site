@@ -177,12 +177,15 @@ gulp.task('watch', function() {
 
 	// Watch theme template files
 	gulp.watch( src_theme + '/**/*.*', ['build-theme'] );
+
+	// Watch builders/sass/*.scss files
+	gulp.watch( __dirname + '/src/builders/sass/**/*.scss', ['builders'] );
 });
 
 
 
 // Build processes for reveal.js
-gulp.task('reveal', function() {
+gulp.task('builders', function() {
 	gulp.src(src + '/builders/**/*')
 		.pipe(gulp.dest(__dirname + '/builders'));
 

@@ -1,0 +1,3 @@
+@function em( $target, $context: $font__default-size ) {
+	@return $target / $context * 1em;
+}
