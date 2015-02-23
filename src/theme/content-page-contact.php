@@ -37,7 +37,8 @@
 
 			<div class="contact__info__new-business">
 				<h2>Work With Us</h2>
-				<p class="contact__info__email">Rob Gerds, CMO<br><a href="<?php echo esc_url( 'mailto:' . get_field( 'new_business_email' ), array( 'mailto' ) ); ?>"><?php echo esc_html( get_field( 'new_business_email' ) ); ?></a></p>
+				<p class="contact__info__email">Jim Lansbury, Principal and Chief Creative Officer<br />
+				<a href="mailto:jlansbury@rp3agency.com">jlansbury@rp3agency.com</a></p>
 			</div>
 
 			<?php endif; ?>
