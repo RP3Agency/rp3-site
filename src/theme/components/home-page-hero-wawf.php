@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Create 44 blocks.
+ * Create -44- 51 blocks.
  * Each block will have 1 of 4 possible size variations:
  *     100x100
  *     100x200
@@ -10,6 +10,9 @@
  * Each block will either be blur or photo
  * Blocks are numbered left to right, top to bottom based on the starting
  *     position (sort of like a crossword puzzle)
+ *
+ * except for the last 7, which are there to fill in the CTA space that's on
+ * the actual WAWF home page.
  */
 $blocks = array(
 	array( '300x300', 'photo', 'photo-1' ),	// 1
@@ -34,6 +37,7 @@ $blocks = array(
 	array( '100x100', 'photo', 'photo-10' ),	// 18
 	array( '100x100', 'blur', 'green' ),		// 19
 	array( '100x100', 'blur', 'blue' ),			// 20
+
 	array( '200x200', 'photo', 'photo-11' ),	// 21
 	array( '100x100', 'blur', 'green' ),		// 22
 
@@ -62,6 +66,16 @@ $blocks = array(
 	array( '100x100', 'photo', 'photo-22' ),	// 42
 	array( '200x100', 'blur', 'blue' ),			// 43
 	array( '200x100', 'blur', 'pink' ),			// 44
+
+
+	/** Customization for the RP3 home page hero */
+	array( '200x100', 'blur', 'gold' ),			// 45
+	array( '100x200', 'photo', 'photo-8' ),		// 46
+	array( '100x200', 'blur', 'gray' ),			// 47
+	array( '100x100', 'photo', 'photo-21' ),	// 48
+	array( '100x200', 'blur', 'blue' ),			// 49
+	array( '100x100', 'blur', 'green' ),		// 50
+	array( '200x100', 'blur', 'pink' ),			// 51
 );
 
 // Set a master counter and a photo counter
@@ -87,22 +101,6 @@ $counter = 1;
 
 				<?php $counter++; endforeach; ?>
 
-				<div class="home-splash__inset">
-
-					<div class="home-splash__inset__container">
-
-						<h1 class="home-splash__header">Stand together.</h1>
-
-						<h2 class="home-splash__subheader">So she can stand on her own.</h2>
-
-						<!-- a href="#!" class="button button--purplefill">Get Involved</a -->
-
-					</div>
-					<!-- home splash inset container -->
-
-				</div>
-				<!-- // home-splash__inset -->
-
 			</div>
 			<!-- // home-splash__inner -->
 
@@ -111,7 +109,11 @@ $counter = 1;
 
 		<div class="wrapper">
 
-			<div class="hero__headline"><h1>Washington Area Women's Foundation</h1></div>
+			<div class="hero__headline">
+				<h1>Here. Now. For. Her.</h1>
+
+				for <strong>Washington Area Women's Foundation</strong>
+			</div>
 
 		</div>
 
