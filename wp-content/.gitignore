@@ -1,12 +1,7 @@
 plugins/*
-!plugins/acf-six-image-grid/
-!plugins/advanced-custom-fields-pro/
 !plugins/category-post-list-widget/
 !plugins/rp3/
 !plugins/rp3-mailchimp/
-!plugins/wp-migrate-db-pro/
-!plugins/wp-migrate-db-pro-media-files/
-!plugins/wp-migrate-db-pro-cli/
 debug.log
 xhc-xmt
 uploads/*
