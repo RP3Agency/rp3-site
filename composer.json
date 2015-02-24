@@ -102,6 +102,7 @@
     "wpackagist-plugin/fv-top-level-cats":"*",
     "wpackagist-plugin/google-analytics-for-wordpress":"*",
     "wpackagist-plugin/jetpack":"*",
+    "wpackagist-plugin/json-rest-api":"*",
     "wpackagist-plugin/list-category-posts":"*",
     "wpackagist-plugin/mailchimp-for-wp":"*",
     "wpackagist-plugin/markdown-on-save":"*",
