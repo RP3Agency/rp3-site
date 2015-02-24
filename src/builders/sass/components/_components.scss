@@ -34,9 +34,21 @@
 	}
 
 	&__contact {
-		border-top: 3px solid currentColor;
 		font-size: em( 12px );
+		margin-top: 1rem;
 		padding-top: 1rem;
+		position: relative;
+
+		&::before {
+			background-color: currentColor;
+			content: "";
+			display: block;
+			height: 3px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: rem( 126px );
+		}
 
 		a {
 			color: currentColor;
@@ -55,6 +67,7 @@
 
 	&__header {
 		margin-bottom: 1rem;
+		width: span( 2 );
 	}
 
 	&__label,
@@ -78,6 +91,7 @@
 	&__name {
 		@extend %roboto-bold;
 		font-size: em( 28px );
+		line-height: ( 30px / 28px );
 		text-transform: uppercase;
 	}
 
@@ -85,6 +99,7 @@
 
 	&__intro-paragraph {
 		font-size: em( 22px );
+		margin-top: 0;
 	}
 
 	/** Chapger Subsection */
@@ -94,6 +109,7 @@
 		&__header {
 			@extend %robotocondensed-bold;
 			font-size: em( 22px );
+			margin-bottom: 1rem;
 			padding-bottom: 0.5rem;
 			position: relative;
 			text-transform: uppercase;
