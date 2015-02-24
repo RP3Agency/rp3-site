@@ -1,3 +1,7 @@
 @function em( $target, $context: $font__default-size ) {
 	@return $target / $context * 1em;
 }
+
+@function rem( $target ) {
+	@return $target / $font__default-size * 1rem;
+}

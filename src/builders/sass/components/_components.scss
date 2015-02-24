@@ -75,9 +75,38 @@
 		font-size: em( 90px );
 	}
 
+	&__name {
+		@extend %roboto-bold;
+		font-size: em( 28px );
+		text-transform: uppercase;
+	}
+
 	/** Chapter Content */
 
 	&__intro-paragraph {
 		font-size: em( 22px );
+	}
+
+	/** Chapger Subsection */
+
+	&__subsection {
+
+		&__header {
+			@extend %robotocondensed-bold;
+			font-size: em( 22px );
+			padding-bottom: 0.5rem;
+			position: relative;
+			text-transform: uppercase;
+
+			&::after {
+				background-color: currentColor;
+				content: "";
+				display: block;
+				height: 3px;
+				position: absolute;
+				top: 100%;
+				width: rem( 126px );
+			}
+		}
 	}
 }
