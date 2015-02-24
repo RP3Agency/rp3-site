@@ -4,11 +4,11 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c4faa9ddbfe4081dbe91ce40392268df",
+    "hash": "12e91231b6f3237672a9bc1727082b0b",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
-            "version": "5.1.9",
+            "version": "5.1.9.1",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -575,15 +575,15 @@
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
-            "version": "2.5.16",
+            "version": "3.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/really-simple-twitter-feed-widget/",
-                "reference": "tags/2.5.16"
+                "reference": "tags/3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.2.5.16.zip",
+                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.3.0.zip",
                 "reference": null,
                 "shasum": null
             },
