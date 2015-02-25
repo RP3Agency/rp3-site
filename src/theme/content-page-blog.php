@@ -12,6 +12,30 @@ $blog = new WP_Query( array(
 ) );
 ?>
 
+<script type="text/template" id="blog-template">
+<% _.each( posts, function( post ) { %>
+	<div class="blog-listing__article">
+		<a href="<%= post.get( 'link' ) %>" class="block">
+			<h1 class="blog-listing__headline"><%= post.get( 'title' ) %></h1>
+			<div class="blog-listing__byline">By <%= post.get( 'author' ).first_name %> <%= post.get( 'author' ).last_name %> on <%= post.get( 'date' ) %></div>
+
+			<% if ( post.get( 'featured_image' ) ) { %>
+				<div class="blog__thumbnail">
+					<img src="<%= post.get( 'featured_image' ).source %>" class="attachment-post-thumbnail wp-post-image">
+				</div>
+			<% } %>
+
+			<div class="blog-listing__excerpt equal-heights">
+				<%= post.get( 'excerpt' ) %>
+			</div>
+
+			<p class="link continue">Continue reading</p>
+
+		</a>
+	</div>
+<% }) %>
+</script>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-content">
@@ -88,7 +112,7 @@ $blog = new WP_Query( array(
 
 
 	<div class="all-news-link">
-		<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>">View All Blog Posts</a>
+		<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>" id="view-more">View More Posts</a>
 	</div>
 
 

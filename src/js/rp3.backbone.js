@@ -11,11 +11,36 @@ rp3.backbone = (function($, _, Backbone) {
 		onNewsPage = $body.hasClass('page-news'),
 		onBlogPage = $body.hasClass('page-blog'),
 
-		$viewMoreButton = $('#view-more');
+		$viewMoreButton = $('#view-more'),
+
+		// For date conversion
+		datetime, year, month, date, formattedDate,
+		monthArray = [
+			'January',
+			'February',
+			'March',
+			'April',
+			'May',
+			'June',
+			'July',
+			'August',
+			'September',
+			'October',
+			'November',
+			'December'
+		],
+
+		elementID, templateID;
+
+	if ( onNewsPage ) {
+		elementID  = '#news-listing';
+		templateID = '#news-template';
+	} else {
+		elementID  = '#blog-listing';
+		templateID = '#blog-template';
+	}
 
 	var
-
-
 
 
 	/**
@@ -24,9 +49,7 @@ rp3.backbone = (function($, _, Backbone) {
 	
 	/** Post Model */
 
-	PostModel = Backbone.Model.extend({
-
-	}),
+	PostModel = Backbone.Model.extend({}),
 
 	/** Posts Collection */
 
@@ -38,7 +61,7 @@ rp3.backbone = (function($, _, Backbone) {
 	/** Post List View */
 
 	PostListView = Backbone.View.extend({
-		el:     '#news-listing',
+		el:     elementID,
 		render: function() {
 			var that = this;
 
@@ -46,22 +69,6 @@ rp3.backbone = (function($, _, Backbone) {
 				success: function( posts ) {
 
 					// Convert the dates into something more human-friendly
-					var datetime, year, month, date, formatted,
-						monthArray = [
-							'January',
-							'February',
-							'March',
-							'April',
-							'May',
-							'June',
-							'July',
-							'August',
-							'September',
-							'October',
-							'November',
-							'December'
-						];
-
 					posts.each( function( post ) {
 						datetime = post.attributes.date;
 
@@ -71,12 +78,12 @@ rp3.backbone = (function($, _, Backbone) {
 
 						month = monthArray[ parseInt( month ) - 1 ];
 
-						formatted = month + ' ' + parseInt( date ) + ', ' + year;
+						formattedDate = month + ' ' + parseInt( date ) + ', ' + year;
 
-						post.attributes.date = formatted;
+						post.attributes.date = formattedDate;
 					});
 
-					var template = _.template( $( '#news-template' ).html() );
+					var template = _.template( $( templateID ).html() );
 					that.$el.html( template( { posts: posts.models } ) );				
 				},
 				error: function() {
@@ -104,9 +111,6 @@ rp3.backbone = (function($, _, Backbone) {
 			// Don't do anything I wouldn't do.
 			event.preventDefault();
 
-			// Now pop up a friendly test message.
-			// window.alert( "How's it going?" );
-
 			// "Blur" the button
 			$(this).blur();
 
@@ -121,7 +125,15 @@ rp3.backbone = (function($, _, Backbone) {
 			}
 
 			// Update our collections URL
-			var url = '/wp-json/posts?filter[category_name]=news&filter[posts_per_page]=6&page=' + nextPageNumber;
+			var url = '/wp-json/posts?filter[posts_per_page]=6&filter[category_name]=';
+
+			if ( onNewsPage ) {
+				url += 'news&page=';
+			} else {
+				url += 'blog&page=';
+			}
+
+			url += nextPageNumber;
 
 			postsCollection.url = url;
 
@@ -130,7 +142,7 @@ rp3.backbone = (function($, _, Backbone) {
 
 			postListView.render();
 
-			$('#news-listing').append( $nextPostSet );
+			$(elementID).append( $nextPostSet );
 
 		});
 
@@ -138,25 +150,15 @@ rp3.backbone = (function($, _, Backbone) {
 
 	init = function() {
 
-		setupMoreButtonListener();
-
-		$(window).scroll(function() {
-		});
-
-		$(window).on( 'resize', function() {
-		});
+		if ( ( onNewsPage ) || ( onBlogPage ) ) {
+			setupMoreButtonListener();
+		}
 	};
 
 
-	if ( ( onNewsPage ) || ( onBlogPage ) ) {
-
-		return {
-			init:init
-		};
-
-	}
-
-	return;
+	return {
+		init:init
+	};
 
 }(jQuery, _, Backbone));
 

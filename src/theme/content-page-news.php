@@ -19,9 +19,11 @@ $news = new WP_Query( array(
 			<h1 class="news-listing__headline"><%= post.get( 'title' ) %></h1>
 			<div class="news-listing__date"><%= post.get( 'date' ) %></div>
 
-			<div class="blog__thumbnail">
-				<img src="<%= post.get( 'featured_image' ).source %>" class="attachment-post-thumbnail wp-post-image">
-			</div>
+			<% if ( post.get( 'featured_image' ) ) { %>
+				<div class="blog__thumbnail">
+					<img src="<%= post.get( 'featured_image' ).source %>" class="attachment-post-thumbnail wp-post-image">
+				</div>
+			<% } %>
 
 			<div class="news-listing__excerpt equal-heights">
 				<%= post.get( 'excerpt' ) %>
