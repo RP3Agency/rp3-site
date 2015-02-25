@@ -123,8 +123,7 @@ rp3.backbone = (function($, _, Backbone) {
 			// Determine which was the last page loaded (or from which page
 			// we're starting), so as to know which page we're loading next
 
-			var $lastPostSetArray = $('.' + postSetClass),
-				nextPageNumber = 2,
+			var nextPageNumber = 2,
 				$nextPostSet = $('<div>').addClass(postSetClass).attr('data-page', nextPageNumber);
 
 			if ( $container.attr('data-paged') ) {
