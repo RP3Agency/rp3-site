@@ -5,11 +5,19 @@
  * @package RP3
  */
 
+if ( $paged == 0 ) {
+	$paged = 1;
+}
+
+$posts_per_page = 6 * $paged;
+
 $news = new WP_Query( array(
 	'post_type'			=> 'post',
 	'category_name'		=> 'news',
-	'posts_per_page'	=> 6
+	'posts_per_page'	=> $posts_per_page
 ) );
+
+
 ?>
 
 <script type="text/template" id="news-template">
@@ -68,7 +76,7 @@ $news = new WP_Query( array(
 
 	<?php if ( $news->have_posts() ) : ?>
 
-	<section id="news-listing" class="news-listing">
+	<section id="news-listing" class="news-listing" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 		<?php while ( $news->have_posts() ) : $news->the_post(); ?>
 

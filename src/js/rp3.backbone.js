@@ -30,7 +30,10 @@ rp3.backbone = (function($, _, Backbone) {
 			'December'
 		],
 
-		elementID, templateID;
+		elementID, templateID,
+
+		// For the history pushState stuff
+		locationHref, hrefPattern = /http:\/\/[^\/]+\/(news|blog)/;
 
 	if ( onNewsPage ) {
 		elementID  = '#news-listing';
@@ -39,6 +42,9 @@ rp3.backbone = (function($, _, Backbone) {
 		elementID  = '#blog-listing';
 		templateID = '#blog-template';
 	}
+
+
+	var $container = $(elementID);
 
 	var
 
@@ -114,14 +120,16 @@ rp3.backbone = (function($, _, Backbone) {
 			// "Blur" the button
 			$(this).blur();
 
-			// Determine which was the last page loaded, so as to know which page we're loading next
+			// Determine which was the last page loaded (or from which page
+			// we're starting), so as to know which page we're loading next
+
 			var $lastPostSetArray = $('.' + postSetClass),
 				nextPageNumber = 2,
 				$nextPostSet = $('<div>').addClass(postSetClass).attr('data-page', nextPageNumber);
 
-			if ( $lastPostSetArray.length > 0 ) {
-				nextPageNumber = $( $lastPostSetArray[ $lastPostSetArray.length - 1 ] ).data( 'page' ) + 1;
-				$nextPostSet.attr( 'data-page', nextPageNumber );
+			if ( $container.attr('data-paged') ) {
+				nextPageNumber = parseInt( $container.attr('data-paged') ) + 1;
+				$container.attr( 'data-paged', nextPageNumber );
 			}
 
 			// Update our collections URL
@@ -143,6 +151,10 @@ rp3.backbone = (function($, _, Backbone) {
 			postListView.render();
 
 			$(elementID).append( $nextPostSet );
+
+			// update the location
+			locationHref = window.location.href.match( hrefPattern )[0] + '/page/' + nextPageNumber + '/';
+			window.history.pushState( '', '', locationHref );
 
 		});
 

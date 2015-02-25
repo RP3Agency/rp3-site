@@ -5,10 +5,16 @@
  * @package RP3
  */
 
+if ( $paged == 0 ) {
+	$paged = 1;
+}
+
+$posts_per_page = 6 * $paged;
+
 $blog = new WP_Query( array(
 	'post_type'			=> 'post',
 	'category_name'		=> 'blog',
-	'posts_per_page'	=> 6
+	'posts_per_page'	=> $posts_per_page
 ) );
 ?>
 
@@ -68,7 +74,7 @@ $blog = new WP_Query( array(
 
 	<?php if ( $blog->have_posts() ) : ?>
 
-	<section id="blog-listing" class="blog-listing">
+	<section id="blog-listing" class="blog-listing" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 		<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
 
