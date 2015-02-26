@@ -1,0 +1,55 @@
+.chapter {
+
+	&__wrapper {
+		@include container;
+	}
+
+
+	/** Introduction */
+
+	&--introduction {
+
+		.introduction__contact {
+			@include span( 3 );
+		}
+
+		.chapter__intro-paragraph {
+			@include span( 8 at 5 last );
+		}
+	}
+
+	/** Chapter 1 */
+
+	&--1 {
+
+		.chapter__header {
+			@include pre( 9 );
+		}
+
+		p {
+			width: span( 8 );
+		}
+	}
+
+	&--2 {
+
+		.chapter__header {
+			float: left;
+		}
+
+		.chapter__subsection {
+			@include pre( 3 );
+			width: span( 8 );
+		}
+	}
+
+	&--3 {
+		.chapter__header {
+			@include span( 2 at 10 isolate );
+		}
+
+		.chapter__subsection {
+			@include span( 8 );
+		}
+	}
+}
