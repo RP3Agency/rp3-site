@@ -1,7 +1,21 @@
+/** Libraries */
+
 @import
 	"breakpoint",
-	"susy",
+	"susy";
+
+
+/** Setup */
+
+@import
 	"utils/utils",
-	"base/base",
-	"layout/layout",
-	"components/components";
+	"base/base";
+
+
+/** Structure and styling */
+
+@import
+	"layout",
+	"introduction",
+	"chapter"
+	"header";
