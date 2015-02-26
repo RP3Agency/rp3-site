@@ -30,12 +30,16 @@
 
 	&__subtitle {
 		font-size: em( 28px );
+		line-height: ( 50px / 44px );
 		margin-bottom: 1rem;
 	}
 
 	&__contact {
 		font-size: em( 12px );
-		margin-top: 1rem;
+		margin: {
+			top: 1rem;
+			bottom: 1rem;
+		}
 		padding-top: 1rem;
 		position: relative;
 
@@ -62,12 +66,16 @@
 }
 
 .chapter {
+	margin-bottom: 4rem;
 
 	/** Chapter Header */
 
 	&__header {
-		margin-bottom: 1rem;
-		width: span( 2 );
+		margin-bottom: 2rem;
+
+		@include breakpoint( $bp-medium ) {
+			width: span( 2 );
+		}
 	}
 
 	&__label,
@@ -85,6 +93,7 @@
 
 	&__number {
 		@extend %robotocondensed-bold;
+		clear: both;
 		font-size: em( 90px );
 	}
 
@@ -110,7 +119,8 @@
 			@extend %robotocondensed-bold;
 			font-size: em( 22px );
 			margin-bottom: 1rem;
-			padding-bottom: 0.5rem;
+			line-height: ( 30px / 28px );
+			padding-bottom: 1rem;
 			position: relative;
 			text-transform: uppercase;
 
@@ -128,7 +138,10 @@
 		.bullseye {
 			float: left;
 			height: 41px;
-			margin-right: 0.5em;
+			margin: {
+				top: 1em;
+				right: 0.5em;
+			}
 			width: 41px;
 		}
 	}
@@ -137,45 +150,45 @@
 
 /** Background Images */
 
-.chapter--introduction {
-	background: {
-		attachment: fixed;
-		image: url("http://placehold.it/1300x500");
-		position: 50% 0;
-		repeat: no-repeat;
-	}
-	padding-top: rem( 415px );
+// .chapter--introduction {
+// 	background: {
+// 		attachment: fixed;
+// 		image: url("http://placehold.it/1300x500");
+// 		position: 50% 0;
+// 		repeat: no-repeat;
+// 	}
+// 	padding-top: rem( 415px );
 
-	@include breakpoint( $hidpi ) {
-		background: {
-			image: url("http://placehold.it/2600x1000");
-			size: 1300px auto;
-		}
-	}
+// 	@include breakpoint( $hidpi ) {
+// 		background: {
+// 			image: url("http://placehold.it/2600x1000");
+// 			size: 1300px auto;
+// 		}
+// 	}
 
-	.chapter__wrapper {
-		position: relative;
-		z-index: 1;
+// 	.chapter__wrapper {
+// 		position: relative;
+// 		z-index: 1;
 
-		&::before {
-			background-color: $white;
-			bottom: 0;
-			content: "";
-			display: block;
-			left: rem( -115px );
-			position: absolute;
-			right: 0;
-			top: rem( -119px );
-			z-index: -1;
-		}
-	}
-}
+// 		&::before {
+// 			background-color: $white;
+// 			bottom: 0;
+// 			content: "";
+// 			display: block;
+// 			left: rem( -115px );
+// 			position: absolute;
+// 			right: 0;
+// 			top: rem( -119px );
+// 			z-index: -1;
+// 		}
+// 	}
+// }
 
-.chapter--1 {
-	background: {
-		attachment: fixed;
-		image: url("http://placehold.it/1300x500/990000");
-		position: 50% 0;
-		repeat: no-repeat;
-	}
-}
+// .chapter--1 {
+// 	background: {
+// 		attachment: fixed;
+// 		image: url("http://placehold.it/1300x500/990000");
+// 		position: 50% 0;
+// 		repeat: no-repeat;
+// 	}
+// }

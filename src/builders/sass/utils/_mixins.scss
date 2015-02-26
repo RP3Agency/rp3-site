@@ -5,3 +5,12 @@
 		@content;
 	}
 }
+
+@mixin side-padding {
+	$padding: percentage( 10px / 400px );
+
+	padding: {
+		left:  $padding;
+		right: $padding;
+	}
+}
