@@ -1,6 +1,12 @@
 .chapter {
 	margin-bottom: 4rem;
 
+	/** Wrapper */
+	&__wrapper {
+		background-color: $white;
+		padding-top: 1rem;
+	}
+
 	/** Chapter Header */
 
 	&__header {

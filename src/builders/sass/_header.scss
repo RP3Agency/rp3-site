@@ -1,42 +1,58 @@
+.chapter {
+	background: {
+		position: 50% 0;
+		repeat: no-repeat;
+	}
+	padding-top: rem( 444px );
+
+	@include modernizr( no-touch ) {
+		background-attachment: fixed;
+	}
+
+	&--introduction {
+		padding-top: rem( 500px );
+	}
+}
+
 .chapter--introduction {
-	background: {
-		attachment: fixed;
-		image: url("http://placehold.it/1300x500");
-		position: 50% 0;
-		repeat: no-repeat;
-	}
-	padding-top: rem( 415px );
+	background-image: url("../images/introduction/header.jpg");
 
-	@include breakpoint( $hidpi ) {
-		background: {
-			image: url("http://placehold.it/2600x1000");
-			size: 1300px auto;
-		}
-	}
+	// @include breakpoint( $hidpi ) {
+	// 	background: {
+	// 		image: url("http://placehold.it/2600x1000");
+	// 		size: 1300px auto;
+	// 	}
+	// }
 
-	.chapter__wrapper {
-		position: relative;
-		z-index: 1;
+	// .chapter__wrapper {
+	// 	position: relative;
+	// 	z-index: 1;
 
-		&::before {
-			background-color: $white;
-			bottom: 0;
-			content: "";
-			display: block;
-			left: rem( -115px );
-			position: absolute;
-			right: 0;
-			top: rem( -119px );
-			z-index: -1;
-		}
+	// 	&::before {
+	// 		background-color: $white;
+	// 		bottom: 0;
+	// 		content: "";
+	// 		display: block;
+	// 		left: rem( -115px );
+	// 		position: absolute;
+	// 		right: 0;
+	// 		top: rem( -119px );
+	// 		z-index: -1;
+	// 	}
+	// }
+}
+
+@for $i from 1 through 7 {
+	.chapter--#{$i} {
+		background-image: url("../images/chapter-#{$i}/header.jpg");
 	}
 }
 
-.chapter--1 {
-	background: {
-		attachment: fixed;
-		image: url("http://placehold.it/1300x500/990000");
-		position: 50% 0;
-		repeat: no-repeat;
-	}
-}
+// .chapter--1 {
+// 	background: {
+// 		attachment: fixed;
+// 		image: url("http://placehold.it/1300x500/990000");
+// 		position: 50% 0;
+// 		repeat: no-repeat;
+// 	}
+// }
