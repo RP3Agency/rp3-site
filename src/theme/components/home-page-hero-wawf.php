@@ -83,7 +83,7 @@ $counter = 1;
 ?>
 <section id="home-splash" class="home-splash home-hero hero hero-image wawf-hero">
 
-	<a href="#!" class="hero__container">
+	<a href="<?php echo esc_url( home_url( '/work/thewomensfoundation' ) ); ?>" class="hero__container">
 
 		<div class="hero__image">
 
@@ -110,7 +110,7 @@ $counter = 1;
 		<div class="wrapper">
 
 			<div class="hero__headline">
-				<h1>Here. Now. For. Her.</h1>
+				<h1>Stand Together Website</h1>
 
 				for <strong>Washington Area Women's Foundation</strong>
 			</div>
