@@ -9,7 +9,7 @@ setup_postdata( $post );
 
 	<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
 
-		<?php echo rp3_picture_element( get_field( 'hero_image' ), 'work-half-width' ); ?>
+		<?php echo rp3_picture_element( get_post_thumbnail_id(), 'work-half-width' ); ?>
 
 		<div class="work__headline">
 
