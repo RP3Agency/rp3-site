@@ -25,11 +25,11 @@
 
 					<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
 
-						<?php if ( '' != get_field( 'hero_image' ) ) : ?>
+						<?php if ( '' != get_post_thumbnail_id() ) : ?>
 
 							<?php
-							$thumbnail = wp_get_attachment_image_src( get_field( 'hero_image' ), 'related-work-thumbnail' );
-							$thumbnail_2x = wp_get_attachment_image_src( get_field( 'hero_image' ), 'related-work-thumbnail-2x' );
+							$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'related-work-thumbnail' );
+							$thumbnail_2x = wp_get_attachment_image_src( get_post_thumbnail_id(), 'related-work-thumbnail-2x' );
 							?>
 							<img src="<?php echo esc_url( $thumbnail[0] ); ?>" srcset="<?php echo esc_url( $thumbnail[0] ); ?>, <?php echo esc_url( $thumbnail_2x[0] ); ?> 2x">
 
