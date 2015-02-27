@@ -5,12 +5,42 @@
  * @package RP3
  */
 
+if ( $paged == 0 ) {
+	$paged = 1;
+}
+
+$posts_per_page = 6 * $paged;
+
 $blog = new WP_Query( array(
 	'post_type'			=> 'post',
 	'category_name'		=> 'blog',
-	'posts_per_page'	=> 6
+	'posts_per_page'	=> $posts_per_page
 ) );
 ?>
+
+<script type="text/template" id="blog-template">
+<% _.each( posts, function( post ) { %>
+	<div class="blog-listing__article">
+		<a href="<%= post.get( 'link' ) %>" class="block">
+			<h1 class="blog-listing__headline"><%= post.get( 'title' ) %></h1>
+			<div class="blog-listing__byline">By <%= post.get( 'author' ).first_name %> <%= post.get( 'author' ).last_name %> on <%= post.get( 'date' ) %></div>
+
+			<% if ( post.get( 'featured_image' ) ) { %>
+				<div class="blog__thumbnail">
+					<img src="<%= post.get( 'featured_image' ).source %>" class="attachment-post-thumbnail wp-post-image">
+				</div>
+			<% } %>
+
+			<div class="blog-listing__excerpt equal-heights">
+				<%= post.get( 'excerpt' ) %>
+			</div>
+
+			<p class="link continue">Continue reading</p>
+
+		</a>
+	</div>
+<% }) %>
+</script>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -44,7 +74,7 @@ $blog = new WP_Query( array(
 
 	<?php if ( $blog->have_posts() ) : ?>
 
-	<section id="blog-listing" class="blog-listing">
+	<section id="blog-listing" class="blog-listing" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 		<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
 
@@ -88,7 +118,7 @@ $blog = new WP_Query( array(
 
 
 	<div class="all-news-link">
-		<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>">View All Blog Posts</a>
+		<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>" id="view-more">View More Posts</a>
 	</div>
 
 

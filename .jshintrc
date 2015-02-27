@@ -1,7 +1,16 @@
 {
   "undef": true,
   "unused": true,
-  "predef": [ "MY_GLOBAL", "ScrollMagic", "ScrollScene", "ScrollIntent", "Modernizr" ],
+  "predef": [
+  	"MY_GLOBAL",
+  	"ScrollMagic",
+  	"ScrollScene",
+  	"ScrollIntent",
+  	"Modernizr",
+  	"Backbone",
+  	"_",
+  	"console"
+  ],
   "browser": true,
   "jquery": true
 }

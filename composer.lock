@@ -4,11 +4,11 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c4faa9ddbfe4081dbe91ce40392268df",
+    "hash": "8d8537915a4771f9139dedb647bf8983",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
-            "version": "5.1.9",
+            "version": "5.1.9.1",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -494,6 +494,26 @@
             "homepage": "https://wordpress.org/plugins/jetpack/"
         },
         {
+            "name": "wpackagist-plugin/json-rest-api",
+            "version": "1.1.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/json-rest-api/",
+                "reference": "tags/1.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/json-rest-api.1.1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/json-rest-api/"
+        },
+        {
             "name": "wpackagist-plugin/list-category-posts",
             "version": "0.56",
             "source": {
@@ -515,15 +535,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.2.5",
+            "version": "2.2.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.2.5"
+                "reference": "tags/2.2.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.5.zip",
+                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -575,15 +595,15 @@
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
-            "version": "2.5.16",
+            "version": "3.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/really-simple-twitter-feed-widget/",
-                "reference": "tags/2.5.16"
+                "reference": "tags/3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.2.5.16.zip",
+                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.3.0.zip",
                 "reference": null,
                 "shasum": null
             },
