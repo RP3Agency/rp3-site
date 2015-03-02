@@ -110,7 +110,7 @@ $counter = 1;
 		<div class="wrapper">
 
 			<div class="hero__headline">
-				<h1>Stand Together Website</h1>
+				<h1>Stand Together</h1>
 
 				for <strong>Washington Area Women's Foundation</strong>
 			</div>
