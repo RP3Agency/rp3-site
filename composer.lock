@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1147849c527a2d5a5443976f3bc0aebf",
+    "hash": "3f111fd45b5de45cde5515877e3a6d4d",
     "packages": [
         {
             "name": "composer/installers",
@@ -158,6 +158,20 @@
             "type": "wordpress-plugin"
         },
         {
+            "name": "rp3agency/wordpress",
+            "version": "4.1.1",
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.rp3dev.com/wordpress-4.1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "fancyguy/webroot-installer": "1.0.0"
+            },
+            "type": "webroot"
+        },
+        {
             "name": "rp3agency/wp-migrate-db-pro",
             "version": "1.4.6",
             "dist": {
@@ -198,20 +212,6 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin"
-        },
-        {
-            "name": "wordpress",
-            "version": "4.1.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.1.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "fancyguy/webroot-installer": "1.0.0"
-            },
-            "type": "webroot"
         },
         {
             "name": "wpackagist-plugin/add-from-server",

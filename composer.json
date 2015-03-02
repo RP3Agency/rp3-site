@@ -7,26 +7,11 @@
     {
       "type": "composer",
       "url": "http://composer.rp3dev.com"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "wordpress",
-        "type": "webroot",
-        "version": "4.1.1",
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/WordPress/WordPress/archive/4.1.1.zip"
-        },
-        "require" : {
-          "fancyguy/webroot-installer": "1.0.0"
-        }
-      }
     }
   ],
   "require": {
     "php": ">=5.3.0",
-    "wordpress": "4.1.1",
+    "rp3agency/wordpress": "*",
     "fancyguy/webroot-installer": "1.0.0",
     "rp3agency/advanced-custom-fields-pro": "*",
     "rp3agency/wp-migrate-db-pro": "*",
@@ -67,7 +52,7 @@
   },
   "extra": {
     "webroot-dir": "_wp",
-    "webroot-package": "wordpress",
+    "webroot-package": "rp3agency/wordpress",
     "installer-paths": {
       "wp-content/plugins/{$name}": ["type:wordpress-plugin"]
     }
