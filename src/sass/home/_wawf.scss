@@ -1,25 +1,32 @@
+.hero.home-hero.wawf-hero {
+	height: 300px;
+
+	@include breakpoint( $bp-medium ) {
+		height: 600px;
+	}
+}
+
 .home-splash {
-	height: 500px;
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
 
 	@include breakpoint($bp-medium) {
-		height: 700px;
+		height: 600px;
 	}
 
 	/** Responsive Cropping Effect */
 	&__inner {
-		height: 700px;
+		height: 600px;
 		left: 50%;
 		overflow: hidden;
 		position: relative;
-		top: 50%;
-		transform: translate( -50%, -50% ) scale( 0.5 );
+		top: 0;
+		transform: translate( -50%, -25% ) scale( 0.5 );
 		width: 1600px;
 
 		@include breakpoint( $bp-medium ) {
-			transform: translate( -50%, -50% ) scale( 1 );
+			transform: translate( -50%, 0 ) scale( 1 );
 		}
 	}
 
@@ -83,44 +90,34 @@
 		&--17 { top: 200px; left: 300px; }
 		&--18 { top: 200px; left: 400px; }
 		&--19 { top: 200px; left: 500px; }
-		&--20 { top: 200px; left: 1000px; }
-		&--21 { top: 200px; left: 1100px; }
-		&--22 { top: 200px; left: 1300px; }
+		&--20 { top: 200px; left: 800px; }
+		&--21 { top: 200px; left: 900px; }
+		&--22 { top: 200px; left: 1100px; }
+		&--23 { top: 200px; left: 1300px; }
 
-		&--23 { top: 300px; left: 0; }
-		&--24 { top: 300px; left: 200px; }
-		&--25 { top: 300px; left: 400px; }
-		&--26 { top: 300px; left: 1000px; }
-		&--27 { top: 300px; left: 1300px; }
+		&--24 { top: 300px; left: 0; }
+		&--25 { top: 300px; left: 200px; }
+		&--26 { top: 300px; left: 400px; }
+		&--27 { top: 300px; left: 800px; }
+		&--28 { top: 300px; left: 1000px; }
+		&--29 { top: 300px; left: 1100px; }
+		&--30 { top: 300px; left: 1200px; }
+		&--31 { top: 300px; left: 1300px; }
 
-		&--28 { top: 400px; left: 0; }
-		&--29 { top: 400px; left: 100px; }
-		&--30 { top: 400px; left: 200px; }
-		&--31 { top: 400px; left: 500px; }
-		&--32 { top: 400px; left: 1100px; }
+		&--32 { top: 400px; left: 0; }
+		&--33 { top: 400px; left: 100px; }
+		&--34 { top: 400px; left: 200px; }
+		&--35 { top: 400px; left: 300px; }
+		&--36 { top: 400px; left: 800px; }
+		&--37 { top: 400px; left: 900px; }
+		&--38 { top: 400px; left: 1100px; }
 
-		&--33 { top: 500px; left: 0; }
-		&--34 { top: 500px; left: 500px; }
-		&--35 { top: 500px; left: 600px; }
-		&--36 { top: 500px; left: 800px; }
-		&--37 { top: 500px; left: 1000px; }
-		&--38 { top: 500px; left: 1200px; }
-
-		&--39 { top: 600px; left: 100px; }
-		&--40 { top: 600px; left: 600px; }
-		&--41 { top: 600px; left: 1000px; }
-		&--42 { top: 600px; left: 1100px; }
-		&--43 { top: 600px; left: 1200px; }
-		&--44 { top: 600px; left: 1400px; }
-
-		/** Customizations for the RP3 home page hero */
-		&--45 { top: 200px; left: 600px; }
-		&--46 { top: 200px; left: 900px; }
-		&--47 { top: 200px; left: 800px; }
-		&--48 { top: 300px; left: 700px; }
-		&--49 { top: 300px; left: 600px; }
-		&--50 { top: 400px; left: 700px; }
-		&--51 { top: 400px; left: 800px; }
+		&--39 { top: 500px; left: 0; }
+		&--40 { top: 500px; left: 200px; }
+		&--41 { top: 500px; left: 500px; }
+		&--42 { top: 500px; left: 600px; }
+		&--43 { top: 500px; left: 800px; }
+		&--44 { top: 500px; left: 1000px; }
 
 		/** Blur Colors */
 		@each $color in ('blue', 'gold', 'gray', 'green', 'pink') {
@@ -139,36 +136,35 @@
 		}
 
 		/** Gold */
-		&--32 { background-position: 0 -200px; }
-		&--39 { background-position: 0 -300px; }
-		&--45 { background-position: 0 -200px; }
+		&--2 {}
+		&--22 { background-position: 0 -300px; }
 
 		/** Pink */
+		&--4 {} // placeholder; no bg positioning necessary
 		&--6 { background-position: 0 -100px; }
-		&--28 { background-position: 0 -300px; }
-		&--40 { background-position: 0 -500px; }
-		&--41 { background-position: 0 -400px; }
-		&--44 { background-position: 0 -600px; }
-		&--51 { background-position: 0 -600px; }
+		&--20 { background-position: 0 -100px; }
+		&--26 { background-position: 0 -200px; }
+		&--32 { background-position: 0 -300px; }
+		&--43 { background-position: 0 -500px; }
 
 		/** Green */
+		&--8 {}
 		&--12 { background-position: 0 -100px; }
-		&--19 { background-position: 0 -200px; }
-		&--22 { background-position: 0 -300px; }
-		&--50 { background-position: 0 -300px; }
+		&--23 { background-position: 0 -200px; }
+		&--29 { background-position: 0 -300px; }
+		&--41 { background-position: 0 -400px; }
 
 		/** Blue */
-		&--20 { background-position: 0 -100px; }
-		&--34 { background-position: 0 -200px; }
-		&--43 { background-position: 0 -400px; }
-		&--49 { background-position: 0 -200px; }
+		&--10 { background-position: 0 -100px; }
+		&--27 { background-position: 0 -400px; }
+		&--34 { background-position: 0 -300px; }
 
 		/** Gray */
+		&--14 {}
 		&--16 { background-position: 0 -100px; }
-		&--24 { background-position: 0 -300px; }
-		&--25 { background-position: 0 -400px; }
-		&--37 { background-position: 0 -500px; }
-		&--47 { background-position: 0 -100px; }
+		&--25 { background-position: 0 -300px; }
+		&--37 { background-position: 0 -400px; }
+		&--44 { background-position: 0 -500px; }
 
 
 
@@ -189,7 +185,7 @@
 			}
 		}
 
-		@for $i from 1 through 22 {
+		@for $i from 1 through 23 {
 			&[data-photo="photo-#{$i}"] {
 				background-image: url("../images/wawf/photo-#{$i}.jpg");
 
