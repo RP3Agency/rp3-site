@@ -5,23 +5,27 @@ $post = get_sub_field( 'full_width' );
 setup_postdata( $post );
 ?>
 
-<div class="work__full-width">
+<?php if ( '' != get_field( 'work_landing_image_full' ) ) : ?>
 
-	<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
+	<div class="work__full-width">
 
-		<?php echo rp3_picture_element( get_post_thumbnail_id(), 'work-full-width' ); ?>
+		<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
 
-		<div class="work__headline">
+			<?php echo rp3_picture_element( get_field( 'work_landing_image_full' ), 'work-full-width' ); ?>
 
-			<h1><?php the_title(); ?></h1>
-			for <strong><?php the_field( 'client' ); ?></strong>
+			<div class="work__headline">
 
-		</div>
+				<h1><?php the_title(); ?></h1>
+				for <strong><?php the_field( 'client' ); ?></strong>
 
-	</a>
+			</div>
 
-</div>
-<!-- work full-width -->
+		</a>
+
+	</div>
+	<!-- work full-width -->
+
+<?php endif; ?>
 
 <?php wp_reset_postdata(); ?>
 
