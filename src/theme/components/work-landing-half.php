@@ -5,23 +5,27 @@ $post = get_sub_field( 'half_width' );
 setup_postdata( $post );
 ?>
 
-<div class="work__half">
+<?php if ( '' != get_field( 'work_landing_image_half' ) ) : ?>
 
-	<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
+	<div class="work__half">
 
-		<?php echo rp3_picture_element( get_post_thumbnail_id(), 'work-half-width' ); ?>
+		<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
 
-		<div class="work__headline">
+			<?php echo rp3_picture_element( get_field( 'work_landing_image_half' ), 'work-half-width' ); ?>
 
-			<h1><?php the_title(); ?></h1>
-			for <strong><?php the_field( 'client' ); ?></strong>
+			<div class="work__headline">
 
-		</div>
+				<h1><?php the_title(); ?></h1>
+				for <strong><?php the_field( 'client' ); ?></strong>
 
-	</a>
+			</div>
 
-</div>
-<!-- work half -->
+		</a>
+
+	</div>
+	<!-- work half -->
+
+<?php endif; ?>
 
 <?php wp_reset_postdata(); ?>
 
