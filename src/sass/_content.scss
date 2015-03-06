@@ -251,107 +251,113 @@
 
 
 // Contact
-.contact__info {
-	@extend %side-padding;
-	line-height: 1.2;
-	margin-bottom: 2rem;
-	@include container;
+.contact {
+	&__info-and-form {
+		@extend %side-padding;
 
-	> div {
-		margin-bottom: 1rem;
-
-		@include breakpoint(400px) {
-			@include gallery(12 of 24);
-		}
-
-		@include breakpoint($bp-medium) {
-			@include gallery(8 of 24);
-		}
-
-		@include breakpoint($bp-large) {
-			@include gallery(6 of 24);
+		@include breakpoint( $bp-medium ) {
+			@include container;
 		}
 	}
 
-	h2 {
-		@extend %section-header;
-		margin-bottom: 1em;
+	&__info {
+		line-height: 1.2;
+		margin-bottom: 2rem;
+		@include container;
+
+		@include breakpoint( $bp-medium ) {
+			@include span( 8 of 24 );
+		}
+
+		> div {
+			margin-bottom: 1rem;
+
+			@include breakpoint(400px) {
+				@include gallery(12 of 24);
+			}
+
+			@include breakpoint( $bp-medium ) {
+				clear: both;
+				float: none;
+				margin: 0 0 1em;
+				width: 100%;
+
+				&:nth-child( 2n + 2 ) {
+					clear: both;
+					float: none;
+					margin: 0 0 1em;
+					width: 100%;
+				}
+			}
+		}
+
+		h2 {
+			@extend %section-header;
+			margin-bottom: 1em;
+		}
+
+		&__email,
+		&__phone-fax-numbers,
+		&__fact-sheet-link {
+			span {
+				display: none;
+
+				@include breakpoint($bp-medium) {
+					display: inline;
+				}
+			}
+		}
+
+		&__social {
+			li a {
+				margin: {
+					top: 0.25em;
+					bottom: 0.25em;
+				}
+			}
+
+			li:last-child a {
+				margin-right: 0;
+			}
+		}
 	}
 
-	&__email,
-	&__phone-fax-numbers,
-	&__fact-sheet-link {
-		span {
-			display: none;
+	&__form {
+
+		@include breakpoint( $bp-medium ) {
+			@include span( 16 of 24 last );
+		}
+	}
+
+	&__map {
+		position: relative;
+
+		&__container {
+			height: cr(300px);
+			width: 100%;
 
 			@include breakpoint($bp-medium) {
-				display: inline;
+				height: cr(608px);
 			}
-		}
-	}
 
-	&__social {
-		li a {
-			margin: {
-				top: 0.25em;
-				bottom: 0.25em;
+			// Fixes distorted zoom controls in Google maps
+			img {
+				max-width: none;
 			}
 		}
 
-		li:last-child a {
-			margin-right: 0;
-		}
-	}
-}
+		&__inset {
+			background-color: #fff;
+			border: 1px solid #ccc;
+			display: none;
+			left: 10%;
+			padding: 1rem;
+			position: absolute;
+			top: 10%;
 
-// .contact__form {
-// 	input[type="text"],
-// 	input[type="url"],
-// 	input[type="email"] {
-// 		width: 90%;
-// 	}
-
-// 	@include breakpoint($bp-medium) {
-// 		.form-left,
-// 		.form-right {
-// 			@include span(12 of 24);
-// 		}
-
-// 		.form-right {
-// 			@include last;
-// 		}
-// 	}
-// }
-
-.contact__map {
-	position: relative;
-
-	&__container {
-		height: cr(300px);
-		// margin-bottom: 3rem;
-		width: 100%;
-
-		@include breakpoint($bp-medium) {
-			height: cr(608px);
-		}
-
-		// Fixes distorted zoom controls in Google maps
-		img {
-			max-width: none;
-		}
-	}
-
-	&__inset {
-		background-color: #fff;
-		border: 1px solid #ccc;
-		display: none;
-		left: 10%;
-		padding: 1rem;
-		position: absolute;
-		top: 10%;
-
-		@include breakpoint($bp-medium) {
-			display: block;
+			@include breakpoint($bp-medium) {
+				display: block;
+			}
 		}
 	}
 }
@@ -371,7 +377,6 @@
 // Careers
 .careers {
 	@extend %side-padding;
-	// @extend %wrapper;
 	margin-top: 3em;
 
 	&--single__entry-content {
@@ -479,10 +484,6 @@
 		@extend %back;
 	}
 
-	// &__sidebar {
-	// 	@extend %side-padding;
-	// }
-
 	/**
 	 * Layout
 	 */
@@ -501,18 +502,6 @@
 			@include gallery(8);
 		}
 	}
-
-	// @include breakpoint($bp-medium) {
-	// 	&__details {
-	// 		@include span(16);
-	// 	}
-	// }
-
-	// @include breakpoint($bp-medium) {
-	// 	&__sidebar {
-	// 		@include span(8 last);
-	// 	}
-	// }
 }
 
 
