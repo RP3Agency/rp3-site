@@ -60,7 +60,7 @@ if ( class_exists( 'CoAuthorsIterator' ) ) :
 					<?php endif; ?>
 
 					<?php if ( '' != get_the_author_meta( 'linkedin', $author->ID ) ) : ?>
-					<li class="linkedin"><a href="<?php echo esc_url( get_the_author_meta( 'twitter', $author->ID ) ); ?>">LinkedIn</a></li>
+					<li class="linkedin"><a href="<?php echo esc_url( get_the_author_meta( 'linkedin', $author->ID ) ); ?>">LinkedIn</a></li>
 					<?php endif; ?>
 
 				</ul>
