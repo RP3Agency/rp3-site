@@ -73,7 +73,7 @@ function rp3_cpt_work() {
 		'menu_position'			=> 20,
 		'hierarchical'			=> true,
 		'menu_icon'				=> 'dashicons-portfolio',
-		'supports'				=> array( 'title' ),
+		'supports'				=> array( 'title', 'thumbnail' ),
 		'rewrite'				=> array(
 			'slug'					=> 'work',
 			'with_front'			=> false
