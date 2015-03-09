@@ -1,8 +1,2 @@
-.DS_Store
-.svn
-log/*.log
-tmp/**
-node_modules/
-.sass-cache
-css/reveal.min.css
-js/reveal.min.js
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files

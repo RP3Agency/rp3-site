@@ -5,16 +5,20 @@ $post = get_sub_field( 'quarter_width_2' );
 setup_postdata( $post );
 ?>
 
-<div class="work__quarter">
+<?php if ( '' != get_field( 'work_landing_image_quarter' ) ) : ?>
 
-	<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
+	<div class="work__quarter">
 
-		<?php echo rp3_picture_element( get_post_thumbnail_id(), 'work-quarter-width' ); ?>
+		<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
 
-	</a>
+			<?php echo rp3_picture_element( get_field( 'work_landing_image_quarter' ), 'work-quarter-width' ); ?>
 
-</div>
-<!-- work half -->
+		</a>
+
+	</div>
+	<!-- work quarter -->
+
+<?php endif; ?>
 
 <?php wp_reset_postdata(); ?>
 

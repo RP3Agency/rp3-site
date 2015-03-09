@@ -1,10 +1,25 @@
 .six-up-image-panel {
 	clear: both;
-	display: flex;
-	flex-wrap: wrap;
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+
+		&:nth-child( even ) {
+			flex-direction: column-reverse;
+
+			@include breakpoint( $bp-medium ) {
+				flex-direction: row;
+			}
+		}
+	}
 
 	&__image {
-		width: 50%;
+		width: 100%;
+
+		@include breakpoint( $bp-medium ) {
+			width: 50%;
+		}
 
 		img {
 			height: auto;

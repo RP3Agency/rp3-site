@@ -9,6 +9,10 @@
 		float: right;
 		height: cr(450px);
 		width: 50%;
+
+		&.work-main-copy__left-image {
+			float: left;
+		}
 	}
 
 	@include breakpoint(1600px) {
