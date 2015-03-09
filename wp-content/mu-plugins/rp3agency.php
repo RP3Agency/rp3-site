@@ -2,7 +2,6 @@
 /**
  * Plugin Name: RP3 Agency
  * Description: Custom post types and taxonomies and other custom functionality used by RP3.
- * Version: 3.1
  * Author: RP3 Agency
  * Author URI: http://rp3agency.com
  */
