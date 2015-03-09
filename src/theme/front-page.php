@@ -13,6 +13,7 @@
 
 get_header(); ?>
 
+<?php // get_template_part( 'components/home-page', 'hero' ); ?>
 <?php get_template_part( 'components/home-page', 'hero-wawf' ); ?>
 
 

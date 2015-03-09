@@ -1,0 +1,17 @@
+// Awards
+.awards {
+	background-color: $blue;
+	color: #fff;
+	margin-top: 3em;
+	padding: 3em 0;
+
+	&__content {
+		@include container;
+
+		.entry-content {
+			@include breakpoint($bp-medium) {
+				@include span(16);
+			}
+		}
+	}
+}

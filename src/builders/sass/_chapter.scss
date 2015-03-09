@@ -1,0 +1,90 @@
+.chapter {
+	margin-bottom: 4rem;
+
+	/** Wrapper */
+	&__wrapper {
+		background-color: $white;
+		padding-top: 1rem;
+	}
+
+	/** Chapter Header */
+
+	&__header {
+		margin-bottom: 2rem;
+
+		@include breakpoint( $bp-medium ) {
+			width: span( 2 );
+		}
+	}
+
+	&__label,
+	&__number {
+		line-height: 1;
+	}
+
+	&__label {
+		@extend %roboto-bold;
+		background-color: $black;
+		color: $white;
+		padding: 0 0.5em;
+		text-transform: uppercase;
+	}
+
+	&__number {
+		@extend %robotocondensed-bold;
+		clear: both;
+		font-size: em( 90px );
+	}
+
+	&__name {
+		@extend %roboto-bold;
+		font-size: em( 28px );
+		line-height: ( 30px / 28px );
+		text-transform: uppercase;
+	}
+
+	/** Chapter Content */
+
+	&__intro-paragraph {
+		font-size: em( 22px );
+		margin-top: 0;
+	}
+
+	/** Chapger Subsection */
+
+	&__subsection {
+
+		&__header {
+			@extend %robotocondensed-bold;
+			font-size: em( 22px );
+			margin: {
+				top: 2rem;
+				bottom: 1rem;
+			}
+			line-height: ( 30px / 28px );
+			padding-bottom: 1rem;
+			position: relative;
+			text-transform: uppercase;
+
+			&::after {
+				background-color: currentColor;
+				content: "";
+				display: block;
+				height: 3px;
+				position: absolute;
+				top: 100%;
+				width: rem( 126px );
+			}
+		}
+
+		.bullseye {
+			float: left;
+			height: 41px;
+			margin: {
+				top: 1em;
+				right: 0.5em;
+			}
+			width: 41px;
+		}
+	}
+}

@@ -5,12 +5,44 @@
  * @package RP3
  */
 
+if ( $paged == 0 ) {
+	$paged = 1;
+}
+
+$posts_per_page = 6 * $paged;
+
 $news = new WP_Query( array(
 	'post_type'			=> 'post',
 	'category_name'		=> 'news',
-	'posts_per_page'	=> 6
+	'posts_per_page'	=> $posts_per_page
 ) );
+
+
 ?>
+
+<script type="text/template" id="news-template">
+<% _.each( posts, function( post ) { %>
+	<div class="news-listing__article">
+		<a href="<%= post.get( 'link' ) %>" class="block">
+			<h1 class="news-listing__headline"><%= post.get( 'title' ) %></h1>
+			<div class="news-listing__date"><%= post.get( 'date' ) %></div>
+
+			<% if ( post.get( 'featured_image' ) ) { %>
+				<div class="blog__thumbnail">
+					<img src="<%= post.get( 'featured_image' ).source %>" class="attachment-post-thumbnail wp-post-image">
+				</div>
+			<% } %>
+
+			<div class="news-listing__excerpt equal-heights">
+				<%= post.get( 'excerpt' ) %>
+			</div>
+
+			<p class="link continue">Continue reading</p>
+
+		</a>
+	</div>
+<% }) %>
+</script>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -44,7 +76,7 @@ $news = new WP_Query( array(
 
 	<?php if ( $news->have_posts() ) : ?>
 
-	<section id="news-listing" class="news-listing">
+	<section id="news-listing" class="news-listing" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 		<?php while ( $news->have_posts() ) : $news->the_post(); ?>
 
@@ -87,7 +119,7 @@ $news = new WP_Query( array(
 
 
 	<div class="all-news-link">
-		<a href="<?php echo esc_url( home_url( 'category/news' ) ); ?>">View All News</a>
+		<a href="<?php echo esc_url( home_url( 'category/news' ) ); ?>" id="view-more">View More News</a>
 	</div>
 
 </article>

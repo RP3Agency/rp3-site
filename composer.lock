@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5ea907d6e887299b12e8487345baa147",
+    "hash": "3f111fd45b5de45cde5515877e3a6d4d",
     "packages": [
         {
             "name": "composer/installers",
@@ -144,11 +144,25 @@
             "time": "2013-01-29 22:51:45"
         },
         {
-            "name": "wordpress",
+            "name": "rp3agency/advanced-custom-fields-pro",
+            "version": "5.2.0",
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
+            "name": "rp3agency/wordpress",
             "version": "4.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.1.zip",
+                "url": "http://composer.rp3dev.com/wordpress-4.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -156,6 +170,48 @@
                 "fancyguy/webroot-installer": "1.0.0"
             },
             "type": "webroot"
+        },
+        {
+            "name": "rp3agency/wp-migrate-db-pro",
+            "version": "1.4.6",
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.rp3dev.com/wp-migrate-db-pro.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
+            "name": "rp3agency/wp-migrate-db-pro-cli",
+            "version": "1.1",
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.rp3dev.com/wp-migrate-db-pro-cli.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
+            "name": "rp3agency/wp-migrate-db-pro-media-files",
+            "version": "1.3.1",
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.rp3dev.com/wp-migrate-db-pro-media-files.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin"
         },
         {
             "name": "wpackagist-plugin/add-from-server",
@@ -167,18 +223,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/add-from-server.3.2.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/add-from-server.3.2.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/add-from-server": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/add-from-server/"
+            "homepage": "https://wordpress.org/plugins/add-from-server/"
         },
         {
             "name": "wpackagist-plugin/admin-post-navigation",
@@ -190,18 +243,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/admin-post-navigation.1.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/admin-post-navigation.1.8.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/admin-post-navigation": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/admin-post-navigation/"
+            "homepage": "https://wordpress.org/plugins/admin-post-navigation/"
         },
         {
             "name": "wpackagist-plugin/akismet",
@@ -213,7 +263,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/akismet.3.0.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/akismet.3.0.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -221,7 +271,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/akismet/"
+            "homepage": "https://wordpress.org/plugins/akismet/"
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
@@ -233,7 +283,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -253,18 +303,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/co-authors-plus.3.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/co-authors-plus.3.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/co-authors-plus": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/co-authors-plus/"
+            "homepage": "https://wordpress.org/plugins/co-authors-plus/"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
@@ -276,7 +323,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/contact-form-7.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -296,7 +343,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -316,18 +363,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/custom-tag-widget.zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-tag-widget.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/custom-tag-widget": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/custom-tag-widget/"
+            "homepage": "https://wordpress.org/plugins/custom-tag-widget/"
         },
         {
             "name": "wpackagist-plugin/debug-bar",
@@ -339,18 +383,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/debug-bar": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/debug-bar/"
+            "homepage": "https://wordpress.org/plugins/debug-bar/"
         },
         {
             "name": "wpackagist-plugin/disable-comments",
@@ -362,18 +403,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/disable-comments.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/disable-comments": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/disable-comments/"
+            "homepage": "https://wordpress.org/plugins/disable-comments/"
         },
         {
             "name": "wpackagist-plugin/flipboard-magazine-widget",
@@ -385,18 +423,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/flipboard-magazine-widget.1.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/flipboard-magazine-widget.1.0.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/flipboard-magazine-widget": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/flipboard-magazine-widget/"
+            "homepage": "https://wordpress.org/plugins/flipboard-magazine-widget/"
         },
         {
             "name": "wpackagist-plugin/fv-top-level-cats",
@@ -408,18 +443,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/fv-top-level-cats.zip",
+                "url": "https://downloads.wordpress.org/plugin/fv-top-level-cats.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/fv-top-level-cats": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/fv-top-level-cats/"
+            "homepage": "https://wordpress.org/plugins/fv-top-level-cats/"
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
@@ -431,7 +463,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.3.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -451,7 +483,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/jetpack.3.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.3.3.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -460,6 +492,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/jetpack/"
+        },
+        {
+            "name": "wpackagist-plugin/json-rest-api",
+            "version": "1.1.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/json-rest-api/",
+                "reference": "tags/1.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/json-rest-api.1.1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/json-rest-api/"
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
@@ -471,7 +523,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/list-category-posts.0.56.zip",
+                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.56.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -483,15 +535,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.2.5",
+            "version": "2.2.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.2.5"
+                "reference": "tags/2.2.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -511,18 +563,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/markdown-on-save.1.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/markdown-on-save.1.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/markdown-on-save": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/markdown-on-save/"
+            "homepage": "https://wordpress.org/plugins/markdown-on-save/"
         },
         {
             "name": "wpackagist-plugin/public-post-preview",
@@ -534,7 +583,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/public-post-preview.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/public-post-preview.2.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -546,15 +595,15 @@
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
-            "version": "2.5.16",
+            "version": "3.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/really-simple-twitter-feed-widget/",
-                "reference": "tags/2.5.16"
+                "reference": "tags/3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.2.5.16.zip",
+                "url": "https://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.3.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -574,7 +623,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.14.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.3.14.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -594,18 +643,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.4.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/regenerate-thumbnails": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/regenerate-thumbnails/"
+            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
         },
         {
             "name": "wpackagist-plugin/show-template",
@@ -617,18 +663,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/show-template.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/show-template.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/show-template": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/show-template/"
+            "homepage": "https://wordpress.org/plugins/show-template/"
         },
         {
             "name": "wpackagist-plugin/simple-page-ordering",
@@ -640,7 +683,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/simple-page-ordering.zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-page-ordering.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -660,18 +703,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/tc-custom-taxonomy-filter.1.3.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/tc-custom-taxonomy-filter.1.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/tc-custom-taxonomy-filter": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/tc-custom-taxonomy-filter/"
+            "homepage": "https://wordpress.org/plugins/tc-custom-taxonomy-filter/"
         },
         {
             "name": "wpackagist-plugin/theme-check",
@@ -683,7 +723,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/theme-check.20141222.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/theme-check.20141222.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -703,18 +743,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/widget-logic.0.57.zip",
+                "url": "https://downloads.wordpress.org/plugin/widget-logic.0.57.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/widget-logic": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/widget-logic/"
+            "homepage": "https://wordpress.org/plugins/widget-logic/"
         },
         {
             "name": "wpackagist-plugin/wordpress-importer",
@@ -726,18 +763,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wordpress-importer.0.6.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.6.1.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/wordpress-importer": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/wordpress-importer/"
+            "homepage": "https://wordpress.org/plugins/wordpress-importer/"
         },
         {
             "name": "wpackagist-plugin/worker",
@@ -749,7 +783,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/worker.zip",
+                "url": "https://downloads.wordpress.org/plugin/worker.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -769,18 +803,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wp-maintenance-mode.2.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-maintenance-mode.2.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/wp-maintenance-mode": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/wp-maintenance-mode/"
+            "homepage": "https://wordpress.org/plugins/wp-maintenance-mode/"
         },
         {
             "name": "wpackagist-plugin/wp-siren-recent-posts-by-category",
@@ -792,18 +823,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wp-siren-recent-posts-by-category.1.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-siren-recent-posts-by-category.1.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/wp-siren-recent-posts-by-category": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/wp-siren-recent-posts-by-category/"
+            "homepage": "https://wordpress.org/plugins/wp-siren-recent-posts-by-category/"
         },
         {
             "name": "wpackagist-plugin/wpclef",
@@ -815,7 +843,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wpclef.2.2.9.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpclef.2.2.9.1.zip",
                 "reference": null,
                 "shasum": null
             },

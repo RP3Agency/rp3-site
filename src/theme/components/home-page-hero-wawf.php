@@ -35,47 +35,35 @@ $blocks = array(
 
 	array( '100x200', 'photo', 'photo-9' ),		// 17
 	array( '100x100', 'photo', 'photo-10' ),	// 18
-	array( '100x100', 'blur', 'green' ),		// 19
-	array( '100x100', 'blur', 'blue' ),			// 20
+	array( '300x300', 'photo', 'photo-11' ),	// 19
+	array( '100x100', 'blur', 'pink' ),			// 20
+	array( '200x100', 'photo', 'photo-12' ),	// 21
+	array( '200x100', 'blur', 'gold' ),			// 22
+	array( '100x100', 'blur', 'green' ),		// 23
 
-	array( '200x200', 'photo', 'photo-11' ),	// 21
-	array( '100x100', 'blur', 'green' ),		// 22
+	array( '200x100', 'photo', 'photo-13' ),	// 24
+	array( '100x100', 'blur', 'gray' ),			// 25
+	array( '100x100', 'blur', 'pink' ),			// 26
+	array( '200x100', 'blur', 'blue' ),			// 27
+	array( '100x200', 'photo', 'photo-14' ),	// 28
+	array( '100x100', 'blur', 'green' ),		// 29
+	array( '100x100', 'photo', 'photo-15' ),	// 30
+	array( '300x300', 'photo', 'photo-16' ),	// 31
 
-	array( '200x100', 'photo', 'photo-12' ),	// 23
-	array( '100x100', 'blur', 'gray' ),			// 24
-	array( '200x100', 'blur', 'gray' ),			// 25
-	array( '100x200', 'photo', 'photo-13' ),	// 26
-	array( '300x300', 'photo', 'photo-14' ),	// 27
+	array( '100x100', 'blur', 'pink' ),			// 32
+	array( '100x200', 'photo', 'photo-17' ),	// 33
+	array( '100x100', 'blur', 'blue' ),			// 34
+	array( '200x200', 'photo', 'photo-18' ),	// 35
+	array( '100x100', 'photo', 'photo-19' ),	// 36
+	array( '100x100', 'blur', 'gray' ),			// 37
+	array( '200x200', 'photo', 'photo-20' ),	// 38
 
-	array( '100x100', 'blur', 'pink' ),			// 28
-	array( '100x200', 'photo', 'photo-15' ),	// 29
-	array( '300x300', 'photo', 'photo-16' ),	// 30
-	array( '100x100', 'photo', 'photo-17' ),	// 31
-	array( '200x100', 'blur', 'gold' ),			// 32
-
-	array( '100x200', 'photo', 'photo-18' ),	// 33
-	array( '100x200', 'blur', 'blue' ),			// 34
-	array( '200x100', 'photo', 'photo-19' ),	// 35
-	array( '200x200', 'photo', 'photo-20' ),	// 36
-	array( '200x100', 'blur', 'gray' ),			// 37
-	array( '100x100', 'photo', 'photo-21' ),	// 38
-
-	array( '100x100', 'blur', 'gold' ),			// 39
-	array( '200x100', 'blur', 'pink' ),			// 40
-	array( '100x100', 'blur', 'pink' ),			// 41
-	array( '100x100', 'photo', 'photo-22' ),	// 42
-	array( '200x100', 'blur', 'blue' ),			// 43
-	array( '200x100', 'blur', 'pink' ),			// 44
-
-
-	/** Customization for the RP3 home page hero */
-	array( '200x100', 'blur', 'gold' ),			// 45
-	array( '100x200', 'photo', 'photo-8' ),		// 46
-	array( '100x200', 'blur', 'gray' ),			// 47
-	array( '100x100', 'photo', 'photo-21' ),	// 48
-	array( '100x200', 'blur', 'blue' ),			// 49
-	array( '100x100', 'blur', 'green' ),		// 50
-	array( '200x100', 'blur', 'pink' ),			// 51
+	array( '100x100', 'photo', 'photo-21' ),	// 39
+	array( '100x100', 'photo', 'photo-22' ),	// 40
+	array( '100x100', 'blur', 'green' ),		// 41
+	array( '200x100', 'photo', 'photo-23' ),	// 42
+	array( '200x100', 'blur', 'pink' ),			// 43
+	array( '100x100', 'blur', 'gray' ),			// 44
 );
 
 // Set a master counter and a photo counter
@@ -83,7 +71,7 @@ $counter = 1;
 ?>
 <section id="home-splash" class="home-splash home-hero hero hero-image wawf-hero">
 
-	<a href="#!" class="hero__container">
+	<a href="<?php echo esc_url( home_url( '/work/thewomensfoundation' ) ); ?>" class="hero__container">
 
 		<div class="hero__image">
 
@@ -110,7 +98,7 @@ $counter = 1;
 		<div class="wrapper">
 
 			<div class="hero__headline">
-				<h1>Here. Now. For. Her.</h1>
+				<h1>Stand Together</h1>
 
 				for <strong>Washington Area Women's Foundation</strong>
 			</div>

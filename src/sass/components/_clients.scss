@@ -1,0 +1,31 @@
+// Clients
+.clients {
+
+	&__entry-content {
+		@include breakpoint($bp-large / 2) {
+			@include span(18 of 24);
+		}
+	}
+
+	&__content {
+		// @extend %clearfix;
+		clear: both;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: {
+			right: auto;
+			bottom: 3rem;
+			left: auto;
+		}
+		max-width: cr(1000px);
+	}
+
+	&__client {
+		width: span( 24 / 2 );
+
+		@include breakpoint( $bp-medium ) {
+			width: span( 24 / 3 );
+		}
+	}
+}

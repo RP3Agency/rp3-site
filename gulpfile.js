@@ -152,7 +152,7 @@ gulp.task('build-theme', function() {
 gulp.task('build', ['styles', 'scripts'], function() {
 	gulp.start('build-theme');
 	// gulp.start('build-plugin');
-	gulp.start('reveal');
+	gulp.start('builders');
 });
 
 
@@ -177,12 +177,31 @@ gulp.task('watch', function() {
 
 	// Watch theme template files
 	gulp.watch( src_theme + '/**/*.*', ['build-theme'] );
+
+	// Watch builders/sass/*.scss files
+	gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
 });
 
 
 
 // Build processes for reveal.js
-gulp.task('reveal', function() {
-	return gulp.src(src + '/builders/**/*')
+gulp.task('builders', function() {
+	gulp.src(src + '/builders/**/*')
 		.pipe(gulp.dest(__dirname + '/builders'));
+
+	return gulp.src(__dirname + '/src/builders/sass/*.scss')
+		.pipe(sass({
+			bundleExec: true,
+			require: ['susy', 'breakpoint']
+		}))
+		// .on( 'error', gutil.log )
+		// .pipe(sourcemaps.init({loadMaps: true}))
+		// .pipe(autoprefixer({
+		// 	browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+		// }))
+		// .pipe(sourcemaps.write())
+		.pipe(gulp.dest(__dirname + '/builders/css'))
+		// .pipe(rename({suffix: '.min'}))
+		// .pipe(minifycss())
+		// .pipe(gulp.dest(__dirname + '/builders/css'));
 });

@@ -218,9 +218,9 @@ body.home {
 		}
 	}
 
-	// Adjust the font color of block links
-	a.block {
-		color: #fff;
+	// Block padding
+	.block {
+		// color: #fff;
 		padding: 1rem;
 
 		@include breakpoint($bp-medium) {

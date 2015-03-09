@@ -5,25 +5,18 @@
       "url": "http://wpackagist.org"  
     },
     {
-      "type": "package",
-      "package": {
-        "name": "wordpress",
-        "type": "webroot",
-        "version": "4.1.1",
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/WordPress/WordPress/archive/4.1.1.zip"
-        },
-        "require" : {
-          "fancyguy/webroot-installer": "1.0.0"
-        }
-      }
+      "type": "composer",
+      "url": "http://composer.rp3dev.com"
     }
   ],
   "require": {
     "php": ">=5.3.0",
-    "wordpress": "4.1.1",
+    "rp3agency/wordpress": "*",
     "fancyguy/webroot-installer": "1.0.0",
+    "rp3agency/advanced-custom-fields-pro": "*",
+    "rp3agency/wp-migrate-db-pro": "*",
+    "rp3agency/wp-migrate-db-pro-media-files": "*",
+    "rp3agency/wp-migrate-db-pro-cli": "*",
     "wpackagist-plugin/add-from-server":"*",
     "wpackagist-plugin/admin-post-navigation":"*",
     "wpackagist-plugin/akismet":"*",
@@ -38,6 +31,7 @@
     "wpackagist-plugin/fv-top-level-cats":"*",
     "wpackagist-plugin/google-analytics-for-wordpress":"*",
     "wpackagist-plugin/jetpack":"*",
+    "wpackagist-plugin/json-rest-api":"*",
     "wpackagist-plugin/list-category-posts":"*",
     "wpackagist-plugin/mailchimp-for-wp":"*",
     "wpackagist-plugin/markdown-on-save":"*",
@@ -58,6 +52,9 @@
   },
   "extra": {
     "webroot-dir": "_wp",
-    "webroot-package": "wordpress"
+    "webroot-package": "rp3agency/wordpress",
+    "installer-paths": {
+      "wp-content/plugins/{$name}": ["type:wordpress-plugin"]
+    }
   }
 }

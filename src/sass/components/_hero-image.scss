@@ -105,6 +105,7 @@
 		}
 		right: 0;
 		top: 0;
+		z-index: 9;
 
 		@include breakpoint(1600px) {
 			position: relative;
@@ -123,7 +124,7 @@
 		@include breakpoint($bp-medium) {
 			font-size: cr(12px);
 			padding: ce(30px, 12px) percentage(30px / 589px);
-			@include span( 16 );
+			@include span( 9 );
 		}
 
 		@include breakpoint(1600px) {
