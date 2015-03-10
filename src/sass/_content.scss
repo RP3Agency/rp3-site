@@ -102,6 +102,10 @@
 
 	&__thumbnail {
 		margin-bottom: 2rem;
+
+		img {
+			width: 100%;
+		}
 	}
 
 	&__entry-content {
