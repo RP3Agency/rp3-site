@@ -145,7 +145,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.2.0",
+            "version": "5.2.1",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -255,15 +255,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "3.0.4",
+            "version": "3.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/3.0.4"
+                "reference": "tags/3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.3.0.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/akismet.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -535,15 +535,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.2.6",
+            "version": "2.2.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.2.6"
+                "reference": "tags/2.2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -775,7 +775,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.0.5",
+            "version": "4.0.9",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
