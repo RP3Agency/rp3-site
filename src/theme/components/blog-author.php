@@ -47,7 +47,7 @@ if ( class_exists( 'CoAuthorsIterator' ) ) :
 
 				<ul class="blog__author__social social">
 
-					<?php if ( '' != get_the_author_meta( 'user_email', $author->ID ) ) : ?>
+					<?php if ( ( '' != get_the_author_meta( 'user_email', $author->ID ) ) && ( user_can( $author->ID, 'read' ) ) ) : ?>
 					<li class="email"><a href="<?php echo esc_url( 'mailto:' . get_the_author_meta( 'user_email', $author->ID ) ); ?>">Email</a></li>
 					<?php endif; ?>
 
