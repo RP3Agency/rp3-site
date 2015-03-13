@@ -7,12 +7,15 @@
     {
       "type": "composer",
       "url": "http://composer.rp3dev.com"
+    },
+    {
+      "type": "composer",
+      "url": "https://packagist.org"
     }
   ],
   "require": {
     "php": ">=5.3.0",
-    "rp3agency/wordpress": "*",
-    "fancyguy/webroot-installer": "1.0.0",
+    "johnpbloch/wordpress": "*",
     "rp3agency/advanced-custom-fields-pro": "*",
     "rp3agency/wp-migrate-db-pro": "*",
     "rp3agency/wp-migrate-db-pro-media-files": "*",
@@ -51,8 +54,7 @@
     "wpackagist-plugin/wpclef":"*"
   },
   "extra": {
-    "webroot-dir": "_wp",
-    "webroot-package": "rp3agency/wordpress",
+    "wordpress-install-dir": "_wp",
     "installer-paths": {
       "wp-content/plugins/{$name}": ["type:wordpress-plugin"]
     }

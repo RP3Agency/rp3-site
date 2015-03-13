@@ -15,8 +15,7 @@
 		<h1 class="blog__entry_title entry-title"><?php the_title(); ?></h1>
 
 		<div class="blog__entry-meta entry-meta">
-			<?php echo get_the_date(); ?>
-			<?php // echo rp3_byline( 'blog', 'single' ); ?>
+			<?php echo rp3_byline(); ?>
 		</div>
 		<!-- // .entry-meta -->
 
