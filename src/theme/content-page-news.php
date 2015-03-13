@@ -104,8 +104,6 @@ $news = new WP_Query( array(
 
 					</div>
 
-					<p class="link continue">Continue reading</p>
-
 				</a>
 
 			</div>
