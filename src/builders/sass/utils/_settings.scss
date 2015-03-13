@@ -1,9 +1,13 @@
 /** Susy */
 
 $susy: (
-	"columns":   12,
-	"gutters":   1/4,
-	"container": rem( 900px )
+	"columns":       12,
+	"gutters":       1/4,
+	"container":     rem( 900px ),
+	"output":        isolate,
+	"debug": (
+		"image":     "show"
+	)
 );
 
 $max-width: 900px;

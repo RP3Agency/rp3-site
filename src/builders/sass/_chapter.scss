@@ -1,5 +1,5 @@
 .chapter {
-	margin-bottom: 4rem;
+	// margin-bottom: 4rem;
 
 	/** Wrapper */
 	&__wrapper {
@@ -7,14 +7,17 @@
 		padding-top: 1rem;
 	}
 
+	&--01 {
+
+		.chapter__wrapper {
+			margin-top: rem( -120px );
+		}
+	}
+
 	/** Chapter Header */
 
 	&__header {
 		margin-bottom: 2rem;
-
-		@include breakpoint( $bp-medium ) {
-			width: span( 2 );
-		}
 	}
 
 	&__label,
@@ -89,8 +92,73 @@
 	}
 }
 
-.img__med-left {
-	float: left;
-	width: 67%;
-	margin: 5px 10px 25px 0;	
+
+/**
+ * Some special cases with Chapter 01
+ */
+.chapter--01 {
+
+	&__supertitle {
+		@extend %roboto-bold;
+		display: inline-block;
+		font-size: em( 12px );
+		line-height: 1;
+		margin-bottom: 1rem;
+		position: relative;
+		text-transform: uppercase;
+		transform: translate( 110%, 0 );
+
+		&::before {
+			background-color: currentColor;
+			content: "";
+			display: block;
+			height: 100%;
+			left: -110%;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+	}
+
+	&__title {
+		font-size: em( 44px );
+		line-height: ( 50px / 44px );
+		margin-bottom: 1rem;
+	}
+
+	&__subtitle {
+		font-size: em( 28px );
+		line-height: ( 50px / 44px );
+		margin-bottom: 1rem;
+	}
+
+	&__contact {
+		font-size: em( 12px );
+		margin: {
+			top: 1rem;
+			bottom: 1rem;
+		}
+		padding-top: 1rem;
+		position: relative;
+
+		&::before {
+			background-color: currentColor;
+			content: "";
+			display: block;
+			height: 3px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: rem( 126px );
+		}
+
+		a {
+			color: currentColor;
+			text-decoration: none;
+
+			@include hover-state {
+				text-decoration: underline;
+			}
+		}
+	}
 }

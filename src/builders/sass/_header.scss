@@ -9,42 +9,15 @@
 		background-attachment: fixed;
 	}
 
-	&--introduction {
+	&--01 {
+		background-size: auto rem( 500px );
 		padding-top: rem( 500px );
 	}
 }
 
-.chapter--introduction {
-	background-image: url("../images/introduction/header.jpg");
-
-	// @include breakpoint( $hidpi ) {
-	// 	background: {
-	// 		image: url("http://placehold.it/2600x1000");
-	// 		size: 1300px auto;
-	// 	}
-	// }
-
-	// .chapter__wrapper {
-	// 	position: relative;
-	// 	z-index: 1;
-
-	// 	&::before {
-	// 		background-color: $white;
-	// 		bottom: 0;
-	// 		content: "";
-	// 		display: block;
-	// 		left: rem( -115px );
-	// 		position: absolute;
-	// 		right: 0;
-	// 		top: rem( -119px );
-	// 		z-index: -1;
-	// 	}
-	// }
-}
-
 @for $i from 1 through 7 {
-	.chapter--#{$i} {
-		background-image: url("../images/chapter-#{$i}/header.jpg");
+	.chapter--0#{$i} {
+		background-image: url("../images/header-0#{$i}.jpg");
 	}
 }
 
