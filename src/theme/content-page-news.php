@@ -24,20 +24,20 @@ $news = new WP_Query( array(
 <% _.each( posts, function( post ) { %>
 	<div class="news-listing__article">
 		<a href="<%= post.get( 'link' ) %>" class="block">
-			<h1 class="news-listing__headline"><%= post.get( 'title' ) %></h1>
-			<div class="news-listing__date"><%= post.get( 'date' ) %></div>
 
-			<% if ( post.get( 'featured_image' ) ) { %>
+			<% if ( ( null !== post.get( 'featured_image' ) ) && ( post.get( 'featured_image' ).length > 0 ) ) { %>
 				<div class="blog__thumbnail">
 					<img src="<%= post.get( 'featured_image' ).source %>" class="attachment-post-thumbnail wp-post-image">
 				</div>
 			<% } %>
 
-			<div class="news-listing__excerpt equal-heights">
+			<h1 class="news-listing__headline"><%= post.get( 'title' ) %></h1>
+
+			<div class="news-listing__date"><%= post.get( 'date' ) %></div>
+
+			<div class="news-listing__excerpt">
 				<%= post.get( 'excerpt' ) %>
 			</div>
-
-			<p class="link continue">Continue reading</p>
 
 		</a>
 	</div>
@@ -80,35 +80,29 @@ $news = new WP_Query( array(
 
 		<?php while ( $news->have_posts() ) : $news->the_post(); ?>
 
-			<div class="news-listing__article">
+			<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block news-listing__article">
 
-				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
+				<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
-					<h1 class="news-listing__headline"><?php the_title(); ?></h1>
+					<div class="blog__thumbnail">
 
-					<div class="news-listing__date"><?php echo get_the_date(); ?></div>
-
-					<?php if ( '' != get_the_post_thumbnail() ) : ?>
-
-						<div class="blog__thumbnail">
-
-							<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
-
-						</div>
-
-					<?php endif; ?>
-
-					<div class="news-listing__excerpt equal-heights">
-
-						<?php the_excerpt(); ?>
+						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
 
 					</div>
 
-					<p class="link continue">Continue reading</p>
+				<?php endif; ?>
 
-				</a>
+				<h1 class="news-listing__headline"><?php the_title(); ?></h1>
 
-			</div>
+				<div class="news-listing__date"><?php echo get_the_date(); ?></div>
+
+				<div class="news-listing__excerpt">
+
+					<?php the_excerpt(); ?>
+
+				</div>
+
+			</a>
 
 		<?php endwhile; ?>
 
