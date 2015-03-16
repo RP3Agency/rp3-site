@@ -201,3 +201,35 @@ function rp3_favicon() {
 	echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri() . '/images/favicon.ico">';
 }
 add_action( 'wp_head', 'rp3_favicon' );
+
+
+/**
+ * Custom excerpts for News & Blog
+ */
+if ( ! function_exists( 'rp3_all_excerpts_get_more_link' ) ) {
+
+	function rp3_all_excerpts_get_more_link( $post_excerpt ) {
+
+		return '<p>' . $post_excerpt . ' <span class="link continue">Continue Reading</span></p>';
+	}
+}
+
+add_filter( 'wp_trim_excerpt', 'rp3_all_excerpts_get_more_link' );
+
+if ( ! function_exists( 'rp3_excerpt_length' ) ) {
+
+	function rp3_excerpt_length( $length ) {
+		return 20;
+	}
+}
+
+add_filter( 'excerpt_length', 'rp3_excerpt_length' );
+
+if ( ! function_exists( 'rp3_excerpt_more' ) ) {
+
+	function rp3_excerpt_more( $more ) {
+		return '…';
+	}
+}
+
+add_filter( 'excerpt_more', 'rp3_excerpt_more' );
