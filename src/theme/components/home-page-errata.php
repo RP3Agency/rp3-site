@@ -22,44 +22,42 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 
 	<div class="home-errata__row home-errata__row-1">
 
-		<div class="home-errata__general-widget home-errata__block">
+		<?php if ( '' != get_field( 'link' ) ) : ?>
 
-			<?php if ( '' != get_field( 'link' ) ) : ?>
+			<a href="<?php echo esc_url( get_field( 'link' ) ); ?>" class="home-errata__general-widget home-errata__block block">
 
-				<a href="<?php echo esc_url( get_field( 'link' ) ); ?>" class="block">
+		<?php else: ?>
 
-			<?php else: ?>
+			<div class="home-errata__general-widget home-errata__block block">
 
-				<div class="block">
+		<?php endif; ?>
 
-			<?php endif; ?>
+				<div class="home-errata__subhead"><?php the_field( 'label' ); ?></div>
 
-					<div class="home-errata__subhead"><?php the_field( 'label' ); ?></div>
+				<?php echo get_field( 'content' ); ?>
 
-					<?php echo get_field( 'content' ); ?>
+				<?php if ( '' != get_field( 'date' ) ) : ?>
 
-					<?php if ( '' != get_field( 'date' ) ) : ?>
+					<div class="home-errata__date">
 
-						<div class="home-errata__date">
+						<?php the_field( 'date' ); ?>
 
-							<?php the_field( 'date' ); ?>
+					</div>
 
-						</div>
+				<?php endif; ?>
 
-					<?php endif; ?>
+		<?php if ( '' != get_field( 'link' ) ) : ?>
 
-			<?php if ( '' != get_field( 'link' ) ) : ?>
+			</a>
+			<!-- // .home-errata__general-widget -->
 
-				</a>
+		<?php else: ?>
 
-			<?php else: ?>
+			</div>
+			<!-- // .home-errata__general-widget -->
 
-				</div>
+		<?php endif; ?>
 
-			<?php endif; ?>
-
-		</div>
-		<!-- // .home-errata__general-widget -->
 
 		<!-- Twitter Widget -->
 		<div class="home-errata__twitter home-errata__block">
@@ -107,19 +105,15 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 
 			<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
 
-				<div class="home-errata__blog--green home-errata__block">
+				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="home-errata__blog--green home-errata__block block">
 
-					<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
+					<div class="home-errata__subhead">Blog</div>
 
-						<div class="home-errata__subhead">Blog</div>
+					<h1 class="home-errata__header"><?php the_title(); ?></h1>
 
-						<h1 class="home-errata__header"><?php the_title(); ?></h1>
+					<div class="home-errata__date"><?php echo get_the_date(); ?></div>
 
-						<div class="home-errata__date"><?php echo get_the_date(); ?></div>
-
-					</a>
-
-				</div>
+				</a>
 
 			<?php endwhile; wp_reset_query(); ?>
 
@@ -130,19 +124,15 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 
 			<?php while ( $news->have_posts() ) : $news->the_post(); ?>
 
-				<div class="home-errata__news home-errata__block">
+				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="home-errata__news home-errata__block block">
 
-					<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
+					<div class="home-errata__subhead">News</div>
 
-						<div class="home-errata__subhead">News</div>
+					<h1 class="home-errata__header"><?php the_title(); ?></h1>
 
-						<h1 class="home-errata__header"><?php the_title(); ?></h1>
+					<div class="home-errata__date"><?php echo get_the_date(); ?></div>
 
-						<div class="home-errata__date"><?php echo get_the_date(); ?></div>
-
-					</a>
-
-				</div>
+				</a>
 
 			<?php endwhile; wp_reset_query(); ?>
 
