@@ -176,4 +176,25 @@
 			}
 		}
 	}
+
+	.chapter--05 {
+
+		.row--1 {
+
+			.chapter__header {
+				@include span( 2 at 9 );
+			}
+
+			.chapter__content {
+				@include span( 8 at 1 );
+			}
+		}
+
+		.row--2 {
+
+			.chapter__content {
+				@include span( 12 );
+			}
+		}
+	}
 }
