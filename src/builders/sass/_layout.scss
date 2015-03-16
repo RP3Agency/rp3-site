@@ -140,4 +140,40 @@
 			}
 		}
 	}
+
+	.chapter--04 {
+
+		.row--1,
+		.row--4 {
+
+			.chapter__header {
+				@include span( 2 at 2 );
+			}
+
+			.chapter--04__content {
+				@include span( 8 at 5 );
+			}
+		}
+
+		.row--2 {
+
+			.chapter--04__content {
+				@include span( 8 at 1 );
+			}
+		}
+
+		.row--3 {
+
+			.chapter--04__content {
+				@include span( 12 );
+			}
+		}
+
+		.row--5 {
+
+			.chapter--04__content {
+				@include span( 4 at 1 );
+			}
+		}
+	}
 }
