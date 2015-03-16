@@ -5,60 +5,14 @@
 		max-width: rem( 900px );
 		@include side-padding;
 	}
-
-	.row,
-	.chapter__row {
-		@include container;
-	}
-
-	/** Chapter 1 */
-
-	// &--01 {
-
-	// 	@include breakpoint( $bp-medium ) {
-
-	// 		.chapter__header {
-	// 			@include pre( 9 );
-	// 		}
-
-	// 		p {
-	// 			width: span( 8 );
-	// 		}
-	// 	}
-	// }
-
-	// &--02 {
-
-	// 	@include breakpoint( $bp-medium ) {
-
-	// 		.chapter__header {
-	// 			float: left;
-	// 		}
-
-	// 		.chapter__subsection {
-	// 			@include pre( 3 );
-	// 			width: span( 8 );
-	// 		}
-	// 	}
-	// }
-
-	// &--03 {
-
-	// 	@include breakpoint( $bp-medium ) {
-
-	// 		.chapter__header {
-	// 			@include span( 2 at 10 isolate );
-	// 		}
-
-	// 		.chapter__subsection {
-	// 			@include span( 8 );
-	// 		}
-	// 	}
-	// }
 }
 
 
 @include breakpoint( $bp-medium ) {
+
+	.chapter__row {
+		@include container;
+	}
 
 	.chapter--01 {
 
@@ -94,7 +48,7 @@
 
 	.chapter--03 {
 
-		.row--1 {
+		.chapter__row--1 {
 
 			.chapter--03__header {
 				@include span( 2 at 10 );
@@ -105,36 +59,36 @@
 			}
 		}
 
-		.row--2 {
+		.chapter__row--2 {
 
 			.chapter--03__content {
 				@include span( 3 at 10 );
 			}
 		}
 
-		.row--3,
-		.row--4 {
+		.chapter__row--3,
+		.chapter__row--4 {
 
 			.chapter--03__content {
 				@include span( 7 at 6 );
 			}
 		}
 
-		.row--5 {
+		.chapter__row--5 {
 
 			.chapter--03__content {
 				@include span( 12 );
 			}
 		}
 
-		.row--6 {
+		.chapter__row--6 {
 
 			.chapter--03__content {
 				@include span( 3 );
 			}
 		}
 
-		.row--7 {
+		.chapter__row--7 {
 
 			.chapter--03__content {
 				@include span( 12 );
@@ -144,8 +98,8 @@
 
 	.chapter--04 {
 
-		.row--1,
-		.row--4 {
+		.chapter__row--1,
+		.chapter__row--4 {
 
 			.chapter__header {
 				@include span( 2 at 2 );
@@ -156,21 +110,21 @@
 			}
 		}
 
-		.row--2 {
+		.chapter__row--2 {
 
 			.chapter--04__content {
 				@include span( 8 at 1 );
 			}
 		}
 
-		.row--3 {
+		.chapter__row--3 {
 
 			.chapter--04__content {
 				@include span( 12 );
 			}
 		}
 
-		.row--5 {
+		.chapter__row--5 {
 
 			.chapter--04__content {
 				@include span( 4 at 1 );
@@ -180,7 +134,7 @@
 
 	.chapter--05 {
 
-		.row--1 {
+		.chapter__row--1 {
 
 			.chapter__header {
 				@include span( 2 at 9 );
@@ -191,7 +145,7 @@
 			}
 		}
 
-		.row--2 {
+		.chapter__row--2 {
 
 			.chapter__content {
 				@include span( 12 );
