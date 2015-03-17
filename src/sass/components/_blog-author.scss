@@ -30,6 +30,8 @@
 	}
 
 	&__posts {
+		margin-bottom: 1.5em;
+
 		h2 {
 			@extend %roboto-medium-black;
 			font-size: ce(12px);

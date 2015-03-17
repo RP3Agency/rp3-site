@@ -154,6 +154,7 @@ body.home {
 
 .home-errata {
 	background-color: #fff;
+	color: #fff;
 	font-size: cr(12px);
 	margin: {
 		left: percentage(90px/1600px);
@@ -162,6 +163,10 @@ body.home {
 	}
 	max-width: $container-width;
 	position: relative;
+
+	a {
+		color: currentColor;
+	}
 
 	@include breakpoint($bp-medium) {
 		font-size: cr(14px);
