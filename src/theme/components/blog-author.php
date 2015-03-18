@@ -66,6 +66,7 @@ if ( function_exists( 'get_coauthors' ) ) {
 		<?php /** List last three posts by the same coauthor */ ?>
 
 		<?php
+echo $coauthor->user_nicename;
 
 		$args = array(
 			'post_type'			=> 'post',
@@ -73,7 +74,9 @@ if ( function_exists( 'get_coauthors' ) ) {
 			'post_status'		=> 'publish',
 			'author_name'		=> $coauthor->user_nicename,
 			'post__not_in'		=> array( get_the_ID() ),
-			'category_name'		=> 'blog'
+			'category_name'		=> 'blog',
+			'order'				=> 'DESC',
+			'orderby'			=> 'date'
 		);
 
 		if ( $author_query = new WP_Query( $args ) ) :
