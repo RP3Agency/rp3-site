@@ -72,7 +72,8 @@ if ( function_exists( 'get_coauthors' ) ) {
 			'posts_per_page'	=> 3,
 			'post_status'		=> 'publish',
 			'author_name'		=> $coauthor->user_nicename,
-			'post__not_in'		=> array( get_the_ID() )
+			'post__not_in'		=> array( get_the_ID() ),
+			'category_name'		=> 'blog'
 		);
 
 		if ( $author_query = new WP_Query( $args ) ) :
