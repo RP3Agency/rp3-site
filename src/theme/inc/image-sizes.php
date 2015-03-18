@@ -118,6 +118,20 @@ function rp3_image_sizes() {
 		'medium'		=> array( 600, 225, true ),
 		'large'			=> array( 800, 300, true )
 	) );
+
+
+
+	/** Adding breakpoints, so until I can get all the images squared into a newer, better
+	format, going to do the picture element for the blog single template manually */
+
+	add_image_size( 'single-blog-small',     320,      168,     true );
+	add_image_size( 'single-blog-small-2x',  320 * 2,  168 * 2, true );
+	add_image_size( 'single-blog-medium',    600,      316,     true );
+	add_image_size( 'single-blog-medium-2x', 600 * 2,  316 * 2, true );
+	add_image_size( 'single-blog-large',     1000,     526,     true );
+	add_image_size( 'single-blog-large-2x',  1000 * 2, 526 * 2, true );
+	add_image_size( 'single-blog-xlarge',    1600,     842,     true );
+	add_image_size( 'single-blog-xlarge-2x', 1600 * 2, 842 * 2, true );
 }
 
 add_action( 'init', 'rp3_image_sizes' );

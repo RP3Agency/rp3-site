@@ -21,7 +21,21 @@
 	background-color: adjust-hue($color-test, $adjustment * 1deg);
 }
 
-@mixin side-padding {
+@mixin side-padding( $style: "old" ) {
+
+    // The "old" way of doing it
+
     padding-left: percentage(60px / 2000px);
     padding-right: percentage(60px / 2000px);
+
+
+    // Now for a "new" way of doing it
+
+    @if $style == "new" {
+
+        $padding: percentage( 5px / 320px );
+
+        padding-left: $padding;
+        padding-right: $padding;
+    }
 }
