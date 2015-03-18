@@ -1,0 +1,87 @@
+.single-blog {
+	margin: {
+		left: auto;
+		right: auto;
+	}
+	max-width: 1600px;
+
+	&__back,
+	&__entry-title,
+	&__entry-meta,
+	&__entry-content,
+	&__sharing,
+	&__comments {
+		margin: 0;
+		max-width: none;
+		@include side-padding( "new" );
+
+		@include breakpoint( bp( 4 ) ) {
+			padding: {
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+
+	&__entry-meta,
+	&__entry-header,
+	&__entry-content,
+	&__sharing {
+		margin-bottom: 2em;
+	}
+
+	@include breakpoint( bp( 2 ) ) {
+
+		&__entry-content,
+		&__sharing,
+		&__comments {
+			padding: 0;
+		}
+	}
+
+	&__container {
+		@include container( 1600px );
+	}
+
+	&__thumbnail {
+
+		picture,
+		picture img,
+		img {
+			height: auto;
+			width: 100%;
+		}
+	}
+
+	/** Layout */
+	@include breakpoint( bp( 2 ) ) {
+		&__container {
+			margin-left: percentage( 5px / 320px );
+		}
+
+		&__primary {
+			@include span( 15 );
+		}
+
+		&__secondary {
+			@include span( 9 last );
+		}
+	}
+
+	@include breakpoint( bp( 3 ) ) {
+
+		&__container {
+			margin-left: 0;
+		}
+
+		&__primary {
+			@include span( isolate 14 at 2 );
+		}
+
+		&__secondary {
+			@include span( 8 last );
+		}
+	}
+}
+
+@import "components/blog-author";
