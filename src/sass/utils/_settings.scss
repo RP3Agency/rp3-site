@@ -18,6 +18,27 @@ $bp-xlarge: $container-width + 30px;
 
 
 /* ==========================================================================
+   Breakpoint List
+   ========================================================================== */
+
+$breakpoints: (
+	400px,
+	600px,
+	1000px,
+	1600px
+);
+
+@function bp( $breakpoint ) {
+
+	@if length( $breakpoints ) < $breakpoint {
+		@error "There is no value for the given index.";
+	}
+
+	@return nth( $breakpoints, $breakpoint );
+}
+
+
+/* ==========================================================================
    Susy settings
    ========================================================================== */
 
