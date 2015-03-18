@@ -15,7 +15,9 @@
 		<h1 class="single-blog__entry-title entry-title"><?php the_title(); ?></h1>
 
 		<div class="single-blog__entry-meta entry-meta">
+
 			<?php echo rp3_byline(); ?>
+
 		</div>
 		<!-- // .entry-meta -->
 
