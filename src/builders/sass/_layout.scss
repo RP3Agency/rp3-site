@@ -61,73 +61,120 @@
 
 		.chapter__row--2 {
 
-			.chapter--03__content {
+			.chapter__image {
+				@include span( 8 at 1 );
+			}
+
+			.chapter__content {
 				@include span( 3 at 10 );
 			}
 		}
 
-		.chapter__row--3,
-		.chapter__row--4 {
+		.chapter__row--3 {
 
-			.chapter--03__content {
-				@include span( 7 at 6 );
+			.chapter__image {
+				@include span( 9 at 4 );
 			}
 		}
 
+		.chapter__row--4,
 		.chapter__row--5 {
 
-			.chapter--03__content {
-				@include span( 12 );
+			.chapter__image {
+				@include span( 4 at 1 );
+			}
+
+			.chapter__content {
+				@include span( 7 at 6 );
 			}
 		}
 
 		.chapter__row--6 {
 
-			.chapter--03__content {
-				@include span( 3 );
+			.chapter__content {
+				@include span( 12 );
 			}
 		}
 
 		.chapter__row--7 {
 
-			.chapter--03__content {
+			.chapter__content {
+				@include span( 3 at 1 );
+			}
+
+			.chapter__image {
+				@include span( 8 at 5 );
+			}
+		}
+
+		.chapter__row--8 {
+
+			.chapter__content {
 				@include span( 12 );
+			}
+		}
+
+		.chapter__row--9 {
+
+			.chapter__image {
+				@include span( 8 at 3 );
 			}
 		}
 	}
 
 	.chapter--04 {
 
-		.chapter__row--1,
-		.chapter__row--4 {
+		.chapter__row--1 {
 
 			.chapter__header {
 				@include span( 2 at 2 );
 			}
 
-			.chapter--04__content {
+			.chapter__content {
 				@include span( 8 at 5 );
 			}
 		}
 
 		.chapter__row--2 {
 
-			.chapter--04__content {
-				@include span( 8 at 1 );
+			.chapter__image {
+				@include span( 12 at 1 );
 			}
 		}
 
 		.chapter__row--3 {
 
-			.chapter--04__content {
+			.chapter__content {
+				@include span( 8 at 1 );
+			}
+		}
+
+		.chapter__row--4 {
+
+			.chapter__content {
 				@include span( 12 );
 			}
 		}
 
 		.chapter__row--5 {
 
-			.chapter--04__content {
+			.chapter__header {
+				@include span( 2 at 2 );
+			}
+
+			.chapter__content {
+				@include span( 7 at 6 );
+			}
+		}
+
+		.chapter__row--6 {
+
+			.chapter__content {
 				@include span( 4 at 1 );
+			}
+
+			.chapter__image {
+				@include span( 8 at 5 );
 			}
 		}
 	}
@@ -168,26 +215,37 @@
 
 		.chapter__row--2 {
 
-			.chapter__content {
-				@include span( 8 at 1 );
+			.chapter__image {
+				@include span( 12 at 1 );
 			}
 		}
 
 		.chapter__row--3 {
 
 			.chapter__content {
-				@include span( 12 );
+				@include span( 8 at 1 );
 			}
 		}
 
 		.chapter__row--4 {
 
 			.chapter__content {
-				@include span( 8 at 1 );
+				@include span( 12 );
 			}
 		}
 
 		.chapter__row--5 {
+
+			.chapter__content {
+				@include span( 8 at 1 );
+			}
+		}
+
+		.chapter__row--6 {
+
+			.chapter__image {
+				@include span( 4 at 1 );
+			}
 
 			.chapter__content {
 				@include span( 8 at 5 );
