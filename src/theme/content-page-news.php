@@ -26,7 +26,7 @@ $news = new WP_Query( array(
 		<a href="<%= post.get( 'link' ) %>" class="block">
 
 			<% if ( ( null !== post.get( 'featured_image' ) ) && ( post.get( 'featured_image' ).length > 0 ) ) { %>
-				<div class="blog__thumbnail">
+				<div class="blog-listing__thumbnail">
 					<img src="<%= post.get( 'featured_image' ).source %>" class="attachment-post-thumbnail wp-post-image">
 				</div>
 			<% } %>
@@ -84,7 +84,7 @@ $news = new WP_Query( array(
 
 				<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
-					<div class="blog__thumbnail">
+					<div class="blog-listing__thumbnail">
 
 						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
 

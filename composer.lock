@@ -281,15 +281,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "3.1",
+            "version": "3.1.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/3.1"
+                "reference": "tags/3.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.3.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/akismet.3.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -481,15 +481,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.3.2",
+            "version": "5.3.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.3.2"
+                "reference": "tags/5.3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.3.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -501,15 +501,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.3.2",
+            "version": "3.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.3.2"
+                "reference": "tags/3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.3.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.3.4.zip",
                 "reference": null,
                 "shasum": null
             },
