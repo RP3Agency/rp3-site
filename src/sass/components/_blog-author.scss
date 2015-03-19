@@ -5,7 +5,7 @@
 	@extend %clearfix;
 	background-color: mix(#fff, $gray-light, 50%);
 	font-size: 0.8em;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 
 	&__header {
 		@include container;
@@ -30,6 +30,8 @@
 	}
 
 	&__posts {
+		margin-bottom: 1.5em;
+
 		h2 {
 			@extend %roboto-medium-black;
 			font-size: ce(12px);
