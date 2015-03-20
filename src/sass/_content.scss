@@ -71,73 +71,7 @@
 }
 
 
-// Blog
-.blog {
-	@extend %side-padding;
-	margin-bottom: 3rem;
-
-	@include breakpoint($bp-marge) {
-		@include span(20 of 24);
-	}
-
-	&__secondary {
-		border-top: 1px solid map-get($gray_map, light);
-		margin-top: 3rem;
-		padding-top: 3rem;
-
-		@include breakpoint($bp-large / 2) {
-			border: none;
-			margin: 0;
-			padding: 0;
-		}
-
-		@include breakpoint($bp-large / 2) {
-			@include span(8 last);
-		}
-	}
-
-	&__entry-meta {
-		@extend %roboto-light-gray;
-	}
-
-	&__thumbnail {
-		margin-bottom: 2rem;
-
-		img {
-			width: 100%;
-		}
-	}
-
-	&__entry-content {
-		padding: 0;
-
-		@include breakpoint($bp-medium) {
-			font-size: cr(16px);
-		}
-
-		.entry-content__container {
-			float: none;
-			margin-right: 0;
-			width: 100%;
-		}
-	}
-
-	&__back {
-		@extend %back;
-		display: inline-block;;
-		padding: 0;
-	}
-
-	/**
-	 * Social Media sharing
-	 */
-	&__social-media {
-		clear: both;
-		margin-bottom: 2em;
-	}
-}
-
-@import "components/blog-author";
+@import "content/single-blog";
 
 
 /**
@@ -156,6 +90,10 @@
 
 	&__byline {
 		@extend %roboto-light-gray;
+		margin-bottom: 1em;
+	}
+
+	&__thumbnail {
 		margin-bottom: 1em;
 	}
 
@@ -509,3 +447,39 @@
 
 
 @import "content/work-landing-page";
+
+
+.quotations {
+	border: 1px solid map-get( $gray_map, "light" );
+	margin-bottom: 2em;
+	padding: 1em;
+
+	&__quote {
+		margin: 1em 0 0 1em;
+		position: relative;
+
+		&::before {
+			color: transparentize(map-get( $gray_map, "light" ), 0.5);
+			content: "\f106";
+			display: block;
+			font-family: Genericons;
+			font-size: 3rem;
+			left: -20px;
+			line-height: 0;
+			position: absolute;
+			top: 50%;
+			transform: rotate(180deg) translate(0, -50%);
+			z-index: -1;
+		}
+	}
+
+	&__quote-block {
+		list-style: none;
+		margin: 0 0 2em;
+		z-index: 0;
+	}
+
+	&__attribution {
+		@extend h2;
+	}
+}
