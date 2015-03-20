@@ -31,7 +31,7 @@ $blog = new WP_Query( array(
 
 			<h1 class="blog-listing__headline"><%= post.get( 'title' ) %></h1>
 
-			<div class="blog-listing__byline">By <%= post.get( 'author' ).first_name %> <%= post.get( 'author' ).last_name %> on <%= post.get( 'date' ) %></div>
+			<div class="blog-listing__byline"><%= post.get( 'date' ) %>.</div>
 
 			<div class="blog-listing__excerpt">
 				<%= post.get( 'excerpt' ) %>

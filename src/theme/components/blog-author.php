@@ -73,10 +73,13 @@ if ( function_exists( 'get_coauthors' ) ) {
 			'post_status'		=> 'publish',
 			'author_name'		=> $coauthor->user_nicename,
 			'post__not_in'		=> array( get_the_ID() ),
-			'category_name'		=> 'blog'
+			'category__not_in'	=> array( 25, 7 ),
+			'order'				=> 'DESC',
+			'orderby'			=> 'date'
 		);
 
-		if ( $author_query = new WP_Query( $args ) ) :
+		if ( ( $author_query = new WP_Query( $args ) ) && ( 0 < $author_query->found_posts ) ) :
+
 		?>
 
 		<div class="blog__author__posts">
