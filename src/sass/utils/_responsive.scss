@@ -176,6 +176,10 @@ $default-font-size: 14px !default;
 // value versus a context value, usually the default font size
 $default-font-size: 16px !default;
 
+@function rem( $target, $context: $default-font-size ) {
+	@return $target / $context * 1rem;
+}
+
 @function calc-rem( $target, $context: $default-font-size ) {
 	@return $target / $context * 1rem;
 }
