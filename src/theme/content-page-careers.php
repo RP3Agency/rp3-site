@@ -100,11 +100,6 @@ wp_reset_query();
 					</div>
 					<!-- // .careers__summary -->
 
-					<footer class="careers__footer">
-						<p class="link continue">Learn more</p>
-					</footer>
-					<!-- // .careers__footer -->
-
 				</a>
 
 			</div>
@@ -156,11 +151,6 @@ wp_reset_query();
 						<?php the_excerpt(); ?>
 					</div>
 					<!-- // .careers__summary -->
-
-					<footer class="careers__footer">
-						<p class="link continue">Learn more</p>
-					</footer>
-					<!-- // .careers__footer -->
 
 				</a>
 
