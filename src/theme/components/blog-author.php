@@ -78,7 +78,9 @@ if ( function_exists( 'get_coauthors' ) ) {
 			'orderby'			=> 'date'
 		);
 
-		if ( ( $author_query = new WP_Query( $args ) ) && ( 0 < $author_query->found_posts ) ) :
+		$author_query = new WP_Query( $args );
+
+		if ( $author_query->have_posts() ) :
 
 		?>
 
