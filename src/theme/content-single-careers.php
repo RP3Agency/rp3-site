@@ -8,6 +8,8 @@
 
 	<div class="careers--single__entry-content entry-content">
 
+		<p class="careers__back"><a href="<?php echo esc_url( home_url( '/careers/' ) ); ?>" class="link--back">Back to Careers</a></p>
+
 		<header class="careers__header">
 			<h1 class="careers__title"><?php the_title(); ?></h1>
 			<p class="careers__tagline"><?php the_field( 'tagline' ); ?></p>
@@ -71,8 +73,6 @@
 
 	</div>
 	<!-- // .entry-content -->
-
-	<a href="<?php echo esc_url( home_url( '/careers/' ) ); ?>" class="careers__back">Back to Careers</a>
 
 </article>
 <!-- // #post-## -->

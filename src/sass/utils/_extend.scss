@@ -112,7 +112,7 @@
 %back {
 	@extend %side-padding;
 	clear: both;
-	display: block;
+	display: inline-block;
 	font: {
 		family: Roboto, sans-serif;
 		size: ce(10px);

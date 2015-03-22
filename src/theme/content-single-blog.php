@@ -5,8 +5,7 @@
 ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'single-blog' ); ?>>
 
-	<a href="<?php echo esc_url( home_url( 'blog' ) ); ?>" class="single-blog__back">Back to Articles</a>
-
+	<p class="single-blog__back"><a href="<?php echo esc_url( home_url( 'blog' ) ); ?>" class="link--back">Back to Articles</a></p>
 
 	<!-- Article Header -->
 
