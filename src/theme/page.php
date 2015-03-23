@@ -40,6 +40,10 @@ get_header(); ?>
 
 		<?php get_template_part( 'content', 'page-work' ); ?>
 
+	<?php elseif( is_page( 'sxsw' ) ) : ?>
+
+		<?php get_template_part( 'content', 'page-sxsw' ); ?>
+
 	<?php else: ?>
 
 		<?php get_template_part( 'content', 'page' ); ?>
