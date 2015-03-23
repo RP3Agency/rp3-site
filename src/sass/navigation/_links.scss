@@ -63,3 +63,10 @@ a.block {
 		display: inline-block;
 	}
 }
+
+// Links back to blog/news/careers/etc landing pages
+.link--back {
+	@extend %back;
+	line-height: 3em;
+	padding: 0;
+}

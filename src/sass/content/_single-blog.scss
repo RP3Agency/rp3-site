@@ -70,12 +70,8 @@
 
 	@include breakpoint( bp( 3 ) ) {
 
-		&__container {
-			margin-left: 0;
-		}
-
 		&__primary {
-			@include span( isolate 14 at 2 );
+			@include span( 14 );
 		}
 
 		&__secondary {
