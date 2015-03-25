@@ -1,29 +1,44 @@
 .six-up-image-panel {
 	clear: both;
-
-	&__row {
-		display: flex;
-		flex-wrap: wrap;
-
-		&:nth-child( even ) {
-			flex-direction: column-reverse;
-
-			@include breakpoint( $bp-medium ) {
-				flex-direction: row;
-			}
-		}
-	}
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	width: 100%;
 
 	&__image {
-		width: 100%;
+		margin-top: -1px;
+		overflow: hidden;
+		width: 50%;
 
-		@include breakpoint( $bp-medium ) {
-			width: 50%;
+		picture {
+			background-color: $black;
+			bottom: 0;
+			padding-bottom: percentage( 150px / 160px );
+			position: relative;
+			top: 0;
+			width: percentage( 800px / 300px ); // original image dimensions
+
+			@include breakpoint( $bp-medium ) {
+				padding-bottom: 0;
+			}
+
+			img {
+				bottom: 0;
+				height: 100%;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: auto;
+
+				@include breakpoint( $bp-medium ) {
+					position: static;
+				}
+			}
 		}
 
-		img {
-			height: auto;
-			width: 100%;
+		&:nth-child( odd ) picture {
+			transform: translate( -400px, 0 );
 		}
 	}
 }
