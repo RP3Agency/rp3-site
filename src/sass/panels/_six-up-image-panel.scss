@@ -1,29 +1,42 @@
 .six-up-image-panel {
 	clear: both;
-
-	&__row {
-		display: flex;
-		flex-wrap: wrap;
-
-		&:nth-child( even ) {
-			flex-direction: column-reverse;
-
-			@include breakpoint( $bp-medium ) {
-				flex-direction: row;
-			}
-		}
-	}
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	width: 100%;
 
 	&__image {
-		width: 100%;
+		height: 150px;
+		overflow: hidden;
+		position: relative;
+		width: 50%;
 
 		@include breakpoint( $bp-medium ) {
-			width: 50%;
+			height: 300px;
 		}
 
-		img {
-			height: auto;
-			width: 100%;
+		picture {
+			height: 150px;
+			position: absolute;
+			width: 400px;
+
+			@include breakpoint( $bp-medium ) {
+				height: 300px;
+				width: 800px;
+			}
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+
+		&:nth-child( odd ) picture {
+			right: 0;
+		}
+
+		&:nth-child( even ) picture {
+			left: 0;
 		}
 	}
 }
