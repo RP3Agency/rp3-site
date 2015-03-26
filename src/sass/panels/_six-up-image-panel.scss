@@ -6,39 +6,37 @@
 	width: 100%;
 
 	&__image {
-		margin-top: -1px;
+		height: 150px;
 		overflow: hidden;
+		position: relative;
 		width: 50%;
 
+		@include breakpoint( $bp-medium ) {
+			height: 300px;
+		}
+
 		picture {
-			background-color: $black;
-			bottom: 0;
-			padding-bottom: percentage( 150px / 160px );
-			position: relative;
-			top: 0;
-			width: percentage( 800px / 300px ); // original image dimensions
+			height: 150px;
+			position: absolute;
+			width: 400px;
 
 			@include breakpoint( $bp-medium ) {
-				padding-bottom: 0;
+				height: 300px;
+				width: 800px;
 			}
 
 			img {
-				bottom: 0;
 				height: 100%;
-				left: 0;
-				position: absolute;
-				right: 0;
-				top: 0;
 				width: auto;
-
-				@include breakpoint( $bp-medium ) {
-					position: static;
-				}
 			}
 		}
 
 		&:nth-child( odd ) picture {
-			transform: translate( -400px, 0 );
+			right: 0;
+		}
+
+		&:nth-child( even ) picture {
+			left: 0;
 		}
 	}
 }
