@@ -34,3 +34,18 @@
 		display: block;
 	}
 }
+
+.comments-area ol {
+	list-style-type: none;
+}
+
+.comment-list {
+	margin: {
+		left: 0;
+		top: 1em;
+	}
+}
+
+.comment-body {
+	@extend .quotations;
+}
