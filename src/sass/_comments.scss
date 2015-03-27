@@ -1,0 +1,36 @@
+.single-blog__comments {
+
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+
+		input {
+			width: 100%;
+		}
+
+		@include breakpoint( $bp-marge ) {
+			float: left;
+			width: span( 8 of 24 );
+		}
+	}
+
+	@include breakpoint( $bp-marge ) {
+
+		.comment-form-author,
+		.comment-form-email {
+			@include gutter;
+		}
+
+		.comment-form-comment {
+			clear: both;
+
+			textarea {
+				width: 100%;
+			}
+		}
+	}
+
+	label {
+		display: block;
+	}
+}
