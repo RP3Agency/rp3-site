@@ -24,7 +24,7 @@
       "package": {
         "name": "advanced-custom-fields-pro",
         "type": "wordpress-plugin",
-        "version": "5.1.9.1",
+        "version": "5.2.2",
         "dist": {
           "type": "zip",
           "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip"

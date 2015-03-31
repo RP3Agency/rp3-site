@@ -4,11 +4,11 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8d8537915a4771f9139dedb647bf8983",
+    "hash": "55312ad354e29114b03a7ba66ea1d7e4",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
-            "version": "5.1.9.1",
+            "version": "5.2.2",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -235,15 +235,15 @@
         },
         {
             "name": "wpackagist-plugin/admin-post-navigation",
-            "version": "1.8",
+            "version": "1.9",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/admin-post-navigation/",
-                "reference": "tags/1.8"
+                "reference": "tags/1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/admin-post-navigation.1.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/admin-post-navigation.1.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -255,15 +255,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "3.0.4",
+            "version": "3.1.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/3.0.4"
+                "reference": "tags/3.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/akismet.3.0.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/akismet.3.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -315,15 +315,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.1",
+            "version": "4.1.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.1"
+                "reference": "tags/4.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/contact-form-7.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -455,15 +455,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.3.2",
+            "version": "5.3.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.3.2"
+                "reference": "tags/5.3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.3.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -475,15 +475,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.3.2",
+            "version": "3.4.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.3.2"
+                "reference": "tags/3.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/jetpack.3.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.3.4.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -495,15 +495,15 @@
         },
         {
             "name": "wpackagist-plugin/json-rest-api",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/json-rest-api/",
-                "reference": "tags/1.1.1"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/json-rest-api.1.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/json-rest-api.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -515,15 +515,15 @@
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.56",
+            "version": "0.58.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.56"
+                "reference": "tags/0.58.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/list-category-posts.0.56.zip",
+                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.58.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -535,15 +535,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.2.6",
+            "version": "2.2.8",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.2.6"
+                "reference": "tags/2.2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.2.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -775,7 +775,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.0.5",
+            "version": "4.0.11",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
@@ -783,7 +783,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/worker.zip",
+                "url": "https://downloads.wordpress.org/plugin/worker.zip",
                 "reference": null,
                 "shasum": null
             },
