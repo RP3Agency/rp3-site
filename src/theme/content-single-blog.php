@@ -84,6 +84,19 @@
 
 			<?php endif; ?>
 
+			<!-- Related Content -->
+
+			<?php if ( is_active_sidebar( 'blog-single-post' ) ) : ?>
+
+			<div id="blog-single-post-widget-area" class="widget-area blog-single-post-widget-area blog-archive-widget-area" role="complementary">
+
+				<?php dynamic_sidebar( 'blog-single-post' ); ?>
+
+			</div>
+
+			<?php endif; ?>
+
+
 			<?php /** If comments are open or we have at least one comment, load up the comment template */ ?>
 
 			<?php if ( comments_open() || '0' != get_comments_number() ) : ?>

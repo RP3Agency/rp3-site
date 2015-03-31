@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c835eb3b3e8f6f7f428dda15f4e70fbc",
+    "hash": "52fa6d2d84a9c9b4b4a07c7d57bf5638",
     "packages": [
         {
             "name": "composer/installers",
@@ -185,7 +185,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.2.1",
+            "version": "5.2.2",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -541,15 +541,15 @@
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.57",
+            "version": "0.58.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.57"
+                "reference": "tags/0.58.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.57.zip",
+                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.58.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -578,26 +578,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/mailchimp-for-wp/"
-        },
-        {
-            "name": "wpackagist-plugin/markdown-on-save",
-            "version": "1.2.1",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/markdown-on-save/",
-                "reference": "tags/1.2.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/markdown-on-save.1.2.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/markdown-on-save/"
         },
         {
             "name": "wpackagist-plugin/public-post-preview",

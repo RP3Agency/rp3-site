@@ -159,6 +159,18 @@
 	}
 }
 
+.blog-single-post-widget-area {
+	background-color: mix(#fff, $gray-light, 50%);
+	margin: 2em 0;
+	padding: 2em;
+
+	aside {
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+}
+
 
 // Agency
 .agency {
@@ -494,3 +506,6 @@
 		@extend h2;
 	}
 }
+
+/** Comments */
+@import "comments";

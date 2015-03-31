@@ -64,6 +64,11 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'rp3' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php
+	comment_form( array(
+		'comment_notes_after' => '<p>You can format your comments using <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>.</p>',
+		'label_submit'        => 'Submit Comment'
+	) );
+	?>
 
 </div><!-- #comments -->
