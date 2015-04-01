@@ -19,7 +19,7 @@
 				blue = '#2e91cc',
 				mapOptions = {
 					center: myLatLng,
-					zoom: 11,
+					zoom: 18,
 					draggable: false,
 					scrollwheel: false,
 					streetViewControl: false,
