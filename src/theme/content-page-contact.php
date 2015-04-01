@@ -131,13 +131,16 @@
 
 
 	<section class="contact__map">
-		<div id="contact__map" class="contact__map__container"></div>
-		<div class="contact__map__inset">
-			<h1>RP3 Agency</h1>
-			7316 Wisconsin Avenue<br>
-			Suite 450<br>
-			Bethesda, Maryland 20814
-		</div>
+		<a href="https://www.google.com/maps/@38.9827398,-77.0940005,18z/data=!1e3" class="block">
+			<div id="contact__map" class="contact__map__container"></div>
+			<div class="contact__map__inset">
+				<h1>RP3 Agency</h1>
+				7316 Wisconsin Avenue<br>
+				Suite 450<br>
+				Bethesda, Maryland 20814<br>
+				<span class="link">Driving Directions</span>
+			</div>
+		</a>
 	</section>
 	<!-- // .contact__map -->
 
