@@ -130,7 +130,7 @@
 	<!-- // .contact__wrapper -->
 
 
-	<section class="contact__map">
+	<section id="map" class="contact__map">
 		<a href="https://www.google.com/maps/@38.9827398,-77.0940005,18z/data=!1e3" class="block">
 			<div id="contact__map" class="contact__map__container"></div>
 			<div class="contact__map__inset">
