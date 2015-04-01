@@ -114,9 +114,10 @@ function rp3_image_sizes() {
 
 	// Six-up Image Panel
 	rp3_add_image_size( 'six-up', array(
-		'small'			=> array( 400, 150, true ),
-		'medium'		=> array( 800, 300, true ),
-		'large'			=> array( 800, 300, true )
+		'initial'       => array( 320, 120, true ),
+		'small'         => array( 600, 225, true ),
+		'medium'        => array( 500, 187, true ),
+		'large'         => array( 800, 300, true )
 	) );
 
 	// Full-width Images
