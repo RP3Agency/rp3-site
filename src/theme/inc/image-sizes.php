@@ -119,6 +119,14 @@ function rp3_image_sizes() {
 		'large'			=> array( 800, 300, true )
 	) );
 
+	// Half-width Images
+	rp3_add_image_size( 'half-width', array(
+		'initial'       => array( 320, 240, true ),
+		'small'         => array( 600, 450, true ),
+		'medium'        => array( 500, 375, true ),
+		'large'         => array( 800, 600, true )
+	) );
+
 
 
 	/** Adding breakpoints, so until I can get all the images squared into a newer, better

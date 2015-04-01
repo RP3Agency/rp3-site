@@ -1,0 +1,23 @@
+/**
+ * Global panel properties
+ */
+
+.panel {
+	margin: {
+		right: auto;
+		left: auto;
+	}
+	max-width: rem( 1600px );
+}
+
+/**
+ * Six-Up Image Panel
+ */
+
+@import "six-up-image-panel";
+
+/**
+ * Half-width Image Panel
+ */
+
+@import "half-width-image-panel";
