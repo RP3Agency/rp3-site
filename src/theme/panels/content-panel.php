@@ -6,17 +6,19 @@
  */
 
 /** If we're on the results content block, check for tags */
-// if ( 'results' == get_sub_field( 'label' ) ) {
-// 	$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
-// 	foreach ( $terms as $term ) {
-// 		$work_tags[] = $term->name;
-// 	}
-// }
+if ( get_sub_field( 'display-tags' ) ) {
+	$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
+	foreach ( $terms as $term ) {
+		$work_tags[] = $term->name;
+	}
+}
 ?>
 
 <!-- Content Panel -->
 
 <section class="content-panel panel">
+
+	<!-- Content -->
 
 	<div class="content-panel__content">
 
@@ -34,21 +36,41 @@
 	</div>
 	<!-- content-panel content -->
 
-	<div class="content-panel__image">
 
-		<div class="content-panel__image__content">
+	<!-- Tags -->
 
-			<?php if ( '' != get_sub_field( 'image' ) ) : ?>
+	<?php if ( ( get_sub_field( 'display-tags' ) ) && ( isset( $work_tags ) ) && ( 0 < count( $work_tags ) ) ) : ?>
+
+		<div class="content-panel__tags">
+
+			<div class="content-panel__tags__inner">
+
+				<?php echo join( ', ', $work_tags ); ?>
+
+			</div>
+			<!-- content-panel tags inner -->
+
+		</div>
+		<!-- content-panel tags -->
+
+
+	<!-- Image -->
+
+	<?php elseif ( '' != get_sub_field( 'image' ) ) : ?>
+
+		<div class="content-panel__image">
+
+			<div class="content-panel__image__content">
 
 				<?php echo rp3_picture_element_v2( esc_attr( get_sub_field( 'image' ) ), 'content' ); ?>
 
-			<?php endif; ?>
+			</div>
+			<!-- content-panel image content -->
 
 		</div>
-		<!-- content-panel image content -->
+		<!-- content-panel image -->
 
-	</div>
-	<!-- content-panel image -->
+	<?php endif; ?>
 
 </section>
 <!-- content-panel -->
