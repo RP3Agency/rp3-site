@@ -128,6 +128,14 @@ function rp3_image_sizes() {
 		'large'         => array( 1600, 600, true )
 	) );
 
+	// Full-width Images (Tall)
+	rp3_add_image_size( 'full-width-tall', array(
+		'initial'       => array( 320, 342, true ),
+		'small'         => array( 600, 641, true ),
+		'medium'        => array( 1000, 534, true ),
+		'large'         => array( 1600, 854, true )
+	) );
+
 	// Half-width Images
 	rp3_add_image_size( 'half-width', array(
 		'initial'       => array( 320, 240, true ),
