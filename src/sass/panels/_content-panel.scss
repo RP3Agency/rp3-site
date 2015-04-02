@@ -2,22 +2,24 @@
 
 	@include breakpoint( bp( 2 ) ) {
 		display: flex;
-		min-height: rem( 282px );
 	}
 
-	@include breakpoint( bp( 3 ) ) {
-		min-height: rem( 450px );
-	}
+	/** Content */
 
 	&__content {
 		@include side-padding( "new" );
 
 		@include breakpoint( bp( 2 ) ) {
+			min-height: rem( 282px );
 			width: 50%;
 		}
 
+		@include breakpoint( bp( 3 ) ) {
+			min-height: rem( 400px );
+		}
+
 		&__inner {
-			padding: {
+			margin: {
 				top: 2em;
 				bottom: 2em;
 			}
@@ -27,7 +29,7 @@
 			}
 
 			@include breakpoint( bp( 3 ) ) {
-				padding: {
+				margin: {
 					top: 4em;
 					bottom: 4em;
 				}
@@ -35,10 +37,41 @@
 		}
 	}
 
+	/** Tags */
+
+	&__tags {
+		@include side-padding( "new" );
+
+		@include breakpoint( bp( 2 ) ) {
+			width: 50%;
+		}
+
+		&__inner {
+			margin: {
+				top: 3em;
+				bottom: 2em;
+			}
+
+			@include breakpoint( bp( 2 ) ) {
+				max-width: rem( 500px );
+			}
+
+			@include breakpoint( bp( 3 ) ) {
+				margin: {
+					top: 5em;
+					bottom: 4em;
+				}
+			}
+		}
+	}
+
+	/** Image */
+
 	&__image {
 		@include aspect-ratio( 320px, 180px );
 
 		@include breakpoint( bp( 2 ) ) {
+			min-height: rem( 282px );
 			overflow: hidden;
 			position: relative;
 			width: 50%;
@@ -60,6 +93,10 @@
 				top: 0;
 				transform: translate( -50%, 0 );
 			}
+		}
+
+		@include breakpoint( bp( 3 ) ) {
+			min-height: rem( 450px );
 		}
 	}
 }
