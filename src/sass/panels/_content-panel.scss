@@ -1,0 +1,65 @@
+.content-panel {
+
+	@include breakpoint( bp( 2 ) ) {
+		display: flex;
+		min-height: rem( 282px );
+	}
+
+	@include breakpoint( bp( 3 ) ) {
+		min-height: rem( 450px );
+	}
+
+	&__content {
+		@include side-padding( "new" );
+
+		@include breakpoint( bp( 2 ) ) {
+			width: 50%;
+		}
+
+		&__inner {
+			padding: {
+				top: 2em;
+				bottom: 2em;
+			}
+
+			@include breakpoint( bp( 2 ) ) {
+				max-width: rem( 500px );
+			}
+
+			@include breakpoint( bp( 3 ) ) {
+				padding: {
+					top: 4em;
+					bottom: 4em;
+				}
+			}
+		}
+	}
+
+	&__image {
+		@include aspect-ratio( 320px, 180px );
+
+		@include breakpoint( bp( 2 ) ) {
+			overflow: hidden;
+			position: relative;
+			width: 50%;
+
+			&::before {
+				display: none;
+			}
+
+			picture,
+			picture img {
+				height: 100%;
+				max-width: none;
+				width: auto;
+			}
+
+			img {
+				left: 50%;
+				position: absolute;
+				top: 0;
+				transform: translate( -50%, 0 );
+			}
+		}
+	}
+}

@@ -144,6 +144,14 @@ function rp3_image_sizes() {
 		'large'         => array( 800, 600, true )
 	) );
 
+	// Content Images
+	rp3_add_image_size( 'content', array(
+		'initial'       => array( 320, 180, true ),
+		'small'         => array( 600, 338, true ),
+		'medium'        => array( 500, 282, true ),
+		'large'         => array( 800, 450, true )
+	) );
+
 
 
 	/** Adding breakpoints, so until I can get all the images squared into a newer, better

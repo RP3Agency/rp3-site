@@ -1,19 +1,59 @@
 <?php
 /**
- * Display the content block panel.
+ * Content Panel.
  *
  * @package RP3
  */
 
 /** If we're on the results content block, check for tags */
-if ( 'results' == get_sub_field( 'label' ) ) {
-	$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
-	foreach ( $terms as $term ) {
-		$work_tags[] = $term->name;
-	}
-}
+// if ( 'results' == get_sub_field( 'label' ) ) {
+// 	$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
+// 	foreach ( $terms as $term ) {
+// 		$work_tags[] = $term->name;
+// 	}
+// }
 ?>
 
+<!-- Content Panel -->
+
+<section class="content-panel panel">
+
+	<div class="content-panel__content">
+
+		<?php if ( '' != get_sub_field( 'content' ) ) : ?>
+
+			<div class="content-panel__content__inner">
+
+				<?php the_sub_field( 'content' ); ?>
+
+			</div>
+			<!-- content-panel content inner -->
+
+		<?php endif; ?>
+
+	</div>
+	<!-- content-panel content -->
+
+	<div class="content-panel__image">
+
+		<div class="content-panel__image__content">
+
+			<?php if ( '' != get_sub_field( 'image' ) ) : ?>
+
+				<?php echo rp3_picture_element_v2( esc_attr( get_sub_field( 'image' ) ), 'content' ); ?>
+
+			<?php endif; ?>
+
+		</div>
+		<!-- content-panel image content -->
+
+	</div>
+	<!-- content-panel image -->
+
+</section>
+<!-- content-panel -->
+
+<?php /*
 <section class="case-study-content">
 
 	<div class="case-study-content__container">
@@ -68,3 +108,4 @@ if ( 'results' == get_sub_field( 'label' ) ) {
 
 </section>
 <!-- // .case-study-content -->
+*/ ?>
