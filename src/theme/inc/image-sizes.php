@@ -114,9 +114,42 @@ function rp3_image_sizes() {
 
 	// Six-up Image Panel
 	rp3_add_image_size( 'six-up', array(
-		'small'			=> array( 400, 150, true ),
-		'medium'		=> array( 800, 300, true ),
-		'large'			=> array( 800, 300, true )
+		'initial'       => array( 320, 120, true ),
+		'small'         => array( 600, 225, true ),
+		'medium'        => array( 500, 187, true ),
+		'large'         => array( 800, 300, true )
+	) );
+
+	// Full-width Images
+	rp3_add_image_size( 'full-width', array(
+		'initial'       => array( 320, 240, true ),
+		'small'         => array( 600, 450, true ),
+		'medium'        => array( 1000, 375, true ),
+		'large'         => array( 1600, 600, true )
+	) );
+
+	// Full-width Images (Tall)
+	rp3_add_image_size( 'full-width-tall', array(
+		'initial'       => array( 320, 342, true ),
+		'small'         => array( 600, 641, true ),
+		'medium'        => array( 1000, 534, true ),
+		'large'         => array( 1600, 854, true )
+	) );
+
+	// Half-width Images
+	rp3_add_image_size( 'half-width', array(
+		'initial'       => array( 320, 240, true ),
+		'small'         => array( 600, 450, true ),
+		'medium'        => array( 500, 375, true ),
+		'large'         => array( 800, 600, true )
+	) );
+
+	// Content Images
+	rp3_add_image_size( 'content', array(
+		'initial'       => array( 320, 180, true ),
+		'small'         => array( 600, 338, true ),
+		'medium'        => array( 500, 282, true ),
+		'large'         => array( 800, 450, true )
 	) );
 
 

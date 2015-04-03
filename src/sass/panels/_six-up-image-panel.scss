@@ -1,41 +1,49 @@
 .six-up-image-panel {
-	clear: both;
 	display: flex;
 	flex-wrap: wrap;
 	overflow: hidden;
 	width: 100%;
 
 	&__image {
-		height: 150px;
+		height: 100%;
 		overflow: hidden;
 		position: relative;
 		width: 50%;
+		@include aspect-ratio( 160px, 120px );
 
-		@include breakpoint( $bp-medium ) {
+		@include breakpoint( bp( 2 ) ) {
+			height: 187px;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		@include breakpoint( bp( 3 ) ) {
 			height: 300px;
 		}
 
-		picture {
-			height: 150px;
-			position: absolute;
-			width: 400px;
-
-			@include breakpoint( $bp-medium ) {
-				height: 300px;
-				width: 800px;
-			}
-
-			img {
-				height: 100%;
-				width: auto;
-			}
+		@include modernizr( no-flexbox ) {
+			float: left;
 		}
 
-		&:nth-child( odd ) picture {
+		picture,
+		picture img {
+			height: 100%;
+			max-width: none;
+			width: auto;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+		}
+
+		&:nth-child( odd ) picture img {
 			right: 0;
 		}
 
-		&:nth-child( even ) picture {
+		&:nth-child( even ) picture img {
 			left: 0;
 		}
 	}

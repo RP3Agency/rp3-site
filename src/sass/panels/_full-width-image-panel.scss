@@ -1,0 +1,76 @@
+.full-width-image-panel {
+
+	@include breakpoint( bp( 2 ) ) {
+		height: rem( 375px );
+	}
+
+	@include breakpoint( bp( 3 ) ) {
+		height: rem( 600px );
+	}
+
+	&__image {
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+		@include aspect-ratio( 320px, 240px );
+
+		@include breakpoint( bp( 2 ) ) {
+
+			&::before {
+				display: none;
+			}
+		}
+
+		picture,
+		picture img {
+			height: 100%;
+			max-width: none;
+			width: auto;
+		}
+
+		img {
+			left: 50%;
+			position: absolute;
+			top: 0;
+			transform: translate( -50%, 0 );
+		}
+	}
+
+	/** Tall Variation */
+
+	&--tall {
+
+		@include breakpoint( bp( 2 ) ) {
+			height: rem( 533px );
+		}
+
+		@include breakpoint( bp( 3 ) ) {
+			height: rem( 854px );
+		}
+
+		.full-width-image-panel__image {
+			@include aspect-ratio( 320px, 342px );
+
+			@include breakpoint( bp( 2 ) ) {
+
+				&::before {
+					display: none;
+				}
+			}
+
+			picture,
+			picture img {
+				height: 100%;
+				max-width: none;
+				width: auto;
+			}
+
+			img {
+				left: 50%;
+				position: absolute;
+				top: 0;
+				transform: translate( -50%, 0 );
+			}
+		}
+	}
+}
