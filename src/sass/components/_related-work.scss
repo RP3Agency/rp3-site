@@ -1,22 +1,27 @@
 // Related Work
 .related-work {
 	@extend %clearfix;
-	@extend %side-padding;
 	background-color: $blue;
 	clear: both;
 	color: #fff;
-	margin-top: -1px;
+	margin-top: -1px; // Fix to prevent a thin white line from appearing when stacking responsive images
 	padding: {
-		top: cr(75px);
-		bottom: cr(75px);
+		top: cr( 75px );
+		bottom: cr( 75px );
 	}
 	position: relative;
+	@include side-padding( "new" );
 
-	@include breakpoint($bp-marge) {
+	@include breakpoint( $bp-marge ) {
 		// flexbox
 		display: flex;
 		justify-content: center;
 		align-items: stretch;
+
+		// no-flexbox
+		@include modernizr( "no-flexbox" ) {
+			@include container;
+		}
 
 		&::before,
 		&::after {
@@ -24,41 +29,35 @@
 		}
 
 		header {
-			margin-right: 1em;
+			margin-right: gutter();
 			margin-bottom: 1em;
-			max-width: 250px;
-			width: 250px;
-		}
-	}
-
-	@include breakpoint($bp-marge) {
-		header {
 			position: relative;
+			width: span( 6 );
+
+			@include modernizr( "no-flexbox" ) {
+				@include span( 6 );
+			}
 		}
 	}
 
 	&__header {
-		color: #fff;
-		font-size: ce(12px);
+		color: $white;
+		font-size: ce( 12px );
 		margin: {
 			right: auto;
-			bottom: cr(75px);
+			bottom: cr( 75px );
 			left: auto;
 		}
 		text-transform: none;
 		width: 250px;
 
 		h2 {
-			color: #fff;
-			font-size: ce(16px, 12px);
+			color: $white;
+			font-size: ce( 16px, 12px );
 			margin-bottom: 1em;
 		}
 
-		&__taxonomy {
-			width: 75%;
-		}
-
-		@include breakpoint($bp-medium) {
+		@include breakpoint( $bp-medium ) {
 			margin: {
 				right: 0;
 				left: 0;
@@ -66,12 +65,17 @@
 			width: auto;
 		}
 
-		@include breakpoint($bp-marge) {
+		@include breakpoint( $bp-marge ) {
 			left: 0;
 			margin-bottom: 0;
 			position: absolute;
 			top: 50%;
-			transform: translate(0, -50%);
+			transform: translate( 0, -50% );
+
+			@include modernizr( "no-flexbox" ) {
+				transform: none;
+				@include span( 6 );
+			}
 		}
 	}
 
@@ -79,19 +83,22 @@
 		list-style: none;
 		margin: 0;
 
-		@include breakpoint($bp-medium) {
+		@include breakpoint( $bp-medium ) {
 			// flexbox
+			align-items: stretch;
 			display: flex;
 			justify-content: flex-start;
-			align-items: stretch;
 		}
 
-		@include breakpoint($bp-marge) {
+		@include breakpoint( $bp-marge ) {
 			justify-content: center;
 		}
 	}
 
 	&__item {
+		background-color: $white;
+		color: $black;
+		font-size: cr( 12px );
 		margin: {
 			right: auto;
 			bottom: 1em;
@@ -100,15 +107,25 @@
 		max-width: 250px;
 		width: 250px;
 
-		@include breakpoint($bp-medium) {
+		@include breakpoint( $bp-medium ) {
 			// flexbox
 			flex: 1;
 			margin-left: 0;
-			margin-right: 1em;
+			margin-right: gutter();
+			max-width: none;
 			width: auto;
 
 			&:last-child {
 				margin-right: 0;
+			}
+
+			// no flexbox
+			@include modernizr( "no-flexbox" ) {
+				@include span( 8 );
+
+				&:last-child {
+					margin-right: 0;
+				}
 			}
 
 			img {
@@ -116,17 +133,25 @@
 				width: 100%;
 			}
 		}
+
+		@include breakpoint( $bp-marge ) {
+
+			@include modernizr( "no-flexbox" ) {
+				@include span( 6 );
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
 	}
 
 	&__label {
-		background-color: #fff;
-		color: $black;
-		font-size: cr(12px);
 		overflow: hidden;
-		padding: ce(30px, 12px);
+		padding: ce( 30px, 12px );
 	}
 
 	&__title {
-		font-size: ce(22px, 12px);
+		font-size: ce( 22px, 12px );
 	}
 }
