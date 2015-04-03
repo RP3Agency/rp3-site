@@ -101,14 +101,7 @@ var rp3 = (function($) {
 	},
 	equalizeHeights = function() {
 		var maxHeight = 0,
-			$relatedWorkLabel = $('.related-work__label'),
 			$equalHeights = $('.equal-heights');
-
-		if ( $relatedWorkLabel.length > 0 ) {
-			$relatedWorkLabel.removeAttr('style');
-			maxHeight = getMaxHeight( $relatedWorkLabel );
-			$relatedWorkLabel.height(maxHeight);
-		}
 
 		if ( $equalHeights.length > 0 ) {
 			if ( window.matchMedia( '(min-width: 600px)' ).matches ) {
