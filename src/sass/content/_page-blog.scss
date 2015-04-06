@@ -1,0 +1,38 @@
+/**
+ * Blog Listing
+ */
+
+.listing {
+
+	/**
+	 * Styling
+	 */
+	&__headline {
+		@extend %roboto-medium-black;
+		font-size: ce(12px, 12px);
+		text-transform: uppercase;
+	}
+
+	&__byline {
+		@extend %roboto-light-gray;
+		margin-bottom: 1em;
+	}
+
+	&__thumbnail {
+		margin-bottom: 1em;
+	}
+
+	/**
+	 * Layout
+	 */
+	@extend %side-padding;
+	@include container;
+
+	&__article {
+		margin-bottom: 3rem;
+
+		@include breakpoint($bp-large / 2) {
+			@include gallery(8 of 24);
+		}
+	}
+}
