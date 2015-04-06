@@ -3,117 +3,111 @@
 	@extend %clearfix;
 	background-color: $blue;
 	clear: both;
-	color: #fff;
+	color: $black;
+	font-size: rem( 12px );
 	margin-top: -1px; // Fix to prevent a thin white line from appearing when stacking responsive images
 	padding: {
-		top: cr( 75px );
-		bottom: cr( 75px );
+		top: rem( 75px );
+		bottom: rem( 75px );
 	}
-	position: relative;
+	position: relative; // Again with the thin white line fix. Without this, the blue will appear _behind_ the image above it. :-(
 	@include side-padding( "new" );
 
-	@include breakpoint( $bp-marge ) {
-		// flexbox
-		display: flex;
-		justify-content: center;
-		align-items: stretch;
+	&__container {
+		margin: {
+			right: auto;
+			left: auto;
+		}
+		max-width: rem( 1600px );
+		width: percentage( 250px / 310px );
 
-		// no-flexbox
-		@include modernizr( "no-flexbox" ) {
-			@include container;
+		@include breakpoint( $bp-medium ) {
+			width: 100%;
 		}
 
-		&::before,
-		&::after {
-			display: none;
+		@include breakpoint( $bp-marge ) {
+			// flexbox
+			align-items: stretch;
+			display: flex;
+			justify-content: flex-start;
+
+			// no-flexbox
+			@include modernizr( "no-flexbox" ) {
+				@include container( rem(1600px ) );
+			}
+		}
+	}
+
+	&__header {
+
+		h2 {
+			color: $white;
+			font-size: em( 16px, 12px );
+			margin-bottom: rem( 75px );
 		}
 
-		header {
-			margin-right: gutter();
-			margin-bottom: 1em;
+		@include breakpoint( $bp-marge ) {
+			margin: {
+				right: gutter();
+				bottom: 0;
+			}
 			position: relative;
 			width: span( 6 );
 
 			@include modernizr( "no-flexbox" ) {
 				@include span( 6 );
 			}
-		}
-	}
 
-	&__header {
-		color: $white;
-		font-size: ce( 12px );
-		margin: {
-			right: auto;
-			bottom: cr( 75px );
-			left: auto;
-		}
-		text-transform: none;
-		width: 250px;
+			h2 {
+				position: absolute;
+				top: 50%;
+				transform: translate( 0, -50% );
 
-		h2 {
-			color: $white;
-			font-size: ce( 16px, 12px );
-			margin-bottom: 1em;
-		}
-
-		@include breakpoint( $bp-medium ) {
-			margin: {
-				right: 0;
-				left: 0;
-			}
-			width: auto;
-		}
-
-		@include breakpoint( $bp-marge ) {
-			left: 0;
-			margin-bottom: 0;
-			position: absolute;
-			top: 50%;
-			transform: translate( 0, -50% );
-
-			@include modernizr( "no-flexbox" ) {
-				transform: none;
-				@include span( 6 );
+				@include modernizr( "no-flexbox" ) {
+					position: static;
+					transform: none;
+				}
 			}
 		}
 	}
 
 	&__list {
-		list-style: none;
-		margin: 0;
 
 		@include breakpoint( $bp-medium ) {
 			// flexbox
 			align-items: stretch;
 			display: flex;
 			justify-content: flex-start;
+			margin: 0;
+			width: 100%;
+
+			@include modernizr( "no-flexbox" ) {
+				@include container;
+			}
 		}
 
 		@include breakpoint( $bp-marge ) {
-			justify-content: center;
+			width: span( 18 of 24 );
+
+			@include modernizr( "no-flexbox" ) {
+				@include span( 18 of 24 at 7 );
+			}
 		}
 	}
 
 	&__item {
 		background-color: $white;
-		color: $black;
-		font-size: cr( 12px );
-		margin: {
-			right: auto;
-			bottom: 1em;
-			left: auto;
-		}
-		max-width: 250px;
-		width: 250px;
+		margin-bottom: 1em;
 
 		@include breakpoint( $bp-medium ) {
 			// flexbox
-			flex: 1;
-			margin-left: 0;
-			margin-right: gutter();
+			margin: {
+				right: gutter();
+				bottom: 0;
+				left: 0;
+			}
 			max-width: none;
-			width: auto;
+			width: span( 6 of 18 );
 
 			&:last-child {
 				margin-right: 0;
@@ -127,17 +121,12 @@
 					margin-right: 0;
 				}
 			}
-
-			img {
-				height: auto;
-				width: 100%;
-			}
 		}
 
 		@include breakpoint( $bp-marge ) {
 
 			@include modernizr( "no-flexbox" ) {
-				@include span( 6 );
+				@include span( 6 of 18 );
 
 				&:last-child {
 					margin-right: 0;
@@ -148,10 +137,10 @@
 
 	&__label {
 		overflow: hidden;
-		padding: ce( 30px, 12px );
+		padding: em( 30px, 12px );
 	}
 
 	&__title {
-		font-size: ce( 22px, 12px );
+		font-size: em( 22px, 12px );
 	}
 }
