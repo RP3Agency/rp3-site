@@ -11,7 +11,6 @@
 		bottom: rem( 75px );
 	}
 	position: relative; // Again with the thin white line fix. Without this, the blue will appear _behind_ the image above it. :-(
-	@include side-padding( "new" );
 
 	&__container {
 		margin: {
@@ -20,6 +19,7 @@
 		}
 		max-width: rem( 1600px );
 		width: percentage( 250px / 310px );
+		@include side-padding( "new" );
 
 		@include breakpoint( $bp-medium ) {
 			width: 100%;
