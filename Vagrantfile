@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node.vm.provision :shell, :path => "provisioning/bootstrap.sh"
     node.vm.hostname = 'rp3-website-hostname'
     node.vm.network :private_network, ip: '192.168.50.201'
-    node.hostmanager.aliases = %w(rp3-website.dev)
+    node.hostmanager.aliases = %w(dev.site.rp3.vagrant.local)
   end
 
   # Create a public network, which generally matched to bridged network.
