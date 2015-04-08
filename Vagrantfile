@@ -56,8 +56,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder ".", "/vagrant", nfs: true
   config.vm.synced_folder ".", "/vagrant"
-  config.vm.synced_folder "wp-content/uploads", "/vagrant/wp-content/uploads", id: "uploads", :mount_options => ["dmode=777,fmode=666"]
-  config.vm.synced_folder "wp-content/uploads/wp-migrate-db", "/vagrant/wp-content/uploads/wp-migrate-db", id: "migrate-db-uploads", :mount_options => ["dmode=777,fmode=666"]
+  # config.vm.synced_folder "wp-content/uploads", "/vagrant/wp-content/uploads", id: "uploads", :mount_options => ["dmode=777,fmode=666"]
+  # config.vm.synced_folder "wp-content/uploads/wp-migrate-db", "/vagrant/wp-content/uploads/wp-migrate-db", id: "migrate-db-uploads", :mount_options => ["dmode=777,fmode=666"]
 
   config.vm.provider "virtualbox" do |v|
     host = RbConfig::CONFIG['host_os']
