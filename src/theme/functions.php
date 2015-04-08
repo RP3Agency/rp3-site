@@ -233,3 +233,13 @@ if ( ! function_exists( 'rp3_excerpt_more' ) ) {
 }
 
 add_filter( 'excerpt_more', 'rp3_excerpt_more' );
+
+
+if ( ! function_exists( 'rp3_add_json_offset' ) ) {
+
+	function rp3_add_json_offset( $valid_vars ) {
+		$valid_vars[] = 'offset';
+		return $valid_vars;
+	}
+}
+add_filter( 'json_query_vars', 'rp3_add_json_offset' );

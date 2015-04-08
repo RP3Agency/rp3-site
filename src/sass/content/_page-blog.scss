@@ -31,8 +31,42 @@
 	&__article {
 		margin-bottom: 3rem;
 
-		@include breakpoint($bp-large / 2) {
-			@include gallery(8 of 24);
+		@include breakpoint( $bp-medium ) {
+			@include gallery( 12 );
+		}
+
+		@include breakpoint( $bp-marge ) {
+			@include gallery( 8 );
+		}
+	}
+
+	&--recent {
+
+		@include breakpoint( $bp-medium ) {
+
+			.listing__article {
+				width: 100%;
+				@include container;
+			}
+
+			.listing__thumbnail {
+				@include span( 12 );
+			}
+
+			.listing__content {
+				@include span( 12 last );
+			}
+		}
+
+		@include breakpoint( $bp-marge ) {
+
+			.listing__thumbnail {
+				@include span( 8 );
+			}
+
+			.listing__content {
+				@include span( 8 );
+			}
 		}
 	}
 }

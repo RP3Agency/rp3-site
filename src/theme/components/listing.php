@@ -1,4 +1,29 @@
 <?php
+
+/**
+ * Check to see if our most recent post is < 2wks old.
+ * If so, we'll have a "featured" post and then go from there.
+ */
+
+$recent_post = false;
+$offset = 0;
+
+$recent = new WP_Query( array(
+	'date_query'     => array(
+		array(
+			'after'         => '2 weeks ago'
+		)
+	),
+	'posts_per_page' => 1,
+	'category_name'  => $post->post_name,
+	'post_type'      => 'post',
+	'post_status'    => 'publish'
+) );
+
+if ( $recent->have_posts() ) {
+	$offset = 1;
+}
+
 if ( $paged == 0 ) {
 	$paged = 1;
 }
@@ -8,31 +33,65 @@ $posts_per_page = 6 * $paged;
 $alt_query = new WP_Query( array(
 	'post_type'			=> 'post',
 	'category_name'		=> $post->post_name,
-	'posts_per_page'	=> $posts_per_page
+	'posts_per_page'	=> $posts_per_page,
+	'offset'            => $offset
 ) );
 ?>
 
 <!-- Post Listing -->
 
-<?php if ( $alt_query->have_posts() ) : ?>
+<script>
+var queryOffset = <?php echo $offset; ?>;
+</script>
 
-	<section id="blog-listing" class="blog-listing listing" data-paged="<?php echo esc_attr( $paged ); ?>">
+<?php if ( $recent->have_posts() ) : while ( $recent->have_posts() ) : $recent->the_post(); ?>
 
-		<?php $counter = 0; while ( $alt_query->have_posts() ) : $alt_query->the_post(); ?>
+	<section class="listing listing--recent">
 
-			<?php $article_class = 'block blog-listing__article listing__article';?>
+		<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
 
-			<?php if ( 0 == $counter ) : ?>
+			<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
-				<?php $article_class .= ' first'; ?>
+				<div class="listing__thumbnail">
+
+					<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+
+				</div>
 
 			<?php endif; ?>
 
-			<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="<?php echo esc_attr( $article_class ); ?>">
+			<div class="listing__content">
+
+				<h1 class="listing__headline"><?php the_title(); ?></h1>
+
+				<div class="listing__byline"><?php echo rp3_byline(); ?></div>
+
+				<div class="listing__excerpt">
+
+					<?php echo the_excerpt(); ?>
+
+				</div>
+
+			</div>
+
+		</a>
+
+	</section>
+
+<?php endwhile; endif; wp_reset_query(); ?>
+
+
+<?php if ( $alt_query->have_posts() ) : ?>
+
+	<section id="listing" class="listing" data-paged="<?php echo esc_attr( $paged ); ?>">
+
+		<?php while ( $alt_query->have_posts() ) : $alt_query->the_post(); ?>
+
+			<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
 
 				<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
-					<div class="blog-listing__thumbnail listing__thumbnail">
+					<div class="listing__thumbnail">
 
 						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
 
@@ -40,11 +99,11 @@ $alt_query = new WP_Query( array(
 
 				<?php endif; ?>
 
-				<h1 class="blog-listing__headline listing__headline"><?php the_title(); ?></h1>
+				<h1 class="listing__headline"><?php the_title(); ?></h1>
 
-				<div class="blog-listing__byline listing__byline"><?php echo rp3_byline(); ?></div>
+				<div class="listing__byline"><?php echo rp3_byline(); ?></div>
 
-				<div class="blog-listing__excerpt listing__excerpt">
+				<div class="listing__excerpt">
 
 					<?php echo the_excerpt(); ?>
 
@@ -52,7 +111,7 @@ $alt_query = new WP_Query( array(
 
 			</a>
 
-		<?php $counter++; endwhile; ?>
+		<?php endwhile; ?>
 
 	</section>
 	<!-- // #blog-listing -->

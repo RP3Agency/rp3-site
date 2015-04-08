@@ -30,21 +30,22 @@ rp3.backbone = (function($, _, Backbone) {
 			'December'
 		],
 
-		elementID, templateID,
+		elementID, templateID, pageOffset,
 
 		// For the history pushState stuff
 		locationHref, hrefPattern = /http:\/\/[^\/]+\/(news|blog)/;
 
+	elementID  = '#listing';
+
 	if ( onNewsPage ) {
-		elementID  = '#news-listing';
 		templateID = '#news-template';
 	} else {
-		elementID  = '#blog-listing';
 		templateID = '#blog-template';
 	}
 
 
-	var $container = $(elementID);
+	var $container = $(elementID),
+		queryOffset = window.queryOffset;
 
 	var
 
@@ -135,12 +136,17 @@ rp3.backbone = (function($, _, Backbone) {
 			var url = '/wp-json/posts?filter[posts_per_page]=6&filter[category_name]=';
 
 			if ( onNewsPage ) {
-				url += 'news&page=';
+				url += 'news';
 			} else {
-				url += 'blog&page=';
+				url += 'blog';
 			}
 
-			url += nextPageNumber;
+			if ( 0 < queryOffset ) {
+				pageOffset = 6 * ( nextPageNumber - 1 ) + 1;
+				url += '&filter[offset]=' + pageOffset;
+			} else {
+				url += '&page=' + nextPageNumber;
+			}
 
 			postsCollection.url = url;
 
