@@ -1,5 +1,7 @@
 <?php
 
+$page_type = $post->post_name;
+
 /**
  * Check to see if our most recent post is < 2wks old.
  * If so, we'll have a "featured" post and then go from there.
@@ -15,7 +17,7 @@ $recent = new WP_Query( array(
 		)
 	),
 	'posts_per_page' => 1,
-	'category_name'  => $post->post_name,
+	'category_name'  => $page_type,
 	'post_type'      => 'post',
 	'post_status'    => 'publish'
 ) );
@@ -64,7 +66,15 @@ var queryOffset = <?php echo $offset; ?>;
 
 				<h1 class="listing__headline"><?php the_title(); ?></h1>
 
-				<div class="listing__byline"><?php echo rp3_byline(); ?></div>
+				<?php if ( 'news' == $page_type ) : ?>
+
+					<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
+
+				<?php else: ?>
+
+					<div class="listing__byline"><?php echo rp3_byline(); ?></div>
+
+				<?php endif; ?>
 
 				<div class="listing__excerpt">
 
@@ -101,7 +111,15 @@ var queryOffset = <?php echo $offset; ?>;
 
 				<h1 class="listing__headline"><?php the_title(); ?></h1>
 
-				<div class="listing__byline"><?php echo rp3_byline(); ?></div>
+				<?php if ( 'news' == $page_type ) : ?>
+
+					<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
+
+				<?php else: ?>
+
+					<div class="listing__byline"><?php echo rp3_byline(); ?></div>
+
+				<?php endif; ?>
 
 				<div class="listing__excerpt">
 
