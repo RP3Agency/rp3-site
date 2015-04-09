@@ -2,7 +2,7 @@
 
 # Update variables here. We'll get to them later in the script.
 MYSQL_PASS="password"
-DEV_URL="http://rp3-website.dev/_wp"
+DEV_URL="http://dev.site.rp3.vagrant.local/_wp"
 DEV_TITLE="RP3 Agency"
 DEV_ADMIN_USER=admin
 DEV_ADMIN_PASSWORD=password
