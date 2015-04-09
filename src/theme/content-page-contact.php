@@ -1,4 +1,3 @@
-
 <?php
 /**
  * The template for displaying all pages.
@@ -53,7 +52,7 @@
 
 				<div class="contact__info__general-inquiries">
 					<h2>General Inquiries</h2>
-					<p class="contact__info__email"><span>&nbsp;<br></span><a href="<?php echo esc_url( 'mailto:' . get_field( 'general_inquiries_email' ), array( 'mailto' ) ); ?>"><?php echo esc_html( get_field( 'general_inquiries_email' ) ); ?></a></p>
+					<p class="contact__info__email"><a href="<?php echo esc_url( 'mailto:' . get_field( 'general_inquiries_email' ), array( 'mailto' ) ); ?>"><?php echo esc_html( get_field( 'general_inquiries_email' ) ); ?></a></p>
 				</div>
 
 				<?php endif; ?>
@@ -66,7 +65,7 @@
 
 				<div class="contact__info__careers">
 					<h2>Careers</h2>
-					<p class="contact__info__email"><span>&nbsp;<br></span><a href="<?php echo esc_url( 'mailto:' . get_field( 'careers_email' ), array( 'mailto' ) ); ?>"><?php echo esc_html( get_field( 'careers_email' ) ); ?></a></p>
+					<p class="contact__info__email"><a href="<?php echo esc_url( 'mailto:' . get_field( 'careers_email' ), array( 'mailto' ) ); ?>"><?php echo esc_html( get_field( 'careers_email' ) ); ?></a></p>
 				</div>
 
 				<?php endif; ?>
