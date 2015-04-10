@@ -294,6 +294,34 @@ if ( ! function_exists( 'rp3_picture_element' ) ) {
 		return $picture;
 	}
 }
+if ( ! function_exists( 'rp3_picture_element_v2' ) ) {
+	function rp3_picture_element_v2( $id, $size_tag, $title = '' ) {
+
+		$bp_small   = 321  / 16;
+		$bp_medium  = 600  / 16;
+		$bp_large   = 1000 / 16;
+
+		$sizes = array( 'large', 'medium', 'small', 'initial' );
+		$images = array();
+
+		foreach ( $sizes as $size ) {
+			$images[$size] = wp_get_attachment_image_src( $id, $size_tag . '-' . $size );
+			$images[$size . '-2x'] = wp_get_attachment_image_src( $id, $size_tag . '-' . $size . '-2x' );
+		}
+
+		$picture  = '<picture>';
+		$picture .= '<!--[if IE 9]><video style="display: none;"><![endif]-->'; // For IE9 compatibility + Picturefill.js
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_large . 'em)">', $images['large'][0], $images['large-2x'][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_medium . 'em)">', $images['medium'][0], $images['medium-2x'][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_small . 'em)">', $images['small'][0], $images['small-2x'][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x">', $images['initial'][0], $images['initial-2x'][0] );
+		$picture .= '<!--[if IE 9]></video><![endif]-->';
+		$picture .= sprintf( '<img srcset="%s, %s 2x" alt="%s">', $images['initial'][0], $images['initial-2x'][0], esc_attr( $title ) );
+		$picture .= '</picture>';
+
+		return $picture;
+	}
+}
 
 
 /**

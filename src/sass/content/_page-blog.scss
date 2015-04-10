@@ -1,0 +1,72 @@
+/**
+ * Blog Listing
+ */
+
+.listing {
+
+	/**
+	 * Styling
+	 */
+	&__headline {
+		@extend %roboto-medium-black;
+		font-size: ce(12px, 12px);
+		text-transform: uppercase;
+	}
+
+	&__byline {
+		@extend %roboto-light-gray;
+		margin-bottom: 1em;
+	}
+
+	&__thumbnail {
+		margin-bottom: 1em;
+	}
+
+	/**
+	 * Layout
+	 */
+	@extend %side-padding;
+	@include container;
+
+	&__article {
+		margin-bottom: 3rem;
+
+		@include breakpoint( $bp-medium ) {
+			@include gallery( 12 );
+		}
+
+		@include breakpoint( $bp-marge ) {
+			@include gallery( 8 );
+		}
+	}
+
+	&--recent {
+
+		@include breakpoint( $bp-medium ) {
+
+			.listing__article {
+				width: 100%;
+				@include container;
+			}
+
+			.listing__thumbnail {
+				@include span( 12 );
+			}
+
+			.listing__content {
+				@include span( 12 last );
+			}
+		}
+
+		@include breakpoint( $bp-marge ) {
+
+			.listing__thumbnail {
+				@include span( 8 );
+			}
+
+			.listing__content {
+				@include span( 8 );
+			}
+		}
+	}
+}

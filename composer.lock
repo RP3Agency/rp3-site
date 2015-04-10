@@ -361,15 +361,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-menu-wizard",
-            "version": "3.1.3",
+            "version": "3.1.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/custom-menu-wizard/",
-                "reference": "tags/3.1.3"
+                "reference": "tags/3.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -421,15 +421,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.2",
+            "version": "1.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.2"
+                "reference": "tags/1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -521,15 +521,15 @@
         },
         {
             "name": "wpackagist-plugin/json-rest-api",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/json-rest-api/",
-                "reference": "trunk"
+                "reference": "tags/1.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/json-rest-api.zip",
+                "url": "https://downloads.wordpress.org/plugin/json-rest-api.1.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -541,15 +541,15 @@
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.58.1",
+            "version": "0.59",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.58.1"
+                "reference": "tags/0.59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.58.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.59.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -861,15 +861,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-super-cache",
-            "version": "1.4.2",
+            "version": "1.4.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/1.4.2"
+                "reference": "tags/1.4.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.4.4.zip",
                 "reference": null,
                 "shasum": null
             },

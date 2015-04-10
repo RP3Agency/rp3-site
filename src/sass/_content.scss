@@ -6,9 +6,9 @@
 }
 
 .entry-content {
-	@extend %side-padding;
 	margin-bottom: 3rem;
-	@include container;
+	@include container( 1600px );
+	@include side-padding( "new" );
 
 	&__container {
 		@include breakpoint($bp-large/2) {
@@ -43,87 +43,9 @@
 	}
 }
 
-
-// News
-.news-listing {
-
-	/**
-	 * Styling
-	 */
-	&__headline {
-		@extend %roboto-medium-black;
-		font-size: ce(12px, 12px);
-		text-transform: uppercase;
-	}
-
-	&__date {
-		@extend %roboto-light-gray;
-		margin-bottom: 1em;
-	}
-
-
-	/**
-	 * Layout
-	 */
-	@extend %side-padding;
-	@include container;
-
-	&__article {
-		margin-bottom: 3rem;
-
-		@include breakpoint($bp-large / 2) {
-			@include gallery(8 of 24);
-		}
-	}
-
-	&__excerpt {
-		margin-bottom: 1rem;
-	}
-}
-
-
 @import "content/single-blog";
 
-
-/**
- * Blog Listing
- */
-.blog-listing {
-
-	/**
-	 * Styling
-	 */
-	&__headline {
-		@extend %roboto-medium-black;
-		font-size: ce(12px, 12px);
-		text-transform: uppercase;
-	}
-
-	&__byline {
-		@extend %roboto-light-gray;
-		margin-bottom: 1em;
-	}
-
-	&__thumbnail {
-		margin-bottom: 1em;
-	}
-
-	/**
-	 * Layout
-	 */
-	@extend %side-padding;
-	@include container;
-
-	&__article {
-		margin-bottom: 3rem;
-
-		@include breakpoint($bp-large / 2) {
-			@include gallery(8 of 24);
-		}
-	}
-}
-
-
+@import "content/page-blog";
 
 /**
  * Widget Area
@@ -214,118 +136,7 @@
 }
 
 
-// Contact
-.contact {
-	&__info-and-form {
-		@extend %side-padding;
-
-		@include breakpoint( $bp-medium ) {
-			@include container;
-		}
-	}
-
-	&__info {
-		line-height: 1.2;
-		margin-bottom: 2rem;
-		@include container;
-
-		@include breakpoint( $bp-medium ) {
-			@include span( 8 of 24 );
-		}
-
-		> div {
-			margin-bottom: 1rem;
-
-			@include breakpoint(400px) {
-				@include gallery(12 of 24);
-			}
-
-			@include breakpoint( $bp-medium ) {
-				clear: both;
-				float: none;
-				margin: 0 0 1em;
-				width: 100%;
-
-				&:nth-child( 2n + 2 ) {
-					clear: both;
-					float: none;
-					margin: 0 0 1em;
-					width: 100%;
-				}
-			}
-		}
-
-		h2 {
-			@extend %section-header;
-			margin-bottom: 1em;
-		}
-
-		&__email,
-		&__phone-fax-numbers,
-		&__fact-sheet-link {
-			span {
-				display: none;
-
-				@include breakpoint($bp-medium) {
-					display: inline;
-				}
-			}
-		}
-
-		&__social {
-			li a {
-				margin: {
-					top: 0.25em;
-					bottom: 0.25em;
-				}
-			}
-
-			li:last-child a {
-				margin-right: 0;
-			}
-		}
-	}
-
-	&__form {
-
-		@include breakpoint( $bp-medium ) {
-			@include span( 16 of 24 last );
-		}
-	}
-
-	&__map {
-		position: relative;
-
-		&__container {
-			height: cr(300px);
-			width: 100%;
-
-			@include breakpoint($bp-medium) {
-				height: cr(608px);
-			}
-
-			// Fixes distorted zoom controls in Google maps
-			img {
-				max-width: none;
-			}
-		}
-
-		&__inset {
-			background-color: #fff;
-			border: 1px solid #ccc;
-			display: none;
-			left: 10%;
-			padding: 1rem;
-			position: absolute;
-			top: 10%;
-
-			@include breakpoint($bp-medium) {
-				display: block;
-			}
-		}
-	}
-}
-
+@import "contact";
 
 @import "components/work/introduction";
 

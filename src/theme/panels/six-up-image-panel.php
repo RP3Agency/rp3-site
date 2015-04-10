@@ -6,13 +6,13 @@
  */
 ?>
 
-<section class="six-up-image-panel">
+<section class="panel six-up-image-panel">
 
 	<?php while ( have_rows( 'images' ) ) : the_row(); ?>
 
 		<div class="six-up-image-panel__image">
 
-			<?php echo rp3_picture_element( get_sub_field( 'image' ), 'six-up' ); ?>
+			<?php echo rp3_picture_element_v2( get_sub_field( 'image' ), 'six-up' ); ?>
 
 		</div>
 

@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node.vm.provision :shell, :path => "provisioning/bootstrap.sh"
     node.vm.hostname = 'rp3-website-hostname'
     node.vm.network :private_network, ip: '192.168.50.201'
-    node.hostmanager.aliases = %w(rp3-website.dev)
+    node.hostmanager.aliases = %w(dev.site.rp3.vagrant.local)
   end
 
   # Create a public network, which generally matched to bridged network.
@@ -56,8 +56,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder ".", "/vagrant", nfs: true
   config.vm.synced_folder ".", "/vagrant"
-  config.vm.synced_folder "wp-content/uploads", "/vagrant/wp-content/uploads", id: "uploads", :mount_options => ["dmode=777,fmode=666"]
-  config.vm.synced_folder "wp-content/uploads/wp-migrate-db", "/vagrant/wp-content/uploads/wp-migrate-db", id: "migrate-db-uploads", :mount_options => ["dmode=777,fmode=666"]
+  # config.vm.synced_folder "wp-content/uploads", "/vagrant/wp-content/uploads", id: "uploads", :mount_options => ["dmode=777,fmode=666"]
+  # config.vm.synced_folder "wp-content/uploads/wp-migrate-db", "/vagrant/wp-content/uploads/wp-migrate-db", id: "migrate-db-uploads", :mount_options => ["dmode=777,fmode=666"]
 
   config.vm.provider "virtualbox" do |v|
     host = RbConfig::CONFIG['host_os']

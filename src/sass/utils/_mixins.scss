@@ -5,15 +5,15 @@
 }
 
 @mixin hover-state {
-    &:hover, &:active, &:focus {
-        @content;
-    }
+	&:hover, &:active, &:focus {
+		@content;
+	}
 }
 
 @mixin modernizr($test) {
-    html.#{$test} & {
-        @content;
-    }
+	html.#{$test} & {
+		@content;
+	}
 }
 
 @mixin highlight($adjustment: 0) {
@@ -23,19 +23,51 @@
 
 @mixin side-padding( $style: "old" ) {
 
-    // The "old" way of doing it
+	// The "old" way of doing it
 
-    padding-left: percentage(60px / 2000px);
-    padding-right: percentage(60px / 2000px);
+	padding-left: percentage(60px / 2000px);
+	padding-right: percentage(60px / 2000px);
 
 
-    // Now for a "new" way of doing it
+	// Now for a "new" way of doing it
 
-    @if $style == "new" {
+	@if $style == "new" {
 
-        $padding: percentage( 5px / 320px );
+		$padding: percentage( 5px / 320px );
 
-        padding-left: $padding;
-        padding-right: $padding;
-    }
+		padding-left: $padding;
+		padding-right: $padding;
+	}
+}
+
+/**
+ * Maintains an element's given aspect ratio
+ * @mixin  aspect-ratio
+ * @param  {number} $width  Width context
+ * @param  {number} $height Height context
+ */
+
+@mixin aspect-ratio( $width, $height ) {
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		padding-top: percentage( $height / $width );
+		width: 100%;
+	}
+
+	> [class$="__content"] {
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	picture,
+	picture img {
+		height: auto;
+		width: 100%;
+	}
 }

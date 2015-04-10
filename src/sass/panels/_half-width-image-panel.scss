@@ -1,0 +1,48 @@
+.half-width-image-panel {
+
+	@include breakpoint( bp( 2 ) ) {
+		display: flex;
+		height: rem( 375px );
+	}
+
+	@include breakpoint( bp( 3 ) ) {
+		height: rem( 600px );
+	}
+
+	@include modernizr( no-flexbox ) {
+		@extend %clearfix;
+	}
+
+	&__image {
+		@include aspect-ratio( 320px, 240px );
+
+		@include breakpoint( bp( 2 ) ) {
+			overflow: hidden;
+			position: relative;
+			width: 50%;
+
+			@include modernizr( no-flexbox ) {
+				float: left;
+				height: 100%;
+			}
+
+			&::before {
+				display: none;
+			}
+
+			picture,
+			picture img {
+				height: 100%;
+				max-width: none;
+				width: auto;
+			}
+
+			img {
+				left: 50%;
+				position: absolute;
+				top: 0;
+				transform: translate( -50%, 0 );
+			}
+		}
+	}
+}
