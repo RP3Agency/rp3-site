@@ -521,15 +521,15 @@
         },
         {
             "name": "wpackagist-plugin/json-rest-api",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/json-rest-api/",
-                "reference": "trunk"
+                "reference": "tags/1.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/json-rest-api.zip",
+                "url": "https://downloads.wordpress.org/plugin/json-rest-api.1.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -541,15 +541,15 @@
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.58.1",
+            "version": "0.59",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.58.1"
+                "reference": "tags/0.59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.58.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.59.zip",
                 "reference": null,
                 "shasum": null
             },
