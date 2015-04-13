@@ -63,45 +63,49 @@ if ( function_exists( 'get_coauthors' ) ) {
 
 			<?php echo wpautop( get_the_author_meta( 'description', $coauthor->ID ) ); ?>
 
-		<?php /** List last three posts by the same coauthor */ ?>
+			<?php /** List last three posts by the same coauthor, but only on a "single" page */ ?>
 
-		<?php
+			<?php if ( is_single() ) : ?>
 
-		$args = array(
-			'post_type'			=> 'post',
-			'posts_per_page'	=> 3,
-			'post_status'		=> 'publish',
-			'author_name'		=> $coauthor->user_nicename,
-			'post__not_in'		=> array( get_the_ID() ),
-			'category__not_in'	=> array( 25, 7 ),
-			'order'				=> 'DESC',
-			'orderby'			=> 'date'
-		);
+				<?php
 
-		$author_query = new WP_Query( $args );
+				$args = array(
+					'post_type'			=> 'post',
+					'posts_per_page'	=> 3,
+					'post_status'		=> 'publish',
+					'author_name'		=> $coauthor->user_nicename,
+					'post__not_in'		=> array( get_the_ID() ),
+					'category__not_in'	=> array( 25, 7 ),
+					'order'				=> 'DESC',
+					'orderby'			=> 'date'
+				);
 
-		if ( $author_query->have_posts() ) :
+				$author_query = new WP_Query( $args );
 
-		?>
+				if ( $author_query->have_posts() ) :
 
-		<div class="blog__author__posts">
+				?>
 
-			<h2>Recent Posts by <?php echo $coauthor->display_name; ?>:</h2>
+				<div class="blog__author__posts">
 
-			<ul>
+					<h2>Recent Posts by <?php echo $coauthor->display_name; ?>:</h2>
 
-				<?php while ( $author_query->have_posts() ) : $author_query->the_post(); ?>
+					<ul>
 
-					<li><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></li>
+						<?php while ( $author_query->have_posts() ) : $author_query->the_post(); ?>
 
-				<?php endwhile; ?>
+							<li><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></li>
 
-			</ul>
+						<?php endwhile; ?>
 
-		</div>
-		<!-- blog author posts -->
-		
-		<?php endif; wp_reset_query(); ?>
+					</ul>
+
+				</div>
+				<!-- blog author posts -->
+
+				<?php endif; wp_reset_query(); ?>
+
+			<?php endif; ?>
 
 			<!-- Social media presence -->
 

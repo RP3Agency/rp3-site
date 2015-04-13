@@ -14,4 +14,10 @@ function rp3_pre_get_posts( $query ) {
 		$query->set( 'category__in', array( 2, 7 ) );
 
 	}
+
+	if ( $query->is_main_query() && ! is_admin() && is_author() ) {
+
+		$query->set( 'post_type', 'post' );
+		$query->set( 'category__not_in', array( 25, 7 ) );
+	}
 }
