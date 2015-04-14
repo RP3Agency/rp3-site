@@ -2,28 +2,33 @@
 
 $page_type = $post->post_name;
 
-/**
- * Check to see if our most recent post is < 2wks old.
- * If so, we'll have a "featured" post and then go from there.
- */
-
 $recent_post = false;
 $offset = 0;
 
-$recent = new WP_Query( array(
-	'date_query'     => array(
-		array(
-			'after'         => '2 weeks ago'
-		)
-	),
-	'posts_per_page' => 1,
-	'category_name'  => $page_type,
-	'post_type'      => 'post',
-	'post_status'    => 'publish'
-) );
+/**
+ * Check to see if we're going to feature the most recent post
+ */
+if ( get_field( 'display-featured-post' ) ) {
 
-if ( $recent->have_posts() ) {
-	$offset = 1;
+	/**
+	 * Check to see if our most recent post is < 2wks old.
+	 * If so, we'll have a "featured" post and then go from there.
+	 */
+	$recent = new WP_Query( array(
+		'date_query'     => array(
+			array(
+				'after'         => '2 weeks ago'
+			)
+		),
+		'posts_per_page' => 1,
+		'category_name'  => $page_type,
+		'post_type'      => 'post',
+		'post_status'    => 'publish'
+	) );
+
+	if ( $recent->have_posts() ) {
+		$offset = 1;
+	}
 }
 
 if ( $paged == 0 ) {
@@ -33,9 +38,9 @@ if ( $paged == 0 ) {
 $posts_per_page = 6 * $paged;
 
 $alt_query = new WP_Query( array(
-	'post_type'			=> 'post',
-	'category_name'		=> $post->post_name,
-	'posts_per_page'	=> $posts_per_page,
+	'post_type'         => 'post',
+	'category_name'     => $post->post_name,
+	'posts_per_page'    => $posts_per_page,
 	'offset'            => $offset
 ) );
 ?>
@@ -46,50 +51,53 @@ $alt_query = new WP_Query( array(
 var queryOffset = <?php echo $offset; ?>;
 </script>
 
-<?php if ( $recent->have_posts() ) : while ( $recent->have_posts() ) : $recent->the_post(); ?>
+<?php if ( get_field( 'display-featured-post' ) ) : ?>
 
-	<section class="listing listing--recent">
+	<?php if ( $recent->have_posts() ) : while ( $recent->have_posts() ) : $recent->the_post(); ?>
 
-		<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
+		<section class="listing listing--recent">
 
-			<?php if ( '' != get_the_post_thumbnail() ) : ?>
+			<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
 
-				<div class="listing__thumbnail">
+				<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
-					<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+					<div class="listing__thumbnail">
 
-				</div>
+						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
 
-			<?php endif; ?>
-
-			<div class="listing__content">
-
-				<h1 class="listing__headline"><?php the_title(); ?></h1>
-
-				<?php if ( 'news' == $page_type ) : ?>
-
-					<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
-
-				<?php else: ?>
-
-					<div class="listing__byline"><?php echo rp3_byline(); ?></div>
+					</div>
 
 				<?php endif; ?>
 
-				<div class="listing__excerpt">
+				<div class="listing__content">
 
-					<?php echo the_excerpt(); ?>
+					<h1 class="listing__headline"><?php the_title(); ?></h1>
+
+					<?php if ( 'news' == $page_type ) : ?>
+
+						<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
+
+					<?php else: ?>
+
+						<div class="listing__byline"><?php echo rp3_byline(); ?></div>
+
+					<?php endif; ?>
+
+					<div class="listing__excerpt">
+
+						<?php echo the_excerpt(); ?>
+
+					</div>
 
 				</div>
 
-			</div>
+			</a>
 
-		</a>
+		</section>
 
-	</section>
+	<?php endwhile; endif; wp_reset_query(); ?>
 
-<?php endwhile; endif; wp_reset_query(); ?>
-
+<?php endif; ?>
 
 <?php if ( $alt_query->have_posts() ) : ?>
 
