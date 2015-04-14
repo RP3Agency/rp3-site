@@ -19,5 +19,6 @@ function rp3_pre_get_posts( $query ) {
 
 		$query->set( 'post_type', 'post' );
 		$query->set( 'category__not_in', array( 25, 7 ) );
+		$query->set( 'posts_per_page', -1 );
 	}
 }
