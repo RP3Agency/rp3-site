@@ -175,18 +175,18 @@ if ( ! function_exists( 'rp3_byline' ) ) {
 
 		$byline = 'By ';
 
-		if ( $page_type == 'single' ) {
+		if ( is_single() ) {
 			// Check if we're using Co-Authors Plus
 			if ( class_exists( 'CoAuthorsIterator' ) ) {
 				$i = new CoAuthorsIterator();
 				$i->iterate();
-				$byline .= get_the_author_meta( 'display_name' );
+				$byline .= '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a>';
 				while($i->iterate()){
 					$byline .= $i->is_last() ? '<span> and </span>' : '<span>, </span>';
-					$byline .= get_the_author_meta( 'display_name' );
+					$byline .= '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a>';
 				}
 			} else {
-				$byline .= get_the_author_meta( 'display_name' );
+				$byline .= '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a>';
 			}
 		} else {
 			if ( class_exists( 'CoAuthorsIterator' ) ) {
