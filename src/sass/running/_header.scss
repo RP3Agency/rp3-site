@@ -2,11 +2,8 @@
 
 .site-header {
 	@extend %clearfix;
-	@extend %side-padding;
-	// background-color: #fff;
-	@include container;
 
-	@include breakpoint($bp-navigation) {
+	@include breakpoint( bp( 2 ) ) {
 		height: cr(100px);
 	}
 
@@ -22,7 +19,7 @@
 		text-decoration: none;
 		text-transform: uppercase;
 
-		@include breakpoint($bp-navigation) {
+		@include breakpoint( bp( 2 ) ) {
 			font-weight: $light;
 		}
 	}
@@ -44,7 +41,7 @@
 			margin: cr(8px) 0;
 			padding: cr(15px) 0;
 
-			@include breakpoint($bp-navigation) {
+			@include breakpoint( bp( 2 ) ) {
 				margin: {
 					top: cr(24px);
 					bottom: 0;
@@ -65,7 +62,7 @@
 		margin-top: 23px;
 		width: 32px;
 
-		@include breakpoint($bp-navigation) {
+		@include breakpoint( bp( 2 ) ) {
 			display: none;
 		}
 	}
@@ -81,7 +78,7 @@
 		list-style: none;
 		margin: cr(37px) 0 0 0;
 
-		@include breakpoint($bp-navigation) {
+		@include breakpoint( bp( 2 ) ) {
 			display: block;
 		}
 
@@ -113,7 +110,7 @@
 	background-color: transparentize(#fff, 0.1);
 	top: cr(-100px);
 
-	@include breakpoint($bp-navigation) {
+	@include breakpoint( bp( 2 ) ) {
 		body.fixed-nav & {
 
 			@include modernizr(no-touch) {
@@ -132,7 +129,7 @@
 	}
 }
 
-@include breakpoint($bp-navigation) {
+@include breakpoint( bp( 2 ) ) {
 	// Content adjustments to accommodate the fixed nav
 	body.fixed-nav .site-content {
 		margin-top: cr(100px) !important;

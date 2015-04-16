@@ -26,7 +26,6 @@
 	 * Layout
 	 */
 	@include container;
-	@include side-padding( "new" );
 
 	&__article {
 		margin-bottom: 3rem;

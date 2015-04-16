@@ -13,7 +13,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 
-		<div class="site-footer__wrapper">
+		<div class="site-footer__wrapper component component--padded">
 
 			<div class="site-footer__logo">
 				<a href="<?php echo esc_url( home_url() ); ?>" class="block">

@@ -30,7 +30,7 @@ $blog = new WP_Query( array(
 
 	<?php if ( $blog->have_posts() ) : ?>
 
-	<section id="blog-listing" class="listing" data-paged="<?php echo esc_attr( $paged ); ?>">
+	<section id="blog-listing" class="listing component component--padded" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 		<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
 

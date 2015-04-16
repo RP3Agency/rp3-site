@@ -55,7 +55,7 @@ var queryOffset = <?php echo $offset; ?>;
 
 	<?php if ( $recent->have_posts() ) : while ( $recent->have_posts() ) : $recent->the_post(); ?>
 
-		<section class="listing listing--recent">
+		<section class="listing listing--recent component component--padded">
 
 			<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
 
@@ -101,7 +101,7 @@ var queryOffset = <?php echo $offset; ?>;
 
 <?php if ( $alt_query->have_posts() ) : ?>
 
-	<section id="listing" class="listing" data-paged="<?php echo esc_attr( $paged ); ?>">
+	<section id="listing" class="listing component component--padded" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 		<?php while ( $alt_query->have_posts() ) : $alt_query->the_post(); ?>
 
