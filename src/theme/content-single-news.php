@@ -6,8 +6,6 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'single-blog' ); ?>>
 
-	<p class="single-blog__back"><a href="<?php echo esc_url( home_url( 'news' ) ); ?>" class="link--back">Back to Articles</a></p>
-
 	<!-- Article Header -->
 
 	<header class="single-blog__entry-header entry-header">

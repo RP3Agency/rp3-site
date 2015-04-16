@@ -61,8 +61,6 @@ get_header(); ?>
 	</section>
 	<!-- // #blog-listing -->
 
-	<?php rp3_paging_nav(); ?>
-
 <?php else : ?>
 
 	<?php get_template_part( 'content', 'none' ); ?>

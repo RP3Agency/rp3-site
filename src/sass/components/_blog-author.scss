@@ -4,7 +4,6 @@
 .blog__author {
 	@extend %clearfix;
 	background-color: mix(#fff, $gray-light, 50%);
-	font-size: 0.8em;
 	margin-bottom: 2em;
 
 	&__header {
