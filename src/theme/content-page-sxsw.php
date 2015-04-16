@@ -40,7 +40,7 @@ $blog = new WP_Query( array(
 
 					<div class="listing__thumbnail">
 
-						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+						<?php echo rp3_picture_element_v2( get_post_thumbnail_id( get_the_ID() ), 'featured-image-listing' ); ?>
 
 					</div>
 
