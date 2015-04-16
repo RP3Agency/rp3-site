@@ -19,7 +19,7 @@ get_header(); ?>
 
 	</div>
 
-	<section id="listing" class="listing" data-paged="<?php echo esc_attr( $paged ); ?>">
+	<section id="listing" class="listing component component--padded" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>

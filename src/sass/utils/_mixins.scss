@@ -24,20 +24,14 @@
 @mixin side-padding( $style: "old" ) {
 
 	// The "old" way of doing it
-
-	padding-left: percentage(60px / 2000px);
-	padding-right: percentage(60px / 2000px);
-
-
-	// Now for a "new" way of doing it
+	$padding: percentage( 60px / 2000px );
 
 	@if $style == "new" {
-
 		$padding: percentage( 5px / 320px );
-
-		padding-left: $padding;
-		padding-right: $padding;
 	}
+
+	padding-left: $padding;
+	padding-right: $padding;
 }
 
 /**
