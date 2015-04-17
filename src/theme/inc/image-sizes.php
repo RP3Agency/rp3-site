@@ -7,8 +7,8 @@
 
 function rp3_add_image_size( $tag, $sizes ) {
 	foreach ( $sizes as $size => $values ) {
-		add_image_size( $tag . '-' . $size, $values[0], $values[1], true );
-		add_image_size( $tag . '-' . $size . '-2x', $values[0] * 2, $values[1] * 2, true );
+		add_image_size( $tag . '_' . $size, $values[0], $values[1], true );
+		add_image_size( $tag . '_' . $size . '_2x', $values[0] * 2, $values[1] * 2, true );
 	}
 }
 
@@ -154,7 +154,7 @@ function rp3_image_sizes() {
 	) );
 
 	// Featured Image for Listings
-	rp3_add_image_size( 'featured-image-listing', array(
+	rp3_add_image_size( 'featured_image_listing', array(
 		'initial'       => array( 310, ceil( 310 * 0.52625 ), true ),
 		'small'         => array( 582, ceil( 582 * 0.52625 ), true ),
 		'medium'        => array( 474, ceil( 474 * 0.52625 ), true ),
