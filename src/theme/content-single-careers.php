@@ -6,9 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'careers--single' ); ?>>
 
-	<div class="careers--single__entry-content entry-content">
-
-		<p class="careers__back"><a href="<?php echo esc_url( home_url( '/careers/' ) ); ?>" class="link--back">Back to Careers</a></p>
+	<div class="careers--single__entry-content entry-content component component--padded">
 
 		<header class="careers__header">
 			<h1 class="careers__title"><?php the_title(); ?></h1>

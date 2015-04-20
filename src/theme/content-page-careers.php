@@ -28,7 +28,7 @@ wp_reset_query();
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-content' ); ?>>
 
-	<div class="entry-content">
+	<div class="entry-content component component--padded">
 
 		<div class="entry-content__container">
 
@@ -41,12 +41,16 @@ wp_reset_query();
 	<!-- .entry-content -->
 
 
-	<?php if ( '' != get_field( 'hero_image' ) ) {
-		echo rp3_full_bleed_hero_image( get_field( 'hero_image' ), array(
-			'image_size'	=> 'interstitial',
-			'classes'		=> 'hero hero-image interstitial'
-		) );
-	} ?>
+	<div class="interstitial component">
+
+		<?php if ( '' != get_field( 'hero_image' ) ) {
+			echo rp3_full_bleed_hero_image( get_field( 'hero_image' ), array(
+				'image_size'	=> 'interstitial',
+				'classes'		=> 'hero hero-image interstitial'
+			) );
+		} ?>
+
+	</div>
 
 
 
@@ -55,7 +59,7 @@ wp_reset_query();
 
 	<?php if ( '' !== get_field( 'secondary_copy' ) ) : ?>
 
-		<section class="careers__secondary-copy">
+		<section class="careers__secondary-copy component component--padded">
 
 			<?php the_field( 'secondary_copy' ); ?>
 
@@ -70,7 +74,7 @@ wp_reset_query();
 	if ( isset( $jobs ) && is_array( $jobs ) && ( count( $jobs ) > 0 ) ) :
 	?>
 
-	<section class="careers">
+	<section class="careers component component--padded">
 
 		<header class="careers__header--section">
 			<h1>Job Openings</h1>
@@ -122,7 +126,7 @@ wp_reset_query();
 	if ( isset( $internships ) && is_array( $internships ) && ( count( $internships ) > 0 ) ) :
 	?>
 
-	<section class="careers">
+	<section class="careers component component--padded">
 
 		<header class="careers__header--section">
 			<h1>Internships</h1>

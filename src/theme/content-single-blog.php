@@ -64,7 +64,7 @@
 
 			<?php if ( is_active_sidebar( 'blog-single-post' ) ) : ?>
 
-			<div id="blog-single-post-widget-area" class="widget-area blog-single-post-widget-area blog-archive-widget-area" role="complementary">
+			<div id="blog-single-post-widget-area" class="widget-area single-blog__widget-area" role="complementary">
 
 				<?php dynamic_sidebar( 'blog-single-post' ); ?>
 
