@@ -1,5 +1,8 @@
 .component {
-	margin: 0 auto;
+	margin: {
+		right: auto;
+		left: auto;
+	}
 	max-width: rem( 1600px );
 
 	&--padded {

@@ -278,8 +278,8 @@ if ( ! function_exists( 'rp3_picture_element' ) ) {
 		$images = array();
 
 		foreach ( $size_tags as $tag ) {
-			$images[] = wp_get_attachment_image_src( $id, $size_tag . '-' . $tag );
-			$images[] = wp_get_attachment_image_src( $id, $size_tag . '-' . $tag . '-2x' );
+			$images[] = wp_get_attachment_image_src( $id, $size_tag . '_' . $tag );
+			$images[] = wp_get_attachment_image_src( $id, $size_tag . '_' . $tag . '_2x' );
 		}
 
 		$picture  = '<picture>';
@@ -305,18 +305,18 @@ if ( ! function_exists( 'rp3_picture_element_v2' ) ) {
 		$images = array();
 
 		foreach ( $sizes as $size ) {
-			$images[$size] = wp_get_attachment_image_src( $id, $size_tag . '-' . $size );
-			$images[$size . '-2x'] = wp_get_attachment_image_src( $id, $size_tag . '-' . $size . '-2x' );
+			$images[$size] = wp_get_attachment_image_src( $id, $size_tag . '_' . $size );
+			$images[$size . '_2x'] = wp_get_attachment_image_src( $id, $size_tag . '_' . $size . '_2x' );
 		}
 
 		$picture  = '<picture>';
 		$picture .= '<!--[if IE 9]><video style="display: none;"><![endif]-->'; // For IE9 compatibility + Picturefill.js
-		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_large . 'em)">', $images['large'][0], $images['large-2x'][0] );
-		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_medium . 'em)">', $images['medium'][0], $images['medium-2x'][0] );
-		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_small . 'em)">', $images['small'][0], $images['small-2x'][0] );
-		$picture .= sprintf( '<source srcset="%s, %s 2x">', $images['initial'][0], $images['initial-2x'][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_large . 'em)">', $images['large'][0], $images['large_2x'][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_medium . 'em)">', $images['medium'][0], $images['medium_2x'][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x" media="(min-width: ' . $bp_small . 'em)">', $images['small'][0], $images['small_2x'][0] );
+		$picture .= sprintf( '<source srcset="%s, %s 2x">', $images['initial'][0], $images['initial_2x'][0] );
 		$picture .= '<!--[if IE 9]></video><![endif]-->';
-		$picture .= sprintf( '<img srcset="%s, %s 2x" alt="%s">', $images['initial'][0], $images['initial-2x'][0], esc_attr( $title ) );
+		$picture .= sprintf( '<img srcset="%s, %s 2x" alt="%s">', $images['initial'][0], $images['initial_2x'][0], esc_attr( $title ) );
 		$picture .= '</picture>';
 
 		return $picture;

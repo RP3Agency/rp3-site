@@ -6,6 +6,10 @@
 	background-color: mix(#fff, $gray-light, 50%);
 	margin-bottom: 2em;
 
+	&:last-child {
+		margin-bottom: 0;
+	}
+
 	&__header {
 		@include container;
 

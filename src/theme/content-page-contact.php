@@ -15,7 +15,7 @@
 
 	<div class="contact__wrapper">
 
-		<section class="contact__entry-content entry-content wrapper">
+		<section class="contact__entry-content entry-content wrapper component component--padded">
 
 			<div class="entry-content__container">
 

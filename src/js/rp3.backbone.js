@@ -1,4 +1,4 @@
-/* global rp3:true */
+/* global rp3:true, picturefill:true */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
@@ -75,8 +75,9 @@ rp3.backbone = (function($, _, Backbone) {
 			postsCollection.fetch({
 				success: function( posts ) {
 
-					// Convert the dates into something more human-friendly
 					posts.each( function( post ) {
+
+						/** Convert the dates into something more human-friendly */
 						datetime = post.attributes.date;
 
 						year  = datetime.substr(0, 4);
@@ -88,10 +89,77 @@ rp3.backbone = (function($, _, Backbone) {
 						formattedDate = month + ' ' + parseInt( date ) + ', ' + year;
 
 						post.attributes.date = formattedDate;
+
+						/** Next: Deal with the various responsive image sizes we need */
+						var sourceType, sourceValue;
+
+						sourceValue = post.attributes.featured_image;
+
+						if ( null !== sourceValue ) {
+							sourceType = typeof( post.attributes.featured_image.source );
+						}
+
+						if (
+							( 'undefined' !== sourceType ) &&
+							( null !== sourceValue )
+						) {
+
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_initial ) ) {
+								post.attributes.img_initial = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_initial.url;
+							} else {
+								post.attributes.img_initial = post.attributes.featured_image.source;
+							}
+
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_initial_2x ) ) {
+								post.attributes.img_initial_2x = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_initial_2x.url;
+							} else {
+								post.attributes.img_initial_2x = post.attributes.featured_image.source;
+							}
+
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_small ) ) {
+								post.attributes.img_small = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_small.url;
+							} else {
+								post.attributes.img_small = post.attributes.featured_image.source;
+							}
+
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_small_2x ) ) {
+								post.attributes.img_small_2x = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_small_2x.url;
+							} else {
+								post.attributes.img_small_2x = post.attributes.featured_image.source;
+							}
+
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_medium ) ) {
+								post.attributes.img_medium = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_medium.url;
+							} else {
+								post.attributes.img_medium = post.attributes.featured_image.source;
+							}
+
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_medium_2x ) ) {
+								post.attributes.img_medium_2x = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_medium_2x.url;
+							} else {
+								post.attributes.img_medium_2x = post.attributes.featured_image.source;
+							}
+
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_large ) ) {
+								post.attributes.img_large = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_large.url;
+							} else {
+								post.attributes.img_large = post.attributes.featured_image.source;
+							}
+
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_large_2x ) ) {
+								post.attributes.img_large_2x = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_large_2x.url;
+							} else {
+								post.attributes.img_large_2x = post.attributes.featured_image.source;
+							}
+						}
 					});
 
 					var template = _.template( $( templateID ).html() );
-					that.$el.html( template( { posts: posts.models } ) );				
+					that.$el.html( template( { posts: posts.models } ) );
+
+					if ( 'function' === typeof( 'picturefill' ) ) {
+						picturefill();
+					}
 				},
 				error: function() {
 					window.alert( 'Sorry, an error occurred.' );

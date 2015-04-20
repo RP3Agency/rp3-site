@@ -1,6 +1,6 @@
 <?php if ( '' != get_field( 'clients_introduction' ) ) : ?>
 
-<section class="clients">
+<section class="clients component component--padded">
 
 	<div class="clients__entry-content entry-content">
 
