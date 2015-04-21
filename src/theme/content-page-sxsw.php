@@ -30,7 +30,7 @@ $blog = new WP_Query( array(
 
 	<?php if ( $blog->have_posts() ) : ?>
 
-	<section id="blog-listing" class="listing" data-paged="<?php echo esc_attr( $paged ); ?>">
+	<section id="blog-listing" class="listing component component--padded" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 		<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
 
@@ -40,7 +40,7 @@ $blog = new WP_Query( array(
 
 					<div class="listing__thumbnail">
 
-						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+						<?php echo rp3_picture_element_v2( get_post_thumbnail_id( get_the_ID() ), 'featured-image-listing' ); ?>
 
 					</div>
 

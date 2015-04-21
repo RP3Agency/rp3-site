@@ -28,7 +28,7 @@
 
 			<a class="skip-link" href="#content"><?php _e( 'Skip to content', 'rp3' ); ?></a>
 
-			<div class="header-wrapper">
+			<div class="header-wrapper component component--padded">
 
 				<!-- Site Branding -->
 				<div class="site-branding">

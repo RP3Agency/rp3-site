@@ -6,7 +6,7 @@ if ( 'true' == get_field( 'case_study' ) ) {
 }
 ?>
 
-<div class="<?php echo $class; ?>__entry-content entry-content">
+<div class="<?php echo $class; ?>__entry-content entry-content component component--padded">
 
 	<header class="<?php echo $class; ?>__header">
 		<h1 class="<?php echo $class; ?>__title"><?php the_title(); ?></h1>

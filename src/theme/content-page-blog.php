@@ -8,7 +8,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="entry-content">
+	<div class="entry-content component component--padded">
 
 		<div class="entry-content__container">
 
@@ -52,7 +52,11 @@
 
 		<div id="blog-archive-widget-area" class="widget-area blog-archive-widget-area" role="complementary">
 
-			<?php dynamic_sidebar( 'blog-archive' ); ?>
+			<div class="blog-archive-widget-area__container component component--padded">
+
+				<?php dynamic_sidebar( 'blog-archive' ); ?>
+
+			</div>
 
 		</div>
 

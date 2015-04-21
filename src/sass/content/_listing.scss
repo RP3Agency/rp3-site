@@ -20,12 +20,16 @@
 
 	&__thumbnail {
 		margin-bottom: 1em;
+
+		img {
+			height: auto;
+			width: 100%;
+		}
 	}
 
 	/**
 	 * Layout
 	 */
-	@extend %side-padding;
 	@include container;
 
 	&__article {

@@ -9,7 +9,7 @@ $leadership = new WP_Query( array(
 
 <?php if ( $leadership->have_posts() ) : ?>
 
-<section class="leadership entry-content">
+<section class="leadership entry-content component component--padded">
 
 	<h1>Leadership</h1>
 

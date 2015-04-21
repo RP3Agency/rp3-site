@@ -55,7 +55,7 @@ var queryOffset = <?php echo $offset; ?>;
 
 	<?php if ( $recent->have_posts() ) : while ( $recent->have_posts() ) : $recent->the_post(); ?>
 
-		<section class="listing listing--recent">
+		<section class="listing listing--recent component component--padded">
 
 			<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
 
@@ -63,7 +63,7 @@ var queryOffset = <?php echo $offset; ?>;
 
 					<div class="listing__thumbnail">
 
-						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+						<?php echo rp3_picture_element_v2( get_post_thumbnail_id( get_the_ID() ), 'featured_image_listing' ); ?>
 
 					</div>
 
@@ -101,7 +101,7 @@ var queryOffset = <?php echo $offset; ?>;
 
 <?php if ( $alt_query->have_posts() ) : ?>
 
-	<section id="listing" class="listing" data-paged="<?php echo esc_attr( $paged ); ?>">
+	<section id="listing" class="listing component component--padded" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 		<?php while ( $alt_query->have_posts() ) : $alt_query->the_post(); ?>
 
@@ -111,7 +111,7 @@ var queryOffset = <?php echo $offset; ?>;
 
 					<div class="listing__thumbnail">
 
-						<?php echo get_the_post_thumbnail( get_the_ID(), 'news-blog-thumbnail' ); ?>
+						<?php echo rp3_picture_element_v2( get_post_thumbnail_id( get_the_ID() ), 'featured_image_listing' ); ?>
 
 					</div>
 
@@ -159,7 +159,15 @@ var queryOffset = <?php echo $offset; ?>;
 
 			<% if ( ( null !== post.get( 'featured_image' ) ) && ( post.get( 'featured_image' ).constructor !== Array ) && ( '' !== post.get( 'featured_image' ).source ) ) { %>
 				<div class="blog-listing__thumbnail listing__thumbnail">
-					<img src="<%= post.get( 'featured_image' ).source %>" class="attachment-post-thumbnail wp-post-image">
+					<picture>
+						<!--[if IE 9]><video style="display: none;"><![endif]-->
+						<source srcset="<%= post.get( 'img_large' ) %>, <%= post.get( 'img_large_2x' ) %> 2x" media="( min-width: 62.5em )">
+						<source srcset="<%= post.get( 'img_medium' ) %>, <%= post.get( 'img_medium_2x' ) %> 2x" media="( min-width: 37.5em )">
+						<source srcset="<%= post.get( 'img_small' ) %>, <%= post.get( 'img_small_2x' ) %> 2x" media="( min-width: 20.0625em )">
+						<source srcset="<%= post.get( 'img_initial' ) %>, <%= post.get( 'img_initial_2x' ) %> 2x">
+						<!--[if IE 9]></video><![endif]-->
+						<img src="<%= post.get( 'img_initial' ) %>" class="attachment-post-thumbnail wp-post-image">
+					</picture>
 				</div>
 			<% } %>
 
@@ -183,7 +191,15 @@ var queryOffset = <?php echo $offset; ?>;
 
 			<% if ( ( null !== post.get( 'featured_image' ) ) && ( post.get( 'featured_image' ).length > 0 ) ) { %>
 				<div class="blog-listing__thumbnail">
-					<img src="<%= post.get( 'featured_image' ).source %>" class="attachment-post-thumbnail wp-post-image">
+					<picture>
+						<!--[if IE 9]><video style="display: none;"><![endif]-->
+						<source srcset="<%= post.get( 'img_large' ) %>, <%= post.get( 'img_large_2x' ) %> 2x" media="( min-width: 62.5em )">
+						<source srcset="<%= post.get( 'img_medium' ) %>, <%= post.get( 'img_medium_2x' ) %> 2x" media="( min-width: 37.5em )">
+						<source srcset="<%= post.get( 'img_small' ) %>, <%= post.get( 'img_small_2x' ) %> 2x" media="( min-width: 20.0625em )">
+						<source srcset="<%= post.get( 'img_initial' ) %>, <%= post.get( 'img_initial_2x' ) %> 2x">
+						<!--[if IE 9]></video><![endif]-->
+						<img src="<%= post.get( 'img_initial' ) %>" class="attachment-post-thumbnail wp-post-image">
+					</picture>
 				</div>
 			<% } %>
 

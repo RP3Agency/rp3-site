@@ -7,8 +7,8 @@
 
 function rp3_add_image_size( $tag, $sizes ) {
 	foreach ( $sizes as $size => $values ) {
-		add_image_size( $tag . '-' . $size, $values[0], $values[1], true );
-		add_image_size( $tag . '-' . $size . '-2x', $values[0] * 2, $values[1] * 2, true );
+		add_image_size( $tag . '_' . $size, $values[0], $values[1], true );
+		add_image_size( $tag . '_' . $size . '_2x', $values[0] * 2, $values[1] * 2, true );
 	}
 }
 
@@ -43,9 +43,6 @@ function rp3_image_sizes() {
 
 	// Case Studies
 	rp3_add_image_size( 'case-study', $smaller_hero_images );
-
-	// News & Blog Thumbnails
-	add_image_size( 'news-blog-thumbnail', 511, 9999 );
 
 
 	// Leadership
@@ -156,19 +153,21 @@ function rp3_image_sizes() {
 		'large'         => array( 800, 450, true )
 	) );
 
+	// Featured Image for Listings
+	rp3_add_image_size( 'featured_image_listing', array(
+		'initial'       => array( 310, ceil( 310 * 0.52625 ), true ),
+		'small'         => array( 582, ceil( 582 * 0.52625 ), true ),
+		'medium'        => array( 474, ceil( 474 * 0.52625 ), true ),
+		'large'         => array( 495, ceil( 495 * 0.52625 ), true )
+	) );
 
-
-	/** Adding breakpoints, so until I can get all the images squared into a newer, better
-	format, going to do the picture element for the blog single template manually */
-
-	add_image_size( 'single-blog-small',     320,      168,     true );
-	add_image_size( 'single-blog-small-2x',  320 * 2,  168 * 2, true );
-	add_image_size( 'single-blog-medium',    600,      316,     true );
-	add_image_size( 'single-blog-medium-2x', 600 * 2,  316 * 2, true );
-	add_image_size( 'single-blog-large',     1000,     526,     true );
-	add_image_size( 'single-blog-large-2x',  1000 * 2, 526 * 2, true );
-	add_image_size( 'single-blog-xlarge',    1600,     842,     true );
-	add_image_size( 'single-blog-xlarge-2x', 1600 * 2, 842 * 2, true );
+	// Featured Image for Single Posts
+	rp3_add_image_size( 'featured-image-single', array(
+		'initial'       => array( 320, ceil( 320 * 0.52625 ), true ),
+		'small'         => array( 600, ceil( 600 * 0.52625 ), true ),
+		'medium'        => array( 1000, ceil( 1000 * 0.52625 ), true ),
+		'large'         => array( 1600, ceil( 1600 * 0.52625 ), true )
+	) );
 }
 
 add_action( 'init', 'rp3_image_sizes' );

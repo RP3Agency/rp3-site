@@ -1,24 +1,25 @@
 .single-blog {
-	margin: {
-		left: auto;
-		right: auto;
+
+	&__container {
+		@extend %clearfix;
+		margin: {
+			right: auto;
+			left: auto;
+		}
+		max-width: rem( 1600px );
 	}
-	max-width: 1600px;
 
-	&__back,
-	&__entry-title,
-	&__entry-meta,
-	&__entry-content,
-	&__sharing,
-	&__comments {
-		margin: 0;
-		max-width: none;
-		@include side-padding( "new" );
+	&__primary {
+		max-width: rem( 600px );
+		padding: {
+			right: percentage( 5px / 320px );
+			left: percentage( 5px / 320px );
+		}
 
-		@include breakpoint( bp( 4 ) ) {
+		@include breakpoint( bp( 2 ) ) {
 			padding: {
-				left: 0;
 				right: 0;
+				left: 0;
 			}
 		}
 	}
@@ -30,6 +31,18 @@
 		margin-bottom: 2em;
 	}
 
+	&__widget-area {
+		background-color: mix(#fff, $gray-light, 50%);
+		margin: 2em 0;
+		padding: 2em;
+
+		aside {
+			float: none;
+			margin: 0;
+			width: 100%;
+		}
+	}
+
 	@include breakpoint( bp( 2 ) ) {
 
 		&__entry-content,
@@ -39,11 +52,8 @@
 		}
 	}
 
-	&__container {
-		@include container( 1600px );
-	}
-
 	&__thumbnail {
+		margin-bottom: 3rem;
 
 		picture,
 		picture img,
@@ -55,8 +65,9 @@
 
 	/** Layout */
 	@include breakpoint( bp( 2 ) ) {
+
 		&__container {
-			margin-left: percentage( 5px / 320px );
+			padding-left: percentage( 5px / 320px );
 		}
 
 		&__primary {
@@ -68,16 +79,16 @@
 		}
 	}
 
-	@include breakpoint( bp( 3 ) ) {
+	// @include breakpoint( bp( 3 ) ) {
 
-		&__primary {
-			@include span( 14 );
-		}
+	// 	&__primary {
+	// 		@include span( 10 );
+	// 	}
 
-		&__secondary {
-			@include span( 8 last );
-		}
-	}
+	// 	&__secondary {
+	// 		@include span( 8 last );
+	// 	}
+	// }
 }
 
 @import "components/blog-author";

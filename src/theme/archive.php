@@ -22,7 +22,7 @@ get_header(); ?>
 					single_tag_title();
 
 				elseif ( is_author() ) :
-					printf( __( 'Author: %s', 'rp3' ), '<span class="vcard">' . get_the_author() . '</span>' );
+					printf( __( 'Posts by %s', 'rp3' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 				elseif ( is_day() ) :
 					printf( __( 'Day: %s', 'rp3' ), '<span>' . get_the_date() . '</span>' );

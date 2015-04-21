@@ -6,11 +6,9 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'single-blog' ); ?>>
 
-	<p class="single-blog__back"><a href="<?php echo esc_url( home_url( 'news' ) ); ?>" class="link--back">Back to Articles</a></p>
-
 	<!-- Article Header -->
 
-	<header class="single-blog__entry-header entry-header">
+	<header class="single-blog__entry-header entry-header component component--padded">
 
 		<h1 class="single-blog__entry-title entry-title"><?php the_title(); ?></h1>
 
@@ -21,19 +19,18 @@
 		</div>
 		<!-- // .entry-meta -->
 
-		<?php if ( '' != get_the_post_thumbnail() ) : ?>
-
-			<div class="single-blog__thumbnail">
-
-				<?php the_post_thumbnail(); ?>
-
-			</div>
-
-		<?php endif; ?>
-
 	</header>
 	<!-- .entry-header -->
 
+	<?php if ( '' != get_the_post_thumbnail() ) : ?>
+
+		<div class="single-blog__thumbnail component">
+
+			<?php echo rp3_picture_element_v2( get_post_thumbnail_id(), 'featured-image-single' ); ?>
+
+		</div>
+
+	<?php endif; ?>
 
 	<div class="single-blog__container">
 

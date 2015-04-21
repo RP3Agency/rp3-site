@@ -4,8 +4,11 @@
 .blog__author {
 	@extend %clearfix;
 	background-color: mix(#fff, $gray-light, 50%);
-	font-size: 0.8em;
 	margin-bottom: 2em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 	&__header {
 		@include container;
@@ -52,34 +55,39 @@
 	&__social {
 		margin-top: 1em;
 	}
+}
 
-	&--wide {
+/** Layout Adjustments for Author Archive Page */
+
+.archive.author .blog__author {
+
+	&::before,
+	&::after {
 		display: none;
-		margin: {
-			left: 1em;
-			bottom: 1em;
-		}
-		@include span(8 of 24 last);
+	}
 
-		@include breakpoint(800px) {
-			display: block;
+	@include breakpoint( bp( 2 ) ) {
+		display: flex;
+
+		&__header {
+			margin: {
+				right: gutter();
+				left: 0;
+			}
+			width: span( 8 );
+		}
+
+		&__bio {
+			max-width: rem( 500px );
+			padding-left: 0;
+			width: span( 16 );
 		}
 	}
 
-	&--narrow {
+	@include breakpoint( 800px ) {
 
-		@include breakpoint( 480px ) {
-			.blog__author__header {
-				@include span( 12 of 24 );
-			}
-
-			.blog__author__bio {
-				@include span( 12 of 24 last );
-			}
-		}
-
-		@include breakpoint(800px) {
-			display: none;
+		&__header {
+			margin-bottom: 0;
 		}
 	}
 }

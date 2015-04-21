@@ -7,8 +7,8 @@
 
 .entry-content {
 	margin-bottom: 3rem;
-	@include container( 1600px );
-	@include side-padding( "new" );
+	// @include container( 1600px );
+	// @include side-padding( "new" );
 
 	&__container {
 		@include breakpoint($bp-large/2) {
@@ -45,20 +45,19 @@
 
 @import "content/single-blog";
 
-@import "content/page-blog";
+@import "content/listing";
 
 /**
  * Widget Area
  */
 .blog-archive-widget-area {
-	@extend %side-padding;
+	@extend %clearfix;
 	background-color: map-get($gray_map, light);
 	margin-top: 5rem;
 	padding: {
 		top: 5rem;
 		bottom: 2rem;
 	}
-	@include container;
 
 	aside {
 		@include breakpoint($bp-medium) {
@@ -78,18 +77,6 @@
 		&:focus {
 			background-color: #fff;
 		}
-	}
-}
-
-.blog-single-post-widget-area {
-	background-color: mix(#fff, $gray-light, 50%);
-	margin: 2em 0;
-	padding: 2em;
-
-	aside {
-		float: none;
-		margin: 0;
-		width: 100%;
 	}
 }
 
@@ -149,136 +136,7 @@
 
 @import "components/related-work";
 
-// Careers
-.careers {
-	@extend %side-padding;
-	margin-top: 3em;
-
-	&--single__entry-content {
-		margin-bottom: 1em;
-
-		.entry-content__container {
-			float: none;
-			margin-right: 0;
-			width: 100%;
-		}
-	}
-
-	&__primary {
-		@include breakpoint($bp-medium) {
-			@include span(16 of 24);
-		}
-	}
-
-	&__secondary {
-		@include breakpoint($bp-medium) {
-			@include span(8 of 24 last);
-		}
-
-		.widget ul {
-			margin: 0 0 1.5em 3em;
-
-			@include breakpoint($bp-medium) {
-				margin: 0 0 3em 1em;
-			}
-		}
-	}
-
-	&__header--section {
-		border-bottom: 1px solid map-get($gray_map, light);
-		margin: {
-			left: percentage(90px/1600px);
-			right: percentage(90px/1600px);
-			bottom: 3rem;
-		}
-
-		&.no-bottom-margin {
-			border-bottom: none;
-			margin-bottom: 0;
-		}
-
-		h1,
-		h2 {
-			font: {
-				size: ce(12px);
-				weight: $medium;
-			}
-			line-height: 3;
-			text-transform: uppercase;
-		}
-	}
-
-	&__header--article {
-
-		h2 {
-			@extend %roboto-thin;
-			font-size: ce(22px, 14px);
-			margin-bottom: 1em;
-			text-transform: none;
-		}
-	}
-
-	&__title {
-		margin-bottom: 0.5em;
-	}
-
-	&__summary {
-		color: map-get($gray_map, normal);
-	}
-
-	&__secondary-copy {
-		@extend %wrapper;
-		margin-bottom: 3rem;
-		margin-top: 3rem;
-	}
-
-	&__entry-content--larger {
-		font-size: ce(16px);
-
-		@include breakpoint($bp-medium) {
-			@include span(16 of 24);
-		}
-	}
-
-	&__tagline {
-		color: map-get($gray_map, normal);
-		font-size: ce(16px);
-	}
-
-	&__details {
-
-		.careers__header--section {
-			margin: {
-				left: 0;
-				right: 0;
-			}
-		}
-	}
-
-	// &__back {
-	// 	@extend %back;
-	// }
-
-	/**
-	 * Layout
-	 */
-	&__row {
-		@extend %side-padding;
-		margin-bottom: 3rem;
-		@include container;
-	}
-
-	&__article {
-		@include breakpoint($bp-medium) {
-			@include gallery(12);
-		}
-
-		@include breakpoint($bp-large) {
-			@include gallery(8);
-		}
-	}
-}
-
+@import "content/careers";
 
 @import "content/work-landing-page";
 

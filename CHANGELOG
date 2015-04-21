@@ -1,3 +1,9 @@
+2.14.0 | 2015-04-21
+
+RPS-819
+RPS-836: Better author pages
+RPS-839: Improved responsiveness of featured images on blog and news posts; made some context fixes as well
+
 2.13.2.1 | 2015-04-15
 
 Hotfix: fixing CSS class for SXSW landing page blog post listing
