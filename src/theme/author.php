@@ -11,7 +11,7 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 
-	<div class="entry-content">
+	<div class="entry-content component component--padded">
 
 		<h1 class="entry-content__title">Posts by <span class="vcard"><?php echo get_the_author(); ?></span></h1>
 
