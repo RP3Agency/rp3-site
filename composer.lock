@@ -185,7 +185,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.2.2",
+            "version": "5.2.3",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
