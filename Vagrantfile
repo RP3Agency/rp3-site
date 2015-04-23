@@ -29,11 +29,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.manage_host = true
   config.hostmanager.ignore_private_ip = false
   config.hostmanager.include_offline = true
-  config.vm.define 'rp3-website' do |node|
+  config.vm.define 'rp3-site' do |node|
     node.vm.provision :shell, :path => "provisioning/bootstrap.sh"
-    node.vm.hostname = 'rp3-website-hostname'
+    node.vm.hostname = 'rp3-site'
     node.vm.network :private_network, ip: '192.168.50.201'
-    node.hostmanager.aliases = %w(dev.site.rp3.vagrant.local)
+    node.hostmanager.aliases = %w(dev.site.rp3.rp3)
   end
 
   # Create a public network, which generally matched to bridged network.
@@ -49,15 +49,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
-  # config.vm.synced_folder "WordPress-Skeleton/wp/", "/var/www/", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-  # config.vm.synced_folder "WordPress-Skeleton/content/", "/var/www/content/", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-  # config.vm.synced_folder "prototype/", "/var/www/prototype/", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-
   config.vm.synced_folder ".", "/vagrant", nfs: true
-  config.vm.synced_folder ".", "/vagrant"
-  # config.vm.synced_folder "wp-content/uploads", "/vagrant/wp-content/uploads", id: "uploads", :mount_options => ["dmode=777,fmode=666"]
-  # config.vm.synced_folder "wp-content/uploads/wp-migrate-db", "/vagrant/wp-content/uploads/wp-migrate-db", id: "migrate-db-uploads", :mount_options => ["dmode=777,fmode=666"]
+  # config.vm.synced_folder ".", "/vagrant"
 
   config.vm.provider "virtualbox" do |v|
     host = RbConfig::CONFIG['host_os']
@@ -78,6 +71,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     v.customize ["modifyvm", :id, "--memory", mem]
     v.customize ["modifyvm", :id, "--cpus", cpus]
+    v.name = "rp3-site"
   end
 
 end
