@@ -103,16 +103,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.1.2",
+            "version": "4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "51483bcc2f2aadc3bb1f0df20060cdc00dda576e"
+                "reference": "4c247a5f81af6207a99ecda3ce3b895a9f6af84e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/51483bcc2f2aadc3bb1f0df20060cdc00dda576e",
-                "reference": "51483bcc2f2aadc3bb1f0df20060cdc00dda576e",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/4c247a5f81af6207a99ecda3ce3b895a9f6af84e",
+                "reference": "4c247a5f81af6207a99ecda3ce3b895a9f6af84e",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-04-21 14:31:05"
+            "time": "2015-04-23 16:31:07"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -341,15 +341,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.1.1",
+            "version": "4.1.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.1.1"
+                "reference": "tags/4.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -481,15 +481,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.4.1",
+            "version": "5.4.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.4.1"
+                "reference": "tags/5.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -501,15 +501,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.4.3",
+            "version": "3.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.4.3"
+                "reference": "tags/3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.3.4.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -541,15 +541,15 @@
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.59.1",
+            "version": "0.59.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.59.1"
+                "reference": "tags/0.59.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.59.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.59.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -641,15 +641,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.3.14",
+            "version": "2.3.15",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.3.14"
+                "reference": "tags/2.3.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.3.14.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.3.15.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -801,15 +801,15 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.0.15",
+            "version": "4.1.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
-                "reference": "trunk"
+                "reference": "tags/4.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/worker.zip",
+                "url": "https://downloads.wordpress.org/plugin/worker.4.1.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -881,15 +881,15 @@
         },
         {
             "name": "wpackagist-plugin/wpclef",
-            "version": "2.2.9.1",
+            "version": "2.2.9.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wpclef/",
-                "reference": "tags/2.2.9.1"
+                "reference": "tags/2.2.9.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpclef.2.2.9.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpclef.2.2.9.3.zip",
                 "reference": null,
                 "shasum": null
             },
