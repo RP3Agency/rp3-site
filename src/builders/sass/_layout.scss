@@ -1,68 +1,268 @@
 .chapter {
 
 	&__wrapper {
-		@include container;
+		margin: 0 auto;
+		max-width: rem( 900px );
 		@include side-padding;
 	}
+}
 
 
-	/** Introduction */
+@include breakpoint( $bp-medium ) {
 
-	&--introduction {
+	.chapter__row {
+		@include container;
+	}
 
-		@include breakpoint( $bp-medium ) {
+	.chapter--01 {
 
-			.introduction__contact {
-				@include span( 3 );
+		&__contact {
+			@include span( 3 );
+		}
+
+		&__intro-paragraph {
+			@include span( 9 );
+			@include last;
+		}
+
+		&__header {
+			@include span( 2 at 7 );
+		}
+
+		&__content {
+			@include span( 6 at 1 );
+		}
+	}
+
+	.chapter--02 {
+
+		&__header {
+			@include span( 2 at 3 );
+		}
+
+		&__content {
+			@include span( 8 at 5 );
+			@include last;
+		}
+	}
+
+	.chapter--03 {
+
+		.chapter__row--1 {
+
+			.chapter--03__header {
+				@include span( 2 at 10 );
 			}
 
-			.chapter__intro-paragraph {
-				@include span( 8 at 5 last );
+			.chapter--03__content {
+				@include span( 9 )
+			}
+		}
+
+		.chapter__row--2 {
+
+			.chapter__image {
+				@include span( 8 at 1 );
+			}
+
+			.chapter__content {
+				@include span( 3 at 10 );
+			}
+		}
+
+		.chapter__row--3 {
+
+			.chapter__image {
+				@include span( 9 at 4 );
+			}
+		}
+
+		.chapter__row--4,
+		.chapter__row--5 {
+
+			.chapter__image {
+				@include span( 4 at 1 );
+			}
+
+			.chapter__content {
+				@include span( 7 at 6 );
+			}
+		}
+
+		.chapter__row--6 {
+
+			.chapter__content {
+				@include span( 12 );
+			}
+		}
+
+		.chapter__row--7 {
+
+			.chapter__content {
+				@include span( 3 at 1 );
+			}
+
+			.chapter__image {
+				@include span( 8 at 5 );
+			}
+		}
+
+		.chapter__row--8 {
+
+			.chapter__content {
+				@include span( 12 );
+			}
+		}
+
+		.chapter__row--9 {
+
+			.chapter__image {
+				@include span( 8 at 3 );
 			}
 		}
 	}
 
-	/** Chapter 1 */
+	.chapter--04 {
 
-	&--1 {
-
-		@include breakpoint( $bp-medium ) {
+		.chapter__row--1 {
 
 			.chapter__header {
-				@include pre( 9 );
+				@include span( 2 at 2 );
 			}
 
-			p {
-				width: span( 8 );
+			.chapter__content {
+				@include span( 8 at 5 );
+			}
+		}
+
+		.chapter__row--2 {
+
+			.chapter__image {
+				@include span( 12 at 1 );
+			}
+		}
+
+		.chapter__row--3 {
+
+			.chapter__content {
+				@include span( 8 at 1 );
+			}
+		}
+
+		.chapter__row--4 {
+
+			.chapter__content {
+				@include span( 12 );
+			}
+		}
+
+		.chapter__row--5 {
+
+			.chapter__header {
+				@include span( 2 at 2 );
+			}
+
+			.chapter__content {
+				@include span( 7 at 6 );
+			}
+		}
+
+		.chapter__row--6 {
+
+			.chapter__content {
+				@include span( 4 at 1 );
+			}
+
+			.chapter__image {
+				@include span( 8 at 5 );
 			}
 		}
 	}
 
-	&--2 {
+	.chapter--05 {
 
-		@include breakpoint( $bp-medium ) {
+		.chapter__row--1 {
 
 			.chapter__header {
-				float: left;
+				@include span( 2 at 9 );
 			}
 
-			.chapter__subsection {
-				@include pre( 3 );
-				width: span( 8 );
+			.chapter__content {
+				@include span( 8 at 1 );
+			}
+		}
+
+		.chapter__row--2 {
+
+			.chapter__content {
+				@include span( 12 );
 			}
 		}
 	}
 
-	&--3 {
+	.chapter--06 {
 
-		@include breakpoint( $bp-medium ) {
-			
+		.chapter__row--1 {
+
 			.chapter__header {
-				@include span( 2 at 10 isolate );
+				@include span( 2 at 2 );
 			}
 
-			.chapter__subsection {
-				@include span( 8 );
+			.chapter__content {
+				@include span( 8 at 5 );
+			}
+		}
+
+		.chapter__row--2 {
+
+			.chapter__image {
+				@include span( 12 at 1 );
+			}
+		}
+
+		.chapter__row--3 {
+
+			.chapter__content {
+				@include span( 8 at 1 );
+			}
+		}
+
+		.chapter__row--4 {
+
+			.chapter__content {
+				@include span( 12 );
+			}
+		}
+
+		.chapter__row--5 {
+
+			.chapter__content {
+				@include span( 8 at 1 );
+			}
+		}
+
+		.chapter__row--6 {
+
+			.chapter__image {
+				@include span( 4 at 1 );
+			}
+
+			.chapter__content {
+				@include span( 8 at 5 );
+			}
+		}
+	}
+
+	.chapter--07 {
+
+		.chapter__row--1 {
+
+			.chapter__header {
+				@include span( 2 at 10 );
+			}
+
+			.chapter__content {
+				@include span( 9 at 1 );
 			}
 		}
 	}

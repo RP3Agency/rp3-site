@@ -2,6 +2,10 @@
 
 	@include breakpoint( bp( 2 ) ) {
 		display: flex;
+
+		@include modernizr( "no-flexbox" ) {
+			@include container( rem( 1600px ) );
+		}
 	}
 
 	/** Content */
@@ -12,6 +16,10 @@
 		@include breakpoint( bp( 2 ) ) {
 			min-height: rem( 282px );
 			width: 50%;
+
+			@include modernizr( "no-flexbox" ) {
+				float: left;
+			}
 		}
 
 		@include breakpoint( bp( 3 ) ) {
@@ -44,6 +52,10 @@
 
 		@include breakpoint( bp( 2 ) ) {
 			width: 50%;
+
+			@include modernizr( "no-flexbox" ) {
+				float: right;
+			}
 		}
 
 		&__inner {
@@ -92,6 +104,10 @@
 				position: absolute;
 				top: 0;
 				transform: translate( -50%, 0 );
+			}
+
+			@include modernizr( "no-flexbox" ) {
+				float: right;
 			}
 		}
 

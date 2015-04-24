@@ -131,6 +131,10 @@ if ( function_exists( 'get_coauthors' ) ) {
 						<li class="linkedin"><a href="<?php echo esc_url( get_the_author_meta( 'linkedin', $coauthor->ID ) ); ?>">LinkedIn</a></li>
 						<?php endif; ?>
 
+						<?php if ( '' != get_the_author_meta( 'instagram', $coauthor->ID ) ) : ?>
+						<li class="instagram"><a href="<?php echo esc_url( get_the_author_meta( 'instagram', $coauthor->ID ) ); ?>">LinkedIn</a></li>
+						<?php endif; ?>
+
 					</ul>
 
 				<?php endif; ?>
