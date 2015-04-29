@@ -152,7 +152,7 @@ gulp.task('build-theme', function() {
 gulp.task('build', ['styles', 'scripts'], function() {
 	gulp.start('build-theme');
 	// gulp.start('build-plugin');
-	// gulp.start('builders');
+	gulp.start('builders');
 });
 
 
@@ -179,7 +179,7 @@ gulp.task('watch', function() {
 	gulp.watch( src_theme + '/**/*.*', ['build-theme'] );
 
 	// Watch builders/sass/*.scss files
-	// gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
+	gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
 });
 
 
