@@ -4,7 +4,7 @@
 var gulp			= require('gulp'),
 
 	// Sass/Compass/related CSSy things
-	sass			= require('gulp-ruby-sass'),
+	sass			= require('gulp-sass'),
 	autoprefixer	= require('gulp-autoprefixer'),
 	minifycss		= require('gulp-minify-css'),
 	sourcemaps		= require('gulp-sourcemaps'),
@@ -51,20 +51,20 @@ var // Project
 // Styles
 gulp.task('styles', function() {
 	return gulp.src(src_sass + '/*.scss')
-		.pipe(sass({
-			bundleExec: true,
-			require: ['susy', 'breakpoint']
-		}))
-		.on( 'error', gutil.log )
-		.pipe(sourcemaps.init({loadMaps: true}))
-		.pipe(autoprefixer({
-			browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-		}))
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(dest_theme_css))
-		.pipe(rename({suffix: '.min'}))
-		.pipe(minifycss())
-		.pipe(gulp.dest(dest_theme_css));
+		.pipe( sourcemaps.init() )
+		.pipe( sass( {
+			errLogToConsole: true
+		} ) )
+		.pipe( autoprefixer( {
+			browsers: [ 'last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ]
+		} ) )
+		.pipe( sourcemaps.write() )
+		.pipe( gulp.dest( dest_theme_css ) )
+		.pipe( rename( {
+			suffix: '.min'
+		} ) )
+		.pipe( minifycss() )
+		.pipe( gulp.dest( dest_theme_css ) )
 });
 
 
@@ -190,18 +190,16 @@ gulp.task('builders', function() {
 		.pipe(gulp.dest(__dirname + '/builders'));
 
 	return gulp.src(__dirname + '/src/builders/sass/*.scss')
+		.pipe( sourcemaps.init() )
 		.pipe(sass({
-			bundleExec: true,
-			require: ['susy', 'breakpoint']
+			errLogToConsole: true
 		}))
-		// .on( 'error', gutil.log )
-		// .pipe(sourcemaps.init({loadMaps: true}))
-		// .pipe(autoprefixer({
-		// 	browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-		// }))
-		// .pipe(sourcemaps.write())
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+		}))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(__dirname + '/builders/css'))
-		// .pipe(rename({suffix: '.min'}))
-		// .pipe(minifycss())
-		// .pipe(gulp.dest(__dirname + '/builders/css'));
+		.pipe(rename({suffix: '.min'}))
+		.pipe(minifycss())
+		.pipe(gulp.dest(__dirname + '/builders/css'));
 });

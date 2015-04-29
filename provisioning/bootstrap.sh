@@ -27,21 +27,6 @@ echo "Installing Local Packages"
 cd /vagrant
 npm install
 
-echo "Installing Ruby"
-apt-get install -y ruby-full build-essential
-apt-get install -y rubygems
-
-echo "Installing Bundler"
-gem install bundler
-
-echo "Installing Sass and other Sass-related things via Bundler"
-cd /vagrant # Let's just make doubly sure we're in the correct directory
-sudo -u vagrant bundle install
-
-# echo "Running gulp for build compilation"
-# cd /vagrant
-# gulp
-
 echo "Installing apache2..."
 apt-get update
 apt-get install -y apache2 libapache2-mod-php5 php5-gd php5-curl php5-memcache >/dev/null 2>&1
