@@ -103,16 +103,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.2",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "4c247a5f81af6207a99ecda3ce3b895a9f6af84e"
+                "reference": "c1cefa55c50dadb75b5e9f0e4844e420c794ab48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/4c247a5f81af6207a99ecda3ce3b895a9f6af84e",
-                "reference": "4c247a5f81af6207a99ecda3ce3b895a9f6af84e",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/c1cefa55c50dadb75b5e9f0e4844e420c794ab48",
+                "reference": "c1cefa55c50dadb75b5e9f0e4844e420c794ab48",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-04-23 16:31:07"
+            "time": "2015-04-27 17:16:13"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -199,7 +199,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro",
-            "version": "1.4.6",
+            "version": "1.4.7",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro.zip",
@@ -421,15 +421,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.3",
+            "version": "1.3.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.3"
+                "reference": "tags/1.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -801,15 +801,15 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.1.0",
+            "version": "4.1.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
-                "reference": "tags/4.1.0"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/worker.4.1.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/worker.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -881,15 +881,15 @@
         },
         {
             "name": "wpackagist-plugin/wpclef",
-            "version": "2.2.9.3",
+            "version": "2.2.9.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wpclef/",
-                "reference": "tags/2.2.9.3"
+                "reference": "tags/2.2.9.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpclef.2.2.9.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpclef.2.2.9.4.zip",
                 "reference": null,
                 "shasum": null
             },
