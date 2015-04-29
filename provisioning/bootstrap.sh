@@ -31,13 +31,6 @@ echo "Installing Ruby"
 apt-get install -y ruby-full build-essential
 apt-get install -y rubygems
 
-echo "Installing Bundler"
-gem install bundler
-
-echo "Installing Sass and other Sass-related things via Bundler"
-cd /vagrant # Let's just make doubly sure we're in the correct directory
-sudo -u vagrant bundle install
-
 # echo "Running gulp for build compilation"
 # cd /vagrant
 # gulp
