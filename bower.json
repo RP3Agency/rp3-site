@@ -14,9 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "susy": "~2.2.3"
-  },
-  "devDependencies": {
+    "susy": "~2.2.3",
     "breakpoint-sass": "~2.5.0"
   }
 }
