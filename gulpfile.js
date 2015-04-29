@@ -190,18 +190,16 @@ gulp.task('builders', function() {
 		.pipe(gulp.dest(__dirname + '/builders'));
 
 	return gulp.src(__dirname + '/src/builders/sass/*.scss')
+		.pipe( sourcemaps.init() )
 		.pipe(sass({
-			bundleExec: true,
-			require: ['susy', 'breakpoint']
+			errLogToConsole: true
 		}))
-		// .on( 'error', gutil.log )
-		// .pipe(sourcemaps.init({loadMaps: true}))
-		// .pipe(autoprefixer({
-		// 	browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-		// }))
-		// .pipe(sourcemaps.write())
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+		}))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(__dirname + '/builders/css'))
-		// .pipe(rename({suffix: '.min'}))
-		// .pipe(minifycss())
-		// .pipe(gulp.dest(__dirname + '/builders/css'));
+		.pipe(rename({suffix: '.min'}))
+		.pipe(minifycss())
+		.pipe(gulp.dest(__dirname + '/builders/css'));
 });
