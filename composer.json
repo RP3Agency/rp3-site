@@ -20,7 +20,6 @@
     "rp3agency/wp-migrate-db-pro": "*",
     "rp3agency/wp-migrate-db-pro-media-files": "*",
     "rp3agency/wp-migrate-db-pro-cli": "*",
-    "wpackagist-plugin/add-from-server":"*",
     "wpackagist-plugin/admin-post-navigation":"*",
     "wpackagist-plugin/akismet":"*",
     "wpackagist-plugin/black-studio-tinymce-widget":"*",
@@ -50,7 +49,6 @@
     "wpackagist-plugin/wordpress-importer":"*",
     "wpackagist-plugin/worker":"*",
     "wpackagist-plugin/wp-maintenance-mode":"*",
-    "wpackagist-plugin/wp-siren-recent-posts-by-category":"*",
     "wpackagist-plugin/wp-super-cache":"*",
     "wpackagist-plugin/wpclef":"*"
   },

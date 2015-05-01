@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "52fa6d2d84a9c9b4b4a07c7d57bf5638",
+    "hash": "d7f2310656e724294164c9a72df8ff38",
     "packages": [
         {
             "name": "composer/installers",
@@ -238,26 +238,6 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin"
-        },
-        {
-            "name": "wpackagist-plugin/add-from-server",
-            "version": "3.2.0.3",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/add-from-server/",
-                "reference": "tags/3.2.0.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/add-from-server.3.2.0.3.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/add-from-server/"
         },
         {
             "name": "wpackagist-plugin/admin-post-navigation",
@@ -838,26 +818,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-maintenance-mode/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-siren-recent-posts-by-category",
-            "version": "1.0.3",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wp-siren-recent-posts-by-category/",
-                "reference": "tags/1.0.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-siren-recent-posts-by-category.1.0.3.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-siren-recent-posts-by-category/"
         },
         {
             "name": "wpackagist-plugin/wp-super-cache",
