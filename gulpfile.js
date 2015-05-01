@@ -41,7 +41,7 @@ var // Project
 	dest_theme		= __dirname + '/wp-content/themes/' + project,
 	dest_theme_js	= dest_theme + '/js',
 	dest_theme_css	= dest_theme + '/css',
-	dest_plugin		= __dirname + '/wp-content/plugins/' + project;
+	dest_plugin		= __dirname + '/wp-content/mu-plugins/' + project;
 
 /**
  * Now, let's do things.
@@ -113,10 +113,8 @@ gulp.task('scripts', function() {
 
 // Clean
 gulp.task('clean', function() {
-	// del( [dest_theme, dest_plugin], function(err) {
-	del( [dest_theme], function( err ) {
-		// console.log( 'Theme and plugin directories deleted.' );
-		console.log( 'Theme directory deleted.' );
+	del( [dest_theme, dest_plugin], function(err) {
+		console.log( 'Theme and plugin directories deleted.' );
 	});
 
 	del( [__dirname + '/builders'], function(err) {
@@ -138,20 +136,19 @@ gulp.task('build-theme', function() {
 });
 
 // build-plugin
-// on hold for this project
-// gulp.task('build-plugin', function() {
-// 	var filesToMove = [
-// 		src_plugin + '/**/*.*'
-// 	];
+gulp.task('build-plugin', function() {
+	var filesToMove = [
+		src_plugin + '/**/*.*'
+	];
 
-// 	return gulp.src(filesToMove, { base: src_plugin })
-// 		.pipe(gulp.dest(dest_plugin));
-// });
+	return gulp.src(filesToMove, { base: src_plugin })
+		.pipe(gulp.dest(dest_plugin));
+});
 
 // build: combine build-theme and build-plugin
 gulp.task('build', ['styles', 'scripts'], function() {
 	gulp.start('build-theme');
-	// gulp.start('build-plugin');
+	gulp.start('build-plugin');
 	gulp.start('builders');
 });
 
@@ -178,13 +175,16 @@ gulp.task('watch', function() {
 	// Watch theme template files
 	gulp.watch( src_theme + '/**/*.*', ['build-theme'] );
 
+	// Watch plugin files
+	gulp.watch( src_plugin + '/**/*.*', ['build-plugin'] );
+
 	// Watch builders/sass/*.scss files
 	gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
 });
 
 
 
-// Build processes for reveal.js
+// Build processes for builders case study
 gulp.task('builders', function() {
 	gulp.src(src + '/builders/**/*')
 		.pipe(gulp.dest(__dirname + '/builders'));
