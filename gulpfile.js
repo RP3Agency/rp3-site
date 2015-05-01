@@ -153,11 +153,6 @@ gulp.task('build', ['styles', 'scripts'], function() {
 });
 
 
-// Dist: much like build, except clean our destination first.
-gulp.task('dist', ['clean'], function() {
-	gulp.start('build');
-});
-
 // Default: right now, just running build
 gulp.task('default', function() {
 	gulp.start('build');
