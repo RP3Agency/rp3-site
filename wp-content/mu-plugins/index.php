@@ -6,5 +6,12 @@
  * Author URI: http://rp3agency.com
  */
 
+
+/**
+ * Set the primary brand color
+ */
+$primary_brand_color = "#00bde3";
+
+
 require_once WPMU_PLUGIN_DIR . '/rp3/rp3.php';
 require_once WPMU_PLUGIN_DIR . '/rp3agency/rp3agency.php';
