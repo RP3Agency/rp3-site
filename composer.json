@@ -20,6 +20,7 @@
     "rp3agency/wp-migrate-db-pro": "*",
     "rp3agency/wp-migrate-db-pro-media-files": "*",
     "rp3agency/wp-migrate-db-pro-cli": "*",
+    "rp3agency/rp3agency": "*",
     "wpackagist-plugin/admin-post-navigation":"*",
     "wpackagist-plugin/akismet":"*",
     "wpackagist-plugin/black-studio-tinymce-widget":"*",
@@ -55,7 +56,8 @@
   "extra": {
     "wordpress-install-dir": "_wp",
     "installer-paths": {
-      "wp-content/plugins/{$name}": ["type:wordpress-plugin"]
+      "wp-content/plugins/{$name}": ["type:wordpress-plugin"],
+      "wp-content/mu-plugins/{$name}": ["type:wordpress-muplugin"]
     }
   }
 }
