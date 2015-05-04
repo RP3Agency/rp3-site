@@ -199,7 +199,7 @@
         },
         {
             "name": "rp3agency/rp3agency",
-            "version": "0.3",
+            "version": "0.4",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/rp3agency.zip",
