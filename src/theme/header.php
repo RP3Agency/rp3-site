@@ -61,6 +61,18 @@
 					</nav>
 					<!-- // #site-navigation -->
 
+					<!-- Auxiliar Navigation -->
+
+					<nav id="site-navigation-aux" class="auxiliary-navigation" role="navigation">
+
+						<?php wp_nav_menu( array(
+							'theme_location'	=> 'auxiliary',
+							'menu_class'		=> 'auxiliary-menu',
+							'menu_id'			=> 'auxiliary-menu'
+						) ); ?>
+
+					</nav>
+
 				</div>
 				<!-- // .site-branding -->
 

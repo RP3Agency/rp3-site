@@ -1,0 +1,64 @@
+.site-header {
+
+	.menu-open {
+		@extend %genericon;
+		@extend %genericon-menu;
+		@extend %ir;
+		color: $blue;
+		float: right;
+		font-size: 28px;
+		height: 32px;
+		line-height: 1;
+		margin-top: 23px;
+		width: 32px;
+
+		@include breakpoint( bp( 2 ) ) {
+			display: none;
+		}
+	}
+
+	[role="navigation"] {
+		clear: none;
+		float: left;
+	}
+
+	.primary-menu,
+	.auxiliary-menu {
+		@extend %clearfix;
+		display: none;
+		list-style: none;
+		margin: cr(37px) 0 0 0;
+
+		@include breakpoint( bp( 2 ) ) {
+			display: block;
+		}
+
+		li {
+			float: left;
+			padding: 0 7px;
+			text-align: right;
+
+			a {
+				color: #000;
+				font-weight: $medium;
+				padding: 8px;
+
+				@include hover-state {
+					color: $blue;
+				}
+			}
+
+			&.current-menu-item a {
+				color: $blue;
+			}
+		}
+	}
+
+	.auxiliary-navigation {
+		float: right;
+
+		.auxiliary-menu li a {
+			font-weight: $light;
+		}
+	}
+}
