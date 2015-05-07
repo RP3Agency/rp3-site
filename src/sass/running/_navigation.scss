@@ -39,8 +39,6 @@
 			text-align: right;
 
 			a {
-				color: #000;
-				font-weight: $medium;
 				padding: 8px;
 
 				@include hover-state {
@@ -52,6 +50,10 @@
 				color: $blue;
 			}
 		}
+	}
+
+	.primary-menu li a {
+		font-weight: $medium;
 	}
 
 	.auxiliary-navigation {
