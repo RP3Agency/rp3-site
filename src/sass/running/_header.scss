@@ -13,7 +13,7 @@
 		color: $black;
 		display: block;
 		font: {
-			size: cr(12px);
+			size: cr(13px);
 			weight: $medium;
 		}
 		text-decoration: none;
@@ -49,60 +49,9 @@
 			}
 		}
 	}
-
-	.menu-open {
-		@extend %genericon;
-		@extend %genericon-menu;
-		@extend %ir;
-		color: $blue;
-		float: right;
-		font-size: 28px;
-		height: 32px;
-		line-height: 1;
-		margin-top: 23px;
-		width: 32px;
-
-		@include breakpoint( bp( 2 ) ) {
-			display: none;
-		}
-	}
-
-	[role="navigation"] {
-		clear: none;
-		float: left;
-	}
-
-	.primary-menu {
-		@extend %clearfix;
-		display: none;
-		list-style: none;
-		margin: cr(37px) 0 0 0;
-
-		@include breakpoint( bp( 2 ) ) {
-			display: block;
-		}
-
-		li {
-			float: left;
-			padding: 0 7px;
-			text-align: right;
-
-			a {
-				@extend %hover-transition;
-				color: #000;
-				padding: 8px;
-
-				@include hover-state {
-					color: #888;
-				}
-			}
-
-			&.current-menu-item a {
-				font-weight: $medium;
-			}
-		}
-	}
 }
+
+@import "navigation";
 
 @import "mobile-nav";
 
