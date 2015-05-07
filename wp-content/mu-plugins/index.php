@@ -8,10 +8,12 @@
 
 
 /**
- * Set the primary brand color
+ * Set options for the rp3agency plugin
  */
-$primary_brand_color = "#00bde3";
 
+$rp3agency = array(
+	"primary_brand_color"		=> "#00bde3"
+);
 
 require_once WPMU_PLUGIN_DIR . '/rp3/rp3.php';
 require_once WPMU_PLUGIN_DIR . '/rp3agency/rp3agency.php';
