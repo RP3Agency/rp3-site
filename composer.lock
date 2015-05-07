@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "009fc7a94f54dc303bfe0ed073b5ccb3",
+    "hash": "11a18847339148100bf294886f2657cc",
     "packages": [
         {
             "name": "composer/installers",
@@ -692,6 +692,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/show-template/"
+        },
+        {
+            "name": "wpackagist-plugin/simple-login-log",
+            "version": "1.1.0",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/simple-login-log/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-login-log.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simple-login-log/"
         },
         {
             "name": "wpackagist-plugin/simple-page-ordering",
