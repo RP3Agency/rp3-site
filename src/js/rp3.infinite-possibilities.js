@@ -7,7 +7,8 @@ rp3.infinite_possibilities = (function($) {
 
 	'use strict';
 
-	var $homeSplash		= $('#home-splash'),
+	var $body			= $('body'),
+		$homeSplash		= $('#home-splash'),
 		$headline		= $homeSplash.find('#infinite-possibilities-headline'),
 		visible			= 'visible',
 		mousedOver		= false,
@@ -21,7 +22,9 @@ rp3.infinite_possibilities = (function($) {
 
 	// Make it hidden
 	makeHidden = function() {
-		$headline.removeClass(visible);
+		if ( $body.hasClass('no-touch') ) {
+			$headline.removeClass(visible);
+		}
 	},
 
 

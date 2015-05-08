@@ -6,7 +6,7 @@
 
 			<div class="home-splash__inner">
 
-				<video autoplay loop muted class="home-splash__video">
+				<video autoplay loop muted controls class="home-splash__video" poster="<?php echo esc_url( get_template_directory_uri() . '/images/infinite-possibilities/poster.jpg' ); ?>">
 					<source src="<?php echo esc_url( get_template_directory_uri() . '/videos/city-of-possibilities.mp4' ) ?>" />
 				</video>
 
