@@ -32,7 +32,13 @@
 			left: 0;
 			right: 0;
 		}
+		opacity: 0;
 		right: 0;
 		top: 0;
+		transition: opacity 500ms linear;
+
+		&.visible {
+			opacity: 1;
+		}
 	}
 }
