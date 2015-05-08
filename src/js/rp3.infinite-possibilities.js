@@ -10,6 +10,8 @@ rp3.infinite_possibilities = (function($) {
 	var $homeSplash		= $('#home-splash'),
 		$headline		= $homeSplash.find('#infinite-possibilities-headline'),
 		visible			= 'visible',
+		mousedOver		= false,
+		timing			= 3000,
 
 
 	// Make it visible
@@ -26,18 +28,20 @@ rp3.infinite_possibilities = (function($) {
 	// Now, when to do those other things...
 
 	initialHide = function() {
-		setTimeout( makeVisible, 3000 );
+		setTimeout( makeHidden, timing );
 	},
 
 	onMouseEnter = function() {
 		$homeSplash.on( 'mouseenter', function() {
+			mousedOver = true;
 			makeVisible();
 		});
 	},
 
 	onMouseLeave = function() {
 		$homeSplash.on( 'mouseleave', function() {
-			makeHidden();
+			mousedOver = false;
+			setTimeout( makeHidden, timing );
 		});
 	},
 
@@ -45,17 +49,19 @@ rp3.infinite_possibilities = (function($) {
 		var timer;
 
 		window.addEventListener( 'mousemove', function() {
-			makeVisible();
-			clearTimeout(timer);
-			timer = setTimeout( makeHidden, 3000 );
+			if ( mousedOver ) {
+				makeVisible();
+				clearTimeout(timer);
+				timer = setTimeout( makeHidden, timing );
+			}
 		});
 	},
 
 	init = function() {
 		initialHide();
 		onMouseEnter();
-		onMouseLeave();
 		mouseAtRest();
+		onMouseLeave();
 	};
 
 	return {
