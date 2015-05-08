@@ -185,7 +185,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.2.3",
+            "version": "5.2.4",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -535,15 +535,15 @@
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.60",
+            "version": "0.60.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.60"
+                "reference": "tags/0.60.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.60.zip",
+                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.60.1.zip",
                 "reference": null,
                 "shasum": null
             },
