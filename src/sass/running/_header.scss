@@ -16,8 +16,11 @@
 			size: cr(13px);
 			weight: $medium;
 		}
-		text-decoration: none;
-		text-transform: uppercase;
+		text: {
+			decoration: none;
+			transform: uppercase;
+		}
+		transition: color 150ms linear;
 
 		@include breakpoint( bp( 2 ) ) {
 			font-weight: $light;
