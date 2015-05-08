@@ -10,6 +10,11 @@
 	visibility: hidden;
 	z-index: 1000;
 
+	&__menu {
+		margin: 3%;
+		position: relative;
+	}
+
 	// If you change the transition timing here, make sure
 	// you change the setTimeout() timing in rp3.js to the
 	// same amount.
@@ -29,22 +34,8 @@
 			color: $black;
 			display: block;
 			text-decoration: none;
-			@include side-padding;
 		}
 	}
-
-	// &__address {
-	// 	font-size: ce(12px, 22px);
-	// 	font-weight: $regular;
-	// 	@include side-padding;
-
-	// 	h1 {
-	// 		color: #888;
-	// 		font-size: 1em;
-	// 		font-weight: $medium;
-	// 		text-transform: uppercase;
-	// 	}
-	// }
 
 	&__close {
 		@extend %genericon;
@@ -53,8 +44,8 @@
 		font-size: 32px;
 		height: 32px;
 		position: absolute;
-		right: 1em;
-		top: 1em;
+		right: 0;
+		top: 0;
 		width: 32px;
 	}
 }

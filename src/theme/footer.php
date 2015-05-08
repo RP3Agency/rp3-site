@@ -32,7 +32,7 @@
 							
 			<nav class="site-footer__navigation" >
 				<?php wp_nav_menu( array(
-					'theme_location'	=> 'primary',
+					'theme_location'	=> 'footer',
 					'menu_class'		=> 'footer-navigation',
 					'menu_id'			=> 'footer-navigation'
 				) ); ?>
