@@ -455,7 +455,7 @@
         },
         {
             "name": "wpackagist-plugin/fv-top-level-cats",
-            "version": "1.6",
+            "version": "1.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/fv-top-level-cats/",
@@ -875,15 +875,15 @@
         },
         {
             "name": "wpackagist-plugin/wpclef",
-            "version": "2.2.9.4",
+            "version": "2.2.9.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wpclef/",
-                "reference": "tags/2.2.9.4"
+                "reference": "tags/2.2.9.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpclef.2.2.9.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpclef.2.2.9.5.zip",
                 "reference": null,
                 "shasum": null
             },
