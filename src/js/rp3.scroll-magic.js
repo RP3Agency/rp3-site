@@ -9,9 +9,9 @@ rp3.scrollMagic = (function($) {
 
 	// build scenes
 	var $homeWork		= $('#home-work'),
-		$hero			= $homeWork.find('.hero'),
-		$homeErrata		= $('#home-errata'),
-		$homeErrataRow	= $homeErrata.find('.home-errata__row'),
+		$hero			= $homeWork.find('.full-width-image-panel'),
+		$homeBlocks		= $('#home-blocks'),
+		$homeBlocksRow	= $homeBlocks.find('.home-blocks__row'),
 
 	// This is where the scrollMagic happens :-)
 	scrollMagic = function() {
@@ -19,8 +19,8 @@ rp3.scrollMagic = (function($) {
 			$hero.each( function(i) {
 
 				var j				= i + 1,
-					triggerEl		= '#home-work .hero-' + j,
-					targetEl		= '#home-work .hero-' + j + ' .hero__container',
+					triggerEl		= '#home-work .full-width-image-panel--' + j,
+					targetEl		= '#home-work .full-width-image-panel--' + j + ' a',
 					targetClass		= 'active';
 
 				new ScrollScene({
@@ -35,13 +35,13 @@ rp3.scrollMagic = (function($) {
 	},
 
 	/** Second verse, nearly same as the first */
-	scrollMagicErrata = function() {
-		if ( $homeErrata.length > 0 ) {
-			$homeErrataRow.each( function(i) {
+	scrollMagicBlocks = function() {
+		if ( $homeBlocks.length > 0 ) {
+			$homeBlocksRow.each( function(i) {
 
 				var j				= i + 1,
-					triggerEl		= '#home-errata .home-errata__row-' + j,
-					targetEl		= '#home-errata .home-errata__row-' + j + ' .home-errata__block',
+					triggerEl		= '#home-blocks .home-blocks__row--' + j,
+					targetEl		= '#home-blocks .home-blocks__row--' + j + ' .home-blocks__block',
 					targetClass		= 'active';
 
 				new ScrollScene({
@@ -57,13 +57,7 @@ rp3.scrollMagic = (function($) {
 
 	init = function() {
 		scrollMagic();
-		scrollMagicErrata();
-
-		// $(window).scroll(function() {
-		// });
-
-		// $(window).on( 'resize', function() {
-		// });
+		scrollMagicBlocks();
 	};
 
 	return {

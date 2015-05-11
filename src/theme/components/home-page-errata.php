@@ -18,7 +18,7 @@ $blog = new WP_Query( array_merge( $args, array( 'category_name' => 'blog' ) ) )
 $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) );
 ?>
 
-<div id="home-errata" class="home-errata">
+<div id="home-errata" class="home-errata component component--padded">
 
 	<div class="home-errata__row home-errata__row-1">
 

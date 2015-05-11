@@ -11,7 +11,6 @@
 	&__image {
 		height: 100%;
 		overflow: hidden;
-		position: relative;
 		@include aspect-ratio( 320px, 240px );
 
 		@include breakpoint( bp( 2 ) ) {
@@ -71,6 +70,29 @@
 				top: 0;
 				transform: translate( -50%, 0 );
 			}
+		}
+	}
+}
+
+
+/**
+ * Home page scroll magic
+ */
+#home-work {
+
+	.full-width-image-panel {
+		overflow: hidden;
+	}
+
+	.full-width-image-panel a {
+		margin-top: 100%;
+		opacity: 0;
+		transition: margin-top 1s ease-out, opacity 1.5s ease-out 0.5s;
+		width: 100%;
+
+		&.active {
+			opacity: 1;
+			margin-top: 0;
 		}
 	}
 }
