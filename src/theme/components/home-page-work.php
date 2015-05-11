@@ -2,25 +2,33 @@
 
 <?php if ( $posts ) : ?>
 
-	<section id="home-work" class="home-work">
+	<section id="home-work" class="home-work component component--padded">
 
-		<?php $i = 1; foreach ( $posts as $post ) : ?>
+		<?php $i = 1; foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 
-			<?php setup_postdata( $post ); ?>
+			<div class="full-width-image-panel panel full-width-image-panel--<?php echo esc_attr( $i ); ?>">
 
-			<?php if ( '' != get_field( 'home_page_hero_image' ) ) : ?>
+				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
 
-				<?php echo rp3_full_bleed_hero_image( get_field( 'home_page_hero_image' ), array(
-					'id'			=> '',
-					'classes'		=> 'hero-' . $i,
-					'permalink'		=> get_the_permalink(),
-					'image_size'	=> 'home-page-other-work',
-					'title'			=> get_the_title(),
-					'client'		=> get_field( 'client' )
-				) );
-				?>
+					<div class="full-width-image-panel__image">
 
-			<?php endif; ?>
+						<div class="full-width-image-panel__image__content">
+
+							<?php echo rp3_picture_element_v2( get_field( 'home_page_hero_image' ), 'full-width' ); ?>
+
+						</div>
+
+					</div>
+
+					<div class="hero__headline">
+						<h1><?php the_title(); ?></h1>
+
+						for <strong><?php the_field( 'client' ); ?></strong>
+					</div>
+
+				</a>
+
+			</div>
 
 		<?php $i++; endforeach; wp_reset_postdata(); ?>
 

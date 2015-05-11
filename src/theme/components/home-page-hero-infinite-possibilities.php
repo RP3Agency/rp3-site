@@ -1,24 +1,22 @@
-<section id="home-splash" class="home-splash home-hero hero hero-image infinite-possibilities-hero component">
+<section id="home-hero" class="hero hero--home hero--home--infinite-possibilities full-width-image-panel panel component">
 
-	<a href="<?php echo esc_url( home_url( '/work/infinite-possibilities' ) ); ?>" class="hero__container">
+	<a href="<?php echo esc_url( home_url( '/work/infinite-possibilities' ) ); ?>" class="block">
 
-		<div class="hero__image">
+		<div class="hero__container full-width-image-panel__image">
 
-			<div class="home-splash__inner">
+			<div class="full-width-image-panel__image__content">
 
-				<video autoplay loop muted controls class="home-splash__video" poster="<?php echo esc_url( get_template_directory_uri() . '/images/infinite-possibilities/poster.jpg' ); ?>">
-					<source src="<?php echo esc_url( get_template_directory_uri() . '/videos/city-of-possibilities.mp4' ) ?>" />
-				</video>
+				<div id="home-hero-video">
+					<?php echo rp3_picture_element_v2( 8687, 'full-width', __( 'Infinite Possibilities', 'rp3' ) ); ?>
+				</div>
 
 			</div>
-			<!-- // home-splash__inner -->
+			<!-- // full-width-image-panel__image__content -->
 
 		</div>
-		<!-- // hero__image -->
 
-		<div id="infinite-possibilities-headline" class="hero__headline visible">
+		<div id="infinite-possibilities-headline" class="hero__headline hero--home__headline visible">
 			<h1>Infinite Possibilities</h1>
-
 			for <strong>Norfolk Southern</strong>
 		</div>
 
