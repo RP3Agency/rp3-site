@@ -11,7 +11,6 @@
 	</main>
 	<!-- // #content -->
 
-<?php /*
 	<footer id="colophon" class="site-footer" role="contentinfo">
 
 		<div class="site-footer__wrapper component component--padded">
@@ -53,7 +52,7 @@
 				<h1 class="site-footer__subheader">Phone</h1>
 
 				<p>t. 301.718.0333<?php /*<br>
-					f. 301.718.9333* / ?></p>
+					f. 301.718.9333*/ ?></p>
 			</div>
 			<!-- // .site-footer__phone -->
 
@@ -80,7 +79,6 @@
 
 	</footer>
 	<!-- // #colophon -->
-*/ ?>
 
 </div>
 <!-- // #page -->

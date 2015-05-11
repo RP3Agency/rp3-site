@@ -1,22 +1,17 @@
 .hero {
 
-	a.block {
-		height: 100%;
-		position: relative;
-	}
-
 	&__headline {
-		background-color: transparentize( $white, 0.2 );
 		font-size: rem( 11px );
 		padding: em( 30px, 11px ) percentage( 18px / 250px );
 		position: relative;
 
 		@include breakpoint( bp( 2 ) ) {
+			background-color: transparentize( $white, 0.1 );
 			bottom: 0;
 			font-size: rem( 12px );
 			padding-left: 42px; // Okay to set absolute pixels at this point.
 			position: absolute;
-			width: 100%;
+			width: 50%;
 		}
 
 		@include breakpoint( bp( 3 ) ) {
@@ -31,8 +26,18 @@
 			color: $white;
 
 			@include breakpoint( bp( 2 ) ) {
-				background-color: transparentize( $black, 0.15 );
+				background-color: transparentize( $black, 0.1 );
 			}
 		}
+	}
+}
+
+/**
+ * Alternate position of the headline on the "work" items on the home page
+ */
+.home-work .full-width-image-panel:nth-child(even) .hero__headline {
+
+	@include breakpoint( bp( 2 ) ) {
+		right: 0;
 	}
 }
