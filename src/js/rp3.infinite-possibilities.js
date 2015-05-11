@@ -7,9 +7,10 @@ rp3.infinite_possibilities = (function($) {
 
 	'use strict';
 
-	var $body			= $('body'),
-		$homeSplash		= $('#home-splash'),
-		$headline		= $homeSplash.find('#infinite-possibilities-headline'),
+	var $html			= $('html'),
+		$homeHero		= $('#home-hero'),
+		$homeHeroVideo	= $homeHero.find('#home-hero-video'),
+		$headline		= $homeHero.find('#infinite-possibilities-headline'),
 		visible			= 'visible',
 		mousedOver		= false,
 		timing			= 3000,
@@ -17,12 +18,14 @@ rp3.infinite_possibilities = (function($) {
 
 	// Make it visible
 	makeVisible = function() {
-		$headline.addClass(visible);
+		if ( ( $html.hasClass( 'no-touch' ) ) && ( ! $headline.hasClass( 'visible' ) ) ) {
+			$headline.addClass(visible);
+		}
 	},
 
 	// Make it hidden
 	makeHidden = function() {
-		if ( $body.hasClass('no-touch') ) {
+		if ( ( $html.hasClass('no-touch') ) && ( $headline.hasClass( 'visible' ) ) ) {
 			$headline.removeClass(visible);
 		}
 	},
@@ -35,14 +38,14 @@ rp3.infinite_possibilities = (function($) {
 	},
 
 	onMouseEnter = function() {
-		$homeSplash.on( 'mouseenter', function() {
+		$homeHero.on( 'mouseenter', function() {
 			mousedOver = true;
 			makeVisible();
 		});
 	},
 
 	onMouseLeave = function() {
-		$homeSplash.on( 'mouseleave', function() {
+		$homeHero.on( 'mouseleave', function() {
 			mousedOver = false;
 			setTimeout( makeHidden, timing );
 		});
@@ -60,7 +63,19 @@ rp3.infinite_possibilities = (function($) {
 		});
 	},
 
+	displayVideo = function() {
+		var $video, $source;
+
+		if ( ! $html.hasClass( 'no-touch' ) ) {
+			$video = $('<video autoplay loop muted>').addClass('home-splash__video');
+			$source = $('<source>').attr('src', '/wp-content/themes/rp3/videos/city-of-possibilities.mp4');
+			$video.append($source);
+			$homeHeroVideo.replaceWith($video);
+		}
+	},
+
 	init = function() {
+		displayVideo();
 		initialHide();
 		onMouseEnter();
 		mouseAtRest();

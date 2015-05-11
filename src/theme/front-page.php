@@ -17,6 +17,7 @@ get_header(); ?>
 <?php get_template_part( 'components/home-page', 'hero-infinite-possibilities' ); ?>
 
 
+<?php /*
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-content">
@@ -26,9 +27,10 @@ get_header(); ?>
 
 </article>
 <!-- #post-## -->
+*/ ?>
 
-<?php get_template_part( 'components/home-page', 'work' ); ?>
+<?php // get_template_part( 'components/home-page', 'work' ); ?>
 
-<?php get_template_part( 'components/home-page', 'errata' ); ?>
+<?php // get_template_part( 'components/home-page', 'errata' ); ?>
 
 <?php get_footer(); ?>
