@@ -535,15 +535,15 @@
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.60.1",
+            "version": "0.61",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.60.1"
+                "reference": "tags/0.61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.60.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.61.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -555,15 +555,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.3.1",
+            "version": "2.3.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.3.1"
+                "reference": "tags/2.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.3.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.3.2.zip",
                 "reference": null,
                 "shasum": null
             },
