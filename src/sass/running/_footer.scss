@@ -1,11 +1,11 @@
 .site-footer {
 	background-color: $black;
 	color: #fff;
-	font-size: cr(12px);
+	font-size: rem(12px);
 	margin-top: -1px;
 	padding: {
-		top: cr(70px);
-		bottom: cr(95px);
+		top: rem(70px);
+		bottom: rem(95px);
 	}
 	position: relative;
 
@@ -143,7 +143,7 @@
 		@include breakpoint( bp( 3 ) ) {
 			bottom: 0;
 			position: absolute;
-			right: 0;
+			right: percentage( 5px / 320px );
 		}
 	}
 
