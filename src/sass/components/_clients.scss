@@ -8,24 +8,32 @@
 	}
 
 	&__content {
-		// @extend %clearfix;
 		clear: both;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		margin: {
-			right: auto;
-			bottom: 3rem;
-			left: auto;
-		}
-		max-width: cr(1000px);
+		margin-bottom: 3rem;
 	}
 
 	&__client {
+		align-items: center;
+		border-bottom: 1px solid gray;
+		display: flex;
+		filter: opacity( 50% );
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
 		width: span( 24 / 2 );
 
 		@include breakpoint( $bp-medium ) {
-			width: span( 24 / 3 );
+			width: 25%;
+		}
+
+		img {
+			margin: {
+				right: auto;
+				left: auto;
+			}
+			width: 40%;
 		}
 	}
 }
