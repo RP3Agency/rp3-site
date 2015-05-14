@@ -70,7 +70,10 @@ rp3.infinite_possibilities = (function($) {
 			$video = $('<video autoplay loop muted>').addClass('home-splash__video');
 			$source = $('<source>').attr('src', '/wp-content/themes/rp3/videos/city-of-possibilities.mp4');
 			$video.append($source);
-			$homeHeroVideo.replaceWith($video);
+			$homeHeroVideo.append($video);
+			setTimeout( function() {
+				$video.addClass('visible');
+			}, 500);
 		}
 	},
 
