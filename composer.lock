@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "11a18847339148100bf294886f2657cc",
+    "hash": "7ae21980f9c2818334b14d4c6fdb6127",
     "packages": [
         {
             "name": "composer/installers",
@@ -732,6 +732,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/simple-page-ordering/"
+        },
+        {
+            "name": "wpackagist-plugin/svg-support",
+            "version": "2.1.7",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/svg-support/",
+                "reference": "tags/2.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/svg-support.2.1.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/svg-support/"
         },
         {
             "name": "wpackagist-plugin/tc-custom-taxonomy-filter",
