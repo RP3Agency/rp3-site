@@ -12,28 +12,36 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		margin-bottom: 3rem;
+		margin: {
+			bottom: 3rem;
+			left: 0;
+		}
 	}
 
 	&__client {
 		align-items: center;
-		border-bottom: 1px solid gray;
 		display: flex;
-		filter: opacity( 50% );
-		margin-bottom: 2rem;
-		padding-bottom: 2rem;
-		width: span( 24 / 2 );
+		padding: 3rem 0;
+		width: 50%;
 
-		@include breakpoint( $bp-medium ) {
+		@include breakpoint( bp( 2 ) ) {
+			width: 33%;
+		}
+
+		@include breakpoint( bp( 3 ) ) {
 			width: 25%;
 		}
 
-		img {
+		svg {
+			fill: $gray;
 			margin: {
 				right: auto;
 				left: auto;
 			}
-			width: 40%;
+			max-width: 175px;
+			path: $gray;
+			stroke-opacity: 0;
+			width: 75%;
 		}
 	}
 }
