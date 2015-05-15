@@ -185,7 +185,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.2.4",
+            "version": "5.2.5",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -815,7 +815,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.1.5",
+            "version": "4.1.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
