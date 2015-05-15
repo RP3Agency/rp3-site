@@ -1,12 +1,5 @@
 // Work
 %work__container {
-	@extend %side-padding;
-	margin: {
-		left: auto;
-		right: auto;
-	}
-	max-width: $container-width;
-
 	/** Thin white line hack */
 	background-color: #fff;
 	margin-top: -1px;
