@@ -22,9 +22,9 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 
 	<div class="home-blocks__row home-blocks__row--1">
 
-		<?php if ( '' != get_field( 'link' ) ) : ?>
+		<?php if ( '' != get_field( 'general_info_tile_link' ) ) : ?>
 
-			<a href="<?php echo esc_url( get_field( 'link' ) ); ?>" class="home-blocks__general-widget home-blocks__block block">
+			<a href="<?php echo esc_url( get_field( 'general_info_tile_link' ) ); ?>" class="home-blocks__general-widget home-blocks__block block">
 
 		<?php else: ?>
 
@@ -32,21 +32,21 @@ $news = new WP_Query( array_merge( $args, array( 'category_name' => 'news' ) ) )
 
 		<?php endif; ?>
 
-				<div class="home-blocks__subhead"><?php the_field( 'label' ); ?></div>
+				<div class="home-blocks__subhead"><?php the_field( 'general_info_tile_label' ); ?></div>
 
-				<?php echo get_field( 'content' ); ?>
+				<?php echo get_field( 'general_info_tile_content' ); ?>
 
-				<?php if ( '' != get_field( 'date' ) ) : ?>
+				<?php if ( '' != get_field( 'general_info_tile_date' ) ) : ?>
 
 					<div class="home-blocks__date">
 
-						<?php the_field( 'date' ); ?>
+						<?php the_field( 'general_info_tile_date' ); ?>
 
 					</div>
 
 				<?php endif; ?>
 
-		<?php if ( '' != get_field( 'link' ) ) : ?>
+		<?php if ( '' != get_field( 'general_info_tile_link' ) ) : ?>
 
 			</a>
 			<!-- // .home-blocks__general-widget -->

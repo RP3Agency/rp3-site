@@ -7,7 +7,7 @@ setup_postdata( $post );
 
 <?php if ( '' != get_field( 'work_landing_image_full' ) ) : ?>
 
-	<div class="work__full-width">
+	<div class="work__full-width component component--padded">
 
 		<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
 

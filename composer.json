@@ -50,6 +50,7 @@
     "wpackagist-plugin/theme-check":"*",
     "wpackagist-plugin/widget-logic":"*",
     "wpackagist-plugin/wordpress-importer":"*",
+    "wpackagist-plugin/wordpress-seo":"*",
     "wpackagist-plugin/worker":"*",
     "wpackagist-plugin/wp-maintenance-mode":"*",
     "wpackagist-plugin/wp-super-cache":"*",

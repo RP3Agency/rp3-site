@@ -20,7 +20,7 @@
 				<?php if ( 0 == $counter % 2 ) : ?>
 
 
-					<div class="work__container">
+					<div class="work__container component component--padded">
 
 						<?php get_template_part( 'components/work-landing', 'half' ); ?>
 
@@ -40,7 +40,7 @@
 				<?php else : ?>
 
 
-					<div class="work__container">
+					<div class="work__container component component--padded">
 
 						<div class="work__container--half">
 
