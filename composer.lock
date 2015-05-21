@@ -515,15 +515,15 @@
         },
         {
             "name": "wpackagist-plugin/json-rest-api",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/json-rest-api/",
-                "reference": "tags/1.2.1"
+                "reference": "tags/1.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/json-rest-api.1.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/json-rest-api.1.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
