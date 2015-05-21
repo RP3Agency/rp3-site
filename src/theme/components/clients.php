@@ -10,20 +10,23 @@
 
 	<?php if ( have_rows( 'clients' ) ) : ?>
 
-		<div class="clients__content">
+		<ul class="clients__content">
 
 			<?php while ( have_rows( 'clients' ) ) : the_row() ?>
 
-			<article class="clients__client">
+				<li class="clients__client">
 
-				<img src="<?php echo esc_url( get_sub_field( 'client_logo' ) ); ?>" alt="<?php echo esc_attr( get_sub_field( 'client_name' ) ); ?>">
+					<?php
+					$client_logo = wp_remote_get( get_sub_field( 'client_logo' ) );
+					echo $client_logo['body'];
+					?>
 
-			</article>
-			<!-- // .clients_client -->
+				</li>
+				<!-- // .clients_client -->
 
 			<?php endwhile; ?>
 
-		</div>
+		</ul>
 		<!-- // .clients__content -->
 
 	<?php endif; ?>

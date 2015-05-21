@@ -1,5 +1,11 @@
 .single-blog__comments {
 
+	.comment-meta {
+		@extend %clearfix;
+		background-color: mix(#fff, $gray-light, 50%);
+		border-bottom: 1px solid #e3e3e3;
+	}
+
 	.comment-form-author,
 	.comment-form-email,
 	.comment-form-url {
@@ -30,6 +36,24 @@
 		}
 	}
 
+	.comment-author {
+
+		img {
+			float: left;
+			margin-right: 1em;
+		}
+
+		.fn,
+		.says {
+			display: inline-block;
+			margin-top: 0.5em;
+		}
+	}
+
+	.comment-metadata {
+		font-size: em( 12px, 14px );
+	}
+
 	label {
 		display: block;
 	}
@@ -48,4 +72,24 @@
 
 .comment-body {
 	@extend .quotations;
+	padding: 0;
+}
+
+.comment-content {
+	padding: 1em;
+}
+
+.comment-list {
+
+	.children {
+		margin-left: 0;
+
+		@include breakpoint( bp( 2 ) ) {
+			margin-left: 1.5em;
+		}
+	}
+
+	.reply {
+		padding: 1em;
+	}
 }

@@ -66,11 +66,14 @@ rp3.infinite_possibilities = (function($) {
 	displayVideo = function() {
 		var $video, $source;
 
-		if ( $html.hasClass( 'no-touch' ) ) {
+		if ( ( $html.hasClass( 'no-touch' ) ) && ( $('body').hasClass( 'page-front-page' ) ) ) {
 			$video = $('<video autoplay loop muted>').addClass('home-splash__video');
 			$source = $('<source>').attr('src', '/wp-content/themes/rp3/videos/city-of-possibilities.mp4');
 			$video.append($source);
-			$homeHeroVideo.replaceWith($video);
+			$homeHeroVideo.append($video);
+			setTimeout( function() {
+				$video.addClass('visible');
+			}, 500);
 		}
 	},
 

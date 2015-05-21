@@ -8,24 +8,40 @@
 	}
 
 	&__content {
-		// @extend %clearfix;
 		clear: both;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		margin: {
-			right: auto;
 			bottom: 3rem;
-			left: auto;
+			left: 0;
 		}
-		max-width: cr(1000px);
 	}
 
 	&__client {
-		width: span( 24 / 2 );
+		align-items: center;
+		display: flex;
+		padding: 3rem 0;
+		width: 50%;
 
-		@include breakpoint( $bp-medium ) {
-			width: span( 24 / 3 );
+		@include breakpoint( bp( 2 ) ) {
+			width: 33%;
+		}
+
+		@include breakpoint( bp( 3 ) ) {
+			width: 25%;
+		}
+
+		svg {
+			fill: $gray;
+			margin: {
+				right: auto;
+				left: auto;
+			}
+			max-width: 175px;
+			path: $gray;
+			stroke-opacity: 0;
+			width: 75%;
 		}
 	}
 }
