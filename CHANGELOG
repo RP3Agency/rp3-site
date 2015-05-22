@@ -1,10 +1,6 @@
-2.17.0 | 2015-05-21
+2.16.1 | 2015-05-22
 
-* RPS-859
-* RPS-857
-* RPS-854
-* RPS-848
-* RPS-843
+* Adding security plugins: limit login attempts and sucuri scanner
 
 2.16.0 | 2015-05-11
 
