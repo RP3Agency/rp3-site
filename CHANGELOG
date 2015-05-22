@@ -1,3 +1,7 @@
+2.16.1 | 2015-05-22
+
+* Adding security plugins: limit login attempts and sucuri scanner
+
 2.16.0 | 2015-05-11
 
 * Inifnite possibilities home page hero.
