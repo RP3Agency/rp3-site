@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "706739dce9f162c97678c9bcd8410a96",
+    "hash": "414491d3386f3c9be615db9bf85cdce8",
     "packages": [
         {
             "name": "composer/installers",
@@ -534,6 +534,26 @@
             "homepage": "https://wordpress.org/plugins/json-rest-api/"
         },
         {
+            "name": "wpackagist-plugin/limit-login-attempts",
+            "version": "1.7.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/limit-login-attempts/",
+                "reference": "tags/1.7.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts.1.7.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/limit-login-attempts/"
+        },
+        {
             "name": "wpackagist-plugin/list-category-posts",
             "version": "0.61",
             "source": {
@@ -734,16 +754,16 @@
             "homepage": "https://wordpress.org/plugins/simple-page-ordering/"
         },
         {
-            "name": "wpackagist-plugin/svg-support",
-            "version": "2.1.7",
+            "name": "wpackagist-plugin/sucuri-scanner",
+            "version": "1.7.9",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/svg-support/",
-                "reference": "tags/2.1.7"
+                "url": "http://plugins.svn.wordpress.org/sucuri-scanner/",
+                "reference": "tags/1.7.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/svg-support.2.1.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.1.7.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -751,7 +771,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/svg-support/"
+            "homepage": "https://wordpress.org/plugins/sucuri-scanner/"
         },
         {
             "name": "wpackagist-plugin/tc-custom-taxonomy-filter",
