@@ -1,3 +1,13 @@
+2.17.1 | 2015-05-22
+
+(yes, we're skipping 2.17.0, because I swear I tagged that yesterday before I made today's plugin updates, but I don't see it in the git history at all)
+
+RPS-859
+RPS-857
+RPS-854
+RPS-848
+RPS-843
+
 2.16.1 | 2015-05-22
 
 * Adding security plugins: limit login attempts and sucuri scanner

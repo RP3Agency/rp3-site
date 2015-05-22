@@ -47,6 +47,7 @@
     "wpackagist-plugin/simple-login-log":"*",
     "wpackagist-plugin/simple-page-ordering":"*",
     "wpackagist-plugin/sucuri-scanner":"*",
+    "wpackagist-plugin/svg-support":"*",
     "wpackagist-plugin/tc-custom-taxonomy-filter":"*",
     "wpackagist-plugin/theme-check":"*",
     "wpackagist-plugin/widget-logic":"*",
