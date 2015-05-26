@@ -9,3 +9,8 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+<Files "readme.html">
+    Order allow,deny
+    Deny from all
+</Files>
