@@ -655,15 +655,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.3.15",
+            "version": "2.3.16",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.3.15"
+                "reference": "tags/2.3.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.3.15.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.3.16.zip",
                 "reference": null,
                 "shasum": null
             },
