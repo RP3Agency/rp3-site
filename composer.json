@@ -55,8 +55,7 @@
     "wpackagist-plugin/wordpress-seo":"*",
     "wpackagist-plugin/worker":"*",
     "wpackagist-plugin/wp-maintenance-mode":"*",
-    "wpackagist-plugin/wp-super-cache":"*",
-    "wpackagist-plugin/wpclef":"*"
+    "wpackagist-plugin/wp-super-cache":"*"
   },
   "extra": {
     "wordpress-install-dir": "_wp",

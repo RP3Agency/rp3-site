@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "20b2822400642e9103b92fec8f2bee16",
+    "hash": "6f677ef4d3889fabf501386a8e00c886",
     "packages": [
         {
             "name": "composer/installers",
@@ -952,26 +952,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-super-cache/"
-        },
-        {
-            "name": "wpackagist-plugin/wpclef",
-            "version": "2.2.9.5",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wpclef/",
-                "reference": "tags/2.2.9.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpclef.2.2.9.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wpclef/"
         }
     ],
     "packages-dev": [],
