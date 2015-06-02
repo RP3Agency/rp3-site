@@ -18,6 +18,10 @@
 		width: 100%;
 	}
 
+	&__set {
+		clear: both;
+	}
+
 	&__headline {
 		background-color: transparentize(#fff, 0.1);
 		bottom: 0;
