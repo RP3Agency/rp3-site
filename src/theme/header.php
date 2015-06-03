@@ -106,15 +106,9 @@
 			</h1>
 
 			<?php wp_nav_menu( array(
-				'theme_location'	=> 'primary',
-				'menu_class'		=> 'primary-menu',
-				'menu_id'			=> 'primary-menu'
-			) ); ?>
-
-			<?php wp_nav_menu( array(
-				'theme_location'	=> 'auxiliary',
-				'menu_class'		=> 'auxiliary-menu',
-				'menu_id'			=> 'auxiliary-menu'
+				'theme_location'	=> 'footer',
+				'menu_class'		=> 'footer-navigation',
+				'menu_id'			=> 'footer-navigation'
 			) ); ?>
 
 
