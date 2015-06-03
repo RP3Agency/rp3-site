@@ -575,15 +575,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.3.3",
+            "version": "2.3.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.3.3"
+                "reference": "tags/2.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.3.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.3.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -895,7 +895,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.1.6",
+            "version": "4.1.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
