@@ -1,4 +1,8 @@
-.video {
+.video-panel {
+
+	&__image {
+		@include aspect-ratio( 1600px, 900px );
+	}
 
 	// Trigger
 	&__trigger {
