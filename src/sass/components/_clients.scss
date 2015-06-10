@@ -16,21 +16,37 @@
 			bottom: 3rem;
 			left: 0;
 		}
+		@include container(2);
 	}
 
 	&__client {
 		align-items: center;
+		background-color: map-get( $gray_map, "light" );
 		display: flex;
+		margin-bottom: 5px;
+		margin-right: 5px;
 		padding: 3rem 0;
 		width: 50%;
 
-		@include breakpoint( bp( 2 ) ) {
-			width: 33%;
+		&:nth-child(2n) {
+			margin-right: 0;
 		}
 
-		@include breakpoint( bp( 3 ) ) {
-			width: 25%;
+		@include breakpoint( bp( 2 ) ) {
+			width: 32%;
+
+			&:nth-child(2n) {
+				margin-right: 5px;
+			}
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
 		}
+
+		// @include breakpoint( bp( 3 ) ) {
+		// 	width: 25%;
+		// }
 
 		svg {
 			fill: $gray;
