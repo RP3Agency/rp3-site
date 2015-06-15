@@ -137,6 +137,14 @@ function rp3_image_sizes() {
 		'large'         => array( 1600, 854, true )
 	) );
 
+	// Video Panel Images
+	rp3_add_image_size( 'video-panel', array(
+		'initial'       => array( 320, 180, true ),
+		'small'         => array( 600, 337, true ),
+		'medium'        => array( 1000, 562, true ),
+		'large'         => array( 1600, 900, true )
+	) );
+
 	// Half-width Images
 	rp3_add_image_size( 'half-width', array(
 		'initial'       => array( 320, 240, true ),

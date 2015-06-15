@@ -243,3 +243,13 @@ if ( ! function_exists( 'rp3_add_json_offset' ) ) {
 	}
 }
 add_filter( 'json_query_vars', 'rp3_add_json_offset' );
+
+/**
+ * Create a Limit Login Attempts whitelist for the Agency's IP address
+ * https://wordpress.org/plugins/limit-login-attempts/faq/
+ */
+function rp3_limit_login_attempt_whitelist( $allow, $ip ) {
+	return ( $ip == '198.207.29.34' ) ? true : $allow;
+}
+
+add_filter( 'limit_login_whitelist_ip', 'rp3_limit_login_attempt_whitelist', 10, 2 );
