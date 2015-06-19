@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6f677ef4d3889fabf501386a8e00c886",
+    "hash": "c38528414b006b7390fc3d38a92135db",
     "packages": [
         {
             "name": "composer/installers",
@@ -140,20 +140,20 @@
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "a4c08e91be99e858c7778c2f52a4d73820147c2e"
+                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/a4c08e91be99e858c7778c2f52a4d73820147c2e",
-                "reference": "a4c08e91be99e858c7778c2f52a4d73820147c2e",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/a04c2c383ef13aae077f36799ed2eafdebd618d2",
+                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "1.0.0"
+                "composer-plugin-api": "^1.0"
             },
             "conflict": {
                 "composer/installers": "<1.0.6"
@@ -181,7 +181,10 @@
                 }
             ],
             "description": "A custom installer to handle deploying WordPress with composer",
-            "time": "2013-09-09 15:04:54"
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2015-06-11 15:15:30"
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
@@ -434,6 +437,26 @@
             "homepage": "https://wordpress.org/plugins/disable-comments/"
         },
         {
+            "name": "wpackagist-plugin/featured-images-for-rss-feeds",
+            "version": "1.3.6",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/featured-images-for-rss-feeds/",
+                "reference": "tags/1.3.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/featured-images-for-rss-feeds.1.3.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/featured-images-for-rss-feeds/"
+        },
+        {
             "name": "wpackagist-plugin/flipboard-magazine-widget",
             "version": "1.0",
             "source": {
@@ -555,15 +578,15 @@
         },
         {
             "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.61",
+            "version": "0.62",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.61"
+                "reference": "tags/0.62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.61.zip",
+                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.62.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -755,15 +778,15 @@
         },
         {
             "name": "wpackagist-plugin/sucuri-scanner",
-            "version": "1.7.9",
+            "version": "1.7.11",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/sucuri-scanner/",
-                "reference": "tags/1.7.9"
+                "reference": "tags/1.7.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.1.7.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.1.7.11.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -875,15 +898,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "2.1.1",
+            "version": "2.2.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/2.1.1"
+                "reference": "tags/2.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
