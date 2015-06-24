@@ -2,48 +2,48 @@
 
 @import "../../bower_components/susy/sass/susy";
 
-@import "utils/utils";
+@import "legacy/utils/utils";
 
-@import "reset";
+@import "legacy/reset";
 
-@import "typography/typography";
+@import "legacy/typography/typography";
 
-@import "elements";
+@import "legacy/elements";
 
-@import "layout";
+@import "legacy/layout";
 
-@import "forms";
+@import "legacy/forms";
 
-@import "navigation/paging-navigation";
+@import "legacy/navigation/paging-navigation";
 
-@import "navigation/links";
+@import "legacy/navigation/links";
 
-@import "social";
+@import "legacy/social";
 
-@import "running/header";
+@import "legacy/running/header";
 
-@import "a11y";
+@import "legacy/a11y";
 
-@import "alignments";
+@import "legacy/alignments";
 
-@import "clearings";
+@import "legacy/clearings";
 
-@import "widgets";
+@import "legacy/widgets";
 
-@import "content";
+@import "legacy/content";
 
-@import "infinite-scroll";
+@import "legacy/infinite-scroll";
 
-@import "media";
+@import "legacy/media";
 
-@import "running/footer";
+@import "legacy/running/footer";
 
 
 // Components
-@import "components/components";
+@import "legacy/components/components";
 
 // Panels
-@import "panels/panels";
+@import "legacy/panels/panels";
 
 // Home page
-@import "home/home";
+@import "legacy/home/home";
