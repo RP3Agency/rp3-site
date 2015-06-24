@@ -33,6 +33,7 @@ var // Project
 	src_js			= src + '/js',
 	src_js_vendor	= src_js + '/vendor',
 	src_js_plugins	= src_js + '/plugins',
+	src_js_admin	= src_js + '/admin',
 	src_sass		= src + '/sass',
 	src_theme		= src + '/theme',
 	src_plugin		= src + '/plugin',
@@ -103,11 +104,23 @@ gulp.task('scripts-vendor', function() {
 		.pipe(gulp.dest(dest_theme_js));
 });
 
+// Scripts task: Admin
+gulp.task('scripts-admin', function() {
+	return gulp.src(src_js_admin + '/*.js')
+		.pipe(concat(project + '-admin.js'))
+		.pipe(gulp.dest(dest_theme_js))
+		.pipe(rename({suffix: '.min'}))
+		.pipe(uglify())
+		.on('error', gutil.log)
+		.pipe(gulp.dest(dest_theme_js));
+});
+
 // Scripts task: run the three other scripts tasks
 gulp.task('scripts', function() {
 	gulp.start('scripts-custom');
 	gulp.start('scripts-plugins');
 	gulp.start('scripts-vendor');
+	gulp.start('scripts-admin');
 });
 
 
@@ -117,9 +130,9 @@ gulp.task('clean', function() {
 		console.log( 'Theme and plugin directories deleted.' );
 	});
 
-	del( [__dirname + '/builders'], function(err) {
-		console.log( '/builders/ directory deleted.' );
-	});
+	// del( [__dirname + '/builders'], function(err) {
+	// 	console.log( '/builders/ directory deleted.' );
+	// });
 });
 
 
@@ -149,7 +162,7 @@ gulp.task('build-plugin', function() {
 gulp.task('build', ['styles', 'scripts'], function() {
 	gulp.start('build-theme');
 	gulp.start('build-plugin');
-	gulp.start('builders');
+	// gulp.start('builders');
 });
 
 
@@ -167,6 +180,9 @@ gulp.task('watch', function() {
 	// Watch custom JavaScript files
 	gulp.watch( src_js + '/*.js', ['scripts-custom'] );
 
+	// Watch admin JavaScript files
+	gulp.watch( src_js_admin + '/*.js', ['scripts-admin'] );
+
 	// Watch theme template files
 	gulp.watch( src_theme + '/**/*.*', ['build-theme'] );
 
@@ -174,27 +190,27 @@ gulp.task('watch', function() {
 	gulp.watch( src_plugin + '/**/*.*', ['build-plugin'] );
 
 	// Watch builders/sass/*.scss files
-	gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
+	// gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
 });
 
 
 
 // Build processes for builders case study
-gulp.task('builders', function() {
-	gulp.src(src + '/builders/**/*')
-		.pipe(gulp.dest(__dirname + '/builders'));
+// gulp.task('builders', function() {
+// 	gulp.src(src + '/builders/**/*')
+// 		.pipe(gulp.dest(__dirname + '/builders'));
 
-	return gulp.src(__dirname + '/src/builders/sass/*.scss')
-		.pipe( sourcemaps.init() )
-		.pipe(sass({
-			errLogToConsole: true
-		}))
-		.pipe(autoprefixer({
-			browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-		}))
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(__dirname + '/builders/css'))
-		.pipe(rename({suffix: '.min'}))
-		.pipe(minifycss())
-		.pipe(gulp.dest(__dirname + '/builders/css'));
-});
+// 	return gulp.src(__dirname + '/src/builders/sass/*.scss')
+// 		.pipe( sourcemaps.init() )
+// 		.pipe(sass({
+// 			errLogToConsole: true
+// 		}))
+// 		.pipe(autoprefixer({
+// 			browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+// 		}))
+// 		.pipe(sourcemaps.write())
+// 		.pipe(gulp.dest(__dirname + '/builders/css'))
+// 		.pipe(rename({suffix: '.min'}))
+// 		.pipe(minifycss())
+// 		.pipe(gulp.dest(__dirname + '/builders/css'));
+// });

@@ -21,6 +21,11 @@ add_action( 'customize_register', 'rp3_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function rp3_customize_preview_js() {
-	wp_enqueue_script( 'rp3_customizer', get_template_directory_uri() . '/admin-js/customizer.js', array( 'customize-preview' ), '20130508', true );
+
+	if ( WP_DEBUG ) {
+		wp_enqueue_script( 'rp3_customizer', get_template_directory_uri() . '/js/rp3-admin.js', array( 'customize-preview' ), '20130508', true );
+	} else {
+		wp_enqueue_script( 'rp3_customizer', get_template_directory_uri() . '/js/rp3-admin.min.js', array( 'customize-preview' ), '20130508', true );
+	}
 }
 add_action( 'customize_preview_init', 'rp3_customize_preview_js' );

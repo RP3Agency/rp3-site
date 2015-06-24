@@ -19,32 +19,7 @@
 	</div>
 	<!-- .entry-content -->
 
-
-
-	<?php /*
-	<!-- Search form -->
-	<section class="search-form">
-
-		<?php get_search_form( true ); ?>
-
-	</section>
-	<!-- // .search-form -->
-	*/ ?>
-
-
-
 	<?php get_template_part( 'components/listing' ); ?>
-
-
-
-	<!-- Hero Image -->
-	<?php if ( '' != get_field( 'hero_image_2' ) ) :
-		echo rp3_full_bleed_hero_image( get_field( 'hero_image_2' ), array(
-			'image_size'	=> 'sub-page-hero',
-		) );
-	endif; ?>
-
-
 
 	<!-- Related Content -->
 

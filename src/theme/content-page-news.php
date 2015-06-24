@@ -19,21 +19,6 @@
 	</div>
 	<!-- .entry-content -->
 
-
-
-	<?php /*
-	<!-- Search form -->
-	<section class="search-form">
-
-		<?php get_search_form( true ); ?>
-
-	</section>
-	<!-- // .search-form -->
-	*/ ?>
-
-
-
-
 	<?php get_template_part( 'components/listing' ); ?>
 
 </article>
