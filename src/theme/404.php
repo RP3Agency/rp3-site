@@ -10,7 +10,7 @@ get_header(); ?>
 
 <article>
 
-	<div class="entry-content">
+	<div class="entry-content component component--padded">
 
 		<section class="error-404 not-found">
 
