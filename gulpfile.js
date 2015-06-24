@@ -130,9 +130,9 @@ gulp.task('clean', function() {
 		console.log( 'Theme and plugin directories deleted.' );
 	});
 
-	del( [__dirname + '/builders'], function(err) {
-		console.log( '/builders/ directory deleted.' );
-	});
+	// del( [__dirname + '/builders'], function(err) {
+	// 	console.log( '/builders/ directory deleted.' );
+	// });
 });
 
 
@@ -162,7 +162,7 @@ gulp.task('build-plugin', function() {
 gulp.task('build', ['styles', 'scripts'], function() {
 	gulp.start('build-theme');
 	gulp.start('build-plugin');
-	gulp.start('builders');
+	// gulp.start('builders');
 });
 
 
@@ -190,27 +190,27 @@ gulp.task('watch', function() {
 	gulp.watch( src_plugin + '/**/*.*', ['build-plugin'] );
 
 	// Watch builders/sass/*.scss files
-	gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
+	// gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
 });
 
 
 
 // Build processes for builders case study
-gulp.task('builders', function() {
-	gulp.src(src + '/builders/**/*')
-		.pipe(gulp.dest(__dirname + '/builders'));
+// gulp.task('builders', function() {
+// 	gulp.src(src + '/builders/**/*')
+// 		.pipe(gulp.dest(__dirname + '/builders'));
 
-	return gulp.src(__dirname + '/src/builders/sass/*.scss')
-		.pipe( sourcemaps.init() )
-		.pipe(sass({
-			errLogToConsole: true
-		}))
-		.pipe(autoprefixer({
-			browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-		}))
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(__dirname + '/builders/css'))
-		.pipe(rename({suffix: '.min'}))
-		.pipe(minifycss())
-		.pipe(gulp.dest(__dirname + '/builders/css'));
-});
+// 	return gulp.src(__dirname + '/src/builders/sass/*.scss')
+// 		.pipe( sourcemaps.init() )
+// 		.pipe(sass({
+// 			errLogToConsole: true
+// 		}))
+// 		.pipe(autoprefixer({
+// 			browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+// 		}))
+// 		.pipe(sourcemaps.write())
+// 		.pipe(gulp.dest(__dirname + '/builders/css'))
+// 		.pipe(rename({suffix: '.min'}))
+// 		.pipe(minifycss())
+// 		.pipe(gulp.dest(__dirname + '/builders/css'));
+// });
