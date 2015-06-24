@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c38528414b006b7390fc3d38a92135db",
+    "hash": "f63022451bf2a37c29330e88c642e659",
     "packages": [
         {
             "name": "composer/installers",
@@ -188,7 +188,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.2.6",
+            "version": "5.2.7",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -338,15 +338,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.2",
+            "version": "4.2.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.2"
+                "reference": "tags/4.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -598,15 +598,15 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.3.4"
+                "reference": "tags/2.3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.3.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -935,6 +935,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/worker/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-bitly",
+            "version": "2.3.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wp-bitly/",
+                "reference": "tags/2.3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-bitly.2.3.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-bitly/"
         },
         {
             "name": "wpackagist-plugin/wp-maintenance-mode",
