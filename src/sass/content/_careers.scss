@@ -13,8 +13,18 @@
 	}
 
 	&__primary {
-		@include breakpoint($bp-medium) {
-			@include span(16 of 24);
+		max-width: rem( 600px );
+		padding: {
+			right: percentage( 5px / 320px );
+			left: percentage( 5px / 320px );
+		}
+
+		@include breakpoint( bp( 2 ) ) {
+			padding: {
+				right: 0;
+				left: 0;
+			}
+			@include span( 15 );
 		}
 	}
 

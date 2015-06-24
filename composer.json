@@ -56,7 +56,8 @@
     "wpackagist-plugin/worker":"*",
     "wpackagist-plugin/wp-maintenance-mode":"*",
     "wpackagist-plugin/wp-super-cache":"*",
-    "wpackagist-plugin/featured-images-for-rss-feeds": "*"
+    "wpackagist-plugin/featured-images-for-rss-feeds": "*",
+    "wpackagist-plugin/wp-bitly":"*"
   },
   "extra": {
     "wordpress-install-dir": "_wp",
