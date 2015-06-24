@@ -33,6 +33,7 @@ var // Project
 	src_js			= src + '/js',
 	src_js_vendor	= src_js + '/vendor',
 	src_js_plugins	= src_js + '/plugins',
+	src_js_admin	= src_js + '/admin',
 	src_sass		= src + '/sass',
 	src_theme		= src + '/theme',
 	src_plugin		= src + '/plugin',
@@ -103,11 +104,23 @@ gulp.task('scripts-vendor', function() {
 		.pipe(gulp.dest(dest_theme_js));
 });
 
+// Scripts task: Admin
+gulp.task('scripts-admin', function() {
+	return gulp.src(src_js_admin + '/*.js')
+		.pipe(concat(project + '-admin.js'))
+		.pipe(gulp.dest(dest_theme_js))
+		.pipe(rename({suffix: '.min'}))
+		.pipe(uglify())
+		.on('error', gutil.log)
+		.pipe(gulp.dest(dest_theme_js));
+});
+
 // Scripts task: run the three other scripts tasks
 gulp.task('scripts', function() {
 	gulp.start('scripts-custom');
 	gulp.start('scripts-plugins');
 	gulp.start('scripts-vendor');
+	gulp.start('scripts-admin');
 });
 
 
@@ -166,6 +179,9 @@ gulp.task('watch', function() {
 
 	// Watch custom JavaScript files
 	gulp.watch( src_js + '/*.js', ['scripts-custom'] );
+
+	// Watch admin JavaScript files
+	gulp.watch( src_js_admin + '/*.js', ['scripts-admin'] );
 
 	// Watch theme template files
 	gulp.watch( src_theme + '/**/*.*', ['build-theme'] );
