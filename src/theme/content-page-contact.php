@@ -143,13 +143,4 @@
 	</section>
 	<!-- // .contact__map -->
 
-	<?php /*
-	<section class="contact__form wrapper entry-content">
-
-	    <?php echo do_shortcode( '[contact-form-7 id="8285" title="Contact form 1"]' ); ?>
-
-	</section>
-	<!-- // .contact__form -->
-	*/ ?>
-
 </article>

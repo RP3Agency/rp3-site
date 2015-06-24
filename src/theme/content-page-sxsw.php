@@ -14,7 +14,7 @@ $blog = new WP_Query( array(
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="entry-content">
+	<div class="entry-content component component--padded">
 
 		<div class="entry-content__container">
 
@@ -64,15 +64,6 @@ $blog = new WP_Query( array(
 	<!-- // #blog-listing -->
 
 	<?php endif; wp_reset_query(); ?>
-
-
-	<!-- Hero Image -->
-	<?php if ( '' != get_field( 'hero_image_2' ) ) :
-		echo rp3_full_bleed_hero_image( get_field( 'hero_image_2' ), array(
-			'image_size'	=> 'sub-page-hero',
-		) );
-	endif; ?>
-
 
 </article>
 <!-- #post-## -->
