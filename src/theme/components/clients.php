@@ -16,10 +16,7 @@
 
 				<li class="clients__client">
 
-					<?php
-					$client_logo = wp_remote_get( get_sub_field( 'client_logo' ) );
-					echo $client_logo['body'];
-					?>
+					<?php echo wp_remote_retrieve_body( wp_remote_get( get_sub_field( 'client_logo' ), array( 'sslverify' => false ) ) ); ?>
 
 				</li>
 				<!-- // .clients_client -->
