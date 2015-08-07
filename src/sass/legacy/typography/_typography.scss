@@ -52,19 +52,15 @@ $thin:		100;
 /*--------------------------------------------------------------
 General Typography
 --------------------------------------------------------------*/
-html {
-	font-size: cp( $default-font-size, 16px );
-}
-
-body,
-button,
-input,
-select,
-textarea {
-	color: $black;
-	line-height: (44 / 24);
-	@include font($roboto, $light);
-}
+// body,
+// button,
+// input,
+// select,
+// textarea {
+// 	color: $black;
+// 	line-height: (44 / 24);
+// 	@include font($roboto, $light);
+// }
 p {
 	margin-bottom: 1.5em;
 

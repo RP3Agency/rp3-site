@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+html {
+	font-size: percentage( $font-size__default / 16px );
+}
+
+body {
+	color: $color__black;
+	font: {
+		family: $font__roboto;
+		weight: $font-weight__normal;
+	}
+	line-height: ( 16px / 12px );
+}

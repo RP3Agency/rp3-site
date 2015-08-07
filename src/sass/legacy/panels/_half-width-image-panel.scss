@@ -6,7 +6,7 @@
 	}
 
 	@include breakpoint( bp( 3 ) ) {
-		height: rem( 600px );
+		height: rem( 450px );
 	}
 
 	@include modernizr( no-flexbox ) {
