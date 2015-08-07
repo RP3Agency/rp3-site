@@ -4,7 +4,7 @@
 
 	<aside class="related-work">
 
-		<div class="related-work__container">
+		<div class="related-work__container component component--padded">
 
 			<header class="related-work__header">
 
