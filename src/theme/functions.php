@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 1000; /* pixels */
+	$content_width = 1200; /* pixels */
 }
 
 if ( ! function_exists( 'rp3_setup' ) ) :
