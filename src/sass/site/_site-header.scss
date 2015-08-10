@@ -87,11 +87,39 @@
 			background-color: $color__gray--light;
 			font-size: rem( 20px );
 			height: calc( 100vh - 74px );
-			padding: 1em;
 			width: rem( 200px );
 
 			a {
+				border: {
+					top: 1px solid $color__white;
+					bottom: 1px solid $color__gray;
+				}
 				color: mix( black, $color__gray, 50% );
+			}
+
+			li:first-child {
+
+				a {
+					border-top: none;
+				}
+			}
+
+			li:last-child {
+
+				a {
+					position: relative;
+
+					&::after {
+						background-color: $color__white;
+						bottom: -2px;
+						content: '';
+						display: block;
+						height: 1px;
+						left: 0;
+						position: absolute;
+						right: 0;
+					}
+				}
 			}
 		}
 	}

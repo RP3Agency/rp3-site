@@ -2,7 +2,7 @@
 
 	/** Horizontal Menu Pattern */
 
-	&--horizonal {
+	&--horizontal {
 
 		li {
 			float: left;
@@ -26,17 +26,10 @@
 	&--vertical {
 
 		li {
-			margin: {
-				top: 1em;
-				bottom: 1em;
-			}
 
-			&:first-child {
-				margin-top: 0;
-			}
-
-			&:last-child {
-				margin-bottom: 0;
+			a {
+				display: block;
+				padding: 0.5em 1em;
 			}
 		}
 	}
