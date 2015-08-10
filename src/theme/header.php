@@ -33,7 +33,7 @@
 
 					<h1 class="site-header__site-title site-header__table-cell">
 
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="block">
 
 							<?php
 

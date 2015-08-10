@@ -6,7 +6,7 @@
 
 		<?php wp_nav_menu( array(
 			'theme_location'	=> 'primary',
-			'menu_class'		=> 'primary-menu horizontal-menu',
+			'menu_class'		=> 'primary-menu menu--horizontal',
 			'menu_id'			=> 'primary-menu'
 		) ); ?>
 
@@ -19,7 +19,7 @@
 
 		<?php wp_nav_menu( array(
 			'theme_location'	=> 'auxiliary',
-			'menu_class'		=> 'auxiliary-menu horizontal-menu',
+			'menu_class'		=> 'auxiliary-menu menu--horizontal',
 			'menu_id'			=> 'auxiliary-menu'
 		) ); ?>
 
