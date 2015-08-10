@@ -26,14 +26,14 @@ $breakpoints: (
 	1200px
 );
 
-@function bp( $breakpoint ) {
+// @function bp( $breakpoint ) {
 
-	@if length( $breakpoints ) < $breakpoint {
-		@error "There is no value for the given index.";
-	}
+// 	@if length( $breakpoints ) < $breakpoint {
+// 		@error "There is no value for the given index.";
+// 	}
 
-	@return nth( $breakpoints, $breakpoint );
-}
+// 	@return nth( $breakpoints, $breakpoint );
+// }
 
 
 /* ==========================================================================

@@ -2,7 +2,7 @@
    Site Context
    ========================================================================== */
 
-$site-context: rem( 1200px );
+$site-context: 1200px;
 
 
 /* ==========================================================================
@@ -17,3 +17,12 @@ $color__blue:			#00aeef;
 $color__magenta:		#d10457;
 
 
+/* ==========================================================================
+   Color Meanings
+   ========================================================================== */
+
+$color__primary:		$color__blue;
+$color__secondary:		$color__magenta;
+$color__link:			$color__primary;
+$color__link--visited:	$color__primary;
+$color__link--hover:	$color__secondary;

@@ -8,6 +8,8 @@ html {
 
 body {
 	color: $color__black;
+
+	// Inheritance issues vs. reset prohibit us from using our %roboto-normal placeholder selector
 	font: {
 		family: $font__roboto;
 		weight: $font-weight__normal;

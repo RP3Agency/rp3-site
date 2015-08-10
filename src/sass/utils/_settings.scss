@@ -1,6 +1,3 @@
-/* ==========================================================================
-   Breakpoint settings
-   ========================================================================== */
-
-$breakpoint-to-ems: true;
-$hidpi: min-resolution 1.5dppx;
+@import
+	"settings-breakpoint",
+	"settings-susy";

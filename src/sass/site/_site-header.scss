@@ -1,0 +1,223 @@
+.site-header {
+	height: rem( 74px );
+
+	@include breakpoint( bp() ) {
+		height: rem( 100px );
+	}
+
+	&__skip-link {
+		@extend %assistive;
+		@extend %assistive--focusable;
+	}
+
+	&__container {
+		@extend %max-width--padded;
+		height: 100%;
+		width: 100%;
+	}
+
+
+
+	/** Logo */
+
+	&__logo {
+		display: block;
+		height: rem( 28px );
+		width: rem( 40px );
+
+		path {
+			fill: $color__primary;
+		}
+	}
+
+
+	/** Mobile navigation trigger */
+
+	&__menu-open {
+		@extend %genericon;
+		@extend %genericon-menu;
+		@extend %ir;
+		font-size: rem( 28px );
+		height: rem( 32px );
+		line-height: rem( 32px );
+		width: rem( 32px );
+
+		@include breakpoint( bp() ) {
+			display: none;
+		}
+	}
+
+
+	/** Navigation */
+
+	&__site-navigation {
+
+		/** Desktop */
+
+		&--desktop {
+
+			a {
+				@extend %roboto-medium;
+				color: $color__black;
+				font-size: rem( 13px );
+				text: {
+					decoration: none;
+					transform: uppercase;
+				}
+
+				@include hover-state {
+					color: $color__primary;
+				}
+			}
+
+			.current-menu-item a {
+				color: $color__primary;
+			}
+
+			.site-header__site-navigation--auxiliary {
+
+				a {
+					@extend %roboto-normal;
+				}
+			}
+		}
+
+		/** Mobile */
+	}
+
+
+	/** Layout */
+
+	&__table {
+		display: table;
+		height: 100%;
+		width: 100%;
+	}
+
+	&__table-row {
+		display: table-row;
+	}
+
+	&__table-cell {
+		display: table-cell;
+		vertical-align: middle;
+
+		&:nth-child(1) {
+			padding-right: 1em;
+		}
+
+		&:nth-child(2) {
+			text-align: right;
+			width: 100%;
+		}
+	}
+
+	&__site-navigation {
+
+		&--desktop {
+			display: none;
+
+			@include breakpoint( bp() ) {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+
+		&--mobile {
+
+			@include breakpoint( bp() ) {
+				display: none;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-header {
+
+	// @include breakpoint( bp() ) {
+	// 	height: cr(100px);
+	// }
+
+	// Make all links in the primary nav blocks
+	// Set the font size, weight and styling
+	// a {
+	// 	color: $black;
+	// 	display: block;
+	// 	font: {
+	// 		size: cr(13px);
+	// 		weight: $medium;
+	// 	}
+	// 	text: {
+	// 		decoration: none;
+	// 		transform: uppercase;
+	// 	}
+	// 	transition: color 150ms linear;
+
+	// 	@include breakpoint( bp() ) {
+	// 		font-weight: $light;
+	// 	}
+	// }
+
+	// .skip-link {
+	// 	@extend %assistive;
+	// }
+
+	// .header-wrapper {
+	// 	@extend %max-width;
+	// 	@extend %max-width--padded;
+	// 	height: 100%;
+	// }
+}
+
+// @import "navigation";
+
+// @import "mobile-nav";
+
+// #mobile-nav {
+// 	display: none;
+// }
+
+// .header-container {
+// 	background-color: transparentize(#fff, 0.1);
+// 	top: cr(-100px);
+
+// 	@include breakpoint( bp() ) {
+// 		body.fixed-nav & {
+
+// 			@include modernizr(no-touch) {
+// 				border-bottom: 1px solid map-get($gray_map, light);
+// 				position: fixed;
+// 				top: 0;
+// 				transition: top 500ms ease-in-out;
+// 				width: 100%;
+// 				z-index: 10;
+// 			}
+// 		}
+
+// 		// .site-header {
+// 		// 	background-color: transparentize(#fff, 0.1);
+// 		// }
+// 	}
+// }
+
+// @include breakpoint( bp() ) {
+// 	// Content adjustments to accommodate the fixed nav
+// 	body.fixed-nav .site-content {
+// 		margin-top: cr(100px) !important;
+// 	}
+// }

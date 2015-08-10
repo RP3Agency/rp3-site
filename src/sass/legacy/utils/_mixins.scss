@@ -16,11 +16,6 @@
 	}
 }
 
-@mixin highlight($adjustment: 0) {
-	$color-test: rgba(255, 0, 255, 0.2);
-	background-color: adjust-hue($color-test, $adjustment * 1deg);
-}
-
 @mixin side-padding( $style: "old" ) {
 
 	// The "old" way of doing it
