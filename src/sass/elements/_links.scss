@@ -20,4 +20,11 @@ a {
 	&:active {
 		outline: 0;
 	}
+
+	/** Block-style links */
+	&.block {
+		color: currentColor;
+		display: block;
+		text-decoration: none;
+	}
 }

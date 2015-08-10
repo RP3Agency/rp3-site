@@ -11,12 +11,12 @@ $thin:		100;
 
 // Font mixins for setting: family, weight, size, style
 @mixin font( $family: $roboto, $weight: $normal, $size: 1rem, $style: normal ) {
-	font: {
-		family: $family;
-		size: $size;
-		style: $style;
-		weight: $weight;
-	}
+	// font: {
+	// 	family: $family;
+	// 	size: $size;
+	// 	style: $style;
+	// 	weight: $weight;
+	// }
 }
 
 %roboto-thin {

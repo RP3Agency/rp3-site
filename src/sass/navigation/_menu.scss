@@ -1,0 +1,43 @@
+.menu {
+
+	/** Horizontal Menu Pattern */
+
+	&--horizonal {
+
+		li {
+			float: left;
+
+			a {
+				padding: 0.5em;
+			}
+
+			&:first-child a {
+				padding-left: 0;
+			}
+
+			&:last-child a {
+				padding-right: 0;
+			}
+		}
+	}
+
+	/** Vertical Menu Pattern */
+
+	&--vertical {
+
+		li {
+			margin: {
+				top: 1em;
+				bottom: 1em;
+			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

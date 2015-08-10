@@ -11,19 +11,18 @@
 	}
 
 	&__container {
-		@extend %max-width--padded;
+		@extend %max-width;
 		height: 100%;
-		width: 100%;
 	}
 
 
 
 	/** Logo */
 
-	&__logo {
+	&__site-title .logo {
 		display: block;
-		height: rem( 28px );
-		width: rem( 40px );
+		height: 28px;
+		width: 40px;
 
 		path {
 			fill: $color__primary;
@@ -38,9 +37,9 @@
 		@extend %genericon-menu;
 		@extend %ir;
 		font-size: rem( 28px );
-		height: rem( 32px );
-		line-height: rem( 32px );
-		width: rem( 32px );
+		height: rem( 28px );
+		line-height: rem( 28px );
+		width: rem( 28px );
 
 		@include breakpoint( bp() ) {
 			display: none;
@@ -52,23 +51,23 @@
 
 	&__site-navigation {
 
+		a {
+			@extend %roboto-medium;
+			color: $color__black;
+			text: {
+				decoration: none;
+				transform: uppercase;
+			}
+
+			@include hover-state {
+				color: $color__primary;
+			}
+		}
+
 		/** Desktop */
 
 		&--desktop {
-
-			a {
-				@extend %roboto-medium;
-				color: $color__black;
-				font-size: rem( 13px );
-				text: {
-					decoration: none;
-					transform: uppercase;
-				}
-
-				@include hover-state {
-					color: $color__primary;
-				}
-			}
+			font-size: rem( 13px );
 
 			.current-menu-item a {
 				color: $color__primary;
@@ -83,12 +82,25 @@
 		}
 
 		/** Mobile */
+
+		&--mobile {
+			background-color: $color__gray--light;
+			font-size: rem( 20px );
+			height: calc( 100vh - 74px );
+			padding: 1em;
+			width: rem( 200px );
+
+			a {
+				color: mix( black, $color__gray, 50% );
+			}
+		}
 	}
 
 
 	/** Layout */
 
 	&__table {
+		@extend %max-width--padded;
 		display: table;
 		height: 100%;
 		width: 100%;
@@ -124,9 +136,18 @@
 		}
 
 		&--mobile {
+			position: fixed;
+			right: rem( -200px );
+			top: rem( 74px );
+			transition: right 200ms linear;
+			z-index: 10;
 
 			@include breakpoint( bp() ) {
 				display: none;
+			}
+
+			body.canvas-open & {
+				right: 0;
 			}
 		}
 	}
