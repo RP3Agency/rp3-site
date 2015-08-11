@@ -1,0 +1,143 @@
+.work {
+
+	&__set {
+		@extend %max-width--padded;
+	}
+
+	&__link,
+	&__image {
+		height: 100%;
+	}
+
+	&__full {
+		overflow: hidden;
+		position: relative;
+
+		@include breakpoint( bp() ) {
+			height: rem( 450px );
+		}
+
+		img {
+
+			@include breakpoint( bp() ) {
+				height: 100%;
+				max-width: none;
+				width: auto;
+				@include centered( "horizontal" );
+			}
+		}
+	}
+
+	&__half {
+		overflow: hidden;
+		position: relative;
+
+		@include breakpoint( bp() ) {
+			height: rem( 450px );
+			width: 50%;
+		}
+
+		img {
+
+			@include breakpoint( bp() ) {
+				height: 100%;
+				max-width: none;
+				width: auto;
+				@include centered( "horizontal" );
+			}
+		}
+	}
+
+	&__quarter {
+		min-height: rem( 240px );
+		overflow: hidden;
+		position: relative;
+		width: 50%;
+		@include aspect-ratio( 160px, 240px );
+
+		@include breakpoint( bp() ) {
+			height: 50%;
+			min-height: 0;
+			position: absolute;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		img {
+			height: 100%;
+			max-width: none;
+			width: auto;
+			@include centered( "horizontal" );
+		}
+	}
+
+
+	/* ==========================================================================
+	   Layout
+	   ========================================================================== */
+
+	// Default: Half, Quarter, Quarter
+
+	&__set__row {
+
+		@include breakpoint( bp() ) {
+			display: flex;
+		}
+
+		&__quarters {
+			display: flex;
+
+			@include breakpoint( bp() ) {
+				position: relative;
+				width: 50%;
+			}
+
+			.work__quarter {
+
+				@include breakpoint( bp() ) {
+
+					&:nth-child(1) {
+						top: 0;
+						right: 0;
+						bottom: 50%;
+						left: 50%;
+					}
+
+					&:nth-child(2) {
+						top: 50%;
+						right: 50%;
+						bottom: 0;
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+
+	// Alternate: Quarter, Quarter, Half
+
+	&__set:nth-of-type(even) {
+
+		.work__set__row {
+			flex-direction: row-reverse;
+
+			.work__quarter {
+
+				@include breakpoint( bp() ) {
+
+					&:nth-child(1) {
+						right: 50%;
+						left: 0;
+					}
+
+					&:nth-child(2) {
+						right: 0;
+						left: 50%;
+					}
+				}
+			}
+		}
+	}
+}
