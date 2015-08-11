@@ -87,30 +87,29 @@
 		}
 
 		&__quarters {
-			display: flex;
 
 			@include breakpoint( bp() ) {
 				position: relative;
 				width: 50%;
 			}
+		}
 
-			.work__quarter {
+		.work__quarter {
 
-				@include breakpoint( bp() ) {
+			@include breakpoint( bp() ) {
 
-					&:nth-child(1) {
-						top: 0;
-						right: 0;
-						bottom: 50%;
-						left: 50%;
-					}
+				&:nth-child(1) {
+					top: 0;
+					right: 0;
+					bottom: 50%;
+					left: 50%;
+				}
 
-					&:nth-child(2) {
-						top: 50%;
-						right: 50%;
-						bottom: 0;
-						left: 0;
-					}
+				&:nth-child(2) {
+					top: 50%;
+					right: 50%;
+					bottom: 0;
+					left: 0;
 				}
 			}
 		}
@@ -122,20 +121,20 @@
 
 		.work__set__row {
 			flex-direction: row-reverse;
+		}
 
-			.work__quarter {
+		.work__quarter {
 
-				@include breakpoint( bp() ) {
+			@include breakpoint( bp() ) {
 
-					&:nth-child(1) {
-						right: 50%;
-						left: 0;
-					}
+				&:nth-child(1) {
+					right: 50%;
+					left: 0;
+				}
 
-					&:nth-child(2) {
-						right: 0;
-						left: 50%;
-					}
+				&:nth-child(2) {
+					right: 0;
+					left: 50%;
 				}
 			}
 		}
