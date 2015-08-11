@@ -24,6 +24,7 @@ var rp3 = (function($) {
 
 			$body.toggleClass('canvas-open');
 
+			$(this).trigger( 'blur' );
 		});
 	},
 
