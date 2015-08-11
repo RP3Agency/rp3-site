@@ -3,6 +3,7 @@
 	/** Horizontal Menu Pattern */
 
 	&--horizontal {
+		@extend %clearfix;
 
 		li {
 			float: left;

@@ -87,8 +87,10 @@
 		}
 
 		&__quarters {
+			display: flex;
 
 			@include breakpoint( bp() ) {
+				display: block;
 				position: relative;
 				width: 50%;
 			}

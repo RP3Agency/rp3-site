@@ -1,0 +1,97 @@
+.site-footer {
+	background-color: $color__black;
+	color: $color__white;
+	line-height: 1.5;
+	padding: 2rem 0;
+	text-align: center;
+
+	a {
+		color: $color__white;
+		text-decoration: none;
+
+		@include hover-state {
+			text-decoration: underline;
+		}
+	}
+
+	/** Wrapper */
+
+	&__wrapper {
+		@extend %max-width;
+	}
+
+	/** Container */
+
+	&__container {
+		@extend %max-width--padded;
+	}
+
+	/** Logo */
+
+	&__logo {
+		margin-bottom: 2em;
+
+		svg {
+			height: 28px;
+			width: 40px;
+		}
+
+		path {
+			fill: $color__white;
+		}
+	}
+
+	/** Building Opportunity */
+
+	&__building-opportunity {
+		margin-bottom: 2em;
+		text-transform: uppercase;
+	}
+
+	/** Address */
+
+	&__address {
+		margin-bottom: 2em;
+	}
+
+	/** Phone & Email */
+
+	&__phone-email {
+		margin-bottom: 2em;
+	}
+
+	/** Social */
+	/** Modifications to the master _social.scss partial in elements/ */
+
+	&__social {
+		margin-bottom: 2em;
+
+		ul {
+			display: inline-block;
+		}
+
+		li {
+
+			a {
+				border: none;
+				color: $color__white;
+				padding: 0;
+				transition: background-color 100ms linear,
+					color 100ms linear;
+
+				@include hover-state {
+					background-color: $color__white;
+					color: $color__black;
+					text-decoration: none;
+				}
+			}
+
+			&:last-child {
+
+				a {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
