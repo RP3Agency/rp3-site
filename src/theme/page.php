@@ -40,10 +40,6 @@ get_header(); ?>
 
 			get_template_part( 'content', 'page-contact' );
 
-		} elseif ( is_page( 'work' ) ) {
-
-			get_template_part( 'content', 'page-work' );
-
 		} elseif ( is_page( 'sxsw' ) ) {
 
 			get_template_part( 'content', 'page-sxsw' );
