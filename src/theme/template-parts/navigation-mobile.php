@@ -5,9 +5,9 @@
 	<nav id="site-navigation-mobile" class="mobile-nav__menu">
 
 		<?php wp_nav_menu( array(
-			'theme_location'	=> 'footer',
-			'menu_class'		=> 'footer-navigation menu--vertical',
-			'menu_id'			=> 'footer-navigation'
+			'theme_location'	=> 'mobile',
+			'menu_class'		=> 'mobile-navigation menu--vertical',
+			'menu_id'			=> 'mobile-navigation'
 		) ); ?>
 
 	</nav>
