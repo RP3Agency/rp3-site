@@ -86,7 +86,6 @@
 		&--mobile {
 			background-color: $color__gray--light;
 			font-size: rem( 20px );
-			height: calc( 100vh - 74px );
 			width: rem( 200px );
 
 			a {
@@ -104,6 +103,9 @@
 				}
 			}
 
+			// Last li a element needs the white border to complete the emboss.
+			// We'll add it via a pseudo-element.
+
 			li:last-child {
 
 				a {
@@ -119,6 +121,15 @@
 						position: absolute;
 						right: 0;
 					}
+				}
+			}
+
+			// Set the body's position to "relative", but only when the canvas is open.
+
+			@at-root {
+
+				body.canvas-open {
+					position: relative;
 				}
 			}
 		}
@@ -164,7 +175,8 @@
 		}
 
 		&--mobile {
-			position: fixed;
+			bottom: 0;
+			position: absolute;
 			right: rem( -200px );
 			top: rem( 74px );
 			transition: right 200ms linear;
