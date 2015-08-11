@@ -1,9 +1,14 @@
 .site-footer {
+	@extend %roboto-thin;
 	background-color: $color__black;
 	color: $color__white;
 	line-height: 1.5;
 	padding: 2rem 0;
 	text-align: center;
+
+	@include breakpoint( bp() ) {
+		text-align: left;
+	}
 
 	a {
 		color: $color__white;
@@ -46,6 +51,21 @@
 	&__building-opportunity {
 		margin-bottom: 2em;
 		text-transform: uppercase;
+
+		&--wide {
+			display: none;
+		}
+
+		@include breakpoint( bp() ) {
+
+			&--narrow {
+				display: none;
+			}
+
+			&--wide {
+				display: block;
+			}
+		}
 	}
 
 	/** Address */
@@ -92,6 +112,47 @@
 					margin-right: 0;
 				}
 			}
+		}
+	}
+
+	/** Copyright */
+
+	&__copyright {
+		margin-bottom: 2em;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	/** Layout */
+
+	@include breakpoint( bp() ) {
+
+		&__container {
+			align-items: flex-end;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__left {
+			float: left;
+			width: 45%;
+		}
+
+		&__right {
+			float: right;
+			text-align: right;
+			width: 45%;
+		}
+	}
+
+	/** Special case: disable <br/> elements at 800px */
+
+	@include breakpoint( 800px ) {
+
+		br {
+			display: none;
 		}
 	}
 }
