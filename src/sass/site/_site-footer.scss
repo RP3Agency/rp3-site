@@ -158,7 +158,7 @@
 
 	/** Special case: disable <br/> elements at 800px */
 
-	@include breakpoint( 800px ) {
+	@include breakpoint( bp("intermediate") ) {
 
 		br {
 			display: none;
