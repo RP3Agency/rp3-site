@@ -10,7 +10,7 @@
 
 	<!-- Introduction -->
 
-	<?php get_template_part( 'components/work/introduction' ); ?>
+	<?php get_template_part( 'template-parts/content', 'single-work-introduction' ); ?>
 
 	<?php
 
@@ -31,7 +31,7 @@
 
 	<!-- Related Work -->
 
-	<?php get_template_part( 'components/work/related-work' ); ?>
+	<?php get_template_part( 'template-parts/content', 'single-work-related' ); ?>
 
 </article>
 <!-- #post-## -->
