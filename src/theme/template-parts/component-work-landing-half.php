@@ -3,6 +3,19 @@
 <?php
 $post = get_sub_field( 'half_width' );
 setup_postdata( $post );
+
+/** Determine the headline as some combination of the work title and client */
+
+$title = get_the_title();
+$client = get_field( 'client' );
+
+if ( empty( $client ) ) {
+	$content = '<h1 class="work__title headline__title">' . esc_html( $title ) . '</h1>';
+} elseif ( $title === $client ) {
+	$content = '<h1 class="work__title headline__title">' . esc_html( $title ) . '</h1>';
+} else {
+	$content = '<h1 class="work__title headline__title">' . esc_html( $title ) . '</h1><div class="work__client headline__client">for <b>' . esc_html( $client ) . '</b></div>';
+}
 ?>
 
 <?php if ( '' != get_field( 'work_landing_image_half' ) ) : ?>
@@ -33,6 +46,16 @@ setup_postdata( $post );
 
 			</div>
 			<!-- work image half -->
+
+			<div class="work__content headline">
+
+				<div class="headline__container">
+
+					<?php echo $content; ?>
+
+				</div>
+
+			</div>
 
 		</a>
 
