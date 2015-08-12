@@ -58,10 +58,11 @@
 
 /* ==========================================================================
    aspect-ratio
-   Define a constant aspect ratio, regardless of actual size
+   Define a constant aspect ratio, regardless of actual size.
+   Default is 4:3
    ========================================================================== */
 
-@mixin aspect-ratio( $width, $height ) {
+@mixin aspect-ratio( $width: 320px, $height: 240px ) {
 	position: relative;
 
 	&::before {
