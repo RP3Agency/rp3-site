@@ -28,7 +28,7 @@
 	vertical-align: top;
 }
 
-%genericon-menu:before {            content: '\f419'; }
-%genericon-search:before {          content: '\f400'; }
-%genericon-close:before {           content: '\f406'; }
-%genericon-location:before {        content: '\f417'; }
+%genericon-menu::before {            content: '\f419'; }
+%genericon-search::before {          content: '\f400'; }
+%genericon-close::before {           content: '\f406'; }
+%genericon-location::before {        content: '\f417'; }
