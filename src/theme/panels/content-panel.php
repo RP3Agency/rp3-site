@@ -18,13 +18,13 @@
 
 <?php if ( '' != get_sub_field( 'content' ) ) : ?>
 
-	<section class="work__copy">
+	<section class="work-single__content">
 
-		<div class="work__copy__container">
+		<div class="work-single__content__container">
 
 			<?php if ( '' !== get_sub_field( 'headline' ) ) : ?>
 
-				<h2 class="work__copy__headline"><?php the_sub_field( 'headline' ); ?>:</h2>
+				<h2 class="work-single__content__headline"><?php the_sub_field( 'headline' ); ?>:</h2>
 
 			<?php endif; ?>
 

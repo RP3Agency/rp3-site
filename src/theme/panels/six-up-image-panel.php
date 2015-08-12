@@ -6,13 +6,25 @@
  */
 ?>
 
-<section class="panel six-up-image-panel">
+<section class="work-single__six-up">
 
 	<?php while ( have_rows( 'images' ) ) : the_row(); ?>
 
-		<div class="six-up-image-panel__image">
+		<div class="work-single__six-up__image">
 
-			<?php echo rp3_picture_element_v2( get_sub_field( 'image' ), 'six-up' ); ?>
+			<?php
+			$image['small'] = wp_get_attachment_image_src( get_sub_field( 'image' ), 'eight_three_small' );
+			$image['small_2x'] = wp_get_attachment_image_src( get_sub_field( 'image' ), 'eight_three_small_2x' );
+
+			$image['medium'] = wp_get_attachment_image_src( get_sub_field( 'image' ), 'eight_three_medium' );
+			$image['medium_2x'] = wp_get_attachment_image_src( get_sub_field( 'image' ), 'eight_three_medium_2x' );
+			?>
+
+			<picture>
+				<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+				<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+				<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+			</picture>
 
 		</div>
 

@@ -10,7 +10,7 @@
 
 <?php if ( '' != get_sub_field( 'full-width-image' ) ) : ?>
 
-	<section class="work__full">
+	<section class="work-single__full">
 
 		<?php
 		$image['small'] = wp_get_attachment_image_src( get_sub_field( 'full-width-image' ), 'four_three_small' );

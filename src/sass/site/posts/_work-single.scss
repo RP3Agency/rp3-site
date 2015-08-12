@@ -1,12 +1,16 @@
 .work-single {
-	@extend %max-width--padded;
 
 /* ==========================================================================
    Introduction
    ========================================================================== */
 
 	&__introduction {
+		@extend %max-width;
 		margin-bottom: 3rem;
+	}
+
+	&__header {
+		@extend %max-width--padded;
 	}
 
 	&__title {
@@ -22,5 +26,210 @@
 
 	&__tagline {
 		font-size: em( 16px );
+	}
+
+
+/* ==========================================================================
+   Full Width Image Panel
+   (essentially the same thing as the full width image on the work landing
+   page, so we'll just extend that class)
+   ========================================================================== */
+
+	&__full {
+		@extend %max-width;
+		@extend .work__full;
+	}
+
+
+/* ==========================================================================
+   Half Width Image Panel
+   ========================================================================== */
+
+	&__half {
+		@extend %max-width;
+		
+		@include breakpoint( bp() ) {
+			display: flex;
+		}	
+	}
+
+
+/* ==========================================================================
+   Content Panel
+   ========================================================================== */
+
+	&__content {
+		@extend %max-width;
+		max-height: rem( 450px );
+		position: relative;
+		@include aspect-ratio();
+
+		@include breakpoint( bp() ) {
+			height: rem( 450px );
+
+			&::before {
+				display: none;
+			}
+		}
+
+		&__container {
+			@extend %max-width--padded;
+			@include centered( "vertical" );
+			bottom: auto;
+			margin: {
+				right: 0;
+				left: 0;
+			}
+			max-width: rem( 1150px / 2 );
+		}
+
+		&__headline {
+			@extend %roboto-medium;
+			margin-bottom: 1em;
+		}
+	}
+
+
+/* ==========================================================================
+   Six Up Image Panel
+   ========================================================================== */
+
+	&__six-up {
+		@extend %max-width;
+		display: flex;
+		flex-wrap: wrap;
+		overflow: hidden;
+
+		&__image {
+			height: rem( 120px );
+			overflow: hidden;
+			position: relative;
+			width: 50%;
+
+			@include breakpoint( bp() ) {
+				height: rem( 225px );
+			}
+
+			img {
+				height: 100%;
+				max-width: none;
+				width: auto;
+				@include centered( "horizontal" );
+			}
+		}
+	}
+
+
+/* ==========================================================================
+   Related Work
+   ========================================================================== */
+
+	&__related {
+		background-color: $color__blue;
+		color: $color__black;
+		padding: 2rem 0;
+
+		&__container {
+			@extend %max-width;
+
+			&__inner {
+				@extend %max-width--padded;
+
+				@include breakpoint( bp( "intermediate" ) ) {
+					display: flex;
+				}
+			}
+		}
+
+		&__header {
+			margin-bottom: 1em;
+
+			@include breakpoint( bp() ) {
+				margin-bottom: 2em;
+			}
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				align-self: center;
+				margin: {
+					right: gutter();
+					bottom: 0;
+				}
+				width: span( 6 of 24 );
+			}
+
+			h2 {
+				@extend %roboto-medium;
+				color: $color__white;
+				text-transform: uppercase;
+			}
+		}
+
+		&__content {
+
+			@include breakpoint( bp() ) {
+				display: flex;
+				justify-content: flex-start;
+			}
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				width: span( 18 of 24 );
+			}
+		}
+
+		&__item {
+			margin-bottom: 2em;
+
+			@include breakpoint( bp() ) {
+				margin: {
+					right: gutter();
+					bottom: 0;
+				}
+				width: span( 8 of 24 );
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				width: span( 6 of 18 );
+			}
+		}
+
+		&__label {
+			background-color: $color__white;
+			position: relative;
+
+			@include breakpoint( bp() ) {
+				max-height: rem( 120px );
+			}
+			
+			&::before {
+				content: "";
+				display: block;
+				padding-top: percentage( 225px / 1200px ); // 16:3
+				width: 100%;
+
+				@include breakpoint( bp() ) {
+					padding-top: percentage( 240px / 320px ); // 4:3
+				}
+			}
+
+			&__content {
+				left: 0;
+				padding: 0 1em;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translate( 0, -50% );
+			}
+		}
+
+		&__title {
+			@extend %roboto-thin;
+			font-size: em( 20px );
+			line-height: 1;
+			margin-bottom: 0.25em;
+		}
 	}
 }

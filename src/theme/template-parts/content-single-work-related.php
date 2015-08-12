@@ -2,47 +2,69 @@
 
 <?php if ( $related_work ) : ?>
 
-	<aside class="related-work">
+	<aside class="work-single__related">
 
-		<div class="related-work__container component component--padded">
+		<div class="work-single__related__container">
 
-			<header class="related-work__header">
+			<div class="work-single__related__container__inner">
 
-				<h2>Related<br>Work</h2>
+				<header class="work-single__related__header">
 
-			</header>
+					<h2>Related<br>Work</h2>
 
-			<div class="related-work__list">
+				</header>
 
-				<?php foreach ( $related_work as $post ) : ?>
+				<div class="work-single__related__content">
 
-					<?php setup_postdata( $post ); ?>
+					<?php foreach ( $related_work as $post ) : ?>
 
-					<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block related-work__item">
+						<?php setup_postdata( $post ); ?>
 
-						<?php if ( '' != get_post_thumbnail_id() ) : ?>
+						<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block work-single__related__item">
 
-							<?php echo rp3_picture_element_v2( esc_attr( get_post_thumbnail_id() ), 'related-work' ); ?>
+							<?php if ( '' != get_post_thumbnail_id() ) : ?>
 
-						<?php endif; ?>
+								<?php
+								$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small' );
+								$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small_2x' );
 
-						<div class="related-work__label">
+								$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_medium' );
+								$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_medium_2x' );
+								?>
 
-							<h3 class="related-work__title"><?php the_title(); ?></h3>
-
-							<?php if ( ( get_field( 'client' ) != get_the_title() ) && ( '' != get_field( 'client' ) ) ) : ?>
-
-								<div class="related-work__client">for <strong><?php the_field( 'client' ); ?></strong></div>
+								<picture>
+									<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
+									<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+									<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+									<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+								</picture>
 
 							<?php endif; ?>
 
-						</div>
+							<div class="work-single__related__label">
 
-					</a>
+								<div class="work-single__related__label__content">
 
-				<?php endforeach; wp_reset_postdata(); ?>
+									<h3 class="work-single__related__title"><?php the_title(); ?></h3>
+
+									<?php if ( ( get_field( 'client' ) != get_the_title() ) && ( '' != get_field( 'client' ) ) ) : ?>
+
+										<div class="work-single__related__client">for <strong><?php the_field( 'client' ); ?></strong></div>
+
+									<?php endif; ?>
+
+								</div>
+
+							</div>
+
+						</a>
+
+					<?php endforeach; wp_reset_postdata(); ?>
+
+				</div>
 
 			</div>
+			<!-- related container inner -->
 
 		</div>
 		<!-- // related-work container -->

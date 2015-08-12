@@ -11,41 +11,51 @@
 
 <!-- Half-Width Image Panel -->
 
-<section class="half-width-image-panel panel">
+<section class="work-single__half">
 
-	<div class="half-width-image-panel__image half-width-image-panel__image--left">
+	<?php if ( '' != get_sub_field( 'half-width-image-left' ) ) : ?>
 
-		<div class="half-width-image-panel__image__content">
+		<?php
+		$image['small'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-left' ), 'four_three_small' );
+		$image['small_2x'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-left' ), 'four_three_small_2x' );
 
-			<?php if ( '' != get_sub_field( 'half-width-image-left' ) ) : ?>
+		$image['medium'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-left' ), 'four_three_medium' );
+		$image['medium_2x'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-left' ), 'four_three_medium_2x' );
 
-				<?php echo rp3_picture_element_v2( esc_attr( get_sub_field( 'half-width-image-left' ) ), 'half-width' ); ?>
+		$image['large'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-left' ), 'four_three_large' );
+		$image['large_2x'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-left' ), 'four_three_large_2x' );
+		?>
 
-			<?php endif; ?>
+		<picture>
+			<source srcset="<?php echo esc_url( $image['large'][0] ); ?>, <?php echo esc_url( $image['large_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
+			<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+			<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+			<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+		</picture>
 
-		</div>
-		<!-- half-width-image-panel image content -->
+	<?php endif; ?>
 
-	</div>
-	<!-- half-width-image-panel image left -->
+	<?php if ( '' != get_sub_field( 'half-width-image-right' ) ) : ?>
 
+		<?php
+		$image['small'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-right' ), 'four_three_small' );
+		$image['small_2x'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-right' ), 'four_three_small_2x' );
 
+		$image['medium'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-right' ), 'four_three_medium' );
+		$image['medium_2x'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-right' ), 'four_three_medium_2x' );
 
-	<div class="half-width-image-panel__image half-width-image-panel__image--right">
+		$image['large'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-right' ), 'four_three_large' );
+		$image['large_2x'] = wp_get_attachment_image_src( get_sub_field( 'half-width-image-right' ), 'four_three_large_2x' );
+		?>
 
-		<div class="half-width-image-panel__image__content">
+		<picture>
+			<source srcset="<?php echo esc_url( $image['large'][0] ); ?>, <?php echo esc_url( $image['large_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
+			<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+			<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+			<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+		</picture>
 
-			<?php if ( '' != get_sub_field( 'half-width-image-right' ) ) : ?>
-
-				<?php echo rp3_picture_element_v2( esc_attr( get_sub_field( 'half-width-image-right' ) ), 'half-width' ); ?>
-
-			<?php endif; ?>
-
-		</div>
-		<!-- half-width-image-panel image content -->
-
-	</div>
-	<!-- half-width-image-panel image right -->
+	<?php endif; ?>
 
 </section>
 <!-- half-width-image-panel -->

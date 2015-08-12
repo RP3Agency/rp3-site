@@ -21,7 +21,7 @@ $social: (
 	width: 32px;
 
 	&:before {
-		font-size: ce(18px);
+		font-size: em( 18px );
 		line-height: 32px;
 		text-align: center;
 		width: auto;
@@ -38,12 +38,12 @@ $social: (
 		a {
 			@extend %social;
 			border: 1px solid $blue;
-			color: $blue;
+			color: $color__blue;
 			margin-right: 8px;
 
 			@include hover-state {
-				background-color: $blue;
-				color: #fff;
+				background-color: $color__blue;
+				color: $color__white;
 			}
 		}
 
