@@ -80,3 +80,15 @@
 		top: 0;
 	}
 }
+
+
+/* ==========================================================================
+   appearance
+   vendor-prefix the "appearance" property (b/c autoprefixer doesn't)
+   ========================================================================== */
+
+@mixin appearance($appearance) {
+	-webkit-appearance: $appearance;
+	-moz-appearance: $appearance;
+	appearance: $appearance;
+}

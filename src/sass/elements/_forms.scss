@@ -61,8 +61,8 @@ textarea {
 
 label {
 	font: {
-		size: ce(12px);
-		weight: $bold;
+		size: em( 12px );
+		weight: $font-weight__bold;
 	}
 	text-transform: uppercase;
 }
