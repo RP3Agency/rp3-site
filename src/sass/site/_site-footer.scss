@@ -1,5 +1,14 @@
 .site-footer {
-	@extend %roboto-thin;
+
+	// Consistent bototm margin
+	%site-footer__bottom-margin {
+		margin-bottom: 2em;
+
+		@include breakpoint( bp() ) {
+			margin-bottom: 1em;
+		}
+	}
+
 	background-color: $color__black;
 	color: $color__white;
 	line-height: 1.5;
@@ -34,7 +43,7 @@
 	/** Logo */
 
 	&__logo {
-		margin-bottom: 2em;
+		@extend %site-footer__bottom-margin;
 
 		svg {
 			height: 28px;
@@ -49,7 +58,7 @@
 	/** Building Opportunity */
 
 	&__building-opportunity {
-		margin-bottom: 2em;
+		@extend %site-footer__bottom-margin;
 		text-transform: uppercase;
 
 		&--wide {
@@ -71,20 +80,20 @@
 	/** Address */
 
 	&__address {
-		margin-bottom: 2em;
+		@extend %site-footer__bottom-margin;
 	}
 
 	/** Phone & Email */
 
 	&__phone-email {
-		margin-bottom: 2em;
+		@extend %site-footer__bottom-margin;
 	}
 
 	/** Social */
 	/** Modifications to the master _social.scss partial in elements/ */
 
 	&__social {
-		margin-bottom: 2em;
+		@extend %site-footer__bottom-margin;
 
 		ul {
 			display: inline-block;
@@ -118,7 +127,7 @@
 	/** Copyright */
 
 	&__copyright {
-		margin-bottom: 2em;
+		@extend %site-footer__bottom-margin;
 
 		a {
 			text-decoration: underline;
