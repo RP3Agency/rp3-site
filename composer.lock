@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f63022451bf2a37c29330e88c642e659",
+    "hash": "d635826e827fd0db9287fda15a21a381",
     "packages": [
         {
             "name": "composer/installers",
@@ -103,16 +103,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.2.3",
+            "version": "4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "56525f7941a9835ae64deafcaff15cd52336e467"
+                "reference": "7ba0030c15a88c63b3ba2e8ebee1215e211aa9a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/56525f7941a9835ae64deafcaff15cd52336e467",
-                "reference": "56525f7941a9835ae64deafcaff15cd52336e467",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/7ba0030c15a88c63b3ba2e8ebee1215e211aa9a1",
+                "reference": "7ba0030c15a88c63b3ba2e8ebee1215e211aa9a1",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-07-23 11:16:08"
+            "time": "2015-08-04 12:01:12"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -338,15 +338,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.2.1",
+            "version": "4.2.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.2.1"
+                "reference": "tags/4.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -418,15 +418,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.3.1",
+            "version": "1.3.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.3.1"
+                "reference": "tags/1.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.3.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.3.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -477,6 +477,26 @@
             "homepage": "https://wordpress.org/plugins/flipboard-magazine-widget/"
         },
         {
+            "name": "wpackagist-plugin/force-regenerate-thumbnails",
+            "version": "2.0.5",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/force-regenerate-thumbnails/",
+                "reference": "tags/2.0.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/force-regenerate-thumbnails.2.0.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/force-regenerate-thumbnails/"
+        },
+        {
             "name": "wpackagist-plugin/fv-top-level-cats",
             "version": "1.7",
             "source": {
@@ -498,15 +518,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.4.4",
+            "version": "5.4.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.4.4"
+                "reference": "tags/5.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -697,26 +717,6 @@
             "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
-            "name": "wpackagist-plugin/regenerate-thumbnails",
-            "version": "2.2.4",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/regenerate-thumbnails/",
-                "reference": "tags/2.2.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.4.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
-        },
-        {
             "name": "wpackagist-plugin/show-template",
             "version": "1.1",
             "source": {
@@ -778,15 +778,15 @@
         },
         {
             "name": "wpackagist-plugin/sucuri-scanner",
-            "version": "1.7.12",
+            "version": "1.7.13",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/sucuri-scanner/",
-                "reference": "tags/1.7.12"
+                "reference": "tags/1.7.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.1.7.12.zip",
+                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.1.7.13.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -798,15 +798,15 @@
         },
         {
             "name": "wpackagist-plugin/svg-support",
-            "version": "2.1.7",
+            "version": "2.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/svg-support/",
-                "reference": "tags/2.1.7"
+                "reference": "tags/2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/svg-support.2.1.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/svg-support.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -898,15 +898,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "2.3.2",
+            "version": "2.3.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/2.3.2"
+                "reference": "tags/2.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.3.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -918,7 +918,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.1.9",
+            "version": "4.1.12",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
