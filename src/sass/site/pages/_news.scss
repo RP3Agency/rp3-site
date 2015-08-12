@@ -1,0 +1,7 @@
+.news {
+	@extend %max-width;
+
+	&__wrapper {
+		@extend %max-width--padded;
+	}
+}

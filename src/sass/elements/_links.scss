@@ -28,3 +28,48 @@ a {
 		text-decoration: none;
 	}
 }
+
+// Make something _look_ like a link, even if it's not really
+// (mostly for "learn more" type copy inside 'blocked' anchors)
+.link {
+	color: $color__link;
+	text-decoration: underline;
+
+	a:hover &,
+	a:active &,
+	a:focus & {
+		color: $color__link--hover;
+	}
+}
+
+// Add a right-facing caret (er, greater than sign) on "continue" type Links
+// (as opposed to "back" type links that get a left-facing caret (er, less than sign))
+.continue {
+	clear: both;
+	font-weight: $font-weight__medium;
+	margin-bottom: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+
+	&:after {
+		content: ' >';
+		display: inline;
+	}
+}
+
+
+// "View All" links for news & blogs
+.all-news-link {
+	margin: {
+		top: 3em;
+		bottom: 3em;
+	}
+	text-align: center;
+	@include container;
+
+	a {
+		@extend %button;
+		display: inline-block;
+	}
+}

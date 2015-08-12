@@ -17,7 +17,7 @@ if ( get_field( 'display-featured-post' ) ) {
 	$recent = new WP_Query( array(
 		'date_query'     => array(
 			array(
-				'after'         => '2 weeks ago'
+				'after'         => '52 weeks ago'
 			)
 		),
 		'posts_per_page' => 1,
@@ -55,7 +55,7 @@ var queryOffset = <?php echo $offset; ?>;
 
 	<?php if ( $recent->have_posts() ) : while ( $recent->have_posts() ) : $recent->the_post(); ?>
 
-		<section class="listing listing--recent component component--padded">
+		<section class="listing listing--recent">
 
 			<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
 
@@ -63,7 +63,19 @@ var queryOffset = <?php echo $offset; ?>;
 
 					<div class="listing__thumbnail">
 
-						<?php echo rp3_picture_element_v2( get_post_thumbnail_id( get_the_ID() ), 'featured_image_listing' ); ?>
+						<?php
+						$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_small' );
+						$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_small_2x' );
+
+						$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_medium' );
+						$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_medium_2x' );
+						?>
+
+						<picture>
+							<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+							<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+							<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+						</picture>
 
 					</div>
 
@@ -101,7 +113,7 @@ var queryOffset = <?php echo $offset; ?>;
 
 <?php if ( $alt_query->have_posts() ) : ?>
 
-	<section id="listing" class="listing component component--padded" data-paged="<?php echo esc_attr( $paged ); ?>">
+	<section id="listing" class="listing" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 		<?php while ( $alt_query->have_posts() ) : $alt_query->the_post(); ?>
 
@@ -111,7 +123,19 @@ var queryOffset = <?php echo $offset; ?>;
 
 					<div class="listing__thumbnail">
 
-						<?php echo rp3_picture_element_v2( get_post_thumbnail_id( get_the_ID() ), 'featured_image_listing' ); ?>
+						<?php
+						$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_small' );
+						$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_small_2x' );
+
+						$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_medium' );
+						$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_medium_2x' );
+						?>
+
+						<picture>
+							<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+							<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+							<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+						</picture>
 
 					</div>
 
@@ -119,15 +143,7 @@ var queryOffset = <?php echo $offset; ?>;
 
 				<h1 class="listing__headline"><?php the_title(); ?></h1>
 
-				<?php if ( 'news' == $page_type ) : ?>
-
-					<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
-
-				<?php else: ?>
-
-					<div class="listing__byline"><?php echo rp3_byline(); ?></div>
-
-				<?php endif; ?>
+				<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
 
 				<div class="listing__excerpt">
 
@@ -152,60 +168,24 @@ var queryOffset = <?php echo $offset; ?>;
 
 <!-- Underscore Templates -->
 
-<script type="text/template" id="blog-template">
-<% _.each( posts, function( post ) { %>
-	<div class="blog-listing__article listing__article">
-		<a href="<%= post.get( 'link' ) %>" class="block">
-
-			<% if ( ( null !== post.get( 'featured_image' ) ) && ( post.get( 'featured_image' ).constructor !== Array ) && ( '' !== post.get( 'featured_image' ).source ) ) { %>
-				<div class="blog-listing__thumbnail listing__thumbnail">
-					<picture>
-						<!--[if IE 9]><video style="display: none;"><![endif]-->
-						<source srcset="<%= post.get( 'img_large' ) %>, <%= post.get( 'img_large_2x' ) %> 2x" media="( min-width: 62.5em )">
-						<source srcset="<%= post.get( 'img_medium' ) %>, <%= post.get( 'img_medium_2x' ) %> 2x" media="( min-width: 37.5em )">
-						<source srcset="<%= post.get( 'img_small' ) %>, <%= post.get( 'img_small_2x' ) %> 2x" media="( min-width: 20.0625em )">
-						<source srcset="<%= post.get( 'img_initial' ) %>, <%= post.get( 'img_initial_2x' ) %> 2x">
-						<!--[if IE 9]></video><![endif]-->
-						<img src="<%= post.get( 'img_initial' ) %>" class="attachment-post-thumbnail wp-post-image">
-					</picture>
-				</div>
-			<% } %>
-
-			<h1 class="blog-listing__headline listing__headline"><%= post.get( 'title' ) %></h1>
-
-			<div class="blog-listing__byline listing__byline"><%= post.get( 'date' ) %>.</div>
-
-			<div class="blog-listing__excerpt listing__excerpt">
-				<%= post.get( 'excerpt' ) %>
-			</div>
-
-		</a>
-	</div>
-<% }) %>
-</script>
-
 <script type="text/template" id="news-template">
 <% _.each( posts, function( post ) { %>
 	<div class="news-listing__article listing__article">
 		<a href="<%= post.get( 'link' ) %>" class="block">
 
-			<% if ( ( null !== post.get( 'featured_image' ) ) && ( post.get( 'featured_image' ).length > 0 ) ) { %>
-				<div class="blog-listing__thumbnail">
+			<% if ( ( null !== post.get( 'featured_image' ) ) && ( post.get( 'featured_image' ).constructor !== Array ) && ( '' !== post.get( 'featured_image' ).source ) ) { %>
+				<div class="blog-listing__thumbnail listing__thumbnail">
 					<picture>
-						<!--[if IE 9]><video style="display: none;"><![endif]-->
-						<source srcset="<%= post.get( 'img_large' ) %>, <%= post.get( 'img_large_2x' ) %> 2x" media="( min-width: 62.5em )">
-						<source srcset="<%= post.get( 'img_medium' ) %>, <%= post.get( 'img_medium_2x' ) %> 2x" media="( min-width: 37.5em )">
-						<source srcset="<%= post.get( 'img_small' ) %>, <%= post.get( 'img_small_2x' ) %> 2x" media="( min-width: 20.0625em )">
-						<source srcset="<%= post.get( 'img_initial' ) %>, <%= post.get( 'img_initial_2x' ) %> 2x">
-						<!--[if IE 9]></video><![endif]-->
-						<img src="<%= post.get( 'img_initial' ) %>" class="attachment-post-thumbnail wp-post-image">
+						<source srcset="<%= post.get( 'img_medium' ) %>, <%= post.get( 'img_medium_2x' ) %> 2x" media="( min-width: 20.0625em )">
+						<source srcset="<%= post.get( 'img_small' ) %>, <%= post.get( 'img_small_2x' ) %> 2x">
+						<img srcset="<%= post.get( 'img_small' ) %>, <%= post.get( 'img_small_2x' ) %> 2x" class="attachment-post-thumbnail wp-post-image">
 					</picture>
 				</div>
 			<% } %>
 
 			<h1 class="news-listing__headline listing__headline"><%= post.get( 'title' ) %></h1>
 
-			<div class="news-listing__date listing__date"><%= post.get( 'date' ) %></div>
+			<div class="news-listing__date listing__byline"><%= post.get( 'date' ) %></div>
 
 			<div class="news-listing__excerpt listing__excerpt">
 				<%= post.get( 'excerpt' ) %>
