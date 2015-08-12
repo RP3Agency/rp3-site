@@ -17,7 +17,7 @@ if ( get_field( 'display-featured-post' ) ) {
 	$recent = new WP_Query( array(
 		'date_query'     => array(
 			array(
-				'after'         => '52 weeks ago'
+				'after'         => '2 weeks ago'
 			)
 		),
 		'posts_per_page' => 1,
