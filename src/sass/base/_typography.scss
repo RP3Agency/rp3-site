@@ -16,3 +16,8 @@ body {
 	}
 	line-height: ( 16px / 12px );
 }
+
+b,
+strong {
+	font-weight: $font-weight__medium;
+}
