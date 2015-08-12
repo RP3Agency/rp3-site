@@ -1,0 +1,26 @@
+.work-single {
+	@extend %max-width--padded;
+
+/* ==========================================================================
+   Introduction
+   ========================================================================== */
+
+	&__introduction {
+		margin-bottom: 3rem;
+	}
+
+	&__title {
+		@extend %roboto-thin;
+		font-size: em( 40px );
+		line-height: 1;
+		margin-bottom: 0.25em;
+	}
+
+	&__client {
+		margin-bottom: 2em;
+	}
+
+	&__tagline {
+		font-size: em( 16px );
+	}
+}

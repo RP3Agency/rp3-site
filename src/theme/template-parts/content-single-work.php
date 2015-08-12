@@ -6,7 +6,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'mini-study' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'work-single' ); ?>>
 
 	<!-- Introduction -->
 
