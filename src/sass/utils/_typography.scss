@@ -2,7 +2,7 @@
    Google Fonts Roboto
    ========================================================================== */
 
-@import url("//fonts.googleapis.com/css?family=Roboto:400,100,100italic,400italic,500,500italic&subset=latin,latin-ext");
+@import url("//fonts.googleapis.com/css?family=Roboto:300,100,100italic,300italic,500,500italic&subset=latin,latin-ext");
 
 
 /* ==========================================================================
@@ -16,7 +16,8 @@ $font-size__default:	12px;
    ========================================================================== */
 
 $font-weight__thin:		100;
-$font-weight__normal:	400;
+$font-weight__light:	300;
+$font-weight__normal:	$font-weight__light;
 $font-weight__regular:	$font-weight__normal;
 $font-weight__medium:	500;
 $font-weight__bold:		$font-weight__medium;
