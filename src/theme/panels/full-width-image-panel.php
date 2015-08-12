@@ -8,39 +8,28 @@
 
 <!-- Full-Width Image Panel -->
 
-<?php if ( get_sub_field( 'tall' ) ) : ?>
+<?php if ( '' != get_sub_field( 'full-width-image' ) ) : ?>
 
-	<section class="full-width-image-panel panel full-width-image-panel--tall">
+	<section class="work__full">
 
-<?php else: ?>
+		<?php
+		$image['small'] = wp_get_attachment_image_src( get_sub_field( 'full-width-image' ), 'four_three_small' );
+		$image['small_2x'] = wp_get_attachment_image_src( get_sub_field( 'full-width-image' ), 'four_three_small_2x' );
 
-	<section class="full-width-image-panel panel">
+		$image['medium'] = wp_get_attachment_image_src( get_sub_field( 'full-width-image' ), 'four_three_medium' );
+		$image['medium_2x'] = wp_get_attachment_image_src( get_sub_field( 'full-width-image' ), 'four_three_medium_2x' );
+
+		$image['large'] = wp_get_attachment_image_src( get_sub_field( 'full-width-image' ), 'eight_three_large' );
+		$image['large_2x'] = wp_get_attachment_image_src( get_sub_field( 'full-width-image' ), 'eight_three_large_2x' );
+		?>
+
+		<picture>
+			<source srcset="<?php echo esc_url( $image['large'][0] ); ?>, <?php echo esc_url( $image['large_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
+			<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+			<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+			<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+		</picture>
+
+	</section>
 
 <?php endif; ?>
-
-	<div class="full-width-image-panel__image">
-
-		<div class="full-width-image-panel__image__content">
-
-			<?php if ( '' != get_sub_field( 'full-width-image' ) ) : ?>
-
-				<?php if ( get_sub_field( 'tall' ) ) : ?>
-
-					<?php echo rp3_picture_element_v2( esc_attr( get_sub_field( 'full-width-image' ) ), 'full-width-tall' ); ?>
-
-				<?php else: ?>
-
-					<?php echo rp3_picture_element_v2( esc_attr( get_sub_field( 'full-width-image' ) ), 'full-width' ); ?>
-
-				<?php endif; ?>
-
-			<?php endif; ?>
-
-		</div>
-		<!-- full-width-image-panel image content -->
-
-	</div>
-	<!-- full-width-image-panel image -->
-
-</section>
-<!-- full-width-image-panel -->

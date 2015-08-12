@@ -60,6 +60,23 @@
 		}
 	}
 
+	&__copy {
+		max-height: rem( 450px );
+		position: relative;
+		@include aspect-ratio();
+
+		&__container {
+			@include centered( "vertical" );
+			bottom: auto;
+			max-width: rem( 1150px / 2 );
+		}
+
+		&__headline {
+			@extend %roboto-medium;
+			margin-bottom: 1em;
+		}
+	}
+
 
 	/* ==========================================================================
 	   Layout
