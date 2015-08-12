@@ -29,9 +29,9 @@
 	}
 	?>
 
-	<!-- Related Work -->
-
-	<?php get_template_part( 'template-parts/content', 'single-work-related' ); ?>
-
 </article>
 <!-- #post-## -->
+
+<!-- Related Work -->
+
+<?php get_template_part( 'template-parts/content', 'single-work-related' ); ?>

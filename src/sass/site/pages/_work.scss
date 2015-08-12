@@ -1,4 +1,5 @@
 .work {
+	@extend %max-width;
 
 	&__set {
 		@extend %max-width--padded;

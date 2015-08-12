@@ -27,45 +27,50 @@
 
 		<div class="site-header__container">
 
-			<div class="site-header__table">
+			<div class="site-header__container__inner">
 
-				<div class="site-header__table-row">
+				<div class="site-header__table">
 
-					<h1 class="site-header__site-title site-header__table-cell">
+					<div class="site-header__table-row">
 
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="block">
+						<h1 class="site-header__site-title site-header__table-cell">
+
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="block">
+
+								<?php
+
+								/** Include the SVG logo inline via WordPress template parts (http://blog.teamtreehouse.com/perfect-wordpress-inline-svg-workflow) */
+								get_template_part( '/template-parts/inline', 'rp3-logo.svg' );
+
+								?>
+
+							</a>
+
+						</h1>
+						<!-- site title / table cell -->
+
+						<div class="site-header__table-cell">
+
+							<a href="#!" id="site-header__menu-open" class="site-header__menu-open">Menu</a>
 
 							<?php
 
-							/** Include the SVG logo inline via WordPress template parts (http://blog.teamtreehouse.com/perfect-wordpress-inline-svg-workflow) */
-							get_template_part( '/template-parts/inline', 'rp3-logo.svg' );
+							/** Primary navigation: "desktop" */
+							get_template_part( 'template-parts/navigation', 'desktop' );
 
 							?>
 
-						</a>
-
-					</h1>
-					<!-- site title / table cell -->
-
-					<div class="site-header__table-cell">
-
-						<a href="#!" id="site-header__menu-open" class="site-header__menu-open">Menu</a>
-
-						<?php
-
-						/** Primary navigation: "desktop" */
-						get_template_part( 'template-parts/navigation', 'desktop' );
-
-						?>
+						</div>
+						<!-- table cell -->
 
 					</div>
-					<!-- table cell -->
+					<!-- table row -->
 
 				</div>
-				<!-- table row -->
+				<!-- // table -->
 
 			</div>
-			<!-- // table -->
+			<!-- container inner -->
 
 		</div>
 		<!-- // container -->

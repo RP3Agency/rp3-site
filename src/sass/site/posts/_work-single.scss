@@ -1,16 +1,13 @@
 .work-single {
+	@extend %max-width;
 
 /* ==========================================================================
    Introduction
    ========================================================================== */
 
 	&__introduction {
-		@extend %max-width;
-		margin-bottom: 3rem;
-	}
-
-	&__header {
 		@extend %max-width--padded;
+		margin-bottom: 3rem;
 	}
 
 	&__title {
@@ -36,7 +33,6 @@
    ========================================================================== */
 
 	&__full {
-		@extend %max-width;
 		@extend .work__full;
 	}
 
@@ -46,11 +42,14 @@
    ========================================================================== */
 
 	&__half {
-		@extend %max-width;
 		
 		@include breakpoint( bp() ) {
 			display: flex;
-		}	
+
+			picture {
+				width: 50%;
+			}
+		}
 	}
 
 
@@ -59,7 +58,6 @@
    ========================================================================== */
 
 	&__content {
-		@extend %max-width;
 		max-height: rem( 450px );
 		position: relative;
 		@include aspect-ratio();
@@ -86,6 +84,7 @@
 		&__headline {
 			@extend %roboto-medium;
 			margin-bottom: 1em;
+			text-transform: uppercase;
 		}
 	}
 
@@ -95,7 +94,6 @@
    ========================================================================== */
 
 	&__six-up {
-		@extend %max-width;
 		display: flex;
 		flex-wrap: wrap;
 		overflow: hidden;

@@ -13,6 +13,11 @@
 	&__container {
 		@extend %max-width;
 		height: 100%;
+
+		&__inner {
+			@extend %max-width--padded;
+			height: 100%;
+		}
 	}
 
 
@@ -139,7 +144,6 @@
 	/** Layout */
 
 	&__table {
-		@extend %max-width--padded;
 		display: table;
 		height: 100%;
 		width: 100%;
@@ -154,7 +158,7 @@
 		vertical-align: middle;
 
 		&:nth-child(1) {
-			padding-right: 1em;
+			padding-right: 2em;
 		}
 
 		&:nth-child(2) {
