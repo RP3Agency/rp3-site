@@ -27,7 +27,6 @@
 	max-width: rem( $site-context );
 
 	&--padded {
-		@extend %max-width; // Seems a little recursive, but it works.
 		padding: {
 			right: percentage( 25px / $site-context );
 			left: percentage( 25px / $site-context );

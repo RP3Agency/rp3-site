@@ -1,0 +1,34 @@
+.single-blog {
+	@extend %max-width;
+
+	&__wrapper {
+		@extend %max-width--padded;
+	}
+
+	&__header {
+		margin: 2rem 0;
+	}
+
+	&__title {
+		@extend %roboto-thin;
+		font-size: em( 40px );
+	}
+
+	&__featured-image {
+		margin-bottom: 2rem;
+	}
+
+	&__content {
+		// font-size: em( 20px );
+		line-height: 2;
+		// margin: {
+		// 	right: auto;
+		// 	left: auto;
+		// }
+		// width: rem( 720px );
+
+		p {
+			margin: 1em 0;
+		}
+	}
+}

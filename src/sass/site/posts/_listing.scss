@@ -1,9 +1,14 @@
 .listing {
+	@extend %max-width;
 
-	@include breakpoint( bp() ) {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+	&__wrapper {
+		@extend %max-width--padded;
+
+		@include breakpoint( bp() ) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+		}
 	}
 
 	&__headline {

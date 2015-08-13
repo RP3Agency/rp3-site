@@ -17,7 +17,7 @@ get_header(); ?>
 
 	} elseif ( has_category( 'news' ) ) {
 
-		get_template_part( 'content', 'single-news' );
+		get_template_part( 'template-parts/content', 'single-news' );
 
 	} elseif ( has_category( 'careers' ) ) {
 

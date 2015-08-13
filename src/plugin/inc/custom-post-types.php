@@ -134,16 +134,139 @@ function rp3_cpt_leadership() {
 }
 
 
+/**
+ * News
+ */
+function rp3_cpt_news() {
+
+	// Custom Post Type
+	$args = array(
+		'labels'				=> array(
+			'name'					=> 'News',
+			'singular_name'			=> 'News',
+		),
+		'description'			=> 'News articles and press releases.',
+		'public'				=> true,
+		'exclude_from_search'	=> true,
+		'show_ui'				=> true,
+		'show_in_nav_menus'		=> false,
+		'show_in_menu'			=> true,
+		'show_in_admin_bar'		=> false,
+		'menu_position'			=> 5,
+		'hierarchical'			=> false,
+		'menu_icon'				=> 'dashicons-media-text',
+		'supports'				=> array( 'title', 'thumbnail', 'editor', 'excerpt' ),
+		'rewrite'				=> array(
+			'slug'					=> 'news',
+			'with_front'			=> false
+		)
+	);
+
+	register_post_type( 'rp3_cpt_news', $args );
+
+	// Custom Taxonomy
+	$tax_args = array(
+		'labels'				=> array(
+			'name'					=> 'News Categories',
+			'singular_name'			=> 'Category'
+		),
+		'public'				=> true,
+		'hierarchical'			=> true
+	);
+
+	register_taxonomy( 'rp3_tax_news_categories', 'rp3_cpt_news', $tax_args );
+}
+
+
+/**
+ * Careers
+ */
+function rp3_cpt_careers() {
+
+	// Custom Post Type
+	$args = array(
+		'labels'				=> array(
+			'name'					=> 'Careers',
+			'singular_name'			=> 'Job',
+		),
+		'description'			=> 'Job announcements.',
+		'public'				=> true,
+		'exclude_from_search'	=> true,
+		'show_ui'				=> true,
+		'show_in_nav_menus'		=> false,
+		'show_in_menu'			=> true,
+		'show_in_admin_bar'		=> false,
+		'menu_position'			=> 6,
+		'hierarchical'			=> false,
+		'menu_icon'				=> 'dashicons-admin-tools',
+		'supports'				=> array( 'title', 'editor', 'excerpt' ),
+		'rewrite'				=> array(
+			'slug'					=> 'careers',
+			'with_front'			=> false
+		)
+	);
+
+	register_post_type( 'rp3_cpt_careers', $args );
+
+	// Custom Taxonomy
+	$tax_args = array(
+		'labels'				=> array(
+			'name'					=> 'Departments',
+			'singular_name'			=> 'Department'
+		),
+		'public'				=> true,
+		'hierarchical'			=> true
+	);
+
+	register_taxonomy( 'rp3_tax_departments', 'rp3_cpt_careers', $tax_args );
+}
+
+/**
+ * Custom Taxonomies for Blog Posts
+ */
+
+function rp3_blog_taxonomies() {
+
+	$industry_args = array(
+		'labels'				=> array(
+			'name'					=> 'Industries',
+			'singular_name'			=> 'Industry'
+		),
+		'public'				=> true,
+		'hierarchical'			=> true
+	);
+
+	register_taxonomy( 'rp3_tax_industries', 'post', $industry_args );
+
+	$service_args = array(
+		'labels'				=> array(
+			'name'					=> 'Services',
+			'singular_name'			=> 'Service'
+		),
+		'public'				=> true,
+		'hierarchical'			=> true
+	);
+
+	register_taxonomy( 'rp3_tax_services', 'post', $service_args );
+
+	// remove default "category" taxonomy from posts
+	register_taxonomy( 'category', array() );
+}
+
+
 
 
 
 
 /**
- * Activate all the custom post types in one fell swoop
+ * Activate all the custom post types and taxonomies in one fell swoop
  */
 function rp3_cpt() {
 	// rp3_cpt_capabilities();
 	rp3_cpt_work();
 	rp3_cpt_leadership();
+	rp3_cpt_news();
+	rp3_cpt_careers();
+	rp3_blog_taxonomies();
 }
 add_action( 'init', 'rp3_cpt' );

@@ -1,0 +1,23 @@
+.site-header {
+
+	&--blog {
+		background-color: $color__primary;
+
+		/** Logo */
+
+		.site-header__site-title .logo {
+
+			path {
+				fill: $color__white;
+			}
+		}
+
+		a {
+			color: $color__white;
+
+			@include hover-state {
+				color: $color__black;
+			}
+		}
+	}
+}

@@ -19,10 +19,11 @@
 
 
 /* ==========================================================================
-   Pages: news
+   Pages: Listing template (for News, SXSW, and whatever else that comes up
+   for which this would be appropriate)
    ========================================================================== */
 
-@import "pages/news";
+@import "pages/listing";
 
 
 /* ==========================================================================
@@ -34,7 +35,8 @@
 
 /* ==========================================================================
    Posts: Listing
-   (For in-page listings of news and similar posts)
+   (For in-page listings of news and similar posts; note Listing page template
+   above)
    ========================================================================== */
 
 @import "posts/listing";
@@ -45,3 +47,10 @@
    ========================================================================== */
 
 @import "posts/work-single";
+
+
+/* ==========================================================================
+   Posts: News (Single)
+   ========================================================================== */
+
+@import "posts/news-single";
