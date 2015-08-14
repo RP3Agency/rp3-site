@@ -54,8 +54,13 @@
 
 	&__title {
 		@extend %roboto-thin;
-		font-size: em(40px);
+		font-size: em(24px);
 		text-transform: uppercase;
+		white-space: nowrap;
 		@include centered( 'vertical' );
+
+		@include breakpoint( bp() ) {
+			font-size: em(40px);
+		}
 	}
 }
