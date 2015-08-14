@@ -13,7 +13,7 @@
 
 			<h1 class="single-blog__title"><?php the_title(); ?></h1>
 
-			<div class="single-blog__entry-meta"><?php echo esc_html( get_the_date() ); ?></div>
+			<div class="single-blog__date"><?php echo esc_html( get_the_date() ); ?></div>
 
 		</header>
 		<!-- .entry-header -->

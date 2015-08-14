@@ -1,17 +1,25 @@
 .single-blog {
 	@extend %max-width;
+	font-size: em(16px);
 
 	&__wrapper {
 		@extend %max-width--padded;
 	}
 
 	&__header {
-		margin: 2rem 0;
+		margin: {
+			top: 2rem;
+			bottom: 2rem;
+		}
 	}
 
 	&__title {
 		@extend %roboto-thin;
-		font-size: em( 40px );
+		font-size: em( 40px, 16px );
+	}
+
+	&__date {
+		@extend %roboto-medium;
 	}
 
 	&__featured-image {
@@ -19,16 +27,22 @@
 	}
 
 	&__content {
-		// font-size: em( 20px );
-		line-height: 2;
-		// margin: {
-		// 	right: auto;
-		// 	left: auto;
-		// }
-		// width: rem( 720px );
+		@extend %max-width--blog;
+	}
 
-		p {
-			margin: 1em 0;
+	&__sharing {
+		@extend %max-width--blog;
+	}
+
+	p {
+		line-height: 2;
+		margin: {
+			top: 1em;
+			bottom: 1em;
+		}
+
+		&:first-of-type {
+			margin-top: 0;
 		}
 	}
 }

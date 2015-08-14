@@ -13,18 +13,18 @@ if ( function_exists( 'get_coauthors' ) ) {
 
 		if ( 'guest-author' == $coauthor->type ) {
 
-			$coauthor_photo = wp_get_attachment_image_src( get_post_thumbnail_id( $coauthor->ID ), 'blog-author' );
+			$coauthor_photo = wp_get_attachment_image_src( get_post_thumbnail_id( $coauthor->ID ), 'four_three_small' );
 			$coauthor_photo_url = $coauthor_photo[0];
 
-			$coauthor_photo_2x = wp_get_attachment_image_src( get_post_thumbnail_id( $coauthor->ID ), 'blog-author-2x' );
+			$coauthor_photo_2x = wp_get_attachment_image_src( get_post_thumbnail_id( $coauthor->ID ), 'four_three_small_2x' );
 			$coauthor_photo_url_2x = $coauthor_photo_2x[0];
 
 		} else {
 
-			$coauthor_photo = wp_get_attachment_image_src( get_the_author_meta( 'photo', $coauthor->ID ), 'blog-author' );
+			$coauthor_photo = wp_get_attachment_image_src( get_the_author_meta( 'photo', $coauthor->ID ), 'four_three_small' );
 			$coauthor_photo_url = $coauthor_photo[0];
 
-			$coauthor_photo_2x = wp_get_attachment_image_src( get_the_author_meta( 'photo', $coauthor->ID ), 'blog-author-2x' );
+			$coauthor_photo_2x = wp_get_attachment_image_src( get_the_author_meta( 'photo', $coauthor->ID ), 'four_three_small_2x' );
 			$coauthor_photo_url_2x = $coauthor_photo_2x[0];
 
 		}
@@ -36,7 +36,7 @@ if ( function_exists( 'get_coauthors' ) ) {
 
 	<?php /** If this is an author archive page, only show the author requested */ ?>
 
-	<?php if ( ( is_singular() ) || ( ( is_author() ) && ( get_query_var( 'author_name' ) == $coauthor->user_nicename ) ) ) : ?>
+	<?php // if ( ( is_singular() ) || ( ( is_author() ) && ( get_query_var( 'author_name' ) == $coauthor->user_nicename ) ) ) : ?>
 
 		<section class="blog__author">
 
@@ -59,13 +59,15 @@ if ( function_exists( 'get_coauthors' ) ) {
 
 			<div class="blog__author__bio">
 
-				<h2 class="blog__author__name"><?php echo $coauthor->display_name; ?></h2>
-
 				<?php /** All other biographical information limited to current RP3ers */ ?>
 
 				<?php if ( 'guest-author' != $coauthor->type ) : ?>
 
-					<?php echo wpautop( get_the_author_meta( 'description', $coauthor->ID ) ); ?>
+					<?php echo wpautop( 
+						'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . 
+						$coauthor->display_name . '</a> ' . 
+						get_the_author_meta( 'description', $coauthor->ID )
+					); ?>
 
 					<?php /** List last three posts by the same coauthor, but only on a "single" page */ ?>
 
@@ -145,7 +147,7 @@ if ( function_exists( 'get_coauthors' ) ) {
 		</section>
 		<!-- // blog__author -->
 
-	<?php endif; ?>
+	<?php // endif; ?>
 
 <?php endif; ?>
 

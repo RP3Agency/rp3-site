@@ -1,0 +1,22 @@
+.blog__author {
+	@extend %max-width--blog;
+	display: flex;
+
+	&__header {
+		margin-right: gutter();
+		width: span( 8 of 24 );
+
+		img {
+			height: auto;
+			max-width: 100%;
+		}
+	}
+
+	&__bio {
+		width: span( 16 of 24 );
+
+		a {
+			font-weight: $font-weight__bold;
+		}
+	}
+}
