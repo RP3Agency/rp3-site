@@ -22,13 +22,17 @@
 
 		<div class="work-single__content__container">
 
-			<?php if ( '' !== get_sub_field( 'headline' ) ) : ?>
+			<div class="work-single__content__inner">
 
-				<h2 class="work-single__content__headline"><?php the_sub_field( 'headline' ); ?>:</h2>
+				<?php if ( '' !== get_sub_field( 'headline' ) ) : ?>
 
-			<?php endif; ?>
+					<h2 class="work-single__content__headline"><?php the_sub_field( 'headline' ); ?>:</h2>
 
-			<?php the_sub_field( 'content' ); ?>
+				<?php endif; ?>
+
+				<?php the_sub_field( 'content' ); ?>
+
+			</div>
 
 		</div>
 

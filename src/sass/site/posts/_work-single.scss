@@ -58,27 +58,45 @@
    ========================================================================== */
 
 	&__content {
-		max-height: rem( 450px );
-		position: relative;
-		@include aspect-ratio();
+		padding: {
+			top: 4em;
+			bottom: 4em;
+		}
 
 		@include breakpoint( bp() ) {
 			height: rem( 450px );
-
-			&::before {
-				display: none;
+			padding: {
+				top: 0;
+				bottom: 0;
 			}
 		}
 
 		&__container {
 			@extend %max-width--padded;
-			bottom: auto;
+			height: 100%;
 			margin: {
 				right: auto;
 				left: auto;
 			}
 			max-width: rem( 720px );
-			@include centered( "vertical" );
+
+			@include breakpoint( bp() ) {
+				position: relative;
+			}
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				padding: {
+					right: 0;
+					left: 0;
+				}
+			}
+		}
+
+		&__inner {
+
+			@include breakpoint( bp() ) {
+				@include centered( "vertical" );
+			}
 		}
 
 		&__headline {
