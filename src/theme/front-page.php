@@ -13,25 +13,23 @@
 
 get_header(); ?>
 
-[ Home Page Placeholder ]
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'front-page' ); ?>>
+
+	<?php get_template_part( 'template-parts/component', 'front-page-hero' ); ?>
+
+	<?php get_template_part( 'template-parts/component', 'front-page-work' ); ?>
+
+</article>
+<!-- #post-## -->
+
 
 <?php /*
-
-<?php // get_template_part( 'components/home-page', 'hero' ); ?>
-<?php get_template_part( 'components/home-page', 'hero-infinite-possibilities' ); ?>
-
-
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'component component--padded' ); ?>>
 
 	<div class="entry-content entry-content--home">
 		<?php the_content(); ?>
 	</div>
 	<!-- .entry-content -->
 
-</article>
-<!-- #post-## -->
-
-<?php get_template_part( 'components/home-page', 'work' ); ?>
 
 <?php get_template_part( 'components/home-page', 'blocks' ); ?>
 
