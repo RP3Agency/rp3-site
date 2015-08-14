@@ -1,0 +1,29 @@
+.front-page {
+	@extend %max-width;
+
+	/** Hero (to be replaced with the agency video) */
+
+	&__hero {
+		@extend %max-width--padded;
+	}
+
+	/** Work */
+
+	&__work {
+		@extend %max-width--padded;
+		display: flex;
+		flex-wrap: wrap;
+
+		@include breakpoint( bp() ) {
+			flex-wrap: no-wrap;
+		}
+
+		&__item {
+			width: 50%;
+
+			@include breakpoint( bp() ) {
+				flex: 1;
+			}
+		}
+	}
+}
