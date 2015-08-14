@@ -21,3 +21,41 @@
 		}
 	}
 }
+
+
+.blog-header {
+	background-color: $color__primary;
+	color: $color__white;
+	height: rem( 74px );
+
+	@include breakpoint( bp() ) {
+		height: rem( 100px );
+	}
+
+	&__skip-link {
+		@extend %assistive;
+		@extend %assistive--focusable;
+	}
+
+	&__container {
+		@extend %max-width;
+		height: 100%;
+
+		&__inner {
+			@extend %max-width--padded;
+			height: 100%;
+			position: relative;
+		}
+	}
+
+
+
+	/** Layout */
+
+	&__title {
+		@extend %roboto-thin;
+		font-size: em(40px);
+		text-transform: uppercase;
+		@include centered( 'vertical' );
+	}
+}

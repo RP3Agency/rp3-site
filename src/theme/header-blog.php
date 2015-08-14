@@ -19,55 +19,22 @@
 
 <body <?php body_class(); ?>>
 
-<div id="page" class="hfeed site">
+<div id="page" class="hfeed blog">
 
-	<header id="site-header" class="site-header site-header--blog" role="banner">
+	<header id="blog-header" class="blog-header blog-header" role="banner">
 
-		<a class="site-header__skip-link skip-link" href="#content"><?php _e( 'Skip to content', 'rp3' ); ?></a>
+		<a class="blog-header__skip-link skip-link" href="#content"><?php _e( 'Skip to content', 'rp3' ); ?></a>
 
-		<div class="site-header__container">
+		<div class="blog-header__container">
 
-			<div class="site-header__container__inner">
+			<div class="blog-header__container__inner">
 
-				<div class="site-header__table">
+				<h1 class="blog-header__title blog-header__table-cell">
 
-					<div class="site-header__table-row">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="block">Building Opportunity</a>
 
-						<h1 class="site-header__site-title site-header__table-cell">
-
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="block">
-
-								<?php
-
-								/** Include the SVG logo inline via WordPress template parts (http://blog.teamtreehouse.com/perfect-wordpress-inline-svg-workflow) */
-								get_template_part( '/template-parts/inline', 'rp3-logo.svg' );
-
-								?>
-
-							</a>
-
-						</h1>
-						<!-- site title / table cell -->
-
-						<div class="site-header__table-cell">
-
-							<a href="#!" id="site-header__menu-open" class="site-header__menu-open">Menu</a>
-
-							<?php
-
-							/** Primary navigation: "desktop" */
-							get_template_part( 'template-parts/navigation', 'desktop' );
-
-							?>
-
-						</div>
-						<!-- table cell -->
-
-					</div>
-					<!-- table row -->
-
-				</div>
-				<!-- // table -->
+				</h1>
+				<!-- site title / table cell -->
 
 			</div>
 			<!-- container inner -->
@@ -78,11 +45,4 @@
 	</header>
 	<!-- // site header -->
 
-	<?php
-
-	/** Primary navigation: "mobile" */
-	get_template_part( 'template-parts/navigation', 'mobile' );
-
-	?>
-
-	<main id="content" class="site-content">
+	<main id="content" class="blog-content">

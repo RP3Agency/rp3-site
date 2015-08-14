@@ -72,13 +72,13 @@
 
 		&__container {
 			@extend %max-width--padded;
-			@include centered( "vertical" );
 			bottom: auto;
 			margin: {
-				right: 0;
-				left: 0;
+				right: auto;
+				left: auto;
 			}
-			max-width: rem( 1150px / 2 );
+			max-width: rem( 720px );
+			@include centered( "vertical" );
 		}
 
 		&__headline {
@@ -125,6 +125,8 @@
 	&__related {
 		background-color: $color__blue;
 		color: $color__black;
+		font-size: rem( 12px );
+		line-height: 1;
 		padding: 2rem 0;
 
 		&__container {
@@ -225,7 +227,7 @@
 
 		&__title {
 			@extend %roboto-thin;
-			font-size: em( 20px );
+			font-size: em( 20px, 12px );
 			line-height: 1;
 			margin-bottom: 0.25em;
 		}
