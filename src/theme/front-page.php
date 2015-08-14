@@ -13,6 +13,10 @@
 
 get_header(); ?>
 
+[ Home Page Placeholder ]
+
+<?php /*
+
 <?php // get_template_part( 'components/home-page', 'hero' ); ?>
 <?php get_template_part( 'components/home-page', 'hero-infinite-possibilities' ); ?>
 
@@ -30,5 +34,7 @@ get_header(); ?>
 <?php get_template_part( 'components/home-page', 'work' ); ?>
 
 <?php get_template_part( 'components/home-page', 'blocks' ); ?>
+
+*/ ?>
 
 <?php get_footer(); ?>
