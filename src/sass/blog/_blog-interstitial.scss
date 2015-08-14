@@ -1,0 +1,23 @@
+.site-blog__interstitial {
+	background-color: $color__gray--light;
+	padding: {
+		top: 2em;
+		bottom: 2em;
+	}
+
+	&__container {
+		@extend %max-width;
+	}
+
+	&__wrapper {
+		@extend %max-width--padded;
+	}
+
+	&__container {
+		@extend %max-width--blog;
+	}
+
+	a {
+		font-weight: $font-weight__bold;
+	}
+}

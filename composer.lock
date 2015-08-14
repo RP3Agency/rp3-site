@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d635826e827fd0db9287fda15a21a381",
+    "hash": "9c99d6d2988d4b52ce0f32f40851ea3c",
     "packages": [
         {
             "name": "composer/installers",
@@ -558,15 +558,15 @@
         },
         {
             "name": "wpackagist-plugin/json-rest-api",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/json-rest-api/",
-                "reference": "tags/1.2.2"
+                "reference": "tags/1.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/json-rest-api.1.2.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/json-rest-api.1.2.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -995,6 +995,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-super-cache/"
+        },
+        {
+            "name": "wpackagist-plugin/yet-another-related-posts-plugin",
+            "version": "4.2.4",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/yet-another-related-posts-plugin/",
+                "reference": "tags/4.2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/yet-another-related-posts-plugin.4.2.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/yet-another-related-posts-plugin/"
         }
     ],
     "packages-dev": [],

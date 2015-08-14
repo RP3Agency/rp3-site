@@ -1,6 +1,7 @@
 .blog__author {
 	@extend %max-width--blog;
 	display: flex;
+	margin-bottom: 2em;
 
 	&__header {
 		margin-right: gutter();
