@@ -1,5 +1,6 @@
 .headline {
 	background-color: transparentize( $color__white, 0.1 );
+	line-height: 1;
 	padding: 1em;
 
 	// Bump the font size up responsively
@@ -11,7 +12,6 @@
 	&__title {
 		@extend %roboto-thin;
 		font-size: em( 20px );
-		line-height: 1;
 		margin-bottom: 0.25em;
 	}
 
