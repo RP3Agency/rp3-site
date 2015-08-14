@@ -10,6 +10,12 @@
 
 			</div>
 
+			<div class="site-blog__interstitial__subscribe">
+
+				<?php echo do_shortcode( '[mc4wp_form]' ); ?>
+
+			</div>
+
 		</div>
 
 	</div>

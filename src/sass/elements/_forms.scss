@@ -38,8 +38,9 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
+	border: 2px solid $color__blue;
+	box-sizing: border-box;
 	color: #666;
-	border: 1px solid #ccc;
 
 	&:focus {
 		color: #111;
@@ -50,7 +51,7 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
+	padding: 10px;
 }
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
