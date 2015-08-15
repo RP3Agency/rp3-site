@@ -1,6 +1,7 @@
 .page__panel {
 	@extend %max-width;
 	line-height: 1.5;
+	margin-bottom: 2rem;
 
 	&__header {
 		@extend %max-width--padded;

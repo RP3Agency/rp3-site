@@ -20,7 +20,7 @@
 
 		<ul class="clients__content">
 
-			<?php while ( have_rows( 'clients' ) ) : the_row() ?>
+			<?php while ( have_rows( 'clients' ) ) : the_row(); ?>
 
 				<li class="clients__client">
 
