@@ -1,0 +1,75 @@
+// Clients
+.clients {
+	@extend %max-width;
+
+	&__client {
+		border: solid $color__white;
+		border-width: 0 0 2px 2px;
+
+		/** Fix the border on the last element */
+		&:last-child {
+			position: relative;
+
+			&::after {
+				background-color: $color__white;
+				bottom: 0;
+				content: "";
+				display: block;
+				position: absolute;
+				right: -2px;
+				top: 0;
+				width: 2px;
+			}
+		}
+	}
+
+	svg {
+		fill: mix( white, $color__black, 33.33333% );
+	}
+
+
+	/** Layout with flexbox */
+
+	&__content {
+		background-color: $color__gray--light;
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+
+		&::after {
+			background-color: $color__white;
+			bottom: 0;
+			content: "";
+			display: block;
+			height: 2px;
+			left: 0;
+			position: absolute;
+			right: 0;
+		}
+	}
+
+	&__client {
+		width: 50%;
+
+		@include breakpoint( bp() ) {
+			width: percentage( 1 / 3 );
+		}
+
+		@include breakpoint( bp( "large" ) ) {
+			width: 20%;
+		}
+
+		&__inner {
+			position: relative;
+			@include aspect-ratio( 4, 3 );
+
+			svg {
+				@include centered( "vertical" );
+				height: auto;
+				left: 12.5%;
+				right: 12.5%;
+				width: 75%;
+			}
+		}
+	}
+}

@@ -1,17 +1,5 @@
 // Leadership
 .leadership {
-	@extend %max-width;
-	line-height: 1.5;
-
-	&__header {
-		@extend %max-width--padded;
-
-		h1 {
-			@extend %roboto-thin;
-			font-size: em( 40px );
-			margin-bottom: 0.25em;
-		}
-	}
 
 	/**
 	 * Styling

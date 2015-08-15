@@ -2,9 +2,9 @@
 
 <?php if ( $posts ) : ?>
 
-<section class="page__panel__leadership leadership">
+<section class="page__panel page__panel--leadership leadership">
 
-	<header class="leadership__header">
+	<header class="leadership__header page__panel__header">
 
 		<h1>Leadership</h1>
 
