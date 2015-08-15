@@ -11,6 +11,8 @@ function rp3_image_sizes() {
 	   4:3
 	   ========================================================================== */
 
+	add_image_size( 'four_three_thumb', 320 / 2, 320 * 0.75 / 2, true );
+
 	add_image_size( 'four_three_small', 320, 320 * 0.75, true );
 	add_image_size( 'four_three_small_2x', 320 * 2, 320 * 0.75 * 2, true );
 
@@ -24,6 +26,8 @@ function rp3_image_sizes() {
 	/* ==========================================================================
 	   8:3
 	   ========================================================================== */
+
+	add_image_size( 'eight_three_thumb', 320 / 2, 320 * 0.375 / 2, true );
 
 	add_image_size( 'eight_three_small', 320, 320 * 0.375, true );
 	add_image_size( 'eight_three_small_2x', 320 * 2, 320 * 0.375 * 2, true );

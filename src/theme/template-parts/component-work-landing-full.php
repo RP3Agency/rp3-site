@@ -16,6 +16,8 @@ if ( empty( $client ) ) {
 } else {
 	$content = '<h1 class="work__title headline__title">' . esc_html( $title ) . '</h1><div class="work__client headline__client">for <b>' . esc_html( $client ) . '</b></div>';
 }
+
+/** Determine which type of image to use, simple or complex */
 ?>
 
 <?php if ( '' != get_field( 'work_landing_image_full' ) ) : ?>

@@ -6,7 +6,7 @@
 
 		<?php $i = 1; foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 
-			<div class="front-page__work__item">
+			<a href="<?php ?>" class="front-page__work__item">
 
 				<?php
 				$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small' );
@@ -26,7 +26,7 @@
 					<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
 				</picture>
 
-			</div>
+			</a>
 
 		<?php $i++; endforeach; wp_reset_postdata(); ?>
 
