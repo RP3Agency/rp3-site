@@ -1,0 +1,39 @@
+// Clients
+.clients {
+	@extend %max-width;
+
+	&__client {
+		background-color: $color__gray--light;
+		border: 1px solid $color__white;
+	}
+
+	svg {
+		fill: mix( white, $color__black, 33.33333% );
+	}
+
+
+	/** Layout with flexbox */
+
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+	}
+
+	&__client {
+		width: 50%;
+
+		&__inner {
+			position: relative;
+			@include aspect-ratio( 4, 3 );
+
+			svg {
+				@include centered( "vertical" );
+				height: auto;
+				left: 12.5%;
+				right: 12.5%;
+				width: 75%;
+			}
+		}
+	}
+}
