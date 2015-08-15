@@ -180,7 +180,7 @@
 
 		&--mobile {
 			bottom: 0;
-			position: absolute;
+			position: fixed;
 			right: rem( -200px );
 			top: rem( 74px );
 			transition: right 200ms linear;
