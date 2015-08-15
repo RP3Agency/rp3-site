@@ -6,23 +6,66 @@
  */
 
 /** If we're on the results content block, check for tags */
-if ( get_sub_field( 'display-tags' ) ) {
-	$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
-	foreach ( $terms as $term ) {
-		$work_tags[] = $term->name;
-	}
-}
+// if ( get_sub_field( 'display-tags' ) ) {
+// 	$terms = get_the_terms( get_the_ID(), 'rp3_tax_work_tags' );
+// 	foreach ( $terms as $term ) {
+// 		$work_tags[] = $term->name;
+// 	}
+// }
 ?>
 
 <!-- Content Panel -->
 
-<section class="content-panel panel">
+<?php if ( '' != get_sub_field( 'content' ) ) : ?>
 
+	<section class="work-single__content">
+
+		<div class="work-single__content__container">
+
+			<div class="work-single__content__inner">
+
+				<?php if ( '' !== get_sub_field( 'headline' ) ) : ?>
+
+					<h2 class="work-single__content__headline"><?php the_sub_field( 'headline' ); ?>:</h2>
+
+				<?php endif; ?>
+
+				<?php the_sub_field( 'content' ); ?>
+
+			</div>
+
+		</div>
+
+	</section>
+
+<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php /*
 	<!-- Content -->
 
 	<div class="content-panel__content">
-
-		<?php if ( '' != get_sub_field( 'content' ) ) : ?>
 
 			<div class="content-panel__content__inner">
 
@@ -41,6 +84,7 @@ if ( get_sub_field( 'display-tags' ) ) {
 
 	<?php if ( ( get_sub_field( 'display-tags' ) ) && ( isset( $work_tags ) ) && ( 0 < count( $work_tags ) ) ) : ?>
 
+<?php /*
 		<div class="content-panel__tags">
 
 			<div class="content-panel__tags__inner">
@@ -52,8 +96,10 @@ if ( get_sub_field( 'display-tags' ) ) {
 
 		</div>
 		<!-- content-panel tags -->
+*/ ?>
 
 
+<?php /*
 	<!-- Image -->
 
 	<?php elseif ( '' != get_sub_field( 'image' ) ) : ?>
@@ -74,60 +120,4 @@ if ( get_sub_field( 'display-tags' ) ) {
 
 </section>
 <!-- content-panel -->
-
-<?php /*
-<section class="case-study-content">
-
-	<div class="case-study-content__container">
-
-		<div class="case-study-content__container--left">
-
-			<?php if ( '' != get_sub_field( 'label' ) ) : ?>
-
-				<h2 class="case-study-content__subheader"><?php the_sub_field( 'label' ); ?>:</h2>
-
-			<?php endif; ?>
-
-			<?php the_sub_field( 'content' ); ?>
-
-		</div>
-		<!-- // .case-study-content container left -->
-
-		<?php if ( ( isset( $work_tags ) ) && ( count( $work_tags ) > 0 ) ) : ?>
-
-			<div class="case-study-content__container--right">
-
-				<h2 class="case-study-content__subheader related-tags">&nbsp;</h2>
-
-				<?php echo join( ', ', $work_tags ); ?>
-
-			</div>
-			<!-- // case-study-content container right -->
-
-		<?php elseif ( '' != get_sub_field( 'image' ) ) : ?>
-
-			<div class="work-main-content__image work-main-copy__main-counter-image">
-
-				<div class="work-main-content__image__container">
-
-					<div class="work-main-content__image__container__inner">
-
-						<?php echo rp3_picture_element( get_sub_field( 'image' ), 'main-copy-counter-image' ); ?>
-
-					</div>
-					<!-- // work main content image container inner -->
-
-				</div>
-				<!-- // work main content image container -->
-
-			</div>
-			<!-- // work main content image -->
-
-		<?php endif; ?>
-
-	</div>
-	<!-- // .case-study-content container -->
-
-</section>
-<!-- // .case-study-content -->
 */ ?>

@@ -13,22 +13,26 @@
 
 get_header(); ?>
 
-<?php // get_template_part( 'components/home-page', 'hero' ); ?>
-<?php get_template_part( 'components/home-page', 'hero-infinite-possibilities' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'front-page' ); ?>>
+
+	<?php get_template_part( 'template-parts/component', 'front-page-hero' ); ?>
+
+	<?php get_template_part( 'template-parts/component', 'front-page-work' ); ?>
+
+</article>
+<!-- #post-## -->
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'component component--padded' ); ?>>
+<?php /*
 
 	<div class="entry-content entry-content--home">
 		<?php the_content(); ?>
 	</div>
 	<!-- .entry-content -->
 
-</article>
-<!-- #post-## -->
-
-<?php get_template_part( 'components/home-page', 'work' ); ?>
 
 <?php get_template_part( 'components/home-page', 'blocks' ); ?>
+
+*/ ?>
 
 <?php get_footer(); ?>

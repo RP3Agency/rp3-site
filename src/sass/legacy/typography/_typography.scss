@@ -1,5 +1,3 @@
-@import url( "//fonts.googleapis.com/css?family=Roboto:700,500,400,300,100,700italic,500italic,400italic,300italic,100italic" );
-
 // Roboto font stack
 $roboto:	Roboto, sans-serif;
 
@@ -13,12 +11,12 @@ $thin:		100;
 
 // Font mixins for setting: family, weight, size, style
 @mixin font( $family: $roboto, $weight: $normal, $size: 1rem, $style: normal ) {
-	font: {
-		family: $family;
-		size: $size;
-		style: $style;
-		weight: $weight;
-	}
+	// font: {
+	// 	family: $family;
+	// 	size: $size;
+	// 	style: $style;
+	// 	weight: $weight;
+	// }
 }
 
 %roboto-thin {
@@ -52,19 +50,15 @@ $thin:		100;
 /*--------------------------------------------------------------
 General Typography
 --------------------------------------------------------------*/
-html {
-	font-size: cp( $default-font-size, 16px );
-}
-
-body,
-button,
-input,
-select,
-textarea {
-	color: $black;
-	line-height: (44 / 24);
-	@include font($roboto, $light);
-}
+// body,
+// button,
+// input,
+// select,
+// textarea {
+// 	color: $black;
+// 	line-height: (44 / 24);
+// 	@include font($roboto, $light);
+// }
 p {
 	margin-bottom: 1.5em;
 

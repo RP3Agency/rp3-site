@@ -104,52 +104,28 @@ rp3.backbone = (function($, _, Backbone) {
 							( null !== sourceValue )
 						) {
 
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_initial ) ) {
-								post.attributes.img_initial = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_initial.url;
-							} else {
-								post.attributes.img_initial = post.attributes.featured_image.source;
-							}
-
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_initial_2x ) ) {
-								post.attributes.img_initial_2x = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_initial_2x.url;
-							} else {
-								post.attributes.img_initial_2x = post.attributes.featured_image.source;
-							}
-
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_small ) ) {
-								post.attributes.img_small = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_small.url;
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.four_three_small ) ) {
+								post.attributes.img_small = post.attributes.featured_image.attachment_meta.sizes.four_three_small.url;
 							} else {
 								post.attributes.img_small = post.attributes.featured_image.source;
 							}
 
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_small_2x ) ) {
-								post.attributes.img_small_2x = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_small_2x.url;
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.four_three_small_2x ) ) {
+								post.attributes.img_small_2x = post.attributes.featured_image.attachment_meta.sizes.four_three_small_2x.url;
 							} else {
 								post.attributes.img_small_2x = post.attributes.featured_image.source;
 							}
 
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_medium ) ) {
-								post.attributes.img_medium = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_medium.url;
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.four_three_medium ) ) {
+								post.attributes.img_medium = post.attributes.featured_image.attachment_meta.sizes.four_three_medium.url;
 							} else {
 								post.attributes.img_medium = post.attributes.featured_image.source;
 							}
 
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_medium_2x ) ) {
-								post.attributes.img_medium_2x = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_medium_2x.url;
+							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.four_three_medium ) ) {
+								post.attributes.img_medium_2x = post.attributes.featured_image.attachment_meta.sizes.four_three_medium.url;
 							} else {
 								post.attributes.img_medium_2x = post.attributes.featured_image.source;
-							}
-
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_large ) ) {
-								post.attributes.img_large = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_large.url;
-							} else {
-								post.attributes.img_large = post.attributes.featured_image.source;
-							}
-
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_large_2x ) ) {
-								post.attributes.img_large_2x = post.attributes.featured_image.attachment_meta.sizes.featured_image_listing_large_2x.url;
-							} else {
-								post.attributes.img_large_2x = post.attributes.featured_image.source;
 							}
 						}
 					});

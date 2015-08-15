@@ -1,22 +1,5 @@
 .site-header {
 
-	.menu-open {
-		@extend %genericon;
-		@extend %genericon-menu;
-		@extend %ir;
-		color: $blue;
-		float: right;
-		font-size: 28px;
-		height: 32px;
-		line-height: 1;
-		margin-top: 23px;
-		width: 32px;
-
-		@include breakpoint( bp( 2 ) ) {
-			display: none;
-		}
-	}
-
 	[role="navigation"] {
 		clear: none;
 		float: left;

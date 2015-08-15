@@ -4,7 +4,7 @@
 		display: flex;
 
 		@include modernizr( "no-flexbox" ) {
-			@include container( rem( 1600px ) );
+			@include container( rem( 1200px ) );
 		}
 	}
 
@@ -112,7 +112,7 @@
 		}
 
 		@include breakpoint( bp( 3 ) ) {
-			min-height: rem( 450px );
+			min-height: rem( 337px );
 		}
 	}
 }

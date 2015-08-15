@@ -20,7 +20,7 @@
 		}
 
 		@include breakpoint( bp( 3 ) ) {
-			height: 300px;
+			height: 250px;
 		}
 
 		@include modernizr( no-flexbox ) {

@@ -41,7 +41,7 @@
     "wpackagist-plugin/public-post-preview":"*",
     "wpackagist-plugin/real-user-monitoring-by-pingdom":"*",
     "wpackagist-plugin/really-simple-twitter-feed-widget":"*",
-    "wpackagist-plugin/regenerate-thumbnails":"*",
+    "wpackagist-plugin/force-regenerate-thumbnails":"*",
     "wpackagist-plugin/redirection":"*",
     "wpackagist-plugin/show-template":"*",
     "wpackagist-plugin/simple-login-log":"*",
@@ -57,7 +57,8 @@
     "wpackagist-plugin/wp-maintenance-mode":"*",
     "wpackagist-plugin/wp-super-cache":"*",
     "wpackagist-plugin/featured-images-for-rss-feeds": "*",
-    "wpackagist-plugin/wp-bitly":"*"
+    "wpackagist-plugin/wp-bitly":"*",
+    "wpackagist-plugin/yet-another-related-posts-plugin":"*"
   },
   "extra": {
     "wordpress-install-dir": "_wp",

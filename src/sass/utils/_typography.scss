@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Google Fonts Roboto
+   ========================================================================== */
+
+@import url("//fonts.googleapis.com/css?family=Roboto:300,100,100italic,300italic,500,500italic&subset=latin,latin-ext");
+
+
+/* ==========================================================================
+   Default font size
+   ========================================================================== */
+
+$font-size__default:	16px;
+
+/* ==========================================================================
+   Font Weights
+   ========================================================================== */
+
+$font-weight__thin:		100;
+$font-weight__light:	300;
+$font-weight__normal:	$font-weight__light;
+$font-weight__regular:	$font-weight__normal;
+$font-weight__medium:	500;
+$font-weight__bold:		$font-weight__medium;
+
+
+/* ==========================================================================
+   Font Stack
+   ========================================================================== */
+
+$font__roboto:			"Roboto", sans-serif;
+
+
+/* ==========================================================================
+   Typographical Placeholder Selectors
+   ========================================================================== */
+
+%roboto-thin {
+	font: {
+		family: $font__roboto;
+		weight: $font-weight__thin;
+	}
+}
+
+%roboto-normal {
+	font: {
+		family: $font__roboto;
+		weight: $font-weight__normal;
+	}
+}
+
+%roboto-regular {
+	@extend %roboto-normal;
+}
+
+%roboto-medium {
+	font: {
+		family: $font__roboto;
+		weight: $font-weight__medium;
+	}
+}
+
+%roboto-bold {
+	@extend %roboto-medium;
+}
+
+%roboto-thin-italic {
+	@extend %roboto-thin;
+	font-style: italic;
+}
+
+%roboto-normal-italic {
+	@extend %roboto-normal;
+	font-style: italic;
+}
+
+%roboto-regular-italic {
+	@extend %roboto-normal-italic;
+}
+
+
+%roboto-medium-italic {
+	@extend %roboto-medium;
+	font-style: italic;
+}
+
+%roboto-bold-italic {
+	@extend %roboto-medium-italic;
+}

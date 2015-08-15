@@ -1,0 +1,120 @@
+/* ==========================================================================
+   clearfix
+   ========================================================================== */
+
+%clearfix {
+	&:before,
+	&:after {
+		content: '';
+		display: table;		
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+
+/* ==========================================================================
+   max-width
+   ========================================================================== */
+
+%max-width {
+	margin: {
+		right: auto;
+		left: auto;
+	}
+	max-width: rem( $site-context );
+
+	&--padded {
+		padding: {
+			right: percentage( 25px / $site-context );
+			left: percentage( 25px / $site-context );
+		}
+	}
+}
+
+
+/* ==========================================================================
+   visuallyhidden / assistive
+   Hide only visually, but have it available for screenreaders: h5bp.com/v
+   ========================================================================== */
+
+%visuallyhidden,
+%assistive {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+
+	/**
+	 * Extends the .visuallyhidden class to allow the element to be focusable
+	 * when navigated to via the keyboard: h5bp.com/p
+	 */
+	&--focusable:active,
+	&--focusable:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
+
+
+/* ==========================================================================
+   Image Replacement
+   ========================================================================== */
+
+%ir {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+
+	/* IE 6/7 fallback */
+	*text-indent: -9999px;
+
+	&:before {
+		content: "";
+		display: block;
+		height: 150%;
+		width: 0;
+	}
+}
+
+
+/* ==========================================================================
+   Image Replacement
+   ========================================================================== */
+
+%button {
+	background-color: transparent;
+	border: 2px solid $color__blue;
+	border-radius: 0;
+	color: $color__blue;
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	font: {
+		size: rem( 16px );
+		weight: $font-weight__normal;
+	}
+	line-height: 1;
+	padding: 10px;
+	text: {
+		decoration: none;
+		transform: uppercase;
+	}
+	transition: 100ms linear {
+		property: background-color, color;
+	}
+	@include appearance(none);
+
+	@include hover-state {
+		background-color: $color__blue;
+		color: $color__white;
+	}
+}

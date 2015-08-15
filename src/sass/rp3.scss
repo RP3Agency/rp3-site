@@ -1,49 +1,54 @@
+/* ==========================================================================
+   Breakpoint
+   ========================================================================== */
+
 @import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
+
+
+/* ==========================================================================
+   Susy
+   ========================================================================== */
 
 @import "../../bower_components/susy/sass/susy";
 
-@import "legacy/utils/utils";
 
-@import "legacy/reset";
+/* ==========================================================================
+   Utils
+   ========================================================================== */
 
-@import "legacy/typography/typography";
-
-@import "legacy/elements";
-
-@import "legacy/layout";
-
-@import "legacy/forms";
-
-@import "legacy/navigation/paging-navigation";
-
-@import "legacy/navigation/links";
-
-@import "legacy/social";
-
-@import "legacy/running/header";
-
-@import "legacy/a11y";
-
-@import "legacy/alignments";
-
-@import "legacy/clearings";
-
-@import "legacy/widgets";
-
-@import "legacy/content";
-
-@import "legacy/infinite-scroll";
-
-@import "legacy/media";
-
-@import "legacy/running/footer";
+@import "utils/utils";
 
 
-// Components
-@import "legacy/components/components";
+/* ==========================================================================
+   Base
+   ========================================================================== */
 
-// Panels
-@import "legacy/panels/panels";
+@import "base/base";
 
-// Home page
-@import "legacy/home/home";
+
+/* ==========================================================================
+   Elements
+   ========================================================================== */
+
+@import "elements/elements";
+
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+@import "navigation/navigation";
+
+
+/* ==========================================================================
+   Site
+   ========================================================================== */
+
+@import "site/site";
+
+
+/* ==========================================================================
+   Blog
+   ========================================================================== */
+
+@import "blog/blog";

@@ -1,0 +1,168 @@
+.site-footer {
+
+	// Consistent bototm margin
+	%site-footer__bottom-margin {
+		margin-bottom: 2em;
+
+		@include breakpoint( bp() ) {
+			margin-bottom: 1em;
+		}
+	}
+
+	background-color: $color__black;
+	color: $color__white;
+	font-size: rem( 12px );
+	line-height: 1.5;
+	padding: 2rem 0;
+	text-align: center;
+
+	@include breakpoint( bp() ) {
+		text-align: left;
+	}
+
+	a {
+		color: $color__white;
+		text-decoration: none;
+
+		@include hover-state {
+			text-decoration: underline;
+		}
+	}
+
+	/** Wrapper */
+
+	&__wrapper {
+		@extend %max-width;
+	}
+
+	/** Container */
+
+	&__container {
+		@extend %max-width--padded;
+	}
+
+	/** Logo */
+
+	&__logo {
+		@extend %site-footer__bottom-margin;
+
+		svg {
+			height: 28px;
+			width: 40px;
+		}
+
+		path {
+			fill: $color__white;
+		}
+	}
+
+	/** Building Opportunity */
+
+	&__building-opportunity {
+		@extend %site-footer__bottom-margin;
+		text-transform: uppercase;
+
+		&--wide {
+			display: none;
+		}
+
+		@include breakpoint( bp() ) {
+
+			&--narrow {
+				display: none;
+			}
+
+			&--wide {
+				display: block;
+			}
+		}
+	}
+
+	/** Address */
+
+	&__address {
+		@extend %site-footer__bottom-margin;
+	}
+
+	/** Phone & Email */
+
+	&__phone-email {
+		@extend %site-footer__bottom-margin;
+	}
+
+	/** Social */
+	/** Modifications to the master _social.scss partial in elements/ */
+
+	&__social {
+		@extend %site-footer__bottom-margin;
+
+		ul {
+			display: inline-block;
+		}
+
+		li {
+
+			a {
+				border: none;
+				color: $color__white;
+				padding: 0;
+				transition: background-color 100ms linear,
+					color 100ms linear;
+
+				@include hover-state {
+					background-color: $color__white;
+					color: $color__black;
+					text-decoration: none;
+				}
+			}
+
+			&:last-child {
+
+				a {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	/** Copyright */
+
+	&__copyright {
+		@extend %site-footer__bottom-margin;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	/** Layout */
+
+	@include breakpoint( bp() ) {
+
+		&__container {
+			align-items: flex-end;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__left {
+			float: left;
+			width: 45%;
+		}
+
+		&__right {
+			float: right;
+			text-align: right;
+			width: 45%;
+		}
+	}
+
+	/** Special case: disable <br/> elements at 800px */
+
+	@include breakpoint( bp("intermediate") ) {
+
+		br {
+			display: none;
+		}
+	}
+}
