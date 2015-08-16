@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9c99d6d2988d4b52ce0f32f40851ea3c",
+    "hash": "972864aa3dc263935742b88015baa087",
     "packages": [
         {
             "name": "composer/installers",
@@ -435,6 +435,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/disable-comments/"
+        },
+        {
+            "name": "wpackagist-plugin/dynamic-featured-image",
+            "version": "3.5.0",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/dynamic-featured-image/",
+                "reference": "tags/3.5.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/dynamic-featured-image.3.5.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/dynamic-featured-image/"
         },
         {
             "name": "wpackagist-plugin/featured-images-for-rss-feeds",

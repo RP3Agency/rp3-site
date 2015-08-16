@@ -17,7 +17,19 @@ if ( empty( $client ) ) {
 	$content = '<h1 class="work__title headline__title">' . esc_html( $title ) . '</h1><div class="work__client headline__client">for <b>' . esc_html( $client ) . '</b></div>';
 }
 
-/** Determine which type of image to use, simple or complex */
+/** Determine whether to use the primary or alternate featured image */
+
+$alt_featured_image = false;
+
+if ( get_sub_field( 'full_width_featured_image_alt' ) ) {
+
+	if ( class_exists('Dynamic_Featured_Image') ) {
+		global $dynamic_featured_image;
+
+		$alt_featured_image_array = $dynamic_featured_image->get_nth_featured_image( 2 );
+		$alt_featured_image = $alt_featured_image_array['attachment_id'];
+	}
+}
 ?>
 
 <?php if ( '' != get_field( 'work_landing_image_full' ) ) : ?>
@@ -29,14 +41,21 @@ if ( empty( $client ) ) {
 			<div class="work__image work__image--full">
 
 				<?php
-				$image['small'] = wp_get_attachment_image_src( get_field( 'work_landing_image_full' ), 'four_three_small' );
-				$image['small_2x'] = wp_get_attachment_image_src( get_field( 'work_landing_image_full' ), 'four_three_small_2x' );
 
-				$image['medium'] = wp_get_attachment_image_src( get_field( 'work_landing_image_full' ), 'four_three_medium' );
-				$image['medium_2x'] = wp_get_attachment_image_src( get_field( 'work_landing_image_full' ), 'four_three_medium_2x' );
+				if ( $alt_featured_image ) {
+					$featured_image_id = $alt_featured_image;
+				} else {
+					$featured_image_id = get_post_thumbnail_id();
+				}
 
-				$image['large'] = wp_get_attachment_image_src( get_field( 'work_landing_image_full' ), 'eight_three_large' );
-				$image['large_2x'] = wp_get_attachment_image_src( get_field( 'work_landing_image_full' ), 'eight_three_large_2x' );
+				$image['small'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small' );
+				$image['small_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small_2x' );
+
+				$image['medium'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_medium' );
+				$image['medium_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_medium_2x' );
+
+				$image['large'] = wp_get_attachment_image_src( $featured_image_id, 'eight_three_large' );
+				$image['large_2x'] = wp_get_attachment_image_src( $featured_image_id, 'eight_three_large_2x' );
 				?>
 
 				<picture>
