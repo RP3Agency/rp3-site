@@ -21,11 +21,11 @@
 				<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
 					<?php
-					$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small' );
-					$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small_2x' );
+					$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'three_four_small' );
+					$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'three_four_small_2x' );
 
-					$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small' );
-					$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small_2x' );
+					$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'three_four_small' );
+					$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'three_four_small_2x' );
 
 					$image['large'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_medium' );
 					$image['large_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_medium_2x' );
