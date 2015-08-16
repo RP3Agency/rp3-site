@@ -62,9 +62,15 @@
 	/** Styling for comments listing */
 
 	&__list {
+		font-size: rem( 14px );
 		list-style: none;
+		margin: {
+			left: 0;
+			top: 1em;
+		}
 
 		article {
+			border: 1px solid $color__gray--light;
 			margin-bottom: 1rem;
 		}
 
@@ -72,19 +78,104 @@
 		article p {
 			line-height: 1.5;
 		}
+	}
 
-		.comment-metadata {
-			@extend %roboto-bold;
-			color: $color__gray;
-			font-size: em( 12px );
-			text: {
-				decoration: none;
-				transform: uppercase;
+	.comment-body {
+		@extend .quotations;
+		padding: 0;
+	}
+
+	.comment-content {
+		padding: 1em 1em 0;
+	}
+
+	.comment-metadata {
+		@extend %roboto-bold;
+		color: $color__gray;
+		font-size: em( 12px );
+		text: {
+			decoration: none;
+			transform: uppercase;
+		}
+	}
+
+	.children {
+		margin-left: 0;
+
+		@include breakpoint( bp() ) {
+			margin-left: 1.5em;
+		}
+	}
+
+	.reply {
+		padding: 1em;
+	}
+
+	.comment-meta {
+		@extend %clearfix;
+		background-color: mix( white, $color__gray--light, 50% );
+		border-bottom: 1px solid $color__gray--light;
+	}
+
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+
+		input {
+			width: 100%;
+		}
+
+		@include breakpoint( bp() ) {
+			float: left;
+			width: span( 8 of 24 );
+		}
+	}
+
+	.comment-notes {
+		font-size: em( 14px );
+		line-height: 1.5;
+	}
+
+	@include breakpoint( bp() ) {
+
+		.comment-form-author,
+		.comment-form-email {
+			@include gutter;
+		}
+
+		.comment-form-comment {
+			clear: both;
+
+			textarea {
+				width: 100%;
 			}
 		}
+	}
 
-		.children {
-			margin-left: 3rem;
+	.comment-author {
+
+		img {
+			float: left;
+			margin-right: 1em;
 		}
+
+		.fn,
+		.says {
+			display: inline-block;
+			margin-top: 0.5em;
+		}
+	}
+
+	.comment-metadata {
+		font-size: em( 12px );
+	}
+
+	label {
+		display: block;
+	}
+
+	.comment-reply-title {
+		@extend %roboto-thin;
+		font-size: em( 20px );
 	}
 }

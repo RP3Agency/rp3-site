@@ -20,11 +20,17 @@
 
 			<ul class="single-blog__comments__list">
 
-				<?php wp_list_comments(); ?>
+				<?php wp_list_comments(array (
+					'avatar_size' => '64'
+				) ); ?>
 
 			</ul>
 
-			<?php comment_form(); ?>
+			<?php comment_form( array(
+				'title_reply'			=> 'Leave a Comment',
+				'comment_notes_after'	=> '<p class="comment-notes">You can format your comments using <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>.</p>',
+				'label_submit'			=> 'Submit Comment'
+			) ); ?>
 
 		</div>
 
