@@ -2,7 +2,7 @@
 	@extend %max-width--padded;
 	line-height: 2;
 	margin-bottom: 2em;
-	max-width: rem( 600px );
+	max-width: rem( 900px );
 
 	h1 {
 		@extend %roboto-thin;
@@ -16,5 +16,12 @@
 		font-size: em( 12px );
 		margin-bottom: 1em;
 		text-transform: uppercase;
+	}
+
+	p {
+		margin: {
+			top: 1em;
+			bottom: 1em;
+		}
 	}
 }
