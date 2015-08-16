@@ -19,17 +19,7 @@ if ( empty( $client ) ) {
 
 /** Determine whether to use the primary or alternate featured image */
 
-$alt_featured_image = false;
-
-if ( get_sub_field( 'full_width_featured_image_alt' ) ) {
-
-	if ( class_exists('Dynamic_Featured_Image') ) {
-		global $dynamic_featured_image;
-
-		$alt_featured_image_array = $dynamic_featured_image->get_nth_featured_image( 2 );
-		$alt_featured_image = $alt_featured_image_array['attachment_id'];
-	}
-}
+$alt_featured_image = rp3_use_alternate_featured_image( 'full_width_featured_image_alt' );
 ?>
 
 <?php if ( '' != get_field( 'work_landing_image_full' ) ) : ?>
