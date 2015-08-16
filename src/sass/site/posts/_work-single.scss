@@ -202,6 +202,7 @@
 		}
 
 		&__item {
+			overflow: hidden;
 			margin-bottom: 2em;
 
 			@include breakpoint( bp() ) {
