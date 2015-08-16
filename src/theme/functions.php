@@ -273,3 +273,7 @@ function rp3_use_alternate_featured_image( $sub_field ) {
 
 	return $alt_featured_image;
 }
+
+/** Get comments to appear on blog "archive" pages */
+
+$withcomments = 1;

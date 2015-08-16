@@ -69,50 +69,6 @@ if ( function_exists( 'get_coauthors' ) ) {
 						get_the_author_meta( 'description', $coauthor->ID )
 					); ?>
 
-					<?php /** List last three posts by the same coauthor, but only on a "single" page */ ?>
-
-					<?php if ( is_single() ) : ?>
-
-						<?php
-
-						$args = array(
-							'post_type'			=> 'post',
-							'posts_per_page'	=> 3,
-							'post_status'		=> 'publish',
-							'author_name'		=> $coauthor->user_nicename,
-							'post__not_in'		=> array( get_the_ID() ),
-							'category__not_in'	=> array( 25, 7 ),
-							'order'				=> 'DESC',
-							'orderby'			=> 'date'
-						);
-
-						$author_query = new WP_Query( $args );
-
-						if ( $author_query->have_posts() ) :
-
-						?>
-
-						<div class="blog__author__posts">
-
-							<h2>Recent Posts by <?php echo $coauthor->display_name; ?>:</h2>
-
-							<ul>
-
-								<?php while ( $author_query->have_posts() ) : $author_query->the_post(); ?>
-
-									<li><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></li>
-
-								<?php endwhile; ?>
-
-							</ul>
-
-						</div>
-						<!-- blog author posts -->
-
-						<?php endif; wp_reset_query(); ?>
-
-					<?php endif; ?>
-
 					<!-- Social media presence -->
 
 					<ul class="blog__author__social social">

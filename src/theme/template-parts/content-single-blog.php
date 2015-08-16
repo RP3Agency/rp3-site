@@ -69,11 +69,7 @@
 
 			<!-- Comments -->
 
-			<section class="single-blog__comments">
-
-				<?php comments_template(); ?>
-
-			</section>
+			<?php comments_template( '/template-parts/content-blog-comments.php' ); ?>
 
 		<?php endif; ?>
 
