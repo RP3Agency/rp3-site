@@ -16,6 +16,10 @@
 	&__bio {
 		width: span( 16 of 24 );
 
+		p {
+			line-height: 1.5;
+		}
+
 		a {
 			font-weight: $font-weight__bold;
 		}

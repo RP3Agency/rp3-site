@@ -1,0 +1,90 @@
+.single-blog__comments {
+	@extend %max-width;
+	margin-bottom: 2rem;
+
+	&__wrapper {
+		@extend %max-width--blog;		
+	}
+
+
+	/** Open Comments Trigger */
+
+	&__trigger {
+		border: solid {
+			width: 1px 0;
+		}
+		color: $color__gray;
+		display: block;
+		font: {
+			size: em( 12px );
+			weight: $font-weight__bold;
+		}
+		padding: {
+			top: 0.25em;
+			bottom: 0.25em;
+		}
+		text: {
+			align: center;
+			decoration: none;
+			transform: uppercase;
+		}
+
+		&:visited {
+			color: $color__gray;
+		}
+
+		@include hover-state {
+			color: $color__gray;
+		}
+	}
+
+	&__count {
+		background-color: $color__gray;
+		border-radius: 100%;
+		color: $color__white;
+		display: inline-block;
+		font-weight: $font-weight__bold;
+		height: 24px;
+		line-height: 24px;
+		margin-left: 1em;
+		text-align: center;
+		width: 24px;
+	}
+
+	/** Hide form and comments initially */
+
+	&__form {
+		border-bottom: 1px solid $color__gray;
+		display: none;
+		padding-top: 1rem;
+	}
+
+	/** Styling for comments listing */
+
+	&__list {
+		list-style: none;
+
+		article {
+			margin-bottom: 1rem;
+		}
+
+		article,
+		article p {
+			line-height: 1.5;
+		}
+
+		.comment-metadata {
+			@extend %roboto-bold;
+			color: $color__gray;
+			font-size: em( 12px );
+			text: {
+				decoration: none;
+				transform: uppercase;
+			}
+		}
+
+		.children {
+			margin-left: 3rem;
+		}
+	}
+}

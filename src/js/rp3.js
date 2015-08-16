@@ -133,11 +133,26 @@ var rp3 = (function($) {
 		}
 	},
 
+	/** Reveal Comments Section */
+	revealComments = function() {
+
+		var $commentsTrigger = $('#single-blog__comments__trigger'),
+			$commentsForm = $('#single-blog__comments__form');
+
+		$commentsTrigger.on( 'click', function(e) {
+
+			e.preventDefault();
+
+			$commentsForm.slideDown();
+		});
+	},
+
 	init = function() {
 		navigationCanvasSlide();
 		equalizeHeights();
 		videoToggle();
 		raptorJim();
+		revealComments();
 		
 		$(window).scroll(function() {
 			applyFixedHeader();
