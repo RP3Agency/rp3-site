@@ -18,7 +18,7 @@ rp3.backbone_blog = (function($, _, Backbone) {
 	 * Backbone Classes
 	 */
 	
-	/** Model */
+	/** Model: Post */
 	
 	PostModel = Backbone.Model.extend({
 
@@ -33,7 +33,7 @@ rp3.backbone_blog = (function($, _, Backbone) {
 		}
 	}),
 
-	/** View */
+	/** View: Post */
 
 	PostView = Backbone.View.extend({
 
@@ -63,6 +63,13 @@ rp3.backbone_blog = (function($, _, Backbone) {
 
 					var template = _.template( $('#blog-template').html() );
 					that.$el.html( template( { posts: posts.models } ) );
+
+
+					// If the offSet is divisible by three, add on our interstitial
+					if ( 0 === ( parseInt( offSet ) % 3 ) ) {
+						displayInterstitial();
+					}
+
 				},
 
 				error: function() {
@@ -75,7 +82,7 @@ rp3.backbone_blog = (function($, _, Backbone) {
 	}),
 	postView = new PostView(),
 
-	/** Collection */
+	/** Collection: Post */
 
 	PostCollection = Backbone.Collection.extend({
 		model:	PostModel
@@ -126,6 +133,21 @@ rp3.backbone_blog = (function($, _, Backbone) {
 
 
 	/**
+	 * Display the interstitial
+	 */
+	displayInterstitial = function() {
+
+		var $interstitialElement = $('<div>').addClass( 'blog__backbone__interstitial' ),
+			template = _.template( $('#blog-template-interstitial').html() );
+
+		$interstitialElement.html( template() );
+
+		$blog__backbone.append( $interstitialElement );
+	},
+
+
+
+	/**
 	 * Listen for when we reach the bottom of the page
 	 */
 	listenForScroll = function() {
@@ -161,6 +183,8 @@ rp3.backbone_blog = (function($, _, Backbone) {
 			}
 		});
 	},
+
+
 
 	init = function() {
 		listenForScroll();
