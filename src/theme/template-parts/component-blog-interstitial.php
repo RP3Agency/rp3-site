@@ -1,4 +1,4 @@
-<section class="site-blog__interstitial">
+<section id="site-blog__interstitial" class="site-blog__interstitial">
 
 	<div class="site-blog__interstitial__container">
 

@@ -85,3 +85,9 @@
 	<!-- // wrapper -->
 
 </article>
+
+<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
+
+<div id="blog__backbone"></div>
+
+<?php get_template_part( 'template-parts/inline', 'underscorejs-template-blog' ); ?>

@@ -23,8 +23,6 @@ get_header( 'blog' ); ?>
 
 				<?php get_template_part( 'template-parts/content', 'single-blog' ); ?>
 
-				<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
-
 			<?php endwhile; ?>
 
 		<?php else : ?>
