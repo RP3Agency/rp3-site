@@ -6,7 +6,7 @@
 
 			<div class="site-blog__interstitial__content">
 
-				<p>RP3's <strong>Building Opportunity</strong> blog showcases our ongoing exploration of new ideas, new technologies and new experiences that propel businesses forward. If you like what you see, we invite you to learn more about <a href="<?php echo esc_url( home_url( '/agency/' ) ); ?>">RP3</a>, the DC-based creative agency behind all the thinking.</p>
+				<p>RP3's <strong>Building Opportunity</strong> blog showcases our ongoing exploration of new ideas, new technologies and new experiences that propel businesses forward. If you like what you see, we invite you to learn more about <a href="<?php echo esc_url( home_url() ); ?>">RP3</a>, the DC-based creative agency behind all the thinking.</p>
 
 			</div>
 
