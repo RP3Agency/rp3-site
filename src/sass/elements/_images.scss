@@ -4,3 +4,23 @@ picture img {
 	height: auto;
 	max-width: 100%;
 }
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+.wp-caption {
+	background-color: $color__gray--light;
+	border: 1px solid $color__gray;
+	margin-bottom: 1em;
+	max-width: 100%;
+	padding: 4px;
+
+	.wp-caption-text {
+		@extend %roboto-bold;
+		font-size: em( 12px );
+		margin: 0;
+		text-transform: uppercase;
+	}
+}

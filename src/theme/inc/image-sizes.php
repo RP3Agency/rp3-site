@@ -56,3 +56,16 @@ function rp3_image_sizes() {
 }
 
 add_action( 'init', 'rp3_image_sizes' );
+
+
+/** Allow for our custom image size to be used in posts */
+
+function rp3_custom_image_size( $sizes ) {
+	return array_merge( $sizes, array(
+		'eight_three_large' => '8:3',
+		'four_three_large' => '4:3',
+		'three_four_large' => '3:4'
+	) );
+}
+
+add_filter( 'image_size_names_choose', 'rp3_custom_image_size' );
