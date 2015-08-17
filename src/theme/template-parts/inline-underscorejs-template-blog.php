@@ -32,12 +32,75 @@
 
 			</section>
 
+			<section class="blog__author">
+
+				<header class="blog__author__header">
+
+					<div class="blog__author__meta">
+
+						<div class="blog__author__image">
+
+							<img srcset="">
+
+						</div>
+						<!-- // blog author image -->
+
+					</div>
+					<!-- // blog author meta -->
+
+				</header>
+				<!-- // blog author header -->
+
+				<div class="blog__author__bio">
+
+					<p><a href="#!"><%= post.get( 'author' ).name %></a> <%= post.get( 'author' ).description %></p>
+
+				</div>
+
+			</section>
+
 		</div>
 
 	</article>
 
 <% }) %>
 </script>
+
+
+<?php /*
+<script type="text/template" id="blog-template-author">
+<% _.each( authors, function( author ) { %>
+
+	<section class="blog__author">
+
+		<header class="blog__author__header">
+
+			<div class="blog__author__meta">
+
+				<div class="blog__author__image">
+
+					<img srcset="">
+
+				</div>
+				<!-- // blog author image -->
+
+			</div>
+			<!-- // blog author meta -->
+
+		</header>
+		<!-- // blog author header -->
+
+		<div class="blog__author__bio">
+
+			<p><a href="#!"><%= author.name %></a></p>
+
+		</div>
+
+	</section>
+
+<% }) %>
+</script>
+*/ ?>
 
 
 <script type="text/template" id="blog-template-interstitial">

@@ -9,16 +9,17 @@ rp3.backbone_blog = (function($, _, Backbone) {
 
 	var
 
-	baseUrl = '/wp-json/posts?',
-	offSet = 0,
-	$blog__backbone = $('#blog__backbone'),
+	baseUrlPost		= '/wp-json/posts?',
+	baseUrlAuthor	= '/wp-json/users?',
+	offSet			= 0,
+	$blog__backbone	= $('#blog__backbone'),
 
 
 	/**
 	 * Backbone Classes
 	 */
 	
-	/** Model: Post */
+	/** Post Model */
 	
 	PostModel = Backbone.Model.extend({
 
@@ -33,11 +34,11 @@ rp3.backbone_blog = (function($, _, Backbone) {
 		}
 	}),
 
-	/** View: Post */
+	/** Post View */
 
 	PostView = Backbone.View.extend({
 
-		render:		function() {
+		render: function() {
 
 			var that = this;
 
@@ -59,10 +60,19 @@ rp3.backbone_blog = (function($, _, Backbone) {
 						post.set( 'four_three_medium_2x', responsiveImages( post.attributes.featured_image, 'four_three_medium_2x' ) );
 						post.set( 'eight_three_large', responsiveImages( post.attributes.featured_image, 'eight_three_large' ) );
 						post.set( 'eight_three_large_2x', responsiveImages( post.attributes.featured_image, 'eight_three_large_2x' ) );
+
 					});
 
 					var template = _.template( $('#blog-template').html() );
 					that.$el.html( template( { posts: posts.models } ) );
+
+
+					// Get the author(s) information
+
+					// var $authorElement = $('<div>').addClass('author');
+					// authorView.setElement( $authorElement );
+					// authorCollection.url = baseUrlAuthor;
+					// authorView.render();
 
 
 					// If the offSet is divisible by three, add on our interstitial
@@ -73,21 +83,77 @@ rp3.backbone_blog = (function($, _, Backbone) {
 				},
 
 				error: function() {
-					window.alert( 'Sorry, an error occurred.' );
+					window.alert( 'Sorry, an error occurred. [posts]' );
 				}
 			});
 
 			return this;
 		}
 	}),
+
 	postView = new PostView(),
 
-	/** Collection: Post */
+	/** Post Collection */
 
 	PostCollection = Backbone.Collection.extend({
 		model:	PostModel
 	}),
+
 	postCollection = new PostCollection(),
+
+
+
+	/** Author Model */
+
+	// AuthorModel = Backbone.Model.extend({}),
+
+	/** Author View */
+
+	// AuthorView = Backbone.View.extend({
+
+	// 	render: function() {
+
+	// 		var that = this;
+
+	// 		// Fetch our author
+
+	// 		authorCollection.fetch({
+
+	// 			success: function( authors ) {
+
+	// 				authors.each( function( author ) {
+	// 					// Do we even need to do anything here?
+	// 				});
+
+	// 				var template = _.template( $('#blog-template-author').html() );
+	// 				that.$el.html( template( { authors: authors.models } ) );
+	// 			},
+
+	// 			error: function() {
+	// 				window.alert( 'Sorry, an error occurred. [authors]' );
+	// 			}
+	// 		});
+
+	// 		return this;
+	// 	}
+	// }),
+
+	// authorView = new AuthorView(),
+
+	/** Author Collection */
+
+	// AuthorCollection = Backbone.Collection.extend({
+	// 	model: AuthorModel
+	// }),
+
+	// authorCollection = new AuthorCollection(),
+
+
+
+
+
+
+
 
 
 
@@ -127,7 +193,6 @@ rp3.backbone_blog = (function($, _, Backbone) {
 		}
 
 		return thisFeaturedImage.source;
-
 	},
 
 
@@ -173,7 +238,7 @@ rp3.backbone_blog = (function($, _, Backbone) {
 				postView.setElement( $postElement );
 
 				// Set the URL for this query
-				postCollection.url = baseUrl + 'filter[posts_per_page]=1&filter[offset]=' + offSet;
+				postCollection.url = baseUrlPost + 'filter[posts_per_page]=1&filter[offset]=' + offSet;
 
 				// Render the results
 				postView.render();
