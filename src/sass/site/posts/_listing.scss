@@ -1,5 +1,7 @@
 .listing {
 	@extend %max-width;
+	font-size: rem( 14px );
+	line-height: 1.5;
 
 	&__wrapper {
 		@extend %max-width--padded;
@@ -11,17 +13,15 @@
 		}
 	}
 
-	&__headline {
+	&__header {
 		@extend %roboto-medium;
-		font-size: em( 12px );
+		font-size: em( 12px, 14px );
 		margin-bottom: 1em;
 		text-transform: uppercase;
 	}
 
 	&__byline {
-		@extend %roboto-light;
 		color: mix( white, $color__black, 50% );
-		margin-bottom: 1em;
 	}
 
 	&__thumbnail {

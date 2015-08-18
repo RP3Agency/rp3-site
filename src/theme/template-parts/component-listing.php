@@ -8,7 +8,7 @@ if ( '' !== get_field( 'post_type' ) ) {
 
 	$listing_args = array(
 		'post_type'			=> get_field( 'post_type' ),
-		'posts_per_page'	=> 999,
+		'posts_per_page'	=> 6,
 		'post_status'		=> 'publish'
 	);
 
@@ -125,7 +125,8 @@ if ( '' !== get_field( 'post_type' ) ) {
 <!-- Post Listing -->
 
 <script>
-var queryOffset = <?php echo $offset; ?>;
+var listing_offset		= parseInt( '<?php echo esc_js( $offset ); ?>' );
+var listing_post_type	= '<?php echo esc_js( get_field( 'post_type' ) ); ?>';
 </script>
 
 <section class="listing">
@@ -162,17 +163,21 @@ var queryOffset = <?php echo $offset; ?>;
 
 					<div class="listing__content">
 
-						<h1 class="listing__headline"><?php the_title(); ?></h1>
+						<header class="listing__header">
 
-						<?php if ( 'news' == $page_type ) : ?>
+							<h1 class="listing__headline"><?php the_title(); ?></h1>
 
-							<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
+							<?php if ( 'news' == $page_type ) : ?>
 
-						<?php else: ?>
+								<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
 
-							<div class="listing__byline"><?php echo rp3_byline(); ?></div>
+							<?php else: ?>
 
-						<?php endif; ?>
+								<div class="listing__byline"><?php echo rp3_byline(); ?></div>
+
+							<?php endif; ?>
+
+						</header>
 
 						<div class="listing__excerpt">
 
@@ -220,9 +225,13 @@ var queryOffset = <?php echo $offset; ?>;
 
 					<?php endif; ?>
 
-					<h1 class="listing__headline"><?php the_title(); ?></h1>
+					<header class="listing__header">
 
-					<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
+						<h1 class="listing__headline"><?php the_title(); ?></h1>
+
+						<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
+
+					</header>
 
 					<div class="listing__excerpt">
 
@@ -239,10 +248,13 @@ var queryOffset = <?php echo $offset; ?>;
 
 	<?php endif; wp_reset_query(); ?>
 
+	<!-- Container to put our backbone-generated content. -->
 
-	<!-- <div class="all-news-link">
-		<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>" id="view-more">View More Posts</a>
-	</div> -->
+	<div id="listing__backbone"></div>
+
+	<div class="all-news-link">
+		<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>" id="listing__view-more">View More Posts</a>
+	</div>
 
 </section>
 
