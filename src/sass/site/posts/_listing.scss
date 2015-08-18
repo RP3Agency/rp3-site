@@ -5,7 +5,9 @@
 
 	&__wrapper {
 		@extend %max-width--padded;
+	}
 
+	&__contents {
 		@include breakpoint( bp() ) {
 			display: flex;
 			flex-wrap: wrap;

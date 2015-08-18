@@ -114,7 +114,7 @@ rp3.backbone = (function($, _, Backbone) {
 
 		var $listingViewMore = $('#listing__view-more'),
 			$postElement, url,
-			$listingBackboneContents;
+			$listingContentsBackbone;
 
 		$listingViewMore.on( 'click', function(e) {
 
@@ -125,18 +125,14 @@ rp3.backbone = (function($, _, Backbone) {
 			$(this).blur();
 
 			// Update our pagination count
-			$listingBackboneContents = $('.listing__backbone__contents');
+			$listingContentsBackbone = $('.listing__contents--backbone');
 
-console.log( $listingBackboneContents );
-
-			if ( 0 < $listingBackboneContents.size() ) {
-				paged = parseInt( $listingBackboneContents.last().data('paged') ) + 1;
+			if ( 0 < $listingContentsBackbone.size() ) {
+				paged = parseInt( $listingContentsBackbone.last().data('paged') ) + 1;
 			}
 
-console.log( paged );
-
 			// Create an element to store our rendering
-			$postElement = $('<div>').addClass('listing__backbone__contents').attr( 'data-paged', paged );
+			$postElement = $('<div>').addClass('listing__contents listing__contents--backbone').attr( 'data-paged', paged );
 			postView.setElement( $postElement );
 
 			// Determine the proper offset

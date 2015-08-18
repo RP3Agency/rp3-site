@@ -135,7 +135,7 @@ var listing_post_type	= '<?php echo esc_js( get_field( 'post_type' ) ); ?>';
 
 		<?php if ( $recent->have_posts() ) : while ( $recent->have_posts() ) : $recent->the_post(); ?>
 
-			<section class="listing__wrapper listing--recent">
+			<div class="listing__wrapper listing--recent">
 
 				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
 
@@ -189,7 +189,7 @@ var listing_post_type	= '<?php echo esc_js( get_field( 'post_type' ) ); ?>';
 
 				</a>
 
-			</section>
+			</div>
 
 		<?php endwhile; endif; wp_reset_query(); ?>
 
@@ -197,7 +197,7 @@ var listing_post_type	= '<?php echo esc_js( get_field( 'post_type' ) ); ?>';
 
 	<?php if ( $listing->have_posts() ) : ?>
 
-		<section id="listing" class="listing__wrapper" data-paged="<?php echo esc_attr( $paged ); ?>">
+		<div id="listing" class="listing__wrapper listing__contents" data-paged="<?php echo esc_attr( $paged ); ?>">
 
 			<?php while ( $listing->have_posts() ) : $listing->the_post(); ?>
 
@@ -243,14 +243,14 @@ var listing_post_type	= '<?php echo esc_js( get_field( 'post_type' ) ); ?>';
 
 			<?php endwhile; ?>
 
-		</section>
+		</div>
 		<!-- // #blog-listing -->
 
 	<?php endif; wp_reset_query(); ?>
 
 	<!-- Container to put our backbone-generated content. -->
 
-	<div id="listing__backbone"></div>
+	<div id="listing__backbone" class="listing__wrapper"></div>
 
 	<div class="all-news-link">
 		<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>" id="listing__view-more">View More Posts</a>
