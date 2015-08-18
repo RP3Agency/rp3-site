@@ -2,7 +2,7 @@
 
 function rp3_change_post_label() {
 	global $menu;
-	$menu[5][0] = 'Blogs';
+	$menu[5][0] = 'Blog';
 	echo '';
 }
 
