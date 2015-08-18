@@ -262,6 +262,10 @@ rp3.backbone_blog = (function($, _, Backbone) {
 }(jQuery, _, Backbone));
 
 (function() {
+
 	'use strict';
-	rp3.backbone_blog.init();
+
+	if ( -1 < location.href.indexOf( '/blog' ) ) {
+		rp3.backbone_blog.init();
+	}
 }());
