@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "972864aa3dc263935742b88015baa087",
+    "hash": "3885461bc7a62a832bb4ed28f60a67e2",
     "packages": [
         {
             "name": "composer/installers",
@@ -103,16 +103,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.2.4",
+            "version": "4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "7ba0030c15a88c63b3ba2e8ebee1215e211aa9a1"
+                "reference": "2afe902599538caaa0f1fd7579895dd7cc0ac5f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/7ba0030c15a88c63b3ba2e8ebee1215e211aa9a1",
-                "reference": "7ba0030c15a88c63b3ba2e8ebee1215e211aa9a1",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/2afe902599538caaa0f1fd7579895dd7cc0ac5f7",
+                "reference": "2afe902599538caaa0f1fd7579895dd7cc0ac5f7",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-08-04 12:01:12"
+            "time": "2015-08-18 18:16:11"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -357,46 +357,6 @@
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
         },
         {
-            "name": "wpackagist-plugin/custom-menu-wizard",
-            "version": "3.1.4",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/custom-menu-wizard/",
-                "reference": "tags/3.1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-menu-wizard.3.1.4.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/custom-menu-wizard/"
-        },
-        {
-            "name": "wpackagist-plugin/custom-tag-widget",
-            "version": "1.0.4",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/custom-tag-widget/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-tag-widget.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/custom-tag-widget/"
-        },
-        {
             "name": "wpackagist-plugin/debug-bar",
             "version": "0.8.2",
             "source": {
@@ -415,26 +375,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/debug-bar/"
-        },
-        {
-            "name": "wpackagist-plugin/disable-comments",
-            "version": "1.3.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.3.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.3.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/disable-comments/"
         },
         {
             "name": "wpackagist-plugin/dynamic-featured-image",
@@ -477,26 +417,6 @@
             "homepage": "https://wordpress.org/plugins/featured-images-for-rss-feeds/"
         },
         {
-            "name": "wpackagist-plugin/flipboard-magazine-widget",
-            "version": "1.0",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/flipboard-magazine-widget/",
-                "reference": "tags/1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/flipboard-magazine-widget.1.0.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/flipboard-magazine-widget/"
-        },
-        {
             "name": "wpackagist-plugin/force-regenerate-thumbnails",
             "version": "2.0.5",
             "source": {
@@ -515,26 +435,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/force-regenerate-thumbnails/"
-        },
-        {
-            "name": "wpackagist-plugin/fv-top-level-cats",
-            "version": "1.7",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/fv-top-level-cats/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/fv-top-level-cats.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/fv-top-level-cats/"
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
@@ -617,36 +517,16 @@
             "homepage": "https://wordpress.org/plugins/limit-login-attempts/"
         },
         {
-            "name": "wpackagist-plugin/list-category-posts",
-            "version": "0.62",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/list-category-posts/",
-                "reference": "tags/0.62"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/list-category-posts.0.62.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/list-category-posts/"
-        },
-        {
             "name": "wpackagist-plugin/mailchimp-for-wp",
-            "version": "2.3.7",
+            "version": "2.3.8",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/mailchimp-for-wp/",
-                "reference": "tags/2.3.7"
+                "reference": "tags/2.3.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.3.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.3.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -858,15 +738,15 @@
         },
         {
             "name": "wpackagist-plugin/theme-check",
-            "version": "20141222.1",
+            "version": "20150818.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/theme-check/",
-                "reference": "tags/20141222.1"
+                "reference": "tags/20150818.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/theme-check.20141222.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/theme-check.20150818.1.zip",
                 "reference": null,
                 "shasum": null
             },
