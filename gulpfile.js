@@ -70,8 +70,17 @@ gulp.task('styles', function() {
 
 
 // Scripts task: JSHint & minify custom js
+// Scripts need to be loaded in a particular order. There's probably a better way of doing this.
 gulp.task('scripts-custom', function() {
-	return gulp.src(src_js + '/*.js')
+	return gulp.src([
+			src_js + '/rp3.js',
+			src_js + '/rp3.backbone.js',
+			src_js + '/rp3.backbone-blog.js',
+			src_js + '/rp3.google-maps.js',
+			src_js + '/rp3.scroll-magic.js',
+			src_js + '/rp3.skip-link-focus-fix.js',
+			src_js + '/rp3.infinite-possibilities.js'
+		])
 		.pipe(jshint(__dirname + '/.jshintrc'))
 		.pipe(jshint.reporter('default'))
 		.pipe(concat(project + '.js'))
