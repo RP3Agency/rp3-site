@@ -1,4 +1,4 @@
-/* global rp3:true, picturefill:true */
+/* global rp3:true, listing_post_type:true, listing_offset:true */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
@@ -7,47 +7,33 @@ rp3.backbone = (function($, _, Backbone) {
 
 	'use strict';
 
-	var $body      = $('body'),
-		onNewsPage = $body.hasClass('page-news'),
-		onBlogPage = $body.hasClass('page-blog'),
+	// var $body      = $('body'),
+	// 	onNewsPage = $body.hasClass('page-news'),
 
-		$viewMoreButton = $('#view-more'),
+	// 	elementID, templateID, pageOffset,
 
-		// For date conversion
-		datetime, year, month, date, formattedDate,
-		monthArray = [
-			'January',
-			'February',
-			'March',
-			'April',
-			'May',
-			'June',
-			'July',
-			'August',
-			'September',
-			'October',
-			'November',
-			'December'
-		],
+	// 	// For the history pushState stuff
+	// 	locationHref, hrefPattern = /http:\/\/[^\/]+\/(news|blog)/;
 
-		elementID, templateID, pageOffset,
-
-		// For the history pushState stuff
-		locationHref, hrefPattern = /http:\/\/[^\/]+\/(news|blog)/;
-
-	elementID  = '#listing';
-
-	if ( onNewsPage ) {
-		templateID = '#news-template';
-	} else {
-		templateID = '#blog-template';
-	}
+	// if ( onNewsPage ) {
+	// 	templateID = '#news-template';
+	// } else {
+	// 	templateID = '#blog-template';
+	// }
 
 
-	var $container = $(elementID),
-		queryOffset = window.queryOffset;
+	// Bring in our variables from the PHP template
+	var post_type	= listing_post_type,
+		offset		= listing_offset;
+
+
+
 
 	var
+
+	baseUrl				= '/wp-json/posts?',
+	$listing__backbone	= $('#listing__backbone'),
+	paged				= 2,
 
 
 	/**
@@ -56,89 +42,55 @@ rp3.backbone = (function($, _, Backbone) {
 	
 	/** Post Model */
 
-	PostModel = Backbone.Model.extend({}),
+	PostModel = Backbone.Model.extend({
 
-	/** Posts Collection */
+		defaults: {
 
-	PostsCollection = Backbone.Collection.extend({
-		url:   '/wp-json/posts?filter[category_name=news]',
-		model: PostModel
+			'four_three_small':			null,
+			'four_three_small_2x':		null,
+			'four_three_medium':		null,
+			'four_three_medium_2x':		null
+		}
 	}),
 
 	/** Post List View */
 
-	PostListView = Backbone.View.extend({
-		el:     elementID,
+	PostView = Backbone.View.extend({
+
 		render: function() {
+
 			var that = this;
 
-			postsCollection.fetch({
+			// Fetch our next batch of posts
+
+			postCollection.fetch({
+
 				success: function( posts ) {
 
 					posts.each( function( post ) {
 
-						/** Convert the dates into something more human-friendly */
-						datetime = post.attributes.date;
+						// Convert the dates to English
 
-						year  = datetime.substr(0, 4);
-						month = datetime.substr(5, 2);
-						date  = datetime.substr(8, 2);
+						post.attributes.date = convertDate( post.attributes.date );
 
-						month = monthArray[ parseInt( month ) - 1 ];
+						// Gather our responsive images
 
-						formattedDate = month + ' ' + parseInt( date ) + ', ' + year;
-
-						post.attributes.date = formattedDate;
-
-						/** Next: Deal with the various responsive image sizes we need */
-						var sourceType, sourceValue;
-
-						sourceValue = post.attributes.featured_image;
-
-						if ( null !== sourceValue ) {
-							sourceType = typeof( post.attributes.featured_image.source );
-						}
-
-						if (
-							( 'undefined' !== sourceType ) &&
-							( null !== sourceValue )
-						) {
-
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.four_three_small ) ) {
-								post.attributes.img_small = post.attributes.featured_image.attachment_meta.sizes.four_three_small.url;
-							} else {
-								post.attributes.img_small = post.attributes.featured_image.source;
-							}
-
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.four_three_small_2x ) ) {
-								post.attributes.img_small_2x = post.attributes.featured_image.attachment_meta.sizes.four_three_small_2x.url;
-							} else {
-								post.attributes.img_small_2x = post.attributes.featured_image.source;
-							}
-
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.four_three_medium ) ) {
-								post.attributes.img_medium = post.attributes.featured_image.attachment_meta.sizes.four_three_medium.url;
-							} else {
-								post.attributes.img_medium = post.attributes.featured_image.source;
-							}
-
-							if ( 'undefined' != typeof( post.attributes.featured_image.attachment_meta.sizes.four_three_medium ) ) {
-								post.attributes.img_medium_2x = post.attributes.featured_image.attachment_meta.sizes.four_three_medium.url;
-							} else {
-								post.attributes.img_medium_2x = post.attributes.featured_image.source;
-							}
-						}
+						// post.set( 'four_three_small',		responsiveImages( post.attributes.featured_image, 'four_three_small' ) );
+						// post.set( 'four_three_small_2x',	responsiveImages( post.attributes.featured_image, 'four_three_small_2x' ) );
+						// post.set( 'four_three_medium',		responsiveImages( post.attributes.featured_image, 'four_three_medium' ) );
+						// post.set( 'four_three_medium_2x',	responsiveImages( post.attributes.featured_image, 'four_three_medium_2x' ) );
 					});
 
-					var template = _.template( $( templateID ).html() );
+					var template = _.template( $('#listing-template').html() );
 					that.$el.html( template( { posts: posts.models } ) );
 
-					if ( 'function' === typeof( 'picturefill' ) ) {
-						picturefill();
-					}
+					// if ( 'function' === typeof( 'picturefill' ) ) {
+					// 	picturefill();
+					// }
 				},
+
 				error: function() {
-					window.alert( 'Sorry, an error occurred.' );
+					window.alert( 'Sorry, an error occurred [news].' );
 				}
 			});
 
@@ -146,84 +98,170 @@ rp3.backbone = (function($, _, Backbone) {
 		}
 	}),
 
+	postView    = new PostView(),
 
+	/** Posts Collection */
 
-	postsCollection = new PostsCollection(),
-	postListView    = new PostListView(),
+	PostCollection = Backbone.Collection.extend({
+		model: PostModel
+	}),
+
+	postCollection = new PostCollection(),
 
 
 
 	setupMoreButtonListener = function() {
 
-		var postSetClass = 'post-set';
+		var $listingViewMore = $('#listing__view-more'),
+			$postElement, url,
+			$listingBackboneContents;
 
-		$viewMoreButton.on( 'click', function( event ) {
+		$listingViewMore.on( 'click', function(e) {
 
 			// Don't do anything I wouldn't do.
-			event.preventDefault();
+			e.preventDefault();
 
 			// "Blur" the button
 			$(this).blur();
 
-			// Determine which was the last page loaded (or from which page
-			// we're starting), so as to know which page we're loading next
+			// Update our pagination count
+			$listingBackboneContents = $('.listing__backbone__contents');
 
-			var nextPageNumber = 2,
-				$nextPostSet = $('<div>').addClass(postSetClass).attr('data-page', nextPageNumber);
+console.log( $listingBackboneContents );
 
-			if ( $container.attr('data-paged') ) {
-				nextPageNumber = parseInt( $container.attr('data-paged') ) + 1;
-				$container.attr( 'data-paged', nextPageNumber );
+			if ( 0 < $listingBackboneContents.size() ) {
+				paged = parseInt( $listingBackboneContents.last().data('paged') ) + 1;
 			}
 
-			// Update our collections URL
-			var url = '/wp-json/posts?filter[posts_per_page]=6&filter[category_name]=';
+console.log( paged );
 
-			if ( onNewsPage ) {
-				url += 'news';
-			} else {
-				url += 'blog';
-			}
+			// Create an element to store our rendering
+			$postElement = $('<div>').addClass('listing__backbone__contents').attr( 'data-paged', paged );
+			postView.setElement( $postElement );
 
-			if ( 0 < queryOffset ) {
-				pageOffset = 6 * ( nextPageNumber - 1 ) + 1;
-				url += '&filter[offset]=' + pageOffset;
-			} else {
-				url += '&page=' + nextPageNumber;
-			}
+			// Determine the proper offset
+			offset += 6;
 
-			postsCollection.url = url;
+			// Set the URL for this query
+			url = baseUrl;
+			url = url + 'filter[posts_per_page]=6';
+			url = url + '&type=' + post_type;
+			url = url + '&filter[offset]=' + offset;
 
-			// Update the element that we're rendering the view to
-			postListView.setElement( $nextPostSet );
+			postCollection.url = url;
 
-			postListView.render();
+			// Render the results
+			postView.render();
 
-			$(elementID).append( $nextPostSet );
-
-			// update the location
-			locationHref = window.location.href.match( hrefPattern )[0] + '/page/' + nextPageNumber + '/';
-			window.history.pushState( '', '', locationHref );
-
+			// Append results to the container, rather than replacing it
+			$listing__backbone.append( $postElement );
 		});
+
+		// var postSetClass = 'post-set';
+
+		// 	// Determine which was the last page loaded (or from which page
+		// 	// we're starting), so as to know which page we're loading next
+
+		// 	var nextPageNumber = 2,
+		// 		$nextPostSet = $('<div>').addClass(postSetClass).attr('data-page', nextPageNumber);
+
+		// 	if ( $container.attr('data-paged') ) {
+		// 		nextPageNumber = parseInt( $container.attr('data-paged') ) + 1;
+		// 		$container.attr( 'data-paged', nextPageNumber );
+		// 	}
+
+		// 	// Update our collections URL
+		// 	var url = '/wp-json/posts?filter[posts_per_page]=6&filter[category_name]=';
+
+		// 	if ( onNewsPage ) {
+		// 		url += 'news';
+		// 	} else {
+		// 		url += 'blog';
+		// 	}
+
+		// 	if ( 0 < queryOffset ) {
+		// 		pageOffset = 6 * ( nextPageNumber - 1 ) + 1;
+		// 		url += '&filter[offset]=' + pageOffset;
+		// 	} else {
+		// 		url += '&page=' + nextPageNumber;
+		// 	}
+
+		// 	postCollection.url = url;
+
+		// 	// Update the element that we're rendering the view to
+		// 	postView.setElement( $nextPostSet );
+
+		// 	postView.render();
+
+		// 	$(elementID).append( $nextPostSet );
+
+		// 	// update the location
+		// 	locationHref = window.location.href.match( hrefPattern )[0] + '/page/' + nextPageNumber + '/';
+		// 	window.history.pushState( '', '', locationHref );
 
 	},
 
-	init = function() {
 
-		if ( ( onNewsPage ) || ( onBlogPage ) ) {
-			setupMoreButtonListener();
+
+	/** Helper methods for both this and rp3.backbone_blog */
+
+	// Date conversion into plain English
+
+	convertDate = function( datetime ) {
+
+		var year, month, date,
+
+			monthArray = [
+				'January', 'February', 'March', 'April',
+				'May', 'June', 'July', 'August',
+				'September', 'October', 'November', 'December'
+			];
+
+		year  = datetime.substr( 0, 4 );
+		month = monthArray[ parseInt( datetime.substr( 5, 2 ) ) - 1 ];
+		date  = datetime.substr( 8, 2 );
+
+		return month + ' ' + parseInt( date ) + ', ' + year;
+	},
+
+	// Responsive image gathering
+
+	responsiveImages = function( featuredImage, size ) {
+
+		var thisFeaturedImage = featuredImage.attachment_meta.sizes[size];
+
+		if ( 'undefined' != typeof( thisFeaturedImage ) ) {
+
+			return thisFeaturedImage.url;
 		}
+
+		return thisFeaturedImage.source;
+	},
+
+
+
+	init = function() {
+		setupMoreButtonListener();
 	};
 
 
+
 	return {
-		init:init
+		init:init,
+
+		// Publicly expose our helper methods
+
+		convertDate:convertDate,
+		responsiveImages:responsiveImages
 	};
 
 }(jQuery, _, Backbone));
 
-(function() {
+(function($) {
+
 	'use strict';
-	rp3.backbone.init();
-}());
+
+	if ( 0 < $('#listing__view-more').size() ) {
+		rp3.backbone.init();
+	}
+}(jQuery));
