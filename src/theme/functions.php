@@ -72,35 +72,35 @@ require get_template_directory() . '/inc/widgets.php';
  */
 function rp3_scripts() {
 
+	$prerequisites = array(
+		'jquery',
+		'backbone',
+		'underscore',
+		'wp-api',
+		'rp3-plugins'
+	);
+
+	if ( is_page( 'contact' ) ) {
+		array_push( $prerequisites, 'rp3-google-maps' );
+	}
+
 	if ( WP_DEBUG ) {
 		/** Uniminified for debugging */
 
-		// wp_register_style( 'wawf-fonts', get_template_directory_uri() . '/fonts-com.css' );
 		wp_register_style( 'rp3-style', get_stylesheet_directory_uri() . '/css/rp3.css' );
 		wp_register_script( 'rp3-vendor', get_template_directory_uri() . '/js/rp3-vendor.js', array(), '20120206' );
 		wp_register_script( 'rp3-plugins', get_template_directory_uri() . '/js/rp3-plugins.js', array( 'jquery' ), '20120206', true );
 		wp_register_script( 'rp3-google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDbQMhVNXn8QRMNJoiWJeemZ63O4NN75kI');
-
-		if ( is_page( 'contact' ) ) {
-			wp_register_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.js', array( 'jquery', 'rp3-plugins', 'rp3-google-maps', 'backbone' ), '20120206', true );
-		} else {
-			wp_register_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.js', array( 'jquery', 'rp3-plugins', 'backbone' ), '20120206', true );
-		}
+		wp_register_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.js', $prerequisites, '20120206', true );
 
 	} else {
 		/** Minified for production */
 
-		// wp_register_style( 'wawf-fonts', get_template_directory_uri() . '/fonts-com.css' );
 		wp_register_style( 'rp3-style', get_stylesheet_directory_uri() . '/css/rp3.min.css' );
 		wp_register_script( 'rp3-vendor', get_template_directory_uri() . '/js/rp3-vendor.min.js', array(), '20120206' );
 		wp_register_script( 'rp3-plugins', get_template_directory_uri() . '/js/rp3-plugins.min.js', array( 'jquery' ), '20120206', true );
 		wp_register_script( 'rp3-google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDbQMhVNXn8QRMNJoiWJeemZ63O4NN75kI');
-
-		if ( is_page( 'contact' ) ) {
-			wp_register_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', array( 'jquery', 'rp3-plugins', 'rp3-google-maps', 'backbone' ), '20120206', true );
-		} else {
-			wp_register_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', array( 'jquery', 'rp3-plugins', 'backbone' ), '20120206', true );
-		}
+		wp_register_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', $prerequisites, '20120206', true );
 	}
 
 	// wp_enqueue_style( 'wawf-fonts' );
@@ -277,3 +277,29 @@ function rp3_use_alternate_featured_image( $sub_field ) {
 /** Get comments to appear on blog "archive" pages */
 
 $withcomments = 1;
+
+
+/** Expand our available fields via the WP API */
+
+function rp3_json_api_prepare_post( $post_response, $post, $context ) {
+
+	// I'm hoping this could be useful sometime soon...
+
+	// var_dump( $post );
+
+	// $title        = get_field( "title", $post['ID'] );
+	// $website     = get_field( "website", $post['ID'] );
+	// $display_url = wawf_get_display_url( $website );
+	// $phone       = get_field( "phone", $post['ID'] );
+	// $logo        = esc_url( wp_get_attachment_url( get_field( "logo", $post['ID'] ) ) );
+	// $current     = get_field( "current", $post['ID'] );
+
+	// $post_response['title'] = $desc;
+	// $post_response['website']                  = esc_url( $website );
+	// $post_response['display_url']              = $display_url;
+	// $post_response['phone']                    = $phone;
+	// $post_response['logo']                     = $logo;
+
+	return $post_response;
+}
+// add_filter( 'json_prepare_post', 'rp3_json_api_prepare_post', 10, 3 );

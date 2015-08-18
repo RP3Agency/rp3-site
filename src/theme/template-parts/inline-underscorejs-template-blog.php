@@ -32,6 +32,7 @@
 
 			</section>
 
+			<?php /*
 			<section class="blog__author">
 
 				<header class="blog__author__header">
@@ -58,6 +59,7 @@
 				</div>
 
 			</section>
+			*/ ?>
 
 		</div>
 

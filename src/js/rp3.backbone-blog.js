@@ -10,7 +10,7 @@ rp3.backbone_blog = (function($, _, Backbone) {
 	var
 
 	baseUrlPost		= '/wp-json/posts?',
-	baseUrlAuthor	= '/wp-json/users?',
+	// baseUrlAuthor	= '/wp-json/users?',
 	offSet			= 0,
 	$blog__backbone	= $('#blog__backbone'),
 
