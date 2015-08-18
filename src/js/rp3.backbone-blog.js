@@ -15,6 +15,7 @@ rp3.backbone_blog = (function($, _, Backbone) {
 	$blog__backbone	= $('#blog__backbone'),
 
 
+
 	/**
 	 * Backbone Classes
 	 */
@@ -51,16 +52,17 @@ rp3.backbone_blog = (function($, _, Backbone) {
 					posts.each( function( post ) {
 
 						// Convert the date to English
-						post.attributes.date = convertDate( post.attributes.date );
+
+						post.attributes.date = rp3.backbone.convertDate( post.attributes.date );
 
 						// Gather our responsive images
-						post.set( 'four_three_small', responsiveImages( post.attributes.featured_image, 'four_three_small' ) );
-						post.set( 'four_three_small_2x', responsiveImages( post.attributes.featured_image, 'four_three_small_2x' ) );
-						post.set( 'four_three_medium', responsiveImages( post.attributes.featured_image, 'four_three_medium' ) );
-						post.set( 'four_three_medium_2x', responsiveImages( post.attributes.featured_image, 'four_three_medium_2x' ) );
-						post.set( 'eight_three_large', responsiveImages( post.attributes.featured_image, 'eight_three_large' ) );
-						post.set( 'eight_three_large_2x', responsiveImages( post.attributes.featured_image, 'eight_three_large_2x' ) );
 
+						post.set( 'four_three_small',		rp3.backbone.responsiveImages( post.attributes.featured_image, 'four_three_small' ) );
+						post.set( 'four_three_small_2x',	rp3.backbone.responsiveImages( post.attributes.featured_image, 'four_three_small_2x' ) );
+						post.set( 'four_three_medium',		rp3.backbone.responsiveImages( post.attributes.featured_image, 'four_three_medium' ) );
+						post.set( 'four_three_medium_2x',	rp3.backbone.responsiveImages( post.attributes.featured_image, 'four_three_medium_2x' ) );
+						post.set( 'eight_three_large',		rp3.backbone.responsiveImages( post.attributes.featured_image, 'eight_three_large' ) );
+						post.set( 'eight_three_large_2x',	rp3.backbone.responsiveImages( post.attributes.featured_image, 'eight_three_large_2x' ) );
 					});
 
 					var template = _.template( $('#blog-template').html() );
@@ -83,7 +85,7 @@ rp3.backbone_blog = (function($, _, Backbone) {
 				},
 
 				error: function() {
-					window.alert( 'Sorry, an error occurred. [posts]' );
+					window.alert( 'Sorry, an error occurred [posts].' );
 				}
 			});
 
@@ -130,7 +132,7 @@ rp3.backbone_blog = (function($, _, Backbone) {
 	// 			},
 
 	// 			error: function() {
-	// 				window.alert( 'Sorry, an error occurred. [authors]' );
+	// 				window.alert( 'Sorry, an error occurred [authors].' );
 	// 			}
 	// 		});
 
@@ -147,53 +149,6 @@ rp3.backbone_blog = (function($, _, Backbone) {
 	// }),
 
 	// authorCollection = new AuthorCollection(),
-
-
-
-
-
-
-
-
-
-
-	/**
-	 * Convert dates to English
-	 */
-	convertDate = function( datetime ) {
-
-		var year, month, date,
-
-			monthArray = [
-				'January', 'February', 'March', 'April',
-				'May', 'June', 'July', 'August',
-				'September', 'October', 'November', 'December'
-			];
-
-		year = datetime.substr( 0, 4 );
-		month = datetime.substr( 5, 2 );
-		date = datetime.substr( 8, 2 );
-
-		month = monthArray[ parseInt( month ) - 1 ];
-
-		return month + ' ' + parseInt( date ) + ', ' + year;
-	},
-
-
-
-	/**
-	 * Gather Up Responsive Images
-	 */
-	responsiveImages = function( featuredImage, size ) {
-
-		var thisFeaturedImage = featuredImage.attachment_meta.sizes[size];
-
-		if ( 'undefined' != typeof( thisFeaturedImage ) ) {
-			return thisFeaturedImage.url;
-		}
-
-		return thisFeaturedImage.source;
-	},
 
 
 
