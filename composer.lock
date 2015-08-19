@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3885461bc7a62a832bb4ed28f60a67e2",
+    "hash": "b790ba7b96090fb4c81b0ee386cb1be6",
     "packages": [
         {
             "name": "composer/installers",
@@ -555,26 +555,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/public-post-preview/"
-        },
-        {
-            "name": "wpackagist-plugin/real-user-monitoring-by-pingdom",
-            "version": "1.0.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/real-user-monitoring-by-pingdom/",
-                "reference": "tags/1.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-user-monitoring-by-pingdom.1.0.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/real-user-monitoring-by-pingdom/"
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
