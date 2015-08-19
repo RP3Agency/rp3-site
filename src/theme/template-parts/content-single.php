@@ -63,6 +63,38 @@
 
 		<?php endif; ?>
 
+		<?php if ( is_singular( 'rp3_cpt_careers' ) ) : ?>
+
+			<section class="single-post-content--careers">
+
+				<?php if ( '' !== get_field( 'responsibilities' ) ) : ?>
+
+					<div class="single-post-content--careers__subsection">
+
+						<h2 class="single-post-content--careers__subhead">Responsibilities</h2>
+
+						<?php the_field( 'responsibilities' ); ?>
+
+					</div>
+
+				<?php endif; ?>
+
+				<?php if ( '' !== get_field( 'skills' ) ) : ?>
+
+					<div class="single-post-content--careers__subsection">
+
+						<h2 class="single-post-content--careers__subhead">Skills</h2>
+
+						<?php the_field( 'skills' ); ?>
+
+					</div>
+
+				<?php endif; ?>
+
+			</section>
+
+		<?php endif; ?>
+
 	</div>
 	<!-- // wrapper -->
 

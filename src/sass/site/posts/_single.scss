@@ -46,4 +46,23 @@
 			margin-top: 0;
 		}
 	}
+
+	/** Careers */
+
+	&--careers {
+		@extend %max-width--blog;
+
+		&__subsection {
+			margin-bottom: 2em;
+		}
+
+		&__subhead {
+			@extend %roboto-medium;
+			border-bottom: 1px solid $color__gray;
+			font-size: em( 14px );
+			margin-bottom: 0.5em;
+			padding-bottom: 0.25em;
+			text-transform: uppercase;
+		}
+	}
 }
