@@ -45,4 +45,4 @@
 	</header>
 	<!-- // site header -->
 
-	<main id="content" class="blog-content">
+	<main id="content" class="blog-content" role="main">
