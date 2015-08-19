@@ -31,7 +31,7 @@
 
 				<h1 class="blog-header__title blog-header__table-cell">
 
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="block">Building Opportunity</a>
+					<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" rel="home" class="block">Building Opportunity</a>
 
 				</h1>
 				<!-- site title / table cell -->
