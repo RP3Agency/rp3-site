@@ -1,6 +1,5 @@
 .checker-block{
-	@extend %max-width--padded;
-
+	@extend %max-width;
 	display: flex;
 	flex-wrap: wrap;
 

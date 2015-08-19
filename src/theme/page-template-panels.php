@@ -15,7 +15,7 @@ get_header(); ?>
 
 	<?php get_template_part( 'template-parts/content', 'page-panels' ); ?>
 
-	<?php get_template_part( 'template-parts/content', 'checker-blocks' ); ?>
+	<?php get_template_part( 'template-parts/component', 'checker-block' ); ?>
 
 <?php endwhile; // end of the loop. ?>
 
