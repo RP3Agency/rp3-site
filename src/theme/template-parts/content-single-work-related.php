@@ -10,7 +10,7 @@
 
 				<header class="work-single__related__header">
 
-					<h2>Related<br>Work</h2>
+					<h2>Related Work</h2>
 
 				</header>
 
@@ -33,7 +33,7 @@
 								?>
 
 								<picture>
-									<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
+									<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
 									<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
 									<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
 									<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
