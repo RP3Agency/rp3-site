@@ -1,0 +1,45 @@
+.iconified {
+	@extend %max-width;
+	font-size: rem( 14px );
+
+	&__content {
+		@extend %max-width--padded;
+
+		@include breakpoint( bp() ) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__content-block {
+		align-items: stretch;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1em;
+
+		@include breakpoint( bp() ) {
+			display: block;
+			width: span(6 of 24);
+		}
+	}
+
+	&__icon {
+		display: block;
+		width: span(6 of 24);
+
+		@include breakpoint( bp() ) {
+			height: 50px;
+			margin: 0 auto 1em;
+			width: auto;
+		}
+	}
+
+	&__text {
+		width: span(16 of 24);
+
+		@include breakpoint( bp() ) {
+			text-align: center;
+			width: auto;
+		}
+	}
+}
