@@ -19,6 +19,8 @@ get_header(); ?>
 
 	<?php get_template_part( 'template-parts/component', 'front-page-work' ); ?>
 
+	<?php get_template_part( 'template-parts/component', 'placeholders' ); ?>
+
 </article>
 <!-- #post-## -->
 
