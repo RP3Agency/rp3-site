@@ -1,0 +1,58 @@
+.checker-block{
+	@extend %max-width--padded;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	&__block {
+		display: flex;
+		flex: 1 1 100%;
+		flex-wrap: wrap;
+		height: 72vw;
+
+    	@include breakpoint( bp() ) {
+			flex: 1 1 50%;
+			height: 36vw;
+    	}
+
+    	@include breakpoint( bp( "intermediate" ) ) {
+    		flex: 1 1 33.33%;
+			height: 24.4vw;
+	    	max-height: 285px;
+    	}
+
+    	.block-segment {
+    		flex: 1 1 50%;	
+			height: 50%;
+    	}
+
+		&-segment--blue {
+			background-color: $color__blue;	
+		}
+
+		&-segment--img {
+			background-image: url('https://placekitten.com/g/800/600');
+			background-size: cover;
+
+			&.second {
+				background-image: url('https://placekitten.com/g/300/225');
+			}
+		}
+
+		&-segment--magenta {
+			background-color: $color__magenta;
+		}
+
+		&-segment--text {
+			background-color: $color__gray--light;
+			color: $color__blue;
+    		line-height: 1.5;
+			padding: 1em;
+			text-transform: uppercase;
+
+			&.block-segment {
+	    		flex: 1 1 100%;	
+	    	}
+		}
+	}
+}
