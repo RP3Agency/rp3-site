@@ -1,10 +1,6 @@
 .contact {
 	@extend %max-width;
 
-	&__wrapper {
-		@extend %max-width--padded;
-	}
-
 	&__header {
 		@extend %roboto-medium;
 		font-size: em( 12px );
