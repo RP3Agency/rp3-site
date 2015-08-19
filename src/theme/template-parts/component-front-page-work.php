@@ -6,7 +6,7 @@
 
 			<?php $post = get_sub_field( 'front_page_work_item' ); setup_postdata( $post ); ?>
 
-			<a href="<?php echo esc_url( get_permalink() ); ?>" class="front-page__work__item">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="block front-page__work__item">
 
 				<?php
 				/** Determine whether to use the primary or alternate featured image */
