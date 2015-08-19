@@ -12,29 +12,21 @@
 
 get_header( 'blog' ); ?>
 
-	<div id="primary" class="content-area">
+	<?php if ( have_posts() ) : ?>
 
-		<main id="main" class="site-main" role="main">
+		<?php /* Start the Loop */ ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php if ( have_posts() ) : ?>
+			<?php get_template_part( 'template-parts/content', 'single-blog' ); ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
-				<?php get_template_part( 'template-parts/content', 'single-blog' ); ?>
+		<?php endwhile; ?>
 
-				<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
+	<?php else : ?>
 
-			<?php endwhile; ?>
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-		<?php else : ?>
-
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-		<?php endif; ?>
-
-		</main><!-- #main -->
-
-	</div><!-- #primary -->
+	<?php endif; ?>
 
 <?php get_footer( 'blog' ); ?>

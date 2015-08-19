@@ -7,47 +7,19 @@
 
 get_header(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
+	<?php if ( have_posts() ) : ?>
 
-	<?php
+		<?php /* Start the Loop */ ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-	if ( has_category( 'news' ) ) :
+			<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-		get_template_part( 'content', 'single-news' );
+		<?php endwhile; ?>
 
-	elseif ( has_category( 'blog' ) ) :
+	<?php else : ?>
 
-		get_template_part( 'content', 'single-blog' );
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-	elseif ( has_category( 'careers' ) ) :
-
-		get_template_part( 'content', 'single-careers' );
-
-	elseif ( 'rp3_cpt_work' == get_post_type() ) :
-
-		get_template_part( 'content', 'single-work' );
-
-	else :
-
-		get_template_part( 'content', 'single' );
-
-	endif;
-
-	if ( has_category('blog') ) :
-
-
-	endif;
-	?>
-
-<?php endwhile; // end of the loop. ?>
-
-<?php
-
-if ( has_category( 'careers' ) ) {
-
-	get_sidebar( 'careers' );
-
-}
-?>
+	<?php endif; ?>
 
 <?php get_footer(); ?>
