@@ -52,7 +52,8 @@
     "wpackagist-plugin/featured-images-for-rss-feeds": "*",
     "wpackagist-plugin/wp-bitly":"*",
     "wpackagist-plugin/yet-another-related-posts-plugin":"*",
-    "wpackagist-plugin/dynamic-featured-image": "*"
+    "wpackagist-plugin/dynamic-featured-image": "*",
+    "wpackagist-plugin/tc-comment-out": "*"
   },
   "extra": {
     "wordpress-install-dir": "_wp",
