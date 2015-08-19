@@ -22,9 +22,7 @@ rp3.backbone = (function($, _, Backbone) {
 	// }
 
 
-	// Bring in our variables from the PHP template
-	var post_type	= listing_post_type,
-		offset		= listing_offset;
+	var post_type, offset;
 
 
 
@@ -237,6 +235,12 @@ rp3.backbone = (function($, _, Backbone) {
 
 
 	init = function() {
+
+		// Bring in our variables from the PHP template
+
+		post_type	= listing_post_type;
+		offset		= listing_offset;
+
 		setupMoreButtonListener();
 	};
 
