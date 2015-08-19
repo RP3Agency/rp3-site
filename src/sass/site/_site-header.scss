@@ -1,0 +1,198 @@
+.site-header {
+	height: rem( 74px );
+
+	@include breakpoint( bp() ) {
+		height: rem( 100px );
+	}
+
+	&__skip-link {
+		@extend %assistive;
+		@extend %assistive--focusable;
+	}
+
+	&__container {
+		@extend %max-width;
+		height: 100%;
+
+		&__inner {
+			@extend %max-width--padded;
+			height: 100%;
+		}
+	}
+
+
+
+	/** Logo */
+
+	&__site-title .logo {
+		display: block;
+		height: 28px;
+		width: 40px;
+
+		path {
+			fill: $color__primary;
+		}
+	}
+
+
+	/** Mobile navigation trigger */
+
+	&__menu-open {
+		@extend %genericon;
+		@extend %genericon-menu;
+		@extend %ir;
+		font-size: rem( 28px );
+		height: rem( 28px );
+		line-height: rem( 28px );
+		width: rem( 28px );
+
+		@include breakpoint( bp() ) {
+			display: none;
+		}
+	}
+
+
+	/** Navigation */
+
+	&__site-navigation {
+
+		a {
+			@extend %roboto-medium;
+			color: $color__black;
+			text: {
+				decoration: none;
+				transform: uppercase;
+			}
+
+			@include hover-state {
+				color: $color__primary;
+			}
+		}
+
+		/** Desktop */
+
+		&--desktop {
+			font-size: rem( 13px );
+
+			.current-menu-item a {
+				color: $color__primary;
+			}
+
+			.site-header__site-navigation--auxiliary {
+
+				a {
+					@extend %roboto-normal;
+				}
+			}
+		}
+
+		/** Mobile */
+
+		&--mobile {
+			background-color: $color__gray--light;
+			font-size: rem( 20px );
+			width: rem( 200px );
+
+			a {
+				border: {
+					top: 1px solid $color__white;
+					bottom: 1px solid $color__gray;
+				}
+				color: mix( black, $color__gray, 50% );
+			}
+
+			li:first-child {
+
+				a {
+					border-top: none;
+				}
+			}
+
+			// Last li a element needs the white border to complete the emboss.
+			// We'll add it via a pseudo-element.
+
+			li:last-child {
+
+				a {
+					position: relative;
+
+					&::after {
+						background-color: $color__white;
+						bottom: -2px;
+						content: '';
+						display: block;
+						height: 1px;
+						left: 0;
+						position: absolute;
+						right: 0;
+					}
+				}
+			}
+
+			// Set the body's position to "relative", but only when the canvas is open.
+
+			@at-root {
+
+				body.canvas-open {
+					position: relative;
+				}
+			}
+		}
+	}
+
+
+	/** Layout */
+
+	&__table {
+		display: table;
+		height: 100%;
+		width: 100%;
+	}
+
+	&__table-row {
+		display: table-row;
+	}
+
+	&__table-cell {
+		display: table-cell;
+		vertical-align: middle;
+
+		&:nth-child(1) {
+			padding-right: 2em;
+		}
+
+		&:nth-child(2) {
+			text-align: right;
+			width: 100%;
+		}
+	}
+
+	&__site-navigation {
+
+		&--desktop {
+			display: none;
+
+			@include breakpoint( bp() ) {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+
+		&--mobile {
+			bottom: 0;
+			position: fixed;
+			right: rem( -200px );
+			top: rem( 74px );
+			transition: right 200ms linear;
+			z-index: 10;
+
+			@include breakpoint( bp() ) {
+				display: none;
+			}
+
+			body.canvas-open & {
+				right: 0;
+			}
+		}
+	}
+}

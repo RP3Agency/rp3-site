@@ -1,0 +1,56 @@
+$social: (
+	facebook:		'\f204',
+	twitter:		'\f202',
+	linkedin:		'\f207',
+	pinterest:		'\f209',
+	github:			'\f200',
+	dribbble:		'\f201',
+	instagram:		'\f215',
+	email:			'\f410',
+	googleplus:		'\f218',
+	youtube:		'\f213',
+	vimeo:			'\f212'
+);
+
+%social {
+	@extend %genericon;
+	@extend %ir;
+	display: block;
+	height: 32px;
+	text-decoration: none;
+	width: 32px;
+
+	&:before {
+		font-size: em( 18px );
+		line-height: 32px;
+		text-align: center;
+		width: auto;
+	}
+}
+
+.social {
+	@extend %clear-ul-formatting;
+	@extend %clearfix;
+
+	li {
+		float: left;
+
+		a {
+			@extend %social;
+			border: 1px solid $blue;
+			color: $color__blue;
+			margin-right: 8px;
+
+			@include hover-state {
+				background-color: $color__blue;
+				color: $color__white;
+			}
+		}
+
+		@each $network, $content in $social {
+			&.#{$network} a:before {
+				content: $content;
+			}
+		}
+	}
+}

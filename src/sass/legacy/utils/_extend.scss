@@ -1,21 +1,6 @@
 /*
  * Image replacement
  */
-%ir {
-	background-color: transparent;
-	border: 0;
-	overflow: hidden;
-
-	/* IE 6/7 fallback */
-	*text-indent: -9999px;
-
-	&:before {
-		content: "";
-		display: block;
-		height: 150%;
-		width: 0;
-	}
-}
 
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
@@ -43,18 +28,6 @@
 		overflow: visible;
 		position: static;
 		width: auto;
-	}
-}
-
-%clearfix {
-	&:before,
-	&:after {
-		content: '';
-		display: table;		
-	}
-
-	&:after {
-		clear: both;
 	}
 }
 

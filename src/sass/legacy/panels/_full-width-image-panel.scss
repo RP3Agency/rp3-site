@@ -5,7 +5,7 @@
 	}
 
 	@include breakpoint( bp( 3 ) ) {
-		height: rem( 600px );
+		height: rem( 450px );
 	}
 
 	&__image {
@@ -44,7 +44,7 @@
 		}
 
 		@include breakpoint( bp( 3 ) ) {
-			height: rem( 854px );
+			height: rem( 640px );
 		}
 
 		.full-width-image-panel__image {

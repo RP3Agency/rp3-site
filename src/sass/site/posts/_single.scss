@@ -1,0 +1,68 @@
+.single-post-content {
+	@extend %max-width;
+	font-size: em( 16px );
+
+	&__wrapper {
+		@extend %max-width--padded;
+	}
+
+	&__header {
+		margin: {
+			top: 2rem;
+			bottom: 2rem;
+		}
+	}
+
+	&__title {
+		@extend %roboto-thin;
+		font-size: em( 40px );
+		line-height: 1;
+	}
+
+	&__date {
+		@extend %roboto-medium;
+	}
+
+	&__featured-image {
+		margin-bottom: 2rem;
+	}
+
+	&__content {
+		@extend %max-width--blog;
+	}
+
+	&__sharing {
+		@extend %max-width--blog;
+		margin-bottom: 2em;
+	}
+
+	p {
+		margin: {
+			top: 1em;
+			bottom: 1em;
+		}
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+
+	/** Careers */
+
+	&--careers {
+		@extend %max-width--blog;
+
+		&__subsection {
+			margin-bottom: 2em;
+		}
+
+		&__subhead {
+			@extend %roboto-medium;
+			border-bottom: 1px solid $color__gray;
+			font-size: em( 14px );
+			margin-bottom: 0.5em;
+			padding-bottom: 0.25em;
+			text-transform: uppercase;
+		}
+	}
+}

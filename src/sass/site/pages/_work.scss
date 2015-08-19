@@ -1,0 +1,168 @@
+.work {
+	@extend %max-width;
+
+	&__set {
+		@extend %max-width--padded;
+	}
+
+	&__link,
+	&__image {
+		height: 100%;
+	}
+
+	&__full {
+		overflow: hidden;
+		position: relative;
+
+		@include breakpoint( bp() ) {
+			height: rem( 450px );
+		}
+
+		img {
+
+			@include breakpoint( bp() ) {
+				height: 100%;
+				max-width: none;
+				width: auto;
+				@include centered( "horizontal" );
+			}
+		}
+	}
+
+	&__half {
+		overflow: hidden;
+		position: relative;
+
+		@include breakpoint( bp() ) {
+			height: rem( 450px );
+			width: 50%;
+		}
+
+		img {
+
+			@include breakpoint( bp() ) {
+				height: 100%;
+				max-width: none;
+				width: auto;
+				@include centered( "horizontal" );
+			}
+		}
+	}
+
+	&__quarter {
+		overflow: hidden;
+		position: absolute;
+
+		img {
+			height: 100%;
+			max-width: none;
+			width: auto;
+			@include centered( "horizontal" );
+		}
+	}
+
+
+	/* ==========================================================================
+	   Layout
+	   ========================================================================== */
+
+	// Default: Half, Quarter, Quarter
+
+	&__set__row {
+
+		@include breakpoint( bp() ) {
+			display: flex;
+		}
+
+		&__quarters {
+			min-height: rem( 240px );
+			position: relative;
+			@include aspect-ratio( 320px, 240px );
+
+			@include breakpoint( bp() ) {
+				display: block;
+				width: 50%;
+			}
+		}
+
+		.work__quarter {
+
+			&:nth-child(1) {
+				top: 0;
+				right: 0;
+				bottom: 50%;
+				left: 50%;
+
+				@include breakpoint( bp() ) {
+					left: 0;
+				}
+
+				@include breakpoint( bp("intermediate") ) {
+					left: 50%;
+				}
+			}
+
+			&:nth-child(2) {
+				top: 50%;
+				right: 50%;
+				bottom: 0;
+				left: 0;
+
+				@include breakpoint( bp() ) {
+					right: 0;
+				}
+
+				@include breakpoint( bp("intermediate") ) {
+					right: 50%;
+				}
+			}
+		}
+	}
+
+	// Alternate: Quarter, Quarter, Half
+
+	&__set:nth-of-type(even) {
+
+		.work__set__row {
+			flex-direction: row-reverse;
+		}
+
+		.work__quarter {
+
+			&:nth-child(1) {
+				right: 50%;
+				left: 0;
+
+				@include breakpoint( bp() ) {
+					right: 0;
+				}
+
+				@include breakpoint( bp("intermediate") ) {
+					right: 50%;
+				}
+			}
+
+			&:nth-child(2) {
+				right: 0;
+				left: 50%;
+
+				@include breakpoint( bp() ) {
+					left: 0;
+				}
+
+				@include breakpoint( bp("intermediate") ) {
+					left: 50%;
+				}
+			}
+		}
+	}
+
+	// Headline
+	&__content {
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 75%;
+	}
+}

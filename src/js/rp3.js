@@ -9,34 +9,22 @@ var rp3 = (function($) {
 
 	var lastScroll = 0,
 
-	/**
-	 * Toggle the "visibility" class of the mobile nav to trigger the CSS fade in and fade out
-	 */
-	showMainNav = function() {
-		var $mobileNav = $('#mobile-nav');
-		$mobileNav.addClass('visible');
-	},
-	hideMainNav = function() {
-		var $mobileNav = $('#mobile-nav');
+	/* ==========================================================================
+	Navigation Canvas Slide
+	========================================================================== */
 
-		$mobileNav.css('visibility', 'visible').removeClass('visible');
+	navigationCanvasSlide = function() {
 
-		setTimeout( function() {
-			$mobileNav.removeAttr('style');
-		}, 300);
-	},
-	toggleNavigation = function() {
-		var $menuOpen = $("#menu-open"),
-			$menuClose = $("#menu-close");
+		var $body = $('body'),
+			$menuOpen = $('#site-header__menu-open');
 
-		$menuOpen.on('click', function(e) {
+		$menuOpen.on( 'click', function(e) {
+
 			e.preventDefault();
-			showMainNav();
-		});
 
-		$menuClose.on('click', function(e) {
-			e.preventDefault();
-			hideMainNav();
+			$body.toggleClass('canvas-open');
+
+			$(this).trigger( 'blur' );
 		});
 	},
 
@@ -145,11 +133,26 @@ var rp3 = (function($) {
 		}
 	},
 
+	/** Reveal Comments Section */
+	revealComments = function() {
+
+		var $commentsTrigger = $('#single-blog__comments__trigger'),
+			$commentsForm = $('#single-blog__comments__form');
+
+		$commentsTrigger.on( 'click', function(e) {
+
+			e.preventDefault();
+
+			$commentsForm.slideDown();
+		});
+	},
+
 	init = function() {
-		toggleNavigation();
+		navigationCanvasSlide();
 		equalizeHeights();
 		videoToggle();
 		raptorJim();
+		revealComments();
 		
 		$(window).scroll(function() {
 			applyFixedHeader();

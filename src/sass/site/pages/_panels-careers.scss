@@ -1,0 +1,161 @@
+// Careers
+.careers {
+	@extend %max-width;
+	font-size: em( 14px );
+	line-height: 1.5;
+	margin-top: 3em;
+
+	&__header {
+		@extend %max-width--padded;
+		@extend %roboto-medium;
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+
+		h2 {
+			border-bottom: 1px solid $color__gray;
+			padding-bottom: 0.25em;
+		}
+	}
+
+	&--single__entry-content {
+		margin-bottom: 1em;
+
+		.entry-content__container {
+			float: none;
+			margin-right: 0;
+			width: 100%;
+		}
+	}
+
+	&__primary {
+		max-width: rem( 600px );
+		padding: {
+			right: percentage( 5px / 320px );
+			left: percentage( 5px / 320px );
+		}
+
+		@include breakpoint( bp() ) {
+			padding: {
+				right: 0;
+				left: 0;
+			}
+			@include span( 15 );
+		}
+	}
+
+	&__secondary {
+		@include breakpoint( bp() ) {
+			@include span(8 of 24 last);
+		}
+
+		.widget ul {
+			margin: 0 0 1.5em 3em;
+
+			@include breakpoint( cp() ) {
+				margin: 0 0 3em 1em;
+			}
+		}
+	}
+
+	&__header--section {
+		border-bottom: 1px solid $color__gray;
+		margin-bottom: 3rem;
+
+		&.no-bottom-margin {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+
+		h1,
+		h2 {
+			font: {
+				size: em(12px);
+				weight: $font-weight__medium;
+			}
+			line-height: 3;
+			text-transform: uppercase;
+		}
+	}
+
+	&__header--article {
+
+		h2 {
+			@extend %roboto-thin;
+			font-size: em( 20px, 14px );
+			margin-bottom: 0.25em;
+			text-transform: none;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0.5em;
+	}
+
+	&__secondary-copy {
+		@extend %wrapper;
+		margin-bottom: 3rem;
+		margin-top: 3rem;
+	}
+
+	&__entry-content--larger {
+		font-size: em(16px);
+
+		@include breakpoint( bp() ) {
+			@include span(16 of 24);
+		}
+	}
+
+	&__tagline {
+		color: $color__gray;
+		font-size: em(16px);
+	}
+
+	&__details {
+
+		.careers__header--section {
+			margin: {
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+
+	/**
+	 * Layout
+	 */
+	
+	&__content {
+		@extend %max-width--padded;
+
+		@include breakpoint( bp() ) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__article {
+		margin-bottom: 2em;
+
+		@include breakpoint( bp() ) {
+			margin-right: gutter();
+			padding: 0;
+			width: span( 12 of 24 );
+
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+		}
+
+		@include breakpoint( bp( "large" ) ) {
+			width: span( 8 of 24 );
+
+			&:nth-of-type(2n) {
+				margin-right: gutter();
+			}
+
+			&:nth-of-type(3n) {
+				margin-right: 0;
+			}
+		}
+	}
+}

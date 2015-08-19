@@ -1,0 +1,11 @@
+.page__generic {
+	@extend %max-width;
+}
+
+@import
+	"front-page",
+	"work",
+	"listing",
+	"panels",
+	"checker-block",
+	"contact";

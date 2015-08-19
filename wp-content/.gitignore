@@ -1,6 +1,4 @@
 plugins/*
-!plugins/category-post-list-widget/
-!plugins/rp3-mailchimp/
 debug.log
 xhc-xmt
 uploads/*

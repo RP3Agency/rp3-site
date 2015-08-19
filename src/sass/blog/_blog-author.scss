@@ -1,0 +1,37 @@
+.blog__author {
+	@extend %max-width--blog;
+	margin-bottom: 2em;
+
+	@include breakpoint( bp() ) {
+		display: flex;
+	}
+
+	&__header {
+		margin-right: gutter();
+
+		@include breakpoint( bp() ) {
+			width: span( 8 of 24 );
+		}
+
+		img {
+			height: auto;
+			max-width: 100%;
+		}
+	}
+
+	&__bio {
+		font-size: em( 14px );
+
+		@include breakpoint( bp() ) {
+			width: span( 16 of 24 );
+		}
+
+		p {
+			line-height: 1.5;
+		}
+
+		a {
+			font-weight: $font-weight__bold;
+		}
+	}
+}

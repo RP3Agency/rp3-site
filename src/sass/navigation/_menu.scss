@@ -1,0 +1,37 @@
+.menu {
+
+	/** Horizontal Menu Pattern */
+
+	&--horizontal {
+		@extend %clearfix;
+
+		li {
+			float: left;
+
+			a {
+				padding: 0.5em 1em;
+			}
+
+			&:first-child a {
+				padding-left: 0;
+			}
+
+			&:last-child a {
+				padding-right: 0;
+			}
+		}
+	}
+
+	/** Vertical Menu Pattern */
+
+	&--vertical {
+
+		li {
+
+			a {
+				display: block;
+				padding: 0.5em 1em;
+			}
+		}
+	}
+}

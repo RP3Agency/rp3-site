@@ -1,31 +1,32 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * Blog template page.
  *
+ * There is no more landing page for the blog. Instead,
+ * a cold hit to the blog will display the full text of
+ * the most recent post, and navigation commences from there
+ * via infinite scroll.
+ * 
  * @package RP3
  */
 
-get_header(); ?>
+get_header( 'blog' ); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php if ( have_posts() ) : ?>
 
-	<?php
+		<?php /* Start the Loop */ ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-	if ( has_category( 'blog' ) ) {
+			<?php get_template_part( 'template-parts/content', 'single-blog' ); ?>
 
-		get_template_part( 'content', 'single-blog' );
+			<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
-	} elseif ( has_category( 'news' ) ) {
+		<?php endwhile; ?>
 
-		get_template_part( 'content', 'single-news' );
+	<?php else : ?>
 
-	} elseif ( has_category( 'careers' ) ) {
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-		get_template_part( 'content', 'single-careers' );
-	}
+	<?php endif; ?>
 
-	?>
-
-	<?php endwhile; // end of the loop. ?>
-
-<?php get_footer(); ?>
+<?php get_footer( 'blog' ); ?>

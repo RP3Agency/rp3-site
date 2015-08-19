@@ -3,7 +3,7 @@
 		right: auto;
 		left: auto;
 	}
-	max-width: rem( 1600px );
+	max-width: rem( 1200px );
 
 	&--padded {
 		@include side-padding( "new" );

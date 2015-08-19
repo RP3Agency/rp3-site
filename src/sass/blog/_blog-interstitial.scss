@@ -1,0 +1,42 @@
+.site-blog__interstitial {
+	background-color: $color__gray--light;
+	padding: {
+		top: 2em;
+		bottom: 2em;
+	}
+
+	&__container {
+		@extend %max-width;
+	}
+
+	&__wrapper {
+		@extend %max-width--padded;
+	}
+
+	&__container {
+		@extend %max-width--blog;
+	}
+
+	p {
+		margin: {
+			top: 1em;
+			bottom: 1em;
+		}
+	}
+
+	a {
+		font-weight: $font-weight__bold;
+	}
+
+	/** Subscription Form */
+	input[type="email"] {
+		@extend %roboto-normal;
+		display: inline-block;
+		font-size: 1rem;
+		line-height: 1rem;
+		margin-left: 1em;
+		margin-right: 0;
+		vertical-align: baseline;
+		@include appearance(none);
+	}
+}

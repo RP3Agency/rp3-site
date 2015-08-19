@@ -1,89 +1,89 @@
-@import "logo";
+// @import "logo";
 
-.site-header {
-	@extend %clearfix;
+// .site-header {
+// 	@extend %clearfix;
 
-	@include breakpoint( bp( 2 ) ) {
-		height: cr(100px);
-	}
+// 	@include breakpoint( bp( 2 ) ) {
+// 		height: cr(100px);
+// 	}
 
-	// Make all links in the primary nav blocks
-	// Set the font size, weight and styling
-	a {
-		color: $black;
-		display: block;
-		font: {
-			size: cr(13px);
-			weight: $medium;
-		}
-		text: {
-			decoration: none;
-			transform: uppercase;
-		}
-		transition: color 150ms linear;
+// 	// Make all links in the primary nav blocks
+// 	// Set the font size, weight and styling
+// 	a {
+// 		color: $black;
+// 		display: block;
+// 		font: {
+// 			size: cr(13px);
+// 			weight: $medium;
+// 		}
+// 		text: {
+// 			decoration: none;
+// 			transform: uppercase;
+// 		}
+// 		transition: color 150ms linear;
 
-		@include breakpoint( bp( 2 ) ) {
-			font-weight: $light;
-		}
-	}
+// 		@include breakpoint( bp( 2 ) ) {
+// 			font-weight: $light;
+// 		}
+// 	}
 
-	.skip-link {
-		@extend %assistive;
-	}
+// 	.skip-link {
+// 		@extend %assistive;
+// 	}
 
-	.header-wrapper {
-		height: 100%;
-	}
+// 	.header-wrapper {
+// 		height: 100%;
+// 	}
 
-	.site-branding {
-		@extend %clearfix;
-		height: 100%;
+// 	.site-branding {
+// 		@extend %clearfix;
+// 		height: 100%;
 
-		.site-title {
-			float: left;
-			margin: cr(8px) 0;
-			padding: cr(15px) 0;
+// 		.site-title {
+// 			float: left;
+// 			margin: cr(8px) 0;
+// 			padding: cr(15px) 0;
 
-			@include breakpoint( bp( 2 ) ) {
-				margin: {
-					top: cr(24px);
-					bottom: 0;
-				}
-			}
-		}
-	}
-}
+// 			@include breakpoint( bp( 2 ) ) {
+// 				margin: {
+// 					top: cr(24px);
+// 					bottom: 0;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
-@import "navigation";
+// @import "navigation";
 
-@import "mobile-nav";
+// @import "mobile-nav";
 
-.header-container {
-	background-color: transparentize(#fff, 0.1);
-	top: cr(-100px);
+// .header-container {
+// 	background-color: transparentize(#fff, 0.1);
+// 	top: cr(-100px);
 
-	@include breakpoint( bp( 2 ) ) {
-		body.fixed-nav & {
+// 	@include breakpoint( bp( 2 ) ) {
+// 		body.fixed-nav & {
 
-			@include modernizr(no-touch) {
-				border-bottom: 1px solid map-get($gray_map, light);
-				position: fixed;
-				top: 0;
-				transition: top 500ms ease-in-out;
-				width: 100%;
-				z-index: 10;
-			}
-		}
+// 			@include modernizr(no-touch) {
+// 				border-bottom: 1px solid map-get($gray_map, light);
+// 				position: fixed;
+// 				top: 0;
+// 				transition: top 500ms ease-in-out;
+// 				width: 100%;
+// 				z-index: 10;
+// 			}
+// 		}
 
-		// .site-header {
-		// 	background-color: transparentize(#fff, 0.1);
-		// }
-	}
-}
+// 		// .site-header {
+// 		// 	background-color: transparentize(#fff, 0.1);
+// 		// }
+// 	}
+// }
 
-@include breakpoint( bp( 2 ) ) {
-	// Content adjustments to accommodate the fixed nav
-	body.fixed-nav .site-content {
-		margin-top: cr(100px) !important;
-	}
-}
+// @include breakpoint( bp( 2 ) ) {
+// 	// Content adjustments to accommodate the fixed nav
+// 	body.fixed-nav .site-content {
+// 		margin-top: cr(100px) !important;
+// 	}
+// }

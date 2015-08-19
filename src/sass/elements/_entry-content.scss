@@ -1,0 +1,26 @@
+.entry-content {
+	@extend %max-width--padded;
+	margin-bottom: 2em;
+	max-width: rem( 900px );
+
+	h1 {
+		@extend %roboto-thin;
+		font-size: em( 40px );
+		line-height: 1;
+		margin-bottom: 0.25em;
+	}
+
+	h2 {
+		@extend %roboto-medium;
+		font-size: em( 12px );
+		margin-bottom: 1em;
+		text-transform: uppercase;
+	}
+
+	p {
+		margin: {
+			top: 1em;
+			bottom: 1em;
+		}
+	}
+}

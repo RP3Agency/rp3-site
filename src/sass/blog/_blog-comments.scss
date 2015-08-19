@@ -1,0 +1,181 @@
+.single-blog__comments {
+	@extend %max-width;
+	margin-bottom: 2rem;
+
+	&__wrapper {
+		@extend %max-width--blog;		
+	}
+
+
+	/** Open Comments Trigger */
+
+	&__trigger {
+		border: solid {
+			width: 1px 0;
+		}
+		color: $color__gray;
+		display: block;
+		font: {
+			size: em( 12px );
+			weight: $font-weight__bold;
+		}
+		padding: {
+			top: 0.25em;
+			bottom: 0.25em;
+		}
+		text: {
+			align: center;
+			decoration: none;
+			transform: uppercase;
+		}
+
+		&:visited {
+			color: $color__gray;
+		}
+
+		@include hover-state {
+			color: $color__gray;
+		}
+	}
+
+	&__count {
+		background-color: $color__gray;
+		border-radius: 100%;
+		color: $color__white;
+		display: inline-block;
+		font-weight: $font-weight__bold;
+		height: 24px;
+		line-height: 24px;
+		margin-left: 1em;
+		text-align: center;
+		width: 24px;
+	}
+
+	/** Hide form and comments initially */
+
+	&__form {
+		border-bottom: 1px solid $color__gray;
+		display: none;
+		padding-top: 1rem;
+	}
+
+	/** Styling for comments listing */
+
+	&__list {
+		font-size: rem( 14px );
+		list-style: none;
+		margin: {
+			left: 0;
+			top: 1em;
+		}
+
+		article {
+			border: 1px solid $color__gray--light;
+			margin-bottom: 1rem;
+		}
+
+		article,
+		article p {
+			line-height: 1.5;
+		}
+	}
+
+	.comment-body {
+		@extend .quotations;
+		padding: 0;
+	}
+
+	.comment-content {
+		padding: 1em 1em 0;
+	}
+
+	.comment-metadata {
+		@extend %roboto-bold;
+		color: $color__gray;
+		font-size: em( 12px );
+		text: {
+			decoration: none;
+			transform: uppercase;
+		}
+	}
+
+	.children {
+		margin-left: 0;
+
+		@include breakpoint( bp() ) {
+			margin-left: 1.5em;
+		}
+	}
+
+	.reply {
+		padding: 1em;
+	}
+
+	.comment-meta {
+		@extend %clearfix;
+		background-color: mix( white, $color__gray--light, 50% );
+		border-bottom: 1px solid $color__gray--light;
+	}
+
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+
+		input {
+			width: 100%;
+		}
+
+		@include breakpoint( bp() ) {
+			float: left;
+			width: span( 8 of 24 );
+		}
+	}
+
+	.comment-notes {
+		font-size: em( 14px );
+		line-height: 1.5;
+	}
+
+	@include breakpoint( bp() ) {
+
+		.comment-form-author,
+		.comment-form-email {
+			@include gutter;
+		}
+
+		.comment-form-comment {
+			clear: both;
+
+			textarea {
+				width: 100%;
+			}
+		}
+	}
+
+	.comment-author {
+
+		img {
+			float: left;
+			margin-right: 1em;
+		}
+
+		.fn,
+		.says {
+			display: inline-block;
+			margin-top: 0.5em;
+		}
+	}
+
+	.comment-metadata {
+		font-size: em( 12px );
+	}
+
+	label {
+		display: block;
+	}
+
+	.comment-reply-title {
+		@extend %roboto-thin;
+		font-size: em( 20px );
+	}
+}

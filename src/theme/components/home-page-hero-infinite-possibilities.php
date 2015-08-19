@@ -1,4 +1,4 @@
-<section id="home-hero" class="hero hero--home hero--home--infinite-possibilities full-width-image-panel panel component">
+<section id="home-hero" class="hero hero--home hero--home--infinite-possibilities full-width-image-panel component">
 
 	<a href="<?php echo esc_url( home_url( '/work/infinite-possibilities' ) ); ?>" class="block">
 

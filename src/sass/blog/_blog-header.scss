@@ -1,0 +1,66 @@
+.site-header {
+
+	&--blog {
+		background-color: $color__primary;
+
+		/** Logo */
+
+		.site-header__site-title .logo {
+
+			path {
+				fill: $color__white;
+			}
+		}
+
+		a {
+			color: $color__white;
+
+			@include hover-state {
+				color: $color__black;
+			}
+		}
+	}
+}
+
+
+.blog-header {
+	background-color: $color__primary;
+	color: $color__white;
+	height: rem( 74px );
+
+	@include breakpoint( bp() ) {
+		height: rem( 100px );
+	}
+
+	&__skip-link {
+		@extend %assistive;
+		@extend %assistive--focusable;
+	}
+
+	&__container {
+		@extend %max-width;
+		height: 100%;
+
+		&__inner {
+			@extend %max-width--padded;
+			height: 100%;
+			position: relative;
+		}
+	}
+
+
+
+	/** Layout */
+
+	&__title {
+		@extend %roboto-thin;
+		font-size: em(24px);
+		text-transform: uppercase;
+		white-space: nowrap;
+		@include centered( 'vertical' );
+
+		@include breakpoint( bp() ) {
+			font-size: em(40px);
+		}
+	}
+}

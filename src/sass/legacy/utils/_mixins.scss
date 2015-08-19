@@ -16,11 +16,6 @@
 	}
 }
 
-@mixin highlight($adjustment: 0) {
-	$color-test: rgba(255, 0, 255, 0.2);
-	background-color: adjust-hue($color-test, $adjustment * 1deg);
-}
-
 @mixin side-padding( $style: "old" ) {
 
 	// The "old" way of doing it
@@ -41,27 +36,27 @@
  * @param  {number} $height Height context
  */
 
-@mixin aspect-ratio( $width, $height ) {
-	position: relative;
+// @mixin aspect-ratio( $width, $height ) {
+// 	position: relative;
 
-	&::before {
-		content: "";
-		display: block;
-		padding-top: percentage( $height / $width );
-		width: 100%;
-	}
+// 	&::before {
+// 		content: "";
+// 		display: block;
+// 		padding-top: percentage( $height / $width );
+// 		width: 100%;
+// 	}
 
-	> [class$="__content"] {
-		bottom: 0;
-		left: 0;
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
+// 	> [class$="__content"] {
+// 		bottom: 0;
+// 		left: 0;
+// 		position: absolute;
+// 		right: 0;
+// 		top: 0;
+// 	}
 
-	picture,
-	picture img {
-		height: auto;
-		width: 100%;
-	}
-}
+// 	picture,
+// 	picture img {
+// 		height: auto;
+// 		width: 100%;
+// 	}
+// }

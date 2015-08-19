@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Breakpoint settings
+   ========================================================================== */
+
+$breakpoint-to-ems: true;
+$hidpi: min-resolution 1.5dppx;
+
+/* ==========================================================================
+   Set 3 primary breakpoints:
+   small (321+; very specialized and not often used)
+   medium (600+; our primary breakpoint)
+   large (1000+; again, specialized and mostly a "special-circumstances" case)
+   ========================================================================== */
+
+$breakpoints: (
+	"small":         321px,
+	"medium":        600px,
+   "intermediate":  800px,
+	"large":         1000px
+);
+
+/* ==========================================================================
+   bp function
+   For facilitating use of our $breakpoints Sass map with the breakpoint Sass
+   library. Default is "medium", since that will be our most often-used
+   breakpoint.
+   ========================================================================== */
+
+@function bp( $breakpoint: "medium" ) {
+
+	@if map-has-key( $breakpoints, $breakpoint ) {
+
+		@return map-get( $breakpoints, $breakpoint );
+
+	} @else {
+
+		@warn "Invalid breakpoint keyword given for the `bp` function.";
+		@return false;
+
+	}
+}
