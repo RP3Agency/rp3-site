@@ -3,19 +3,19 @@
 <script type="text/template" id="blog-template">
 <% _.each( posts, function( post ) { %>
 
-	<article class="single-blog">
+	<article class="single-post-content single-post-content--blog">
 
-		<div class="single-blog__wrapper">
+		<div class="single-post-content__wrapper">
 
-			<header class="single-blog__header">
+			<header class="single-post-content__header">
 
-				<h1 class="single-blog__title"><%= post.get( 'title' ) %></h1>
+				<h1 class="single-post-content__title"><%= post.get( 'title' ) %></h1>
 
-				<div class="single-blog__date"><%= post.get( 'date' ) %></div>
+				<div class="single-post-content__date"><%= post.get( 'date' ) %></div>
 
 			</header>
 
-			<section class="single-blog__featured-image">
+			<div class="single-post-content__featured-image">
 
 				<picture>
 					<source srcset="<%= post.get( 'eight_three_large' ) %>, <%= post.get( 'eight_three_large_2x' ) %> 2x" media="(min-width: 37.5rem)" />
@@ -24,9 +24,9 @@
 					<img srcset="<%= post.get( 'four_three_small' ) %>, <%= post.get( 'four_three_small_2x' ) %> 2x" />
 				</picture>
 
-			</section>
+			</div>
 
-			<section class="single-blog__content">
+			<section class="single-post-content__content">
 
 				<%= post.get( 'content' ) %>
 

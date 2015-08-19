@@ -3,7 +3,7 @@
  * @package RP3
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-content single-post-content--blog' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-content' ); ?>>
 
 	<div class="single-post-content__wrapper">
 
@@ -63,31 +63,7 @@
 
 		<?php endif; ?>
 
-		<?php /** If comments are open or we have at least one comment, load up the comment template */ ?>
-
-		<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
-
-			<!-- Comments -->
-
-			<?php comments_template( '/template-parts/content-blog-comments.php' ); ?>
-
-		<?php endif; ?>
-
-		<!-- Blog Author -->
-
-		<?php get_template_part( 'template-parts/content', 'blog-author' ); ?>
-
-		<!-- Related Posts -->
-
-		<?php get_template_part( 'template-parts/content', 'blog-related' ); ?>
-
 	</div>
 	<!-- // wrapper -->
 
 </article>
-
-<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
-
-<div id="blog__backbone"></div>
-
-<?php get_template_part( 'template-parts/inline', 'underscorejs-template-blog' ); ?>
