@@ -1,0 +1,80 @@
+.home-blocks {
+	@extend %max-width--padded;
+	color: #fff;
+	font-size: rem( 12px );
+
+	a {
+		color: currentColor;
+	}
+
+	h3 {
+		font-size: rem( 20px );
+		font-weight: $font-weight__thin;
+		margin-bottom: 5px;
+		text-transform: uppercase;
+	}
+
+	@include breakpoint( bp() ) {
+		font-size: rem( 14px );
+	}
+
+	&__row {
+		display: flex;
+	}
+
+	&__block {
+		min-height: rem( 150px );
+		overflow: hidden;
+		padding: 1em;
+		width: 50%;
+
+		@include breakpoint( bp() ) {
+			min-height: rem( 200px );
+			padding: 1em 4em 1em 1em;
+		}
+	}
+
+	&__general-widget {
+		background-color: $color__magenta;
+	}
+
+	&__black {
+		background-color: $color__black;
+
+		@include breakpoint( bp( "intermediate" ) ) {
+			width: 25%;
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+		}
+	}
+
+	&__blog--blue {
+		background-color: $color__blue;
+
+		@include breakpoint( bp( "intermediate" ) ) {
+			width: 25%;
+		}
+	}
+
+	&__gray {
+		background-color: $color__gray;
+
+		@include breakpoint( bp( "intermediate" ) ) {
+			width: 25%;
+		}
+	}
+
+	&__link { 
+		font-size: em( 7px, 12px );
+	}
+
+	&__row--2 {
+
+		@include breakpoint( bp( ) ) {
+			justify-content: space-between;
+		}
+	}
+}
