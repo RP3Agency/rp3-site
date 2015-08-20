@@ -1,18 +1,24 @@
 .headline {
 	@extend %roboto-medium;
-	background-image: linear-gradient(
-		to top,
-		transparentize( $color__white, 0.1 ) 0,
-		transparentize( $color__white, 0.2 ) 33.33333%,
-		transparentize( $color__white, 1 ) 100%
-	);
+	background: {
+		image: linear-gradient( to top, transparentize( $color__black, 0.4 ) 0, transparentize( $color__black, 1 ) 100% );
+		position: 0 100%;
+		repeat: no-repeat;
+		size: 100% 50%;
+	}
+	color: $color__white;
 	font-size: em( 12px );
 	line-height: 1.2;
 	padding: 0 1em;
 	text: {
-		shadow: 1px 1px 0 transparentize( $color__white, 0.5 );
+		// shadow: 1px 1px 0 transparentize( $color__gray, 0.5 );
 		transform: uppercase;
 	}
+	// transition: background-position 200ms linear;
+
+	// @include hover-state {
+	// 	background-position: 0 25%;
+	// }
 
 	// Bump the font size up responsively
 
