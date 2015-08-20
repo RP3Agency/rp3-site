@@ -29,14 +29,44 @@
 	}
 
 	/** Subscription Form */
+
+	form {
+		display: table;
+		width: 100%;
+	}
+	label {
+		display: inline-block;
+		width: 70%;
+
+		@include breakpoint( bp() ) {
+			display: table-cell;
+			width: 100%;
+		}
+	}
+	input[type="email"] {
+		@include breakpoint( bp() ) {
+			display: table-cell;
+		}
+	}
 	input[type="email"] {
 		@extend %roboto-normal;
-		display: inline-block;
+		display: block;
 		font-size: 1rem;
 		line-height: 1rem;
-		margin-left: 1em;
-		margin-right: 0;
+		margin-right: 0.2em;
+		margin-top: 0.5em;
 		vertical-align: baseline;
 		@include appearance(none);
+		width: 98%;
+
+		@include breakpoint( bp() ) {
+			display: inline-block;
+			margin-left: 1em;
+			width: 81%;
+		}
+
+		@include breakpoint( bp( "intermediate" ) ) {
+			width: 82%;
+		}
 	}
 }
