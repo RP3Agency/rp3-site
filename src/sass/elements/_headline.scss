@@ -1,7 +1,18 @@
 .headline {
-	background-color: transparentize( $color__white, 0.1 );
-	line-height: 1;
-	padding: 1em;
+	@extend %roboto-medium;
+	background-image: linear-gradient(
+		to top,
+		transparentize( $color__white, 0.1 ) 0,
+		transparentize( $color__white, 0.2 ) 33.33333%,
+		transparentize( $color__white, 1 ) 100%
+	);
+	font-size: em( 12px );
+	line-height: 1.2;
+	padding: 0 1em;
+	text: {
+		shadow: 1px 1px 0 transparentize( $color__white, 0.5 );
+		transform: uppercase;
+	}
 
 	// Bump the font size up responsively
 
@@ -10,14 +21,14 @@
 	}
 
 	&__title {
-		@extend %roboto-thin;
-		font-size: em( 20px );
 		margin-bottom: 0.25em;
 	}
 
-	// Vertical centering
+	// Align to the bottom
 
 	&__container {
-		@include centered( "vertical" );
+		bottom: 0;
+		padding-bottom: 1em;
+		position: absolute;
 	}
 }
