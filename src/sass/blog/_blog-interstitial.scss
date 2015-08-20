@@ -34,6 +34,7 @@
 		display: table;
 		width: 100%;
 	}
+
 	label {
 		display: inline-block;
 		width: 70%;
@@ -43,11 +44,13 @@
 			width: 100%;
 		}
 	}
+
 	input[type="email"] {
 		@include breakpoint( bp() ) {
 			display: table-cell;
 		}
 	}
+	
 	input[type="email"] {
 		@extend %roboto-normal;
 		display: block;
