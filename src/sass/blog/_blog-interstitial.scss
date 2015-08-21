@@ -30,46 +30,56 @@
 
 	/** Subscription Form */
 
-	form {
+	#mc4wp-form-1 {
 		display: table;
 		width: 100%;
 	}
 
-	label {
-		display: inline-block;
-		width: 70%;
-
-		@include breakpoint( bp() ) {
-			display: table-cell;
-			width: 100%;
-		}
+	form {
+		display: table-row;
 	}
 
-	input[type="email"] {
-		@include breakpoint( bp() ) {
-			display: table-cell;
+	label {
+		padding-right: 1em;
+	}
+
+	.form-table { 
+		display: table;
+		width: 100%;
+	}
+
+	.form-row {
+		display: table-row;
+	}
+
+	.form-cell {
+		display: table-cell;
+
+		&.subscribe-label {
+			max-width: 40px;
+		}
+
+		&.submit-button {
+			vertical-align: bottom;
+		}
+
+		&.block-mobile {
+			display: block;
+
+			@include breakpoint( bp() ) {
+				display: table-cell;
+			}
 		}
 	}
 	
 	input[type="email"] {
 		@extend %roboto-normal;
-		display: block;
 		font-size: 1rem;
 		line-height: 1rem;
 		margin-right: 0.2em;
 		margin-top: 0.5em;
 		vertical-align: baseline;
 		@include appearance(none);
-		width: 98%;
-
-		@include breakpoint( bp() ) {
-			display: inline-block;
-			margin-left: 1em;
-			width: 81%;
-		}
-
-		@include breakpoint( bp( "intermediate" ) ) {
-			width: 82%;
-		}
+		width: 100%;
 	}
 }
