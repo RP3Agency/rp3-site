@@ -73,10 +73,10 @@ rp3.backbone = (function($, _, Backbone) {
 
 						// Gather our responsive images
 
-						// post.set( 'four_three_small',		responsiveImages( post.attributes.featured_image, 'four_three_small' ) );
-						// post.set( 'four_three_small_2x',	responsiveImages( post.attributes.featured_image, 'four_three_small_2x' ) );
-						// post.set( 'four_three_medium',		responsiveImages( post.attributes.featured_image, 'four_three_medium' ) );
-						// post.set( 'four_three_medium_2x',	responsiveImages( post.attributes.featured_image, 'four_three_medium_2x' ) );
+						post.set( 'four_three_small',		responsiveImages( post.attributes.featured_image, 'four_three_small' ) );
+						post.set( 'four_three_small_2x',	responsiveImages( post.attributes.featured_image, 'four_three_small_2x' ) );
+						post.set( 'four_three_medium',		responsiveImages( post.attributes.featured_image, 'four_three_medium' ) );
+						post.set( 'four_three_medium_2x',	responsiveImages( post.attributes.featured_image, 'four_three_medium_2x' ) );
 					});
 
 					var template = _.template( $('#listing-template').html() );
@@ -151,48 +151,9 @@ rp3.backbone = (function($, _, Backbone) {
 			$listing__backbone.append( $postElement );
 		});
 
-		// var postSetClass = 'post-set';
-
-		// 	// Determine which was the last page loaded (or from which page
-		// 	// we're starting), so as to know which page we're loading next
-
-		// 	var nextPageNumber = 2,
-		// 		$nextPostSet = $('<div>').addClass(postSetClass).attr('data-page', nextPageNumber);
-
-		// 	if ( $container.attr('data-paged') ) {
-		// 		nextPageNumber = parseInt( $container.attr('data-paged') ) + 1;
-		// 		$container.attr( 'data-paged', nextPageNumber );
-		// 	}
-
-		// 	// Update our collections URL
-		// 	var url = '/wp-json/posts?filter[posts_per_page]=6&filter[category_name]=';
-
-		// 	if ( onNewsPage ) {
-		// 		url += 'news';
-		// 	} else {
-		// 		url += 'blog';
-		// 	}
-
-		// 	if ( 0 < queryOffset ) {
-		// 		pageOffset = 6 * ( nextPageNumber - 1 ) + 1;
-		// 		url += '&filter[offset]=' + pageOffset;
-		// 	} else {
-		// 		url += '&page=' + nextPageNumber;
-		// 	}
-
-		// 	postCollection.url = url;
-
-		// 	// Update the element that we're rendering the view to
-		// 	postView.setElement( $nextPostSet );
-
-		// 	postView.render();
-
-		// 	$(elementID).append( $nextPostSet );
-
 		// 	// update the location
 		// 	locationHref = window.location.href.match( hrefPattern )[0] + '/page/' + nextPageNumber + '/';
 		// 	window.history.pushState( '', '', locationHref );
-
 	},
 
 
@@ -222,14 +183,25 @@ rp3.backbone = (function($, _, Backbone) {
 
 	responsiveImages = function( featuredImage, size ) {
 
-		var thisFeaturedImage = featuredImage.attachment_meta.sizes[size];
-
-		if ( 'undefined' != typeof( thisFeaturedImage ) ) {
-
-			return thisFeaturedImage.url;
+		// If featuredImage is null, return nothing
+		if ( ! featuredImage ) {
+			return false;
 		}
 
-		return thisFeaturedImage.source;
+		// If featuredImage has error_data as a property, return nothing
+		if ( featuredImage.hasOwnProperty( 'error_data' ) ) {
+			return false;
+		}
+
+		// If featuredImage has the property ID, figure out the appropriate size to return
+		if ( featuredImage.hasOwnProperty( 'ID' ) ) {
+
+			if ( featuredImage.attachment_meta.sizes[size].hasOwnProperty( 'url' ) ) {
+				return featuredImage.attachment_meta.sizes[size].url;
+			} else {
+				return featuredImage.source;
+			}
+		}
 	},
 
 
