@@ -58,4 +58,88 @@
 			text-transform: uppercase;
 		}
 	}
+
+	/** Blocks */
+
+	&__blocks {
+		@extend %max-width--padded;
+		color: $color__white;
+		font-size: rem( 12px );
+
+		&__subhead {
+			font-size: em( 20px );
+			font-weight: $font-weight__thin;
+			margin-bottom: 5px;
+			text-transform: uppercase;
+		}
+
+		@include breakpoint( bp() ) {
+			font-size: em( 14px );
+		}
+
+		&__row {
+			display: flex;
+		}
+
+		&__block {
+			min-height: rem( 150px );
+			overflow: hidden;
+			padding: 1em;
+			width: 50%;
+
+			@include breakpoint( bp() ) {
+				min-height: rem( 200px );
+				padding: 1em 4em 1em 1em;
+			}
+		}
+
+		&__general-widget {
+			background-color: $color__magenta;
+		}
+
+		&__blog {
+			background-color: $color__black;
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				width: 25%;
+			}
+
+			ul {
+				list-style-type: none;
+				margin: 0;
+			}
+		}
+
+		&__twitter {
+			background-color: $color__blue;
+
+			a {
+				color: currentColor;
+				text-decoration: none;
+			}
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				width: 25%;
+			}
+		}
+
+		&__news {
+			background-color: $color__gray;
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				width: 25%;
+			}
+		}
+
+		&__link { 
+			font-size: em( 7px, 12px );
+		}
+
+		&__row--2 {
+
+			@include breakpoint( bp( ) ) {
+				justify-content: space-between;
+			}
+		}
+	}
 }
