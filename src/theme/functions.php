@@ -185,6 +185,11 @@ require get_template_directory() . '/inc/display-people.php';
 require get_template_directory() . '/inc/pre-get-posts.php';
 
 /**
+ * Editor Styles
+ */
+require get_template_directory() . '/inc/editor-styles.php';
+
+/**
  * Miscellaneous
  */
 

@@ -5,17 +5,27 @@
 
 	<a href="<%= post.get( 'link' ) %>" class="block listing__article">
 
-		<?php /*
-		<% if ( ( null !== post.get( 'featured_image' ) ) && ( post.get( 'featured_image' ).constructor !== Array ) && ( '' !== post.get( 'featured_image' ).source ) ) { %>
+		<% if ( post.get( 'four_three_small' ) ) { %>
+
 			<div class="blog-listing__thumbnail listing__thumbnail">
 				<picture>
-					<source srcset="<%= post.get( 'img_medium' ) %>, <%= post.get( 'img_medium_2x' ) %> 2x" media="( min-width: 20.0625em )">
-					<source srcset="<%= post.get( 'img_small' ) %>, <%= post.get( 'img_small_2x' ) %> 2x">
-					<img srcset="<%= post.get( 'img_small' ) %>, <%= post.get( 'img_small_2x' ) %> 2x" class="attachment-post-thumbnail wp-post-image">
+
+					<% if ( post.get( 'four_three_medium' ) ) { %>
+					<source srcset="<%= post.get( 'four_three_medium' ) %>, <%= post.get( 'four_three_medium_2x' ) %> 2x" media="( min-width: 20.0625em )">
+					<% } %>
+
+					<% if ( post.get( 'four_three_small' ) ) { %>
+					<source srcset="<%= post.get( 'four_three_small' ) %>, <%= post.get( 'four_three_small_2x' ) %> 2x">
+					<% } %>
+
+					<% if ( post.get( 'four_three_small' ) ) { %>
+					<img srcset="<%= post.get( 'four_three_small' ) %>, <%= post.get( 'four_three_small_2x' ) %> 2x" class="attachment-post-thumbnail wp-post-image">
+					<% } %>
+
 				</picture>
 			</div>
+
 		<% } %>
-		*/ ?>
 	
 		<header class="listing__header">
 

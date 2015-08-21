@@ -31,6 +31,12 @@
 					<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
 				</picture>
 
+				<?php if ( '' != get_field( 'tagline' ) ) : ?>
+
+					<div class="front-page__work__tagline"><?php echo esc_html( get_field( 'tagline' ) ); ?></div>
+
+				<?php endif; ?>
+
 			</a>
 
 		<?php wp_reset_postdata(); endwhile; ?>
