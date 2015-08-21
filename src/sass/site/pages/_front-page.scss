@@ -5,25 +5,47 @@
 
 	&__hero {
 		@extend %max-width--padded;
+		margin-bottom: 2rem;
 	}
 
 	/** Work */
 
 	&__work {
 		@extend %max-width--padded;
-		display: flex;
-		flex-wrap: wrap;
 
 		@include breakpoint( bp() ) {
-			flex-wrap: nowrap;
+			display: flex;
+			margin-bottom: 2rem;
 		}
 
 		&__item {
-			width: 50%;
+			margin-bottom: 1rem;
 
 			@include breakpoint( bp() ) {
-				width: 25%;
+				margin: {
+					right: gutter();
+					bottom: 0;
+				}
+
+				&:last-of-type {
+					margin-right: 0;
+				}
 			}
+		}
+
+		&__description {
+			font-size: rem( 12px );
+			padding: 0.5em 0;
+		}
+
+		&__title {
+			@extend %roboto-thin;
+			display: block;
+			font-size: em( 16px, 12px );
+		}
+
+		&__client b {
+			text-transform: uppercase;
 		}
 	}
 }
