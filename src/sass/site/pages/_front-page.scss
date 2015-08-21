@@ -4,8 +4,25 @@
 	/** Hero (to be replaced with the agency video) */
 
 	&__hero {
-		@extend %max-width--padded;
 		margin-bottom: 2rem;
+	}
+
+	/** Copy */
+
+	&__copy {
+		@extend %max-width--padded;
+		padding-bottom: 2rem;
+
+		@include breakpoint( bp() ) {
+			padding: {
+				top: 2rem;
+				bottom: 4rem;
+			}
+		}
+
+		&__wrapper {
+			@extend %max-width--blog;
+		}
 	}
 
 	/** Work */
@@ -19,6 +36,7 @@
 		}
 
 		&__item {
+			flex: 1;
 			margin-bottom: 1rem;
 
 			@include breakpoint( bp() ) {
@@ -33,18 +51,10 @@
 			}
 		}
 
-		&__description {
+		&__tagline {
+			@extend %roboto-medium;
 			font-size: rem( 12px );
 			padding: 0.5em 0;
-		}
-
-		&__title {
-			@extend %roboto-thin;
-			display: block;
-			font-size: em( 16px, 12px );
-		}
-
-		&__client b {
 			text-transform: uppercase;
 		}
 	}

@@ -31,13 +31,11 @@
 					<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
 				</picture>
 
-				<div class="front-page__work__description">
+				<?php if ( '' != get_field( 'tagline' ) ) : ?>
 
-					<span class="front-page__work__title"><?php echo esc_html( get_the_title() ); ?></span>
+					<div class="front-page__work__tagline"><?php echo esc_html( get_field( 'tagline' ) ); ?></div>
 
-					<span class="front-page__work__client">for <b><?php echo esc_html( get_field( 'client' ) ); ?></b></span>
-
-				</div>
+				<?php endif; ?>
 
 			</a>
 

@@ -52,8 +52,23 @@ a {
 	text-transform: uppercase;
 	white-space: nowrap;
 
-	&:after {
+	&::after {
 		content: ' >';
+		display: inline;
+	}
+}
+
+/** Call to action */
+.cta a {
+	font-weight: $font-weight__medium;
+	text: {
+		decoration: none;
+		transform: uppercase;
+	}
+	white-space: nowrap;
+
+	&::after {
+		content: '\00A0>';
 		display: inline;
 	}
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2197b9bfe124296ab6f846b272b3c345",
+    "hash": "4ff4ed10642aaad7c56304b0f491e6bc",
     "packages": [
         {
             "name": "composer/installers",
@@ -258,15 +258,15 @@
         },
         {
             "name": "wpackagist-plugin/admin-post-navigation",
-            "version": "1.9.1",
+            "version": "1.9.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/admin-post-navigation/",
-                "reference": "tags/1.9.1"
+                "reference": "tags/1.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/admin-post-navigation.1.9.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/admin-post-navigation.1.9.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -558,15 +558,15 @@
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
-            "version": "3.0",
+            "version": "3.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/really-simple-twitter-feed-widget/",
-                "reference": "tags/3.0"
+                "reference": "tags/3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.3.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -678,15 +678,15 @@
         },
         {
             "name": "wpackagist-plugin/svg-support",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/svg-support/",
-                "reference": "tags/2.2.1"
+                "reference": "tags/2.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/svg-support.2.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/svg-support.2.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -755,6 +755,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/theme-check/"
+        },
+        {
+            "name": "wpackagist-plugin/tinymce-advanced",
+            "version": "4.2.3.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/tinymce-advanced/",
+                "reference": "tags/4.2.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.2.3.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/tinymce-advanced/"
         },
         {
             "name": "wpackagist-plugin/widget-logic",
