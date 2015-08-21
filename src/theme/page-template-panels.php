@@ -15,7 +15,17 @@ get_header(); ?>
 
 	<?php get_template_part( 'template-parts/content', 'page-panels' ); ?>
 
-	<?php get_template_part( 'template-parts/component', 'checker-block' ); ?>
+	<?php /** Load in the appropriate checker block template part */ ?>
+
+	<?php if ( is_page( 'agency' ) ) : ?>
+
+		<?php get_template_part( 'template-parts/component', 'checker-block-agency' ); ?>
+
+	<?php elseif ( is_page( 'careers' ) ) : ?>
+
+		<?php get_template_part( 'template-parts/component', 'checker-block-careers' ); ?>
+
+	<?php endif; ?>
 
 <?php endwhile; // end of the loop. ?>
 

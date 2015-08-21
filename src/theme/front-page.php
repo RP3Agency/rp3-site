@@ -13,28 +13,25 @@
 
 get_header(); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'front-page' ); ?>>
+<?php if ( have_posts() ) : ?>
 
-	<?php get_template_part( 'template-parts/component', 'front-page-hero' ); ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 
-	<?php get_template_part( 'template-parts/component', 'front-page-work' ); ?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class( 'front-page' ); ?>>
 
-	<?php get_template_part( 'template-parts/component', 'placeholders' ); ?>
+			<?php get_template_part( 'template-parts/component', 'front-page-hero' ); ?>
 
-</article>
-<!-- #post-## -->
+			<?php get_template_part( 'template-parts/component', 'front-page-copy' ); ?>
 
+			<?php get_template_part( 'template-parts/component', 'front-page-work' ); ?>
 
-<?php /*
+			<?php get_template_part( 'template-parts/component', 'front-page-blocks' ); ?>
 
-	<div class="entry-content entry-content--home">
-		<?php the_content(); ?>
-	</div>
-	<!-- .entry-content -->
+		</article>
+		<!-- #post-## -->
 
+	<?php endwhile; ?>
 
-<?php get_template_part( 'components/home-page', 'blocks' ); ?>
-
-*/ ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>

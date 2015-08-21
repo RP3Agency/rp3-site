@@ -21,3 +21,13 @@ b,
 strong {
 	font-weight: $font-weight__medium;
 }
+
+/** Larger and small fonts as adjustments to the current font context. */
+
+.font-larger {
+	font-size: 1.2em;
+}
+
+.font-smaller {
+	font-size: 0.8em;
+}
