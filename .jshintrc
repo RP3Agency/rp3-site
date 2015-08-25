@@ -8,9 +8,10 @@
   	"ScrollIntent",
   	"Modernizr",
   	"Backbone",
-  	"_",
-  	"console"
+  	"_"
   ],
   "browser": true,
-  "jquery": true
+  "jquery": true,
+  "node": true,
+  "devel": true
 }
