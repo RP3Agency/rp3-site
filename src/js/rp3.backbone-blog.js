@@ -1,81 +1,38 @@
-/* global rp3:true */
+/* global rp3:true, wp:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
 
-rp3.backbone_blog = (function($, _, Backbone) {
+rp3.backbone_blog = (function($, _, Backbone, wp) {
 
 	/** Do something awesome */
 
 	var
 
-	baseUrlPost		= '/wp-json/posts?',
-	// baseUrlAuthor	= '/wp-json/users?',
 	offSet			= 0,
 	$blog__backbone	= $('#blog__backbone'),
-
-
-
-	/**
-	 * Backbone Classes
-	 */
-	
-	/** Post Model */
-	
-	PostModel = Backbone.Model.extend({
-
-		defaults: {
-
-			'four_three_small':			null,
-			'four_three_small_2x':		null,
-			'four_three_medium':		null,
-			'four_three_medium_2x':		null,
-			'eight_three_large':		null,
-			'eight_three_large_2x':		null
-		}
-	}),
 
 	/** Post View */
 
 	PostView = Backbone.View.extend({
 
-		render: function() {
+		render: function( filters ) {
 
 			var that = this;
 
-			// Fetch our next post
+			// set up collection query filters
+			filters = filters || {};
+
+			// Fetch our next batch of posts
 
 			postCollection.fetch({
 
+				// used by jQuery.ajax to build query parameters
+				data: filters,
+
 				success: function( posts ) {
-
-					posts.each( function( post ) {
-
-						// Convert the date to English
-
-						post.attributes.date = rp3.backbone.convertDate( post.attributes.date );
-
-						// Gather our responsive images
-
-						post.set( 'four_three_small',		rp3.backbone.responsiveImages( post.attributes.featured_image, 'four_three_small' ) );
-						post.set( 'four_three_small_2x',	rp3.backbone.responsiveImages( post.attributes.featured_image, 'four_three_small_2x' ) );
-						post.set( 'four_three_medium',		rp3.backbone.responsiveImages( post.attributes.featured_image, 'four_three_medium' ) );
-						post.set( 'four_three_medium_2x',	rp3.backbone.responsiveImages( post.attributes.featured_image, 'four_three_medium_2x' ) );
-						post.set( 'eight_three_large',		rp3.backbone.responsiveImages( post.attributes.featured_image, 'eight_three_large' ) );
-						post.set( 'eight_three_large_2x',	rp3.backbone.responsiveImages( post.attributes.featured_image, 'eight_three_large_2x' ) );
-					});
-
 					var template = _.template( $('#blog-template').html() );
-					that.$el.html( template( { posts: posts.models } ) );
-
-
-					// Get the author(s) information
-
-					// var $authorElement = $('<div>').addClass('author');
-					// authorView.setElement( $authorElement );
-					// authorCollection.url = baseUrlAuthor;
-					// authorView.render();
-
+					that.$el.html( template( { posts: posts.toJSON() } ) );
 
 					// If the offSet is divisible by three, add on our interstitial
 					if ( 0 === ( parseInt( offSet ) % 3 ) ) {
@@ -97,60 +54,11 @@ rp3.backbone_blog = (function($, _, Backbone) {
 
 	/** Post Collection */
 
-	PostCollection = Backbone.Collection.extend({
-		model:	PostModel
+	PostCollection = wp.api.collections.Posts.extend({
+		model:	rp3.backbone.models.PostModel
 	}),
 
 	postCollection = new PostCollection(),
-
-
-
-	/** Author Model */
-
-	// AuthorModel = Backbone.Model.extend({}),
-
-	/** Author View */
-
-	// AuthorView = Backbone.View.extend({
-
-	// 	render: function() {
-
-	// 		var that = this;
-
-	// 		// Fetch our author
-
-	// 		authorCollection.fetch({
-
-	// 			success: function( authors ) {
-
-	// 				authors.each( function( author ) {
-	// 					// Do we even need to do anything here?
-	// 				});
-
-	// 				var template = _.template( $('#blog-template-author').html() );
-	// 				that.$el.html( template( { authors: authors.models } ) );
-	// 			},
-
-	// 			error: function() {
-	// 				window.alert( 'Sorry, an error occurred [authors].' );
-	// 			}
-	// 		});
-
-	// 		return this;
-	// 	}
-	// }),
-
-	// authorView = new AuthorView(),
-
-	/** Author Collection */
-
-	// AuthorCollection = Backbone.Collection.extend({
-	// 	model: AuthorModel
-	// }),
-
-	// authorCollection = new AuthorCollection(),
-
-
 
 	/**
 	 * Display the interstitial
@@ -164,8 +72,6 @@ rp3.backbone_blog = (function($, _, Backbone) {
 
 		$blog__backbone.append( $interstitialElement );
 	},
-
-
 
 	/**
 	 * Listen for when we reach the bottom of the page
@@ -192,19 +98,20 @@ rp3.backbone_blog = (function($, _, Backbone) {
 				$postElement = $('<div>').addClass('blog__backbone__post');
 				postView.setElement( $postElement );
 
-				// Set the URL for this query
-				postCollection.url = baseUrlPost + 'filter[posts_per_page]=1&filter[offset]=' + offSet;
+				// Set the filters for this query
+				var filters = {
+					'filter[posts_per_page]'	: 1,
+					'filter[offset]'			: offSet,
+				};
 
 				// Render the results
-				postView.render();
+				postView.render( filters );
 
 				// Append results to the container, rather than replacing it
 				$blog__backbone.append( $postElement );
 			}
 		});
 	},
-
-
 
 	init = function() {
 		listenForScroll();
@@ -214,7 +121,7 @@ rp3.backbone_blog = (function($, _, Backbone) {
 		init:init
 	};
 
-}(jQuery, _, Backbone));
+}(jQuery, _, Backbone, wp));
 
 (function() {
 
