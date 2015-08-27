@@ -6,7 +6,7 @@
  * a cold hit to the blog will display the full text of
  * the most recent post, and navigation commences from there
  * via infinite scroll.
- * 
+ *
  * @package RP3
  */
 
@@ -18,8 +18,6 @@ get_header( 'blog' ); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'template-parts/content', 'single-blog' ); ?>
-
-			<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
 		<?php endwhile; ?>
 
