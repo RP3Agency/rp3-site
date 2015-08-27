@@ -13,3 +13,4 @@ require_once( RP3_PLUGIN_INC_DIR . '/custom-post-types.php' );
 require_once( RP3_PLUGIN_INC_DIR . '/home-page-featured.php' );
 require_once( RP3_PLUGIN_INC_DIR . '/remove-dfi-meta-box.php' );
 require_once( RP3_PLUGIN_INC_DIR . '/custom-relabel-post-to-blog.php' );
+require_once( RP3_PLUGIN_INC_DIR . '/rest-api-extensions.php' );

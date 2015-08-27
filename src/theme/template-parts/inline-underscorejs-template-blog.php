@@ -9,30 +9,32 @@
 
 			<header class="single-post-content__header">
 
-				<h1 class="single-post-content__title"><%= post.get( 'title' ) %></h1>
+				<h1 class="single-post-content__title"><%= post.title %></h1>
 
-				<div class="single-post-content__date"><%= post.get( 'date' ) %></div>
+				<div class="single-post-content__date"><%= post.longDate %></div>
 
 			</header>
 
 			<div class="single-post-content__featured-image">
 
 				<picture>
-					<source srcset="<%= post.get( 'eight_three_large' ) %>, <%= post.get( 'eight_three_large_2x' ) %> 2x" media="(min-width: 37.5rem)" />
-					<source srcset="<%= post.get( 'four_three_medium' ) %>, <%= post.get( 'four_three_medium_2x' ) %> 2x" media="(min-width: 20.0625rem)" />
-					<source srcset="<%= post.get( 'four_three_small' ) %>, <%= post.get( 'four_three_small_2x' ) %> 2x" />
-					<img srcset="<%= post.get( 'four_three_small' ) %>, <%= post.get( 'four_three_small_2x' ) %> 2x" />
+					<source srcset="<%= post.eight_three_large %>, <%= post.eight_three_large_2x %> 2x" media="(min-width: 37.5rem)" />
+					<source srcset="<%= post.four_three_medium %>, <%= post.four_three_medium_2x %> 2x" media="(min-width: 20.0625rem)" />
+					<source srcset="<%= post.four_three_small %>, <%= post.four_three_small_2x %> 2x" />
+					<img srcset="<%= post.four_three_small %>, <%= post.four_three_small_2x %> 2x" />
 				</picture>
 
 			</div>
 
 			<section class="single-post-content__content">
 
-				<%= post.get( 'content' ) %>
+				<%= post.content %>
 
 			</section>
 
-			<?php /*
+			<% _.each( post.authors, function( author ) { %>
+				<% if( author.photo_url ) { %>
+
 			<section class="blog__author">
 
 				<header class="blog__author__header">
@@ -41,7 +43,7 @@
 
 						<div class="blog__author__image">
 
-							<img srcset="">
+							<img srcset="<%= author.photo_url %>, <%= author.photo_url_2x %> 2x">
 
 						</div>
 						<!-- // blog author image -->
@@ -52,14 +54,44 @@
 				</header>
 				<!-- // blog author header -->
 
+				<% if( 'guest-author' !== author.type ) { %>
 				<div class="blog__author__bio">
 
-					<p><a href="#!"><%= post.get( 'author' ).name %></a> <%= post.get( 'author' ).description %></p>
+					<p><a href="<%= author.posts_url %>"><%= author.display_name %></a> <%= author.description %></p>
+
+					<!-- Social media presence -->
+
+					<ul class="blog__author__social social">
+
+						<% if( author.email ) { %>
+						<li class="email"><a href="<%= author.email %>">Email</a></li>
+						<% } %>
+
+						<% if( author.facebook ) { %>
+						<li class="facebook"><a href="<%= author.facebook %>">Facebook</a></li>
+						<% } %>
+
+						<% if( author.twitter ) { %>
+						<li class="twitter"><a href="<%= author.twitter %>">Twitter</a></li>
+						<% } %>
+
+						<% if( author.linkedin ) { %>
+						<li class="linkedin"><a href="<%= author.linkedin %>">LinkedIn</a></li>
+						<% } %>
+
+						<% if( author.instagram ) { %>
+						<li class="instagram"><a href="<%= author.instagram %>">Instagram</a></li>
+						<% } %>
+
+					</ul>
 
 				</div>
+				<% } %>
 
 			</section>
-			*/ ?>
+
+				<% } %>
+			<% }) %>
 
 		</div>
 
@@ -67,43 +99,6 @@
 
 <% }) %>
 </script>
-
-
-<?php /*
-<script type="text/template" id="blog-template-author">
-<% _.each( authors, function( author ) { %>
-
-	<section class="blog__author">
-
-		<header class="blog__author__header">
-
-			<div class="blog__author__meta">
-
-				<div class="blog__author__image">
-
-					<img srcset="">
-
-				</div>
-				<!-- // blog author image -->
-
-			</div>
-			<!-- // blog author meta -->
-
-		</header>
-		<!-- // blog author header -->
-
-		<div class="blog__author__bio">
-
-			<p><a href="#!"><%= author.name %></a></p>
-
-		</div>
-
-	</section>
-
-<% }) %>
-</script>
-*/ ?>
-
 
 <script type="text/template" id="blog-template-interstitial">
 
