@@ -15,8 +15,12 @@
 
 	&__title {
 		@extend %roboto-thin;
-		font-size: em( 40px );
+		font-size: em( 28px );
 		line-height: 1;
+
+		@include breakpoint( bp() ) {
+			font-size: em( 40px );
+		}
 	}
 
 	&__date {
