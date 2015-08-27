@@ -1,4 +1,4 @@
-/* global rp3:true, wp:false */
+/* global rp3:true, wp:false, picturefill:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
@@ -37,6 +37,11 @@ rp3.backbone_blog = (function($, _, Backbone, wp) {
 					// If the offSet is divisible by three, add on our interstitial
 					if ( 0 === ( parseInt( offSet ) % 3 ) ) {
 						displayInterstitial();
+					}
+
+					// run picturefill to update inserted elements
+					if ( 'function' === typeof( 'picturefill' ) ) {
+						picturefill();
 					}
 
 				},

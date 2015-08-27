@@ -1,4 +1,4 @@
-/* global rp3:true, listing_post_type:true, listing_offset:true, wp:false */
+/* global rp3:true, listing_post_type:true, listing_offset:true, wp:false, picturefill:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
@@ -128,9 +128,10 @@ rp3.backbone = (function($, _, Backbone, wp) {
 					var template = _.template( $('#listing-template').html() );
 					that.$el.html( template( { posts: posts.toJSON() } ) );
 
-					// if ( 'function' === typeof( 'picturefill' ) ) {
-					// 	picturefill();
-					// }
+					// run picturefill to update inserted elements
+					if ( 'function' === typeof( 'picturefill' ) ) {
+						picturefill();
+					}
 				},
 
 				error: function() {
