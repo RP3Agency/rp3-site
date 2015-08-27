@@ -30,7 +30,7 @@
 
 	/** Subscription Form */
 
-	#mc4wp-form-1 {
+	.mc4wp-form {
 		display: table;
 		width: 100%;
 	}
@@ -61,6 +61,7 @@
 
 		&.submit-button {
 			vertical-align: bottom;
+			width: 92px;
 		}
 
 		&.block-mobile {
