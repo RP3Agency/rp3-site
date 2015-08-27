@@ -42,7 +42,7 @@ function rp3_json_coauthor_data( $data, $coauthor ) {
 	if ( 'guest-author' != $coauthor['type'] ) {
 		$data['posts_url'] = esc_url( get_author_posts_url( $coauthor['ID'] ) );
 		$data['display_name'] = get_the_author_meta( 'display_name', $coauthor['ID'] );
-		$data['description'] = wpautop( get_the_author_meta( 'description', $coauthor['ID'] ) );
+		$data['description'] = get_the_author_meta( 'description', $coauthor['ID'] );
 	}
 
 	return $data;

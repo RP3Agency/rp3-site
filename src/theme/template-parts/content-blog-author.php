@@ -63,11 +63,10 @@ if ( function_exists( 'get_coauthors' ) ) {
 
 				<?php if ( 'guest-author' != $coauthor->type ) : ?>
 
-					<?php echo wpautop(
-						'<a href="' . esc_url( get_author_posts_url( $coauthor->ID ) ) . '">' .
-						$coauthor->display_name . '</a> ' .
-						get_the_author_meta( 'description', $coauthor->ID )
-					); ?>
+					<p>
+						<a href="<?php echo esc_url( get_author_posts_url( $coauthor->ID ) ); ?>"><?php echo $coauthor->display_name; ?></a>
+						<?php echo get_the_author_meta( 'description', $coauthor->ID ); ?>
+					</p>
 
 					<!-- Social media presence -->
 
