@@ -63,9 +63,9 @@ if ( function_exists( 'get_coauthors' ) ) {
 
 				<?php if ( 'guest-author' != $coauthor->type ) : ?>
 
-					<?php echo wpautop( 
-						'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . 
-						$coauthor->display_name . '</a> ' . 
+					<?php echo wpautop(
+						'<a href="' . esc_url( get_author_posts_url( $coauthor->ID ) ) . '">' .
+						$coauthor->display_name . '</a> ' .
 						get_the_author_meta( 'description', $coauthor->ID )
 					); ?>
 
@@ -90,7 +90,7 @@ if ( function_exists( 'get_coauthors' ) ) {
 						<?php endif; ?>
 
 						<?php if ( '' != get_the_author_meta( 'instagram', $coauthor->ID ) ) : ?>
-						<li class="instagram"><a href="<?php echo esc_url( get_the_author_meta( 'instagram', $coauthor->ID ) ); ?>">LinkedIn</a></li>
+						<li class="instagram"><a href="<?php echo esc_url( get_the_author_meta( 'instagram', $coauthor->ID ) ); ?>">Instagram</a></li>
 						<?php endif; ?>
 
 					</ul>

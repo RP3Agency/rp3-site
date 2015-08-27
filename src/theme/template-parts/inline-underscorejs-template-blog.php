@@ -32,6 +32,9 @@
 
 			</section>
 
+			<% _.each( post.authors, function( author ) { %>
+				<% if( author.photo_url ) { %>
+
 			<section class="blog__author">
 
 				<header class="blog__author__header">
@@ -40,7 +43,7 @@
 
 						<div class="blog__author__image">
 
-							<img srcset="">
+							<img srcset="<%= author.photo_url %>, <%= author.photo_url_2x %> 2x">
 
 						</div>
 						<!-- // blog author image -->
@@ -51,13 +54,44 @@
 				</header>
 				<!-- // blog author header -->
 
+				<% if( 'guest-author' !== author.type ) { %>
 				<div class="blog__author__bio">
 
-					<p><a href="#!"><%= post.author.name %></a> <%= post.author.description %></p>
+					<p><a href="<%= author.posts_url %>"><%= author.display_name %></a> <%= author.description %></p>
+
+					<!-- Social media presence -->
+
+					<ul class="blog__author__social social">
+
+						<% if( author.email ) { %>
+						<li class="email"><a href="<%= author.email %>">Email</a></li>
+						<% } %>
+
+						<% if( author.facebook ) { %>
+						<li class="facebook"><a href="<%= author.facebook %>">Facebook</a></li>
+						<% } %>
+
+						<% if( author.twitter ) { %>
+						<li class="twitter"><a href="<%= author.twitter %>">Twitter</a></li>
+						<% } %>
+
+						<% if( author.linkedin ) { %>
+						<li class="linkedin"><a href="<%= author.linkedin %>">LinkedIn</a></li>
+						<% } %>
+
+						<% if( author.instagram ) { %>
+						<li class="instagram"><a href="<%= author.instagram %>">Instagram</a></li>
+						<% } %>
+
+					</ul>
 
 				</div>
+				<% } %>
 
 			</section>
+
+				<% } %>
+			<% }) %>
 
 		</div>
 
