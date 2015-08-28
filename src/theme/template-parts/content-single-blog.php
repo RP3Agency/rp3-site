@@ -6,10 +6,13 @@
 <?php
 
 	// fetch industry taxonomy for single post
-	$industries = '';
+	$industries = array();
 	if( is_single() ) {
-		$industries = get_field( 'industries' );
+		foreach ( wp_get_post_terms( $post->ID, 'rp3_tax_industries' ) as $industry ) {
+			$industries[] = $industry->slug;
+		}
 	}
+	$industries = implode( ',', $industries );
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-content single-post-content--blog' ); ?>>

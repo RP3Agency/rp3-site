@@ -8,6 +8,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 	/** Do something awesome */
 
 	var
+	industries = rp3.backbone.get('industries'),
+	//exclude = rp3.backbone.get('exclude'),
 
 	offSet			= 0,
 	$blog__backbone	= $('#blog__backbone'),
@@ -103,8 +105,11 @@ rp3.backbone.blog = (function($, _, Backbone) {
 				var filters = {
 					'filter[posts_per_page]'	: 1,
 					'filter[offset]'			: offSet,
+					//'filter[post__not_in]'		: exclude,
 				};
-
+				if( '' !== industries ) {
+					filters['filter[rp3_tax_industries]'] = industries;
+				}
 				// Render the results
 				postView.render( filters );
 
