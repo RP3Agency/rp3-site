@@ -1,9 +1,9 @@
-/* global rp3:true, wp:false, picturefill:false */
+/* global rp3:true, picturefill:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
 
-rp3.backbone_blog = (function($, _, Backbone, wp) {
+rp3.backbone.blog = (function($, _, Backbone) {
 
 	/** Do something awesome */
 
@@ -11,6 +11,10 @@ rp3.backbone_blog = (function($, _, Backbone, wp) {
 
 	offSet			= 0,
 	$blog__backbone	= $('#blog__backbone'),
+
+	// Posts collection instance
+
+	postCollection = new rp3.backbone.collections.Posts(),
 
 	/** Post View */
 
@@ -56,14 +60,6 @@ rp3.backbone_blog = (function($, _, Backbone, wp) {
 	}),
 
 	postView = new PostView(),
-
-	/** Post Collection */
-
-	PostCollection = wp.api.collections.Posts.extend({
-		model:	rp3.backbone.models.PostModel
-	}),
-
-	postCollection = new PostCollection(),
 
 	/**
 	 * Display the interstitial
@@ -126,13 +122,13 @@ rp3.backbone_blog = (function($, _, Backbone, wp) {
 		init:init
 	};
 
-}(jQuery, _, Backbone, wp));
+}(jQuery, _, Backbone));
 
 (function() {
 
 	'use strict';
 
 	if ( -1 < location.href.indexOf( '/blog' ) ) {
-		rp3.backbone_blog.init();
+		rp3.backbone.blog.init();
 	}
 }());

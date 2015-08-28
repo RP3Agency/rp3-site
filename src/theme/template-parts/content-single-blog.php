@@ -3,6 +3,15 @@
  * @package RP3
  */
 ?>
+<?php
+
+	// fetch industry taxonomy for single post
+	$industries = '';
+	if( is_single() ) {
+		$industries = get_field( 'industries' );
+	}
+
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-content single-post-content--blog' ); ?>>
 
 	<div class="single-post-content__wrapper">
@@ -88,6 +97,6 @@
 
 <?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
-<div id="blog__backbone"></div>
+<div id="blog__backbone" data-backbone='{ "industries": "<?php echo $industries; ?>", "exclude": "<?php the_ID(); ?>" }'></div>
 
 <?php get_template_part( 'template-parts/inline', 'underscorejs-template-blog' ); ?>
