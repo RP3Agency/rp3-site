@@ -29,14 +29,59 @@
 	}
 
 	/** Subscription Form */
+
+	.mc4wp-form {
+		display: table;
+		width: 100%;
+	}
+
+	form {
+		display: table-row;
+	}
+
+	label {
+		padding-right: 1em;
+	}
+
+	.form-table { 
+		display: table;
+		width: 100%;
+	}
+
+	.form-row {
+		display: table-row;
+	}
+
+	.form-cell {
+		display: table-cell;
+
+		&.subscribe-label {
+			max-width: 40px;
+		}
+
+		&.submit-button {
+			vertical-align: bottom;
+			width: 92px;
+		}
+
+		&.block-mobile {
+			display: block;
+
+			@include breakpoint( bp() ) {
+				display: table-cell;
+			}
+		}
+	}
+	
 	input[type="email"] {
 		@extend %roboto-normal;
-		display: inline-block;
 		font-size: 1rem;
 		line-height: 1rem;
-		margin-left: 1em;
-		margin-right: 0;
+		margin-right: 0.2em;
+		margin-top: 0.5em;
+		padding: em(10px) em(10px) em(9px);
 		vertical-align: baseline;
 		@include appearance(none);
+		width: 100%;
 	}
 }

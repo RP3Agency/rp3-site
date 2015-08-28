@@ -378,15 +378,15 @@
         },
         {
             "name": "wpackagist-plugin/dynamic-featured-image",
-            "version": "3.5.0",
+            "version": "3.5.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/dynamic-featured-image/",
-                "reference": "tags/3.5.0"
+                "reference": "tags/3.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/dynamic-featured-image.3.5.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/dynamic-featured-image.3.5.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -558,15 +558,15 @@
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
-            "version": "3.1",
+            "version": "3.1.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/really-simple-twitter-feed-widget/",
-                "reference": "tags/3.1"
+                "reference": "tags/3.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.3.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.3.1.1.zip",
                 "reference": null,
                 "shasum": null
             },

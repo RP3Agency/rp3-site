@@ -1,9 +1,9 @@
-/* global rp3:true, listing_post_type:true, listing_offset:true */
+/* global rp3:true, listing_post_type:true, listing_offset:true, wp:false, picturefill:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
 
-rp3.backbone = (function($, _, Backbone) {
+rp3.backbone = (function($, _, Backbone, wp) {
 
 	'use strict';
 
@@ -21,70 +21,117 @@ rp3.backbone = (function($, _, Backbone) {
 	// 	templateID = '#blog-template';
 	// }
 
-
 	var post_type, offset;
 
-
-
-
 	var
-
-	baseUrl				= '/wp-json/posts?',
-	$listing__backbone	= $('#listing__backbone'),
-	paged				= 2,
+		$listing__backbone	= $('#listing__backbone'),
+		paged				= 2,
 
 
 	/**
 	 * Backbone Classes
 	 */
-	
+
 	/** Post Model */
 
-	PostModel = Backbone.Model.extend({
+	PostModel = wp.api.models.Post.extend({
 
+		// define additional default attribute values
 		defaults: {
-
 			'four_three_small':			null,
 			'four_three_small_2x':		null,
 			'four_three_medium':		null,
-			'four_three_medium_2x':		null
-		}
+			'four_three_medium_2x':		null,
+			'eight_three_large':		null,
+			'eight_three_large_2x':		null,
+		},
+
+		// set calculated values on model initialization
+		initialize: function() {
+			var self = this;
+
+			// set long format date string from date object
+			this.set({ longDate: this.longDate() });
+
+			// for each image size in defaults, set responsive image from featured image
+			_.each( _.keys( this.defaults ), function( size ) {
+				self.set( size, self.responsiveImage( size ) );
+			});
+		},
+
+		// make model read-only
+		sync: function( method ) {
+			if( method === 'read' ) {
+				return wp.api.models.Post.prototype.sync.apply(this, arguments);
+			}
+		},
+
+		toJSON: function( ) {
+			// get base serialized post
+			var attributes = wp.api.models.Post.prototype.toJSON.apply(this, arguments);
+
+			// serialize author attribute directly from related Author model instance
+			attributes.author = this.attributes.author.toJSON();
+
+			return attributes;
+		},
+
+		// Date conversion into plain English
+		longDate: function( ) {
+			var months = [ 'January', 'February', 'March', 'April',	'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'	],
+				date = this.get( 'date' );
+			return months[ date.getMonth() ] + ' ' + date.getDate() + ', ' + date.getFullYear();
+		},
+
+		responsiveImage: function( size ) {
+			// If featuredImage is null, return nothing
+			if ( ! this.has( 'featured_image' ) ) {
+				return false;
+			}
+
+			var featuredImage = this.get( 'featured_image' );
+
+			// If featuredImage has error_data as a property, or doesn't have an ID property, return nothing
+			if ( featuredImage.hasOwnProperty( 'error_data' ) || ! featuredImage.hasOwnProperty( 'ID' ) ) {
+				return false;
+			}
+
+			// If featuredImage has the property ID, figure out the appropriate size to return
+			if ( featuredImage.attachment_meta.sizes.hasOwnProperty( size ) && featuredImage.attachment_meta.sizes[size].hasOwnProperty( 'url' ) ) {
+				return featuredImage.attachment_meta.sizes[size].url;
+			} else {
+				return featuredImage.source;
+			}
+		},
+
 	}),
 
 	/** Post List View */
 
 	PostView = Backbone.View.extend({
 
-		render: function() {
+		render: function( filters ) {
 
 			var that = this;
 
-			// Fetch our next batch of posts
+			// set up collection query filters
+			filters = filters || {};
 
+			// Fetch our next batch of posts
 			postCollection.fetch({
+
+				// used by jQuery.ajax to build query parameters
+				data: filters,
 
 				success: function( posts ) {
 
-					posts.each( function( post ) {
-
-						// Convert the dates to English
-
-						post.attributes.date = convertDate( post.attributes.date );
-
-						// Gather our responsive images
-
-						// post.set( 'four_three_small',		responsiveImages( post.attributes.featured_image, 'four_three_small' ) );
-						// post.set( 'four_three_small_2x',	responsiveImages( post.attributes.featured_image, 'four_three_small_2x' ) );
-						// post.set( 'four_three_medium',		responsiveImages( post.attributes.featured_image, 'four_three_medium' ) );
-						// post.set( 'four_three_medium_2x',	responsiveImages( post.attributes.featured_image, 'four_three_medium_2x' ) );
-					});
-
 					var template = _.template( $('#listing-template').html() );
-					that.$el.html( template( { posts: posts.models } ) );
+					that.$el.html( template( { posts: posts.toJSON() } ) );
 
-					// if ( 'function' === typeof( 'picturefill' ) ) {
-					// 	picturefill();
-					// }
+					// run picturefill to update inserted elements
+					if ( 'function' === typeof( 'picturefill' ) ) {
+						picturefill();
+					}
 				},
 
 				error: function() {
@@ -100,7 +147,7 @@ rp3.backbone = (function($, _, Backbone) {
 
 	/** Posts Collection */
 
-	PostCollection = Backbone.Collection.extend({
+	PostCollection = wp.api.collections.Posts.extend({
 		model: PostModel
 	}),
 
@@ -111,7 +158,7 @@ rp3.backbone = (function($, _, Backbone) {
 	setupMoreButtonListener = function() {
 
 		var $listingViewMore = $('#listing__view-more'),
-			$postElement, url,
+			$postElement,
 			$listingContentsBackbone;
 
 		$listingViewMore.on( 'click', function(e) {
@@ -136,103 +183,24 @@ rp3.backbone = (function($, _, Backbone) {
 			// Determine the proper offset
 			offset += 6;
 
-			// Set the URL for this query
-			url = baseUrl;
-			url = url + 'filter[posts_per_page]=6';
-			url = url + '&type=' + post_type;
-			url = url + '&filter[offset]=' + offset;
-
-			postCollection.url = url;
+			// Set the filters for this query
+			var filters = {
+				'type'						: post_type,
+				'filter[posts_per_page]'	: 6,
+				'filter[offset]'			: offset,
+			};
 
 			// Render the results
-			postView.render();
+			postView.render( filters );
 
 			// Append results to the container, rather than replacing it
 			$listing__backbone.append( $postElement );
 		});
 
-		// var postSetClass = 'post-set';
-
-		// 	// Determine which was the last page loaded (or from which page
-		// 	// we're starting), so as to know which page we're loading next
-
-		// 	var nextPageNumber = 2,
-		// 		$nextPostSet = $('<div>').addClass(postSetClass).attr('data-page', nextPageNumber);
-
-		// 	if ( $container.attr('data-paged') ) {
-		// 		nextPageNumber = parseInt( $container.attr('data-paged') ) + 1;
-		// 		$container.attr( 'data-paged', nextPageNumber );
-		// 	}
-
-		// 	// Update our collections URL
-		// 	var url = '/wp-json/posts?filter[posts_per_page]=6&filter[category_name]=';
-
-		// 	if ( onNewsPage ) {
-		// 		url += 'news';
-		// 	} else {
-		// 		url += 'blog';
-		// 	}
-
-		// 	if ( 0 < queryOffset ) {
-		// 		pageOffset = 6 * ( nextPageNumber - 1 ) + 1;
-		// 		url += '&filter[offset]=' + pageOffset;
-		// 	} else {
-		// 		url += '&page=' + nextPageNumber;
-		// 	}
-
-		// 	postCollection.url = url;
-
-		// 	// Update the element that we're rendering the view to
-		// 	postView.setElement( $nextPostSet );
-
-		// 	postView.render();
-
-		// 	$(elementID).append( $nextPostSet );
-
 		// 	// update the location
 		// 	locationHref = window.location.href.match( hrefPattern )[0] + '/page/' + nextPageNumber + '/';
 		// 	window.history.pushState( '', '', locationHref );
-
 	},
-
-
-
-	/** Helper methods for both this and rp3.backbone_blog */
-
-	// Date conversion into plain English
-
-	convertDate = function( datetime ) {
-
-		var year, month, date,
-
-			monthArray = [
-				'January', 'February', 'March', 'April',
-				'May', 'June', 'July', 'August',
-				'September', 'October', 'November', 'December'
-			];
-
-		year  = datetime.substr( 0, 4 );
-		month = monthArray[ parseInt( datetime.substr( 5, 2 ) ) - 1 ];
-		date  = datetime.substr( 8, 2 );
-
-		return month + ' ' + parseInt( date ) + ', ' + year;
-	},
-
-	// Responsive image gathering
-
-	responsiveImages = function( featuredImage, size ) {
-
-		var thisFeaturedImage = featuredImage.attachment_meta.sizes[size];
-
-		if ( 'undefined' != typeof( thisFeaturedImage ) ) {
-
-			return thisFeaturedImage.url;
-		}
-
-		return thisFeaturedImage.source;
-	},
-
-
 
 	init = function() {
 
@@ -244,18 +212,16 @@ rp3.backbone = (function($, _, Backbone) {
 		setupMoreButtonListener();
 	};
 
-
-
 	return {
-		init:init,
+		init: init,
 
-		// Publicly expose our helper methods
-
-		convertDate:convertDate,
-		responsiveImages:responsiveImages
+		// publicly expose the models
+		models: {
+			PostModel: PostModel,
+		}
 	};
 
-}(jQuery, _, Backbone));
+}(jQuery, _, Backbone, wp));
 
 (function($) {
 

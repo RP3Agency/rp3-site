@@ -65,7 +65,7 @@ gulp.task('styles', function() {
 			suffix: '.min'
 		} ) )
 		.pipe( minifycss() )
-		.pipe( gulp.dest( dest_theme_css ) )
+		.pipe( gulp.dest( dest_theme_css ) );
 });
 
 
@@ -135,11 +135,11 @@ gulp.task('scripts', function() {
 
 // Clean
 gulp.task('clean', function() {
-	del( [dest_theme, dest_plugin], function(err) {
+	del( [dest_theme, dest_plugin], function() {
 		console.log( 'Theme and plugin directories deleted.' );
 	});
 
-	// del( [__dirname + '/builders'], function(err) {
+	// del( [__dirname + '/builders'], function() {
 	// 	console.log( '/builders/ directory deleted.' );
 	// });
 });
