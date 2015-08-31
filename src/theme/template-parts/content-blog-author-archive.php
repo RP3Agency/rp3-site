@@ -74,8 +74,7 @@ if ( function_exists( 'get_coauthors' ) ) {
 				<?php if ( 'guest-author' != $coauthor->type ) : ?>
 
 					<p>
-						<a href="<?php echo esc_url( get_author_posts_url( $coauthor->ID ) ); ?>"><?php echo $coauthor->display_name; ?></a>
-						<?php echo get_the_author_meta( 'description', $coauthor->ID ); ?>
+						<?php echo $coauthor->display_name; ?> <?php echo get_the_author_meta( 'description', $coauthor->ID ); ?>
 					</p>
 
 					<!-- Social media presence -->
