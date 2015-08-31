@@ -5,11 +5,16 @@
 ?>
 <?php
 
+	$post_id = $post->ID;
+
 	// fetch industry taxonomy for single post
-	$industries = '';
+	$industries = array();
 	if( is_single() ) {
-		$industries = get_field( 'industries' );
+		foreach ( wp_get_post_terms( $post->ID, 'rp3_tax_industries' ) as $industry ) {
+			$industries[] = $industry->slug;
+		}
 	}
+	$industries = implode( ',', $industries );
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-content single-post-content--blog' ); ?>>
@@ -97,6 +102,6 @@
 
 <?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
-<div id="blog__backbone" data-backbone='{ "industries": "<?php echo $industries; ?>", "exclude": "<?php the_ID(); ?>" }'></div>
+<div id="blog__backbone" data-backbone='{ "industries": "<?php echo $industries; ?>", "exclude": "<?php echo $post_id; ?>" }'></div>
 
 <?php get_template_part( 'template-parts/inline', 'underscorejs-template-blog' ); ?>
