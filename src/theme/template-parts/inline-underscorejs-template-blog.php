@@ -11,7 +11,15 @@
 
 				<h1 class="single-post-content__title"><%= post.title %></h1>
 
-				<div class="single-post-content__date"><%= post.longDate %></div>
+				<div class="single-post-content__date">By
+
+					<% _.each( post.authors, function( author ) { %>
+
+						<%= author.display_name %>, 
+
+					<% }); %>
+
+					on <%= post.longDate %></div>
 
 			</header>
 

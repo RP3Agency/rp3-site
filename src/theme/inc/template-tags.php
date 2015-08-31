@@ -180,13 +180,13 @@ if ( ! function_exists( 'rp3_byline' ) ) {
 			if ( class_exists( 'CoAuthorsIterator' ) ) {
 				$i = new CoAuthorsIterator();
 				$i->iterate();
-				$byline .= '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a>';
+				$byline .= get_the_author_meta( 'display_name' );
 				while($i->iterate()){
 					$byline .= $i->is_last() ? '<span> and </span>' : '<span>, </span>';
-					$byline .= '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a>';
+					$byline .= get_the_author_meta( 'display_name' );
 				}
 			} else {
-				$byline .= '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a>';
+				$byline .= get_the_author_meta( 'display_name' );
 			}
 		} else {
 			if ( class_exists( 'CoAuthorsIterator' ) ) {
@@ -205,42 +205,6 @@ if ( ! function_exists( 'rp3_byline' ) ) {
 		// Date
 
 		$byline .= ' on ' . get_the_date() . '.';
-
-		// Taxonomy
-
-		// if ( $type == 'blog' ) {
-		// 	$byline .= ' in ';
-
-		// 	$tags = get_the_tags();
-
-		// 	$counter = 0;
-
-		// 	if ( $page_type == 'single' ) {
-		// 		foreach( $tags as $tag ) {
-		// 			if ( $counter > 0 ) {
-		// 				$byline .= ', <a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a>';
-		// 			} else {
-		// 				$byline .= '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a>';
-		// 			}
-
-		// 			$counter++;
-		// 		}
-		// 	} else {
-		// 		foreach( $tags as $tag ) {
-		// 			if ( $counter > 0 ) {
-		// 				$byline .= ', ' . $tag->name;
-		// 			} else {
-		// 				$byline .= $tag->name;
-		// 			}
-
-		// 			$counter++;
-		// 		}
-		// 	}
-
-		// 	$byline .= '.';
-		// } else {
-		// 	$byline .= ' in [categories TK].';
-		// }
 
 		return $byline;
 	}
