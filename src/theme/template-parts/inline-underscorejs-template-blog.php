@@ -13,11 +13,19 @@
 
 				<div class="single-post-content__date">By
 
-					<% _.each( post.authors, function( author ) { %>
+					<% if ( 1 === post.authors.length ) { %>
 
-						<%= author.display_name %>, 
+						<%= post.authors[0].display_name %>
 
-					<% }); %>
+					<% } else { %>
+
+						<% var names = _.pluck( post.authors, 'display_name' ); %>
+
+						<% var andName = names.pop(); %>
+
+						<%= names.join(', ') %> and <%= andName %>
+
+					<% } %>
 
 					on <%= post.longDate %></div>
 
