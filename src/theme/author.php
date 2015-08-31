@@ -11,55 +11,76 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 
-	<div class="entry-content component component--padded">
+	<article <?php post_class( 'page-listing' ); ?>>
 
-		<h1 class="entry-content__title">Posts by <span class="vcard"><?php echo get_the_author(); ?></span></h1>
+		<div class="entry-content">
 
-		<?php get_template_part( 'components/blog-author' ); ?>
+			<h1 class="entry-content__title"><span class="vcard"><?php echo get_the_author(); ?></span></h1>
 
-	</div>
+			<?php get_template_part( 'template-parts/content', 'blog-author-archive' ); ?>
 
-	<section id="listing" class="listing component component--padded" data-paged="<?php echo esc_attr( $paged ); ?>">
+		</div>
 
-		<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+	</article>
 
-			<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
+	<section class="listing">
 
-				<?php if ( '' != get_the_post_thumbnail() ) : ?>
+		<div id="listing" class="listing__wrapper listing__contents" data-paged="<?php echo esc_attr( $paged ); ?>">
 
-					<div class="listing__thumbnail">
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php echo rp3_picture_element_v2( get_post_thumbnail_id( get_the_ID() ), 'featured-image-listing' ); ?>
+				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
+
+					<?php if ( '' != get_the_post_thumbnail() ) : ?>
+
+						<div class="listing__thumbnail">
+
+							<?php
+							$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_small' );
+							$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_small_2x' );
+
+							$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_medium' );
+							$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_medium_2x' );
+							?>
+
+							<picture>
+								<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+								<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+								<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+							</picture>
+
+						</div>
+
+					<?php endif; ?>
+
+					<div class="listing__content">
+
+						<header class="listing__header">
+
+							<h1 class="listing__headline"><?php the_title(); ?></h1>
+
+							<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
+
+						</header>
+
+						<div class="listing__excerpt">
+
+							<?php echo the_excerpt(); ?>
+
+						</div>
 
 					</div>
+					<!-- // listing content -->
 
-				<?php endif; ?>
+				</a>
 
-				<h1 class="listing__headline"><?php the_title(); ?></h1>
+			<?php endwhile; ?>
 
-				<?php if ( 'news' == $page_type ) : ?>
-
-					<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
-
-				<?php else: ?>
-
-					<div class="listing__byline"><?php echo rp3_byline(); ?></div>
-
-				<?php endif; ?>
-
-				<div class="listing__excerpt">
-
-					<?php echo the_excerpt(); ?>
-
-				</div>
-
-			</a>
-
-		<?php endwhile; ?>
+		</div>
+		<!-- // #listing -->
 
 	</section>
-	<!-- // #blog-listing -->
 
 <?php else : ?>
 
