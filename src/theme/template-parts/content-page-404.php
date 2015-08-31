@@ -4,13 +4,11 @@
  *
  * @package RP3
  */
+?>
 
-get_header(); ?>
+<article <?php post_class( '404 page__generic' ); ?>>
 
-
-<article>
-
-	<div class="entry-content component component--padded">
+	<div class="entry-content">
 
 		<section class="error-404 not-found">
 
@@ -37,5 +35,3 @@ get_header(); ?>
 	<!-- // .entry-content -->
 
 </article>
-
-<?php get_footer(); ?>
