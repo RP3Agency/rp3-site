@@ -5,6 +5,8 @@
 ?>
 <?php
 
+	$post_id = $post->ID;
+
 	// fetch industry taxonomy for single post
 	$industries = array();
 	if( is_single() ) {
@@ -100,6 +102,6 @@
 
 <?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
-<div id="blog__backbone" data-backbone='{ "industries": "<?php echo $industries; ?>", "exclude": "<?php the_ID(); ?>" }'></div>
+<div id="blog__backbone" data-backbone='{ "industries": "<?php echo $industries; ?>", "exclude": "<?php echo $post_id; ?>" }'></div>
 
 <?php get_template_part( 'template-parts/inline', 'underscorejs-template-blog' ); ?>

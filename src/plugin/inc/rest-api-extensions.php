@@ -90,3 +90,18 @@ function rp3_json_coauthor_photos( $data, $coauthor ) {
 	return $data;
 }
 add_filter( RP3_JSON_PREFIX . 'coauthor_fields', 'rp3_json_coauthor_photos', 10, 2 );
+
+/**
+ * Add filters to the list of valid REST API query vars
+ */
+function rp3_json_add_filters( $filters ) {
+
+	// List of filters to allow in API
+	$allowed = array( 'post__not_in' );
+
+	// Merge with current list
+	$filters = array_merge( $filters, $allowed );
+
+	return $filters;
+}
+add_filter( 'json_query_vars', 'rp3_json_add_filters' );
