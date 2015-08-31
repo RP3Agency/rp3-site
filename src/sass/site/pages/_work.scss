@@ -176,6 +176,28 @@
 		left: 0;
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: percentage( 2 / 3 );
+
+		@include breakpoint( 400px ) {
+			top: 75%;
+		}
+
+		@include breakpoint( bp() ) {
+
+			.work__full & {
+				right: 50%;
+			}
+		}
+
+		@include breakpoint( bp( "large" ) ) {
+
+			.work__full & {
+				right: 75%;
+			}
+
+			.work__half & {
+				right: 50%;
+			}
+		}
 	}
 }

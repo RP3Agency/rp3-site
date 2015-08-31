@@ -4,6 +4,19 @@
 $post = get_sub_field( 'full_width' );
 setup_postdata( $post );
 
+/** Determine the headline as some combination of the work title and client */
+
+$title = get_the_title();
+$client = get_field( 'client' );
+
+$content = '<h1 class="work__title headline__title">' . esc_html( $title ) . '</h1><div class="work__client headline__client">for <b>' . esc_html( $client ) . '</b></div>';
+
+if ( empty( $client ) ) {
+	$content = '<h1 class="work__title headline__title">' . esc_html( $title ) . '</h1>';
+} elseif ( $title === $client ) {
+	$content = '<h1 class="work__title headline__title">' . esc_html( $title ) . '</h1>';
+}
+
 /** Determine whether to use the primary or alternate featured image */
 
 $alt_featured_image = rp3_use_alternate_featured_image( 'full_width_featured_image_alt' );
@@ -48,7 +61,7 @@ $alt_featured_image = rp3_use_alternate_featured_image( 'full_width_featured_ima
 
 				<div class="headline__container">
 
-					<?php echo esc_html( get_the_title() ); ?>
+					<?php echo $content; ?>
 
 				</div>
 
