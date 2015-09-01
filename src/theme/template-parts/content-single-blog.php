@@ -27,7 +27,7 @@
 
 			<h1 class="single-post-content__title"><?php the_title(); ?></h1>
 
-			<div class="single-post-content__date"><?php echo esc_html( rp3_byline() ); ?></div>
+			<div class="single-post-content__date"><?php echo rp3_byline(); ?></div>
 
 		</header>
 		<!-- .entry-header -->
