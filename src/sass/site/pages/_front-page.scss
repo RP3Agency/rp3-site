@@ -36,7 +36,6 @@
 		}
 
 		&__item {
-			flex: 1;
 			margin-bottom: 1rem;
 
 			@include breakpoint( bp() ) {
@@ -44,6 +43,7 @@
 					right: gutter();
 					bottom: 0;
 				}
+				width: span( 24 / 4 );
 
 				&:last-of-type {
 					margin-right: 0;
