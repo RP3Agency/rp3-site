@@ -19,7 +19,7 @@ get_header(); ?>
 
 	<?php if ( is_page( 'agency' ) ) : ?>
 
-		<?php get_template_part( 'template-parts/component', 'checker-block-agency' ); ?>
+		<?php // get_template_part( 'template-parts/component', 'checker-block-agency' ); ?>
 
 	<?php elseif ( is_page( 'careers' ) ) : ?>
 
