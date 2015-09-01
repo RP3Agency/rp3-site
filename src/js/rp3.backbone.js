@@ -93,7 +93,7 @@ rp3.backbone = (function($, _, Backbone, wp) {
 
 		// read-only getter for Backbone settings
 		getSetting = function( setting ) {
-			return _settings[ setting ];
+			return _.result( _settings, setting );
 		},
 
 		init = function() {
