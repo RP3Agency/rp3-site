@@ -4,13 +4,11 @@
  *
  * @package RP3
  */
+?>
 
-get_header(); ?>
+<article <?php post_class( '404 page__generic' ); ?>>
 
-
-<article>
-
-	<div class="entry-content component component--padded">
+	<div class="entry-content">
 
 		<section class="error-404 not-found">
 
@@ -21,7 +19,7 @@ get_header(); ?>
 
 			<div class="page-content">
 
-				<p><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/rp404.gif" id="rp404"></p>
+				<p><?php get_template_part( 'template-parts/inline', 'rp404.svg' ); ?></p>
 
 				<p>The page you were trying to find doesn't seem to exist or perhaps we simply misplaced it.</p>
 
@@ -37,5 +35,3 @@ get_header(); ?>
 	<!-- // .entry-content -->
 
 </article>
-
-<?php get_footer(); ?>

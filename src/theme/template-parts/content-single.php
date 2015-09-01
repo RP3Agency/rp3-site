@@ -51,18 +51,6 @@
 
 		</section>
 
-		<?php if ( function_exists( 'sharing_display' ) ) : ?>
-
-			<!-- Sharing -->
-
-			<section class="single-post-content__sharing">
-
-				<?php sharing_display( '', true ); ?>
-
-			</section>
-
-		<?php endif; ?>
-
 		<?php if ( is_singular( 'rp3_cpt_careers' ) ) : ?>
 
 			<section class="single-post-content--careers">

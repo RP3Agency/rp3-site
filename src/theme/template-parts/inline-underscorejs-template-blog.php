@@ -11,7 +11,23 @@
 
 				<h1 class="single-post-content__title"><%= post.title %></h1>
 
-				<div class="single-post-content__date"><%= post.longDate %></div>
+				<div class="single-post-content__date">By
+
+					<% if ( 1 === post.authors.length ) { %>
+
+						<%= post.authors[0].display_name %>
+
+					<% } else { %>
+
+						<% var names = _.pluck( post.authors, 'display_name' ); %>
+
+						<% var andName = names.pop(); %>
+
+						<%= names.join(', ') %> and <%= andName %>
+
+					<% } %>
+
+					on <%= post.longDate %></div>
 
 			</header>
 
@@ -31,6 +47,8 @@
 				<%= post.content %>
 
 			</section>
+
+			<section id="single-post-content__comments-placeholder-<%= post.ID %>" />
 
 			<% _.each( post.authors, function( author ) { %>
 				<% if( author.photo_url ) { %>

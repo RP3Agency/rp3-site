@@ -43,7 +43,7 @@ if ( '' !== get_field( 'post_type' ) ) {
 	// Industries
 
 	$industries = get_field( 'industries' );
-	
+
 	if ( ! empty( $industries ) ) {
 		$tax_name = 'rp3_tax_industries';
 		$tax_field = 'term_id';
@@ -59,7 +59,7 @@ if ( '' !== get_field( 'post_type' ) ) {
 	// Services
 
 	$services = get_field( 'services' );
-	
+
 	if ( ! empty( $industries ) ) {
 		$tax_name = 'rp3_tax_services';
 		$tax_field = 'term_id';
@@ -123,11 +123,6 @@ if ( '' !== get_field( 'post_type' ) ) {
 ?>
 
 <!-- Post Listing -->
-
-<script>
-var listing_offset		= parseInt( '<?php echo esc_js( $offset ); ?>' );
-var listing_post_type	= '<?php echo esc_js( get_field( 'post_type' ) ); ?>';
-</script>
 
 <section class="listing">
 
@@ -250,7 +245,7 @@ var listing_post_type	= '<?php echo esc_js( get_field( 'post_type' ) ); ?>';
 
 	<!-- Container to put our backbone-generated content. -->
 
-	<div id="listing__backbone" class="listing__wrapper"></div>
+	<div id="listing__backbone" class="listing__wrapper" data-backbone='{ "offset": "<?php echo esc_js( $offset ); ?>", "post_type": "<?php echo esc_js( get_field( 'post_type' ) ); ?>" }'></div>
 
 	<div class="all-news-link">
 		<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>" id="listing__view-more">View More Posts</a>

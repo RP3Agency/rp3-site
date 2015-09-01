@@ -34,7 +34,6 @@
 		position: relative;
 
 		@include breakpoint( bp() ) {
-			height: rem( 450px );
 			width: 50%;
 		}
 
@@ -58,6 +57,19 @@
 			max-width: none;
 			width: auto;
 			@include centered( "horizontal" );
+
+			@include breakpoint( 644px ) {
+				height: auto;
+				width: 100%;
+				@include centered( "both" );
+			}
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				height: 100%;
+				top: 0;
+				width: auto;
+				@include centered( "horizontal" );
+			}
 		}
 	}
 
@@ -72,6 +84,7 @@
 
 		@include breakpoint( bp() ) {
 			display: flex;
+			height: rem( 450px );
 		}
 
 		&__quarters {
@@ -163,6 +176,28 @@
 		left: 0;
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: percentage( 2 / 3 );
+
+		@include breakpoint( 400px ) {
+			top: 75%;
+		}
+
+		@include breakpoint( bp() ) {
+
+			.work__full & {
+				right: 50%;
+			}
+		}
+
+		@include breakpoint( bp( "large" ) ) {
+
+			.work__full & {
+				right: 75%;
+			}
+
+			.work__half & {
+				right: 50%;
+			}
+		}
 	}
 }

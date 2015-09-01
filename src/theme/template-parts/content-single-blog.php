@@ -3,6 +3,20 @@
  * @package RP3
  */
 ?>
+<?php
+
+	$post_id = $post->ID;
+
+	// fetch industry taxonomy for single post
+	$industries = array();
+	if( is_single() ) {
+		foreach ( wp_get_post_terms( $post->ID, 'rp3_tax_industries' ) as $industry ) {
+			$industries[] = $industry->slug;
+		}
+	}
+	$industries = implode( ',', $industries );
+
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-content single-post-content--blog' ); ?>>
 
 	<div class="single-post-content__wrapper">
@@ -13,7 +27,7 @@
 
 			<h1 class="single-post-content__title"><?php the_title(); ?></h1>
 
-			<div class="single-post-content__date"><?php echo esc_html( get_the_date() ); ?></div>
+			<div class="single-post-content__date"><?php echo rp3_byline(); ?></div>
 
 		</header>
 		<!-- .entry-header -->
@@ -88,6 +102,6 @@
 
 <?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
-<div id="blog__backbone"></div>
+<div id="blog__backbone" data-backbone='{ "industries": "<?php echo $industries; ?>", "exclude": "<?php echo $post_id; ?>" }'></div>
 
 <?php get_template_part( 'template-parts/inline', 'underscorejs-template-blog' ); ?>

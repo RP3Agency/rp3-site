@@ -7,6 +7,7 @@
 	}
 
 	&__post {
+		background-color: $color__blue;
 		margin-bottom: 2em;
 
 		@include breakpoint( bp() ) {
@@ -22,7 +23,6 @@
 		}
 
 		&__label {
-			background-color: $color__blue;
 			color: $color__white;
 			line-height: 1.5;
 			padding: 1em;

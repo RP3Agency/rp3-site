@@ -1,10 +1,10 @@
 .contact {
 	@extend %max-width;
 
-	&__header {
+	h2.contact__header {
 		@extend %roboto-medium;
 		font-size: em( 12px );
-		margin-bottom: 1em;
+		margin-bottom: 0;
 		text-transform: uppercase;
 	}
 
@@ -24,6 +24,20 @@
 
 		> * {
 			margin-bottom: 2em;
+		}
+
+		p {
+			margin: {
+				top: 0;
+				bottom: 0;
+			}
+		}
+
+		&__social ul {
+			margin: {
+				top: 0.5em;
+				bottom: 0.5em;
+			}
 		}
 	}
 
@@ -61,20 +75,6 @@
 			// Fixes distorted zoom controls in Google maps
 			img {
 				max-width: none;
-			}
-		}
-
-		&__inset {
-			background-color: $color__white;
-			border: 1px solid $color__gray;
-			display: none;
-			left: 10%;
-			padding: 1rem;
-			position: absolute;
-			top: 10%;
-
-			@include breakpoint( bp() ) {
-				display: block;
 			}
 		}
 	}

@@ -32,7 +32,8 @@
 
 							<h2 class="contact__header">Work With Us</h2>
 
-							<p class="contact__info__email">Jim Lansbury, Principal and Chief Creative Officer<br />
+							<p class="contact__info__email">Jim Lansbury,<br />
+							Principal and Chief Creative Officer<br />
 
 							<a href="<?php echo esc_url( 'mailto:' . get_field( 'new_business_email' ), array( 'mailto' ) ); ?>"><?php echo esc_html( get_field( 'new_business_email' ) ); ?></a></p>
 
@@ -87,6 +88,20 @@
 
 					</div>
 					<!-- // .contact__info__social -->
+
+
+
+					<?php // Address ?>
+
+					<div class="contact__info__address">
+
+						<h2 class="contact__header">Address</h2>
+
+						<p>7316 Wisconsin Ave.<br />
+						Suite 450<br />
+						Bethesda, Maryland 20814</p>
+
+					</div>
 
 
 
@@ -147,13 +162,6 @@
 	<section id="map" class="contact__map">
 
 		<div id="contact__map" class="contact__map__container"></div>
-
-		<div class="contact__map__inset">
-			<h1>RP3 Agency</h1>
-			7316 Wisconsin Avenue<br>
-			Suite 450<br>
-			Bethesda, Maryland 20814<br>
-		</div>
 
 	</section>
 	<!-- // .contact__map -->

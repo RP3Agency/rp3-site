@@ -33,7 +33,7 @@
 
 					<div class="site-footer__building-opportunity site-footer__building-opportunity--narrow">
 
-						<p><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Building Opportunity</a></p>
+						<p><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Building Opportunity Blog</a></p>
 
 					</div>
 					<!-- // building opportunity (narrow) -->

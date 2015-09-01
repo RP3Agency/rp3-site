@@ -25,6 +25,11 @@
 
 	&__date {
 		@extend %roboto-medium;
+		color: mix( white, $color__black, 50% );
+		margin: {
+			top: 0.5em;
+			bottom: 0.5em;
+		}
 	}
 
 	&__featured-image {

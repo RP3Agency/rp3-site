@@ -135,13 +135,12 @@ var rp3 = (function($) {
 
 	/** Reveal Comments Section */
 	revealComments = function() {
-
-		var $commentsTrigger = $('#single-blog__comments__trigger'),
-			$commentsForm = $('#single-blog__comments__form');
-
-		$commentsTrigger.on( 'click', function(e) {
-
+		$( 'body' ).on( 'click', '.single-blog__comments__trigger', function(e) {
 			e.preventDefault();
+
+			var $this = $(this),
+				post_id = $this.data('commentPost'),
+				$commentsForm = $('#single-blog__comments__form-' + post_id);
 
 			$commentsForm.slideDown();
 		});
@@ -153,7 +152,7 @@ var rp3 = (function($) {
 		videoToggle();
 		raptorJim();
 		revealComments();
-		
+
 		$(window).scroll(function() {
 			applyFixedHeader();
 		});

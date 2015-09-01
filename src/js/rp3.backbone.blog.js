@@ -1,16 +1,21 @@
-/* global rp3:true, wp:false, picturefill:false */
+/* global rp3:true, picturefill:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
 
-rp3.backbone_blog = (function($, _, Backbone, wp) {
+rp3.backbone.blog = (function($, _, Backbone) {
 
 	/** Do something awesome */
 
 	var
+	industries = rp3.backbone.get('industries'),
+	exclude = rp3.backbone.get('exclude'),
 
-	offSet			= 0,
 	$blog__backbone	= $('#blog__backbone'),
+
+	// Posts collection instance
+
+	postCollection = new rp3.backbone.collections.Posts(),
 
 	/** Post View */
 
@@ -24,18 +29,22 @@ rp3.backbone_blog = (function($, _, Backbone, wp) {
 			filters = filters || {};
 
 			// Fetch our next batch of posts
-
-			postCollection.fetch({
+			var query = {
 
 				// used by jQuery.ajax to build query parameters
 				data: filters,
 
 				success: function( posts ) {
 					var template = _.template( $('#blog-template').html() );
+
 					that.$el.html( template( { posts: posts.toJSON() } ) );
 
-					// If the offSet is divisible by three, add on our interstitial
-					if ( 0 === ( parseInt( offSet ) % 3 ) ) {
+					_.each( posts.models, function( post ) {
+						that.$el.find( '#single-post-content__comments-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html' );
+					});
+
+					// If the current page is divisible by three, add on our interstitial
+					if ( 0 === ( postCollection.state.currentPage % 3 ) ) {
 						displayInterstitial();
 					}
 
@@ -43,27 +52,31 @@ rp3.backbone_blog = (function($, _, Backbone, wp) {
 					if ( 'function' === typeof( 'picturefill' ) ) {
 						picturefill();
 					}
-
 				},
 
 				error: function() {
 					window.alert( 'Sorry, an error occurred [posts].' );
+				},
+
+			};
+
+			// Fetch first or next page from collection, depending on collection state
+			if ( null === postCollection.state.currentPage ) {
+				postCollection.fetch( query );
+			} else {
+				if( postCollection.hasMore() ) {
+					postCollection.more( query );
+				} else {
+					//TODO: do something to show that there are no more posts
 				}
-			});
+			}
 
 			return this;
-		}
+		},
+
 	}),
 
 	postView = new PostView(),
-
-	/** Post Collection */
-
-	PostCollection = wp.api.collections.Posts.extend({
-		model:	rp3.backbone.models.PostModel
-	}),
-
-	postCollection = new PostCollection(),
 
 	/**
 	 * Display the interstitial
@@ -96,9 +109,6 @@ rp3.backbone_blog = (function($, _, Backbone, wp) {
 
 			if ( documentHeight === windowScrollTop + windowHeight ) {
 
-				// Increment our query offset
-				offSet++;
-
 				// Create an element to store our rendering
 				$postElement = $('<div>').addClass('blog__backbone__post');
 				postView.setElement( $postElement );
@@ -106,9 +116,11 @@ rp3.backbone_blog = (function($, _, Backbone, wp) {
 				// Set the filters for this query
 				var filters = {
 					'filter[posts_per_page]'	: 1,
-					'filter[offset]'			: offSet,
+					'filter[post__not_in][]'	: exclude,
 				};
-
+				if( '' !== industries ) {
+					filters['filter[rp3_tax_industries]'] = industries;
+				}
 				// Render the results
 				postView.render( filters );
 
@@ -126,13 +138,13 @@ rp3.backbone_blog = (function($, _, Backbone, wp) {
 		init:init
 	};
 
-}(jQuery, _, Backbone, wp));
+}(jQuery, _, Backbone));
 
 (function() {
 
 	'use strict';
 
 	if ( -1 < location.href.indexOf( '/blog' ) ) {
-		rp3.backbone_blog.init();
+		rp3.backbone.blog.init();
 	}
 }());
