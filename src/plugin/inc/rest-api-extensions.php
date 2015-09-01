@@ -7,6 +7,14 @@
 define( 'RP3_JSON_PREFIX', 'rp3_json_' );
 
 /**
+ * Add pre-dispatch hook to JSON API
+ */
+function rp3_json_pre_dispatch( $result, $server) {
+	return apply_filters( RP3_JSON_PREFIX . 'pre_dispatch', $result, $server );
+}
+add_filter( 'json_pre_dispatch', 'rp3_json_pre_dispatch', 10, 2 );
+
+/**
  * Add filter hook to Post JSON preparation
  */
 function rp3_json_api( $data, $post, $context ) {
@@ -19,7 +27,7 @@ function rp3_json_api( $data, $post, $context ) {
 	// For each co-author, invoke filter to get co-author meta fields and append to authors array
 	if ( function_exists( 'get_coauthors' ) ) {
 		$data['authors'] = array();
-		$coauthors = get_coauthors( $post[ 'ID' ] );
+		$coauthors = get_coauthors( $post['ID'] );
 		foreach( $coauthors as $coauthor ) {
 			$author_data = array( );
 			$data['authors'][] = apply_filters( RP3_JSON_PREFIX . 'coauthor_fields', $author_data, (array) $coauthor );
@@ -105,3 +113,11 @@ function rp3_json_add_filters( $filters ) {
 	return $filters;
 }
 add_filter( 'json_query_vars', 'rp3_json_add_filters' );
+
+/**
+ * Remove sharing plugin filter on excerpts
+ */
+function rp3_json_remove_excerpt_sharing() {
+	remove_filter( 'the_excerpt', 'sharing_display', 19 );
+}
+add_filter( RP3_JSON_PREFIX . 'pre_dispatch', 'rp3_json_remove_excerpt_sharing' );
