@@ -4,7 +4,7 @@
 
 		<?php if ( 0 < get_comments_number() ) : ?>
 
-			<a href="#!" id="single-blog__comments__trigger" class="single-blog__comments__trigger">
+			<a href="#!" id="single-blog__comments__trigger-<?php the_ID(); ?>" class="single-blog__comments__trigger" data-comment-post="<?php the_ID(); ?>">
 
 				View Comments <span class="single-blog__comments__count"><?php echo esc_html( get_comments_number() ); ?></span>
 
@@ -12,11 +12,11 @@
 
 		<?php else : ?>
 
-			<a href="#!" id="single-blog__comments__trigger" class="single-blog__comments__trigger">Leave a Comment</a>
+			<a href="#!" id="single-blog__comments__trigger-<?php the_ID(); ?>" class="single-blog__comments__trigger" data-comment-post="<?php the_ID(); ?>">Leave a Comment</a>
 
 		<?php endif; ?>
 
-		<div id="single-blog__comments__form" class="single-blog__comments__form">
+		<div id="single-blog__comments__form-<?php the_ID(); ?>" class="single-blog__comments__form">
 
 			<ul class="single-blog__comments__list">
 

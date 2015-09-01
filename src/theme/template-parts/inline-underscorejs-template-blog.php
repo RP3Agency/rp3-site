@@ -48,6 +48,8 @@
 
 			</section>
 
+			<section id="single-post-content__comments-placeholder-<%= post.ID %>" />
+
 			<% _.each( post.authors, function( author ) { %>
 				<% if( author.photo_url ) { %>
 

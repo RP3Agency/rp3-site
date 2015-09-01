@@ -36,7 +36,12 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 				success: function( posts ) {
 					var template = _.template( $('#blog-template').html() );
+
 					that.$el.html( template( { posts: posts.toJSON() } ) );
+
+					_.each( posts.models, function( post ) {
+						that.$el.find( '#single-post-content__comments-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html' );
+					});
 
 					// If the current page is divisible by three, add on our interstitial
 					if ( 0 === ( postCollection.state.currentPage % 3 ) ) {
