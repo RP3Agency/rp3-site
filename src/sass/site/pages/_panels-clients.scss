@@ -23,8 +23,9 @@
 		}
 	}
 
-	svg {
-		fill: mix( white, $color__black, 33.33333% );
+	svg path,
+	svg g rect {
+		fill: mix( white, $color__black, 33.33333% ) !important; // !important, to override inline styles from Adobe Illustrator
 	}
 
 
