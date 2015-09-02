@@ -1,6 +1,10 @@
 .site-blog__interstitial {
 	@extend %max-width;
 
+	@include breakpoint( bp() ) {
+		margin-bottom: 4rem;
+	}
+
 	&__container {
 		@extend %max-width--padded;
 	}
