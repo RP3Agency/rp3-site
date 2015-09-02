@@ -1,0 +1,32 @@
+.site-blog__horizontal-rule {
+	@extend %max-width;
+	margin: {
+		top: 2rem;
+		bottom: 2rem;
+	}
+
+	@include breakpoint( bp() ) {
+		margin: {
+			top: 4rem;
+			bottom: 4rem;
+		}
+	}
+
+	&__inner {
+		@extend %max-width--padded;
+		background: {
+			clip: content-box;
+			color: $color__gray--light;
+			image: url("../images/interstitial-blog.jpg");
+			position: center;
+		}
+		height: 0.5rem;
+
+		@include breakpoint( $hidpi ) {
+			background: {
+				image: url("../images/interstitial-blog@2x.jpg");
+				size: 1200px auto;
+			}
+		}
+	}
+}
