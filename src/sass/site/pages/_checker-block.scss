@@ -2,6 +2,7 @@
 	@extend %max-width;
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: 2rem;
 
 	&__block {
 		display: flex;
