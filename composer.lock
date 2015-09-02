@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4ff4ed10642aaad7c56304b0f491e6bc",
+    "hash": "27d731b7615f7d90d4d0ac0c9c7c01f9",
     "packages": [
         {
             "name": "composer/installers",
@@ -918,15 +918,15 @@
         },
         {
             "name": "wpackagist-plugin/yet-another-related-posts-plugin",
-            "version": "4.2.4",
+            "version": "dev-trunk",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/yet-another-related-posts-plugin/",
-                "reference": "tags/4.2.4"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/yet-another-related-posts-plugin.4.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/yet-another-related-posts-plugin.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -934,13 +934,16 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/yet-another-related-posts-plugin/"
+            "homepage": "https://wordpress.org/plugins/yet-another-related-posts-plugin/",
+            "time": "2015-05-14 21:00:52"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "wpackagist-plugin/yet-another-related-posts-plugin": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
