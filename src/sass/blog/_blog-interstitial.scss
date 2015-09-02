@@ -1,27 +1,37 @@
 .site-blog__interstitial {
-	background-color: $color__gray--light;
-	padding: {
-		top: 2em;
-		bottom: 2em;
-	}
+	@extend %max-width;
 
 	&__container {
-		@extend %max-width;
-	}
-
-	&__wrapper {
 		@extend %max-width--padded;
 	}
 
-	&__container {
+	&__wrapper {
+		background: {
+			color: $color__gray--light;
+			image: url("../images/interstitial-blog.jpg");
+			position: center;
+		}
+		padding: {
+			top: 2em;
+			bottom: 2em;
+		}
+
+		@include breakpoint( $hidpi ) {
+			background: {
+				image: url("../images/interstitial-blog@2x.jpg");
+				size: 1200px auto;
+			}
+		}
+	}
+
+	&__inner {
 		@extend %max-width--blog;
+		background-color: transparentize( $color__white, 0.3 );
+		padding: 1em;
 	}
 
 	p {
-		margin: {
-			top: 1em;
-			bottom: 1em;
-		}
+		margin: 0 0 1em;
 	}
 
 	a {
