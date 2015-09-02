@@ -126,9 +126,6 @@
 
 <script type="text/template" id="blog-template-horizontal-rule">
 
-<div class="site-blog__horizontal-rule">
-	<div class="site-blog__horizontal-rule__inner">
-	</div>
-</div>
+<div class="site-blog__horizontal-rule"></div>
 
 </script>

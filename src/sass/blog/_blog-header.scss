@@ -1,4 +1,5 @@
 .blog-header {
+	background-color: $color__gray--light;
 	height: rem( 74px );
 
 	@include breakpoint( bp() ) {
@@ -15,6 +16,9 @@
 		height: 100%;
 		overflow: hidden;
 		position: relative;
+
+		/** Fade Out the Edges */
+		@extend %blog-header-fadeout;
 
 		a {
 			height: 100%;

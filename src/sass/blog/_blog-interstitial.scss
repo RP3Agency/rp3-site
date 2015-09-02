@@ -1,12 +1,15 @@
 .site-blog__interstitial {
-	@extend %max-width;
+	background-color: $color__gray--light;
 
 	@include breakpoint( bp() ) {
 		margin-bottom: 4rem;
 	}
 
 	&__container {
-		@extend %max-width--padded;
+		@extend %max-width;
+		position: relative;
+
+		@extend %blog-header-fadeout;
 	}
 
 	&__wrapper {
