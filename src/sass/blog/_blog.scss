@@ -46,7 +46,46 @@
 
 
 /* ==========================================================================
+   Blog Horizontal Rule
+   ========================================================================== */
+
+@import "blog-horizontal-rule";
+
+
+/* ==========================================================================
    Blog Footer
    ========================================================================== */
 
 @import "blog-footer";
+
+
+/* ==========================================================================
+   Blog Header & Interstitial Fade Outs
+   ========================================================================== */
+
+%blog-header-fadeout {
+
+	@include breakpoint( 1200px ) {
+
+		&::before,
+		&::after {
+			bottom: 0;
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			width: rem( 150px );
+			z-index: 1;
+		}
+
+		&::before {
+			background-image: linear-gradient( to right, $color__gray--light, transparentize( $color__gray--light, 1 ) );
+			left: 0;
+		}
+
+		&::after {
+			background-image: linear-gradient( to left, $color__gray--light, transparentize( $color__gray--light, 1 ) );
+			right: 0;
+		}
+	}
+}

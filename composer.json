@@ -51,7 +51,7 @@
     "wpackagist-plugin/wp-super-cache":"*",
     "wpackagist-plugin/featured-images-for-rss-feeds": "*",
     "wpackagist-plugin/wp-bitly":"*",
-    "wpackagist-plugin/yet-another-related-posts-plugin":"*",
+    "wpackagist-plugin/yet-another-related-posts-plugin":"dev-trunk",
     "wpackagist-plugin/dynamic-featured-image": "*",
     "wpackagist-plugin/tc-comment-out": "*",
     "wpackagist-plugin/tinymce-advanced": "*"

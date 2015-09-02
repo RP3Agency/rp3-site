@@ -44,8 +44,11 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					});
 
 					// If the current page is divisible by three, add on our interstitial
+					// Otherwise, add a "horizontal rule" type thing
 					if ( 0 === ( postCollection.state.currentPage % 3 ) ) {
 						displayInterstitial();
+					} else {
+						displayHorizontalRule();
 					}
 
 					// run picturefill to update inserted elements
@@ -89,6 +92,19 @@ rp3.backbone.blog = (function($, _, Backbone) {
 		$interstitialElement.html( template() );
 
 		$blog__backbone.append( $interstitialElement );
+	},
+
+	/**
+	 * Display the "horizontal rule"
+	 */
+	displayHorizontalRule = function() {
+
+		var $horizontalRuleElement = $('<div>').addClass( 'blog__backbone__horizontal-rule' ),
+			template = _.template( $('#blog-template-horizontal-rule').html() );
+
+		$horizontalRuleElement.html( template() );
+
+		$blog__backbone.append( $horizontalRuleElement );
 	},
 
 	/**

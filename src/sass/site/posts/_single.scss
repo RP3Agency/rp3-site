@@ -60,6 +60,11 @@
 		font-weight: $font-weight__medium;
 	}
 
+	ul {
+		list-style: square;
+		margin: 0 0 2em 1em;
+	}
+
 	.quotations {
 		border: 1px solid $color__gray--light;
 		margin-bottom: 2em;

@@ -1,5 +1,6 @@
 .work {
 	@extend %max-width;
+	margin-bottom: 2rem;
 
 	&__set {
 		@extend %max-width--padded;
