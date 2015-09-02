@@ -1,35 +1,8 @@
-.site-header {
-
-	&--blog {
-		background-color: $color__primary;
-
-		/** Logo */
-
-		.site-header__site-title .logo {
-
-			path {
-				fill: $color__white;
-			}
-		}
-
-		a {
-			color: $color__white;
-
-			@include hover-state {
-				color: $color__black;
-			}
-		}
-	}
-}
-
-
 .blog-header {
-	background-color: $color__primary;
-	color: $color__white;
 	height: rem( 74px );
 
 	@include breakpoint( bp() ) {
-		height: rem( 100px );
+		height: rem( 150px );
 	}
 
 	&__skip-link {
@@ -40,27 +13,20 @@
 	&__container {
 		@extend %max-width;
 		height: 100%;
+		overflow: hidden;
+		position: relative;
 
-		&__inner {
-			@extend %max-width--padded;
+		a {
 			height: 100%;
-			position: relative;
+			left: 50%;
+			position: absolute;
+			transform: translate( -50%, 0 );
 		}
-	}
 
-
-
-	/** Layout */
-
-	&__title {
-		@extend %roboto-thin;
-		font-size: em(24px);
-		text-transform: uppercase;
-		white-space: nowrap;
-		@include centered( 'vertical' );
-
-		@include breakpoint( bp() ) {
-			font-size: em(40px);
+		img {
+			height: 100%;
+			max-width: none;
+			width: auto;
 		}
 	}
 }
