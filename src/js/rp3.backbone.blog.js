@@ -39,7 +39,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					that.$el.html( template( { posts: posts.toJSON() } ) );
 
 					_.each( posts.models, function( post ) {
-						that.$el.find( '#single-post-content__comments-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html' );
+						that.$el.find( '#single-post-content__comments-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html .single-blog__comments' );
+						that.$el.find( '#single-post-content__related-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html .single-blog__related' );
 					});
 
 					// If the current page is divisible by three, add on our interstitial
@@ -55,6 +56,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 						reevaluate: true
 					});
 
+					$blog__loading_indicator.removeClass('visible');
+					
 				},
 
 				error: function() {
@@ -71,6 +74,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					postCollection.more( query );
 				} else {
 					//TODO: do something to show that there are no more posts
+					$blog__loading_indicator.removeClass('visible');
 				}
 			}
 

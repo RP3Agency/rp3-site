@@ -13,3 +13,5 @@
 	<?php comments_template( '/template-parts/content-blog-comments.php' ); ?>
 
 <?php endif; ?>
+
+<?php get_template_part( 'template-parts/content', 'blog-related' ); ?>
