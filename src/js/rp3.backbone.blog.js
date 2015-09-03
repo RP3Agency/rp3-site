@@ -55,6 +55,11 @@ rp3.backbone.blog = (function($, _, Backbone) {
 						reevaluate: true
 					});
 
+					// Turn off the loading indicator
+					$blog__loading_indicator.removeClass('visible');
+
+					// Pull the page up 50px
+					window.scrollBy( 0, 50 );
 				},
 
 				error: function() {
