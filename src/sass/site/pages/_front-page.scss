@@ -30,32 +30,66 @@
 	&__work {
 		@extend %max-width--padded;
 
-		@include breakpoint( bp() ) {
-			display: flex;
-			margin-bottom: 2rem;
+		a {
+			height: 100%;
+			margin-top: 100%;
+			opacity: 0;
+			position: relative;
+			transition: margin-top 1s ease-out, opacity 1.5s ease-out 0.5s;
+
+			&.active {
+				margin-top: 0;
+				opacity: 1;
+			}
 		}
 
 		&__item {
 			margin-bottom: 1rem;
 
 			@include breakpoint( bp() ) {
-				margin: {
-					right: gutter();
-					bottom: 0;
-				}
-				width: span( 24 / 4 );
+				height: rem( 450px );
+				margin-bottom: 0;
+				overflow: hidden;
+			}
+		}
 
-				&:last-of-type {
-					margin-right: 0;
-				}
+		img {
+
+			@include breakpoint( bp() ) {
+				height: 100%;
+				max-width: none;
+				width: auto;
+				@include centered( "horizontal" );
 			}
 		}
 
 		&__tagline {
 			@extend %roboto-medium;
 			font-size: rem( 12px );
-			padding: 0.5em 0;
 			text-transform: uppercase;
+
+			@include breakpoint( bp() ) {
+				bottom: 0;
+				position: absolute;
+				top: 75%;
+				width: 100%;
+			}
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				width: 25%;
+
+				.front-page__work__item:nth-of-type(even) & {
+					right: 0;
+				}
+			}
+
+			&__inner {
+
+				@include breakpoint( bp() ) {
+					width: calc( 100% - 2em );
+					@include centered( "vertical" );
+				}
+			}
 		}
 	}
 
@@ -65,7 +99,6 @@
 		@extend %max-width--padded;
 		color: $color__white;
 		font-size: rem( 12px );
-		margin-bottom: 2rem;
 
 		&__subhead {
 			font-size: em( 20px );
@@ -84,9 +117,15 @@
 
 		&__block {
 			min-height: rem( 150px );
+			opacity: 0;
 			overflow: hidden;
 			padding: 1em;
+			transition: opacity 1.5s ease-out 0.5s;
 			width: 50%;
+
+			&.active {
+				opacity: 1;
+			}
 
 			@include breakpoint( bp() ) {
 				min-height: rem( 200px );
