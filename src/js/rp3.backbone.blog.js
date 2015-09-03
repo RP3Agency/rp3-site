@@ -10,6 +10,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 	var exclude, industries,
 
 	$blog__backbone	= $('#blog__backbone'),
+	$blog__loading_indicator = $('#blog__loading-indicator'),
 
 	// Posts collection instance
 
@@ -123,6 +124,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 			documentHeight		= $(document).height();
 
 			if ( documentHeight === windowScrollTop + windowHeight ) {
+
+				$blog__loading_indicator.addClass('visible');
 
 				// Create an element to store our rendering
 				$postElement = $('<div>').addClass('blog__backbone__post');

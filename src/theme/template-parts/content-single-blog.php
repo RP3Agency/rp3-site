@@ -111,4 +111,10 @@
 
 <div id="blog__backbone" data-backbone='<?php echo json_encode( $settings ); ?>'></div>
 
+<div id="blog__loading-indicator" class="blog__loading-indicator">
+
+	<img src="<?php echo esc_url( get_template_directory_uri() . '/images/loading-indicator.gif' ); ?>" />
+
+</div>
+
 <?php get_template_part( 'template-parts/inline', 'underscorejs-template-blog' ); ?>
