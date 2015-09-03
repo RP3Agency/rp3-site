@@ -17,7 +17,7 @@ $blog = new WP_Query( array_merge( $args, array( 'post_type' => 'post' ) ) );
 $news = new WP_Query( array_merge( $args, array( 'post_type' => 'rp3_cpt_news' ) ) );
 ?>
 
-<div id="front-page__blocks" class="front-page__blocks component component--padded">
+<div id="front-page__blocks" class="front-page__blocks">
 
 	<div class="front-page__blocks__row front-page__blocks__row--1">
 
