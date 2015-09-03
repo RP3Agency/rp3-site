@@ -12,7 +12,15 @@ get_header(); ?>
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
+			<?php if ( is_singular( 'rp3_cpt_careers' ) ) : ?>
+
+				<?php get_template_part( 'template-parts/content', 'single-careers' ); ?>
+
+			<?php else : ?>
+
+				<?php get_template_part( 'template-parts/content', 'single' ); ?>
+
+			<?php endif; ?>
 
 		<?php endwhile; ?>
 

@@ -1,14 +1,14 @@
 <section class="front-page__hero">
 
 	<?php
-	$image['small'] = wp_get_attachment_image_src( 10544, 'four_three_small' );
-	$image['small_2x'] = wp_get_attachment_image_src( 10544, 'four_three_small_2x' );
+	$image['small'] = wp_get_attachment_image_src( 10798, 'four_three_small' );
+	$image['small_2x'] = wp_get_attachment_image_src( 10798, 'four_three_small_2x' );
 
-	$image['medium'] = wp_get_attachment_image_src( 10544, 'four_three_medium' );
-	$image['medium_2x'] = wp_get_attachment_image_src( 10544, 'four_three_medium_2x' );
+	$image['medium'] = wp_get_attachment_image_src( 10798, 'four_three_medium' );
+	$image['medium_2x'] = wp_get_attachment_image_src( 10798, 'four_three_medium_2x' );
 
-	$image['large'] = wp_get_attachment_image_src( 10544, 'eight_three_large' );
-	$image['large_2x'] = wp_get_attachment_image_src( 10544, 'eight_three_large_2x' );
+	$image['large'] = wp_get_attachment_image_src( 10798, 'eight_three_large' );
+	$image['large_2x'] = wp_get_attachment_image_src( 10798, 'eight_three_large_2x' );
 	?>
 
 	<picture>

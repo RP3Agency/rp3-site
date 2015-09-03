@@ -31,6 +31,8 @@
 
 			</header>
 
+			<% if ( post.four_three_small !== false ) { %>
+				
 			<div class="single-post-content__featured-image">
 
 				<picture>
@@ -41,6 +43,8 @@
 				</picture>
 
 			</div>
+
+			<% } %>
 
 			<section class="single-post-content__content">
 
@@ -110,6 +114,8 @@
 
 				<% } %>
 			<% }) %>
+
+			<section id="single-post-content__related-placeholder-<%= post.ID %>" />
 
 		</div>
 

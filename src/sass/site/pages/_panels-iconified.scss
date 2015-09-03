@@ -35,8 +35,6 @@
 	}
 
 	&__text {
-		@extend %roboto-medium;
-		text-transform: uppercase;
 		width: span(16 of 24);
 
 		@include breakpoint( bp() ) {

@@ -1,0 +1,15 @@
+.blog__loading-indicator {
+	margin-top: -2rem;
+	padding-bottom: 2rem;
+	text-align: center;
+	visibility: hidden;
+
+	&.visible {
+		visibility: visible;
+	}
+
+	img {
+		display: inline-block;
+		width: 50px;
+	}
+}
