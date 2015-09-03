@@ -102,6 +102,14 @@
 
 <?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
-<div id="blog__backbone" data-backbone='{ "industries": "<?php echo $industries; ?>", "exclude": "<?php echo $post_id; ?>" }'></div>
+<?php
+	// Create settings collection to pass to Backbone
+	$settings = array(
+		'exclude'			=> $post_ids,
+		'industries'		=> $industries,
+	);
+?>
+
+<div id="blog__backbone" data-backbone='<?php echo json_encode( $settings ); ?>'></div>
 
 <?php get_template_part( 'template-parts/inline', 'underscorejs-template-blog' ); ?>

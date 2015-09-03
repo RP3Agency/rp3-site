@@ -7,7 +7,7 @@ rp3.backbone = (function($, _, Backbone, wp) {
 
 	var
 
-		// private variable for Backbone settings
+		// private Backbone settings
 		_settings,
 
 		/** Models */
@@ -93,11 +93,12 @@ rp3.backbone = (function($, _, Backbone, wp) {
 
 		// read-only getter for Backbone settings
 		getSetting = function( setting ) {
-			return _.result( _settings, setting );
+			return _settings.result( setting );
 		},
 
 		init = function() {
-			_settings = $('[data-backbone]').data('backbone');
+			// fetch settings from Backbone data attribute, apply Underscore wrapper
+			_settings = _( $('[data-backbone]').data('backbone') );
 		};
 
 	return {

@@ -105,7 +105,7 @@ add_filter( RP3_JSON_PREFIX . 'coauthor_fields', 'rp3_json_coauthor_photos', 10,
 function rp3_json_add_filters( $filters ) {
 
 	// List of filters to allow in API
-	$allowed = array( 'post__not_in' );
+	$allowed = array( 'post__not_in', 'tax_query' );
 
 	// Merge with current list
 	$filters = array_merge( $filters, $allowed );
