@@ -50,9 +50,10 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					}
 
 					// run picturefill to update inserted elements
-					if ( 'function' === typeof( 'picturefill' ) ) {
-						picturefill();
-					}
+					picturefill({
+						reevaluate: true
+					});
+
 				},
 
 				error: function() {
@@ -156,6 +157,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 				// Append results to the container, rather than replacing it
 				$blog__backbone.append( $postElement );
+
 			}
 		});
 	},
