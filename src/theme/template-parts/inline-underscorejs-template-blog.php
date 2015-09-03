@@ -3,7 +3,7 @@
 <script type="text/template" id="blog-template">
 <% _.each( posts, function( post ) { %>
 
-	<article class="single-post-content single-post-content--blog">
+	<article id="article-<%= post.ID %>" class="single-post-content single-post-content--blog" data-permalink="<%= post.link %>">
 
 		<div class="single-post-content__wrapper">
 
@@ -32,7 +32,7 @@
 			</header>
 
 			<% if ( post.four_three_small !== false ) { %>
-				
+
 			<div class="single-post-content__featured-image">
 
 				<picture>
