@@ -37,15 +37,15 @@ rp3.backbone.news = (function($, _, Backbone) {
 					var template = _.template( $('#listing-template').html() );
 					that.$el.html( template( { posts: posts.toJSON() } ) );
 
-					// run picturefill to update inserted elements
-					if ( 'function' === typeof( 'picturefill' ) ) {
-						picturefill();
-					}
-
 					// if last page, hide button
 					if ( ! postCollection.hasMore() ) {
 						$listingViewMore.hide();
 					}
+					
+					// run picturefill to update inserted elements
+					picturefill({
+						reevaluate: true
+					});
 				},
 
 				error: function() {
