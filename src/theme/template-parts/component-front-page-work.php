@@ -1,5 +1,11 @@
 <?php if ( have_rows( 'front_page_work' ) ) : ?>
 
+	<header class="front-page__work__item front-page__work__item--color-bar full-width-image-panel--0">
+
+		<h1>Featured Case Studies</h1>
+
+	</header>
+
 	<section id="front-page__work" class="front-page__work">
 
 		<?php $counter = 1; while ( have_rows( 'front_page_work' ) ) : the_row(); ?>

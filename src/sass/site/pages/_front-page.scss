@@ -1,16 +1,16 @@
 .front-page {
-	@extend %max-width;
 
 	/** Hero (to be replaced with the agency video) */
 
 	&__hero {
+		@extend %max-width;
 		margin-bottom: 2rem;
 	}
 
 	/** Copy */
 
 	&__copy {
-		@extend %max-width--padded;
+		@extend %max-width;
 		padding-bottom: 2rem;
 
 		@include breakpoint( bp() ) {
@@ -21,6 +21,7 @@
 		}
 
 		&__wrapper {
+			@extend %max-width--padded;
 			@extend %max-width--blog;
 		}
 	}
@@ -28,12 +29,13 @@
 	/** Work */
 
 	&__work {
-		@extend %max-width--padded;
+		@extend %max-width;
 
 		a {
 			height: 100%;
 			margin-top: 100%;
 			opacity: 0;
+			overflow: hidden;
 			position: relative;
 			transition: margin-top 1s ease-out, opacity 1.5s ease-out 0.5s;
 
@@ -44,12 +46,43 @@
 		}
 
 		&__item {
+			@extend %max-width--padded;
 			margin-bottom: 1rem;
 
 			@include breakpoint( bp() ) {
 				height: rem( 450px );
 				margin-bottom: 0;
 				overflow: hidden;
+			}
+
+			&--color-bar {
+				background-color: $color__gray--light;
+				height: rem( 450px / 2 );
+				position: relative;
+
+				h1 {
+					line-height: 1.2;
+					margin-top: rem(15px);
+					position: absolute;
+					text-align: center;
+					top: percentage( 2 / 3 );
+					transform: translate( 0, -50% );
+					width: 100%;
+
+					@include breakpoint( bp() ) {
+						font-size: rem(36px);
+					}
+
+					&::before {
+						content: url("../images/icon-bullseye.svg");
+						height: 75px;
+						left: 50%;
+						position: absolute;
+						top: -90px;
+						transform: translate( -17px, 0 );
+						width: 75px;
+					}
+				}
 			}
 		}
 
@@ -70,6 +103,7 @@
 
 			@include breakpoint( bp() ) {
 				bottom: 0;
+				left: 0;
 				position: absolute;
 				top: 75%;
 				width: 100%;
@@ -79,6 +113,7 @@
 				width: 25%;
 
 				.front-page__work__item:nth-of-type(even) & {
+					left: auto;
 					right: 0;
 				}
 			}
@@ -96,7 +131,7 @@
 	/** Blocks */
 
 	&__blocks {
-		@extend %max-width--padded;
+		@extend %max-width;
 		color: $color__white;
 		font-size: rem( 12px );
 
@@ -112,6 +147,7 @@
 		}
 
 		&__row {
+			@extend %max-width--padded;
 			display: flex;
 		}
 
