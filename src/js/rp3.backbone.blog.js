@@ -56,11 +56,28 @@ rp3.backbone.blog = (function($, _, Backbone) {
 						reevaluate: true
 					});
 
+					// store current location (previous loaded or landing url) in local scope
+					var prev_link = location.href;
+
+					// add article scroll waypoint
+					that.$el.find('article').waypoint({
+  						handler: function( direction ) {
+							var $article = $(this.element);
+							if( direction == 'up' ) {
+								history.pushState( null, null, prev_link );
+							} else {
+								history.pushState( null, null, $article.data('permalink') );
+							}
+  						},
+						offset: '100%',
+					});
+
 					// Turn off the loading indicator
 					$blog__loading_indicator.removeClass('visible');
 
 					// Pull the page up 50px
 					window.scrollBy( 0, 50 );
+
 				},
 
 				error: function() {
@@ -76,8 +93,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 				if( postCollection.hasMore() ) {
 					postCollection.more( query );
 				} else {
-					//TODO: do something to show that there are no more posts
 					$blog__loading_indicator.removeClass('visible');
+					//TODO: do something else to show that there are no more posts
 				}
 			}
 
