@@ -7,9 +7,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 	/** Do something awesome */
 
-	var
-	industries = rp3.backbone.get('industries'),
-	exclude = rp3.backbone.get('exclude'),
+	var exclude, industries,
 
 	$blog__backbone	= $('#blog__backbone'),
 
@@ -132,11 +130,27 @@ rp3.backbone.blog = (function($, _, Backbone) {
 				// Set the filters for this query
 				var filters = {
 					'filter[posts_per_page]'	: 1,
-					'filter[post__not_in][]'	: exclude,
+					'filter[post__not_in]'		: exclude,
 				};
-				if( '' !== industries ) {
-					filters['filter[rp3_tax_industries]'] = industries;
+
+				// Collection for taxonomy selectors
+				var taxonomy = [];
+
+				// Industry taxonomy
+				if( ! _.isEmpty( industries ) ) {
+					taxonomy.push({
+						'taxonomy':	'rp3_tax_industries',
+						'field':	'term_id',
+						'terms':	industries,
+					});
 				}
+
+				// If we have taxonomy selectors, set relationshop and assign to filters
+				if( 0 < taxonomy.length ) {
+					filters['filter[tax_query]'] = taxonomy;
+					filters['filter[tax_query][relation]'] = 'AND';
+				}
+
 				// Render the results
 				postView.render( filters );
 
@@ -147,6 +161,12 @@ rp3.backbone.blog = (function($, _, Backbone) {
 	},
 
 	init = function() {
+
+		// Bring in our variables from the PHP template
+
+		exclude		= rp3.backbone.get('exclude');
+		industries	= rp3.backbone.get('industries');
+
 		listenForScroll();
 	};
 
