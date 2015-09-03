@@ -2,44 +2,54 @@
 
 	<section id="front-page__work" class="front-page__work">
 
-		<?php while ( have_rows( 'front_page_work' ) ) : the_row(); ?>
+		<?php $counter = 1; while ( have_rows( 'front_page_work' ) ) : the_row(); ?>
 
 			<?php $post = get_sub_field( 'front_page_work_item' ); setup_postdata( $post ); ?>
 
-			<a href="<?php echo esc_url( get_permalink() ); ?>" class="block front-page__work__item">
+			<div class="front-page__work__item full-width-image-panel--<?php echo esc_attr( $counter ); ?>">
 
-				<?php
-				/** Determine whether to use the primary or alternate featured image */
-				$alt_featured_image = rp3_use_alternate_featured_image( 'featured_image_alt' );
+				<a href="<?php echo esc_url( get_permalink() ); ?>" class="block">
 
-				if ( $alt_featured_image ) {
-					$featured_image_id = $alt_featured_image;
-				} else {
-					$featured_image_id = get_post_thumbnail_id();
-				}
+					<?php
+					/** Determine whether to use the primary or alternate featured image */
+					$alt_featured_image = rp3_use_alternate_featured_image( 'featured_image_alt' );
 
-				$image['small'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small' );
-				$image['small_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small_2x' );
+					if ( $alt_featured_image ) {
+						$featured_image_id = $alt_featured_image;
+					} else {
+						$featured_image_id = get_post_thumbnail_id();
+					}
 
-				$image['medium'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_medium' );
-				$image['medium_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_medium_2x' );
-				?>
+					$image['small'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small' );
+					$image['small_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small_2x' );
 
-				<picture>
-					<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
-					<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
-					<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
-				</picture>
+					$image['medium'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_medium' );
+					$image['medium_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_medium_2x' );
 
-				<?php if ( '' != get_field( 'tagline' ) ) : ?>
+					$image['large'] = wp_get_attachment_image_src( $featured_image_id, 'eight_three_large' );
+					$image['large_2x'] = wp_get_attachment_image_src( $featured_image_id, 'eight_three_large_2x' );
+					?>
 
-					<div class="front-page__work__tagline"><?php echo esc_html( get_field( 'tagline' ) ); ?></div>
+					<picture>
+						<source srcset="<?php echo esc_url( $image['large'][0] ); ?>, <?php echo esc_url( $image['large_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
+						<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+						<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+						<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+					</picture>
 
-				<?php endif; ?>
+					<?php if ( '' != get_field( 'tagline' ) ) : ?>
 
-			</a>
+						<div class="front-page__work__tagline headline">
+							<div class="front-page__work__tagline__inner"><?php echo esc_html( get_field( 'tagline' ) ); ?></div>
+						</div>
 
-		<?php wp_reset_postdata(); endwhile; ?>
+					<?php endif; ?>
+
+				</a>
+
+			</div>
+
+		<?php wp_reset_postdata(); $counter++; endwhile; ?>
 
 	</section>
 
