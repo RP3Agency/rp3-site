@@ -27,23 +27,31 @@ if ( function_exists( 'related_posts' ) ) :
 
 				<a href="<?php echo esc_url( get_permalink() ); ?>" class="block">
 
-					<?php
-					$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small' );
-					$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small_2x' );
+					<?php if ( '' !== get_the_post_thumbnail() ) : ?>
 
-					$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_medium' );
-					$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_medium_2x' );
+						<?php
+						$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small' );
+						$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small_2x' );
 
-					$image['large'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small' );
-					$image['large_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small_2x' );
-					?>
+						$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_medium' );
+						$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_medium_2x' );
 
-					<picture>
-						<source srcset="<?php echo esc_url( $image['large'][0] ); ?>, <?php echo esc_url( $image['large_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
-						<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
-						<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
-						<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
-					</picture>
+						$image['large'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small' );
+						$image['large_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small_2x' );
+						?>
+
+						<picture>
+							<source srcset="<?php echo esc_url( $image['large'][0] ); ?>, <?php echo esc_url( $image['large_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
+							<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+							<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+							<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+						</picture>
+
+					<?php else : ?>
+
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/images/blog-fallback-image.jpg' ); ?>">
+
+					<?php endif; ?>
 
 
 					<div class="single-blog__related__post__label">

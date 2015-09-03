@@ -28,4 +28,9 @@
 			padding: 1em;
 		}
 	}
+
+	// Make sure the fallback image fills the space
+	img[src*="blog-fallback-image.jpg"] {
+		width: 100%;
+	}
 }
