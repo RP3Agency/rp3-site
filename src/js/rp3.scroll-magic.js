@@ -56,8 +56,21 @@ rp3.scrollMagic = (function($) {
 	},
 
 	init = function() {
-		scrollMagic();
-		scrollMagicBlocks();
+
+		// Only run at viewports of 600+ pixels
+		var rem = 600 / 16;
+
+		rem = rem + 'rem';
+
+		if ( window.matchMedia( '(min-width: ' + rem + ')' ).matches ) {
+			scrollMagic();
+			scrollMagicBlocks();
+		} else {
+			// Override the styling issues that would happen if we pulled our browser out from
+			// narrow to wide
+			$hero.find('a').css( 'margin-top', '0' ).css( 'opacity', '1' );
+			$homeBlocksRow.find('.front-page__blocks__block').css( 'opacity', '1' );
+		}
 	};
 
 	return {
