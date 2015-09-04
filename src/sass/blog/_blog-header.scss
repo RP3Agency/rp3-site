@@ -22,15 +22,14 @@
 
 		a {
 			height: 100%;
-			left: 50%;
-			position: absolute;
-			transform: translate( -50%, 0 );
+			position: relative;
 		}
 
 		img {
 			height: 100%;
 			max-width: none;
 			width: auto;
+			@include centered( "horizontal" );
 		}
 	}
 }
