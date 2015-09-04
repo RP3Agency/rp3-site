@@ -60,7 +60,7 @@
 		font-weight: $font-weight__medium;
 	}
 
-	ul {
+	ul:not(.social) {
 		list-style: square;
 		margin: 0 0 2em 1em;
 	}

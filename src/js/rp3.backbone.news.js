@@ -41,7 +41,7 @@ rp3.backbone.news = (function($, _, Backbone) {
 					if ( ! postCollection.hasMore() ) {
 						$listingViewMore.hide();
 					}
-					
+
 					// run picturefill to update inserted elements
 					picturefill({
 						reevaluate: true
@@ -146,8 +146,8 @@ rp3.backbone.news = (function($, _, Backbone) {
 
 			// update the location
 			current_page++;
-			//var locationHref = window.location.href.match( /http:\/\/[^\/]+\/([^\/]+)/ )[0] + '/page/' + current_page + '/';
-			//window.history.pushState( '', '', locationHref );
+			var locationHref = window.location.href.match( /http:\/\/[^\/]+\/([^\/]+)/ )[0] + '/page/' + current_page + '/';
+			window.history.pushState( '', '', locationHref );
 
 		});
 
