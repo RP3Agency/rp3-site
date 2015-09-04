@@ -11,7 +11,7 @@
  */
 
 // if blog page request has "ajax=html" query parameter, serve HTML fragment for infinite scroll
-if( 'html' == $_GET['ajax'] ) {
+if( isset($_GET['ajax']) && ( 'html' == $_GET['ajax'] ) ) {
 	while ( have_posts() ) : the_post();
 		get_template_part( 'template-parts/content', 'single-blog-ajax' );
 	endwhile;
