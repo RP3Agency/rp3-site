@@ -34,6 +34,10 @@
 
 	&__full {
 		@extend .work__full;
+
+		&--woolly-mammoth {
+			@include aspect-ratio( 2400px, 1690px )
+		}
 	}
 
 
