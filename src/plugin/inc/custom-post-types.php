@@ -158,11 +158,15 @@ function rp3_cpt_news() {
 		'supports'				=> array( 'title', 'thumbnail', 'editor', 'excerpt' ),
 		'rewrite'				=> array(
 			'slug'					=> 'news',
-			'with_front'			=> false
+			'with_front'			=> false,
+			'pages'					=> false,
 		)
 	);
 
 	register_post_type( 'rp3_cpt_news', $args );
+
+	// define explicit news pagination rewrite rule
+	add_rewrite_rule('^news/page/([0-9]+)/?$','index.php?pagename=news&paged=$matches[1]','top');
 
 	// Custom Taxonomy
 	$tax_args = array(
