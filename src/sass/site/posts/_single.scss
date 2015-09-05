@@ -60,7 +60,7 @@
 		font-weight: $font-weight__medium;
 	}
 
-	ul:not(.social) {
+	ul:not(.social, .single-blog__comments__list) {
 		list-style: square;
 		margin: 0 0 2em 1em;
 	}
