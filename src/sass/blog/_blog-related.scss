@@ -9,6 +9,7 @@
 	&__post {
 		background-color: $color__blue;
 		margin-bottom: 2em;
+		overflow: hidden;
 
 		@include breakpoint( bp() ) {
 			margin: {
@@ -19,6 +20,17 @@
 
 			&:last-child {
 				margin-right: 0;
+			}
+		}
+
+		&__featured-image {
+			@include aspect-ratio( 4, 3 );
+
+			img {
+				height: 100%;
+				max-width: none;
+				width: auto;
+				@include centered( "both" );
 			}
 		}
 
