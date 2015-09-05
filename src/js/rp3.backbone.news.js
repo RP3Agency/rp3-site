@@ -7,11 +7,10 @@ rp3.backbone.news = (function($, _, Backbone) {
 
 	'use strict';
 
-	var post_type, offset;
+	var post_type, current_page, offset, exclude, tags, categories, industries, services;
 
-	var
+	var $listingViewMore	= $('#listing__view-more'),
 		$listing__backbone	= $('#listing__backbone'),
-		paged				= 2,
 
 	// Posts collection instance
 	postCollection = new rp3.backbone.collections.Posts(),
@@ -28,7 +27,7 @@ rp3.backbone.news = (function($, _, Backbone) {
 			filters = filters || {};
 
 			// Fetch our next batch of posts
-			postCollection.fetch({
+			var query = {
 
 				// used by jQuery.ajax to build query parameters
 				data: filters,
@@ -38,16 +37,30 @@ rp3.backbone.news = (function($, _, Backbone) {
 					var template = _.template( $('#listing-template').html() );
 					that.$el.html( template( { posts: posts.toJSON() } ) );
 
-					// run picturefill to update inserted elements
-					if ( 'function' === typeof( 'picturefill' ) ) {
-						picturefill();
+					// if last page, hide button
+					if ( ! postCollection.hasMore() ) {
+						$listingViewMore.hide();
 					}
+
+					// run picturefill to update inserted elements
+					picturefill({
+						reevaluate: true
+					});
 				},
 
 				error: function() {
 					window.alert( 'Sorry, an error occurred [news].' );
 				}
-			});
+			};
+
+			// Fetch first or next page from collection, depending on collection state
+			if ( null === postCollection.state.currentPage ) {
+				postCollection.fetch( query );
+			} else {
+				if( postCollection.hasMore() ) {
+					postCollection.more( query );
+				}
+			}
 
 			return this;
 		}
@@ -72,42 +85,86 @@ rp3.backbone.news = (function($, _, Backbone) {
 			// Update our pagination count
 			$listingContentsBackbone = $('.listing__contents--backbone');
 
-			if ( 0 < $listingContentsBackbone.size() ) {
-				paged = parseInt( $listingContentsBackbone.last().data('paged') ) + 1;
-			}
-
 			// Create an element to store our rendering
-			$postElement = $('<div>').addClass('listing__contents listing__contents--backbone').attr( 'data-paged', paged );
+			$postElement = $('<div>').addClass('listing__contents listing__contents--backbone');
 			postView.setElement( $postElement );
 
-			// Determine the proper offset
-			offset += 6;
-
-			// Set the filters for this query
+			// Set the base filters for this query
 			var filters = {
 				'type'						: post_type,
+				'filter[offset]'			: offset - exclude.length,
 				'filter[posts_per_page]'	: 6,
-				'filter[offset]'			: offset,
+				'filter[post__not_in]'		: exclude,
 			};
+
+			// Add tag filters if set
+			if( ! _.isEmpty( tags ) ) {
+				filters['filter[tag__in]'] = tags;
+			}
+
+			// Collection for taxonomy selectors
+			var taxonomy = [];
+
+			// News Category taxonomy
+			if( ! _.isEmpty( categories ) ) {
+				taxonomy.push({
+					'taxonomy':	'rp3_tax_news_categories',
+					'field':	'term_id',
+					'terms':	categories,
+				});
+			}
+
+			// Industry taxonomy
+			if( ! _.isEmpty( industries ) ) {
+				taxonomy.push({
+					'taxonomy':	'rp3_tax_industries',
+					'field':	'term_id',
+					'terms':	industries,
+				});
+			}
+
+			// Service taxonomy
+			if( ! _.isEmpty( services ) ) {
+				taxonomy.push({
+					'taxonomy':	'rp3_tax_services',
+					'field':	'term_id',
+					'terms':	services,
+				});
+			}
+
+			// If we have taxonomy selectors, set relationshop and assign to filters
+			if( 0 < taxonomy.length ) {
+				filters['filter[tax_query]'] = taxonomy;
+				filters['filter[tax_query][relation]'] = 'AND';
+			}
 
 			// Render the results
 			postView.render( filters );
 
 			// Append results to the container, rather than replacing it
 			$listing__backbone.append( $postElement );
+
+			// update the location
+			current_page++;
+			var locationHref = window.location.href.match( /http:\/\/[^\/]+\/([^\/]+)/ )[0] + '/page/' + current_page + '/';
+			window.history.pushState( '', '', locationHref );
+
 		});
 
-		// 	// update the location
-		// 	locationHref = window.location.href.match( hrefPattern )[0] + '/page/' + nextPageNumber + '/';
-		// 	window.history.pushState( '', '', locationHref );
 	},
 
 	init = function() {
 
 		// Bring in our variables from the PHP template
 
-		post_type	= rp3.backbone.get('post_type');
-		offset		= parseInt( rp3.backbone.get('offset') );
+		post_type		= rp3.backbone.get('post_type');
+		current_page	= rp3.backbone.get('current_page');
+		offset			= rp3.backbone.get('offset');
+		exclude			= rp3.backbone.get('exclude');
+		tags			= rp3.backbone.get('tags');
+		categories		= rp3.backbone.get('news_categories');
+		industries		= rp3.backbone.get('industries');
+		services		= rp3.backbone.get('services');
 
 		setupMoreButtonListener();
 	};

@@ -3,7 +3,7 @@
 <script type="text/template" id="blog-template">
 <% _.each( posts, function( post ) { %>
 
-	<article class="single-post-content single-post-content--blog">
+	<article id="article-<%= post.ID %>" class="single-post-content single-post-content--blog" data-permalink="<%= post.link %>">
 
 		<div class="single-post-content__wrapper">
 
@@ -31,6 +31,8 @@
 
 			</header>
 
+			<% if ( post.four_three_small !== false ) { %>
+
 			<div class="single-post-content__featured-image">
 
 				<picture>
@@ -41,6 +43,8 @@
 				</picture>
 
 			</div>
+
+			<% } %>
 
 			<section class="single-post-content__content">
 
@@ -111,6 +115,8 @@
 				<% } %>
 			<% }) %>
 
+			<section id="single-post-content__related-placeholder-<%= post.ID %>" />
+
 		</div>
 
 	</article>
@@ -121,5 +127,11 @@
 <script type="text/template" id="blog-template-interstitial">
 
 <?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
+
+</script>
+
+<script type="text/template" id="blog-template-horizontal-rule">
+
+<div class="site-blog__horizontal-rule"></div>
 
 </script>

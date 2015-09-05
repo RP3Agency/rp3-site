@@ -1,16 +1,16 @@
 .front-page {
-	@extend %max-width;
 
 	/** Hero (to be replaced with the agency video) */
 
 	&__hero {
+		@extend %max-width;
 		margin-bottom: 2rem;
 	}
 
 	/** Copy */
 
 	&__copy {
-		@extend %max-width--padded;
+		@extend %max-width;
 		padding-bottom: 2rem;
 
 		@include breakpoint( bp() ) {
@@ -21,6 +21,7 @@
 		}
 
 		&__wrapper {
+			@extend %max-width--padded;
 			@extend %max-width--blog;
 		}
 	}
@@ -28,41 +29,113 @@
 	/** Work */
 
 	&__work {
-		@extend %max-width--padded;
+		@extend %max-width;
 
-		@include breakpoint( bp() ) {
-			display: flex;
-			margin-bottom: 2rem;
+		a {
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+
+			@include breakpoint( bp() ) {
+				margin-top: 100%;
+				opacity: 0;
+				transition: margin-top 1s ease-out, opacity 1.5s ease-out 0.5s;
+
+				&.active {
+					margin-top: 0;
+					opacity: 1;
+				}
+			}
 		}
 
 		&__item {
+			@extend %max-width--padded;
 			margin-bottom: 1rem;
 
 			@include breakpoint( bp() ) {
-				margin: {
-					right: gutter();
-					bottom: 0;
-				}
-				width: span( 24 / 4 );
+				height: rem( 450px );
+				margin-bottom: 0;
+				overflow: hidden;
+			}
 
-				&:last-of-type {
-					margin-right: 0;
+			&--color-bar {
+				background-color: $color__gray--light;
+				height: rem( 450px / 2 );
+				position: relative;
+
+				h1 {
+					left: 0;
+					line-height: 1.2;
+					margin-top: rem(15px);
+					position: absolute;
+					right: 0;
+					text-align: center;
+					top: percentage( 2 / 3 );
+					transform: translate( 0, -50% );
+
+					@include breakpoint( bp() ) {
+						font-size: rem(36px);
+					}
+
+					&::before {
+						content: url("../images/icon-bullseye.svg");
+						height: 75px;
+						left: 50%;
+						position: absolute;
+						top: -90px;
+						transform: translate( -17px, 0 );
+						width: 75px;
+					}
 				}
+			}
+		}
+
+		img {
+
+			@include breakpoint( bp() ) {
+				height: 100%;
+				max-width: none;
+				width: auto;
+				@include centered( "horizontal" );
 			}
 		}
 
 		&__tagline {
 			@extend %roboto-medium;
 			font-size: rem( 12px );
-			padding: 0.5em 0;
 			text-transform: uppercase;
+
+			@include breakpoint( bp() ) {
+				bottom: 0;
+				left: 0;
+				position: absolute;
+				top: 75%;
+				width: 100%;
+			}
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				width: 25%;
+
+				.front-page__work__item:nth-of-type(even) & {
+					left: auto;
+					right: 0;
+				}
+			}
+
+			&__inner {
+
+				@include breakpoint( bp() ) {
+					width: calc( 100% - 2em );
+					@include centered( "vertical" );
+				}
+			}
 		}
 	}
 
 	/** Blocks */
 
 	&__blocks {
-		@extend %max-width--padded;
+		@extend %max-width;
 		color: $color__white;
 		font-size: rem( 12px );
 
@@ -78,6 +151,7 @@
 		}
 
 		&__row {
+			@extend %max-width--padded;
 			display: flex;
 		}
 
@@ -88,17 +162,39 @@
 			width: 50%;
 
 			@include breakpoint( bp() ) {
+				opacity: 0;
+				transition: opacity 1.5s ease-out 0.5s;
+
+				&.active {
+					opacity: 1;
+				}
+			}
+
+			@include breakpoint( bp() ) {
+				background: {
+					position: 1rem 1rem;
+					repeat: no-repeat;
+					size: 55px auto;
+				}
 				min-height: rem( 200px );
-				padding: 1em 4em 1em 1em;
+				padding: 1em 1rem 1em 85px;
 			}
 		}
 
 		&__general-widget {
 			background-color: $color__magenta;
+
+			@include breakpoint( bp() ) {
+				background-image: url("../images/icon-lightning.svg");
+			}
 		}
 
 		&__blog {
 			background-color: $color__black;
+
+			@include breakpoint( bp() ) {
+				background-image: url("../images/icon-gears.svg");
+			}
 
 			@include breakpoint( bp( "intermediate" ) ) {
 				width: 25%;
@@ -118,6 +214,10 @@
 				text-decoration: none;
 			}
 
+			@include breakpoint( bp() ) {
+				background-image: url("../images/icon-twitter.svg");
+			}
+
 			@include breakpoint( bp( "intermediate" ) ) {
 				width: 25%;
 			}
@@ -125,6 +225,10 @@
 
 		&__news {
 			background-color: $color__gray;
+
+			@include breakpoint( bp() ) {
+				background-image: url("../images/icon-flame.svg");
+			}
 
 			@include breakpoint( bp( "intermediate" ) ) {
 				width: 25%;

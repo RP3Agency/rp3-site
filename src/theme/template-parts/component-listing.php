@@ -8,8 +8,7 @@ if ( '' !== get_field( 'post_type' ) ) {
 
 	$listing_args = array(
 		'post_type'			=> get_field( 'post_type' ),
-		'posts_per_page'	=> 6,
-		'post_status'		=> 'publish'
+		'post_status'		=> 'publish',
 	);
 
 	// Figure out which taxonomies we're looking for
@@ -60,7 +59,7 @@ if ( '' !== get_field( 'post_type' ) ) {
 
 	$services = get_field( 'services' );
 
-	if ( ! empty( $industries ) ) {
+	if ( ! empty( $services ) ) {
 		$tax_name = 'rp3_tax_services';
 		$tax_field = 'term_id';
 		$tax_terms = $services;
@@ -85,6 +84,8 @@ if ( '' !== get_field( 'post_type' ) ) {
 
 	$recent_post = false;
 	$offset = 0;
+	$page_size = 6;
+	$current_page = $paged ?: 1;
 
 	if ( get_field( 'display-featured-post' ) ) {
 
@@ -104,21 +105,19 @@ if ( '' !== get_field( 'post_type' ) ) {
 		) );
 
 		if ( $recent->have_posts() ) {
-			$offset = 1;
+			$recent_post = true;
+			$offset++;
 		}
 	}
 
 	// Modify our listing query, if needed, and run that
 
-	// if ( $paged == 0 ) {
-	// 	$paged = 1;
-	// }
-
-	// $posts_per_page = 6 * $paged;
-
 	$listing_args['offset'] = $offset;
+	$listing_args['posts_per_page'] = ( $page_size * $current_page ) - $offset;
 
 	$listing = new WP_Query( $listing_args );
+
+	$post_ids = array();
 }
 ?>
 
@@ -129,6 +128,8 @@ if ( '' !== get_field( 'post_type' ) ) {
 	<?php if ( get_field( 'display-featured-post' ) ) : ?>
 
 		<?php if ( $recent->have_posts() ) : while ( $recent->have_posts() ) : $recent->the_post(); ?>
+
+			<?php $post_ids[] = get_the_ID(); ?>
 
 			<div class="listing__wrapper listing--recent">
 
@@ -192,9 +193,11 @@ if ( '' !== get_field( 'post_type' ) ) {
 
 	<?php if ( $listing->have_posts() ) : ?>
 
-		<div id="listing" class="listing__wrapper listing__contents" data-paged="<?php echo esc_attr( $paged ); ?>">
+		<div id="listing" class="listing__wrapper listing__contents">
 
 			<?php while ( $listing->have_posts() ) : $listing->the_post(); ?>
+
+				<?php $post_ids[] = get_the_ID(); ?>
 
 				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block listing__article">
 
@@ -243,13 +246,30 @@ if ( '' !== get_field( 'post_type' ) ) {
 
 	<?php endif; wp_reset_query(); ?>
 
-	<!-- Container to put our backbone-generated content. -->
+	<?php if( $listing->found_posts > ( $page_size * $current_page ) ): ?>
 
-	<div id="listing__backbone" class="listing__wrapper" data-backbone='{ "offset": "<?php echo esc_js( $offset ); ?>", "post_type": "<?php echo esc_js( get_field( 'post_type' ) ); ?>" }'></div>
+		<?php
+			// Create settings collection to pass to Backbone
+			$settings = array(
+				'exclude'			=> $post_ids,
+				'current_page'		=> $current_page,
+				'offset'			=> $page_size * $current_page,
+				'post_type'			=> get_field( 'post_type' ),
+				'tags'				=> $tags,
+				'news_categories'	=> $news_categories,
+				'industries'		=> $industries,
+				'services'			=> $services,
+				'recent_post'		=> $recent_post,
+			);
+		?>
+		<!-- Container to put our backbone-generated content. -->
+		<div id="listing__backbone" class="listing__wrapper" data-backbone='<?php echo json_encode( $settings ); ?>'></div>
 
-	<div class="all-news-link">
-		<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>" id="listing__view-more">View More Posts</a>
-	</div>
+		<div class="all-news-link">
+			<a href="<?php echo esc_url( home_url( 'category/blog' ) ); ?>" id="listing__view-more">View More Posts</a>
+		</div>
+
+	<?php endif; ?>
 
 </section>
 

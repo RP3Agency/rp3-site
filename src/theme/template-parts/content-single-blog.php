@@ -11,10 +11,9 @@
 	$industries = array();
 	if( is_single() ) {
 		foreach ( wp_get_post_terms( $post->ID, 'rp3_tax_industries' ) as $industry ) {
-			$industries[] = $industry->slug;
+			$industries[] = $industry->term_id;
 		}
 	}
-	$industries = implode( ',', $industries );
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-content single-post-content--blog' ); ?>>
@@ -102,6 +101,20 @@
 
 <?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
-<div id="blog__backbone" data-backbone='{ "industries": "<?php echo $industries; ?>", "exclude": "<?php echo $post_id; ?>" }'></div>
+<?php
+	// Create settings collection to pass to Backbone
+	$settings = array(
+		'exclude'			=> array( $post_id ),
+		'industries'		=> $industries,
+	);
+?>
+
+<div id="blog__backbone" data-backbone='<?php echo json_encode( $settings ); ?>'></div>
+
+<div id="blog__loading-indicator" class="blog__loading-indicator">
+
+	<img src="<?php echo esc_url( get_template_directory_uri() . '/images/loading-indicator.gif' ); ?>" />
+
+</div>
 
 <?php get_template_part( 'template-parts/inline', 'underscorejs-template-blog' ); ?>

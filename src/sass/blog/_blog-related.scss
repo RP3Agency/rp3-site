@@ -9,6 +9,7 @@
 	&__post {
 		background-color: $color__blue;
 		margin-bottom: 2em;
+		overflow: hidden;
 
 		@include breakpoint( bp() ) {
 			margin: {
@@ -22,10 +23,26 @@
 			}
 		}
 
+		&__featured-image {
+			@include aspect-ratio( 4, 3 );
+
+			img {
+				height: 100%;
+				max-width: none;
+				width: auto;
+				@include centered( "both" );
+			}
+		}
+
 		&__label {
 			color: $color__white;
 			line-height: 1.5;
 			padding: 1em;
 		}
+	}
+
+	// Make sure the fallback image fills the space
+	img[src*="blog-fallback-image.jpg"] {
+		width: 100%;
 	}
 }

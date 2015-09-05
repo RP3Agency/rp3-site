@@ -27,17 +27,16 @@
 
 		<div class="blog-header__container">
 
-			<div class="blog-header__container__inner">
+			<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" rel="home" class="block">
 
-				<h1 class="blog-header__title blog-header__table-cell">
+				<picture>
+					<source srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large@2x.jpg' ); ?> 2x" media="(min-width: 37.5rem)" />
+					<source srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-medium.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-medium@2x.jpg' ); ?> 2x" media="(min-width: 20.0625rem)" />
+					<source srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-small.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-small@2x.jpg' ); ?> 2x" />
+					<img srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-small.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-small@2x.jpg' ); ?> 2x" alt="Building Opportunity" />
+				</picture>
 
-					<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" rel="home" class="block">Building Opportunity</a>
-
-				</h1>
-				<!-- site title / table cell -->
-
-			</div>
-			<!-- container inner -->
+			</a>
 
 		</div>
 		<!-- // container -->

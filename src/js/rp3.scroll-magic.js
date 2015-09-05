@@ -8,10 +8,10 @@ rp3.scrollMagic = (function($) {
 	var controller = new ScrollMagic();
 
 	// build scenes
-	var $homeWork		= $('#home-work'),
-		$hero			= $homeWork.find('.full-width-image-panel'),
-		$homeBlocks		= $('#home-blocks'),
-		$homeBlocksRow	= $homeBlocks.find('.home-blocks__row'),
+	var $homeWork		= $('#front-page__work'),
+		$hero			= $homeWork.find('.front-page__work__item'),
+		$homeBlocks		= $('#front-page__blocks'),
+		$homeBlocksRow	= $homeBlocks.find('.front-page__blocks__row'),
 
 	// This is where the scrollMagic happens :-)
 	scrollMagic = function() {
@@ -19,8 +19,8 @@ rp3.scrollMagic = (function($) {
 			$hero.each( function(i) {
 
 				var j				= i + 1,
-					triggerEl		= '#home-work .full-width-image-panel--' + j,
-					targetEl		= '#home-work .full-width-image-panel--' + j + ' a',
+					triggerEl		= '#front-page__work .full-width-image-panel--' + j,
+					targetEl		= '#front-page__work .full-width-image-panel--' + j + ' a',
 					targetClass		= 'active';
 
 				new ScrollScene({
@@ -40,8 +40,8 @@ rp3.scrollMagic = (function($) {
 			$homeBlocksRow.each( function(i) {
 
 				var j				= i + 1,
-					triggerEl		= '#home-blocks .home-blocks__row--' + j,
-					targetEl		= '#home-blocks .home-blocks__row--' + j + ' .home-blocks__block',
+					triggerEl		= '#front-page__blocks .front-page__blocks__row--' + j,
+					targetEl		= '#front-page__blocks .front-page__blocks__row--' + j + ' .front-page__blocks__block',
 					targetClass		= 'active';
 
 				new ScrollScene({
@@ -56,8 +56,21 @@ rp3.scrollMagic = (function($) {
 	},
 
 	init = function() {
-		scrollMagic();
-		scrollMagicBlocks();
+
+		// Only run at viewports of 600+ pixels
+		var rem = 600 / 16;
+
+		rem = rem + 'rem';
+
+		if ( window.matchMedia( '(min-width: ' + rem + ')' ).matches ) {
+			scrollMagic();
+			scrollMagicBlocks();
+		} else {
+			// Override the styling issues that would happen if we pulled our browser out from
+			// narrow to wide
+			$hero.find('a').css( 'margin-top', '0' ).css( 'opacity', '1' );
+			$homeBlocksRow.find('.front-page__blocks__block').css( 'opacity', '1' );
+		}
 	};
 
 	return {

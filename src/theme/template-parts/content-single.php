@@ -81,6 +81,16 @@
 
 			</section>
 
+			<?php if ( has_term( 'internship', 'rp3_tax_departments' ) ) : ?>
+
+				<?php get_template_part( 'template-parts/content', 'careers-boilerplate-internship' ); ?>
+
+			<?php else : ?>
+
+				<?php get_template_part( 'template-parts/content', 'careers-boilerplate' ); ?>
+
+			<?php endif; ?>
+
 		<?php endif; ?>
 
 	</div>

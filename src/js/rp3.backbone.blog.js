@@ -7,11 +7,10 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 	/** Do something awesome */
 
-	var
-	industries = rp3.backbone.get('industries'),
-	exclude = rp3.backbone.get('exclude'),
+	var exclude, industries,
 
 	$blog__backbone	= $('#blog__backbone'),
+	$blog__loading_indicator = $('#blog__loading-indicator'),
 
 	// Posts collection instance
 
@@ -40,18 +39,45 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					that.$el.html( template( { posts: posts.toJSON() } ) );
 
 					_.each( posts.models, function( post ) {
-						that.$el.find( '#single-post-content__comments-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html' );
+						that.$el.find( '#single-post-content__comments-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html .single-blog__comments' );
+						that.$el.find( '#single-post-content__related-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html .single-blog__related' );
 					});
 
 					// If the current page is divisible by three, add on our interstitial
+					// Otherwise, add a "horizontal rule" type thing
 					if ( 0 === ( postCollection.state.currentPage % 3 ) ) {
 						displayInterstitial();
+					} else {
+						displayHorizontalRule();
 					}
 
 					// run picturefill to update inserted elements
-					if ( 'function' === typeof( 'picturefill' ) ) {
-						picturefill();
-					}
+					picturefill({
+						reevaluate: true
+					});
+
+					// store current location (previous loaded or landing url) in local scope
+					var prev_link = location.href;
+
+					// add article scroll waypoint
+					that.$el.find('article').waypoint({
+  						handler: function( direction ) {
+							var $article = $(this.element);
+							if( direction == 'up' ) {
+								history.pushState( null, null, prev_link );
+							} else {
+								history.pushState( null, null, $article.data('permalink') );
+							}
+  						},
+						offset: '100%',
+					});
+
+					// Turn off the loading indicator
+					$blog__loading_indicator.removeClass('visible');
+
+					// Pull the page up 50px
+					window.scrollBy( 0, 50 );
+
 				},
 
 				error: function() {
@@ -67,7 +93,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 				if( postCollection.hasMore() ) {
 					postCollection.more( query );
 				} else {
-					//TODO: do something to show that there are no more posts
+					$blog__loading_indicator.removeClass('visible');
+					//TODO: do something else to show that there are no more posts
 				}
 			}
 
@@ -92,6 +119,19 @@ rp3.backbone.blog = (function($, _, Backbone) {
 	},
 
 	/**
+	 * Display the "horizontal rule"
+	 */
+	displayHorizontalRule = function() {
+
+		var $horizontalRuleElement = $('<div>').addClass( 'blog__backbone__horizontal-rule' ),
+			template = _.template( $('#blog-template-horizontal-rule').html() );
+
+		$horizontalRuleElement.html( template() );
+
+		$blog__backbone.append( $horizontalRuleElement );
+	},
+
+	/**
 	 * Listen for when we reach the bottom of the page
 	 */
 	listenForScroll = function() {
@@ -109,6 +149,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 			if ( documentHeight === windowScrollTop + windowHeight ) {
 
+				$blog__loading_indicator.addClass('visible');
+
 				// Create an element to store our rendering
 				$postElement = $('<div>').addClass('blog__backbone__post');
 				postView.setElement( $postElement );
@@ -116,21 +158,44 @@ rp3.backbone.blog = (function($, _, Backbone) {
 				// Set the filters for this query
 				var filters = {
 					'filter[posts_per_page]'	: 1,
-					'filter[post__not_in][]'	: exclude,
+					'filter[post__not_in]'		: exclude,
 				};
-				if( '' !== industries ) {
-					filters['filter[rp3_tax_industries]'] = industries;
+
+				// Collection for taxonomy selectors
+				var taxonomy = [];
+
+				// Industry taxonomy
+				if( ! _.isEmpty( industries ) ) {
+					taxonomy.push({
+						'taxonomy':	'rp3_tax_industries',
+						'field':	'term_id',
+						'terms':	industries,
+					});
 				}
+
+				// If we have taxonomy selectors, set relationshop and assign to filters
+				if( 0 < taxonomy.length ) {
+					filters['filter[tax_query]'] = taxonomy;
+					filters['filter[tax_query][relation]'] = 'AND';
+				}
+
 				// Render the results
 				postView.render( filters );
 
 				// Append results to the container, rather than replacing it
 				$blog__backbone.append( $postElement );
+
 			}
 		});
 	},
 
 	init = function() {
+
+		// Bring in our variables from the PHP template
+
+		exclude		= rp3.backbone.get('exclude');
+		industries	= rp3.backbone.get('industries');
+
 		listenForScroll();
 	};
 
