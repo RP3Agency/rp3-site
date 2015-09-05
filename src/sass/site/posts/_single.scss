@@ -34,6 +34,20 @@
 
 	&__featured-image {
 		margin-bottom: 2rem;
+
+		@include breakpoint( bp() ) {
+			overflow: hidden;
+			@include aspect-ratio( 8, 3 );
+		}
+
+		img {
+			height: auto;
+			width: 100%;
+
+			@include breakpoint( bp() ) {
+				@include centered("vertical");
+			}
+		}
 	}
 
 	&__content {
