@@ -4,6 +4,7 @@
 
 	&__wrapper {
 		@extend %max-width--padded;
+		padding-bottom: em( 20px );
 	}
 
 	&__header {
