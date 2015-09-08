@@ -2,43 +2,65 @@
 
 	&__image {
 		@include aspect-ratio( 1600px, 900px );
+
+		@include hover-state {
+
+			.video-panel__play-button rect {
+				fill: transparentize( $color__black, 0.2 );
+			}
+		}
+	}
+
+	&__play-button {
+		height: 50px;
+		width: 50px;
+		@include centered( "both" );
+
+		polygon {
+			fill: $color__blue;
+		}
+
+		rect {
+			fill: transparentize( $color__white, 0.8 );
+			transition: fill 100ms linear;
+		}
 	}
 
 	// Trigger
-	&__trigger {
-		clear: both;
-		position: relative;
+	// &__trigger {
+	// 	clear: both;
+	// 	position: relative;
 
-		> a::after {
-			background-color: transparentize( $color__black, 0.2 );
-			border: 1px solid #fff;
-			border-radius: 2px;
-			color: #fff;
-			content: '\f452';
-			display: block;
-			font-family: Genericons;
-			font-size: ce(14px);
-			height: 26px;
-			line-height: 26px;
-			text-align: center;
-			transition: background-color 200ms linear;
-			width: 26px;
-			@include centered( "both" );
+		// > a::after {
+		// 	background-color: transparentize( $color__black, 0.2 );
+		// 	border: 1px solid #fff;
+		// 	border-radius: 2px;
+		// 	color: #fff;
+		// 	content: '\f452';
+		// 	display: block;
+		// 	font-family: Genericons;
+		// 	font-size: em(14px);
+		// 	height: 26px;
+		// 	line-height: 26px;
+		// 	text-align: center;
+		// 	transition: background-color 200ms linear;
+		// 	width: 26px;
+		// 	@include centered( "both" );
 
-			@include breakpoint( bp() ) {
-				font-size: ce(21px);
-				height: 46px;
-				line-height: 46px;
-				width: 46px;
-			}
-		}
+		// 	@include breakpoint( bp() ) {
+		// 		font-size: em(21px);
+		// 		height: 46px;
+		// 		line-height: 46px;
+		// 		width: 46px;
+		// 	}
+		// }
 
-		@include hover-state {
-			> a::after {
-				background-color: $color__black;
-			}
-		}
-	}
+		// @include hover-state {
+		// 	> a::after {
+		// 		background-color: $color__black;
+		// 	}
+		// }
+	// }
 
 
 	// Modal

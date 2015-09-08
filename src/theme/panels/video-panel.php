@@ -39,6 +39,12 @@
 		</div>
 		<!-- video-panel image content -->
 
+		<div class="video-panel__play-button">
+
+			<?php get_template_part( 'template-parts/inline', 'icon-video-play.svg' ); ?>
+
+		</div>
+
 	</a>
 	<!-- video-panel image -->
 
