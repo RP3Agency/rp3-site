@@ -207,8 +207,15 @@ require get_template_directory() . '/inc/editor-styles.php';
 function rp3_dequeue_plugin_css() {
 	wp_dequeue_style( 'main-style' );
 	wp_dequeue_style( 'rpbcStyle' );
+	wp_dequeue_style( 'yarppWidgetCss' );
 }
 add_action( 'wp_enqueue_scripts', 'rp3_dequeue_plugin_css' );
+
+// https://wordpress.org/support/topic/prevent-loading-relatedcss-and-widgetcss
+function rp3_dequeue_yarpp_related_css() {
+	wp_dequeue_style( 'yarppRelatedCss' );
+}
+add_action( 'get_footer', 'rp3_dequeue_yarpp_related_css' );
 
 
 // Add Favicon

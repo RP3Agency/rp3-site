@@ -6,11 +6,11 @@
  */
 ?>
 
-<!-- Full-Width Image Panel -->
+<!-- Video Panel -->
 
 <section class="video-panel panel video-panel__trigger">
 
-	<a href="#!" id="video__trigger" class="video-panel__image block">
+	<a href="#!" class="video-panel__image video__trigger block">
 
 		<div class="video-panel__image__content">
 
@@ -37,12 +37,12 @@
 			<?php endif; ?>
 
 		</div>
-		<!-- full-width-image-panel image content -->
+		<!-- video-panel image content -->
 
 	</a>
-	<!-- full-width-image-panel image -->
+	<!-- video-panel image -->
 
-	<div class="video-panel__modal" id="video__modal">
+	<div class="video-panel__modal">
 
 		<?php echo wp_oembed_get( get_sub_field( 'video_link' ) ); ?>
 

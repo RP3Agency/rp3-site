@@ -34,6 +34,20 @@
 
 	&__featured-image {
 		margin-bottom: 2rem;
+
+		@include breakpoint( bp() ) {
+			overflow: hidden;
+			@include aspect-ratio( 8, 3 );
+		}
+
+		img {
+			height: auto;
+			width: 100%;
+
+			@include breakpoint( bp() ) {
+				@include centered("vertical");
+			}
+		}
 	}
 
 	&__content {
@@ -60,7 +74,7 @@
 		font-weight: $font-weight__medium;
 	}
 
-	ul:not(.social) {
+	ul:not(.social, .single-blog__comments__list) {
 		list-style: square;
 		margin: 0 0 2em 1em;
 	}
@@ -98,6 +112,17 @@
 		&__attribution {
 			@extend h2;
 		}
+	}
+
+	blockquote {
+		border-left: 3px solid;
+		color: $color__blue;
+		font: {
+			size: rem( 16px );
+			style: italic;
+		}
+		margin: 1.5em 1.5em 1.5em 0;
+		padding-left: 1.5em;
 	}
 
 	/** Careers */

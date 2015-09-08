@@ -103,15 +103,10 @@ var rp3 = (function($) {
 	},
 
 	videoToggle = function() {
-		var $videoModal = $('#video__modal'),
-			$videoTrigger = $('#video__trigger');
-
-		if ( 0 < $videoModal.length ) {
-			$videoTrigger.on( 'click', function(e) {
-				e.preventDefault();
-				$videoModal.addClass('visible');
-			});
-		}
+		$('.video__trigger').on( 'click', function(e) {
+			$(this).parents('.video-panel__trigger').find('.video-panel__modal').addClass('visible');
+			e.preventDefault();
+		});
 	},
 
 
