@@ -129,9 +129,3 @@
 <?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
 </script>
-
-<script type="text/template" id="blog-template-horizontal-rule">
-
-<div class="site-blog__horizontal-rule"></div>
-
-</script>
