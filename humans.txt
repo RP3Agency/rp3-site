@@ -1,0 +1,62 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+/* ==========================================================================
+   RP3 Agency
+   https://rp3agency.com
+   ========================================================================== */
+
+Founder, CEO: Beth Johnson
+Twitter: bethjohnson
+
+Founder, Chief Creative Officer: Jim Lansbury
+Twitter: rp3jim
+
+Chief Creative Technologist: Kurt Roberts
+Twitter: kurtroberts
+
+/* Developers */
+
+Tracy Rotton
+Twitter: taupecat
+
+Bryan Cox
+Twitter: rp3bcox
+
+Deanna Steers
+Twitter: tropicandid
+
+/* Designers */
+
+Jean-Pierre Bovie
+
+Grace Taylor
+
+Allison Rinaldi
+Twitter: allison_rinaldi
+
+/* Project Management */
+
+Lauren Turner
+Twitter: lauren_turner
+
+Samia Khan
+
+
+                  ,::::::.
+                  ::::::: 
+                 :::::::  
+; `;;;:  ;;;;;.     `:::  
+;;;;;; .;;;;;;;;    ::::, 
+;;;;;  ;;;;:;;;;,  ,,::::`
+;;;;  ;;;:    ;;;      :::
+;;;   ;;;      ;;`     `::
+;;;   ;;;     ;;;      :::
+;;;   ;;;    ;;;; :` `:::,
+;;;   ;;;  ;;;;;  ::::::: 
+;;;   ;;; ,;;;;  :::::::  
+;;;   ;;;  `.      `.`    
+      ;;;                 
+      ;;;                 
+      ;;;                 
+      :::                 
