@@ -1,57 +1,79 @@
-.checker-block{
+.checker-block {
 	@extend %max-width;
-	display: flex;
-	flex-wrap: wrap;
+	background-color: $color__gray--light;
+	height: rem(600px);
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	&__inner {
+		height: rem(600px);
+		position: absolute;
+		width: rem(1200px);
+		@include centered( "horizontal" );
+	}
 
 	&__block {
-		display: flex;
-		flex: 1 1 100%;
-		flex-wrap: wrap;
-		height: 72vw;
+		height: rem(150px);
+		position: absolute;
+		width: rem(200px);
 
-    	@include breakpoint( bp() ) {
-			flex: 1 1 50%;
-			height: 36vw;
-    	}
-
-    	@include breakpoint( bp( "intermediate" ) ) {
-    		flex: 1 1 33.33%;
-			height: 24.4vw;
-	    	max-height: 285px;
-    	}
-
-    	.block-segment {
-    		flex: 1 1 50%;	
-			height: 50%;
-    	}
-
-		&-segment--blue {
-			background-color: $color__blue;	
+		&--01 {
+			height: rem(300px);
+			left: rem(400px);
+			width: rem(400px);
 		}
 
-		&-segment--img {
-			background-image: url('https://placekitten.com/g/800/600');
-			background-size: cover;
-
-			&.second {
-				background-image: url('https://placekitten.com/g/300/225');
-			}
+		&--02 {
+			left: rem(1000px);
 		}
 
-		&-segment--magenta {
+		&--03 {
+			top: rem(150px);
+		}
+
+		&--04 {
+			left: rem(800px);
+			top: rem(150px);
+		}
+
+		&--05 {
+			top: rem(300px);
+			width: rem(400px);
+		}
+
+		&--06 {
+			left: rem(600px);
+			top: rem(300px);
+		}
+
+		&--07 {
+			left: rem(200px);
+			top: rem(450px);
+		}
+
+		&--08 {
+			left: rem(800px);
+			top: rem(450px);
+			width: rem(400px);
+		}
+
+		&--blue-01 {
+			background-color: $color__blue;
+			left: rem(200px);
+			top: rem(150px);
+		}
+
+		&--blue-02 {
+			background-color: $color__blue;
+			left: rem(1000px);
+			top: rem(150px);
+		}
+
+		&--magenta {
 			background-color: $color__magenta;
-		}
-
-		&-segment--text {
-			background-color: $color__gray--light;
-			color: $color__blue;
-    		line-height: 1.5;
-			padding: 1em;
-			text-transform: uppercase;
-
-			&.block-segment {
-	    		flex: 1 1 100%;	
-	    	}
+			left: rem(400px);
+			top: rem(300px);
 		}
 	}
 }
