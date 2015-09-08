@@ -4,7 +4,9 @@
 
 	&__hero {
 		@extend %max-width;
+		background-color: $color__gray--light;
 		margin-bottom: 2rem;
+		@include aspect-ratio( 16, 9 );
 	}
 
 	/** Copy */
