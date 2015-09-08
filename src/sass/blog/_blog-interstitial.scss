@@ -2,7 +2,7 @@
 	background-color: $color__gray--light;
 
 	@include breakpoint( bp() ) {
-		margin-bottom: 4rem;
+		margin-bottom: 3rem;
 	}
 
 	&__container {
