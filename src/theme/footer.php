@@ -33,7 +33,7 @@
 
 					<div class="site-footer__building-opportunity site-footer__building-opportunity--narrow">
 
-						<p><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Building Opportunity Blog</a></p>
+						<p><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" target="_blank">Building Opportunity Blog</a></p>
 
 					</div>
 					<!-- // building opportunity (narrow) -->
@@ -64,7 +64,7 @@
 
 					<div class="site-footer__building-opportunity site-footer__building-opportunity--wide">
 
-						<p><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Building Opportunity Blog</a></p>
+						<p><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" target="_blank">Building Opportunity Blog</a></p>
 
 					</div>
 					<!-- // building opportunity (wide) -->
