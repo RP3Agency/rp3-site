@@ -1,4 +1,4 @@
-/* global rp3:true */
+/* global rp3:true, ga:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
@@ -160,6 +160,13 @@ var rp3 = (function($) {
 		});
 	},
 
+	/** Track Blog Related Posts clicks */
+	trackBlogRelated = function() {
+		$( 'body' ).on( 'click', '.single-blog__related__post', function() {
+			ga( 'send', 'event', 'Navigation', 'Blog Related Post Clicked' );
+		});
+	},
+
 	init = function() {
 
 		// At viewports >= 600px, swap out the video on the home page with the non-audio version
@@ -175,6 +182,7 @@ var rp3 = (function($) {
 		raptorJim();
 		revealComments();
 		swapVideoWithAudio();
+		trackBlogRelated();
 
 		$(window).scroll(function() {
 			applyFixedHeader();
