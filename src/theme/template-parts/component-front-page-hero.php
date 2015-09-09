@@ -3,14 +3,14 @@
 	<div class="front-page__hero__container">
 
 		<?php
-		$image['small'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_small' );
-		$image['small_2x'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_small_2x' );
+		$image['small'] = wp_get_attachment_image_src( 10917, 'sixteen_nine_small' );
+		$image['small_2x'] = wp_get_attachment_image_src( 10917, 'sixteen_nine_small_2x' );
 
-		$image['medium'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_medium' );
-		$image['medium_2x'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_medium_2x' );
+		$image['medium'] = wp_get_attachment_image_src( 10917, 'sixteen_nine_medium' );
+		$image['medium_2x'] = wp_get_attachment_image_src( 10917, 'sixteen_nine_medium_2x' );
 
-		$image['large'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_large' );
-		$image['large_2x'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_large_2x' );
+		$image['large'] = wp_get_attachment_image_src( 10917, 'sixteen_nine_large' );
+		$image['large_2x'] = wp_get_attachment_image_src( 10917, 'sixteen_nine_large_2x' );
 		?>
 
 		<picture>
