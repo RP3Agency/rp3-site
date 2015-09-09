@@ -1,4 +1,4 @@
-/* global rp3:true, picturefill:false */
+/* global rp3:true, picturefill:false, ga:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
@@ -53,8 +53,9 @@ rp3.backbone.blog = (function($, _, Backbone) {
 						reevaluate: true
 					});
 
-					// store current location (previous loaded or landing url) in local scope
-					var prev_link = location.href;
+					// store current location (previous loaded or landing url) and article depth in local scope
+					var prev_link = location.href,
+						article_depth = postCollection.state.currentPage;
 
 					// add article scroll waypoint
 					that.$el.find('article').waypoint({
@@ -65,6 +66,13 @@ rp3.backbone.blog = (function($, _, Backbone) {
 							} else {
 								history.pushState( null, null, $article.data('permalink') );
 							}
+							// trigger analytics page view and reporting events
+							ga( 'send', 'pageview', location.pathname );
+							ga( 'send', 'event', 'Navigation', 'Blog Scrolled', {
+								page: location.pathname,			// Associate with page just in case
+								metric1: article_depth,				// Custom Metric - Blog Article Depth
+								metric2: $(window).scrollTop(),		// Custom Metric - Blog Pixel Depth
+							});
   						},
 						offset: '100%',
 					});
