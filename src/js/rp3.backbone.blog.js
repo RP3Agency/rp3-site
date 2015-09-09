@@ -44,7 +44,6 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					});
 
 					// If the current page is divisible by three, add on our interstitial
-					// Otherwise, add a "horizontal rule" type thing
 					if ( 0 === ( postCollection.state.currentPage % 3 ) ) {
 						displayInterstitial();
 					}
