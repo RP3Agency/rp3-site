@@ -1,17 +1,25 @@
-<aside class="single-post-content--careers single-post-content--careers--boilerplate">
+<aside class="single-post-content--careers single-post-content--careers--boilerplate single-post-content--careers__subsection">
 
-	<h2 class="single-post-content--careers__subhead">Benefits</h2>
+	<div class="single-post-content--careers__subsection">
 
-	<ul>
-		<li>10-week internship (paid or college course credit)</li>
-		<li>Free Metro pass or parking</li>
-		<li>College course credit, if available to you</li>
-		<li>Networking with DC industry leaders</li>
-		<li>An invaluable learning experience</li>
-	</ul>
+		<h2 class="single-post-content--careers__subhead">Benefits</h2>
 
-	<h2 class="single-post-content--careers__subhead">Apply</h2>
+		<ul>
+			<li>10-week internship (paid or college course credit)</li>
+			<li>Free Metro pass or parking</li>
+			<li>College course credit, if available to you</li>
+			<li>Networking with DC industry leaders</li>
+			<li>An invaluable learning experience</li>
+		</ul>
 
-	<p>Send your cover letter, resume and portfolio to <a href="mailto:internships@rp3agency.com">internships@rp3agency.com</a>. Please specify the internship for which your are applying in the subject line.</p>
+	</div>
+
+	<div class="single-post-content--careers__subsection">
+
+		<h2 class="single-post-content--careers__subhead">Apply</h2>
+
+		<p>Send your cover letter, resume and portfolio to <a href="mailto:internships@rp3agency.com">internships@rp3agency.com</a>. Please specify the internship for which your are applying in the subject line.</p>
+
+	</div>
 
 </aside>

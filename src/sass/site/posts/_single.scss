@@ -132,6 +132,11 @@
 
 		&__subsection {
 			margin-bottom: 2em;
+
+			ul {
+				list-style-type: square;
+				margin-left: 1em;
+			}
 		}
 
 		&__subhead {

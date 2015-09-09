@@ -4,9 +4,21 @@
 
 	&__hero {
 		@extend %max-width;
-		background-color: $color__gray--light;
 		margin-bottom: 2rem;
-		@include aspect-ratio( 16, 9 );
+
+		&__container {
+			@include aspect-ratio( 16, 9 );
+		}
+
+		&__video iframe {
+			height: 100%;
+			width: 100%;
+		}
+
+		&__play-audio {
+			@extend %max-width--padded;
+			font-weight: $font-weight__bold;
+		}
 	}
 
 	/** Copy */
