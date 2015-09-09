@@ -63,16 +63,17 @@ rp3.backbone = (function($, _, Backbone, wp) {
 
 			// Generate responsive image at given size from featured image
 			responsiveImage: function( size ) {
-				// If featuredImage is null, return nothing
+				// If featuredImage is null, return the greatest hits image (I love that we're calling it that. ;-)
 				if ( ! this.has( 'featured_image' ) ) {
-					return false;
+					return greatestHitsImage( size );
 				}
 
 				var featuredImage = this.get( 'featured_image' );
 
-				// If featuredImage has error_data as a property, or doesn't have an ID property, return nothing
+				// If featuredImage has error_data as a property, or doesn't have an ID property, return
+				// the "greatest hits" image.
 				if ( featuredImage.hasOwnProperty( 'error_data' ) || ! featuredImage.hasOwnProperty( 'ID' ) ) {
-					return false;
+					return greatestHitsImage( size );
 				}
 
 				// If featuredImage has the property ID, figure out the appropriate size to return
@@ -84,6 +85,40 @@ rp3.backbone = (function($, _, Backbone, wp) {
 			},
 
 		}),
+
+		greatestHitsImage = function( size ) {
+
+			switch ( size ) {
+
+				case 'four_three_small':
+					return '//' + location.hostname + '/wp-content/uploads/2015/09/GENERIC-BLOG-HEADER-320X240.jpg';
+					break;
+
+				case 'four_three_small_2x':
+					return '//' + location.hostname + '/wp-content/uploads/2015/09/GENERIC-BLOG-HEADER-640x480.jpg';
+					break;
+
+				case 'four_three_medium':
+					return '//' + location.hostname + '/wp-content/uploads/2015/09/GENERIC-BLOG-HEADER-600X450.jpg';
+					break;
+
+				case 'four_three_medium_2x':
+					return '//' + location.hostname + '/wp-content/uploads/2015/09/GENERIC-BLOG-HEADER-1200X900.jpg';
+					break;
+
+				case 'eight_three_large':
+					return '//' + location.hostname + '/wp-content/uploads/2015/09/GENERIC-BLOG-HEADER-1200x450.jpg';
+					break;
+
+				case 'eight_three_large_2x':
+					return '//' + location.hostname + '/wp-content/uploads/2015/09/GENERIC-BLOG-HEADER.jpg';
+					break;
+
+				default:
+					return false;
+					break;
+			}
+		},
 
 		/** Collections */
 
