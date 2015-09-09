@@ -16,7 +16,7 @@
 		</header>
 		<!-- .entry-header -->
 
-		<section class="single-post-content__content">
+		<section class="single-post-content__content single-post-content--careers__subsection">
 
 			<?php the_content(); ?>
 
