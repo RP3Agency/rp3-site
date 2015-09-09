@@ -27,9 +27,9 @@
 	}
 
 	// Trigger
-	// &__trigger {
-	// 	clear: both;
-	// 	position: relative;
+	&__trigger {
+		clear: both;
+		position: relative;
 
 		// > a::after {
 		// 	background-color: transparentize( $color__black, 0.2 );
@@ -60,7 +60,7 @@
 		// 		background-color: $color__black;
 		// 	}
 		// }
-	// }
+	}
 
 
 	// Modal
