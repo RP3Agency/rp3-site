@@ -1,19 +1,26 @@
+<?php
+
+// Get the required strings and alter the case as appropriate
+
+$title = esc_html( get_the_title() );
+
+if ( '' !== get_field( 'tagline' ) ) {
+
+	$tagline = esc_html( strtolower( get_field( 'tagline' ) ) );
+	$tagline = ucfirst( preg_replace( '/\.$/', '', $tagline ) );
+	$tagline = $tagline . ' for <strong>' . esc_html( get_field( 'client' ) ) . '</strong>.';
+
+} else {
+
+	$tagline = 'For <strong>' . esc_html( get_field( 'client' ) ) . '</strong>.';
+
+}
+?>
+
 <header class="work-single__introduction">
 
-	<h1 class="work-single__title"><?php the_title(); ?></h1>
+	<h1 class="work-single__title"><?php echo $title; ?></h1>
 
-	<?php // if the client field has content AND if that content doesn't exactly match the post title... ?>
-	<?php if ( ( '' != get_field( 'client' ) ) && ( get_the_title() != get_field( 'client' ) ) ) : ?>
-
-		<div class="work-single__client">for <strong><?php the_field( 'client' ); ?></strong></div>
-
-	<?php endif; ?>
-
-	<?php // if the tagline field has content ?>
-	<?php if ( '' != get_field( 'tagline' ) ) : ?>
-
-		<div class="work-single__tagline"><?php the_field( 'tagline' ); ?></div>
-
-	<?php endif; ?>
+	<div class="work-single__client"><?php echo $tagline; ?></div>
 
 </header>
