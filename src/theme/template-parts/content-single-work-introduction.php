@@ -4,16 +4,23 @@
 
 $title = esc_html( get_the_title() );
 
-if ( '' !== get_field( 'tagline' ) ) {
+if ( 'Game Central' === $title ) {
 
-	$tagline = esc_html( strtolower( get_field( 'tagline' ) ) );
-	$tagline = ucfirst( preg_replace( '/\.$/', '', $tagline ) );
-	$tagline = $tagline . ' for <strong>' . esc_html( get_field( 'client' ) ) . '</strong>.';
+	$tagline = 'Building an immersive experience for <strong>Norfolk Southern Club at Nationals Park</strong>.';
 
 } else {
 
-	$tagline = 'For <strong>' . esc_html( get_field( 'client' ) ) . '</strong>.';
+	if ( '' !== get_field( 'tagline' ) ) {
 
+		$tagline = esc_html( strtolower( get_field( 'tagline' ) ) );
+		$tagline = ucfirst( preg_replace( '/\.$/', '', $tagline ) );
+		$tagline = $tagline . ' for <strong>' . esc_html( get_field( 'client' ) ) . '</strong>.';
+
+	} else {
+
+		$tagline = 'For <strong>' . esc_html( get_field( 'client' ) ) . '</strong>.';
+
+	}
 }
 ?>
 
