@@ -18,62 +18,140 @@
 		position: absolute;
 		width: rem(200px);
 
-		&--01 {
+		/** Agency */
+
+		.checker-block--agency &--01 {
 			height: rem(300px);
 			left: rem(400px);
 			width: rem(400px);
 		}
 
-		&--02 {
+		.checker-block--agency &--02 {
 			left: rem(1000px);
 		}
 
-		&--03 {
+		.checker-block--agency &--03 {
 			top: rem(150px);
 		}
 
-		&--04 {
+		.checker-block--agency &--04 {
 			left: rem(800px);
 			top: rem(150px);
 		}
 
-		&--05 {
+		.checker-block--agency &--05 {
 			top: rem(300px);
 			width: rem(400px);
 		}
 
-		&--06 {
+		.checker-block--agency &--06 {
 			left: rem(600px);
 			top: rem(300px);
 		}
 
-		&--07 {
+		.checker-block--agency &--07 {
 			left: rem(200px);
 			top: rem(450px);
 		}
 
-		&--08 {
+		.checker-block--agency &--08 {
 			left: rem(800px);
 			top: rem(450px);
 			width: rem(400px);
 		}
 
-		&--blue-01 {
+		.checker-block--agency &--blue-01 {
 			background-color: $color__blue;
 			left: rem(200px);
 			top: rem(150px);
 		}
 
-		&--blue-02 {
+		.checker-block--agency &--blue-02 {
 			background-color: $color__blue;
 			left: rem(1000px);
 			top: rem(150px);
 		}
 
-		&--magenta {
+		.checker-block--agency &--magenta {
 			background-color: $color__magenta;
 			left: rem(400px);
 			top: rem(300px);
+		}
+
+		/** Careers */
+
+		.checker-block--careers &--01 {
+			height: rem(300px);
+			left: rem(400px);
+			width: rem(400px);
+		}
+
+		.checker-block--careers &--02 {
+			left: rem(1000px);
+		}
+
+		.checker-block--careers &--03 {
+			top: rem(150px);
+		}
+
+		.checker-block--careers &--04 {
+			left: rem(800px);
+			top: rem(150px);
+		}
+
+		.checker-block--careers &--05 {
+			left: rem(1000px);
+			top: rem(150px);
+		}
+
+		.checker-block--careers &--06 {
+			top: rem(300px);
+		}
+
+		.checker-block--careers &--07 {
+			left: rem(200px);
+			top: rem(300px);
+		}
+
+		.checker-block--careers &--08 {
+			left: rem(400px);
+			top: rem(300px);
+		}
+
+		.checker-block--careers &--09 {
+			left: rem(600px);
+			top: rem(300px);
+		}
+
+		.checker-block--careers &--10 {
+			left: rem(200px);
+			top: rem(450px);
+		}
+
+		.checker-block--careers &--11 {
+			left: rem(800px);
+			top: rem(450px);
+		}
+
+		.checker-block--careers &--12 {
+			left: rem(1000px);
+			top: rem(450px);
+		}
+
+		.checker-block--careers &--blue {
+			background-color: $color__blue;
+			top: rem(450px);
+		}
+
+		.checker-block--careers &--magenta-01 {
+			background-color: $color__magenta;
+			left: rem(800px);
+		}
+
+		.checker-block--careers &--magenta-02 {
+			background-color: $color__magenta;
+			left: rem(200px);
+			top: rem(150px);
 		}
 	}
 }

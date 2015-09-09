@@ -23,7 +23,7 @@ get_header(); ?>
 
 	<?php elseif ( is_page( 'careers' ) ) : ?>
 
-		<?php // get_template_part( 'template-parts/component', 'checker-block-careers' ); ?>
+		<?php get_template_part( 'template-parts/component', 'checker-block-careers' ); ?>
 
 	<?php endif; ?>
 
