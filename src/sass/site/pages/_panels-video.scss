@@ -16,12 +16,17 @@
 		width: 50px;
 		@include centered( "both" );
 
+		@include breakpoint( bp() ) {
+			height: 100px;
+			width: 100px;
+		}
+
 		polygon {
 			fill: $color__blue;
 		}
 
 		rect {
-			fill: transparentize( $color__white, 0.8 );
+			fill: transparentize( $color__white, 0.2 );
 			transition: fill 100ms linear;
 		}
 	}
