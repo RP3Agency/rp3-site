@@ -31,32 +31,38 @@
 		</header>
 		<!-- .entry-header -->
 
-		<?php if ( '' !== get_the_post_thumbnail() ) : ?>
+		<?php
 
-			<div class="single-post-content__featured-image">
+		$post_image_id = 10850;
 
-				<?php
-				$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small' );
-				$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_small_2x' );
+		if ( '' !== get_the_post_thumbnail() ) {
 
-				$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_medium' );
-				$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'four_three_medium_2x' );
+			$post_image_id = get_post_thumbnail_id();
+		}
 
-				$image['large'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'eight_three_large' );
-				$image['large_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id(), 'eight_three_large_2x' );
-				?>
+		?>
 
-				<picture>
-					<source srcset="<?php echo esc_url( $image['large'][0] ); ?>, <?php echo esc_url( $image['large_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
-					<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
-					<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
-					<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
-				</picture>
+		<div class="single-post-content__featured-image">
 
+			<?php
+			$image['small'] = wp_get_attachment_image_src( $post_image_id, 'four_three_small' );
+			$image['small_2x'] = wp_get_attachment_image_src( $post_image_id, 'four_three_small_2x' );
 
-			</div>
+			$image['medium'] = wp_get_attachment_image_src( $post_image_id, 'four_three_medium' );
+			$image['medium_2x'] = wp_get_attachment_image_src( $post_image_id, 'four_three_medium_2x' );
 
-		<?php endif; ?>
+			$image['large'] = wp_get_attachment_image_src( $post_image_id, 'eight_three_large' );
+			$image['large_2x'] = wp_get_attachment_image_src( $post_image_id, 'eight_three_large_2x' );
+			?>
+
+			<picture>
+				<source srcset="<?php echo esc_url( $image['large'][0] ); ?>, <?php echo esc_url( $image['large_2x'][0] ); ?> 2x" media="(min-width: 37.5rem)" />
+				<source srcset="<?php echo esc_url( $image['medium'][0] ); ?>, <?php echo esc_url( $image['medium_2x'][0] ); ?> 2x" media="(min-width: 20.0625rem)" />
+				<source srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+				<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
+			</picture>
+
+		</div>
 
 		<section class="single-post-content__content">
 

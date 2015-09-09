@@ -44,11 +44,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					});
 
 					// If the current page is divisible by three, add on our interstitial
-					// Otherwise, add a "horizontal rule" type thing
 					if ( 0 === ( postCollection.state.currentPage % 3 ) ) {
 						displayInterstitial();
-					} else {
-						displayHorizontalRule();
 					}
 
 					// run picturefill to update inserted elements
@@ -75,8 +72,10 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					// Turn off the loading indicator
 					$blog__loading_indicator.removeClass('visible');
 
-					// Pull the page up 50px
-					window.scrollBy( 0, 50 );
+					// Pull the page up 50px if not at top
+					if( 0 !== $(window).scrollTop() ) {
+						window.scrollBy( 0, 50 );
+					}
 
 				},
 
@@ -119,19 +118,6 @@ rp3.backbone.blog = (function($, _, Backbone) {
 	},
 
 	/**
-	 * Display the "horizontal rule"
-	 */
-	displayHorizontalRule = function() {
-
-		var $horizontalRuleElement = $('<div>').addClass( 'blog__backbone__horizontal-rule' ),
-			template = _.template( $('#blog-template-horizontal-rule').html() );
-
-		$horizontalRuleElement.html( template() );
-
-		$blog__backbone.append( $horizontalRuleElement );
-	},
-
-	/**
 	 * Listen for when we reach the bottom of the page
 	 */
 	listenForScroll = function() {
@@ -141,13 +127,13 @@ rp3.backbone.blog = (function($, _, Backbone) {
 			documentHeight,
 			$postElement;
 
-		$(window).on( 'scroll', function() {
+		$(window).on( 'scroll', _.debounce( function() {
 
 			windowScrollTop		= $(window).scrollTop();
 			windowHeight		= $(window).height();
 			documentHeight		= $(document).height();
 
-			if ( documentHeight === windowScrollTop + windowHeight ) {
+			if ( documentHeight <= windowScrollTop + windowHeight + 100 ) {
 
 				$blog__loading_indicator.addClass('visible');
 
@@ -186,7 +172,9 @@ rp3.backbone.blog = (function($, _, Backbone) {
 				$blog__backbone.append( $postElement );
 
 			}
-		});
+		}, 50));
+
+		$(window).trigger('scroll');
 	},
 
 	init = function() {

@@ -83,16 +83,16 @@ function rp3_image_sizes() {
 	   Woolly Mammoth
 	   ========================================================================== */
 
-	add_image_size( 'woolly_mammoth_thumb', 320 / 2, 320 * $woolly_mammoth_ratio / 2, true );
+	add_image_size( 'woolly_mammoth_thumb', 320 / 2, 320 * $ratio__woolly_mammoth / 2, true );
 
-	add_image_size( 'woolly_mammoth_small', 320, 320 * $woolly_mammoth_ratio, true );
-	add_image_size( 'woolly_mammoth_small_2x', 320 * 2, 320 * $woolly_mammoth_ratio * 2, true );
+	add_image_size( 'woolly_mammoth_small', 320, 320 * $ratio__woolly_mammoth, true );
+	add_image_size( 'woolly_mammoth_small_2x', 320 * 2, 320 * $ratio__woolly_mammoth * 2, true );
 
-	add_image_size( 'woolly_mammoth_medium', 600, 600 * $woolly_mammoth_ratio, true );
-	add_image_size( 'woolly_mammoth_medium_2x', 600 * 2, $woolly_mammoth_ratio * 2, true );
+	add_image_size( 'woolly_mammoth_medium', 600, 600 * $ratio__woolly_mammoth, true );
+	add_image_size( 'woolly_mammoth_medium_2x', 600 * 2, $ratio__woolly_mammoth * 2, true );
 
-	add_image_size( 'woolly_mammoth_large', 1200, 1200 * $woolly_mammoth_ratio, true );
-	add_image_size( 'woolly_mammoth_large_2x', 1200 * 2, 1200 * $woolly_mammoth_ratio * 2, true );
+	add_image_size( 'woolly_mammoth_large', 1200, 1200 * $ratio__woolly_mammoth, true );
+	add_image_size( 'woolly_mammoth_large_2x', 1200 * 2, 1200 * $ratio__woolly_mammoth * 2, true );
 }
 
 add_action( 'init', 'rp3_image_sizes' );

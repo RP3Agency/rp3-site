@@ -43,13 +43,17 @@ add_filter( 'json_prepare_post', 'rp3_json_api', 10, 3 );
  */
 function rp3_json_coauthor_data( $data, $coauthor ) {
 
-	// Pass coauthor type for all records
+	// Pass coauthor type and display name for all records
 	$data['type'] = $coauthor['type'];
 
-	// additional fields for official RP3 authors
-	if ( 'guest-author' != $coauthor['type'] ) {
-		$data['posts_url'] = esc_url( get_author_posts_url( $coauthor['ID'] ) );
+	// Get display name from record depending on coauthor type
+	if ( 'guest-author' == $coauthor['type'] ) {
+		$data['display_name'] = $coauthor['display_name'];
+	} else {
 		$data['display_name'] = get_the_author_meta( 'display_name', $coauthor['ID'] );
+
+		// additional fields for official RP3 authors
+		$data['posts_url'] = esc_url( get_author_posts_url( $coauthor['ID'] ) );
 		$data['description'] = get_the_author_meta( 'description', $coauthor['ID'] );
 	}
 

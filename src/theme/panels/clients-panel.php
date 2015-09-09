@@ -2,7 +2,7 @@
 
 	<header class="clients__header page__panel__header">
 
-		<h1>Our Clients</h1>
+		<h1>Clients</h1>
 
 	</header>
 

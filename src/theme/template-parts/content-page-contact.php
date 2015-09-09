@@ -33,7 +33,7 @@
 							<h2 class="contact__header">Work With Us</h2>
 
 							<p class="contact__info__email">Jim Lansbury,<br />
-							Principal and Chief Creative Officer<br />
+							Founder, Chief Creative Officer<br />
 
 							<a href="<?php echo esc_url( 'mailto:' . get_field( 'new_business_email' ), array( 'mailto' ) ); ?>"><?php echo esc_html( get_field( 'new_business_email' ) ); ?></a></p>
 
