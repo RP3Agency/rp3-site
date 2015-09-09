@@ -6,7 +6,7 @@ $title = esc_html( get_the_title() );
 
 if ( 'Game Central' === $title ) {
 
-	$tagline = 'Building an immersive experience for <strong>Norfolk Southern Club at Nationals Park</strong>.';
+	$tagline = 'Building an immersive experience for the <strong>Norfolk Southern Club at Nationals Park</strong>.';
 
 } else {
 
