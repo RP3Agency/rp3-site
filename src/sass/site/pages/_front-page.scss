@@ -16,6 +16,7 @@
 		}
 
 		&__play-audio {
+			@extend %max-width--padded;
 			font-weight: $font-weight__bold;
 		}
 	}

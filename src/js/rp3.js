@@ -165,6 +165,8 @@ var rp3 = (function($) {
 		// At viewports >= 600px, swap out the video on the home page with the non-audio version
 		if ( ( window.matchMedia( '(min-width: 37.5em)' ).matches ) && ( $('body').hasClass( 'page-front-page' ) ) ) {
 			$('#front-page__video').attr( 'src', 'https://player.vimeo.com/video/18469291?autoplay=1&title=0&byline=0&portrait=0' );
+			var $playAudioLink = $('<p class="front-page__hero__play-audio"><a href="#!" id="play-with-audio">Play with audio.</a></p>');
+			$playAudioLink.insertAfter( '.front-page__hero__container' );
 		}
 
 		navigationCanvasSlide();

@@ -3,14 +3,14 @@
 	<div class="front-page__hero__container">
 
 		<?php
-		$image['small'] = wp_get_attachment_image_src( 10798, 'four_three_small' );
-		$image['small_2x'] = wp_get_attachment_image_src( 10798, 'four_three_small_2x' );
+		$image['small'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_small' );
+		$image['small_2x'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_small_2x' );
 
-		$image['medium'] = wp_get_attachment_image_src( 10798, 'four_three_medium' );
-		$image['medium_2x'] = wp_get_attachment_image_src( 10798, 'four_three_medium_2x' );
+		$image['medium'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_medium' );
+		$image['medium_2x'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_medium_2x' );
 
-		$image['large'] = wp_get_attachment_image_src( 10798, 'eight_three_large' );
-		$image['large_2x'] = wp_get_attachment_image_src( 10798, 'eight_three_large_2x' );
+		$image['large'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_large' );
+		$image['large_2x'] = wp_get_attachment_image_src( 10798, 'sixteen_nine_large_2x' );
 		?>
 
 		<picture>
@@ -22,12 +22,10 @@
 
 		<div class="front-page__hero__video">
 
-			<iframe src="https://player.vimeo.com/video/91775232?autoplay=1&title=0&byline=0&portrait=0" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen id="front-page__video"></iframe>
+			<iframe src="https://player.vimeo.com/video/91775232?title=0&byline=0&portrait=0" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen id="front-page__video"></iframe>
 
 		</div>
 
 	</div>
-
-	<p class="front-page__hero__play-audio"><a href="#!" id="play-with-audio">Play with audio.</a></p>
 
 </section>
