@@ -38,7 +38,7 @@ rp3.backbone = (function($, _, Backbone, wp) {
 
 			// make model read-only
 			sync: function( method ) {
-				if( method === 'read' ) {
+				if( _.contains( [ 'read', 'option' ], method ) ) {
 					return wp.api.models.Post.prototype.sync.apply(this, arguments);
 				}
 			},

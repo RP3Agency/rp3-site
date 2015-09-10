@@ -88,7 +88,10 @@ rp3.backbone.blog = (function($, _, Backbone) {
 				},
 
 				error: function() {
-					window.alert( 'Sorry, an error occurred [posts].' );
+					// Turn off the loading indicator
+					$blog__loading_indicator.removeClass('visible');
+
+					//TODO: maybe hit a logging service to send notifications
 				},
 
 			};
