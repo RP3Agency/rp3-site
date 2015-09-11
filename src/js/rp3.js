@@ -8,6 +8,7 @@ var rp3 = (function($) {
 	'use strict';
 
 	var lastScroll = 0,
+		$body = $('body'),
 
 	/* ==========================================================================
 	Navigation Canvas Slide
@@ -146,25 +147,28 @@ var rp3 = (function($) {
 	========================================================================== */
 	frontPageVideoAudio = function() {
 
-		var $playAudioLink = $('#play-with-audio'),
-			$iFrame = $('#front-page__video')[0],
-			player = $f($iFrame);
+		if ( $body.hasClass( 'home' ) ) {
 
-		player.addEvent( 'ready', function() {
+			var $playAudioLink = $('#play-with-audio'),
+				$iFrame = $('#front-page__video')[0],
+				player = $f($iFrame);
 
-			player.api( 'setVolume', 0 );
-		});
+			player.addEvent( 'ready', function() {
 
-		$playAudioLink.on( 'click', function(e) {
-
-			e.preventDefault();
-
-			player.api( 'setVolume', 1 );
-			player.api( 'seekTo', 0 );
-			$(this).fadeOut( 100, function() {
-				$(this).remove();
+				player.api( 'setVolume', 0 );
 			});
-		});
+
+			$playAudioLink.on( 'click', function(e) {
+
+				e.preventDefault();
+
+				player.api( 'setVolume', 1 );
+				player.api( 'seekTo', 0 );
+				$(this).fadeOut( 100, function() {
+					$(this).remove();
+				});
+			});			
+		}
 	},
 
 	/** Track Blog Related Posts clicks */
