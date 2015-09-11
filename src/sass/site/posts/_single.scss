@@ -152,4 +152,26 @@
 			margin-bottom: 4rem;
 		}
 	}
+
+	/** Video Aspect Ratio Fix */
+	/** Always set to 16:9, even though some videos may really be 4:3. */
+
+	.video-container {
+		padding-bottom: 56.25%; // 16:9
+		position: relative;
+		display: block;
+		height: 0;
+		width: 100%;
+		overflow: hidden;
+
+		iframe {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
 }

@@ -147,28 +147,49 @@ var rp3 = (function($) {
 	========================================================================== */
 	frontPageVideoAudio = function() {
 
-		if ( $body.hasClass( 'home' ) ) {
+		var $playAudioLink = $('#play-with-audio'),
+			$iFrame = $('#front-page__video')[0],
+			player = $f($iFrame);
 
-			var $playAudioLink = $('#play-with-audio'),
-				$iFrame = $('#front-page__video')[0],
-				player = $f($iFrame);
+		player.addEvent( 'ready', function() {
 
-			player.addEvent( 'ready', function() {
+			player.api( 'setVolume', 0 );
+		});
 
-				player.api( 'setVolume', 0 );
+		$playAudioLink.on( 'click', function(e) {
+
+			e.preventDefault();
+
+			player.api( 'setVolume', 1 );
+			player.api( 'seekTo', 0 );
+			$(this).fadeOut( 100, function() {
+				$(this).remove();
 			});
+		});
+	},
 
-			$playAudioLink.on( 'click', function(e) {
+	/* ==========================================================================
+	   Fix Blog Video Aspect Ratios
+	========================================================================== */
 
-				e.preventDefault();
+	fixBlogVideoAspectRatios = function() {
 
-				player.api( 'setVolume', 1 );
-				player.api( 'seekTo', 0 );
-				$(this).fadeOut( 100, function() {
-					$(this).remove();
-				});
-			});			
-		}
+		var $iframes = $('iframe[src*="vimeo"], iframe[src*="youtube"]'),
+			$container,
+			$iframeParent,
+			videoContainer = 'video-container';
+
+		$iframes.each( function() {
+
+			$iframeParent = $(this).parent();
+
+			if ( ! $iframeParent.hasClass( videoContainer ) ) {
+				$container = $('<div>').addClass( videoContainer );
+				$container.append( $(this) );
+				$iframeParent.append( $container );
+			}
+		});
+
 	},
 
 	/** Track Blog Related Posts clicks */
@@ -185,8 +206,15 @@ var rp3 = (function($) {
 		videoToggle();
 		raptorJim();
 		revealComments();
-		frontPageVideoAudio();
 		trackBlogRelated();
+
+		if ( $body.hasClass( 'home' ) ) {
+			frontPageVideoAudio();
+		}
+
+		if ( $body.hasClass( 'blog' ) ) {
+			fixBlogVideoAspectRatios();
+		}
 
 		$(window).scroll(function() {
 			applyFixedHeader();
@@ -200,7 +228,8 @@ var rp3 = (function($) {
 	};
 
 	return {
-		init:init
+		init:init,
+		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios
 	};
 
 }(jQuery));
