@@ -49,6 +49,10 @@
 
 		p {
 			margin-bottom: 2em;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
 		}
 
 		input[type="email"],
