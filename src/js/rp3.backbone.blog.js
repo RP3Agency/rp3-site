@@ -53,6 +53,9 @@ rp3.backbone.blog = (function($, _, Backbone) {
 						reevaluate: true
 					});
 
+					// Fix any blog aspect ratio issues that might be out there
+					rp3.fixBlogVideoAspectRatios();
+
 					// store current location (previous loaded or landing url) and article depth in local scope
 					var prev_link = location.href,
 						article_depth = postCollection.state.currentPage;

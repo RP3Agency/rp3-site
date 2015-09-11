@@ -174,16 +174,20 @@ var rp3 = (function($) {
 
 	fixBlogVideoAspectRatios = function() {
 
-		var $iframes = $('iframe[src*="vimeo"]'),
+		var $iframes = $('iframe[src*="vimeo"], iframe[src*="youtube"]'),
 			$container,
-			$iframeParent;
+			$iframeParent,
+			videoContainer = 'video-container';
 
 		$iframes.each( function() {
 
 			$iframeParent = $(this).parent();
-			$container = $('<div>').addClass('vimeo-container');
-			$container.append( $(this) );
-			$iframeParent.append( $container );
+
+			if ( ! $iframeParent.hasClass( videoContainer ) ) {
+				$container = $('<div>').addClass( videoContainer );
+				$container.append( $(this) );
+				$iframeParent.append( $container );
+			}
 		});
 
 	},
@@ -224,7 +228,8 @@ var rp3 = (function($) {
 	};
 
 	return {
-		init:init
+		init:init,
+		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios
 	};
 
 }(jQuery));

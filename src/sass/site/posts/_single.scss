@@ -153,9 +153,10 @@
 		}
 	}
 
-	/** Vimeo Aspect Ratio Fix */
+	/** Video Aspect Ratio Fix */
+	/** Always set to 16:9, even though some videos may really be 4:3. */
 
-	.vimeo-container {
+	.video-container {
 		padding-bottom: 56.25%; // 16:9
 		position: relative;
 		display: block;
