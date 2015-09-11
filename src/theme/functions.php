@@ -88,11 +88,14 @@ function rp3_scripts() {
 		'underscore',
 		'wp-api',
 		'rp3-plugins',
-		'froogaloop'
 	);
 
 	if ( is_page( 'contact' ) ) {
 		array_push( $prerequisites, 'rp3-google-maps' );
+	}
+
+	if ( is_front_page() ) {
+		array_push( $prerequisites, 'froogaloop' );
 	}
 
 	if ( WP_DEBUG ) {
