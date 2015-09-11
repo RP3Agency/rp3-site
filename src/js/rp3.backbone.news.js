@@ -49,7 +49,10 @@ rp3.backbone.news = (function($, _, Backbone) {
 				},
 
 				error: function() {
-					window.alert( 'Sorry, an error occurred [news].' );
+					// Hide button
+					$listingViewMore.hide();
+
+					//TODO: maybe hit a logging service to send notifications
 				}
 			};
 

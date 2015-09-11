@@ -1,4 +1,4 @@
-/* global rp3:true, ga:false */
+/* global rp3:true, ga:false, $f:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
@@ -142,21 +142,28 @@ var rp3 = (function($) {
 	},
 
 	/* ==========================================================================
-	   Swap out video with audio track
+	   Front Page Video With Audio
 	========================================================================== */
-	swapVideoWithAudio = function() {
+	frontPageVideoAudio = function() {
 
 		var $playAudioLink = $('#play-with-audio'),
-			videoWithAudio = 'https://player.vimeo.com/video/138791940?autoplay=1&title=0&byline=0&portrait=0',
-			$iFrame = $('#front-page__video');
+			$iFrame = $('#front-page__video')[0],
+			player = $f($iFrame);
+
+		player.addEvent( 'ready', function() {
+
+			player.api( 'setVolume', 0 );
+		});
 
 		$playAudioLink.on( 'click', function(e) {
 
 			e.preventDefault();
 
-			$iFrame.attr( 'src', videoWithAudio );
-
-			$(this).html('');
+			player.api( 'setVolume', 1 );
+			player.api( 'seekTo', 0 );
+			$(this).fadeOut( 100, function() {
+				$(this).remove();
+			});
 		});
 	},
 
@@ -169,19 +176,12 @@ var rp3 = (function($) {
 
 	init = function() {
 
-		// At viewports >= 600px, swap out the video on the home page with the non-audio version
-		if ( ( window.matchMedia( '(min-width: 37.5em)' ).matches ) && ( $('body').hasClass( 'page-front-page' ) ) ) {
-			$('#front-page__video').attr( 'src', 'https://player.vimeo.com/video/138792354?autoplay=1&title=0&byline=0&portrait=0' );
-			var $playAudioLink = $('<p class="front-page__hero__play-audio"><a href="#!" id="play-with-audio">Play with audio.</a></p>');
-			$playAudioLink.insertAfter( '.front-page__hero__container' );
-		}
-
 		navigationCanvasSlide();
 		equalizeHeights();
 		videoToggle();
 		raptorJim();
 		revealComments();
-		swapVideoWithAudio();
+		frontPageVideoAudio();
 		trackBlogRelated();
 
 		$(window).scroll(function() {
