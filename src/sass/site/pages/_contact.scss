@@ -31,6 +31,10 @@
 				top: 0;
 				bottom: 0;
 			}
+
+			&:nth-of-type(n+2) {
+				margin-top: 1em;
+			}
 		}
 
 		&__social ul {
