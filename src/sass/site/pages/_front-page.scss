@@ -17,7 +17,32 @@
 
 		&__play-audio {
 			@extend %max-width--padded;
+			background-color: $color__white;
+			display: none;
 			font-weight: $font-weight__bold;
+			height: 50px;
+			left: 1em;
+			opacity: 0.5;
+			position: absolute;
+			top: 1em;
+			transition: opacity 100ms linear;
+			width: 50px;
+
+			svg {
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				width: 40px;
+				height: auto;
+			}
+
+			@include hover-state {
+				opacity: 1;
+			}
+
+			html.no-touch & {
+				display: block;
+			}
 		}
 	}
 

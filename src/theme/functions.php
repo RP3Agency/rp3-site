@@ -87,7 +87,8 @@ function rp3_scripts() {
 		'backbone',
 		'underscore',
 		'wp-api',
-		'rp3-plugins'
+		'rp3-plugins',
+		'froogaloop'
 	);
 
 	if ( is_page( 'contact' ) ) {
