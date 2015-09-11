@@ -32,11 +32,11 @@
 
 							<h2 class="contact__header">Work With Us</h2>
 
-							<p class="contact__info__email">Beth Johnson<br />
-							<a href="mailto:bjohnson@rp3agency.com">bjohnson@rp3agency.com</a></p>
-
 							<p class="contact__info__email">Jim Lansbury<br />
 							<a href="mailto:jlansbury@rp3agency.com">jlansbury@rp3agency.com</a></p>
+
+							<p class="contact__info__email">Beth Johnson<br />
+							<a href="mailto:bjohnson@rp3agency.com">bjohnson@rp3agency.com</a></p>
 
 						</div>
 
