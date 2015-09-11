@@ -32,10 +32,11 @@
 
 							<h2 class="contact__header">Work With Us</h2>
 
-							<p class="contact__info__email">Jim Lansbury,<br />
-							Founder, Chief Creative Officer<br />
+							<p class="contact__info__email">Jim Lansbury<br />
+							<a href="mailto:jlansbury@rp3agency.com">jlansbury@rp3agency.com</a></p>
 
-							<a href="<?php echo esc_url( 'mailto:' . get_field( 'new_business_email' ), array( 'mailto' ) ); ?>"><?php echo esc_html( get_field( 'new_business_email' ) ); ?></a></p>
+							<p class="contact__info__email">Beth Johnson<br />
+							<a href="mailto:bjohnson@rp3agency.com">bjohnson@rp3agency.com</a></p>
 
 						</div>
 

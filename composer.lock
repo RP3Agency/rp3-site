@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "79b9d64d476fac185c176107449f0e8a",
+    "hash": "7116ad00216d0425a242592d66e9b588",
     "packages": [
         {
             "name": "composer/installers",
@@ -275,26 +275,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/admin-post-navigation/"
-        },
-        {
-            "name": "wpackagist-plugin/advanced-responsive-video-embedder",
-            "version": "6.1.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/advanced-responsive-video-embedder/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-responsive-video-embedder.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/advanced-responsive-video-embedder/"
         },
         {
             "name": "wpackagist-plugin/akismet",
@@ -838,7 +818,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.1.12",
+            "version": "4.1.13",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",

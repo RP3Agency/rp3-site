@@ -31,6 +31,10 @@
 				top: 0;
 				bottom: 0;
 			}
+
+			&:nth-of-type(n+2) {
+				margin-top: 1em;
+			}
 		}
 
 		&__social ul {
@@ -49,6 +53,10 @@
 
 		p {
 			margin-bottom: 2em;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
 		}
 
 		input[type="email"],
