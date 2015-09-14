@@ -87,14 +87,14 @@ function rp3_scripts() {
 		'backbone',
 		'underscore',
 		'wp-api',
-		'rp3-plugins',
+		'rp3-plugins'
 	);
 
 	if ( is_page( 'contact' ) ) {
 		array_push( $prerequisites, 'rp3-google-maps' );
 	}
 
-	if ( is_front_page() ) {
+	if ( ( is_front_page() ) || ( is_singular( 'rp3_cpt_work' ) ) ) {
 		array_push( $prerequisites, 'froogaloop' );
 	}
 
@@ -329,3 +329,32 @@ function rp3_json_api_prepare_post( $post_response, $post, $context ) {
 	return $post_response;
 }
 // add_filter( 'json_prepare_post', 'rp3_json_api_prepare_post', 10, 3 );
+
+
+/** Give us more parameters for our calls to Vimeo from the work items pages */
+/** See: http://tinygod.pt/vimeo-embedding-on-wordpress/ */
+
+add_filter( 'oembed_fetch_url','add_param_oembed_fetch_url', 10, 3);
+add_filter( 'oembed_result', 'add_player_id_to_iframe', 10, 3);
+
+/** add extra parameters to vimeo request api (oEmbed) */
+function add_param_oembed_fetch_url( $provider, $url, $args) {
+	// unset args that WP is already taking care
+	$newargs = $args;
+	unset( $newargs['discover'] );
+	unset( $newargs['width'] );
+	unset( $newargs['height'] );
+
+	// build the query url
+	$parameters = urlencode( http_build_query( $newargs ) );
+
+	return $provider . '&'. $parameters;
+}
+
+/** add player id to iframe id on vimeo */
+function add_player_id_to_iframe( $html, $url, $args ) {
+	if( isset( $args['player_id'] ) ) {
+		$html = str_replace( '<iframe', '<iframe id="'. $args['player_id'] .'"', $html );
+	}
+	return $html;
+}

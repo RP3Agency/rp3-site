@@ -104,9 +104,28 @@ var rp3 = (function($) {
 	},
 
 	videoToggle = function() {
-		$('.video__trigger').on( 'click', function(e) {
-			$(this).parents('.video-panel__trigger').find('.video-panel__modal').addClass('visible');
-			e.preventDefault();
+
+		var $videoTrigger = $('.video__trigger');
+
+
+		// Loop through each video on the page
+		$videoTrigger.each( function() {
+
+			// Get the hash which serves as the basis for all of our unique IDs
+			var hash = $(this).data('id'),
+				$modal = $('#' + hash + '__modal'), // the modal
+				$iframe = $('#' + hash + '__iframe'), // the vimeo iframe
+				player = $f( $iframe[0] ); // the vimeo player for the purposes of the API
+
+			player.addEvent( 'ready' ); // initialize the player API
+
+			// Clicking on the trigger reveals the modal and plays the video
+			$(this).on( 'click', function(e) {
+
+				e.preventDefault();
+				$modal.addClass('visible');
+				player.api( 'play' );
+			});
 		});
 	},
 

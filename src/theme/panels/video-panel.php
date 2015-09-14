@@ -4,13 +4,26 @@
  *
  * @package RP3
  */
+
+/** Get the video embed code and assign an ID to it */
+
+// Create an id off of the MD5 checksum of the Vimeo source string
+$hash = md5( get_sub_field( 'video_link' ) );
+
+$embed_args = array(
+    'title' => 0,
+    'byline' => 0,
+    'portrait' => 0,
+    'player_id' => $hash . '__iframe',
+);
+$iframe = wp_oembed_get( get_sub_field( 'video_link' ), $embed_args );
 ?>
 
 <!-- Video Panel -->
 
-<section class="video-panel panel video-panel__trigger">
+<section id="<?php echo esc_attr( $hash ); ?>" class="video-panel panel video-panel__trigger">
 
-	<a href="#!" class="video-panel__image video__trigger block">
+	<a href="#!" id="<?php echo esc_attr( $hash . '__trigger' ); ?>" data-id="<?php echo esc_attr( $hash ); ?>" class="video-panel__image video__trigger block">
 
 		<div class="video-panel__image__content">
 
@@ -48,9 +61,9 @@
 	</a>
 	<!-- video-panel image -->
 
-	<div class="video-panel__modal">
+	<div id="<?php echo esc_attr( $hash . '__modal' ); ?>" class="video-panel__modal">
 
-		<?php echo wp_oembed_get( get_sub_field( 'video_link' ) ); ?>
+		<?php echo $iframe; ?>
 
 	</div>
 
