@@ -179,6 +179,8 @@ var rp3 = (function($) {
 
 			e.preventDefault();
 
+			ga( 'send', 'event', 'Interface Elements', 'Enable Audio' );
+
 			player.api( 'setVolume', 1 );
 			player.api( 'seekTo', 0 );
 			$(this).fadeOut( 100, function() {
