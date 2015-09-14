@@ -7,6 +7,8 @@ if ( function_exists( 'get_coauthors' ) ) {
 
 	$coauthors = get_coauthors();
 
+	wp_die( var_dump( get_post_meta( $coauthor->ID, 'rp3_alumni', true ) ) );
+
 	foreach( $coauthors as $coauthor ) :
 
 		/** Get appropriate photo (if any) based on author type */
@@ -30,9 +32,9 @@ if ( function_exists( 'get_coauthors' ) ) {
 		}
 ?>
 
-<?php /** Only show author information if we have an image. Otherwise, it just looks stupid. */ ?>
+<?php /** Only show author information if they are current RP3ers. */ ?>
 
-<?php if ( '' != $coauthor_photo ) : ?>
+<?php if ( ! get_the_author_meta( 'rp3_alumni' ) ) : ?>
 
 	<?php /** If this is an author archive page, only show the author requested */ ?>
 
