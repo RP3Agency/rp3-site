@@ -235,25 +235,28 @@ var rp3 = (function($) {
 							modalElement = $('<div>').addClass( 'blog__subscribe__modal' ),
 							template = _.template( $('#blog-template-subscription-modal' ).html() );
 
-						modalElement.html( template() );
-						modalElement.find( '#blog-subscription-modal__message' ).html( successMsg );
-						$body.append( modalElement );
-						modalElement.find( '#blog-subscription-modal__close' ).on( 'click', function(e) {
-							e.preventDefault();
-							modalElement.fadeOut( 100, function() {
-								$(this).remove();
-							});
-						});
-
-						$body.keydown( function ( e ) {
-							if(e.keyCode == 27) {
+						if ( ! Modernizr.touch ) {
+							modalElement.html( template() );
+							modalElement.find( '#blog-subscription-modal__message' ).html( successMsg );
+							$body.append( modalElement );
+							modalElement.find( '#blog-subscription-modal__close' ).on( 'click', function(e) {
 								e.preventDefault();
 								modalElement.fadeOut( 100, function() {
 									$(this).remove();
 								});
-							}
-						});
+							});
 
+							$body.keydown( function ( e ) {
+								if(e.keyCode == 27) {
+									e.preventDefault();
+									modalElement.fadeOut( 100, function() {
+										$(this).remove();
+									});
+								}
+							});
+						} else {
+							alert( successMsg.replace( '<br><br>', "\n\n" ) );
+						}
 					}
 				}
 			);
