@@ -118,3 +118,26 @@
 		color: $color__white;
 	}
 }
+
+
+/* ==========================================================================
+   Image Replacement
+   ========================================================================== */
+
+%quote {
+	position: relative;
+
+	&::before {
+		color: transparentize($color__gray--light, 0.5);
+		content: "\f106";
+		display: block;
+		font-family: Genericons;
+		font-size: 3rem;
+		left: -20px;
+		line-height: 0;
+		position: absolute;
+		top: 50%;
+		transform: rotate(180deg) translate(0, -50%);
+		z-index: -1;
+	}
+}
