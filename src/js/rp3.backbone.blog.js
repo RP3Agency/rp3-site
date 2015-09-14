@@ -70,12 +70,14 @@ rp3.backbone.blog = (function($, _, Backbone) {
 								history.pushState( null, null, $article.data('permalink') );
 							}
 							// trigger analytics page view and reporting events
-							ga( 'send', 'pageview', location.pathname );
-							ga( 'send', 'event', 'Navigation', 'Blog Scrolled', {
-								page: location.pathname,			// Associate with page just in case
-								metric1: article_depth,				// Custom Metric - Blog Article Depth
-								metric2: $(window).scrollTop(),		// Custom Metric - Blog Pixel Depth
-							});
+							if ( undefined !== window.ga ) {
+								ga( 'send', 'pageview', location.pathname );
+								ga( 'send', 'event', 'Navigation', 'Blog Scrolled', {
+									page: location.pathname,			// Associate with page just in case
+									metric1: article_depth,				// Custom Metric - Blog Article Depth
+									metric2: $(window).scrollTop(),		// Custom Metric - Blog Pixel Depth
+								});
+							}
   						},
 						offset: '100%',
 					});
