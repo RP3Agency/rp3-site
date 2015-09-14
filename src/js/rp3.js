@@ -103,6 +103,10 @@ var rp3 = (function($) {
 		}
 	},
 
+
+	/* ==========================================================================
+	   Load videos on work item pages
+	========================================================================== */
 	videoToggle = function() {
 
 		var $videoTrigger = $('.video__trigger');
@@ -215,6 +219,47 @@ var rp3 = (function($) {
 
 	},
 
+	// Sorry for the mess...
+	campaignMonitor = function() {
+
+		$('#subForm').on( 'submit', function(e) {
+			e.preventDefault();
+			$.getJSON(
+				this.action + "?callback=?",
+				$(this).serialize(),
+				function( data ) {
+					if ( data.Status === 400 ) {
+						alert( "Error: " + data.Message );
+					} else {
+						var successMsg = "Thank you!<br><br>" + data.Message,
+							modalElement = $('<div>').addClass( 'blog__subscribe__modal' ),
+							template = _.template( $('#blog-template-subscription-modal' ).html() );
+
+						modalElement.html( template() );
+						modalElement.find( '#blog-subscription-modal__message' ).html( successMsg );
+						$body.append( modalElement );
+						modalElement.find( '#blog-subscription-modal__close' ).on( 'click', function(e) {
+							e.preventDefault();
+							modalElement.fadeOut( 100, function() {
+								$(this).remove();
+							});
+						});
+
+						$body.keydown( function ( e ) {
+							if(e.keyCode == 27) {
+								e.preventDefault();
+								modalElement.fadeOut( 100, function() {
+									$(this).remove();
+								});
+							}
+						});
+
+					}
+				}
+			);
+		});
+	},
+
 	/** Track Blog Related Posts clicks */
 	trackBlogRelated = function() {
 		$( 'body' ).on( 'click', '.single-blog__related__post', function() {
@@ -233,6 +278,7 @@ var rp3 = (function($) {
 		raptorJim();
 		revealComments();
 		trackBlogRelated();
+		campaignMonitor();
 
 		if ( $body.hasClass( 'home' ) ) {
 			frontPageVideoAudio();
