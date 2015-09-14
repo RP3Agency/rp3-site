@@ -258,6 +258,11 @@
 			@include breakpoint( bp( "intermediate" ) ) {
 				width: 25%;
 			}
+
+			/** Prevent orphans in the timestamp */
+			.twitter-timestamp {
+				white-space: nowrap;
+			}
 		}
 
 		&__news {
