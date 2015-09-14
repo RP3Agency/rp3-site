@@ -118,6 +118,8 @@ if ( '' !== get_field( 'post_type' ) ) {
 	$listing = new WP_Query( $listing_args );
 
 	$post_ids = array();
+
+	$post_type = get_field( 'post_type' );
 }
 ?>
 
@@ -163,7 +165,7 @@ if ( '' !== get_field( 'post_type' ) ) {
 
 							<h1 class="listing__headline"><?php the_title(); ?></h1>
 
-							<?php if ( 'news' == $page_type ) : ?>
+							<?php if ( 'rp3_cpt_news' === $post_type ) : ?>
 
 								<div class="listing__byline"><?php echo get_the_date(); ?>.</div>
 
