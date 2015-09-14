@@ -129,3 +129,15 @@
 <?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
 </script>
+
+<script type="text/template" id="blog-template-subscription-modal">
+
+<div id="blog-subscription-modal" class="blog-subscription-modal">
+
+	<a href="#!" id="blog-subscription-modal__close" class="blog-subscription-modal__close">Close</a>
+
+	<div id="blog-subscription-modal__message"></div>
+
+</div>
+
+</script>
