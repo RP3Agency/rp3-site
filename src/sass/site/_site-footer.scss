@@ -56,28 +56,6 @@
 		}
 	}
 
-	/** Building Opportunity */
-
-	&__building-opportunity {
-		@extend %site-footer__bottom-margin;
-		text-transform: uppercase;
-
-		&--wide {
-			display: none;
-		}
-
-		@include breakpoint( bp() ) {
-
-			&--narrow {
-				display: none;
-			}
-
-			&--wide {
-				display: block;
-			}
-		}
-	}
-
 	/** Address */
 
 	&__address {
