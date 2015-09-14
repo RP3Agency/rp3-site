@@ -179,7 +179,9 @@ var rp3 = (function($) {
 
 			e.preventDefault();
 
-			ga( 'send', 'event', 'Interface Elements', 'Enable Audio' );
+			if ( undefined !== window.ga ) {
+				ga( 'send', 'event', 'Interface Elements', 'Enable Audio' );
+			}
 
 			player.api( 'setVolume', 1 );
 			player.api( 'seekTo', 0 );
@@ -216,7 +218,10 @@ var rp3 = (function($) {
 	/** Track Blog Related Posts clicks */
 	trackBlogRelated = function() {
 		$( 'body' ).on( 'click', '.single-blog__related__post', function() {
-			ga( 'send', 'event', 'Navigation', 'Blog Related Post Clicked' );
+
+			if ( undefined !== window.ga ) {
+				ga( 'send', 'event', 'Navigation', 'Blog Related Post Clicked' );
+			}
 		});
 	},
 
