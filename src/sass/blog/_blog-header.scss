@@ -1,10 +1,6 @@
 .blog-header {
 	background: $color__gray--light url("../images/header-blog-background.jpg") repeat-y center center;
-	// height: rem( 109px );
-
-	// @include breakpoint( bp() ) {
-		height: rem( 175px );
-	// }
+	height: rem( 175px );
 
 	@include breakpoint( $hidpi ) {
 		background: {
@@ -28,12 +24,8 @@
 		@extend %blog-header-fadeout;
 
 		a[rel="home"] {
-			// height: 74px;
+			height: 100%;
 			position: relative;
-
-			// @include breakpoint( bp() ) {
-				height: 100%;
-			// }
 
 			.building-opportunity-container {
 				align-items: center;
@@ -153,8 +145,13 @@
 					align-items: center;
 					display: flex;
 					height: rem(35px);
+					margin: {
+						right: 0 !important;
+						left: 0 !important;
+					}
 					position: fixed;
 					top: 0;
+					width: 100%;
 					z-index: 100;
 				}
 
@@ -163,6 +160,12 @@
 					position: fixed;
 					z-index: 99;
 				}
+			}
+		}
+
+		&.fixed {
+			.blog-header__sub-header__container {
+				width: 100%;
 			}
 		}
 	}
