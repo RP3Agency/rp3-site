@@ -15,7 +15,17 @@
 
 				<div class="site-blog__interstitial__subscribe">
 
-					<?php echo do_shortcode( '[mc4wp_form]' ); ?>
+					<form action="https://rp3agency.createsend.com/t/i/s/ilhyx/" method="post" id="subForm">
+
+						<div class="form-row">
+
+							<p class="form-cell"><label><span>Email</span> <input name="cm-ilhyx-ilhyx" type="email" placeholder="Email address" required /></label></p>
+
+							<p class="form-cell"><button type="submit">Subscribe</button></p>
+
+						</div>
+
+					</form>
 
 				</div>
 				<!-- // subscribe -->

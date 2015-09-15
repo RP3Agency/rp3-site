@@ -7,7 +7,7 @@ var rp3 = (function($) {
 
 	'use strict';
 
-	var lastScroll = 0,
+	var //lastScroll = 0,
 		$body = $('body'),
 
 	/* ==========================================================================
@@ -32,81 +32,104 @@ var rp3 = (function($) {
 	/**
 	 * Apply the "fixed" class to the desktop header if the user starts to scroll back up
 	 */
-	applyFixedHeader = function() {
-		// Sets the current scroll position
-		var scrollTop = $(window).scrollTop(),
-			$body = $('body'),
-			$window = $(window);
+	// applyFixedHeader = function() {
+	// 	// Sets the current scroll position
+	// 	var scrollTop = $(window).scrollTop(),
+	// 		$body = $('body'),
+	// 		$window = $(window);
 
-		// Determines up-or-down scrolling
+	// 	// Determines up-or-down scrolling
 
-		// Scrolling Down
-		if ( lastScroll > 0 ) {
-			if (scrollTop > lastScroll) {
-				$body.removeClass('fixed-nav');
+	// 	// Scrolling Down
+	// 	if ( lastScroll > 0 ) {
+	// 		if (scrollTop > lastScroll) {
+	// 			$body.removeClass('fixed-nav');
 
-			// Scrolling Up
-			} else {
-				$body.addClass('fixed-nav');
-			}
+	// 		// Scrolling Up
+	// 		} else {
+	// 			$body.addClass('fixed-nav');
+	// 		}
 
-			if ( $window.scrollTop() === 0 ) {
-				$body.removeClass('fixed-nav');
-			}
-		}
+	// 		if ( $window.scrollTop() === 0 ) {
+	// 			$body.removeClass('fixed-nav');
+	// 		}
+	// 	}
 
-		// Updates scroll position
-		lastScroll = scrollTop;
+	// 	// Updates scroll position
+	// 	lastScroll = scrollTop;
 
 
-		// var actions = {
-		// 	direction: "down",
-		// 	callback: function(scrollIntent) {
-		// 		window.alert( 'condition met!' );
-		// 	}
-		// },
+	// 	// var actions = {
+	// 	// 	direction: "down",
+	// 	// 	callback: function(scrollIntent) {
+	// 	// 		window.alert( 'condition met!' );
+	// 	// 	}
+	// 	// },
 
-		// options = {
+	// 	// options = {
 
-		// };
+	// 	// };
 
-		// var scrollIntent = new ScrollIntent( window, actions, options );
-	},
+	// 	// var scrollIntent = new ScrollIntent( window, actions, options );
+	// },
 
 
 	/**
 	 * Equalize the height of elements of a given selector
 	 */
-	getMaxHeight = function( elements ) {
-		var maxHeight = 0;
+	// getMaxHeight = function( elements ) {
+	// 	var maxHeight = 0;
 
-		for ( var i = 0; i < elements.length; i++ ) {
-			if ( $(elements[i]).height() > maxHeight ) {
-				maxHeight = $(elements[i]).height();
-			}
-		}
+	// 	for ( var i = 0; i < elements.length; i++ ) {
+	// 		if ( $(elements[i]).height() > maxHeight ) {
+	// 			maxHeight = $(elements[i]).height();
+	// 		}
+	// 	}
 
-		return maxHeight;
-	},
-	equalizeHeights = function() {
-		var maxHeight = 0,
-			$equalHeights = $('.equal-heights');
+	// 	return maxHeight;
+	// },
+	// equalizeHeights = function() {
+	// 	var maxHeight = 0,
+	// 		$equalHeights = $('.equal-heights');
 
-		if ( $equalHeights.length > 0 ) {
-			if ( window.matchMedia( '(min-width: 600px)' ).matches ) {
-				$equalHeights.removeAttr('style');
-				maxHeight = getMaxHeight( $equalHeights );
-				$equalHeights.height(maxHeight);
-			} else {
-				$equalHeights.css('height', 'auto');
-			}
-		}
-	},
+	// 	if ( $equalHeights.length > 0 ) {
+	// 		if ( window.matchMedia( '(min-width: 600px)' ).matches ) {
+	// 			$equalHeights.removeAttr('style');
+	// 			maxHeight = getMaxHeight( $equalHeights );
+	// 			$equalHeights.height(maxHeight);
+	// 		} else {
+	// 			$equalHeights.css('height', 'auto');
+	// 		}
+	// 	}
+	// },
 
+
+	/* ==========================================================================
+	   Load videos on work item pages
+	========================================================================== */
 	videoToggle = function() {
-		$('.video__trigger').on( 'click', function(e) {
-			$(this).parents('.video-panel__trigger').find('.video-panel__modal').addClass('visible');
-			e.preventDefault();
+
+		var $videoTrigger = $('.video__trigger');
+
+
+		// Loop through each video on the page
+		$videoTrigger.each( function() {
+
+			// Get the hash which serves as the basis for all of our unique IDs
+			var hash = $(this).data('id'),
+				$modal = $('#' + hash + '__modal'), // the modal
+				$iframe = $('#' + hash + '__iframe'), // the vimeo iframe
+				player = $f( $iframe[0] ); // the vimeo player for the purposes of the API
+
+			player.addEvent( 'ready' ); // initialize the player API
+
+			// Clicking on the trigger reveals the modal and plays the video
+			$(this).on( 'click', function(e) {
+
+				e.preventDefault();
+				$modal.addClass('visible');
+				player.api( 'play' );
+			});
 		});
 	},
 
@@ -160,6 +183,10 @@ var rp3 = (function($) {
 
 			e.preventDefault();
 
+			if ( undefined !== window.ga ) {
+				ga( 'send', 'event', 'Interface Elements', 'Enable Audio' );
+			}
+
 			player.api( 'setVolume', 1 );
 			player.api( 'seekTo', 0 );
 			$(this).fadeOut( 100, function() {
@@ -192,21 +219,87 @@ var rp3 = (function($) {
 
 	},
 
+	// Sorry for the mess...
+	campaignMonitor = function() {
+
+		$('#subForm').on( 'submit', function(e) {
+			e.preventDefault();
+			$.getJSON(
+				this.action + "?callback=?",
+				$(this).serialize(),
+				function( data ) {
+					if ( data.Status === 400 ) {
+						alert( "Error: " + data.Message );
+					} else {
+						var successMsg = "Thank you!<br><br>" + data.Message,
+							modalElement = $('<div>').addClass( 'blog__subscribe__modal' ),
+							template = _.template( $('#blog-template-subscription-modal' ).html() );
+
+						if ( ! Modernizr.touch ) {
+							modalElement.html( template() );
+							modalElement.find( '#blog-subscription-modal__message' ).html( successMsg );
+							$body.append( modalElement );
+							modalElement.find( '#blog-subscription-modal__close' ).on( 'click', function(e) {
+								e.preventDefault();
+								modalElement.fadeOut( 100, function() {
+									$(this).remove();
+								});
+							});
+
+							$body.keydown( function ( e ) {
+								if(e.keyCode == 27) {
+									e.preventDefault();
+									modalElement.fadeOut( 100, function() {
+										$(this).remove();
+									});
+								}
+							});
+						} else {
+							alert( successMsg.replace( '<br><br>', "\n\n" ) );
+						}
+					}
+				}
+			);
+		});
+	},
+
 	/** Track Blog Related Posts clicks */
 	trackBlogRelated = function() {
 		$( 'body' ).on( 'click', '.single-blog__related__post', function() {
-			ga( 'send', 'event', 'Navigation', 'Blog Related Post Clicked' );
+
+			if ( undefined !== window.ga ) {
+				ga( 'send', 'event', 'Navigation', 'Blog Related Post Clicked' );
+			}
 		});
+	},
+
+	blogSubHeader = function() {
+
+		if ( $('#blog-header__sub-header').size() > 0 ) {
+
+			var waypoint = new Waypoint({
+				element: document.getElementById('blog-header__sub-header'),
+				handler: function( direction ) {
+					if ( 'down' === direction ) {
+						$('#blog-header__sub-header').addClass('fixed');
+					} else if ( 'up' === direction ) {
+						$('#blog-header__sub-header').removeClass('fixed');
+					}
+				}
+			});
+		}
 	},
 
 	init = function() {
 
 		navigationCanvasSlide();
-		equalizeHeights();
+		// equalizeHeights();
 		videoToggle();
 		raptorJim();
 		revealComments();
 		trackBlogRelated();
+		campaignMonitor();
+		blogSubHeader();
 
 		if ( $body.hasClass( 'home' ) ) {
 			frontPageVideoAudio();
@@ -217,12 +310,12 @@ var rp3 = (function($) {
 		}
 
 		$(window).scroll(function() {
-			applyFixedHeader();
+		// 	applyFixedHeader();
 		});
 
-		$(window).on( 'resize', function() {
-			equalizeHeights();
-		});
+		// $(window).on( 'resize', function() {
+		// 	equalizeHeights();
+		// });
 
 		// scrollIntent;
 	};

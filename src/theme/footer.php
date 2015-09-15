@@ -31,15 +31,6 @@
 					<!-- // .site-footer__logo -->
 
 
-					<div class="site-footer__building-opportunity site-footer__building-opportunity--narrow">
-
-						<p><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" target="_blank">Building Opportunity Blog</a></p>
-
-					</div>
-					<!-- // building opportunity (narrow) -->
-
-
-									
 					<div class="site-footer__address">
 
 						<p>7316 Wisconsin Avenue<br/>
@@ -61,14 +52,6 @@
 
 
 				<div class="site-footer__right">
-
-					<div class="site-footer__building-opportunity site-footer__building-opportunity--wide">
-
-						<p><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" target="_blank">Building Opportunity Blog</a></p>
-
-					</div>
-					<!-- // building opportunity (wide) -->
-
 
 					<nav class="site-footer__social social">
 

@@ -115,6 +115,15 @@
 				bottom: 1em;
 			}
 		}
+
+		blockquote {
+			@extend %quote;
+			font-size: em(18px);
+		}
+
+		em {
+			@extend %roboto-normal-italic;
+		}
 	}
 
 

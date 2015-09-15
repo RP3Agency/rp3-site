@@ -32,11 +32,31 @@
 				<picture>
 					<source srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large@2x.jpg' ); ?> 2x" media="(min-width: 37.5rem)" />
 					<source srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-medium.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-medium@2x.jpg' ); ?> 2x" media="(min-width: 20.0625rem)" />
-					<source srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-small.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-small@2x.jpg' ); ?> 2x" />
-					<img srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-small.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-small@2x.jpg' ); ?> 2x" alt="Building Opportunity" />
+					<source srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?> 2x" />
+					<img srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?> 2x" alt="Building Opportunity" />
 				</picture>
 
 			</a>
+
+			<div class="blog-header__sub-header" id="blog-header__sub-header">
+
+				<div class="blog-header__sub-header__container">
+
+					<div class="blog-header__return">
+
+						<a href="<?php echo esc_url( home_url() ); ?>">rp3agency.com</a>
+
+					</div>
+
+					<div class="blog-header__search">
+
+						<?php get_search_form( true ); ?>
+
+					</div>
+
+				</div>
+
+			</div>
 
 		</div>
 		<!-- // container -->

@@ -48,5 +48,10 @@
 		a {
 			font-weight: $font-weight__bold;
 		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+		}
 	}
 }

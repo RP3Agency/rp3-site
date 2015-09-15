@@ -52,6 +52,7 @@
 
 	&__content {
 		@extend %max-width--blog;
+		margin-bottom: 2em;
 	}
 
 	&__sharing {
@@ -85,22 +86,8 @@
 		padding: 1em;
 
 		&__quote {
+			@extend %quote;
 			margin: 1em 0 0 1em;
-			position: relative;
-
-			&::before {
-				color: transparentize($color__gray--light, 0.5);
-				content: "\f106";
-				display: block;
-				font-family: Genericons;
-				font-size: 3rem;
-				left: -20px;
-				line-height: 0;
-				position: absolute;
-				top: 50%;
-				transform: rotate(180deg) translate(0, -50%);
-				z-index: -1;
-			}
 		}
 
 		&__quote-block {
@@ -123,6 +110,22 @@
 		}
 		margin: 1.5em 1.5em 1.5em 0;
 		padding-left: 1.5em;
+	}
+
+	ul {
+		list-style-type: square;
+		margin: {
+			top: 1em;
+			bottom: 1em;
+			left: 1em;
+		}
+
+		li {
+			margin: {
+				top: 1em;
+				bottom: 1em;
+			}
+		}
 	}
 
 	/** Careers */

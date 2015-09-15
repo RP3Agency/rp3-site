@@ -47,20 +47,20 @@
 
 	/** Subscription Form */
 
-	.mc4wp-form {
-		display: table;
-		width: 100%;
-	}
-
-	form {
-		display: table-row;
-	}
-
 	label {
-		padding-right: 1em;
+
+		span {
+			display: inline-block;
+			float: left;
+			height: 0;
+			overflow: hidden;
+			text-indent: 100%;
+			white-space: nowrap;
+			width: 0;
+		}
 	}
 
-	.form-table { 
+	form { 
 		display: table;
 		width: 100%;
 	}
@@ -88,17 +88,66 @@
 				display: table-cell;
 			}
 		}
+
+		&:first-of-type {
+			padding-right: 1em;
+			width: 100%;
+		}
 	}
-	
+
 	input[type="email"] {
 		@extend %roboto-normal;
 		font-size: 1rem;
 		line-height: 1rem;
-		margin-right: 0.2em;
-		margin-top: 0.5em;
+		margin: 0;
 		padding: em(10px) em(10px) em(9px);
 		vertical-align: baseline;
-		@include appearance(none);
 		width: 100%;
+		@include appearance(none);
+	}
+}
+
+/** Subscription Modal */
+.blog__subscribe__modal {
+	background-color: transparentize( $color__black, 0.5 );
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	z-index: 100;
+	top: 0;
+}
+
+.blog-subscription-modal {
+	background-color: $color__white;
+	left: 50%;
+	padding: 2em;
+	position: absolute;
+	top: 50%;
+	transform: translate( -50%, -50% );
+	box-shadow: 0 0 10px 5px transparentize( $color__black, 0.8 );
+}
+
+.blog-subscription-modal__close {
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	text-indent: 200%;
+	white-space: nowrap;
+
+	&::before {
+		font-family: Genericons;
+		content: '\f406';
+		display: block;
+		text-indent: 0;
+		color: $color__black;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 }
