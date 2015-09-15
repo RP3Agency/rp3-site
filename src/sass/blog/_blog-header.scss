@@ -1,9 +1,9 @@
 .blog-header {
 	background-color: $color__gray--light;
-	height: rem( 74px );
+	height: rem( 109px );
 
 	@include breakpoint( bp() ) {
-		height: rem( 150px );
+		height: rem( 175px );
 	}
 
 	&__skip-link {
@@ -20,9 +20,13 @@
 		/** Fade Out the Edges */
 		@extend %blog-header-fadeout;
 
-		a {
-			height: 100%;
+		a[rel="home"] {
+			height: 74px;
 			position: relative;
+
+			@include breakpoint( bp() ) {
+				height: 100%;
+			}
 		}
 
 		img {
@@ -31,5 +35,108 @@
 			width: auto;
 			@include centered( "horizontal" );
 		}
+	}
+
+	&__sub-header {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+		z-index: 10;
+		height: rem(35px);
+		transition: background-color 250ms linear;
+
+		@include breakpoint( bp() ) {
+			&::before {
+				left: 0;
+				right: 0;
+				top: 0;
+				height: rem(35px);
+				content: "";
+				display: block;
+				z-index: -1;
+				background-color: transparent;
+				transition: background-color 250ms linear;
+			}
+
+			&.fixed {
+
+				.blog-header__sub-header__container {
+					@extend %max-width;
+					position: fixed;
+					top: 0;
+					background-color: $color__gray--light;
+					height: rem(35px);
+					z-index: 100;
+				}
+
+				&::before {
+					background-color: $color__gray--light;
+					position: fixed;
+					z-index: 99;
+				}
+			}
+		}
+
+		// > div {
+		// 	width: 50%;
+		// }
+	}
+
+	&__return {
+		padding-left: calc( 1em + 12px );
+	}
+
+	&__return a {
+		@extend %roboto-medium;
+		// background-color: transparentize( $color__white, 0.5 );
+		background-color: transparent;
+		border: 2px solid $color__blue;
+		border-left-width: 0;
+		display: inline-block;
+		font-size: rem(12px);
+		height: rem(24px);
+		line-height: rem(18px);
+		margin: 0.5em 0;
+		padding: {
+			right: 1em;
+			left: 1em;
+		}
+		position: relative;
+		text: {
+			decoration: none;
+			transform: uppercase;
+		}
+		transition: background-color 100ms linear;
+
+		&::before {
+			width: 18px;
+			height: 18px;
+			// background: transparentize( $color__white, 0.5 );
+			background-color: transparent;
+			transform: rotate(45deg);
+			content: "";
+			display: block;
+			position: absolute;
+			left: -9px;
+			top: 1px;
+			border: solid $color__blue;
+			border-width: 0 0 2px 2px;
+			transition: background-color 100ms linear;
+			clip-path: polygon( 0 0, 18px 18px, 0 18px );
+		}
+
+		@include hover-state {
+			background-color: $color__white;
+			color: $color__blue;
+
+			&::before {
+				background-color: $color__white;
+			}
+		}
+	}
+
+	&__search {
+		display: none;
 	}
 }
