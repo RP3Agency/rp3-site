@@ -358,3 +358,19 @@ function add_player_id_to_iframe( $html, $url, $args ) {
 	}
 	return $html;
 }
+
+/** Limit Campaign Monitor to Pull 1 Post Only */
+/** https://www.campaignmonitor.com/forums/topic/7607/rss-no-of-posts/ */
+function campaign_rss_limit( $limit, $query ) {
+    if( $query->is_feed() && $_GET['rss_limit'] ){
+        $paged =  $query->get('paged') ? (int) $query->get('paged') : 1;
+        $per_page = $_GET['rss_limit'];
+        settype($per_page, 'integer');
+        $page_start = ($paged - 1) * $per_page;
+
+        return "LIMIT $page_start, $per_page";
+    }
+    return $limit;
+}
+
+add_action( 'post_limits', 'campaign_rss_limit', 10, 2 );
