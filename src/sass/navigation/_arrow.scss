@@ -1,0 +1,76 @@
+.arrow {
+	background-color: transparentize( $color__blue, 1 );
+	border: 2px solid $color__blue;
+	box-sizing: content-box;
+	color: $color__blue !important;
+	display: inline-block;
+	font: {
+		size: rem(12px);
+		weight: $font-weight__medium;
+	}
+	height: rem(24px);
+	line-height: rem(24px) !important;
+	padding: 0 1em;
+	position: relative;
+	text: {
+		decoration: none;
+		transform: uppercase;
+	}
+	transition: none;
+	white-space: nowrap;
+	z-index: 100;
+
+	&::before {
+		background-color: transparentize( $color__blue, 1 );
+		border: solid $color__blue;
+		box-sizing: content-box;
+		content: "";
+		display: block;
+		height: 18px;
+		position: absolute;
+		top: 2px;
+		transition: none;
+		width: 18px;
+		z-index: -1;
+	}
+
+	@include hover-state {
+		background-color: $color__blue;
+		color: $color__white !important;
+
+		&::before {
+			background-color: $color__blue;
+		}
+	}
+
+	&--right {
+		border-right-width: 0;
+		margin-right: calc( 1em + 24px );
+
+		&::before {
+			border-width: 0 0 2px 2px;
+			right: -10px;
+			transform: rotate(225deg);
+		}
+	}
+
+	&--left {
+		border-left-width: 0;
+		margin-left: calc( 1em + 24px );
+
+		&::before {
+			border-width: 0 0 2px 2px;
+			left: -10px;
+			transform: rotate(45deg);
+		}
+	}
+
+	// shorten the arrow in awkward widths
+	span {
+		display: none;
+
+		@include breakpoint( bp( "intermediate" ) ) {
+			display: inline;
+		}
+	}
+}
