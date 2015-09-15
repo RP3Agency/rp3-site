@@ -173,6 +173,7 @@
 			display: none;
 
 			@include breakpoint( bp() ) {
+				align-items: center;
 				display: flex;
 				justify-content: space-between;
 			}
@@ -192,64 +193,6 @@
 
 			body.canvas-open & {
 				right: 0;
-			}
-		}
-	}
-}
-
-
-
-
-.auxiliary-menu {
-
-	a {
-		font-weight: $font-weight__medium !important;
-		color: $color__blue !important;
-		// background-color: transparentize( $color__white, 0.5 );
-		background-color: transparent;
-		border: 2px solid $color__blue;
-		border-right-width: 0;
-		display: inline-block;
-		font-size: rem(12px);
-		height: rem(24px);
-		line-height: rem(18px) !important;
-
-		padding: {
-			right: 1em !important;
-			left: 1em !important;
-			top: 0 !important;
-			bottom: 0 !important;
-		}
-		position: relative;
-		text: {
-			decoration: none;
-			transform: uppercase;
-		}
-		transition: background-color 100ms linear;
-
-		&::before {
-			width: 18px;
-			height: 18px;
-			// background: transparentize( $color__white, 0.5 );
-			background-color: transparent;
-			transform: rotate(225deg);
-			content: "";
-			display: block;
-			position: absolute;
-			right: -9px;
-			top: 1px;
-			border: solid $color__blue;
-			border-width: 0 0 2px 2px;
-			transition: background-color 100ms linear;
-			clip-path: polygon( 0 0, 18px 18px, 0 18px );
-		}
-
-		@include hover-state {
-			background-color: $color__white;
-			color: $color__blue;
-
-			&::before {
-				background-color: $color__white;
 			}
 		}
 	}

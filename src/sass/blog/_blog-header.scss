@@ -1,9 +1,12 @@
 .blog-header {
-	background-color: $color__gray--light;
-	height: rem( 109px );
+	background: $color__gray--light url("../images/header-blog-background.jpg") repeat-y center center;
+	height: rem( 175px );
 
-	@include breakpoint( bp() ) {
-		height: rem( 175px );
+	@include breakpoint( $hidpi ) {
+		background: {
+			image: url("../images/header-blog-background@2x.jpg");
+			size: 1200px auto;
+		}
 	}
 
 	&__skip-link {
@@ -21,11 +24,87 @@
 		@extend %blog-header-fadeout;
 
 		a[rel="home"] {
-			height: 74px;
+			height: 100%;
 			position: relative;
 
-			@include breakpoint( bp() ) {
+			.building-opportunity-container {
+				align-items: center;
+				display: flex;
+				font: {
+					size: rem(24px);
+					weight: 900;
+				}
 				height: 100%;
+				justify-content: center;
+				position: relative;
+				text: {
+					align: center;
+					transform: uppercase;
+				}
+				z-index: 1;
+
+				@include breakpoint( bp() ) {
+					font-size: rem(48px);
+				}
+
+				@include breakpoint( bp( "large" ) ) {
+					font-size: rem(72px);
+				}
+
+				&::after {
+					border: 1px dashed $color__magenta;
+					border-radius: 100%;
+					content: "";
+					display: block;
+					height: 200px;
+					left: 50%;
+					position: absolute;
+					top: 50%;
+					transform: translate( -50%, -50% );
+					width: 200px;
+					z-index: -1;
+
+					@include breakpoint( bp() ) {
+						height: 320px;
+						width: 320px;
+					}
+				}
+
+				.building {
+					color: transparentize( mix( black, $color__blue, 5% ), 0.1 );
+					display: inline-block;
+					margin-bottom: 16px;
+
+					@include breakpoint( bp() ) {
+						margin-bottom: 32px;
+					}
+
+					@include breakpoint( bp( "large" ) ) {
+						margin-bottom: 50px;
+					}
+				}
+
+				.opportunity {
+					background-color: transparentize( mix( black, $color__blue, 5% ), 0.1 );
+					color: $color__gray--light;
+					display: inline-block;
+					font: {
+						style: italic;
+						weight: 700;
+					}
+					line-height: 1;
+					margin-top: 16px;
+					padding: 0 5px;
+
+					@include breakpoint( bp() ) {
+						margin-top: 32px;
+						padding: 0 10px;
+					}
+
+					@include breakpoint( bp( "large" ) ) {
+						margin-top: 50px;
+					}
+				}
 			}
 		}
 
@@ -43,7 +122,7 @@
 		width: 100%;
 		display: flex;
 		z-index: 10;
-		height: rem(35px);
+		height: rem(40px);
 		transition: background-color 250ms linear;
 
 		@include breakpoint( bp() ) {
@@ -51,7 +130,7 @@
 				left: 0;
 				right: 0;
 				top: 0;
-				height: rem(35px);
+				height: rem(40px);
 				content: "";
 				display: block;
 				z-index: -1;
@@ -63,10 +142,16 @@
 
 				.blog-header__sub-header__container {
 					@extend %max-width;
+					align-items: center;
+					display: flex;
+					height: rem(35px);
+					margin: {
+						right: 0 !important;
+						left: 0 !important;
+					}
 					position: fixed;
 					top: 0;
-					background-color: $color__gray--light;
-					height: rem(35px);
+					width: 100%;
 					z-index: 100;
 				}
 
@@ -78,60 +163,9 @@
 			}
 		}
 
-		// > div {
-		// 	width: 50%;
-		// }
-	}
-
-	&__return {
-		padding-left: calc( 1em + 12px );
-	}
-
-	&__return a {
-		@extend %roboto-medium;
-		// background-color: transparentize( $color__white, 0.5 );
-		background-color: transparent;
-		border: 2px solid $color__blue;
-		border-left-width: 0;
-		display: inline-block;
-		font-size: rem(12px);
-		height: rem(24px);
-		line-height: rem(18px);
-		margin: 0.5em 0;
-		padding: {
-			right: 1em;
-			left: 1em;
-		}
-		position: relative;
-		text: {
-			decoration: none;
-			transform: uppercase;
-		}
-		transition: background-color 100ms linear;
-
-		&::before {
-			width: 18px;
-			height: 18px;
-			// background: transparentize( $color__white, 0.5 );
-			background-color: transparent;
-			transform: rotate(45deg);
-			content: "";
-			display: block;
-			position: absolute;
-			left: -9px;
-			top: 1px;
-			border: solid $color__blue;
-			border-width: 0 0 2px 2px;
-			transition: background-color 100ms linear;
-			clip-path: polygon( 0 0, 18px 18px, 0 18px );
-		}
-
-		@include hover-state {
-			background-color: $color__white;
-			color: $color__blue;
-
-			&::before {
-				background-color: $color__white;
+		&.fixed {
+			.blog-header__sub-header__container {
+				width: 100%;
 			}
 		}
 	}

@@ -8,14 +8,14 @@
 
 				<div class="site-blog__interstitial__content">
 
-					<p>The <strong>Building Opportunity blog</strong> showcases our ongoing exploration of new ideas, new technologies and new experiences that propel businesses forward. If you like what you see, we invite you to learn more about <a href="<?php echo esc_url( home_url() ); ?>">RP3 Agency</a>, the DC-based creative agency behind all the thinking.</p>
+					<p>The <strong>Building Opportunity blog</strong> showcases RP3 Agency's ongoing exploration of new ideas, new technologies, and new experiences that propel businesses forward. Don't miss it.</p>
 
 				</div>
 				<!-- // content -->
 
 				<div class="site-blog__interstitial__subscribe">
 
-					<form action="https://rp3agency.createsend.com/t/i/s/ilhyx/" method="post" id="subForm">
+					<form action="https://rp3agency.createsend.com/t/i/s/ilhyx/" method="post" id="subForm" class="campaign-monitor">
 
 						<div class="form-row">
 

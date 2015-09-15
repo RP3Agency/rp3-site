@@ -13,17 +13,13 @@
 	</nav>
 	<!-- // #site-navigation -->
 
-	<!-- Auxiliary Navigation -->
+	<!-- Building Opportunity Blog -->
 
-	<nav id="site-header__site-navigation--auxiliary" class="site-header__site-navigation--auxiliary" role="navigation">
+	<div class="site-header__blog-link">
 
-		<?php wp_nav_menu( array(
-			'theme_location'	=> 'auxiliary',
-			'menu_class'		=> 'auxiliary-menu menu--horizontal',
-			'menu_id'			=> 'auxiliary-menu'
-		) ); ?>
+		<a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="arrow arrow--right"><span>Building Opportunity</span> Blog</a>
 
-	</nav>
+	</div>
 
 </div>
 <!-- site navigation desktop -->

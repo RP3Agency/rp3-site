@@ -29,12 +29,12 @@
 
 			<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" rel="home" class="block">
 
-				<picture>
-					<source srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large@2x.jpg' ); ?> 2x" media="(min-width: 37.5rem)" />
-					<source srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-medium.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-medium@2x.jpg' ); ?> 2x" media="(min-width: 20.0625rem)" />
-					<source srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?> 2x" />
-					<img srcset="<?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/header-blog-large.jpg' ); ?> 2x" alt="Building Opportunity" />
-				</picture>
+				<div class="building-opportunity-container">
+
+					<span class="building">Building</span>
+					<span class="opportunity">Opportunity</span>
+
+				</div>
 
 			</a>
 
@@ -42,17 +42,21 @@
 
 				<div class="blog-header__sub-header__container">
 
-					<div class="blog-header__return">
+					<!-- <div class="blog-header__sub-header__inner"> -->
 
-						<a href="<?php echo esc_url( home_url() ); ?>">rp3agency.com</a>
+						<div class="blog-header__return">
 
-					</div>
+							<a class="arrow arrow--left" href="<?php echo esc_url( home_url() ); ?>">rp3agency.com</a>
 
-					<div class="blog-header__search">
+						</div>
 
-						<?php get_search_form( true ); ?>
+						<div class="blog-header__search">
 
-					</div>
+							<?php get_search_form( true ); ?>
+
+						</div>
+
+					<!-- </div> -->
 
 				</div>
 

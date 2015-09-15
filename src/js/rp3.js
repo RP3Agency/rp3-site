@@ -29,81 +29,6 @@ var rp3 = (function($) {
 		});
 	},
 
-	/**
-	 * Apply the "fixed" class to the desktop header if the user starts to scroll back up
-	 */
-	// applyFixedHeader = function() {
-	// 	// Sets the current scroll position
-	// 	var scrollTop = $(window).scrollTop(),
-	// 		$body = $('body'),
-	// 		$window = $(window);
-
-	// 	// Determines up-or-down scrolling
-
-	// 	// Scrolling Down
-	// 	if ( lastScroll > 0 ) {
-	// 		if (scrollTop > lastScroll) {
-	// 			$body.removeClass('fixed-nav');
-
-	// 		// Scrolling Up
-	// 		} else {
-	// 			$body.addClass('fixed-nav');
-	// 		}
-
-	// 		if ( $window.scrollTop() === 0 ) {
-	// 			$body.removeClass('fixed-nav');
-	// 		}
-	// 	}
-
-	// 	// Updates scroll position
-	// 	lastScroll = scrollTop;
-
-
-	// 	// var actions = {
-	// 	// 	direction: "down",
-	// 	// 	callback: function(scrollIntent) {
-	// 	// 		window.alert( 'condition met!' );
-	// 	// 	}
-	// 	// },
-
-	// 	// options = {
-
-	// 	// };
-
-	// 	// var scrollIntent = new ScrollIntent( window, actions, options );
-	// },
-
-
-	/**
-	 * Equalize the height of elements of a given selector
-	 */
-	// getMaxHeight = function( elements ) {
-	// 	var maxHeight = 0;
-
-	// 	for ( var i = 0; i < elements.length; i++ ) {
-	// 		if ( $(elements[i]).height() > maxHeight ) {
-	// 			maxHeight = $(elements[i]).height();
-	// 		}
-	// 	}
-
-	// 	return maxHeight;
-	// },
-	// equalizeHeights = function() {
-	// 	var maxHeight = 0,
-	// 		$equalHeights = $('.equal-heights');
-
-	// 	if ( $equalHeights.length > 0 ) {
-	// 		if ( window.matchMedia( '(min-width: 600px)' ).matches ) {
-	// 			$equalHeights.removeAttr('style');
-	// 			maxHeight = getMaxHeight( $equalHeights );
-	// 			$equalHeights.height(maxHeight);
-	// 		} else {
-	// 			$equalHeights.css('height', 'auto');
-	// 		}
-	// 	}
-	// },
-
-
 	/* ==========================================================================
 	   Load videos on work item pages
 	========================================================================== */
@@ -239,6 +164,7 @@ var rp3 = (function($) {
 							modalElement.html( template() );
 							modalElement.find( '#blog-subscription-modal__message' ).html( successMsg );
 							$body.append( modalElement );
+							$('input[type="email"]').val('');
 							modalElement.find( '#blog-subscription-modal__close' ).on( 'click', function(e) {
 								e.preventDefault();
 								modalElement.fadeOut( 100, function() {
@@ -255,6 +181,7 @@ var rp3 = (function($) {
 								}
 							});
 						} else {
+							$('input[type="email"]').val('');
 							alert( successMsg.replace( '<br><br>', "\n\n" ) );
 						}
 					}
@@ -293,7 +220,6 @@ var rp3 = (function($) {
 	init = function() {
 
 		navigationCanvasSlide();
-		// equalizeHeights();
 		videoToggle();
 		raptorJim();
 		revealComments();
@@ -308,16 +234,6 @@ var rp3 = (function($) {
 		if ( $body.hasClass( 'blog' ) ) {
 			fixBlogVideoAspectRatios();
 		}
-
-		$(window).scroll(function() {
-		// 	applyFixedHeader();
-		});
-
-		// $(window).on( 'resize', function() {
-		// 	equalizeHeights();
-		// });
-
-		// scrollIntent;
 	};
 
 	return {
