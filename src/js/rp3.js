@@ -204,8 +204,7 @@ var rp3 = (function($) {
 
 		if ( $('#blog-header__sub-header').size() > 0 ) {
 
-			var waypoint = new Waypoint({
-				element: document.getElementById('blog-header__sub-header'),
+			$('#blog-header__sub-header').waypoint({
 				handler: function( direction ) {
 					if ( 'down' === direction ) {
 						$('#blog-header__sub-header').addClass('fixed');
