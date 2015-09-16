@@ -8,7 +8,7 @@
 
 				<div class="site-blog__interstitial__content">
 
-					<p>The <strong>Building Opportunity blog</strong> showcases RP3 Agency's ongoing exploration of new ideas, new technologies, and new experiences that propel businesses forward. Don't miss it.</p>
+					<p>The <strong>Building Opportunity</strong> blog showcases RP3 Agency's ongoing exploration of new ideas, new technologies, and new experiences that propel businesses forward. Don't miss it.</p>
 
 				</div>
 				<!-- // content -->
