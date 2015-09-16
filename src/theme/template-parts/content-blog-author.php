@@ -7,104 +7,90 @@ if ( function_exists( 'get_coauthors' ) ) {
 
 	$coauthors = get_coauthors();
 
-	wp_die( var_dump( get_post_meta( $coauthor->ID, 'rp3_alumni', true ) ) );
-
 	foreach( $coauthors as $coauthor ) :
 
-		/** Get appropriate photo (if any) based on author type */
+		$coauthor_photo = wp_get_attachment_image_src( get_post_thumbnail_id( $coauthor->ID ), 'four_three_small' );
+		$coauthor_photo_url = $coauthor_photo[0];
 
-		if ( 'guest-author' == $coauthor->type ) {
-
-			$coauthor_photo = wp_get_attachment_image_src( get_post_thumbnail_id( $coauthor->ID ), 'four_three_small' );
-			$coauthor_photo_url = $coauthor_photo[0];
-
-			$coauthor_photo_2x = wp_get_attachment_image_src( get_post_thumbnail_id( $coauthor->ID ), 'four_three_small_2x' );
-			$coauthor_photo_url_2x = $coauthor_photo_2x[0];
-
-		} else {
-
-			$coauthor_photo = wp_get_attachment_image_src( get_the_author_meta( 'photo', $coauthor->ID ), 'four_three_small' );
-			$coauthor_photo_url = $coauthor_photo[0];
-
-			$coauthor_photo_2x = wp_get_attachment_image_src( get_the_author_meta( 'photo', $coauthor->ID ), 'four_three_small_2x' );
-			$coauthor_photo_url_2x = $coauthor_photo_2x[0];
-
-		}
+		$coauthor_photo_2x = wp_get_attachment_image_src( get_post_thumbnail_id( $coauthor->ID ), 'four_three_small_2x' );
+		$coauthor_photo_url_2x = $coauthor_photo_2x[0];
 ?>
 
 <?php /** Only show author information if they are current RP3ers. */ ?>
 
-<?php if ( ! get_the_author_meta( 'rp3_alumni' ) ) : ?>
+<?php if ( ! get_post_meta( $coauthor->ID, 'rp3_alumni', true ) ) : ?>
 
-	<?php /** If this is an author archive page, only show the author requested */ ?>
+	<section class="blog__author">
 
-	<?php // if ( ( is_singular() ) || ( ( is_author() ) && ( get_query_var( 'author_name' ) == $coauthor->user_nicename ) ) ) : ?>
+		<header class="blog__author__header">
 
-		<section class="blog__author">
+			<div class="blog__author__meta">
 
-			<header class="blog__author__header">
+				<div class="blog__author__image">
 
-				<div class="blog__author__meta">
-
-					<div class="blog__author__image">
-
-						<img srcset="<?php echo $coauthor_photo_url; ?>, <?php echo $coauthor_photo_url_2x; ?> 2x">
-
-					</div>
-					<!-- // blog author image -->
+					<img srcset="<?php echo $coauthor_photo_url; ?>, <?php echo $coauthor_photo_url_2x; ?> 2x">
 
 				</div>
-				<!-- // blog author meta -->
-
-			</header>
-			<!-- blog author header -->
-
-			<div class="blog__author__bio">
-
-				<?php /** All other biographical information limited to current RP3ers */ ?>
-
-				<?php if ( 'guest-author' != $coauthor->type ) : ?>
-
-					<p>
-						<a href="<?php echo esc_url( get_author_posts_url( $coauthor->ID ) ); ?>"><?php echo $coauthor->display_name; ?></a>
-						<?php echo get_the_author_meta( 'description', $coauthor->ID ); ?>
-					</p>
-
-					<!-- Social media presence -->
-
-					<ul class="blog__author__social social">
-
-						<?php if ( '' != get_the_author_meta( 'user_email', $coauthor->ID ) ) : ?>
-						<li class="email"><a href="<?php echo esc_url( 'mailto:' . get_the_author_meta( 'user_email', $coauthor->ID ) ); ?>">Email</a></li>
-						<?php endif; ?>
-
-						<?php if ( '' != get_the_author_meta( 'facebook', $coauthor->ID ) ) : ?>
-						<li class="facebook"><a href="<?php echo esc_url( get_the_author_meta( 'facebook', $coauthor->ID ) ); ?>">Facebook</a></li>
-						<?php endif; ?>
-
-						<?php if ( '' != get_the_author_meta( 'twitter', $coauthor->ID ) ) : ?>
-						<li class="twitter"><a href="<?php echo esc_url( get_the_author_meta( 'twitter', $coauthor->ID ) ); ?>">Twitter</a></li>
-						<?php endif; ?>
-
-						<?php if ( '' != get_the_author_meta( 'linkedin', $coauthor->ID ) ) : ?>
-						<li class="linkedin"><a href="<?php echo esc_url( get_the_author_meta( 'linkedin', $coauthor->ID ) ); ?>">LinkedIn</a></li>
-						<?php endif; ?>
-
-						<?php if ( '' != get_the_author_meta( 'instagram', $coauthor->ID ) ) : ?>
-						<li class="instagram"><a href="<?php echo esc_url( get_the_author_meta( 'instagram', $coauthor->ID ) ); ?>">Instagram</a></li>
-						<?php endif; ?>
-
-					</ul>
-
-				<?php endif; ?>
+				<!-- // blog author image -->
 
 			</div>
-			<!-- // blog author bio -->
+			<!-- // blog author meta -->
 
-		</section>
-		<!-- // blog__author -->
+		</header>
+		<!-- blog author header -->
 
-	<?php // endif; ?>
+		<div class="blog__author__bio">
+
+			<p>
+				<a href="<?php echo esc_url( home_url( '/author/' . $coauthor->user_nicename ) ); ?>"><?php echo $coauthor->display_name; ?></a>
+				<?php echo $coauthor->description; ?>
+			</p>
+
+			<!-- Social media presence -->
+
+			<ul class="blog__author__social social">
+
+				<?php if ( '' != $coauthor->user_email ) : ?>
+				<li class="email"><a href="<?php echo esc_url( 'mailto:' . $coauthor->user_email ); ?>">Email</a></li>
+				<?php endif; ?>
+
+				<?php if ( '' != get_post_meta( $coauthor->ID, 'facebook', true ) ) : ?>
+				<li class="facebook"><a href="<?php echo esc_url( get_post_meta( $coauthor->ID, 'facebook', true ) ); ?>">Facebook</a></li>
+				<?php endif; ?>
+
+				<?php if ( '' != get_post_meta( $coauthor->ID, 'twitter', true ) ) : ?>
+				<li class="twitter"><a href="<?php echo esc_url( get_post_meta( $coauthor->ID, 'twitter', true ) ); ?>">Twitter</a></li>
+				<?php endif; ?>
+
+				<?php if ( '' != get_post_meta( $coauthor->ID, 'linkedin', true ) ) : ?>
+				<li class="linkedin"><a href="<?php echo esc_url( get_post_meta( $coauthor->ID, 'linkedin', true ) ); ?>">LinkedIn</a></li>
+				<?php endif; ?>
+
+				<?php if ( '' != get_post_meta( $coauthor->ID, 'instagram', true ) ) : ?>
+				<li class="instagram"><a href="<?php echo esc_url( get_post_meta( $coauthor->ID, 'instagram', true ) ); ?>">Instagram</a></li>
+				<?php endif; ?>
+
+				<?php if ( '' != get_post_meta( $coauthor->ID, 'github', true ) ) : ?>
+				<li class="github"><a href="<?php echo esc_url( get_post_meta( $coauthor->ID, 'github', true ) ); ?>">GitHub</a></li>
+				<?php endif; ?>
+
+			</ul>
+
+		</div>
+		<!-- // blog author bio -->
+
+	</section>
+	<!-- // blog__author -->
+
+<?php else : ?>
+
+	<section class="blog__author">
+
+		<div class="blog__author__bio">
+			<p>View more posts from <a href="<?php echo esc_url( home_url( '/author/' . $coauthor->user_nicename ) ); ?>"><?php echo $coauthor->display_name; ?></a>.</p>
+		</div>
+
+	</section>
 
 <?php endif; ?>
 
@@ -113,3 +99,4 @@ if ( function_exists( 'get_coauthors' ) ) {
 } else {
 	// TK
 }
+?>
