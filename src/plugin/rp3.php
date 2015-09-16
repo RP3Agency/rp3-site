@@ -15,3 +15,14 @@ require_once( RP3_PLUGIN_INC_DIR . '/remove-dfi-meta-box.php' );
 require_once( RP3_PLUGIN_INC_DIR . '/custom-relabel-post-to-blog.php' );
 require_once( RP3_PLUGIN_INC_DIR . '/rest-api-extensions.php' );
 require_once( RP3_PLUGIN_INC_DIR . '/chrome-admin-menu-fix.php');
+
+/** Enable Featured Images for Co-Authors */
+
+function rp3_coauthors_featured_images() {
+
+	if ( function_exists( 'get_coauthors' ) ) {
+		add_theme_support( 'post-thumbnails', array( 'guest-author' ) );
+	}
+}
+
+add_action( 'plugins_loaded', 'rp3_coauthors_featured_images' );
