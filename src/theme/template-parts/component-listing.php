@@ -83,9 +83,9 @@ if ( '' !== get_field( 'post_type' ) ) {
 	// AND there is a post that is < 2 weeks old.)
 
 	$recent_post = false;
-	$offset = 0;
 	$page_size = 6;
 	$current_page = $paged ?: 1;
+	$listing_args['posts_per_page'] = ( $page_size * $current_page );
 
 	if ( get_field( 'display-featured-post' ) ) {
 
@@ -106,14 +106,15 @@ if ( '' !== get_field( 'post_type' ) ) {
 
 		if ( $recent->have_posts() ) {
 			$recent_post = true;
-			$offset++;
+			$listing_args['post__not_in'] = array( $recent->posts[0]->ID );
+
+			// echo "<pre>";
+			// print_r($recent->posts);
+			// die();
 		}
 	}
 
 	// Modify our listing query, if needed, and run that
-
-	$listing_args['offset'] = $offset;
-	$listing_args['posts_per_page'] = ( $page_size * $current_page ) - $offset;
 
 	$listing = new WP_Query( $listing_args );
 
