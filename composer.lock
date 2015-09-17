@@ -298,15 +298,15 @@
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
-            "version": "2.2.7",
+            "version": "2.2.8",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/black-studio-tinymce-widget/",
-                "reference": "tags/2.2.7"
+                "reference": "tags/2.2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -338,15 +338,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.2.2",
+            "version": "4.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.2.2"
+                "reference": "tags/4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.2.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.3.zip",
                 "reference": null,
                 "shasum": null
             },
