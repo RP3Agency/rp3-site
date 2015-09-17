@@ -15,7 +15,7 @@ get_header(); ?>
 
 		<div class="entry-content">
 
-			<h1 class="entry-content__title"><span class="vcard"><?php echo get_the_author(); ?></span></h1>
+			<h1 class="entry-content__title">Posts by <span class="vcard"><?php echo get_the_author(); ?></span></h1>
 
 			<?php get_template_part( 'template-parts/content', 'blog-author-archive' ); ?>
 
