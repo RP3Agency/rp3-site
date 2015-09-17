@@ -42,21 +42,17 @@
 
 				<div class="blog-header__sub-header__container">
 
-					<!-- <div class="blog-header__sub-header__inner"> -->
+					<div class="blog-header__return">
 
-						<div class="blog-header__return">
+						<a class="arrow arrow--left" href="<?php echo esc_url( home_url() ); ?>">rp3agency.com</a>
 
-							<a class="arrow arrow--left" href="<?php echo esc_url( home_url() ); ?>">rp3agency.com</a>
+					</div>
 
-						</div>
+					<!-- <div class="blog-header__search">
 
-						<div class="blog-header__search">
+						<a href="#!" class="search__trigger">Search</a>
 
-							<?php get_search_form( true ); ?>
-
-						</div>
-
-					<!-- </div> -->
+					</div> -->
 
 				</div>
 

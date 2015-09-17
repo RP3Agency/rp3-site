@@ -52,6 +52,7 @@
 				}
 
 				&::after {
+					border: 1px dotted $color__magenta;
 					border: 1px dashed $color__magenta;
 					border-radius: 100%;
 					content: "";
@@ -134,7 +135,7 @@
 				content: "";
 				display: block;
 				z-index: -1;
-				background-color: transparent;
+				background-color: transparentize( $color__gray--light, 1 );
 				transition: background-color 250ms linear;
 			}
 
@@ -156,7 +157,7 @@
 				}
 
 				&::before {
-					background-color: $color__gray--light;
+					background-color: transparentize( $color__gray--light, 0.1 );
 					position: fixed;
 					z-index: 99;
 				}
@@ -168,9 +169,5 @@
 				width: 100%;
 			}
 		}
-	}
-
-	&__search {
-		display: none;
 	}
 }
