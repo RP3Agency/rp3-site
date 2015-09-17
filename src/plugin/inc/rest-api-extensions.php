@@ -46,16 +46,13 @@ function rp3_json_coauthor_data( $data, $coauthor ) {
 	// Pass coauthor type and display name for all records
 	$data['type'] = $coauthor['type'];
 
-	// Get display name from record depending on coauthor type
-	if ( 'guest-author' == $coauthor['type'] ) {
-		$data['display_name'] = $coauthor['display_name'];
-	} else {
-		$data['display_name'] = get_the_author_meta( 'display_name', $coauthor['ID'] );
+	$data['display_name'] = $coauthor['display_name'];
 
-		// additional fields for official RP3 authors
-		$data['posts_url'] = esc_url( get_author_posts_url( $coauthor['ID'] ) );
-		$data['description'] = get_the_author_meta( 'description', $coauthor['ID'] );
-	}
+	// additional fields for official RP3 authors
+	// $data['posts_url'] = esc_url( get_author_posts_url( $coauthor['ID'] ) );
+	$data['posts_url'] = esc_url( home_url( '/author/' . $coauthor['user_nicename'] ) );;
+	$data['description'] = $coauthor['description'];
+	$data['alumni'] = get_post_meta( $coauthor['ID'], 'rp3_alumni', true );
 
 	return $data;
 }
@@ -66,18 +63,14 @@ add_filter( RP3_JSON_PREFIX . 'coauthor_fields', 'rp3_json_coauthor_data', 10, 2
  */
 function rp3_json_coauthor_social_links( $data, $coauthor ) {
 
-	// skip social links if guest author
-	if ( 'guest-author' == $coauthor['type'] ) {
-		return $data;
-	}
-
 	// build social media links
 	$social = array(
-		'email' => esc_url( 'mailto:' . get_the_author_meta( 'user_email', $coauthor['ID'] ) ),
-		'facebook' => esc_url( get_the_author_meta( 'facebook', $coauthor['ID'] ) ),
-		'twitter' => esc_url( get_the_author_meta( 'twitter', $coauthor['ID'] ) ),
-		'linkedin' => esc_url( get_the_author_meta( 'linkedin', $coauthor['ID'] ) ),
-		'instagram' => esc_url( get_the_author_meta( 'instagram', $coauthor['ID'] ) ),
+		'email' => esc_url( 'mailto:' . $coauthor['user_email'] ),
+		'facebook' => esc_url( get_post_meta( $coauthor['ID'], 'facebook', true ) ),
+		'twitter' => esc_url( get_post_meta( $coauthor['ID'], 'twitter', true ) ),
+		'linkedin' => esc_url( get_post_meta( $coauthor['ID'], 'linkedin', true ) ),
+		'instagram' => esc_url( get_post_meta( $coauthor['ID'], 'instagram', true ) ),
+		'github' => esc_url( get_post_meta( $coauthor['ID'], 'github', true ) ),
 	);
 
 	return array_merge( $data, $social );
@@ -90,11 +83,7 @@ add_filter( RP3_JSON_PREFIX . 'coauthor_fields', 'rp3_json_coauthor_social_links
 function rp3_json_coauthor_photos( $data, $coauthor ) {
 
 	// Get coauthor photo source depending on coauthor type
-	if ( 'guest-author' == $coauthor['type'] ) {
-		$photo = get_post_thumbnail_id( $coauthor['ID'] );
-	} else {
-		$photo = get_the_author_meta( 'photo', $coauthor['ID'] );
-	}
+	$photo = get_post_thumbnail_id( $coauthor['ID'] );
 
 	list( $data['photo_url'] ) = wp_get_attachment_image_src( $photo, 'four_three_small' );
 	list( $data['photo_url_2x'] ) = wp_get_attachment_image_src( $photo, 'four_three_small_2x' );
