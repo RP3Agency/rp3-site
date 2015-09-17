@@ -7,6 +7,8 @@ if ( function_exists( 'get_coauthors' ) ) {
 
 	$coauthors = get_coauthors();
 
+	wp_die( var_dump( get_post_meta( $coauthor->ID, 'rp3_alumni', true ) ) );
+
 	foreach( $coauthors as $coauthor ) :
 
 		$coauthor_photo = wp_get_attachment_image_src( get_post_thumbnail_id( $coauthor->ID ), 'four_three_small' );
