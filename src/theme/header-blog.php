@@ -42,21 +42,28 @@
 
 				<div class="blog-header__sub-header__container">
 
-					<div class="blog-header__return">
+					<div class="blog-header__sub-header__inner">
 
-						<a class="arrow arrow--left" href="<?php echo esc_url( home_url() ); ?>">rp3agency.com</a>
+						<div class="blog-header__return">
+
+							<a class="arrow arrow--left" href="<?php echo esc_url( home_url() ); ?>">rp3agency.com</a>
+
+						</div>
+
+						<div class="blog-header__search">
+
+							<a href="#!" class="search__trigger search__trigger--mobile">Search</a>
+
+						</div>
 
 					</div>
-
-					<!-- <div class="blog-header__search">
-
-						<a href="#!" class="search__trigger">Search</a>
-
-					</div> -->
+					<!-- sub-header inner -->
 
 				</div>
+				<!-- sub-header container -->
 
 			</div>
+			<!-- sub-header -->
 
 		</div>
 		<!-- // container -->

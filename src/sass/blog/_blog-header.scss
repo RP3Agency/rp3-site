@@ -52,7 +52,6 @@
 				}
 
 				&::after {
-					border: 1px dotted $color__magenta;
 					border: 1px dashed $color__magenta;
 					border-radius: 100%;
 					content: "";
@@ -117,57 +116,67 @@
 		}
 	}
 
+
+/* ==========================================================================
+   Sub Header (back to main site & search)
+   ========================================================================== */
+
 	&__sub-header {
-		position: absolute;
 		bottom: 0;
-		width: 100%;
-		display: flex;
-		z-index: 10;
 		height: rem(40px);
+		position: absolute;
 		transition: background-color 250ms linear;
+		width: 100%;
+		z-index: 10;
 
-		@include breakpoint( bp() ) {
-			&::before {
-				left: 0;
-				right: 0;
-				top: 0;
-				height: rem(40px);
-				content: "";
-				display: block;
-				z-index: -1;
-				background-color: transparentize( $color__gray--light, 1 );
-				transition: background-color 250ms linear;
-			}
-
-			&.fixed {
-
-				.blog-header__sub-header__container {
-					@extend %max-width;
-					align-items: center;
-					display: flex;
-					height: rem(35px);
-					margin: {
-						right: 0 !important;
-						left: 0 !important;
-					}
-					position: fixed;
-					top: 0;
-					width: 100%;
-					z-index: 100;
-				}
-
-				&::before {
-					background-color: transparentize( $color__gray--light, 0.1 );
-					position: fixed;
-					z-index: 99;
-				}
-			}
+		&::before {
+			background-color: transparentize( $color__gray--light, 1 );
+			border-bottom-color: transparentize( $color__gray, 1 );
+			box-sizing: content-box;
+			content: "";
+			transition: background-color 250ms linear;
 		}
 
 		&.fixed {
-			.blog-header__sub-header__container {
-				width: 100%;
+			bottom: auto;
+			left: 0;
+			position: fixed;
+			top: 0;
+
+			&::before {
+				background-color: transparentize( $color__gray--light, 0.1 );
+				border-bottom: 1px solid transparentize( $color__gray, 0.1 );
+				display: block;
+				height: rem(40px);
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
 			}
 		}
+
+		&__container {
+			@extend %max-width;
+			height: 100%;
+		}
+
+		&__inner {
+			@extend %max-width--padded;
+			display: flex;
+			height: 100%;
+			position: relative;
+			z-index: 20;
+
+			> * {
+				align-items: center;
+				display: flex;
+				flex: 1;
+				height: 100%;
+			}
+		}
+	}
+
+	&__search {
+		justify-content: flex-end;
 	}
 }

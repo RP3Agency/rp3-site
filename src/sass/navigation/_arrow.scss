@@ -2,8 +2,8 @@
 	background-color: transparentize( $color__white, 0.5 );
 	border: 2px solid $color__blue;
 	box-sizing: content-box;
-	color: $color__blue !important;
-	display: block;
+	color: $color__blue;
+	display: inline-block;
 	font: {
 		size: rem(12px);
 		weight: $font-weight__medium;
