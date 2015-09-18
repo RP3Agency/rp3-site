@@ -122,34 +122,24 @@
    ========================================================================== */
 
 	&__sub-header {
+		background-color: transparentize( $color__gray--light, 1 );
+		border-bottom-color: transparentize( $color__gray, 1 );
 		bottom: 0;
+		box-sizing: content-box;
 		height: rem(40px);
 		position: absolute;
 		transition: background-color 250ms linear;
 		width: 100%;
 		z-index: 10;
 
-		&::before {
-			background-color: transparentize( $color__gray--light, 1 );
-			border-bottom-color: transparentize( $color__gray, 1 );
-			box-sizing: content-box;
-			content: "";
-			transition: background-color 250ms linear;
-		}
+		@include breakpoint( bp() ) {
 
-		&.fixed {
-			bottom: auto;
-			left: 0;
-			position: fixed;
-			top: 0;
-
-			&::before {
+			&.fixed {
 				background-color: transparentize( $color__gray--light, 0.1 );
 				border-bottom: 1px solid transparentize( $color__gray, 0.1 );
-				display: block;
-				height: rem(40px);
+				bottom: auto;
 				left: 0;
-				position: absolute;
+				position: fixed;
 				right: 0;
 				top: 0;
 			}
