@@ -228,7 +228,7 @@ var rp3 = (function($) {
 		revealComments();
 		trackBlogRelated();
 		campaignMonitor();
-		this.waypoint = blogSubHeader();
+		blogSubHeader();
 
 		if ( $body.hasClass( 'home' ) ) {
 			frontPageVideoAudio();
@@ -241,7 +241,8 @@ var rp3 = (function($) {
 
 	return {
 		init:init,
-		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios
+		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios,
+		blogSubHeader:blogSubHeader
 	};
 
 }(jQuery));

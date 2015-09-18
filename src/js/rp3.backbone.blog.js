@@ -56,17 +56,13 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					// Fix any blog aspect ratio issues that might be out there
 					rp3.fixBlogVideoAspectRatios();
 
-					// Refresh our sub header waypoint
-					// Only works if it returns an error to the console. WTGF?????
-					rp3.waypoint[0].refresh();
-
 					// store current location (previous loaded or landing url) and article depth in local scope
 					var prev_link = location.href,
 						article_depth = postCollection.state.currentPage;
 
 					// add article scroll waypoint
 					that.$el.find('article').waypoint({
-  						handler: function( direction ) {
+						handler: function( direction ) {
 							var $article = $(this.element);
 							if( direction == 'up' ) {
 								history.pushState( null, null, prev_link );
@@ -82,7 +78,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 									metric2: $(window).scrollTop(),		// Custom Metric - Blog Pixel Depth
 								});
 							}
-  						},
+						},
 						offset: '100%',
 					});
 
