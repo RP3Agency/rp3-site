@@ -122,26 +122,44 @@
    ========================================================================== */
 
 	&__sub-header {
-		background-color: transparentize( $color__gray--light, 1 );
-		border-bottom-color: transparentize( $color__gray, 1 );
 		bottom: 0;
 		box-sizing: content-box;
 		height: rem(40px);
 		position: absolute;
-		transition: background-color 250ms linear;
 		width: 100%;
-		z-index: 10;
+
+		&::after {
+			background-color: transparentize( $color__gray--light, 1 );
+			border-bottom-color: transparentize( $color__gray, 1 );
+			bottom: 0;
+			content: "";
+			display: block;
+			height: rem(40px);
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transition: background-color 250ms linear,
+				border-bottom-color 250ms linear;
+			z-index: 10;
+		}
 
 		@include breakpoint( bp() ) {
 
-			&.fixed {
+			&.fixed::after {
 				background-color: transparentize( $color__gray--light, 0.1 );
 				border-bottom: 1px solid transparentize( $color__gray, 0.1 );
 				bottom: auto;
-				left: 0;
 				position: fixed;
-				right: 0;
+			}
+
+			&.fixed .blog-header__sub-header__container {
+				bottom: auto;
+				height: rem(40px);
+				position: fixed;
 				top: 0;
+				width: 100%;
+				z-index: 15;
 			}
 		}
 

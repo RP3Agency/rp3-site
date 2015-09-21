@@ -216,8 +216,6 @@ var rp3 = (function($) {
 				}
 			});
 		}
-
-		return waypoint;
 	},
 
 	init = function() {
@@ -241,8 +239,7 @@ var rp3 = (function($) {
 
 	return {
 		init:init,
-		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios,
-		blogSubHeader:blogSubHeader
+		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios
 	};
 
 }(jQuery));
