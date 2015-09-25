@@ -230,7 +230,7 @@
 			background-color: $color__black;
 
 			@include breakpoint( bp() ) {
-				background-image: url("../images/icon-gears.svg");
+				background-image: url("../images/icon-blog.svg");
 			}
 
 			@include breakpoint( bp( "intermediate" ) ) {
