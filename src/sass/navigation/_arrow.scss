@@ -17,13 +17,14 @@
 		decoration: none;
 		transform: uppercase;
 	}
-	transition: background-color 100ms linear,
-		color 100ms linear;
+	transition: none;
 	white-space: nowrap;
 
 	@include modernizr( "cssclippathpolygon" ) {
 		border: none;
 		box-sizing: border-box;
+		transition: background-color 100ms linear,
+			color 100ms linear;
 	}
 
 	@include hover-state {
@@ -40,23 +41,39 @@
 		}
 	}
 
-	@include modernizr( "cssclippathpolygon" ) {
-		&::before {
+	&::before {
+		background-color: transparentize( $color__blue, 1 );
+		border: solid $color__blue;
+		box-sizing: content-box;
+		content: "";
+		display: block;
+		height: 18px;
+		position: absolute;
+		top: 2px;
+		transition: none;
+		width: 18px;
+		z-index: -1;
+
+		@include modernizr( "cssclippathpolygon" ) {
 			background-color: $color__blue;
 			bottom: 0;
-			content: "";
-			display: block;
 			left: 0;
-			position: absolute;
 			right: 0;
 			top: 0;
 			z-index: 10;
 		}
 	}
 
-	@include modernizr( "cssclippathpolygon" ) {
+	&--left {
+		border-left-width: 0;
 
-		&--left {
+		&::before {
+			border-width: 0 0 2px 2px;
+			left: -10px;
+			transform: rotate( 45deg );
+		}
+
+		@include modernizr( "cssclippathpolygon" ) {
 			clip-path: polygon( 0 50%, 10px 0, 100% 0, 100% 100%, 10px 100% );
 			padding: 0 1em 0 1.5em;
 
@@ -77,8 +94,17 @@
 				);
 			}
 		}
+	}
 
-		&--right {
+	&--right {
+
+		&::before {
+			border-width: 0 0 2px 2px;
+			right: -10px;
+			transform: rotate( 225deg );
+		}
+
+		@include modernizr( "cssclippathpolygon" ) {
 			clip-path: polygon( 0 0, calc( 100% - 10px ) 0, 100% 50%, calc( 100% - 10px ) 100%, 0 100% );
 			padding: 0 1.5em 0 1em;
 
