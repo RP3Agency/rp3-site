@@ -11,7 +11,8 @@
 
 <!-- Half-Width Image Panel -->
 
-<section class="work-single__half">
+<section class="work-single__half scroll-effect effect-ease-up">
+	<div class="work-single__half scroll-effect-target">
 
 	<?php if ( '' != get_sub_field( 'half-width-image-left' ) ) : ?>
 
@@ -49,5 +50,6 @@
 
 	<?php endif; ?>
 
+	</div>
 </section>
 <!-- half-width-image-panel -->

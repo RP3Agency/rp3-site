@@ -14,9 +14,9 @@
 
 		<?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 
-		<div class="leadership__person">
+		<div class="leadership__person scroll-effect effect-fade-in">
 
-			<div class="leadership__photo">
+			<div class="leadership__photo scroll-effect-target">
 
 				<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
@@ -44,7 +44,7 @@
 			</div>
 			<!-- // .leadership__photo -->
 
-			<div class="leadership__content">
+			<div class="leadership__content scroll-effect-target">
 
 				<h2 class="leadership__name"><?php the_title(); ?></h2>
 

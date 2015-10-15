@@ -14,13 +14,13 @@
 
 				</header>
 
-				<div class="work-single__related__content">
+				<div class="work-single__related__content scroll-effect effect-fade-in">
 
 					<?php foreach ( $related_work as $post ) : ?>
 
 						<?php setup_postdata( $post ); ?>
 
-						<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block work-single__related__item">
+						<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block work-single__related__item scroll-effect-target">
 
 							<?php if ( '' != get_post_thumbnail_id() ) : ?>
 
