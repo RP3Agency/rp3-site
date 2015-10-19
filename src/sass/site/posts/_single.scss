@@ -53,6 +53,10 @@
 	&__content {
 		@extend %max-width--blog;
 		margin-bottom: 2em;
+
+		h2:first-child {
+			margin-bottom: 1em;
+		}
 	}
 
 	&__sharing {
