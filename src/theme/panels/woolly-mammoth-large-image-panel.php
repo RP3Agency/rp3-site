@@ -10,8 +10,8 @@
 
 <?php if ( '' != get_sub_field( 'woolly-mammoth-image' ) ) : ?>
 
-	<section class="work-single__full--woolly-mammoth">
-
+<section class="work-single__full--woolly-mammoth scroll-effect effect-ease-up">
+	<div class="scroll-effect-target">
 		<?php
 		$image['small'] = wp_get_attachment_image_src( get_sub_field( 'woolly-mammoth-image' ), 'woolly_mammoth_small' );
 		$image['small_2x'] = wp_get_attachment_image_src( get_sub_field( 'woolly-mammoth-image' ), 'woolly_mammoth_small_2x' );
@@ -30,6 +30,7 @@
 			<img srcset="<?php echo esc_url( $image['small'][0] ); ?>, <?php echo esc_url( $image['small_2x'][0] ); ?> 2x" />
 		</picture>
 
-	</section>
+	</div>
+</section>
 
 <?php endif; ?>

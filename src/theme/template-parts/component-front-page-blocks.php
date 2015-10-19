@@ -19,17 +19,17 @@ $news = new WP_Query( array_merge( $args, array( 'post_type' => 'rp3_cpt_news' )
 
 <div id="front-page__blocks" class="front-page__blocks">
 
-	<div class="front-page__blocks__row front-page__blocks__row--1">
+	<div class="front-page__blocks__row front-page__blocks__row--1 scroll-effect effect-fade-in">
 
 		<!-- General Information Tile -->
 
 		<?php if ( '' != get_field( 'general_info_tile_link' ) ) : ?>
 
-			<a href="<?php echo esc_url( get_field( 'general_info_tile_link' ) ); ?>" class="front-page__blocks__general-widget front-page__blocks__block block">
+			<a href="<?php echo esc_url( get_field( 'general_info_tile_link' ) ); ?>" class="front-page__blocks__general-widget front-page__blocks__block block scroll-effect-target">
 
 		<?php else: ?>
 
-			<div class="front-page__blocks__general-widget front-page__blocks__block block">
+			<div class="front-page__blocks__general-widget front-page__blocks__block block scroll-effect-target">
 
 		<?php endif; ?>
 
@@ -65,7 +65,7 @@ $news = new WP_Query( array_merge( $args, array( 'post_type' => 'rp3_cpt_news' )
 
 			<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
 
-				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="front-page__blocks__blog front-page__blocks__block block">
+				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="front-page__blocks__blog front-page__blocks__block block scroll-effect-target">
 
 					<div class="front-page__blocks__subhead">Blog</div>
 
@@ -81,11 +81,11 @@ $news = new WP_Query( array_merge( $args, array( 'post_type' => 'rp3_cpt_news' )
 
 	</div>
 
-	<div class="front-page__blocks__row front-page__blocks__row--2">
+	<div class="front-page__blocks__row front-page__blocks__row--2 scroll-effect effect-fade-in">
 
 		<!-- Latest Tweet -->
 
-		<div class="front-page__blocks__twitter front-page__blocks__block">
+		<div class="front-page__blocks__twitter front-page__blocks__block scroll-effect-target">
 
 			<div class="front-page__blocks__subhead"><a href="https://twitter.com/RP3Agency">@RP3Agency</a></div>
 
@@ -100,7 +100,7 @@ $news = new WP_Query( array_merge( $args, array( 'post_type' => 'rp3_cpt_news' )
 
 			<?php while ( $news->have_posts() ) : $news->the_post(); ?>
 
-				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="front-page__blocks__news front-page__blocks__block block">
+				<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="front-page__blocks__news front-page__blocks__block block scroll-effect-target">
 
 					<div class="front-page__blocks__subhead">News</div>
 
@@ -113,7 +113,7 @@ $news = new WP_Query( array_merge( $args, array( 'post_type' => 'rp3_cpt_news' )
 			<?php endwhile; wp_reset_query(); ?>
 
 		<?php endif; ?>
-		
+
 	</div>
 
 </div>
