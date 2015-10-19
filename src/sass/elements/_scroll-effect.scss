@@ -1,0 +1,28 @@
+.scroll-effect {
+
+	@include breakpoint( bp() ) {
+
+		&.effect-ease-up .effect-active {
+			height: 100%;
+			transform: translate(0, 100%);
+			opacity: 0;
+			transition: transform 1s ease-out, opacity 1.5s ease-out 0.5s;
+
+			&.effect-complete {
+				transform: translate(0, 0);
+				opacity: 1;
+			}
+		}
+
+		&.effect-fade-in .effect-active {
+			opacity: 0;
+			transition: opacity 1.5s ease-out;
+
+			&.effect-complete {
+				opacity: 1;
+			}
+		}
+
+	}
+
+}

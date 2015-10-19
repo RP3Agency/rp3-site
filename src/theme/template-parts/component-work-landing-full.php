@@ -22,9 +22,9 @@ if ( empty( $client ) ) {
 $alt_featured_image = rp3_use_alternate_featured_image( 'full_width_featured_image_alt' );
 ?>
 
-<div class="work__full">
+<div class="work__full scroll-effect effect-ease-up">
 
-	<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="work__link block">
+	<a href="<?php echo esc_url( get_the_permalink() ); ?>" class="work__link block scroll-effect-target">
 
 		<div class="work__image work__image--full">
 

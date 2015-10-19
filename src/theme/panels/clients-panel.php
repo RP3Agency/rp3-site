@@ -22,9 +22,9 @@
 
 			<?php while ( have_rows( 'clients' ) ) : the_row(); ?>
 
-				<li class="clients__client">
+				<li class="clients__client scroll-effect effect-fade-in">
 
-					<div class="clients__client__inner">
+					<div class="clients__client__inner scroll-effect-target">
 
 						<?php echo wp_remote_retrieve_body( wp_remote_get( get_sub_field( 'client_logo' ), array( 'sslverify' => false ) ) ); ?>
 

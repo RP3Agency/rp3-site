@@ -12,9 +12,9 @@
 
 			<?php $post = get_sub_field( 'front_page_work_item' ); setup_postdata( $post ); ?>
 
-			<div class="front-page__work__item full-width-image-panel--<?php echo esc_attr( $counter ); ?>">
+			<div class="front-page__work__item full-width-image-panel--<?php echo esc_attr( $counter ); ?> scroll-effect effect-ease-up">
 
-				<a href="<?php echo esc_url( get_permalink() ); ?>" class="block">
+				<a href="<?php echo esc_url( get_permalink() ); ?>" class="block scroll-effect-target">
 
 					<?php
 					/** Determine whether to use the primary or alternate featured image */

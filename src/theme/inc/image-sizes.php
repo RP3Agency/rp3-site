@@ -95,7 +95,7 @@ function rp3_image_sizes() {
 	add_image_size( 'woolly_mammoth_large_2x', 1200 * 2, 1200 * $ratio__woolly_mammoth * 2, true );
 }
 
-add_action( 'init', 'rp3_image_sizes' );
+add_action( 'after_setup_theme', 'rp3_image_sizes' );
 
 
 /** Allow for our custom image size to be used in posts */
