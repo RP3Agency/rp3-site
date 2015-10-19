@@ -7,7 +7,7 @@
  * @package RP3
  */
 
-get_header(); ?>
+get_header( 'blog' ); ?>
 
 <?php if ( have_posts() ) : ?>
 
@@ -94,4 +94,6 @@ get_header(); ?>
 
 <?php endif; ?>
 
-<?php get_footer(); ?>
+<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
+
+<?php get_footer( 'blog' ); ?>
