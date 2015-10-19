@@ -17,6 +17,7 @@ var gulp			= require('gulp'),
 	concat			= require('gulp-concat'),
 	rename			= require('gulp-rename'),
 	del				= require('del'),
+	livereload		= require('gulp-livereload'),
 
 	// Notifications and error handling
 	gutil			= require('gulp-util');
@@ -65,7 +66,8 @@ gulp.task('styles', function() {
 			suffix: '.min'
 		} ) )
 		.pipe( minifycss() )
-		.pipe( gulp.dest( dest_theme_css ) );
+		.pipe( gulp.dest( dest_theme_css ) )
+		.pipe( livereload() );
 });
 
 
@@ -88,7 +90,8 @@ gulp.task('scripts-custom', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest(dest_theme_js));
+		.pipe(gulp.dest(dest_theme_js))
+		.pipe( livereload() );
 });
 
 // Scripts task: Plugins
@@ -99,7 +102,8 @@ gulp.task('scripts-plugins', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest(dest_theme_js));
+		.pipe(gulp.dest(dest_theme_js))
+		.pipe( livereload() );
 });
 
 // Scripts task: Vendor
@@ -110,7 +114,8 @@ gulp.task('scripts-vendor', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest(dest_theme_js));
+		.pipe(gulp.dest(dest_theme_js))
+		.pipe( livereload() );
 });
 
 // Scripts task: Admin
@@ -121,7 +126,8 @@ gulp.task('scripts-admin', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.on('error', gutil.log)
-		.pipe(gulp.dest(dest_theme_js));
+		.pipe(gulp.dest(dest_theme_js))
+		.pipe( livereload() );
 });
 
 // Scripts task: run the three other scripts tasks
@@ -154,7 +160,8 @@ gulp.task('build-theme', function() {
 	];
 
 	return gulp.src(filesToMove, { base: src_theme })
-		.pipe(gulp.dest(dest_theme));
+		.pipe(gulp.dest(dest_theme))
+		.pipe( livereload() );
 });
 
 // build-plugin
@@ -164,7 +171,8 @@ gulp.task('build-plugin', function() {
 	];
 
 	return gulp.src(filesToMove, { base: src_plugin })
-		.pipe(gulp.dest(dest_plugin));
+		.pipe(gulp.dest(dest_plugin))
+		.pipe( livereload() );
 });
 
 // build: combine build-theme and build-plugin
@@ -200,6 +208,9 @@ gulp.task('watch', ['default'], function() {
 
 	// Watch builders/sass/*.scss files
 	// gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
+
+	livereload.listen();
+	gutil.log( 'LiveReload server activated' );
 });
 
 
