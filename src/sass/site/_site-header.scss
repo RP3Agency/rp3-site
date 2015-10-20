@@ -56,7 +56,7 @@
 
 	&__site-navigation {
 
-		a {
+		a:not(.arrow) {
 			@extend %roboto-medium;
 			color: $color__black;
 			text: {

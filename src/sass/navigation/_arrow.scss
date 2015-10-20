@@ -2,7 +2,7 @@
 	background-color: transparentize( $color__blue, 1 );
 	border: 2px solid $color__blue;
 	box-sizing: content-box;
-	color: $color__blue !important;
+	color: $color__blue;
 	display: inline-block;
 	font: {
 		size: rem(12px);
@@ -16,9 +16,42 @@
 		decoration: none;
 		transform: uppercase;
 	}
-	transition: none;
 	white-space: nowrap;
-	z-index: 100;
+
+	@include modernizr( "cssclippathpolygon" ) {
+		background-color: transparentize( $color__white, 0.5 );
+		border: none;
+		box-sizing: border-box;
+		height: auto;
+		padding: {
+			top: 0.2em;
+			bottom: 0.2em;
+		}
+	}
+
+	@include hover-state {
+		background-color: $color__blue;
+		color: $color__white;
+		transition: background-color 100ms;
+
+		&::before {
+			background-color: $color__blue;
+		}
+
+		@include modernizr( "cssclippathpolygon" ) {
+			background-color: $color__blue;
+			color: $color__white;
+		}
+	}
+
+	// shorten the arrow in awkward widths
+	span {
+		display: none;
+
+		@include breakpoint( bp( "intermediate" ) ) {
+			display: inline;
+		}
+	}
 
 	&::before {
 		background-color: transparentize( $color__blue, 1 );
@@ -29,48 +62,96 @@
 		height: 18px;
 		position: absolute;
 		top: 2px;
-		transition: none;
 		width: 18px;
 		z-index: -1;
+
+		@include modernizr( "cssclippathpolygon" ) {
+			background-color: $color__blue;
+			border: none;
+			bottom: 0;
+			height: 100%;
+			left: 0;
+			overflow: hidden;
+			right: 0;
+			top: 0;
+			width: 100%;
+			z-index: 10;
+		}
 	}
 
-	@include hover-state {
-		background-color: $color__blue;
-		color: $color__white !important;
+	&--left {
+		background-color: mix( white, $color__gray--light, 50% );
+		border-left-width: 0;
+		margin-left: 15px;
 
 		&::before {
-			background-color: $color__blue;
+			background-color: mix( white, $color__gray--light, 50% );
+			border-width: 0 0 2px 2px;
+			left: -10px;
+			transform: rotate( 45deg );
+		}
+
+		@include modernizr( "cssclippathpolygon" ) {
+			clip-path: polygon( 0 50%, 10px 0, 100% 0, 100% 100%, 10px 100% );
+			margin-left: 0;
+			padding: {
+				left: 1.5em;
+				right: 1em;
+			}
+
+			&::before {
+				clip-path: polygon(
+					0 50%,
+					10px 0,
+					100% 0,
+					100% 100%,
+					10px 100%,
+					0 50%,
+					2.5px 50%,
+					11px calc( 100% - 2px ),
+					calc( 100% - 2px ) calc( 100% - 2px ),
+					calc( 100% - 2px ) 2px,
+					11px 2px,
+					2.5px 50%
+				);
+				transform: rotate(0);
+			}
 		}
 	}
 
 	&--right {
 		border-right-width: 0;
-		margin-right: calc( 1em + 24px );
 
 		&::before {
 			border-width: 0 0 2px 2px;
 			right: -10px;
-			transform: rotate(225deg);
+			transform: rotate( 225deg );
 		}
-	}
 
-	&--left {
-		border-left-width: 0;
-		margin-left: calc( 1em + 24px );
+		@include modernizr( "cssclippathpolygon" ) {
+			clip-path: polygon( 0 0, calc( 100% - 10px ) 0, 100% 50%, calc( 100% - 10px ) 100%, 0 100% );
+			padding: {
+				right: 1.5em;
+				left: 1em;
+			}
 
-		&::before {
-			border-width: 0 0 2px 2px;
-			left: -10px;
-			transform: rotate(45deg);
-		}
-	}
-
-	// shorten the arrow in awkward widths
-	span {
-		display: none;
-
-		@include breakpoint( bp( "intermediate" ) ) {
-			display: inline;
+			&::before {
+				clip-path: polygon(
+					0 0,
+					calc( 100% - 10px ) 0,
+					100% 50%,
+					calc( 100% - 10px ) 100%,
+					0 100%,
+					0 0,
+					2px 2px,
+					2px calc( 100% - 2px ),
+					calc( 100% - 11px ) calc( 100% - 2px ),
+					calc( 100% - 2.5px ) 50%,
+					calc( 100% - 11px ) 2px,
+					2px 2px
+				);
+				transform: rotate(0);
+			}
 		}
 	}
 }

@@ -6,11 +6,11 @@
  */
 ?>
 
-<section class="work-single__six-up">
+<section class="work-single__six-up scroll-effect effect-fade-in">
 
 	<?php while ( have_rows( 'images' ) ) : the_row(); ?>
 
-		<div class="work-single__six-up__image">
+		<div class="work-single__six-up__image scroll-effect-target">
 
 			<?php
 			$image['small'] = wp_get_attachment_image_src( get_sub_field( 'image' ), 'eight_three_small' );

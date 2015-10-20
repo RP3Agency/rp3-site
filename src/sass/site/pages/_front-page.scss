@@ -75,16 +75,6 @@
 			overflow: hidden;
 			position: relative;
 
-			@include breakpoint( bp() ) {
-				margin-top: 100%;
-				opacity: 0;
-				transition: margin-top 1s ease-out, opacity 1.5s ease-out 0.5s;
-
-				&.active {
-					margin-top: 0;
-					opacity: 1;
-				}
-			}
 		}
 
 		&__item {
@@ -199,15 +189,6 @@
 			width: 50%;
 
 			@include breakpoint( bp() ) {
-				opacity: 0;
-				transition: opacity 1.5s ease-out 0.5s;
-
-				&.active {
-					opacity: 1;
-				}
-			}
-
-			@include breakpoint( bp() ) {
 				background: {
 					position: 1rem 1rem;
 					repeat: no-repeat;
@@ -230,7 +211,7 @@
 			background-color: $color__black;
 
 			@include breakpoint( bp() ) {
-				background-image: url("../images/icon-gears.svg");
+				background-image: url("../images/icon-blog.svg");
 			}
 
 			@include breakpoint( bp( "intermediate" ) ) {
@@ -277,7 +258,7 @@
 			}
 		}
 
-		&__link { 
+		&__link {
 			font-size: em( 7px, 12px );
 		}
 

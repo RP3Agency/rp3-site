@@ -27,22 +27,22 @@
 
 		<div class="blog-header__container">
 
-			<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" rel="home" class="block">
+			<div class="building-opportunity-container">
 
-				<div class="building-opportunity-container">
+				<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" rel="home" class="block">
 
 					<span class="building">Building</span>
 					<span class="opportunity">Opportunity</span>
 
-				</div>
+				</a>
 
-			</a>
+			</div>
 
 			<div class="blog-header__sub-header" id="blog-header__sub-header">
 
 				<div class="blog-header__sub-header__container">
 
-					<!-- <div class="blog-header__sub-header__inner"> -->
+					<div class="blog-header__sub-header__inner">
 
 						<div class="blog-header__return">
 
@@ -50,17 +50,20 @@
 
 						</div>
 
-						<div class="blog-header__search">
+						<!-- <div class="blog-header__search">
 
-							<?php get_search_form( true ); ?>
+							<a href="#!" class="search__trigger search__trigger--mobile">Search</a>
 
-						</div>
+						</div> -->
 
-					<!-- </div> -->
+					</div>
+					<!-- sub-header inner -->
 
 				</div>
+				<!-- sub-header container -->
 
 			</div>
+			<!-- sub-header -->
 
 		</div>
 		<!-- // container -->

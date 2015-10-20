@@ -1,0 +1,11 @@
+.search {
+
+	&__trigger {
+		@extend %genericon;
+		@extend %genericon-search;
+		font-size: rem(36px);
+		height: 36px;
+		overflow: hidden;
+		width: 36px;
+	}
+}

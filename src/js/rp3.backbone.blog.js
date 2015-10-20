@@ -62,7 +62,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 					// add article scroll waypoint
 					that.$el.find('article').waypoint({
-  						handler: function( direction ) {
+						handler: function( direction ) {
 							var $article = $(this.element);
 							if( direction == 'up' ) {
 								history.pushState( null, null, prev_link );
@@ -78,7 +78,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 									metric2: $(window).scrollTop(),		// Custom Metric - Blog Pixel Depth
 								});
 							}
-  						},
+						},
 						offset: '100%',
 					});
 

@@ -1,6 +1,5 @@
 .blog-header {
 	background: $color__gray--light url("../images/header-blog-background.jpg") repeat-y center center;
-	height: rem( 175px );
 
 	@include breakpoint( $hidpi ) {
 		background: {
@@ -16,20 +15,18 @@
 
 	&__container {
 		@extend %max-width;
-		height: 100%;
 		overflow: hidden;
 		position: relative;
 
 		/** Fade Out the Edges */
 		@extend %blog-header-fadeout;
 
-		a[rel="home"] {
-			height: 100%;
-			position: relative;
+		.building-opportunity-container {
+			text-align: center;
 
-			.building-opportunity-container {
+			a[rel="home"] {
 				align-items: center;
-				display: flex;
+				display: inline-flex;
 				font: {
 					size: rem(24px);
 					weight: 900;
@@ -116,61 +113,73 @@
 		}
 	}
 
+
+/* ==========================================================================
+   Sub Header (back to main site & search)
+   ========================================================================== */
+
 	&__sub-header {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		display: flex;
-		z-index: 10;
+		box-sizing: content-box;
 		height: rem(40px);
-		transition: background-color 250ms linear;
+		width: 100%;
+
+		&::after {
+			background-color: transparentize( $color__gray--light, 1 );
+			border-bottom-color: transparentize( $color__gray, 1 );
+			bottom: 0;
+			content: "";
+			display: block;
+			height: rem(40px);
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transition: background-color 250ms linear,
+				border-bottom-color 250ms linear;
+			z-index: 10;
+		}
 
 		@include breakpoint( bp() ) {
-			&::before {
-				left: 0;
-				right: 0;
-				top: 0;
-				height: rem(40px);
-				content: "";
-				display: block;
-				z-index: -1;
-				background-color: transparent;
-				transition: background-color 250ms linear;
+
+			&.fixed::after {
+				background-color: transparentize( $color__gray--light, 0.1 );
+				border-bottom: 1px solid transparentize( $color__gray, 0.1 );
+				bottom: auto;
+				position: fixed;
 			}
 
-			&.fixed {
-
-				.blog-header__sub-header__container {
-					@extend %max-width;
-					align-items: center;
-					display: flex;
-					height: rem(35px);
-					margin: {
-						right: 0 !important;
-						left: 0 !important;
-					}
-					position: fixed;
-					top: 0;
-					width: 100%;
-					z-index: 100;
-				}
-
-				&::before {
-					background-color: $color__gray--light;
-					position: fixed;
-					z-index: 99;
-				}
+			&.fixed .blog-header__sub-header__container {
+				bottom: auto;
+				height: rem(40px);
+				position: fixed;
+				top: 0;
+				width: 100%;
+				z-index: 15;
 			}
 		}
 
-		&.fixed {
-			.blog-header__sub-header__container {
-				width: 100%;
+		&__container {
+			@extend %max-width;
+			height: 100%;
+		}
+
+		&__inner {
+			@extend %max-width--padded;
+			display: flex;
+			height: 100%;
+			position: relative;
+			z-index: 20;
+
+			> * {
+				align-items: center;
+				display: flex;
+				flex: 1;
+				height: 100%;
 			}
 		}
 	}
 
 	&__search {
-		display: none;
+		justify-content: flex-end;
 	}
 }

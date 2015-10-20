@@ -1,6 +1,6 @@
-<section id="checker-block" class="checker-block checker-block--careers">
+<section id="checker-block" class="checker-block checker-block--careers scroll-effect effect-fade-in">
 
-	<div class="checker-block__inner">
+	<div class="checker-block__inner scroll-effect-target">
 
 		<div class="checker-block__block checker-block__block--01">
 			<img srcset="<?php echo esc_url( get_template_directory_uri() . '/images/checker-block-careers/checker-block-careers-01.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/checker-block-careers/checker-block-careers-01@2x.jpg' ); ?> 2x" alt=""/>

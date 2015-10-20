@@ -7,8 +7,7 @@ var rp3 = (function($) {
 
 	'use strict';
 
-	var //lastScroll = 0,
-		$body = $('body'),
+	var $body = $('body'),
 
 	/* ==========================================================================
 	Navigation Canvas Slide
@@ -202,14 +201,17 @@ var rp3 = (function($) {
 
 	blogSubHeader = function() {
 
-		if ( $('#blog-header__sub-header').size() > 0 ) {
+		var $blogSubHeader = $('#blog-header__sub-header'),
+			waypoint;
 
-			$('#blog-header__sub-header').waypoint({
+		if ( $blogSubHeader.size() > 0 ) {
+
+			waypoint = $blogSubHeader.waypoint({
 				handler: function( direction ) {
 					if ( 'down' === direction ) {
-						$('#blog-header__sub-header').addClass('fixed');
+						$blogSubHeader.addClass('fixed');
 					} else if ( 'up' === direction ) {
-						$('#blog-header__sub-header').removeClass('fixed');
+						$blogSubHeader.removeClass('fixed');
 					}
 				}
 			});
