@@ -1,5 +1,5 @@
 .arrow {
-	background-color: transparentize( $color__white, 0.5 );
+	background-color: transparentize( $color__blue, 1 );
 	border: 2px solid $color__blue;
 	box-sizing: content-box;
 	color: $color__blue;
@@ -10,26 +10,28 @@
 	}
 	height: rem(24px);
 	line-height: rem(24px) !important;
-	overflow: hidden;
 	padding: 0 1em;
 	position: relative;
 	text: {
 		decoration: none;
 		transform: uppercase;
 	}
-	transition: none;
 	white-space: nowrap;
 
-	@include modernizr( "cssclippathpolygon" ) {
-		border: none;
-		box-sizing: border-box;
-		transition: background-color 100ms linear,
-			color 100ms linear;
-	}
+	// @include modernizr( "cssclippathpolygon" ) {
+	// 	border: none;
+	// 	box-sizing: border-box;
+	// 	transition: background-color 100ms linear,
+	// 		color 100ms linear;
+	// }
 
 	@include hover-state {
 		background-color: $color__blue;
 		color: $color__white !important;
+
+		&::before {
+			background-color: $color__blue;
+		}
 	}
 
 	// shorten the arrow in awkward widths
@@ -50,53 +52,56 @@
 		height: 18px;
 		position: absolute;
 		top: 2px;
-		transition: none;
 		width: 18px;
 		z-index: -1;
 
-		@include modernizr( "cssclippathpolygon" ) {
-			background-color: $color__blue;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			top: 0;
-			z-index: 10;
-		}
+		// @include modernizr( "cssclippathpolygon" ) {
+		// 	background-color: $color__blue;
+		// 	bottom: 0;
+		// 	left: 0;
+		// 	right: 0;
+		// 	top: 0;
+		// 	z-index: 10;
+		// }
 	}
 
 	&--left {
+		background-color: mix( white, $color__gray--light, 50% );
 		border-left-width: 0;
+		margin-left: 15px;
 
 		&::before {
+			background-color: mix( white, $color__gray--light, 50% );
 			border-width: 0 0 2px 2px;
 			left: -10px;
 			transform: rotate( 45deg );
 		}
 
-		@include modernizr( "cssclippathpolygon" ) {
-			clip-path: polygon( 0 50%, 10px 0, 100% 0, 100% 100%, 10px 100% );
-			padding: 0 1em 0 1.5em;
+	// 	@include modernizr( "cssclippathpolygon" ) {
+	// 		clip-path: polygon( 0 50%, 10px 0, 100% 0, 100% 100%, 10px 100% );
+	// 		padding: 0 1em 0 1.5em;
 
-			&::before {
-				clip-path: polygon( 
-					0 50%,
-					10px 0,
-					100% 0,
-					100% 100%,
-					10px 100%,
-					0 50%,
-					2.5px 50%,
-					11px calc( 100% - 2px ),
-					calc( 100% - 2px ) calc( 100% - 2px ),
-					calc( 100% - 2px ) 2px,
-					11px 2px,
-					2.5px 50%
-				);
-			}
-		}
+	// 		&::before {
+	// 			clip-path: polygon(
+	// 				0 50%,
+	// 				10px 0,
+	// 				100% 0,
+	// 				100% 100%,
+	// 				10px 100%,
+	// 				0 50%,
+	// 				2.5px 50%,
+	// 				11px calc( 100% - 2px ),
+	// 				calc( 100% - 2px ) calc( 100% - 2px ),
+	// 				calc( 100% - 2px ) 2px,
+	// 				11px 2px,
+	// 				2.5px 50%
+	// 			);
+	// 		}
+	// 	}
 	}
 
 	&--right {
+		border-right-width: 0;
 
 		&::before {
 			border-width: 0 0 2px 2px;
@@ -104,26 +109,26 @@
 			transform: rotate( 225deg );
 		}
 
-		@include modernizr( "cssclippathpolygon" ) {
-			clip-path: polygon( 0 0, calc( 100% - 10px ) 0, 100% 50%, calc( 100% - 10px ) 100%, 0 100% );
-			padding: 0 1.5em 0 1em;
+	// 	@include modernizr( "cssclippathpolygon" ) {
+	// 		clip-path: polygon( 0 0, calc( 100% - 10px ) 0, 100% 50%, calc( 100% - 10px ) 100%, 0 100% );
+	// 		padding: 0 1.5em 0 1em;
 
-			&::before {
-				clip-path: polygon( 
-					0 0,
-					calc( 100% - 10px ) 0,
-					100% 50%,
-					calc( 100% - 11px ) 100%,
-					0 100%,
-					0 0,
-					2px 2px,
-					2px calc( 100% - 2px ),
-					calc( 100% - 11px ) calc( 100% - 2px ),
-					calc( 100% - 2.5px ) 50%,
-					calc( 100% - 11px ) 2px,
-					2px 2px
-				);
-			}
-		}
+	// 		&::before {
+	// 			clip-path: polygon(
+	// 				0 0,
+	// 				calc( 100% - 10px ) 0,
+	// 				100% 50%,
+	// 				calc( 100% - 11px ) 100%,
+	// 				0 100%,
+	// 				0 0,
+	// 				2px 2px,
+	// 				2px calc( 100% - 2px ),
+	// 				calc( 100% - 11px ) calc( 100% - 2px ),
+	// 				calc( 100% - 2.5px ) 50%,
+	// 				calc( 100% - 11px ) 2px,
+	// 				2px 2px
+	// 			);
+	// 		}
+	// 	}
 	}
 }
