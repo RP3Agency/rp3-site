@@ -27,16 +27,16 @@
 
 		<div class="blog-header__container">
 
-			<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" rel="home" class="block">
+			<div class="building-opportunity-container">
 
-				<div class="building-opportunity-container">
+				<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" rel="home" class="block">
 
 					<span class="building">Building</span>
 					<span class="opportunity">Opportunity</span>
 
-				</div>
+				</a>
 
-			</a>
+			</div>
 
 			<div class="blog-header__sub-header" id="blog-header__sub-header">
 
@@ -50,11 +50,11 @@
 
 						</div>
 
-						<div class="blog-header__search">
+						<!-- <div class="blog-header__search">
 
 							<a href="#!" class="search__trigger search__trigger--mobile">Search</a>
 
-						</div>
+						</div> -->
 
 					</div>
 					<!-- sub-header inner -->

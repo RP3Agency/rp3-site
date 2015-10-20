@@ -1,6 +1,5 @@
 .blog-header {
 	background: $color__gray--light url("../images/header-blog-background.jpg") repeat-y center center;
-	height: rem( 175px );
 
 	@include breakpoint( $hidpi ) {
 		background: {
@@ -16,20 +15,18 @@
 
 	&__container {
 		@extend %max-width;
-		height: 100%;
 		overflow: hidden;
 		position: relative;
 
 		/** Fade Out the Edges */
 		@extend %blog-header-fadeout;
 
-		a[rel="home"] {
-			height: 100%;
-			position: relative;
+		.building-opportunity-container {
+			text-align: center;
 
-			.building-opportunity-container {
+			a[rel="home"] {
 				align-items: center;
-				display: flex;
+				display: inline-flex;
 				font: {
 					size: rem(24px);
 					weight: 900;
@@ -122,10 +119,8 @@
    ========================================================================== */
 
 	&__sub-header {
-		bottom: 0;
 		box-sizing: content-box;
 		height: rem(40px);
-		position: absolute;
 		width: 100%;
 
 		&::after {
