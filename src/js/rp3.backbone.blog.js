@@ -131,6 +131,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 		$interstitialElement.html( template() );
 
 		$blog__backbone.append( $interstitialElement );
+
+		rp3.scrollMagic.init();
 	},
 
 	/**

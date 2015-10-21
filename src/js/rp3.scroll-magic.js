@@ -14,6 +14,9 @@ rp3.scrollMagic = (function($) {
 			var $scrollTrigger = $(this),
 				$scrollTarget = $scrollTrigger.find('.scroll-effect-target');
 
+			if( $scrollTarget.hasClass('effect-complete') ) {
+				return;
+			}
 			new ScrollScene({
 				triggerHook:		0.9,
 				triggerElement:		this,
@@ -22,7 +25,7 @@ rp3.scrollMagic = (function($) {
 			.setClassToggle( $scrollTarget, 'effect-complete' )
 			.addTo( controller );
 
-			$scrollTarget.addClass(' effect-active' );
+			$scrollTarget.addClass( 'effect-active' );
 		});
 	},
 
