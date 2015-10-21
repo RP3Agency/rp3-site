@@ -1,8 +1,11 @@
 .site-blog__interstitial {
-	background-color: $color__gray--light;
 
 	@include breakpoint( bp() ) {
 		margin-bottom: 3rem;
+	}
+
+	&__outer {
+		background-color: $color__gray--light;
 	}
 
 	&__container {
@@ -60,7 +63,7 @@
 		}
 	}
 
-	form { 
+	form {
 		display: table;
 		width: 100%;
 	}

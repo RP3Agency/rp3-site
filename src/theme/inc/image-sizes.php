@@ -93,6 +93,13 @@ function rp3_image_sizes() {
 
 	add_image_size( 'woolly_mammoth_large', 1200, 1200 * $ratio__woolly_mammoth, true );
 	add_image_size( 'woolly_mammoth_large_2x', 1200 * 2, 1200 * $ratio__woolly_mammoth * 2, true );
+
+
+	/* ==========================================================================
+	   In-Post Images
+	   ========================================================================== */
+
+	add_image_size( 'in_post', 720 );
 }
 
 add_action( 'after_setup_theme', 'rp3_image_sizes' );
@@ -102,10 +109,7 @@ add_action( 'after_setup_theme', 'rp3_image_sizes' );
 
 function rp3_custom_image_size( $sizes ) {
 	return array_merge( $sizes, array(
-		'eight_three_large' => '8:3',
-		'four_three_large' => '4:3',
-		'three_four_large' => '3:4',
-		'sixteen_nine_large' => '16:9'
+		'in_post' => 'In-Post Image'
 	) );
 }
 
