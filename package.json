@@ -18,7 +18,8 @@
   ],
   "copyright": "2014",
   "version": "1.0.0",
-  "license": "Private",
+  "license": "UNLICENSED",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@rp3agency.git.beanstalkapp.com:/rp3agency/rp3-rp31-website.git"
