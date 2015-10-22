@@ -101,8 +101,8 @@ gulp.task( 'scripts-modernizr', function() {
 		.pipe( shell(
 			'modernizr -c ' + __dirname + '/modernizr-config.json -d ' + src_js_vendor + '/modernizr.js',
 			{
-				errorMessage: "Something went wrong. Likely, you don't have modernizr installed on your system.\n    Try running \"npm install -g modernizr\" and then this task again. Have a nice day!",
-				quiet: true
+				// errorMessage: "Something went wrong. Likely, you don't have modernizr installed on your system.\n    Try running \"npm install -g modernizr\" and then this task again. Have a nice day!",
+				// quiet: true
 			}
 		) );
 });
@@ -121,7 +121,11 @@ gulp.task('scripts-plugins', function() {
 
 // Scripts task: Vendor
 gulp.task('scripts-vendor', [ 'scripts-modernizr' ], function() {
-	return gulp.src(src_js_vendor + '/*.js')
+	return gulp.src([
+			src_js_vendor + '/modernizr.js',
+			src_js_vendor + '/modernizr.clippath-polygon.js',
+			src_js_vendor + '/picturefill.js'
+		])
 		.pipe(concat(project + '-vendor.js'))
 		.pipe(gulp.dest(dest_theme_js))
 		.pipe(rename({suffix: '.min'}))
