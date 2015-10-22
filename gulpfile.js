@@ -226,9 +226,7 @@ gulp.task('watch', ['default'], function() {
 	// Watch builders/sass/*.scss files
 	// gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
 
-	livereload.listen({
-		quiet: true
-	});
+	livereload.listen();
 	gutil.log( 'LiveReload server activated' );
 });
 
