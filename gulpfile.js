@@ -98,7 +98,13 @@ gulp.task('scripts-custom', function() {
 // Scripts task: Modernizr
 gulp.task( 'scripts-modernizr', function() {
 	return gulp.src( '' )
-		.pipe( shell( 'modernizr -c ' + __dirname + '/modernizr-config.json -d ' + src_js_vendor + '/modernizr.js' ) );
+		.pipe( shell(
+			'modernizr -c ' + __dirname + '/modernizr-config.json -d ' + src_js_vendor + '/modernizr.js',
+			{
+				errorMessage: "Something went wrong. Likely, you don't have modernizr installed on your system.\n    Try running \"npm install -g modernizr\" and then this task again. Have a nice day!",
+				quiet: true
+			}
+		) );
 });
 
 // Scripts task: Plugins
