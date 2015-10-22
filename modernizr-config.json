@@ -1,6 +1,7 @@
 {
 	"options": [
-		"setClasses"
+		"setClasses",
+		"prefixes"
 	],
 	"feature-detects": [
 		"test/video/autoplay"
