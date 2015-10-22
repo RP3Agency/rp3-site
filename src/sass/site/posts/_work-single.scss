@@ -191,15 +191,11 @@
 		}
 
 		&__item {
-			margin-right: 2em;
+			margin-right: gutter();
 			min-width: ( 320px * 0.8 );
 			overflow: hidden;
 
 			@include breakpoint( bp() ) {
-				margin: {
-					right: gutter();
-					bottom: 0;
-				}
 				min-width: 0;
 				width: span( 8 of 24 );
 
