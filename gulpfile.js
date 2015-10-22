@@ -18,6 +18,7 @@ var gulp			= require('gulp'),
 	rename			= require('gulp-rename'),
 	del				= require('del'),
 	livereload		= require('gulp-livereload'),
+	shell			= require('gulp-shell'),
 
 	// Notifications and error handling
 	gutil			= require('gulp-util');
@@ -94,6 +95,12 @@ gulp.task('scripts-custom', function() {
 		.pipe( livereload() );
 });
 
+// Scripts task: Modernizr
+gulp.task( 'scripts-modernizr', function() {
+	return gulp.src( '' )
+		.pipe( shell( 'modernizr -c ' + __dirname + '/modernizr-config.json -d ' + src_js_vendor + '/modernizr.js' ) );
+});
+
 // Scripts task: Plugins
 gulp.task('scripts-plugins', function() {
 	return gulp.src(src_js_plugins + '/*.js')
@@ -107,7 +114,7 @@ gulp.task('scripts-plugins', function() {
 });
 
 // Scripts task: Vendor
-gulp.task('scripts-vendor', function() {
+gulp.task('scripts-vendor', [ 'scripts-modernizr' ], function() {
 	return gulp.src(src_js_vendor + '/*.js')
 		.pipe(concat(project + '-vendor.js'))
 		.pipe(gulp.dest(dest_theme_js))
@@ -209,7 +216,9 @@ gulp.task('watch', ['default'], function() {
 	// Watch builders/sass/*.scss files
 	// gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
 
-	livereload.listen();
+	livereload.listen({
+		quiet: true
+	});
 	gutil.log( 'LiveReload server activated' );
 });
 

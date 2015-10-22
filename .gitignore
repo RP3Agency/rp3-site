@@ -16,3 +16,4 @@ builders
 !src/builders
 rp3config.json
 bower_components
+src/js/vendor/modernizr.js
