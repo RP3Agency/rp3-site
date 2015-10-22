@@ -185,22 +185,18 @@
 		}
 
 		&__content {
-
-			@include breakpoint( bp() ) {
-				display: flex;
-				justify-content: flex-start;
-			}
+			display: flex;
+			justify-content: flex-start;
+			overflow-x: auto;
 		}
 
 		&__item {
+			margin-right: gutter();
+			min-width: ( 320px * 0.8 );
 			overflow: hidden;
-			margin-bottom: 2em;
 
 			@include breakpoint( bp() ) {
-				margin: {
-					right: gutter();
-					bottom: 0;
-				}
+				min-width: 0;
 				width: span( 8 of 24 );
 
 				&:last-of-type {
@@ -220,12 +216,8 @@
 			&::before {
 				content: "";
 				display: block;
-				padding-top: percentage( 225px / 1200px ); // 16:3
+				padding-top: percentage( 3 / 8 ); // 8:3
 				width: 100%;
-
-				@include breakpoint( bp() ) {
-					padding-top: percentage( 240px / 320px ); // 4:3
-				}
 			}
 
 			&__content {
