@@ -40,7 +40,7 @@
 				opacity: 1;
 			}
 
-			html.videoautoplay & {
+			@include modernizr( "videoautoplay" ) {
 				display: block;
 			}
 		}

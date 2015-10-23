@@ -182,4 +182,8 @@
 	&__search {
 		justify-content: flex-end;
 	}
+
+	.search__trigger {
+		@extend %button--unstyled;
+	}
 }

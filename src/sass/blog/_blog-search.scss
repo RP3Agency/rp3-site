@@ -1,0 +1,120 @@
+.blog-search {
+	background-color: transparentize( $color__white, 0.05 );
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	position: fixed;
+	right: 0;
+	transition: opacity 200ms;
+	top: 100%;
+	visibility: hidden;
+	z-index: 1000;
+
+	&.open {
+		opacity: 1;
+		top: 0;
+		visibility: visible;
+	}
+
+	&.close {
+		opacity: 0;
+		top: 0;
+		visibility: visible;
+	}
+
+	&__container {
+		@extend %max-width--padded;
+		padding: {
+			top: 2rem;
+			bottom: 2rem;
+		}
+	}
+
+	/** Close Button */
+
+	&__close {
+		@extend %genericon;
+		@extend %genericon-close;
+		@extend %button--unstyled;
+		height: 32px;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		text-indent: 100%;
+		top: 0;
+		width: 32px;
+
+		&::before {
+			bottom: 0;
+			display: block;
+			left: 0;
+			line-height: 32px;
+			position: absolute;
+			right: 0;
+			text: {
+				align: center;
+				indent: 0;
+			}
+			top: 0;
+		}
+	}
+
+	/** Form */
+
+	form {
+		margin: {
+			top: 2rem;
+			bottom: 2rem;
+		}
+
+		.screen-reader-text {
+			@extend %assistive;
+		}
+
+		label {
+			display: flex;
+			width: 100%;
+
+			&::before {
+				@extend %genericon;
+				@extend %genericon-search;
+				color: $color__blue;
+				flex-grow: 0;
+				font-size: rem(32px);
+				height: auto;
+				line-height: ( 35 / 32 );
+				width: auto;
+			}
+		}
+
+		.search-field {
+			border-width: 0 0 1px 0;
+			border-color: $color__blue;
+			flex-grow: 1;
+		}
+	}
+
+	/** Suggested Search */
+
+	&__suggestions {
+		@extend %roboto-medium;
+		font-size: rem(12px);
+		text-transform: uppercase;
+
+		&__header {
+			color: mix( black, $color__gray, 50% );
+			margin-bottom: 1em;
+		}
+
+		&__list {
+
+			li {
+				margin-bottom: 1em;
+
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

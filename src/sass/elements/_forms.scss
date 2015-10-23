@@ -67,3 +67,20 @@ label {
 	}
 	text-transform: uppercase;
 }
+
+/** An unstyled button, to replace instances of <a href="#!"></a> */
+
+%button--unstyled {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	background-color: transparent;
+	border: none;
+	padding: 0;
+
+	@include hover-state {
+		background-color: transparent;
+		color: $color__blue;
+	}
+}

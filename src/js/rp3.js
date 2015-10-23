@@ -218,6 +218,41 @@ var rp3 = (function($) {
 		}
 	},
 
+	/* ==========================================================================
+	   Toggle Search Screen
+	========================================================================== */
+
+	toggleSearch = function() {
+
+		var overlay				= $('#blog-search');
+
+		if ( overlay.hasClass( 'open' ) ) {
+			overlay.removeClass( 'open' );
+			overlay.addClass( 'close' );
+
+			if ( Modernizr.csstransitions ) {
+				overlay.one( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
+					overlay.removeClass( 'close' );
+				});
+			}
+		} else if ( ! overlay.hasClass( 'close' ) ) {
+			overlay.addClass( 'open' );
+		}
+	},
+
+	toggleSearchControl = function() {
+
+		var triggerBttn			= $('#search__trigger--mobile'),
+			closeBttn			= $('#blog-search__close');
+
+		triggerBttn.on( 'click', function() {
+			toggleSearch()
+		});
+		closeBttn.on( 'click', function() {
+			toggleSearch()
+		});
+	},
+
 	init = function() {
 
 		navigationCanvasSlide();
@@ -227,6 +262,7 @@ var rp3 = (function($) {
 		trackBlogRelated();
 		campaignMonitor();
 		blogSubHeader();
+		toggleSearchControl();
 
 		if ( $body.hasClass( 'home' ) ) {
 			frontPageVideoAudio();
