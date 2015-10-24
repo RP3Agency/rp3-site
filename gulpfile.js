@@ -79,6 +79,7 @@ gulp.task('scripts-custom', function() {
 			src_js + '/rp3.js',
 			src_js + '/rp3.backbone.js',
 			src_js + '/rp3.backbone.*.js',
+			src_js + '/rp3.blog-search.js',
 			src_js + '/rp3.google-maps.js',
 			src_js + '/rp3.scroll-magic.js',
 			src_js + '/rp3.skip-link-focus-fix.js',
@@ -99,11 +100,7 @@ gulp.task('scripts-custom', function() {
 gulp.task( 'scripts-modernizr', function() {
 	return gulp.src( '' )
 		.pipe( shell(
-			'modernizr -c ' + __dirname + '/modernizr-config.json -d ' + src_js_vendor + '/modernizr.js',
-			{
-				// errorMessage: "Something went wrong. Likely, you don't have modernizr installed on your system.\n    Try running \"npm install -g modernizr\" and then this task again. Have a nice day!",
-				// quiet: true
-			}
+			'modernizr -c ' + __dirname + '/modernizr-config.json -d ' + src_js_vendor + '/modernizr.js'
 		) );
 });
 
