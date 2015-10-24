@@ -88,6 +88,10 @@
 		}
 
 		.search-field {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border-radius: 0;
 			border-width: 0 0 1px 0;
 			border-color: $color__blue;
 			flex-grow: 1;
