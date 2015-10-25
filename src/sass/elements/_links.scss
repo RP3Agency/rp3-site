@@ -35,9 +35,7 @@ a {
 	color: $color__link;
 	text-decoration: underline;
 
-	a:hover &,
-	a:active &,
-	a:focus & {
+	@include hover-state {
 		color: $color__link--hover;
 	}
 }
