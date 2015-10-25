@@ -30,39 +30,45 @@ $search_suggestions = new WP_Query( $args );
 
 <div id="blog-search" class="blog-search">
 
-	<div class="blog-search__container">
+	<div class="blog-search__wrapper">
 
-		<button id="blog-search__close" class="blog-search__close">Close</button>
+		<div class="blog-search__container">
 
-		<?php get_search_form( true ); ?>
+			<button id="blog-search__close" class="blog-search__close">Close</button>
 
-		<aside id="blog-search__suggestions" class="blog-search__suggestions">
+			<?php get_search_form( true ); ?>
 
-			<h2 class="blog-search__header">Lorem ipsum dolor sit amet:</h2>
+			<aside id="blog-search__suggestions" class="blog-search__suggestions">
 
-			<?php if ( $search_suggestions->have_posts() ) : ?>
+				<h2 class="blog-search__header">Lorem ipsum dolor sit amet:</h2>
 
-				<ul class="blog-search__list">
+				<?php if ( $search_suggestions->have_posts() ) : ?>
 
-					<?php while ( $search_suggestions->have_posts() ) : $search_suggestions->the_post(); ?>
+					<ul class="blog-search__list">
 
-						<li class="blog-search__suggestions__title"><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></li>
+						<?php while ( $search_suggestions->have_posts() ) : $search_suggestions->the_post(); ?>
 
-					<?php endwhile; ?>
+							<li class="blog-search__suggestions__title"><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></li>
 
-				</ul>
+						<?php endwhile; ?>
 
-			<?php endif; wp_reset_query(); ?>
+					</ul>
 
-		</aside>
+				<?php endif; wp_reset_query(); ?>
 
-		<div id="blog-search__results" class="blog-search__results">
+			</aside>
 
-			<h2 class="blog-search__header">Search results:</h2>
+			<div id="blog-search__results" class="blog-search__results">
+
+				<h2 class="blog-search__header">Search results:</h2>
+
+			</div>
 
 		</div>
+		<!-- // container -->
 
 	</div>
+	<!-- // wrapper -->
 
 </div>
 
@@ -72,25 +78,32 @@ $search_suggestions = new WP_Query( $args );
 
 <% _.each( posts, function( post ) { %>
 
-	<li><a href="<%= post.permalink %>" class="block">
-		<span class="link"><%= post.title %></span><br/>
-		By
+	<li><a href="<%= post.link %>" class="block">
 
-		<% if ( 1 === post.authors.length ) { %>
+		<div class="blog-search__results__photo">
+			<img src="<%= post.thumbnail %>">
+		</div>
 
-			<%= post.authors[0].display_name %>
+		<div class="blog-search__results__details">
+			<span class="link"><%= post.title %></span><br/>
+			By
 
-		<% } else { %>
+			<% if ( 1 === post.authors.length ) { %>
 
-			<% var names = _.pluck( post.authors, 'display_name' ); %>
+				<%= post.authors[0].display_name %>
 
-			<% var andName = names.pop(); %>
+			<% } else { %>
 
-			<%= names.join(', ') %> and <%= andName %>
+				<% var names = _.pluck( post.authors, 'display_name' ); %>
 
-		<% } %>
+				<% var andName = names.pop(); %>
 
-		on <%= post.longDate %>
+				<%= names.join(', ') %> and <%= andName %>
+
+			<% } %>
+
+			on <%= post.longDate %>
+		</div>
 	</a></li>
 
 <% }) %>
