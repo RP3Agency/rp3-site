@@ -100,7 +100,7 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 		var $postElement;
 
-		$postElement = $('<div>').addClass('hello-world');
+		$postElement = $('<div>');
 		postView.setElement( $postElement );
 
 		$searchForm.on( 'submit', function(e) {
@@ -111,7 +111,8 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 			filters = {
 				'filter[s]'					: $searchInput.val(),
-				'filter[posts_per_page]'	: -1
+				'filter[posts_per_page]'	: -1,
+				'filter[post_type]'			: 'post'
 			};
 
 			$searchSuggestions.fadeOut( 200, function() {
