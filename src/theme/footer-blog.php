@@ -36,13 +36,13 @@ $search_suggestions = new WP_Query( $args );
 
 		<?php get_search_form( true ); ?>
 
-		<aside class="blog-search__suggestions">
+		<aside id="blog-search__suggestions" class="blog-search__suggestions">
 
-			<h2 class="blog-search__suggestions__header">Some recent articles:</h2>
+			<h2 class="blog-search__header">Lorem ipsum dolor sit amet:</h2>
 
 			<?php if ( $search_suggestions->have_posts() ) : ?>
 
-				<ul class="blog-search__suggestions__list">
+				<ul class="blog-search__list">
 
 					<?php while ( $search_suggestions->have_posts() ) : $search_suggestions->the_post(); ?>
 
@@ -56,9 +56,48 @@ $search_suggestions = new WP_Query( $args );
 
 		</aside>
 
+		<div id="blog-search__results" class="blog-search__results">
+
+			<h2 class="blog-search__header">Search results:</h2>
+
+		</div>
+
 	</div>
 
 </div>
+
+<script type="text/template" id="blog-search__results__template">
+
+<ul class="blog-search__list">
+
+<% _.each( posts, function( post ) { %>
+
+	<li><a href="<%= post.permalink %>" class="block">
+		<span class="link"><%= post.title %></span><br/>
+		By
+
+		<% if ( 1 === post.authors.length ) { %>
+
+			<%= post.authors[0].display_name %>
+
+		<% } else { %>
+
+			<% var names = _.pluck( post.authors, 'display_name' ); %>
+
+			<% var andName = names.pop(); %>
+
+			<%= names.join(', ') %> and <%= andName %>
+
+		<% } %>
+
+		on <%= post.longDate %>
+	</a></li>
+
+<% }) %>
+
+</ul>
+
+</script>
 
 <!-- // Blog Search -->
 
