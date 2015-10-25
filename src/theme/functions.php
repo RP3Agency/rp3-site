@@ -305,32 +305,6 @@ function rp3_use_alternate_featured_image( $sub_field ) {
 $withcomments = 1;
 
 
-/** Expand our available fields via the WP API */
-
-function rp3_json_api_prepare_post( $post_response, $post, $context ) {
-
-	// I'm hoping this could be useful sometime soon...
-
-	// var_dump( $post );
-
-	// $title        = get_field( "title", $post['ID'] );
-	// $website     = get_field( "website", $post['ID'] );
-	// $display_url = wawf_get_display_url( $website );
-	// $phone       = get_field( "phone", $post['ID'] );
-	// $logo        = esc_url( wp_get_attachment_url( get_field( "logo", $post['ID'] ) ) );
-	// $current     = get_field( "current", $post['ID'] );
-
-	// $post_response['title'] = $desc;
-	// $post_response['website']                  = esc_url( $website );
-	// $post_response['display_url']              = $display_url;
-	// $post_response['phone']                    = $phone;
-	// $post_response['logo']                     = $logo;
-
-	return $post_response;
-}
-// add_filter( 'json_prepare_post', 'rp3_json_api_prepare_post', 10, 3 );
-
-
 /** Give us more parameters for our calls to Vimeo from the work items pages */
 /** See: http://tinygod.pt/vimeo-embedding-on-wordpress/ */
 
@@ -358,19 +332,3 @@ function add_player_id_to_iframe( $html, $url, $args ) {
 	}
 	return $html;
 }
-
-/** Limit Campaign Monitor to Pull 1 Post Only */
-/** https://www.campaignmonitor.com/forums/topic/7607/rss-no-of-posts/ */
-function campaign_rss_limit( $limit, $query ) {
-    if( $query->is_feed() && $_GET['rss_limit'] ){
-        $paged =  $query->get('paged') ? (int) $query->get('paged') : 1;
-        $per_page = $_GET['rss_limit'];
-        settype($per_page, 'integer');
-        $page_start = ($paged - 1) * $per_page;
-
-        return "LIMIT $page_start, $per_page";
-    }
-    return $limit;
-}
-
-add_action( 'post_limits', 'campaign_rss_limit', 10, 2 );
