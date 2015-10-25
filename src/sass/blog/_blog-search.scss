@@ -1,6 +1,7 @@
 .blog-search {
 	background-color: transparentize( $color__white, 0.05 );
 	bottom: 0;
+	color: mix( black, $color__gray, 50% );
 	left: 0;
 	opacity: 0;
 	position: fixed;
@@ -27,6 +28,24 @@
 		padding: {
 			top: 2rem;
 			bottom: 2rem;
+		}
+	}
+
+	&__header {
+		@extend %roboto-medium;
+		font-size: rem(12px);
+		text-transform: uppercase;
+		margin-bottom: 1em;
+	}
+
+	&__list {
+
+		li {
+			margin-bottom: 1em;
+
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 
@@ -104,21 +123,25 @@
 		@extend %roboto-medium;
 		font-size: rem(12px);
 		text-transform: uppercase;
+	}
 
-		&__header {
-			color: mix( black, $color__gray, 50% );
-			margin-bottom: 1em;
+	/** Search Results */
+
+	&__results {
+		@extend %roboto-medium;
+		display: none;
+		font-size: rem(12px);
+		opacity: 0;
+		text-transform: uppercase;
+		transition: opacity 200ms;
+
+		&.open {
+			display: block;
+			opacity: 1;
 		}
 
-		&__list {
-
-			li {
-				margin-bottom: 1em;
-
-				a {
-					text-decoration: none;
-				}
-			}
+		.link {
+			text-decoration: none;
 		}
 	}
 }
