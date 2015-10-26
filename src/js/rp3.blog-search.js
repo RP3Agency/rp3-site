@@ -68,6 +68,7 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 			$body		= $('body');
 
 		if ( $overlay.hasClass( 'open' ) ) {
+			$body.removeClass( 'search-open' );
 			$overlay.removeClass( 'open' );
 			$overlay.addClass( 'close' );
 
