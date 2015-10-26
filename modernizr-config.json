@@ -6,6 +6,7 @@
 	],
 	"feature-detects": [
 		"test/video/autoplay",
-		"css/transitions"
+		"css/transitions",
+		"touchevents"
 	]
 }

@@ -81,7 +81,9 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 			$overlay.addClass( 'open' );
 			$body.addClass( 'search-open' );
 
-			$searchInput.trigger( 'focus' );
+			if ( ! Modernizr.touchevents ) {
+				$searchInput.trigger( 'focus' );
+			}
 		}
 	},
 
