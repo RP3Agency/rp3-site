@@ -130,7 +130,7 @@ var rp3 = (function($) {
 			$iframeParent,
 			videoContainer = 'video-container';
 
-		$iframes.each( function(i) {
+		$iframes.each( function() {
 
 			$iframeParent = $(this).parent();
 
