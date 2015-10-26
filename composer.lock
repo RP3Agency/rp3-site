@@ -539,15 +539,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.4.2",
+            "version": "2.4.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.4.2"
+                "reference": "tags/2.4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.4.3.zip",
                 "reference": null,
                 "shasum": null
             },
