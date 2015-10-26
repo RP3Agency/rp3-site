@@ -64,20 +64,22 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 	toggleSearch = function() {
 
-		var overlay				= $('#blog-search');
+		var $overlay	= $('#blog-search'),
+			$body		= $('body');
 
-		if ( overlay.hasClass( 'open' ) ) {
-			overlay.removeClass( 'open' );
-			overlay.addClass( 'close' );
+		if ( $overlay.hasClass( 'open' ) ) {
+			$overlay.removeClass( 'open' );
+			$overlay.addClass( 'close' );
 
 			if ( Modernizr.csstransitions ) {
-				overlay.one( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
-					overlay.removeClass( 'close' );
+				$overlay.one( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
+					$overlay.removeClass( 'close' );
 				});
 			}
 
-		} else if ( ! overlay.hasClass( 'close' ) ) {
-			overlay.addClass( 'open' );
+		} else if ( ! $overlay.hasClass( 'close' ) ) {
+			$overlay.addClass( 'open' );
+			$body.addClass( 'search-open' );
 
 			$searchInput.trigger( 'focus' );
 		}

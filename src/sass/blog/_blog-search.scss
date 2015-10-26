@@ -4,6 +4,7 @@
 	color: mix( black, $color__gray, 50% );
 	left: 0;
 	opacity: 0;
+	overflow-y: auto;
 	position: fixed;
 	right: 0;
 	transition: opacity 200ms;
@@ -33,6 +34,7 @@
 			top: 2rem;
 			bottom: 2rem;
 		}
+		position: relative;
 	}
 
 	&__header {
@@ -62,9 +64,9 @@
 		height: 32px;
 		overflow: hidden;
 		position: absolute;
-		right: 0;
+		right: 2.08333%;
 		text-indent: 100%;
-		top: 0;
+		top: 2rem;
 		width: 32px;
 
 		&::before {
@@ -178,4 +180,9 @@
 			flex-grow: 1;
 		}
 	}
+}
+
+/** Prevent the <body> from scrolling when search is open */
+body.search-open {
+	overflow: hidden;
 }

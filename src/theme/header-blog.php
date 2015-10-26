@@ -50,12 +50,11 @@
 
 						</div>
 
-						<?php /* <div class="blog-header__search">
+						<div class="blog-header__search">
 
 							<button id="search__trigger--mobile" class="search__trigger search__trigger--mobile">Search</button>
-							<a href="#!" class="search__trigger search__trigger- -mobile">Search</a>
 
-						</div> */ ?>
+						</div>
 
 					</div>
 					<!-- sub-header inner -->
