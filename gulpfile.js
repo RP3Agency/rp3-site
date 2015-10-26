@@ -19,6 +19,7 @@ var gulp			= require('gulp'),
 	del				= require('del'),
 	livereload		= require('gulp-livereload'),
 	shell			= require('gulp-shell'),
+	run				= require('gulp-run'),
 
 	// Notifications and error handling
 	gutil			= require('gulp-util');
@@ -69,6 +70,14 @@ gulp.task('styles', function() {
 		.pipe( minifycss() )
 		.pipe( gulp.dest( dest_theme_css ) )
 		.pipe( livereload() );
+});
+
+gulp.task('sassc', function() {
+	return gulp.src( src_sass + '/rp3.scss', { cwd: src_sass } )
+		.pipe( run( '/usr/local/bin/sassc -s', {verbosity: 1} ) )
+		.on( 'error', function( err ) { this.end(); } )
+		.pipe( rename( function( path ) { path.extname = '.css'; } ) )
+		.pipe( gulp.dest( dest_theme_css ) );
 });
 
 
