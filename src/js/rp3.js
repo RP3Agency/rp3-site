@@ -130,7 +130,7 @@ var rp3 = (function($) {
 			$iframeParent,
 			videoContainer = 'video-container';
 
-		$iframes.each( function() {
+		$iframes.each( function(i) {
 
 			$iframeParent = $(this).parent();
 
@@ -227,13 +227,10 @@ var rp3 = (function($) {
 		trackBlogRelated();
 		campaignMonitor();
 		blogSubHeader();
+		fixBlogVideoAspectRatios();
 
 		if ( $body.hasClass( 'home' ) ) {
 			frontPageVideoAudio();
-		}
-
-		if ( $body.hasClass( 'blog' ) ) {
-			fixBlogVideoAspectRatios();
 		}
 	};
 
