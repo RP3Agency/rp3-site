@@ -40,7 +40,7 @@ $search_suggestions = new WP_Query( $args );
 
 			<aside id="blog-search__suggestions" class="blog-search__suggestions">
 
-				<h2 class="blog-search__header">Lorem ipsum dolor sit amet:</h2>
+				<h2 class="blog-search__header">Featured Opportunities:</h2>
 
 				<?php if ( $search_suggestions->have_posts() ) : ?>
 
@@ -71,7 +71,7 @@ $search_suggestions = new WP_Query( $args );
 
 			<div id="blog-search__results" class="blog-search__results">
 
-				<h2 class="blog-search__header">Search results:</h2>
+				<h2 class="blog-search__header">Found Opportunities:</h2>
 
 			</div>
 
