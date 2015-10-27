@@ -58,11 +58,24 @@
 
 			a.block {
 				display: flex;
+				justify-content: space-between;
 				text-decoration: none;
 
 				.link {
 					text-decoration: none;
 				}
+			}
+
+			.blog-search__photo {
+				width: span( 4 of 12 );
+
+				img {
+					display: block;
+				}
+			}
+
+			.blog-search__details {
+				width: span( 8 of 12 );
 			}
 		}
 	}
@@ -133,6 +146,7 @@
 			border-width: 0 0 1px 0;
 			border-color: $color__blue;
 			flex-grow: 1;
+			font-size: 1rem;
 		}
 	}
 
@@ -160,19 +174,6 @@
 			display: block;
 			opacity: 1;
 		}
-
-		&__photo {
-			margin-right: percentage( 10px / 600px );
-			max-width: 100px;
-
-			img {
-				display: block;
-			}
-		}
-
-		&__details {
-			flex-grow: 1;
-		}
 	}
 
 	/** No results */
@@ -193,6 +194,7 @@
 /** Prevent the <body> from scrolling when search is open */
 body.search-open {
 	overflow: hidden;
+	position: fixed;
 }
 
 /** If we have a saved search state, hide the suggestions */

@@ -118,6 +118,16 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 			if ( ! Modernizr.touchevents ) {
 				$searchInput.trigger( 'focus' );
+			} else {
+				var $viewportMeta = $('meta[name="viewport"]');
+
+				$searchInput.on( 'focus', function() {
+					$viewportMeta.attr( 'content', 'width=device-width,initial-scale=1,maximum-scale=1' );
+				});
+
+				$searchInput.on( 'blur', function() {
+					$viewportMeta.attr( 'content', 'width=device-width,initial-scale=1,maximum-scale=10' );
+				});
 			}
 		}
 	},

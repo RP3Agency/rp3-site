@@ -38,11 +38,11 @@ $search_suggestions = new WP_Query( $args );
 
 							<li><a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
 
-								<div class="blog-search__results__photo">
+								<div class="blog-search__photo">
 									<?php echo get_the_post_thumbnail( $post->ID, 'four_three_thumb' ); ?>
 								</div>
 
-								<div class="blog-search__results__details">
+								<div class="blog-search__details">
 									<span class="link"><?php the_title(); ?></span><br/>
 									<?php echo rp3_byline(); ?>
 								</div>
@@ -85,11 +85,11 @@ $search_suggestions = new WP_Query( $args );
 
 	<li><a href="<%= post.link %>" class="block">
 
-		<div class="blog-search__results__photo">
+		<div class="blog-search__photo">
 			<img src="<%= post.four_three_thumb %>">
 		</div>
 
-		<div class="blog-search__results__details">
+		<div class="blog-search__details">
 			<span class="link"><%= post.title %></span><br/>
 			By
 
