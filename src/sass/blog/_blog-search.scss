@@ -47,10 +47,22 @@
 	&__list {
 
 		li {
+			border-bottom: 1px solid $color__gray;
 			margin-bottom: 1em;
+			padding-bottom: 1em;
 
-			a {
+			&:last-child {
+				border-bottom: none;
+				padding-bottom: 0;
+			}
+
+			a.block {
+				display: flex;
 				text-decoration: none;
+
+				.link {
+					text-decoration: none;
+				}
 			}
 		}
 	}
@@ -147,24 +159,6 @@
 		&.open {
 			display: block;
 			opacity: 1;
-		}
-
-		.link {
-			text-decoration: none;
-		}
-
-		li {
-			border-bottom: 1px solid $color__gray;
-			padding-bottom: 1em;
-
-			&:last-child {
-				border-bottom: none;
-				padding-bottom: 0;
-			}
-		}
-
-		a.block {
-			display: flex;
 		}
 
 		&__photo {

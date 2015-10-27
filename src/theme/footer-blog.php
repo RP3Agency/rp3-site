@@ -48,7 +48,17 @@ $search_suggestions = new WP_Query( $args );
 
 						<?php while ( $search_suggestions->have_posts() ) : $search_suggestions->the_post(); ?>
 
-							<li class="blog-search__suggestions__title"><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></li>
+							<li><a href="<?php echo esc_url( get_the_permalink() ); ?>" class="block">
+
+								<div class="blog-search__results__photo">
+									<?php echo get_the_post_thumbnail( $post->ID, 'four_three_thumb' ); ?>
+								</div>
+
+								<div class="blog-search__results__details">
+									<span class="link"><?php the_title(); ?></span><br/>
+								</div>
+
+							</a></li>
 
 						<?php endwhile; ?>
 
@@ -81,7 +91,7 @@ $search_suggestions = new WP_Query( $args );
 	<li><a href="<%= post.link %>" class="block">
 
 		<div class="blog-search__results__photo">
-			<img src="<%= post.thumbnail %>">
+			<img src="<%= post.four_three_thumb %>">
 		</div>
 
 		<div class="blog-search__results__details">
