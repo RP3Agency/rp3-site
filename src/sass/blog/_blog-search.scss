@@ -59,7 +59,6 @@
 
 			a.block {
 				display: flex;
-				justify-content: space-between;
 				text-decoration: none;
 
 				.link {
@@ -68,10 +67,13 @@
 			}
 
 			.blog-search__photo {
+				flex-grow: 0;
+				margin-right: gutter();
 				width: span( 4 of 12 );
 
 				img {
 					display: block;
+					width: 100%;
 				}
 			}
 
