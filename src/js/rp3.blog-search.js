@@ -7,14 +7,16 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 	var
 
-	$body = $('body'),
-	$searchSuggestions = $('#blog-search__suggestions'),
-	$searchForm = $('#search-form'),
-	$searchResults = $('#blog-search__results'),
-	$searchResultsTemplate = $('#blog-search__results__template'),
-	$searchInput = $('input[name="s"]'),
+	$body					= $('body'),
+	$searchSuggestions		= $('#blog-search__suggestions'),
+	$searchForm				= $('#search-form'),
+	$searchResults			= $('#blog-search__results'),
+	$searchResultsTemplate	= $('#blog-search__results__template'),
+	$noResults				= $('#blog-search__no-results' ),
+	$searchInput			= $('input[name="s"]'),
 	filters,
 	searchQuery,
+	$postElement,
 
 	/* ==========================================================================
 	   Backbone Stuff
@@ -41,6 +43,14 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 				success: function( posts ) {
 
+					if ( 0 === posts.length ) {
+						$searchResults.removeClass( 'open' );
+						$noResults.addClass( 'open' );
+						return;
+					}
+
+					$noResults.removeClass( 'open' );
+
 					/** Store the query string by appending it to the end of the link */
 
 					_.each( posts.models, function( post ) {
@@ -50,6 +60,8 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 					var template = _.template( $searchResultsTemplate.html() );
 
 					that.$el.html( template( { posts: posts.toJSON() } ) );
+
+					$searchResults.append( $postElement ).addClass( 'open' );
 				},
 
 				error: function() {
@@ -125,8 +137,6 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 	searchControl = function() {
 
-		var $postElement;
-
 		$postElement = $('<div>');
 		postView.setElement( $postElement );
 
@@ -149,8 +159,6 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 				$(this).remove();
 
 				postView.render( filters, searchQuery );
-
-				$searchResults.append( $postElement ).addClass( 'open' );
 			});
 
 			// Add the search query to our location bar

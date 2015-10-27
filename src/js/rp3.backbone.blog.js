@@ -7,7 +7,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 	/** Do something awesome */
 
-	var exclude, industries,
+	var exclude, industries, searchQuery,
 
 	$blog__backbone	= $('#blog__backbone'),
 	$blog__loading_indicator = $('#blog__loading-indicator'),
@@ -70,8 +70,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 								history.pushState( null, null, prev_link );
 							} else {
 
-								var searchQuery = Backbone.history.getFragment(),
-									permalink = $article.data( 'permalink' );
+								var permalink = $article.data( 'permalink' );
 
 								if ( 0 < searchQuery.length ) {
 									permalink = permalink + '#/' + searchQuery;
@@ -184,28 +183,49 @@ rp3.backbone.blog = (function($, _, Backbone) {
 				$postElement = $('<div>').addClass('blog__backbone__post');
 				postView.setElement( $postElement );
 
-				// Set the filters for this query
-				var filters = {
-					'filter[posts_per_page]'	: 1,
-					'filter[post__not_in]'		: exclude,
-				};
+				// Set the filters for this query, based on whether or not this was a search
 
-				// Collection for taxonomy selectors
-				var taxonomy = [];
+				searchQuery = Backbone.history.getFragment();
 
-				// Industry taxonomy
-				if( ! _.isEmpty( industries ) ) {
-					taxonomy.push({
-						'taxonomy':	'rp3_tax_industries',
-						'field':	'term_id',
-						'terms':	industries,
-					});
+				if ( 0 < searchQuery.length ) {
+					searchQuery = decodeURIComponent( searchQuery.substring( searchQuery.indexOf( '/' ) + 1 ) );
 				}
 
-				// If we have taxonomy selectors, set relationshop and assign to filters
-				if( 0 < taxonomy.length ) {
-					filters['filter[tax_query]'] = taxonomy;
-					filters['filter[tax_query][relation]'] = 'AND';
+				var filters;
+
+				if ( 0 < searchQuery.length ) {
+
+					filters = {
+						'filter[posts_per_page]'	: 1,
+						'filter[s]'					: searchQuery,
+						'filter[post_type]'			: 'post',
+						'filter[post__not_in]'			: exclude
+					}
+
+				} else {
+
+					filters = {
+						'filter[posts_per_page]'	: 1,
+						'filter[post__not_in]'		: exclude,
+					};
+
+					// Collection for taxonomy selectors
+					var taxonomy = [];
+
+					// Industry taxonomy
+					if( ! _.isEmpty( industries ) ) {
+						taxonomy.push({
+							'taxonomy':	'rp3_tax_industries',
+							'field':	'term_id',
+							'terms':	industries,
+						});
+					}
+
+					// If we have taxonomy selectors, set relationshop and assign to filters
+					if( 0 < taxonomy.length ) {
+						filters['filter[tax_query]'] = taxonomy;
+						filters['filter[tax_query][relation]'] = 'AND';
+					}
 				}
 
 				// Render the results

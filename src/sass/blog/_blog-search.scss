@@ -174,6 +174,20 @@
 			flex-grow: 1;
 		}
 	}
+
+	/** No results */
+
+	&__no-results {
+		display: none;
+		margin-left: 32px;
+		opacity: 0;
+		transition: opacity 200ms;
+
+		&.open {
+			display: block;
+			opacity: 1;
+		}
+	}
 }
 
 /** Prevent the <body> from scrolling when search is open */

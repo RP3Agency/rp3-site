@@ -63,6 +63,12 @@ $search_suggestions = new WP_Query( $args );
 
 			</div>
 
+			<div id="blog-search__no-results" class="blog-search__no-results">
+
+				<h2 class="blog-search__header">Sorry, no posts matched your search.</h2>
+
+			</div>
+
 		</div>
 		<!-- // container -->
 
