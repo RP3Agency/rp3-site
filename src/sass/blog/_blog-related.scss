@@ -2,7 +2,8 @@
 	@extend %max-width--blog;
 	display: flex;
 	margin-bottom: 3em;
-	overflow-y: auto;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
 
 	&__post {
 		background-color: $color__blue;
