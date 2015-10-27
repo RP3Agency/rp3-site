@@ -7,12 +7,14 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 	var
 
+	$body = $('body'),
 	$searchSuggestions = $('#blog-search__suggestions'),
 	$searchForm = $('#search-form'),
 	$searchResults = $('#blog-search__results'),
 	$searchResultsTemplate = $('#blog-search__results__template'),
 	$searchInput = $('input[name="s"]'),
 	filters,
+	searchQuery,
 
 	/* ==========================================================================
 	   Backbone Stuff
@@ -69,12 +71,6 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 		routes: {
 			'search/:searchQuery':	'search'
-		},
-
-		search: function( searchQuery ) {
-			
-			// Do something awesome
-
 		}
 	}),
 
@@ -86,8 +82,7 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 	toggleSearch = function() {
 
-		var $overlay	= $('#blog-search'),
-			$body		= $('body');
+		var $overlay	= $('#blog-search');
 
 		if ( $overlay.hasClass( 'open' ) ) {
 			$body.removeClass( 'search-open' );
@@ -103,6 +98,11 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 		} else if ( ! $overlay.hasClass( 'close' ) ) {
 			$overlay.addClass( 'open' );
 			$body.addClass( 'search-open' );
+
+			if ( 0 < searchQuery.length ) {
+				$searchInput.val( searchQuery );
+				$searchForm.trigger( 'submit' );
+			}
 
 			if ( ! Modernizr.touchevents ) {
 				$searchInput.trigger( 'focus' );
@@ -134,7 +134,7 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 			e.preventDefault();
 
 			// Assign the query to a variable
-			var searchQuery = $searchInput.val();
+			searchQuery = $searchInput.val();
 
 			// remove the focus
 			$searchInput.trigger( 'blur' );
@@ -154,13 +154,21 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 			});
 
 			// Add the search query to our location bar
-			appRouter.navigate( 'search/' + encodeURIComponent( searchQuery ), { trigger: true } );
+			appRouter.navigate( '#/search/' + encodeURIComponent( searchQuery ), { trigger: true } );
 		});
 	},
 
 	init = function() {
 		toggleSearchControl();
 		searchControl();
+
+		// check to see if we have a saved search
+		searchQuery = Backbone.history.getFragment();
+
+		if ( 0 < searchQuery.length ) {
+			searchQuery = decodeURIComponent( searchQuery.substring( searchQuery.indexOf( '/' ) + 1 ) );
+			$body.addClass( 'search-saved' );
+		}
 	};
 
 	return {

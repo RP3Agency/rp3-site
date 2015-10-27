@@ -180,3 +180,8 @@
 body.search-open {
 	overflow: hidden;
 }
+
+/** If we have a saved search state, hide the suggestions */
+body.search-saved .blog-search__suggestions {
+	display: none;
+}

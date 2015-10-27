@@ -70,9 +70,15 @@ rp3.backbone.blog = (function($, _, Backbone) {
 								history.pushState( null, null, prev_link );
 							} else {
 
-								var searchQuery = Backbone.history.getFragment();
+								var searchQuery = Backbone.history.getFragment(),
+									permalink = $article.data( 'permalink' );
 
-								history.pushState( null, null, $article.data('permalink') + '#/' + searchQuery );
+								if ( 0 < searchQuery.length ) {
+									permalink = permalink + '#/' + searchQuery;
+								}
+
+								history.pushState( null, null, permalink );
+
 							}
 
 							// trigger analytics page view and reporting events
