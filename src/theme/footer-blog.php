@@ -56,6 +56,7 @@ $search_suggestions = new WP_Query( $args );
 
 								<div class="blog-search__results__details">
 									<span class="link"><?php the_title(); ?></span><br/>
+									<?php echo rp3_byline(); ?>
 								</div>
 
 							</a></li>
