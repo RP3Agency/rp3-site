@@ -63,12 +63,15 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					// add article scroll waypoint
 					that.$el.find('article').waypoint({
 						handler: function( direction ) {
+
 							var $article = $(this.element);
+
 							if( direction == 'up' ) {
 								history.pushState( null, null, prev_link );
 							} else {
 								history.pushState( null, null, $article.data('permalink') );
 							}
+
 							// trigger analytics page view and reporting events
 							if ( undefined !== window.ga ) {
 								ga( 'send', 'pageview', location.pathname );
@@ -79,6 +82,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 								});
 							}
 						},
+
 						offset: '100%',
 					});
 
@@ -119,6 +123,20 @@ rp3.backbone.blog = (function($, _, Backbone) {
 	}),
 
 	postView = new PostView(),
+
+	// App routing, for when we're preserving search state
+	AppRouter = Backbone.Router.extend({
+
+		routes: {
+			'search/:searchQuery':	'search'
+		},
+
+		search: function( searchQuery ) {
+			console.log( 'Search route has been called. Your query string is: ' + encodeURIComponent( searchQuery ) + '.' );
+		}
+	}),
+
+	appRouter = new AppRouter(),
 
 	/**
 	 * Display the interstitial
@@ -201,6 +219,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 		exclude		= rp3.backbone.get('exclude');
 		industries	= rp3.backbone.get('industries');
+
+		Backbone.history.start();
 
 		listenForScroll();
 	};

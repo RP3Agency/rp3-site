@@ -26,7 +26,7 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 	PostView = Backbone.View.extend({
 
-		render: function( filters ) {
+		render: function( filters, searchQuery ) {
 
 			var that = this;
 
@@ -39,10 +39,15 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 				success: function( posts ) {
 
+					/** Store the query string by appending it to the end of the link */
+
+					_.each( posts.models, function( post ) {
+						post.attributes.link = post.attributes.link + '/#/search/' + encodeURIComponent( searchQuery );
+					});
+
 					var template = _.template( $searchResultsTemplate.html() );
 
 					that.$el.html( template( { posts: posts.toJSON() } ) );
-
 				},
 
 				error: function() {
@@ -57,6 +62,21 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 	}),
 
 	postView = new PostView(),
+
+	// Router
+
+	AppRouter = Backbone.Router.extend({
+
+		routes: {
+			'search/:searchQuery':	'search'
+		},
+
+		search: function( searchQuery ) {
+			console.log( 'Search route has been called. Your query string is: ' + encodeURIComponent( searchQuery ) + '.' );
+		}
+	}),
+
+	appRouter = new AppRouter(),
 
 	/* ==========================================================================
 	   Toggle Search Screen
@@ -111,11 +131,14 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 		$searchForm.on( 'submit', function(e) {
 			e.preventDefault();
 
+			// Assign the query to a variable
+			var searchQuery = $searchInput.val();
+
 			// remove the focus
 			$searchInput.trigger( 'blur' );
 
 			filters = {
-				'filter[s]'					: $searchInput.val(),
+				'filter[s]'					: searchQuery,
 				'filter[posts_per_page]'	: -1,
 				'filter[post_type]'			: 'post'
 			};
@@ -123,10 +146,13 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 			$searchSuggestions.fadeOut( 200, function() {
 				$(this).remove();
 
-				postView.render( filters );
+				postView.render( filters, searchQuery );
 
 				$searchResults.append( $postElement ).addClass( 'open' );
 			});
+
+			// Add the search query to our location bar
+			appRouter.navigate( '#/search/' + encodeURIComponent( searchQuery ), { trigger: true } );
 		});
 	},
 
