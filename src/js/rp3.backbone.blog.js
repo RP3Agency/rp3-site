@@ -69,7 +69,10 @@ rp3.backbone.blog = (function($, _, Backbone) {
 							if( direction == 'up' ) {
 								history.pushState( null, null, prev_link );
 							} else {
-								history.pushState( null, null, $article.data('permalink') );
+
+								var searchQuery = Backbone.history.getFragment();
+
+								history.pushState( null, null, $article.data('permalink') + '#/' + searchQuery );
 							}
 
 							// trigger analytics page view and reporting events
@@ -129,10 +132,6 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 		routes: {
 			'search/:searchQuery':	'search'
-		},
-
-		search: function( searchQuery ) {
-			console.log( 'Search route has been called. Your query string is: ' + encodeURIComponent( searchQuery ) + '.' );
 		}
 	}),
 
@@ -170,6 +169,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 			documentHeight		= $(document).height();
 
 			if ( documentHeight <= windowScrollTop + windowHeight + 100 ) {
+
+				appRouter.execute();
 
 				$blog__loading_indicator.addClass('visible');
 

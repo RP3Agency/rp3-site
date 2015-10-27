@@ -72,7 +72,9 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 		},
 
 		search: function( searchQuery ) {
-			console.log( 'Search route has been called. Your query string is: ' + encodeURIComponent( searchQuery ) + '.' );
+			
+			// Do something awesome
+
 		}
 	}),
 
@@ -152,7 +154,7 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 			});
 
 			// Add the search query to our location bar
-			appRouter.navigate( '#/search/' + encodeURIComponent( searchQuery ), { trigger: true } );
+			appRouter.navigate( 'search/' + encodeURIComponent( searchQuery ), { trigger: true } );
 		});
 	},
 
