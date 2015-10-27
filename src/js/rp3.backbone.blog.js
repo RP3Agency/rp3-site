@@ -199,8 +199,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 						'filter[posts_per_page]'	: 1,
 						'filter[s]'					: searchQuery,
 						'filter[post_type]'			: 'post',
-						'filter[post__not_in]'			: exclude
-					}
+						'filter[post__not_in]'		: exclude
+					};
 
 				} else {
 
