@@ -2,7 +2,8 @@
 	"options": [
 		"setClasses",
 		"prefixes",
-		"prefixed"
+		"prefixed",
+		"testProp"
 	],
 	"feature-detects": [
 		"test/video/autoplay",
