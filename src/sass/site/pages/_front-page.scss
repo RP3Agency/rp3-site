@@ -40,7 +40,7 @@
 				opacity: 1;
 			}
 
-			@include modernizr( "videoautoplay" ) {
+			@include modernizr( "no-touchevents" ) {
 				display: block;
 			}
 		}
