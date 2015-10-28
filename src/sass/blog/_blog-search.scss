@@ -4,14 +4,13 @@
 	color: mix( black, $color__gray, 50% );
 	left: 0;
 	opacity: 0;
-	overflow-y: scroll;
+	overflow: hidden;
 	position: fixed;
 	right: 0;
 	transition: opacity 200ms;
 	top: 100%;
 	visibility: hidden;
 	z-index: 1000;
-	-webkit-overflow-scrolling: touch;
 
 	&.open {
 		opacity: 1;
@@ -27,6 +26,9 @@
 
 	&__wrapper {
 		@extend %max-width--blog;
+		height: 100%;
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
 	}
 
 	&__container {
