@@ -18,6 +18,7 @@ var gulp			= require('gulp'),
 	rename			= require('gulp-rename'),
 	del				= require('del'),
 	livereload		= require('gulp-livereload'),
+	shell			= require('gulp-shell'),
 
 	// Notifications and error handling
 	gutil			= require('gulp-util');
@@ -70,7 +71,6 @@ gulp.task('styles', function() {
 		.pipe( livereload() );
 });
 
-
 // Scripts task: JSHint & minify custom js
 // Scripts need to be loaded in a particular order. There's probably a better way of doing this.
 gulp.task('scripts-custom', function() {
@@ -78,6 +78,7 @@ gulp.task('scripts-custom', function() {
 			src_js + '/rp3.js',
 			src_js + '/rp3.backbone.js',
 			src_js + '/rp3.backbone.*.js',
+			src_js + '/rp3.blog-search.js',
 			src_js + '/rp3.google-maps.js',
 			src_js + '/rp3.scroll-magic.js',
 			src_js + '/rp3.skip-link-focus-fix.js',
@@ -94,6 +95,14 @@ gulp.task('scripts-custom', function() {
 		.pipe( livereload() );
 });
 
+// Scripts task: Modernizr
+gulp.task( 'scripts-modernizr', function() {
+	return gulp.src( '' )
+		.pipe( shell(
+			'modernizr -c ' + __dirname + '/modernizr-config.json -d ' + src_js_vendor + '/modernizr.js'
+		) );
+});
+
 // Scripts task: Plugins
 gulp.task('scripts-plugins', function() {
 	return gulp.src(src_js_plugins + '/*.js')
@@ -107,8 +116,12 @@ gulp.task('scripts-plugins', function() {
 });
 
 // Scripts task: Vendor
-gulp.task('scripts-vendor', function() {
-	return gulp.src(src_js_vendor + '/*.js')
+gulp.task('scripts-vendor', [ 'scripts-modernizr' ], function() {
+	return gulp.src([
+			src_js_vendor + '/modernizr.js',
+			src_js_vendor + '/modernizr.clippath-polygon.js',
+			src_js_vendor + '/picturefill.js'
+		])
 		.pipe(concat(project + '-vendor.js'))
 		.pipe(gulp.dest(dest_theme_js))
 		.pipe(rename({suffix: '.min'}))

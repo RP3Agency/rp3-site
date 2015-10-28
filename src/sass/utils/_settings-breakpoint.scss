@@ -2,7 +2,7 @@
    Breakpoint settings
    ========================================================================== */
 
-$breakpoint-to-ems: true;
+@include breakpoint-set( 'to ems', true );
 $hidpi: min-resolution 1.5dppx;
 
 /* ==========================================================================

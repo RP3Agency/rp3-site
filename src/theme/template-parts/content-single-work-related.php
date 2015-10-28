@@ -62,6 +62,7 @@
 					<?php endforeach; wp_reset_postdata(); ?>
 
 				</div>
+				<!-- // content -->
 
 			</div>
 			<!-- related container inner -->

@@ -1,0 +1,13 @@
+{
+	"options": [
+		"setClasses",
+		"prefixes",
+		"prefixed",
+		"testProp"
+	],
+	"feature-detects": [
+		"test/video/autoplay",
+		"css/transitions",
+		"touchevents"
+	]
+}

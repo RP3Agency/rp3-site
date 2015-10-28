@@ -21,6 +21,7 @@ rp3.backbone = (function($, _, Backbone, wp) {
 				'four_three_medium_2x':		null,
 				'eight_three_large':		null,
 				'eight_three_large_2x':		null,
+				'four_three_thumb':			null
 			},
 
 			// set calculated values on model initialization
@@ -115,6 +116,9 @@ rp3.backbone = (function($, _, Backbone, wp) {
 
 				case 'eight_three_large_2x':
 					return defaultImage + '.jpg';
+
+				case 'four_three_thumb':
+					return defaultImage + '-160x120.jpg';
 
 				default:
 					return false;

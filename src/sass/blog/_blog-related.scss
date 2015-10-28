@@ -1,21 +1,18 @@
 .single-blog__related {
 	@extend %max-width--blog;
+	display: flex;
 	margin-bottom: 3em;
-
-	@include breakpoint( bp() ) {
-		display: flex;
-	}
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
 
 	&__post {
 		background-color: $color__blue;
-		margin-bottom: 2em;
+		margin-right: gutter();
+		min-width: ( 320px * 0.8 );
 		overflow: hidden;
 
 		@include breakpoint( bp() ) {
-			margin: {
-				right: gutter();
-				bottom: 0;
-			}
+			min-width: 0;
 			width: span(8);
 
 			&:last-child {

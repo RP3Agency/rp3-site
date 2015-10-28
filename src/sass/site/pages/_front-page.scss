@@ -40,7 +40,7 @@
 				opacity: 1;
 			}
 
-			html.no-touch & {
+			@include modernizr( "no-touchevents" ) {
 				display: block;
 			}
 		}
