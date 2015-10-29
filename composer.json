@@ -52,7 +52,9 @@
     "wpackagist-plugin/yet-another-related-posts-plugin":"dev-trunk",
     "wpackagist-plugin/dynamic-featured-image": "*",
     "wpackagist-plugin/tc-comment-out": "*",
-    "wpackagist-plugin/tinymce-advanced": "*"
+    "wpackagist-plugin/tinymce-advanced": "*",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "^0.9.6",
+    "wpackagist-plugin/amazon-web-services": "^0.3.3"
   },
   "extra": {
     "wordpress-install-dir": "_wp",
