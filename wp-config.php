@@ -14,8 +14,8 @@
  * @package WordPress
  */
 
-if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
-	include( dirname( __FILE__ ) . '/wp-config-local.php' );
+if ( file_exists( '/var/www/assets/wp-config-local.php' ) ) {
+	include( '/var/www/assets/wp-config-local.php' );
 }
  
 // ** MySQL settings - You can get this info from your web host ** //
