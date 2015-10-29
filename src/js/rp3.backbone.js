@@ -100,7 +100,7 @@ rp3.backbone = (function($, _, Backbone, wp) {
 			switch ( size ) {
 
 				case 'four_three_small':
-					return defaultImage + '-320X240.jpg';
+					return defaultImage + '-320x240.jpg';
 
 				case 'four_three_small_2x':
 					return defaultImage + '-640x480.jpg';
