@@ -139,23 +139,20 @@
 			z-index: 10;
 		}
 
-		@include breakpoint( bp() ) {
+		&.fixed::after {
+			background-color: transparentize( $color__gray--light, 0.1 );
+			border-bottom: 1px solid transparentize( $color__gray, 0.1 );
+			bottom: auto;
+			position: fixed;
+		}
 
-			&.fixed::after {
-				background-color: transparentize( $color__gray--light, 0.1 );
-				border-bottom: 1px solid transparentize( $color__gray, 0.1 );
-				bottom: auto;
-				position: fixed;
-			}
-
-			&.fixed .blog-header__sub-header__container {
-				bottom: auto;
-				height: rem(40px);
-				position: fixed;
-				top: 0;
-				width: 100%;
-				z-index: 15;
-			}
+		&.fixed .blog-header__sub-header__container {
+			bottom: auto;
+			height: rem(40px);
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 15;
 		}
 
 		&__container {
