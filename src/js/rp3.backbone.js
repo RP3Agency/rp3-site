@@ -106,10 +106,10 @@ rp3.backbone = (function($, _, Backbone, wp) {
 					return defaultImage + '-640x480.jpg';
 
 				case 'four_three_medium':
-					return defaultImage + '-600X450.jpg';
+					return defaultImage + '-600x450.jpg';
 
 				case 'four_three_medium_2x':
-					return defaultImage + '-1200X900.jpg';
+					return defaultImage + '-1200x900.jpg';
 
 				case 'eight_three_large':
 					return defaultImage + '-1200x450.jpg';
