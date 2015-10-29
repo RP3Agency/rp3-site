@@ -332,3 +332,5 @@ function add_player_id_to_iframe( $html, $url, $args ) {
 	}
 	return $html;
 }
+
+add_filter( 'deprecated_constructor_trigger_error', '__return_false' );
