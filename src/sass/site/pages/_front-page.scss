@@ -37,6 +37,8 @@
 			}
 
 			@include hover-state {
+				background-color: $color__white;
+				color: $color__blue;
 				opacity: 1;
 			}
 
