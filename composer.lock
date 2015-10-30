@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fe5d10188218e2fb825e313a69a81a42",
-    "content-hash": "b6ecf29f959c39dfe2edd27ec24d8f29",
+    "hash": "fbdbc8165bc1b6269a008b9c0f0e93b1",
+    "content-hash": "b216eaf0d85c0dd62771098d57a481a1",
     "packages": [
         {
             "name": "composer/installers",
@@ -298,6 +298,46 @@
             "homepage": "https://wordpress.org/plugins/akismet/"
         },
         {
+            "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
+            "version": "0.9.7",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
+                "reference": "tags/0.9.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.9.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
+        },
+        {
+            "name": "wpackagist-plugin/amazon-web-services",
+            "version": "0.3.3",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/amazon-web-services/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-web-services.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/amazon-web-services/"
+        },
+        {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
             "version": "2.2.8",
             "source": {
@@ -396,6 +436,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/dynamic-featured-image/"
+        },
+        {
+            "name": "wpackagist-plugin/easy-digital-downloads",
+            "version": "2.4.9",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/easy-digital-downloads/",
+                "reference": "tags/2.4.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/easy-digital-downloads.2.4.9.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/easy-digital-downloads/"
         },
         {
             "name": "wpackagist-plugin/featured-images-for-rss-feeds",
@@ -876,6 +936,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-super-cache/"
+        },
+        {
+            "name": "wpackagist-plugin/wpclef",
+            "version": "2.3.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wpclef/",
+                "reference": "tags/2.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wpclef.2.3.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wpclef/"
         },
         {
             "name": "wpackagist-plugin/yet-another-related-posts-plugin",

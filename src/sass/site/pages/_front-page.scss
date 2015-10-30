@@ -18,6 +18,7 @@
 		&__play-audio {
 			@extend %max-width--padded;
 			background-color: $color__white;
+			border: none;
 			display: none;
 			font-weight: $font-weight__bold;
 			height: 50px;
@@ -37,6 +38,8 @@
 			}
 
 			@include hover-state {
+				background-color: $color__white;
+				color: $color__blue;
 				opacity: 1;
 			}
 
