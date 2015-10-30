@@ -4,7 +4,7 @@
 
 <% _.each( posts, function( post ) { %>
 
-	<article id="article-<%= post.ID %>" class="single-post-content single-post-content--blog" data-permalink="<%= post.link %>">
+	<article id="post-<%= post.ID %>" class="single-post-content single-post-content--blog" data-permalink="<%= post.link %>">
 
 		<div class="single-post-content__wrapper">
 
@@ -139,6 +139,17 @@
 		</div>
 
 	</article>
+
+	<?php if ( function_exists( 'sharing_display' ) ) : ?>
+
+		<li class="share-link" id="share-link-<%= post.ID %>" data-post-id="<%= post.ID %>">
+			<a rel="nofollow" data-post-id="<%= post.ID %>" data-shared="sharing-link-<%= post.ID %>" data-clipboard-text="<%= post.link %>" class="share-link sd-button share-icon no-text" href="#!">
+				<span></span>
+				<span class="sharing-screen-reader-text">Click to copy permalink to clipboard</span>
+			</a>
+		</li>
+
+	<?php endif; ?>
 
 <% }) %>
 </script>

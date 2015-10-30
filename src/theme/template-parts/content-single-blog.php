@@ -128,7 +128,7 @@
 <?php if ( function_exists( 'sharing_display' ) ) : ?>
 
 	<li class="share-link" id="share-link-<?php echo esc_attr( get_the_ID() ); ?>" data-post-id="<?php echo esc_attr( get_the_ID() ); ?>">
-		<a rel="nofollow" id="copy-permalink" data-shared="sharing-link-<?php echo esc_attr( get_the_ID() ); ?>" data-clipboard-text="<?php echo esc_url( get_permalink() ); ?>" class="share-link sd-button share-icon no-text" href="#!">
+		<a rel="nofollow" data-post-id="<?php echo esc_attr( get_the_ID() ); ?>" data-shared="sharing-link-<?php echo esc_attr( get_the_ID() ); ?>" data-clipboard-text="<?php echo esc_url( get_permalink() ); ?>" class="share-link sd-button share-icon no-text" href="#!">
 			<span></span>
 			<span class="sharing-screen-reader-text">Click to copy permalink to clipboard</span>
 		</a>

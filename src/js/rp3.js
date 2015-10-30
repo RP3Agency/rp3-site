@@ -1,4 +1,4 @@
-/* global rp3:true, ga:false, $f:false */
+/* global rp3:true, ga:false, $f:false, Clipboard:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
@@ -222,8 +222,8 @@ var rp3 = (function($) {
 	   Copy permalink to clipboard
 	========================================================================== */
 
-	copyPermalinkSuccess = function( text ) {
-		var $toolTip = $('#copy-permalink').parent();
+	copyPermalinkSuccess = function( postID ) {
+		var $toolTip = $('#share-link-' + postID);
 
 		$toolTip.addClass( 'tooltip tooltip--success' );
 
@@ -232,8 +232,8 @@ var rp3 = (function($) {
 		}, 3000 );
 	},
 
-	copyPermalinkFailure = function() {
-		var $toolTip = $('#copy-permalink').parent();
+	copyPermalinkFailure = function( postID ) {
+		var $toolTip = $('#share-link-' + postID);
 
 		$toolTip.addClass( 'tooltip tooltip--failure' );
 
@@ -244,19 +244,21 @@ var rp3 = (function($) {
 
 	copyPermalinkToClipboard = function() {
 
-		var clipboard = new Clipboard('#copy-permalink'),
-			$copyPermalink = $('#copy-permalink');
+		var clipboard = new Clipboard('.share-link'),
+			$shareLink = $('.share-link'),
+			postID;
 
-		$copyPermalink.on( 'click', function(e) {
+		$shareLink.on( 'click', function(e) {
 			e.preventDefault();
+			postID = $(this).data( 'post-id' );
 		});
 
-		clipboard.on( 'success', function(e) {
-			copyPermalinkSuccess( e.text );
+		clipboard.on( 'success', function() {
+			copyPermalinkSuccess( postID );
 		});
 
-		clipboard.on( 'error', function(e) {
-			copyPermalinkFailure();
+		clipboard.on( 'error', function() {
+			copyPermalinkFailure( postID );
 		});
 	},
 
@@ -265,12 +267,10 @@ var rp3 = (function($) {
 		var $shareLink = $('li.share-link');
 
 		$shareLink.each( function() {
-			console.log( $(this) );
-			console.log( $(this).data( 'post-id' ) );
 
 			var postID = $(this).data( 'post-id' );
 
-			$('#share-link-' + postID ).insertBefore( $('#post-' + postID + ' .share-end' ) );
+			$( '#share-link-' + postID ).insertBefore( $('#post-' + postID + ' .share-end' ) );
 		});
 	},
 
@@ -290,11 +290,29 @@ var rp3 = (function($) {
 		if ( $body.hasClass( 'home' ) ) {
 			frontPageVideoAudio();
 		}
+
+
+		var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+		var observer = new MutationObserver(function(mutations, observer) {
+			// fired when a mutation occurs
+			copyPermalinkOption();
+			copyPermalinkToClipboard();
+		});
+
+		// define what element should be observed by the observer
+		// and what types of mutations trigger the callback
+		observer.observe(document, {
+			subtree: true,
+			attributes: true
+		});
 	};
 
 	return {
 		init:init,
-		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios
+		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios,
+		// copyPermalinkToClipboard:copyPermalinkToClipboard,
+		// copyPermalinkOption:copyPermalinkOption
 	};
 
 }(jQuery));

@@ -101,7 +101,6 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					if( 0 !== $(window).scrollTop() ) {
 						window.scrollBy( 0, 50 );
 					}
-
 				},
 
 				error: function() {
