@@ -223,11 +223,23 @@ var rp3 = (function($) {
 	========================================================================== */
 
 	copyPermalinkSuccess = function( text ) {
-		console.log( text );
+		var $toolTip = $('#copy-permalink').parent();
+
+		$toolTip.addClass( 'tooltip tooltip--success' );
+
+		setTimeout( function() {
+			$toolTip.removeClass( 'tooltip tooltip--success' );
+		}, 3000 );
 	},
 
 	copyPermalinkFailure = function() {
-		console.log( '#fail' );
+		var $toolTip = $('#copy-permalink').parent();
+
+		$toolTip.addClass( 'tooltip tooltip--failure' );
+
+		setTimeout( function() {
+			$toolTip.removeClass( 'tooltip tooltip--failure' );
+		}, 3000 );
 	},
 
 	copyPermalinkToClipboard = function() {
