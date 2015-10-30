@@ -218,6 +218,36 @@ var rp3 = (function($) {
 		}
 	},
 
+	/* ==========================================================================
+	   Copy permalink to clipboard
+	========================================================================== */
+
+	copyPermalinkSuccess = function( text ) {
+		console.log( text );
+	},
+
+	copyPermalinkFailure = function() {
+		console.log( '#fail' );
+	},
+
+	copyPermalinkToClipboard = function() {
+
+		var clipboard = new Clipboard('#copy-permalink'),
+			$copyPermalink = $('#copy-permalink');
+
+		$copyPermalink.on( 'click', function(e) {
+			e.preventDefault();
+		});
+
+		clipboard.on( 'success', function(e) {
+			copyPermalinkSuccess( e.text );
+		});
+
+		clipboard.on( 'error', function(e) {
+			copyPermalinkFailure();
+		});
+	},
+
 	init = function() {
 
 		navigationCanvasSlide();
@@ -228,6 +258,7 @@ var rp3 = (function($) {
 		campaignMonitor();
 		blogSubHeader();
 		fixBlogVideoAspectRatios();
+		copyPermalinkToClipboard();
 
 		if ( $body.hasClass( 'home' ) ) {
 			frontPageVideoAudio();
