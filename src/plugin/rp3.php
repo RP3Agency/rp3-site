@@ -20,10 +20,12 @@ require_once( RP3_PLUGIN_INC_DIR . '/seo-coauthor-fix.php' );
 
 function rp3_copy_permalink() {
 
-	class Share_Copy_Permalink extends Sharing_Source {
-		
-	}
+	if ( class_exists( 'Sharing_Source' ) ) {
 
+		class Share_Copy_Permalink extends Sharing_Source {
+			
+		}
+	}
 }
 
 add_action( 'plugins_loaded', 'rp3_copy_permalink' );

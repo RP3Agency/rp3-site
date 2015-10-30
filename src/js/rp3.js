@@ -260,6 +260,20 @@ var rp3 = (function($) {
 		});
 	},
 
+	copyPermalinkOption = function() {
+
+		var $shareLink = $('li.share-link');
+
+		$shareLink.each( function() {
+			console.log( $(this) );
+			console.log( $(this).data( 'post-id' ) );
+
+			var postID = $(this).data( 'post-id' );
+
+			$('#share-link-' + postID ).insertBefore( $('#post-' + postID + ' .share-end' ) );
+		});
+	},
+
 	init = function() {
 
 		navigationCanvasSlide();
@@ -271,6 +285,7 @@ var rp3 = (function($) {
 		blogSubHeader();
 		fixBlogVideoAspectRatios();
 		copyPermalinkToClipboard();
+		copyPermalinkOption();
 
 		if ( $body.hasClass( 'home' ) ) {
 			frontPageVideoAudio();

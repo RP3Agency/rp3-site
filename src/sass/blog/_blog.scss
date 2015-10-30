@@ -105,6 +105,8 @@
 .sd-social-icon .sd-content ul li[class*='share-'].share-link a.sd-button {
 	background-color: $color__blue;
 	color: $color__white !important;
+	top: -4px;
+	padding: 6px;
 }
 
 .sd-social-icon .sd-content ul li[class*='share-'] a {
@@ -124,9 +126,9 @@
 	line-height: 1;
 	padding: 5px;
 	position: absolute;
+	right: 5px;
 	text-transform: uppercase;
 	white-space: nowrap;
-	@include centered( 'horizontal' );
 }
 
 .sd-social-icon .sd-content ul li.share-link.tooltip::after {
@@ -143,6 +145,7 @@
 
 .sd-social-icon .sd-content ul li.share-link a::before {
 	content: "\f107";
+	font-size: rem(20px);
 }
 
 

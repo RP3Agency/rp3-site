@@ -78,27 +78,6 @@
 
 				<?php sharing_display( '', true ); ?>
 
-				<div class="sharedaddy sd-sharing-enabled">
-
-					<div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
-
-						<div class="sd-content">
-
-							<ul>
-								<li class="share-link">
-									<a rel="nofollow" id="copy-permalink" data-shared="sharing-link-<?php echo esc_attr( get_the_ID() ); ?>" data-clipboard-text="<?php echo esc_url( get_permalink() ); ?>" class="share-link sd-button share-icon no-text" href="#!">
-										<span></span>
-										<span class="sharing-screen-reader-text">Click to copy permalink to clipboard</span>
-									</a>
-								</li>
-							</ul>
-
-						</div>
-
-					</div>
-
-				</div>
-
 			</section>
 
 		<?php endif; ?>
@@ -145,3 +124,14 @@
 </div>
 
 <?php get_template_part( 'template-parts/inline', 'underscorejs-template-blog' ); ?>
+
+<?php if ( function_exists( 'sharing_display' ) ) : ?>
+
+	<li class="share-link" id="share-link-<?php echo esc_attr( get_the_ID() ); ?>" data-post-id="<?php echo esc_attr( get_the_ID() ); ?>">
+		<a rel="nofollow" id="copy-permalink" data-shared="sharing-link-<?php echo esc_attr( get_the_ID() ); ?>" data-clipboard-text="<?php echo esc_url( get_permalink() ); ?>" class="share-link sd-button share-icon no-text" href="#!">
+			<span></span>
+			<span class="sharing-screen-reader-text">Click to copy permalink to clipboard</span>
+		</a>
+	</li>
+
+<?php endif; ?>
