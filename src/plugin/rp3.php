@@ -16,3 +16,16 @@ require_once( RP3_PLUGIN_INC_DIR . '/custom-relabel-post-to-blog.php' );
 require_once( RP3_PLUGIN_INC_DIR . '/rest-api-extensions.php' );
 require_once( RP3_PLUGIN_INC_DIR . '/chrome-admin-menu-fix.php' );
 require_once( RP3_PLUGIN_INC_DIR . '/seo-coauthor-fix.php' );
+
+
+function rp3_copy_permalink() {
+
+	if ( class_exists( 'Sharing_Source' ) ) {
+
+		class Share_Copy_Permalink extends Sharing_Source {
+			
+		}
+	}
+}
+
+add_action( 'plugins_loaded', 'rp3_copy_permalink' );
