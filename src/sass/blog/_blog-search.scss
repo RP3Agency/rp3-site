@@ -28,6 +28,7 @@
 		@extend %max-width--blog;
 		height: 100%;
 		overflow: scroll;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
 		-webkit-overflow-scrolling: touch;
 	}
 

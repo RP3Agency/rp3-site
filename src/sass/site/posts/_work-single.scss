@@ -188,7 +188,9 @@
 		&__content {
 			display: flex;
 			justify-content: flex-start;
-			overflow-x: auto;
+			overflow-x: scroll;
+			-ms-overflow-style: -ms-autohiding-scrollbar;
+			-webkit-overflow-scrolling: touch;
 		}
 
 		&__item {
