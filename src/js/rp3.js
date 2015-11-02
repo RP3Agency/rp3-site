@@ -225,20 +225,20 @@ var rp3 = (function($) {
 	copyPermalinkSuccess = function( postID ) {
 		var $toolTip = $('#share-link-' + postID);
 
-		$toolTip.addClass( 'tooltip tooltip--success' );
+		$toolTip.addClass( 'tt--open tt--success' );
 
 		setTimeout( function() {
-			$toolTip.removeClass( 'tooltip tooltip--success' );
+			$toolTip.removeClass( 'tt--open tt--success' );
 		}, 3000 );
 	},
 
 	copyPermalinkFailure = function( postID ) {
 		var $toolTip = $('#share-link-' + postID);
 
-		$toolTip.addClass( 'tooltip tooltip--failure' );
+		$toolTip.addClass( 'tt--open tt--failure' );
 
 		setTimeout( function() {
-			$toolTip.removeClass( 'tooltip tooltip--failure' );
+			$toolTip.removeClass( 'tt--open tt--failure' );
 		}, 3000 );
 	},
 
@@ -294,7 +294,8 @@ var rp3 = (function($) {
 
 		var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
-		var observer = new MutationObserver(function(mutations, observer) {
+		var observer = new MutationObserver( function() {
+
 			// fired when a mutation occurs
 			copyPermalinkOption();
 			copyPermalinkToClipboard();

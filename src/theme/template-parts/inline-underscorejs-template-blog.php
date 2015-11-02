@@ -143,7 +143,7 @@
 	<?php if ( function_exists( 'sharing_display' ) ) : ?>
 
 		<li class="share-link" id="share-link-<%= post.ID %>" data-post-id="<%= post.ID %>">
-			<a rel="nofollow" data-post-id="<%= post.ID %>" data-shared="sharing-link-<%= post.ID %>" data-clipboard-text="<%= post.link %>" class="share-link sd-button share-icon no-text" href="#!">
+			<a rel="nofollow" data-post-id="<%= post.ID %>" data-shared="sharing-link-<%= post.ID %>" data-clipboard-text="<%= post.link %>" class="share-link sd-button share-icon no-text" href="#!" title="Click to copy permalink.">
 				<span></span>
 				<span class="sharing-screen-reader-text">Click to copy permalink to clipboard</span>
 			</a>
