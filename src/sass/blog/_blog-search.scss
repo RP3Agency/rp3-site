@@ -201,6 +201,7 @@
 body.search-open {
 	overflow: hidden;
 	position: fixed;
+	width: 100%;
 }
 
 /** If we have a saved search state, hide the suggestions */
