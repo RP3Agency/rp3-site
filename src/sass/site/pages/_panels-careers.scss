@@ -7,14 +7,9 @@
 
 	&__header {
 		@extend %max-width--padded;
-		@extend %roboto-medium;
+		@extend %roboto-light;
+		font-size: rem(20px);
 		margin-bottom: 0.5em;
-		text-transform: uppercase;
-
-		h2 {
-			border-bottom: 1px solid $color__gray;
-			padding-bottom: 0.25em;
-		}
 	}
 
 	&--single__entry-content {
@@ -80,10 +75,9 @@
 	&__header--article {
 
 		h2 {
-			@extend %roboto-thin;
-			font-size: em( 20px, 14px );
-			margin-bottom: 0.25em;
-			text-transform: none;
+			@extend %roboto-medium;
+			margin-bottom: 0;
+			text-transform: uppercase;
 		}
 	}
 
@@ -124,7 +118,7 @@
 	 * Layout
 	 */
 	
-	&__content {
+	> ul {
 		@extend %max-width--padded;
 
 		@include breakpoint( bp() ) {
@@ -134,7 +128,7 @@
 	}
 
 	&__article {
-		margin-bottom: 2em;
+		border-bottom: 1px solid $color__gray;
 
 		@include breakpoint( bp() ) {
 			margin-right: gutter();
@@ -156,6 +150,90 @@
 			&:nth-of-type(3n) {
 				margin-right: 0;
 			}
+		}
+	}
+
+	&__trigger {
+		@extend %button--unstyled;
+		color: currentColor;
+		display: block;
+		padding: {
+			top: 1em;
+			bottom: 1em;
+		}
+		position: relative;
+		text-align: left;
+		width: 100%;
+
+		&:focus {
+			outline: none;
+		}
+
+		&::after {
+			content: "\f431";
+			display: block;
+			font: {
+				family: Genericons;
+				size: rem(20px);
+			}
+			position: absolute;
+			right: 0;
+			transition: transform 200ms;
+			@include centered("vertical");
+		}
+	}
+
+	&__content {
+		display: none;
+		opacity: 0;
+		padding-bottom: 1em;
+		transition: opacity 200ms;
+
+		p {
+			margin: {
+				top: 0.5em;
+				bottom: 0.5em;
+			}
+		}
+
+		h3 {
+			@extend %roboto-medium;
+			border-bottom: 1px solid $color__gray--light;
+			margin: {
+				top: 1em;
+				bottom: 0.5em;
+			}
+		}
+
+		ul {
+			list-style: square;
+			margin-left: 1em;
+		}
+	}
+
+	/** Mobile Open State */
+
+	&__article.open {
+
+		.careers__trigger::after {
+			transform: translate( 0, -50% ) rotate( 180deg );
+		}
+
+		.careers__content {
+			opacity: 1;
+		}
+	}
+
+	/** Mobile "Closing" State */
+
+	&__article.close {
+
+		.careers__trigger::after {
+			transform: translate( 0, -50% );
+		}
+
+		.careers__content {
+			opacity: 0;
 		}
 	}
 }
