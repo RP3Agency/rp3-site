@@ -56,7 +56,8 @@
     "wpackagist-plugin/amazon-s3-and-cloudfront": "^0.9.6",
     "wpackagist-plugin/amazon-web-services": "^0.3.3",
     "wpackagist-plugin/wpclef": "^2.3",
-    "wpackagist-plugin/easy-digital-downloads": "^2.4"
+    "wpackagist-plugin/easy-digital-downloads": "^2.4",
+    "wpackagist-plugin/wpmandrill": "^1.33"
   },
   "extra": {
     "wordpress-install-dir": "_wp",
