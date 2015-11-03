@@ -143,7 +143,7 @@
 				</section>
 				<!-- // .contact__info -->
 
-				<section class="contact__form">
+				<section class="contact__form" id="contact__form">
 
 					<?php echo do_shortcode( '[contact-form-7 id="8285" title="Contact Form"]' ); ?>
 
