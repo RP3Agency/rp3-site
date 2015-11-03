@@ -8,7 +8,7 @@
 
 		</header>
 
-		<div class="careers__content">
+		<ul>
 
 			<?php
 
@@ -19,25 +19,40 @@
 				foreach ( $posts as $post ) : setup_postdata( $post );
 			?>
 
-					<div id="post-<?php the_ID(); ?>" <?php post_class('careers__article'); ?>>
+					<li id="post-<?php echo esc_attr( get_the_ID() ); ?>" <?php post_class('careers__article'); ?>>
 
-						<a href="<?php the_permalink(); ?>" rel="bookmark" class="block">
+						<button class="careers__trigger" data-id="<?php echo esc_attr( get_the_ID() ); ?>">
 
 							<header class="careers__header--article">
 								<h2 class="careers__title"><?php the_title(); ?></h2>
 							</header>
 							<!-- // .careers__header—article -->
 
-							<div class="careers__summary">
-								<?php // We don't want sharing links here, exactly. ?>
-								<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
-								<?php the_excerpt(); ?>
-							</div>
-							<!-- // .careers__summary -->
+						</button>
 
-						</a>
+						<div id="post-<?php echo esc_attr( get_the_ID() ); ?>-content" class="careers__content">
 
-					</div>
+							<?php the_content(); ?>
+
+							<?php if ( '' !== get_field( 'responsibilities' ) ) : ?>
+
+								<h3>Responsibilities</h3>
+
+								<?php the_field( 'responsibilities' ); ?>
+
+							<?php endif; ?>
+
+							<?php if ( '' !== get_field( 'skills' ) ) : ?>
+
+								<h3>Skills</h3>
+
+								<?php the_field( 'skills' ); ?>
+
+							<?php endif; ?>
+
+						</div>
+
+					</li>
 					<!-- #post-## -->
 
 			<?php
@@ -48,6 +63,8 @@
 			endif;
 
 			?>
+
+		</ul>
 
 	<?php endif; ?>
 

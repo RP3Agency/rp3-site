@@ -274,6 +274,66 @@ var rp3 = (function($) {
 		});
 	},
 
+	/* ==========================================================================
+	   Display a Career Article
+	========================================================================== */
+
+	displayCareerArticle = function() {
+
+		var $allPosts = $('.careers__article'),
+			$buttons = $('button.careers__trigger'),
+			thisID, $thisPost, $thisContent,
+			thatID, $thatPost, $thatContent;
+
+		$buttons.each( function() {
+
+			$(this).on( 'click', function() {
+
+				thisID = $(this).data('id');
+				$thisPost = $('#post-' + thisID);
+				$thisContent = $thisPost.find( '.careers__content' );
+
+				if ( $thisPost.hasClass( 'open' ) ) {
+
+					$thisPost.addClass('close').removeClass('open');
+
+					if ( Modernizr.csstransitions ) {
+						$thisPost.one( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
+							$thisPost.removeClass( 'close' );
+							$thisContent.slideUp( 200 );
+						});
+					} else {
+
+					}
+
+				} else if ( ! $thisPost.hasClass( 'close' ) ) {
+
+					// Close any other open posts
+					$allPosts.each( function() {
+
+						thatID = $(this).find('.careers__trigger').data( 'id' );
+						$thatPost = $('#post-' + thatID);
+						$thatContent = $('#post-' + thatID + '-content');
+
+						if ( ( thisID !== thatID ) && ( $thatPost.hasClass( 'open' ) ) ) {
+							$thatPost.removeClass('open');
+							$thatContent.slideUp( 200, function() {
+
+								$('html, body').animate({
+									scrollTop: $thisPost.offset().top
+								}, 200);
+							});
+						}
+					});
+
+					$thisContent.slideDown( 200, function() {
+						$thisPost.addClass('open');
+					});
+				}
+			});
+		});
+	},
+
 	init = function() {
 
 		navigationCanvasSlide();
@@ -286,6 +346,7 @@ var rp3 = (function($) {
 		fixBlogVideoAspectRatios();
 		copyPermalinkToClipboard();
 		copyPermalinkOption();
+		displayCareerArticle();
 
 		if ( $body.hasClass( 'home' ) ) {
 			frontPageVideoAudio();

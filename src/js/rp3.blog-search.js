@@ -98,8 +98,7 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 		if ( $overlay.hasClass( 'open' ) ) {
 			$body.removeClass( 'search-open' );
-			$overlay.removeClass( 'open' );
-			$overlay.addClass( 'close' );
+			$overlay.addClass( 'close' ).removeClass( 'open' );
 
 			if ( Modernizr.csstransitions ) {
 				$overlay.one( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
