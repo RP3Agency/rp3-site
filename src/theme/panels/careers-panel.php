@@ -66,6 +66,16 @@
 
 		</ul>
 
+		<?php if ( '' !== get_sub_field( 'boilerplate' ) ) : ?>
+
+			<footer class="careers__boilerplate">
+
+				<?php the_sub_field( 'boilerplate' ); ?>
+
+			</footer>
+
+		<?php endif; ?>
+
 	<?php endif; ?>
 
 </section>

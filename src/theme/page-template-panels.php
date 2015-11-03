@@ -15,6 +15,14 @@ get_header(); ?>
 
 	<?php get_template_part( 'template-parts/content', 'page-panels' ); ?>
 
+	<?php if ( is_page( 'careers' ) ) : ?>
+
+		<?php /** For the careers page, add some copy about not finding the right position */ ?>
+
+		<?php get_template_part( 'template-parts/component', 'careers-page-boilerplate' ); ?>
+
+	<?php endif; ?>
+
 	<?php /** Load in the appropriate checker block template part */ ?>
 
 	<?php if ( is_page( 'agency' ) ) : ?>

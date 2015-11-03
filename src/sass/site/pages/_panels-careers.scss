@@ -114,6 +114,22 @@
 		}
 	}
 
+	&__boilerplate {
+		@extend %max-width--padded;
+
+		ul {
+			list-style: square;
+			margin-left: 16px;
+		}
+
+		p {
+			margin: {
+				top: 0.5em;
+				bottom: 0.5em;
+			}
+		}
+	}
+
 	/**
 	 * Layout
 	 */
@@ -207,7 +223,7 @@
 
 		ul {
 			list-style: square;
-			margin-left: 1em;
+			margin-left: 16px;
 		}
 	}
 
@@ -234,6 +250,23 @@
 
 		.careers__content {
 			opacity: 0;
+		}
+	}
+}
+
+
+
+/** Careers Page Boilerplate */
+
+.careers__page-boilerplate {
+	@extend %max-width;
+	background-color: $color__gray--light;
+
+	&__container {
+		@extend %max-width--padded;
+		padding: {
+			top: 2rem;
+			bottom: 2rem;
 		}
 	}
 }
