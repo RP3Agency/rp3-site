@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fbdbc8165bc1b6269a008b9c0f0e93b1",
-    "content-hash": "b216eaf0d85c0dd62771098d57a481a1",
+    "hash": "01a60677821ac85e1d4e68ceaef64d8e",
+    "content-hash": "38c00a5b8df24da040f09b4cef17833e",
     "packages": [
         {
             "name": "composer/installers",
@@ -862,7 +862,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.1.17",
+            "version": "4.1.22",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/worker/",
@@ -959,6 +959,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wpclef/"
+        },
+        {
+            "name": "wpackagist-plugin/wpmandrill",
+            "version": "1.33",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wpmandrill/",
+                "reference": "tags/1.33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wpmandrill.1.33.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wpmandrill/"
         },
         {
             "name": "wpackagist-plugin/yet-another-related-posts-plugin",
