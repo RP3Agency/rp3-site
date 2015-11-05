@@ -134,12 +134,27 @@
 	 * Layout
 	 */
 	
-	> ul {
-		@extend %max-width--padded;
+	&__inner {
 
 		@include breakpoint( bp() ) {
+			@extend %max-width--padded;
 			display: flex;
-			flex-wrap: wrap;
+		}
+
+		> ul {
+
+			@include breakpoint( bp() ) {
+				margin-right: gutter();
+				padding: {
+					left: 0;
+					right: 0;
+				}
+				width: span( 10 of 24 );
+			}
+		}
+
+		&__content {
+			width: span( 14 of 24 );
 		}
 	}
 
@@ -147,9 +162,7 @@
 		border-bottom: 1px solid $color__gray;
 
 		@include breakpoint( bp() ) {
-			margin-right: gutter();
 			padding: 0;
-			width: span( 12 of 24 );
 
 			&:nth-of-type(2n) {
 				margin-right: 0;
@@ -181,6 +194,10 @@
 		text-align: left;
 		width: 100%;
 
+		@include breakpoint( bp() ) {
+			padding-left: 5px;
+		}
+
 		&:focus {
 			outline: none;
 		}
@@ -196,6 +213,10 @@
 			right: 0;
 			transition: transform 200ms;
 			@include centered("vertical");
+
+			@include breakpoint( bp() ) {
+				transform: translate( 0, -50% ) rotate( -90deg );
+			}
 		}
 	}
 
@@ -231,8 +252,19 @@
 
 	&__article.open {
 
-		.careers__trigger::after {
-			transform: translate( 0, -50% ) rotate( 180deg );
+		.careers__trigger {
+
+			@include breakpoint( bp() ) {
+				background-color: $color__gray--light;
+			}
+
+			&::after {
+				transform: translate( 0, -50% ) rotate( 180deg );
+
+				@include breakpoint( bp() ) {
+					transform: translate( 0, -50% ) rotate( -90deg );
+				}
+			}
 		}
 
 		.careers__content {
@@ -246,6 +278,10 @@
 
 		.careers__trigger::after {
 			transform: translate( 0, -50% );
+
+			@include breakpoint( bp() ) {
+				transform: translate( 0, -50% ) rotate( -90deg );
+			}
 		}
 
 		.careers__content {
