@@ -143,11 +143,20 @@ if ( '' !== get_field( 'post_type' ) ) {
 						<div class="listing__thumbnail">
 
 							<?php
-							$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_small' );
-							$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_small_2x' );
+							/** Use an alternate featured listing, if available */
+							if ( '' !== get_field( 'secondary_featured_image' ) ) {
+								$featured_image_id = get_field( 'secondary_featured_image' );
+							} else {
+								$featured_image_id = get_post_thumbnail_id( get_the_ID() );
+							}
+							?>
 
-							$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_medium' );
-							$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_medium_2x' );
+							<?php
+							$image['small'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small' );
+							$image['small_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small_2x' );
+
+							$image['medium'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_medium' );
+							$image['medium_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_medium_2x' );
 							?>
 
 							<picture>
@@ -207,13 +216,24 @@ if ( '' !== get_field( 'post_type' ) ) {
 					<?php if ( '' != get_the_post_thumbnail() ) : ?>
 
 						<div class="listing__thumbnail">
+							<?php
+
+							/** Use an alternate featured listing, if available */
+							if ( get_field( 'secondary_featured_image' ) ) {
+								$featured_image_id = get_field( 'secondary_featured_image' );
+							} else {
+								$featured_image_id = get_post_thumbnail_id( get_the_ID() );
+							}
+							?>
+
+							<!-- <?php echo get_post_thumbnail_id( get_the_ID() ); ?> -->
 
 							<?php
-							$image['small'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_small' );
-							$image['small_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_small_2x' );
+							$image['small'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small' );
+							$image['small_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small_2x' );
 
-							$image['medium'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_medium' );
-							$image['medium_2x'] = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'four_three_medium_2x' );
+							$image['medium'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_medium' );
+							$image['medium_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_medium_2x' );
 							?>
 
 							<picture>
