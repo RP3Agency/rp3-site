@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "01a60677821ac85e1d4e68ceaef64d8e",
-    "content-hash": "38c00a5b8df24da040f09b4cef17833e",
+    "hash": "ed79df9ceb9e5238372ef57539e8b0c4",
+    "content-hash": "b867e61e58950b96682511ba872ff25e",
     "packages": [
         {
             "name": "composer/installers",
@@ -192,7 +192,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.3.1",
+            "version": "5.3.2",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -582,15 +582,15 @@
         },
         {
             "name": "wpackagist-plugin/really-simple-twitter-feed-widget",
-            "version": "3.1.1",
+            "version": "dev-trunk",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/really-simple-twitter-feed-widget/",
-                "reference": "tags/3.1.1"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.3.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/really-simple-twitter-feed-widget.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -598,7 +598,8 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/really-simple-twitter-feed-widget/"
+            "homepage": "https://wordpress.org/plugins/really-simple-twitter-feed-widget/",
+            "time": "2015-08-21 20:16:45"
         },
         {
             "name": "wpackagist-plugin/redirection",
@@ -1006,6 +1007,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "wpackagist-plugin/really-simple-twitter-feed-widget": 20,
         "wpackagist-plugin/yet-another-related-posts-plugin": 20
     },
     "prefer-stable": false,
