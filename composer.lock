@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ed79df9ceb9e5238372ef57539e8b0c4",
-    "content-hash": "b867e61e58950b96682511ba872ff25e",
+    "hash": "9e94256645936431073b08a11603229c",
+    "content-hash": "0cd6b667bae79e0bd2a8045c4d2b5808",
     "packages": [
         {
             "name": "composer/installers",
@@ -192,7 +192,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.3.2",
+            "version": "5.3.2.1",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -960,26 +960,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wpclef/"
-        },
-        {
-            "name": "wpackagist-plugin/wpmandrill",
-            "version": "1.33",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wpmandrill/",
-                "reference": "tags/1.33"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpmandrill.1.33.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wpmandrill/"
         },
         {
             "name": "wpackagist-plugin/yet-another-related-posts-plugin",
