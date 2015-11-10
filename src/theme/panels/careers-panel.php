@@ -1,4 +1,4 @@
-<section class="page__panel__careers careers">
+<div class="page__panel__careers careers">
 
 	<?php if ( '' !== get_sub_field( 'section_title' ) ) : ?>
 
@@ -68,7 +68,7 @@
 
 			</ul>
 
-			<div id="careers__inner__content" class="careers__inner__content"></div>
+			<div class="careers__inner__content"></div>
 
 		</div>
 		<!-- // inner -->
@@ -85,5 +85,5 @@
 
 	<?php endif; ?>
 
-</section>
+</div>
 <!-- // careers -->

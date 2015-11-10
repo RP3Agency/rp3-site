@@ -10,6 +10,35 @@ var rp3 = (function($) {
 	var $body = $('body'),
 
 	/* ==========================================================================
+	Breakpoints
+	========================================================================== */
+
+	breakpoint,
+
+	getBreakpoint = function() {
+
+		var breakpointSmall			= 321 / 16,
+			breakpointMedium		= 600 / 16,
+			breakpointIntermediate	= 800 / 16,
+			breakpointLarge			= 1000 / 16;
+
+		// Upgrade, if appropriate
+		if ( window.matchMedia( "( min-width: " + breakpointLarge + "em )" ).matches ) {
+			return 'large';
+		} else if ( window.matchMedia( "( min-width: " + breakpointIntermediate + "em )" ).matches ) {
+			return 'intermediate';
+		} else if ( window.matchMedia( "( min-width: " + breakpointMedium + "em )" ).matches ) {
+			return 'medium';
+		} else if ( window.matchMedia( "( min-width: " + breakpointSmall + "em )" ).matches ) {
+			return 'small';
+		}
+
+		// If all else fails, return default.
+		return 'default';
+
+	},
+
+	/* ==========================================================================
 	Navigation Canvas Slide
 	========================================================================== */
 
@@ -280,8 +309,9 @@ var rp3 = (function($) {
 
 	displayCareerArticle = function() {
 
-		var $allPosts = $('.careers__article'),
-			$buttons = $('button.careers__trigger'),
+		var $allPosts			= $('.careers__article'),
+			$buttons			= $('button.careers__trigger'),
+			panelID, $columnContainer,
 			thisID, $thisPost, $thisContent,
 			thatID, $thatPost, $thatContent;
 
@@ -289,46 +319,60 @@ var rp3 = (function($) {
 
 			$(this).on( 'click', function() {
 
-				thisID = $(this).data('id');
+				thisID = $(this).data( 'id' );
 				$thisPost = $('#post-' + thisID);
 				$thisContent = $thisPost.find( '.careers__content' );
 
-				if ( $thisPost.hasClass( 'open' ) ) {
+				if ( ( breakpoint === 'medium' ) || ( breakpoint === 'intermediate' ) || ( breakpoint === 'large' ) ) {
 
-					$thisPost.addClass('close').removeClass('open');
+					/** Column Mode */
 
-					if ( Modernizr.csstransitions ) {
-						$thisPost.one( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
-							$thisPost.removeClass( 'close' );
-							$thisContent.slideUp( 200 );
-						});
-					} else {
+					panelID = $(this).parents( '.page__panel' ).data( 'panel-id' );
 
-					}
+					$columnContainer = $('#panel-' + panelID ).find( '.careers__inner__content' );
 
-				} else if ( ! $thisPost.hasClass( 'close' ) ) {
+					$columnContainer.html( $thisContent.html() );
 
-					// Close any other open posts
-					$allPosts.each( function() {
+				} else {
 
-						thatID = $(this).find('.careers__trigger').data( 'id' );
-						$thatPost = $('#post-' + thatID);
-						$thatContent = $('#post-' + thatID + '-content');
+					/** Accordion Mode */
 
-						if ( ( thisID !== thatID ) && ( $thatPost.hasClass( 'open' ) ) ) {
-							$thatPost.removeClass('open');
-							$thatContent.slideUp( 200, function() {
+					if ( $thisPost.hasClass( 'open' ) ) {
 
-								$('html, body').animate({
-									scrollTop: $thisPost.offset().top
-								}, 200);
+						$thisPost.addClass('close').removeClass('open');
+
+						if ( Modernizr.csstransitions ) {
+							$thisPost.one( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
+								$thisPost.removeClass( 'close' );
+								$thisContent.slideUp( 200 );
 							});
-						}
-					});
+						} else {
 
-					$thisContent.slideDown( 200, function() {
-						$thisPost.addClass('open');
-					});
+						}
+					} else if ( ! $thisPost.hasClass( 'close' ) ) {
+
+						// Close any other open posts
+						$allPosts.each( function() {
+
+							thatID = $(this).find('.careers__trigger').data( 'id' );
+							$thatPost = $('#post-' + thatID);
+							$thatContent = $('#post-' + thatID + '-content');
+
+							if ( ( thisID !== thatID ) && ( $thatPost.hasClass( 'open' ) ) ) {
+								$thatPost.removeClass('open');
+								$thatContent.slideUp( 200, function() {
+
+									$('html, body').animate({
+										scrollTop: $thisPost.offset().top
+									}, 200);
+								});
+							}
+						});
+
+						$thisContent.slideDown( 200, function() {
+							$thisPost.addClass('open');
+						});
+					}
 				}
 			});
 		});
@@ -368,13 +412,19 @@ var rp3 = (function($) {
 			subtree: true,
 			attributes: true
 		});
+
+		// Figure out our current breakpoint. It's a constant struggle.
+
+		breakpoint = getBreakpoint();
+
+		$(window).on( 'resize', function() {
+			breakpoint = getBreakpoint();
+		});
 	};
 
 	return {
 		init:init,
-		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios,
-		// copyPermalinkToClipboard:copyPermalinkToClipboard,
-		// copyPermalinkOption:copyPermalinkOption
+		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios
 	};
 
 }(jQuery));

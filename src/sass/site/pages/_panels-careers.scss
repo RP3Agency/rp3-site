@@ -149,12 +149,28 @@
 					left: 0;
 					right: 0;
 				}
-				width: span( 10 of 24 );
+				width: span( 9 of 24 );
+
+				@include breakpoint( bp( "intermediate" ) ) {
+					width: span( 7 of 24 );
+				}
+
+				@include breakpoint( bp( "large" ) ) {
+					width: span( 6 of 24 );
+				}
 			}
 		}
 
 		&__content {
-			width: span( 14 of 24 );
+			width: span( 15 of 24 );
+
+			@include breakpoint( bp( "intermediate" ) ) {
+				width: span( 17 of 24 );
+			}
+
+			@include breakpoint( bp( "large" ) ) {
+				width: span( 18 of 24 );
+			}
 		}
 	}
 
@@ -165,18 +181,6 @@
 			padding: 0;
 
 			&:nth-of-type(2n) {
-				margin-right: 0;
-			}
-		}
-
-		@include breakpoint( bp( "large" ) ) {
-			width: span( 8 of 24 );
-
-			&:nth-of-type(2n) {
-				margin-right: gutter();
-			}
-
-			&:nth-of-type(3n) {
 				margin-right: 0;
 			}
 		}
