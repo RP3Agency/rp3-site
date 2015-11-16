@@ -6,7 +6,6 @@
 
 		<ul>
 			<li>10-week internship (paid or college course credit)</li>
-			<li>Free Metro pass or parking</li>
 			<li>College course credit, if available to you</li>
 			<li>Networking with DC industry leaders</li>
 			<li>An invaluable learning experience</li>
