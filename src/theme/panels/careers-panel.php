@@ -10,78 +10,82 @@
 
 		<div class="careers__inner">
 
-			<ul>
+			<div class="careers__inner__left">
 
-				<?php
+				<ul>
 
-				$posts = get_sub_field( 'positions' );
+					<?php
 
-				if ( $posts ) :
+					$posts = get_sub_field( 'positions' );
 
-					foreach ( $posts as $post ) : setup_postdata( $post );
-				?>
+					if ( $posts ) :
 
-						<li id="post-<?php echo esc_attr( get_the_ID() ); ?>" <?php post_class('careers__article'); ?>>
+						foreach ( $posts as $post ) : setup_postdata( $post );
+					?>
 
-							<button class="careers__trigger" data-id="<?php echo esc_attr( get_the_ID() ); ?>">
+							<li id="post-<?php echo esc_attr( get_the_ID() ); ?>" <?php post_class('careers__article'); ?>>
 
-								<header class="careers__header--article">
-									<h2 class="careers__title"><?php the_title(); ?></h2>
-								</header>
-								<!-- // .careers__header—article -->
+								<button class="careers__trigger" data-id="<?php echo esc_attr( get_the_ID() ); ?>">
 
-							</button>
+									<header class="careers__header--article">
+										<h2 class="careers__title"><?php the_title(); ?></h2>
+									</header>
+									<!-- // .careers__header—article -->
 
-							<div id="post-<?php echo esc_attr( get_the_ID() ); ?>-content" class="careers__content">
+								</button>
 
-								<?php the_content(); ?>
+								<div id="post-<?php echo esc_attr( get_the_ID() ); ?>-content" class="careers__content">
 
-								<?php if ( '' !== get_field( 'responsibilities' ) ) : ?>
+									<?php the_content(); ?>
 
-									<h3>Responsibilities</h3>
+									<?php if ( '' !== get_field( 'responsibilities' ) ) : ?>
 
-									<?php the_field( 'responsibilities' ); ?>
+										<h3>Responsibilities</h3>
 
-								<?php endif; ?>
+										<?php the_field( 'responsibilities' ); ?>
 
-								<?php if ( '' !== get_field( 'skills' ) ) : ?>
+									<?php endif; ?>
 
-									<h3>Skills</h3>
+									<?php if ( '' !== get_field( 'skills' ) ) : ?>
 
-									<?php the_field( 'skills' ); ?>
+										<h3>Skills</h3>
 
-								<?php endif; ?>
+										<?php the_field( 'skills' ); ?>
 
-							</div>
+									<?php endif; ?>
 
-						</li>
-						<!-- #post-## -->
+								</div>
 
-				<?php
-					endforeach;
+							</li>
+							<!-- #post-## -->
 
-					wp_reset_postdata();
+					<?php
+						endforeach;
 
-				endif;
+						wp_reset_postdata();
 
-				?>
+					endif;
 
-			</ul>
+					?>
 
-			<div class="careers__inner__content"></div>
+				</ul>
+
+				<?php if ( '' !== get_sub_field( 'boilerplate' ) ) : ?>
+
+					<footer class="careers__boilerplate">
+
+						<?php the_sub_field( 'boilerplate' ); ?>
+
+					</footer>
+
+				<?php endif; ?>
+
+			</div>
+
+			<div class="careers__inner__right careers__content"></div>
 
 		</div>
 		<!-- // inner -->
-
-		<?php if ( '' !== get_sub_field( 'boilerplate' ) ) : ?>
-
-			<footer class="careers__boilerplate">
-
-				<?php the_sub_field( 'boilerplate' ); ?>
-
-			</footer>
-
-		<?php endif; ?>
 
 	<?php endif; ?>
 

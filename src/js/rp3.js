@@ -307,15 +307,38 @@ var rp3 = (function($) {
 	   Display a Career Article
 	========================================================================== */
 
+	displayNthCareerArticle = function( i, $thisButton ) {
+
+		var panelID, $columnContainer,
+			thisID = $thisButton.data('id'),
+			$thisPost = $('#post-' + thisID),
+			$thisContent = $thisPost.find('.careers__content');
+
+		panelID = $thisButton.parents( '.page__panel' ).data( 'panel-id' );
+
+		// Close previously open buttons in this section
+		$('#panel-' + panelID).find('button.careers__trigger').each( function() {
+
+			if ( $(this).hasClass('open') ) {
+				$(this).removeClass('open');
+			}
+		});
+
+		$thisButton.addClass('open');
+
+		$columnContainer = $('#panel-' + panelID ).find( '.careers__inner__right' );
+
+		$columnContainer.html( $thisContent.html() );
+	},
+
 	displayCareerArticle = function() {
 
 		var $allPosts			= $('.careers__article'),
 			$buttons			= $('button.careers__trigger'),
-			panelID, $columnContainer,
 			thisID, $thisPost, $thisContent,
 			thatID, $thatPost, $thatContent;
 
-		$buttons.each( function() {
+		$buttons.each( function(i) {
 
 			$(this).on( 'click', function() {
 
@@ -327,11 +350,7 @@ var rp3 = (function($) {
 
 					/** Column Mode */
 
-					panelID = $(this).parents( '.page__panel' ).data( 'panel-id' );
-
-					$columnContainer = $('#panel-' + panelID ).find( '.careers__inner__content' );
-
-					$columnContainer.html( $thisContent.html() );
+					displayNthCareerArticle( i, $(this) );
 
 				} else {
 
@@ -378,6 +397,13 @@ var rp3 = (function($) {
 		});
 	},
 
+	displayFirstCareerArticle = function() {
+
+		$('.page__panel__careers').each( function() {
+			displayNthCareerArticle( 0, $(this).find('button.careers__trigger').eq(0) );
+		});
+	},
+
 	init = function() {
 
 		navigationCanvasSlide();
@@ -420,6 +446,13 @@ var rp3 = (function($) {
 		$(window).on( 'resize', function() {
 			breakpoint = getBreakpoint();
 		});
+
+		if ( $body.hasClass('page-careers') ) {
+
+			if ( ( breakpoint === 'medium' ) || ( breakpoint === 'intermediate' ) || ( breakpoint === 'large' ) ) {
+				displayFirstCareerArticle();
+			}
+		}
 	};
 
 	return {

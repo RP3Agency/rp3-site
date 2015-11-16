@@ -115,12 +115,6 @@
 	}
 
 	&__boilerplate {
-		@extend %max-width--padded;
-
-		ul {
-			list-style: square;
-			margin-left: 16px;
-		}
 
 		p {
 			margin: {
@@ -141,7 +135,7 @@
 			display: flex;
 		}
 
-		> ul {
+		&__left {
 
 			@include breakpoint( bp() ) {
 				margin-right: gutter();
@@ -161,7 +155,7 @@
 			}
 		}
 
-		&__content {
+		&__right {
 			width: span( 15 of 24 );
 
 			@include breakpoint( bp( "intermediate" ) ) {
@@ -197,6 +191,10 @@
 		position: relative;
 		text-align: left;
 		width: 100%;
+
+		&.open {
+			background-color: $color__gray--light;
+		}
 
 		@include breakpoint( bp() ) {
 			padding-left: 5px;
@@ -249,6 +247,11 @@
 		ul {
 			list-style: square;
 			margin-left: 16px;
+		}
+
+		&.careers__inner__right {
+			display: block;
+			opacity: 1;
 		}
 	}
 
