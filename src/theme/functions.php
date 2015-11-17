@@ -205,8 +205,20 @@ function rp3_dequeue_plugin_css() {
 	wp_dequeue_style( 'main-style' );
 	wp_dequeue_style( 'rpbcStyle' );
 	wp_dequeue_style( 'yarppWidgetCss' );
+
+	if ( ! is_page( 'contact' ) ) {
+		wp_dequeue_style( 'contact-form-7' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'rp3_dequeue_plugin_css' );
+
+function rp3_dequeue_plugin_js() {
+
+	if ( ! is_page( 'contact' ) ) {
+		wp_dequeue_script( 'contact-form-7' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'rp3_dequeue_plugin_js' );
 
 // https://wordpress.org/support/topic/prevent-loading-relatedcss-and-widgetcss
 function rp3_dequeue_yarpp_related_css() {
