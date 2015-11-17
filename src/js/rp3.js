@@ -1,5 +1,3 @@
-/* global rp3:true, ga:false, $f:false, Clipboard:false */
-
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
 
@@ -35,7 +33,6 @@ var rp3 = (function($) {
 
 		// If all else fails, return default.
 		return 'default';
-
 	},
 
 	/* ==========================================================================
@@ -60,6 +57,7 @@ var rp3 = (function($) {
 	/* ==========================================================================
 	   Load videos on work item pages
 	========================================================================== */
+
 	videoToggle = function() {
 
 		var $videoTrigger = $('.video__trigger');
@@ -86,10 +84,10 @@ var rp3 = (function($) {
 		});
 	},
 
+	/* ==========================================================================
+	   Raptor Jim
+	========================================================================== */
 
-	/**
-	 * Raptor Jim
-	 */
 	raptorJim = function() {
 		var $body = $('body');
 
@@ -105,7 +103,10 @@ var rp3 = (function($) {
 		}
 	},
 
-	/** Reveal Comments Section */
+	/* ==========================================================================
+	   Reveal Comments
+	========================================================================== */
+
 	revealComments = function() {
 		$( 'body' ).on( 'click', '.single-blog__comments__trigger', function(e) {
 			e.preventDefault();
@@ -121,6 +122,7 @@ var rp3 = (function($) {
 	/* ==========================================================================
 	   Front Page Video With Audio
 	========================================================================== */
+
 	frontPageVideoAudio = function() {
 
 		var $playAudioLink = $('#play-with-audio'),
@@ -169,7 +171,6 @@ var rp3 = (function($) {
 				$iframeParent.append( $container );
 			}
 		});
-
 	},
 
 	// Sorry for the mess...
@@ -404,6 +405,31 @@ var rp3 = (function($) {
 		});
 	},
 
+	/* ==========================================================================
+	   Element fade in/fade out (expose to public)
+	========================================================================== */
+
+	elementFadeIn = function( element ) {
+
+		element.addClass( 'open' );
+	},
+
+	elementFadeOut = function( element ) {
+
+		element.addClass( 'close' ).removeClass( 'open' );
+
+		if ( Modernizr.csstransitions ) {
+
+			element.one( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function () {
+				element.removeClass( 'close' );
+			});
+		}
+	},
+
+	/* ==========================================================================
+	   Init
+	========================================================================== */
+
 	init = function() {
 
 		navigationCanvasSlide();
@@ -457,7 +483,9 @@ var rp3 = (function($) {
 
 	return {
 		init:init,
-		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios
+		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios,
+		elementFadeIn:elementFadeIn,
+		elementFadeOut:elementFadeOut
 	};
 
 }(jQuery));

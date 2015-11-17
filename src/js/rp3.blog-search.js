@@ -1,5 +1,3 @@
-/* global rp3:true */
-
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
 
@@ -97,17 +95,15 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 		var $overlay	= $('#blog-search');
 
 		if ( $overlay.hasClass( 'open' ) ) {
-			$body.removeClass( 'search-open' );
-			$overlay.addClass( 'close' ).removeClass( 'open' );
 
-			if ( Modernizr.csstransitions ) {
-				$overlay.one( 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
-					$overlay.removeClass( 'close' );
-				});
-			}
+			$body.removeClass( 'search-open' );
+
+			rp3.elementFadeOut( $overlay );
 
 		} else if ( ! $overlay.hasClass( 'close' ) ) {
-			$overlay.addClass( 'open' );
+
+			rp3.elementFadeIn( $overlay );
+
 			$body.addClass( 'search-open' );
 
 			if ( 0 < searchQuery.length ) {

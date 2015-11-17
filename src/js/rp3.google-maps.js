@@ -5,8 +5,6 @@
 /** Tell JSHint that we know about the "google" object;
 	it gets defined by an externally-loaded google maps script */
 
-/* global google */
-
 (function() {
 
 	var marker;
