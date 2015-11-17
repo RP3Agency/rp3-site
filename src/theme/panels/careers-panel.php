@@ -95,11 +95,11 @@
 
 				</ul>
 
-				<?php if ( '' !== get_sub_field( 'boilerplate' ) ) : ?>
+				<?php if ( '' !== get_sub_field( 'boilerplate_widget_area' ) ) : ?>
 
 					<footer class="careers__boilerplate">
 
-						<?php the_sub_field( 'boilerplate' ); ?>
+						<?php the_sub_field( 'boilerplate_widget_area' ); ?>
 
 					</footer>
 
