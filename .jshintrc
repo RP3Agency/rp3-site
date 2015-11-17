@@ -1,17 +1,26 @@
 {
-  "undef": true,
-  "unused": true,
-  "predef": [
-  	"MY_GLOBAL",
-  	"ScrollMagic",
-  	"ScrollScene",
-  	"ScrollIntent",
-  	"Modernizr",
-  	"Backbone",
-  	"_"
-  ],
-  "browser": true,
-  "jquery": true,
-  "node": true,
-  "devel": true
+	"undef": true,
+	"unused": true,
+	"predef": [
+		"MY_GLOBAL",
+		"ScrollMagic",
+		"ScrollScene",
+		"ScrollIntent",
+		"Modernizr",
+		"Backbone",
+		"_",
+		"picturefill",
+		"ga",
+		"$f",
+		"Clipboard",
+		"wp",
+		"google"
+	],
+	"browser": true,
+	"jquery": true,
+	"node": true,
+	"devel": true,
+	"globals": {
+		"rp3": true
+	}
 }
