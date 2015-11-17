@@ -1,3 +1,20 @@
+/** Sharing Widget */
+div.sharedaddy {
+
+	h3.sd-title {
+		display: block;
+		font: {
+			size: rem(14px);
+			weight: 500;
+		}
+		margin-top: 2em;
+
+		&::before {
+			content: none;
+		}
+	}
+}
+
 .sd-social-icon .sd-content ul {
 
 	li[class*='share-'] a {

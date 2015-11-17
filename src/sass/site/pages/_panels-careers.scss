@@ -295,22 +295,6 @@
 			opacity: 0;
 		}
 	}
-
-	/** Sharing Widget */
-	.single-post-content__sharing {
-		max-width: none;
-
-		.sd-title {
-			@extend %roboto-medium;
-			display: block;
-			font-size: rem(14px);
-			margin-top: 2em;
-
-			&::before {
-				content: none;
-			}
-		}
-	}
 }
 
 
