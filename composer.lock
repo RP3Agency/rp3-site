@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9e94256645936431073b08a11603229c",
-    "content-hash": "0cd6b667bae79e0bd2a8045c4d2b5808",
+    "hash": "76ceef08b45d39a7d93746e1c10cf887",
+    "content-hash": "f2929c60d65f0b8d45321be5e5f91f0e",
     "packages": [
         {
             "name": "composer/installers",
@@ -261,6 +261,20 @@
             "type": "wordpress-plugin"
         },
         {
+            "name": "rp3agency/wp-offload-s3-pro",
+            "version": "1.0.4",
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.rp3dev.com/wp-offload-s3-pro.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
             "name": "wpackagist-plugin/admin-post-navigation",
             "version": "1.9.2",
             "source": {
@@ -299,26 +313,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/"
-        },
-        {
-            "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
-            "version": "0.9.9",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/0.9.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.9.9.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
         },
         {
             "name": "wpackagist-plugin/amazon-web-services",
