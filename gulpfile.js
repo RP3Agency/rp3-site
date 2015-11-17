@@ -203,7 +203,7 @@ gulp.task('default', function() {
 
 
 // Watch: watch our files and do things when they change
-gulp.task('watch', ['default'], function() {
+gulp.task('watch', function() {
 	// Watch .scss files
 	gulp.watch( src_sass + '/**/*.scss', ['styles'] );
 
