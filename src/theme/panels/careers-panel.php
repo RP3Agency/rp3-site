@@ -54,7 +54,32 @@
 
 									<?php endif; ?>
 
+									<?php /** Jetpack Sharing Module */ ?>
+
+									<?php if ( function_exists( 'sharing_display' ) ) : ?>
+
+										<!-- Sharing -->
+
+										<section class="single-post-content__sharing">
+
+											<?php sharing_display( '', true ); ?>
+
+										</section>
+
+									<?php endif; ?>
+
 								</div>
+
+<?php if ( function_exists( 'sharing_display' ) ) : ?>
+
+	<li class="share-link" id="share-link-<?php echo esc_attr( get_the_ID() ); ?>" data-post-id="<?php echo esc_attr( get_the_ID() ); ?>">
+		<a rel="nofollow" data-post-id="<?php echo esc_attr( get_the_ID() ); ?>" data-shared="sharing-link-<?php echo esc_attr( get_the_ID() ); ?>" data-clipboard-text="<?php echo esc_url( get_permalink() ); ?>" class="share-link sd-button share-icon no-text" href="#!" title="Click to copy permalink.">
+			<span></span>
+			<span class="sharing-screen-reader-text">Click to copy permalink to clipboard</span>
+		</a>
+	</li>
+
+<?php endif; ?>
 
 							</li>
 							<!-- #post-## -->
