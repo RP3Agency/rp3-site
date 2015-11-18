@@ -1,7 +1,6 @@
 // Careers
 .careers {
 	@extend %max-width;
-	font-size: em( 14px );
 	line-height: 1.5;
 	margin-top: 3em;
 
@@ -184,6 +183,7 @@
 		@extend %button--unstyled;
 		color: currentColor;
 		display: block;
+		font-size: rem(14px);
 		padding: {
 			top: 1em;
 			bottom: 1em;
