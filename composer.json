@@ -38,7 +38,7 @@
     "wpackagist-plugin/show-template":"*",
     "wpackagist-plugin/simple-login-log":"*",
     "wpackagist-plugin/simple-page-ordering":"*",
-    "wpackagist-plugin/sucuri-scanner":"*",
+    "wpackagist-plugin/sucuri-scanner":"dev-trunk",
     "wpackagist-plugin/svg-support":"*",
     "wpackagist-plugin/tc-custom-taxonomy-filter":"*",
     "wpackagist-plugin/theme-check":"*",
