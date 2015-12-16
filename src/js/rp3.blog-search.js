@@ -140,8 +140,16 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 		triggerBttn.on( 'click', function() {
 			toggleSearch();
 		});
+
 		closeBttn.on( 'click', function() {
 			toggleSearch();
+		});
+
+		$(document).keyup( function(e) {
+
+			if ( ( e.keyCode == 27 ) && ( $('#blog-search').hasClass( 'open' ) ) ) {
+				toggleSearch();
+			}
 		});
 	},
 

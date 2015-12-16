@@ -1,4 +1,4 @@
-/* global rp3:true, ga:false, $f:false */
+/* global rp3:true, ga:false, $f:false, Clipboard:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
@@ -218,6 +218,62 @@ var rp3 = (function($) {
 		}
 	},
 
+	/* ==========================================================================
+	   Copy permalink to clipboard
+	========================================================================== */
+
+	copyPermalinkSuccess = function( postID ) {
+		var $toolTip = $('#share-link-' + postID);
+
+		$toolTip.addClass( 'tt--open tt--success' );
+
+		setTimeout( function() {
+			$toolTip.removeClass( 'tt--open tt--success' );
+		}, 3000 );
+	},
+
+	copyPermalinkFailure = function( postID ) {
+		var $toolTip = $('#share-link-' + postID);
+
+		$toolTip.addClass( 'tt--open tt--failure' );
+
+		setTimeout( function() {
+			$toolTip.removeClass( 'tt--open tt--failure' );
+		}, 3000 );
+	},
+
+	copyPermalinkToClipboard = function() {
+
+		var clipboard = new Clipboard('.share-link'),
+			$shareLink = $('.share-link'),
+			postID;
+
+		$shareLink.on( 'click', function(e) {
+			e.preventDefault();
+			postID = $(this).data( 'post-id' );
+		});
+
+		clipboard.on( 'success', function() {
+			copyPermalinkSuccess( postID );
+		});
+
+		clipboard.on( 'error', function() {
+			copyPermalinkFailure( postID );
+		});
+	},
+
+	copyPermalinkOption = function() {
+
+		var $shareLink = $('li.share-link');
+
+		$shareLink.each( function() {
+
+			var postID = $(this).data( 'post-id' );
+
+			$( '#share-link-' + postID ).insertBefore( $('#post-' + postID + ' .share-end' ) );
+		});
+	},
+
 	init = function() {
 
 		navigationCanvasSlide();
@@ -228,15 +284,36 @@ var rp3 = (function($) {
 		campaignMonitor();
 		blogSubHeader();
 		fixBlogVideoAspectRatios();
+		copyPermalinkToClipboard();
+		copyPermalinkOption();
 
 		if ( $body.hasClass( 'home' ) ) {
 			frontPageVideoAudio();
 		}
+
+
+		var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+		var observer = new MutationObserver( function() {
+
+			// fired when a mutation occurs
+			copyPermalinkOption();
+			copyPermalinkToClipboard();
+		});
+
+		// define what element should be observed by the observer
+		// and what types of mutations trigger the callback
+		observer.observe(document, {
+			subtree: true,
+			attributes: true
+		});
 	};
 
 	return {
 		init:init,
-		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios
+		fixBlogVideoAspectRatios:fixBlogVideoAspectRatios,
+		// copyPermalinkToClipboard:copyPermalinkToClipboard,
+		// copyPermalinkOption:copyPermalinkOption
 	};
 
 }(jQuery));

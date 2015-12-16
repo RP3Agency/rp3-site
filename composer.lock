@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4d0522612ebbcc7b7efd79c6c86727b4",
-    "content-hash": "81a65f18ca6fd76446640c97013a66aa",
+    "hash": "9d5aadcef3648f13c1b7a5dd7edd091b",
+    "content-hash": "337ea4c74439bf0fadd37d5ea4205d33",
     "packages": [
         {
             "name": "composer/installers",
@@ -107,16 +107,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.3.1",
+            "version": "4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f"
+                "reference": "ad70e5cf518b697eed94f558ca6c88e5cc87e65b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f",
-                "reference": "cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/ad70e5cf518b697eed94f558ca6c88e5cc87e65b",
+                "reference": "ad70e5cf518b697eed94f558ca6c88e5cc87e65b",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-09-15 15:01:23"
+            "time": "2015-12-08 23:46:14"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -220,7 +220,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro",
-            "version": "1.5.2",
+            "version": "1.5.3",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro.zip",
@@ -248,10 +248,24 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro-media-files",
-            "version": "1.4",
+            "version": "1.4.1",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro-media-files.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
+            "name": "rp3agency/wp-offload-s3-pro",
+            "version": "1.0.4",
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.rp3dev.com/wp-offload-s3-pro.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -282,15 +296,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "3.1.5",
+            "version": "3.1.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/3.1.5"
+                "reference": "tags/3.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.3.1.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/akismet.3.1.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -302,15 +316,15 @@
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
-            "version": "0.9.9",
+            "version": "0.9.10",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/0.9.9"
+                "reference": "tags/0.9.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.9.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.9.10.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -442,15 +456,15 @@
         },
         {
             "name": "wpackagist-plugin/easy-digital-downloads",
-            "version": "2.4.9",
+            "version": "2.4.10",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/easy-digital-downloads/",
-                "reference": "tags/2.4.9"
+                "reference": "tags/2.4.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/easy-digital-downloads.2.4.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/easy-digital-downloads.2.4.10.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -502,15 +516,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.8.0",
+            "version": "3.8.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.8.0"
+                "reference": "tags/3.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.3.8.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.3.8.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -683,15 +697,15 @@
         },
         {
             "name": "wpackagist-plugin/sucuri-scanner",
-            "version": "dev-trunk",
+            "version": "1.7.16",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/sucuri-scanner/",
-                "reference": "trunk"
+                "reference": "tags/1.7.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.zip",
+                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.1.7.16.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -699,8 +713,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/sucuri-scanner/",
-            "time": "2015-11-24 00:40:07"
+            "homepage": "https://wordpress.org/plugins/sucuri-scanner/"
         },
         {
             "name": "wpackagist-plugin/svg-support",
@@ -764,15 +777,15 @@
         },
         {
             "name": "wpackagist-plugin/theme-check",
-            "version": "20150818.1",
+            "version": "20151211.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/theme-check/",
-                "reference": "tags/20150818.1"
+                "reference": "tags/20151211.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/theme-check.20150818.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/theme-check.20151211.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -784,15 +797,15 @@
         },
         {
             "name": "wpackagist-plugin/tinymce-advanced",
-            "version": "4.2.5",
+            "version": "4.2.8",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/tinymce-advanced/",
-                "reference": "tags/4.2.5"
+                "reference": "tags/4.2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.2.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.2.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -844,15 +857,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.0.3",
+            "version": "3.0.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.0.3"
+                "reference": "tags/3.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.0.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -989,7 +1002,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "wpackagist-plugin/really-simple-twitter-feed-widget": 20,
-        "wpackagist-plugin/sucuri-scanner": 20,
         "wpackagist-plugin/yet-another-related-posts-plugin": 20
     },
     "prefer-stable": false,

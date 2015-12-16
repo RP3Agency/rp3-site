@@ -1,0 +1,52 @@
+.sd-social-icon .sd-content ul {
+
+	li[class*='share-'] a {
+		border-radius: 0 !important;
+	}
+
+	/* ==========================================================================
+	   Copy Permalink
+	   ========================================================================== */
+
+	li[class*='share-'].share-link a.sd-button {
+		background-color: $color__blue;
+		color: $color__white !important;
+	}
+
+	li.share-link {
+		position: relative;
+
+		&::after {
+			@extend %roboto-medium;
+			background-color: $color__black;
+			color: $color__white;
+			content: "Copied Permalink";
+			display: block;
+			font-size: rem(12px);
+			line-height: 1;
+			opacity: 0;
+			padding: 5px;
+			position: absolute;
+			right: 5px;
+			text-transform: uppercase;
+			transition: opacity 5s;
+			white-space: nowrap;
+		}
+
+		&.tt--open::after {
+			opacity: 1;
+		}
+
+		&.tt--close::after {
+			opacity: 0;
+		}
+
+		&.tt--failure::after {
+			content: "CMD-C to Copy Permalink";
+		}
+
+		& a::before {
+			content: "\f107";
+		}
+	}
+}

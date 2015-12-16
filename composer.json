@@ -21,6 +21,7 @@
     "rp3agency/wp-migrate-db-pro-media-files": "*",
     "rp3agency/wp-migrate-db-pro-cli": "*",
     "rp3agency/rp3agency": "*",
+    "rp3agency/wp-offload-s3-pro":"*",
     "wpackagist-plugin/admin-post-navigation":"*",
     "wpackagist-plugin/akismet":"*",
     "wpackagist-plugin/black-studio-tinymce-widget":"*",
@@ -37,7 +38,7 @@
     "wpackagist-plugin/show-template":"*",
     "wpackagist-plugin/simple-login-log":"*",
     "wpackagist-plugin/simple-page-ordering":"*",
-    "wpackagist-plugin/sucuri-scanner":"dev-trunk",
+    "wpackagist-plugin/sucuri-scanner":"*",
     "wpackagist-plugin/svg-support":"*",
     "wpackagist-plugin/tc-custom-taxonomy-filter":"*",
     "wpackagist-plugin/theme-check":"*",
@@ -53,10 +54,10 @@
     "wpackagist-plugin/dynamic-featured-image": "*",
     "wpackagist-plugin/tc-comment-out": "*",
     "wpackagist-plugin/tinymce-advanced": "*",
-    "wpackagist-plugin/amazon-s3-and-cloudfront": "^0.9.6",
     "wpackagist-plugin/amazon-web-services": "^0.3.3",
     "wpackagist-plugin/wpclef": "^2.3",
-    "wpackagist-plugin/easy-digital-downloads": "^2.4"
+    "wpackagist-plugin/easy-digital-downloads": "^2.4",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "^0.9.6"
   },
   "extra": {
     "wordpress-install-dir": "_wp",

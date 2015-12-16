@@ -28,6 +28,7 @@
 		@extend %max-width--blog;
 		height: 100%;
 		overflow: scroll;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
 		-webkit-overflow-scrolling: touch;
 	}
 
@@ -200,6 +201,7 @@
 body.search-open {
 	overflow: hidden;
 	position: fixed;
+	width: 100%;
 }
 
 /** If we have a saved search state, hide the suggestions */
