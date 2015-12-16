@@ -21,4 +21,16 @@
 
 	</div>
 
+	<?php if ( function_exists( 'sharing_display' ) ) : ?>
+
+		<!-- Sharing -->
+
+		<div class="single-blog__sharing">
+
+			<?php sharing_display( '', true ); ?>
+
+		</div>
+
+	<?php endif; ?>
+
 </aside>
