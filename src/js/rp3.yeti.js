@@ -13,7 +13,7 @@ rp3.yeti = (function($) {
 
 		setTimeout( function() {
 			$('#agency-yeti').addClass('yeti-down');
-		}, 6000 );
+		}, 7000 );
 	},
 
 	init = function() {

@@ -11,6 +11,8 @@
 	</main>
 	<!-- // #content -->
 
+	<?php get_template_part( 'template-parts/content', 'agency-yeti' ); ?>
+
 </div>
 <!-- // #page -->
 

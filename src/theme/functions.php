@@ -224,7 +224,8 @@ add_action( 'get_footer', 'rp3_dequeue_yarpp_related_css' );
 
 // Add Favicon
 function rp3_favicon() {
-	echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri() . '/images/favicon.ico">';
+	echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri() . '/images/yeti-avatar.png">';
+	echo '<link rel="apple-touch-icon" href="' . get_stylesheet_directory_uri() . '/images/yeti-avatar.png">';
 }
 add_action( 'wp_head', 'rp3_favicon' );
 

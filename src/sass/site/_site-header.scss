@@ -24,7 +24,7 @@
 
 	/** Logo */
 
-	&__site-title .logo {
+	&__site-title .rp3-pressstart2p-logo {
 		display: block;
 		height: 28px;
 		width: 40px;
@@ -42,7 +42,7 @@
 		@extend %genericon-menu;
 		@extend %ir;
 		font-size: rem( 28px );
-		height: rem( 28px );
+		height: auto;
 		line-height: rem( 28px );
 		width: rem( 28px );
 

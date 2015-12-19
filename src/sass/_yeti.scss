@@ -1,10 +1,11 @@
 .agency-yeti {
-	animation: 500ms 2s ease-out forwards yeti-rising;
+	animation: 500ms 1.5s ease-out forwards yeti-rising;
 	// background-color: rgba( 9, 9, 9, 0.4 );
 	bottom: -100%;
 	height: 100vh;
 	position: fixed;
 	width: 100%;
+	z-index: 100;
 
 	&.yeti-down {
 		animation: 500ms ease-out forwards yeti-down;
