@@ -11,19 +11,25 @@ rp3.yeti = (function($) {
 
 	yetiRising = function() {
 
-		setTimeout( function() {
-			$('#agency-yeti').addClass('yeti-rising');
-		}, 500 );
+		if ( ! Cookies.get( 'RPYeti' ) ) {
+
+			setTimeout( function() {
+				$('#agency-yeti').addClass('yeti-rising');
+			}, 500 );
+
+			yetiCookie();
+		}
 	},
 
-	yetiDismissed = function() {
-		alert('hello!');
-		$('#agency-yeti').removeClass('yeti-rising');
+	yetiCookie = function() {
+
+		// Yetis _love_ cookies!
+
+		Cookies.set( 'RPYeti', true, {
+			expires: 1
+		});
+
 	},
-
-	// yetiCookie = function() {
-
-	// },
 
 	yetiDown = function() {
 

@@ -105,7 +105,7 @@ gulp.task( 'scripts-modernizr', function() {
 
 // Scripts task: Plugins
 gulp.task('scripts-plugins', function() {
-	return gulp.src(src_js_plugins + '/*.js')
+	return gulp.src( [ src_js_plugins + '/*.js', __dirname + '/bower_components/js-cookie/src/js.cookie.js' ] )
 		.pipe(concat(project + '-plugins.js'))
 		.pipe(gulp.dest(dest_theme_js))
 		.pipe(rename({suffix: '.min'}))
