@@ -82,10 +82,10 @@
 	</footer>
 	<!-- // #colophon -->
 
-	<?php get_template_part( 'template-parts/content', 'agency-yeti' ); ?>
-
 </div>
 <!-- // #page -->
+
+<?php get_template_part( 'template-parts/content', 'agency-yeti' ); ?>
 
 <?php wp_footer(); ?>
 

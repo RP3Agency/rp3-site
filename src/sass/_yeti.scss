@@ -1,23 +1,44 @@
 .agency-yeti {
-	animation: 500ms 1.5s ease-out forwards yeti-rising;
-	// background-color: rgba( 9, 9, 9, 0.4 );
-	bottom: -100%;
-	height: 100vh;
+	bottom: 0;
+	display: none;
+	left: 0;
 	position: fixed;
-	width: 100%;
+	right: 0;
+	top: 0;
 	z-index: 100;
 
-	&.yeti-down {
-		animation: 500ms ease-out forwards yeti-down;
+	&__inner {
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
 	}
 
-	img {
+	svg {
+		bottom: -100%;
 		height: auto;
 		left: 50%;
 		max-height: 100vh;
 		position: absolute;
 		transform: translate( -50%, 0 );
 		width: 75%;
+	}
+
+	&.yeti-rising {
+		display: block;
+
+		.agency-yeti__inner {
+			background-color: rgba( 9, 9, 9, 0.4 );
+		}
+
+		svg {
+			animation: 500ms ease-out forwards yeti-rising;
+		}
+	}
+
+	&.yeti-down {
+		animation: 500ms ease-out forwards yeti-down;
 	}
 }
 
@@ -38,5 +59,23 @@
 
 	100% {
 		bottom: -100%;
+	}
+}
+
+
+/** Adjustments to Mr. Yeti, himself */
+
+[data-name="Yeti"] {
+
+	.sign {
+		transform: rotate(3deg) translateX(1em) translateY(-1em);
+	}
+
+	.dismiss-yeti {
+		color: #00aeef !important;
+
+		&:active {
+			color: #00aeef;
+		}
 	}
 }

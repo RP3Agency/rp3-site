@@ -1,5 +1,9 @@
 <div id="agency-yeti" class="agency-yeti">
 
-	<img src="<?php echo esc_url( get_template_directory_uri() . '/images/agency-yeti.svg' ) ?>"/>
+	<div class="agency-yeti__inner">
+
+		<?php get_template_part( 'template-parts/inline', 'agency-yeti.svg' ); ?>
+
+	</div>
 
 </div>

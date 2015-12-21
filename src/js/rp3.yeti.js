@@ -9,14 +9,36 @@ rp3.yeti = (function($) {
 
 	var
 
-	yetiDown = function() {
+	yetiRising = function() {
 
 		setTimeout( function() {
+			$('#agency-yeti').addClass('yeti-rising');
+		}, 500 );
+	},
+
+	yetiDismissed = function() {
+		alert('hello!');
+		$('#agency-yeti').removeClass('yeti-rising');
+	},
+
+	// yetiCookie = function() {
+
+	// },
+
+	yetiDown = function() {
+
+		$('#dismiss-yeti').on('click', function(e) {
+			e.preventDefault();
 			$('#agency-yeti').addClass('yeti-down');
-		}, 7000 );
+
+			setTimeout( function() {
+				$('#agency-yeti').removeClass('yeti-rising');
+			}, 600 );
+		});
 	},
 
 	init = function() {
+		yetiRising();
 		yetiDown();
 	};
 
