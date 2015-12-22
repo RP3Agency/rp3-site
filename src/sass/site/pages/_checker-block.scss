@@ -50,7 +50,7 @@
 		}
 
 		.checker-block--agency &--07 {
-			left: rem(200px);
+			left: rem(400px);
 			top: rem(450px);
 		}
 
@@ -76,6 +76,7 @@
 			background-color: $color__magenta;
 			left: rem(400px);
 			top: rem(300px);
+			width: rem(400px);
 		}
 
 		/** Careers */
@@ -100,8 +101,9 @@
 		}
 
 		.checker-block--careers &--05 {
+			background-color: $color__blue;
 			left: rem(1000px);
-			top: rem(150px);
+			top: rem(300px);
 		}
 
 		.checker-block--careers &--06 {
@@ -114,6 +116,7 @@
 		}
 
 		.checker-block--careers &--08 {
+			background-color: $color__blue;
 			left: rem(400px);
 			top: rem(300px);
 		}

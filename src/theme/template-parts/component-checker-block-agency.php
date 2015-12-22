@@ -22,9 +22,9 @@
 			<img srcset="<?php echo esc_url( get_template_directory_uri() . '/images/checker-block-agency/checker-block-agency-05.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/checker-block-agency/checker-block-agency-05@2x.jpg' ); ?> 2x" alt=""/>
 		</div>
 
-		<div class="checker-block__block checker-block__block--06">
+		<!-- <div class="checker-block__block checker-block__block- -06">
 			<img srcset="<?php echo esc_url( get_template_directory_uri() . '/images/checker-block-agency/checker-block-agency-06.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/checker-block-agency/checker-block-agency-06@2x.jpg' ); ?> 2x" alt=""/>
-		</div>
+		</div> -->
 
 		<div class="checker-block__block checker-block__block--07">
 			<img srcset="<?php echo esc_url( get_template_directory_uri() . '/images/checker-block-agency/checker-block-agency-07.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/checker-block-agency/checker-block-agency-07@2x.jpg' ); ?> 2x" alt=""/>
