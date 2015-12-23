@@ -41,6 +41,20 @@ rp3.yeti = (function($) {
 				$('#agency-yeti').removeClass('yeti-rising');
 			}, 600 );
 		});
+
+		$('#agency-yeti').on('click', function(e) {
+			var clicked = $(e.target); // get the element clicked
+			if (clicked.is('g') || clicked.parents().is('g')) {
+				return; // click happened within the dialog, do nothing here
+			} else { // click was outside the dialog, so close it
+				e.preventDefault();
+				$('#agency-yeti').addClass('yeti-down');
+
+				setTimeout( function() {
+					$('#agency-yeti').removeClass('yeti-rising');
+				}, 600 );
+			}
+		});
 	},
 
 	init = function() {

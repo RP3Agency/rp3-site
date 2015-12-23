@@ -13,6 +13,16 @@
 		position: absolute;
 		right: 0;
 		top: 0;
+
+		&::after {
+			content: '\f406';
+			font-family: genericons;
+			color: white;
+			position: absolute;
+			top: 50px;
+			right: 50px;
+			font-size: 1.5rem;
+		}
 	}
 
 	svg {
