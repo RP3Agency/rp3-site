@@ -15,7 +15,7 @@
 
 		if ( '' !== document.getElementById('contact__map') ) {
 
-			var myLatLng = new google.maps.LatLng(38.9827398, -77.0940005),
+			var myLatLng = new google.maps.LatLng(27.7, 85.333333),
 				blue = '#2e91cc',
 				mapOptions = {
 					center: myLatLng,
