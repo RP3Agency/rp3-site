@@ -1,3 +1,4 @@
+<?php /*
 <svg id="97bcf3c3-00e0-4f67-a469-b4b6b6b95419" data-name="Yeti" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 519.52 563">
 	<defs>
 		<style>
@@ -514,8 +515,8 @@
 		<a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#!" id="dismiss-yeti" class="dismiss-yeti" onclick="ga('send', 'event', 'Yeti Takeover', 'Dismiss the Yeti');"><text class="62a28609-7c7a-4407-b8b4-2ce5c4c38074" transform="translate(132.46 496.73)">No thanks.<tspan x="76.63" y="0"> </tspan><tspan x="80.28" y="0">T</tspan><tspan x="88.95" y="0">a</tspan><tspan x="97.65" y="0">k</tspan><tspan x="105.6" y="0">e me </tspan><tspan x="144.5" y="0">t</tspan><tspan x="149.57" y="0">o rp3agenc</tspan><tspan x="229.39" y="0">y</tspan><tspan x="236.13" y="0">.com.</tspan></text></a>
 	</g>
 </svg>
+*/ ?>
 
-<?php /*
 <svg id="870fd168-b8a6-47e3-8062-610ff0f83ece" data-name="Yeti" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 519.52 563">
 	<defs>
 		<style>
@@ -1033,4 +1034,3 @@
 		<a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#!" id="dismiss-yeti" class="dismiss-yeti" onclick="ga('send', 'event', 'Yeti Takeover', 'Dismiss the Yeti');"><text class="58ae9bd8-d5e2-488b-99e7-d7eb72936447" transform="translate(132.46 496.73)">No thanks.<tspan x="76.63" y="0"> </tspan><tspan x="80.28" y="0">T</tspan><tspan x="88.95" y="0">a</tspan><tspan x="97.65" y="0">k</tspan><tspan x="105.6" y="0">e me </tspan><tspan x="144.5" y="0">t</tspan><tspan x="149.57" y="0">o rp3agenc</tspan><tspan x="229.39" y="0">y</tspan><tspan x="236.13" y="0">.com.</tspan></text></a>
 	</g>
 </svg>
-*/ ?>
