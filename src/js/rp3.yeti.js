@@ -1,4 +1,4 @@
-/* global rp3:true */
+/* global rp3:true, Cookies:false */
 
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
