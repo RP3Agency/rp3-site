@@ -70,5 +70,5 @@ rp3.yeti = (function($) {
 
 (function() {
 	'use strict';
-	// rp3.yeti.init();
+	rp3.yeti.init();
 }());
