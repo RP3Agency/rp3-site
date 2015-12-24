@@ -49,6 +49,7 @@ rp3.yeti = (function($) {
 			} else { // click was outside the dialog, so close it
 				e.preventDefault();
 				$('#agency-yeti').addClass('yeti-down');
+				ga('send', 'event', 'Yeti Takeover', 'Dismiss the Yeti');
 
 				setTimeout( function() {
 					$('#agency-yeti').removeClass('yeti-rising');
