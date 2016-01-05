@@ -6,7 +6,7 @@ var gulp			= require('gulp'),
 	// Sass/Compass/related CSSy things
 	sass			= require('gulp-sass'),
 	autoprefixer	= require('gulp-autoprefixer'),
-	minifycss		= require('gulp-minify-css'),
+	cssnano			= require('gulp-cssnano'),
 	sourcemaps		= require('gulp-sourcemaps'),
 
 	// JavaScript
@@ -53,7 +53,7 @@ var // Project
 
 // Styles
 gulp.task('styles', function() {
-	return gulp.src(src_sass + '/*.scss')
+	return gulp.src( src_sass + '/*.scss' )
 		.pipe( sourcemaps.init() )
 		.pipe( sass( {
 			errLogToConsole: true
@@ -66,7 +66,9 @@ gulp.task('styles', function() {
 		.pipe( rename( {
 			suffix: '.min'
 		} ) )
-		.pipe( minifycss() )
+		.pipe( cssnano( {
+			autoprefixer : false
+		} ) )
 		.pipe( gulp.dest( dest_theme_css ) )
 		.pipe( livereload() );
 });
