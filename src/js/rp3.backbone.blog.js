@@ -68,6 +68,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 							if( direction == 'up' ) {
 								history.pushState( null, null, prev_link );
+								document.title = $article.data( 'title' ) + ' | RP3 Agency';
 							} else {
 
 								var permalink = $article.data( 'permalink' );
@@ -77,7 +78,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 								}
 
 								history.pushState( null, null, permalink );
-
+								document.title = $article.data( 'title' ) + ' | RP3 Agency';
 							}
 
 							// trigger analytics page view and reporting events
