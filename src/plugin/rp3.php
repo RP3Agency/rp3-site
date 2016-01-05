@@ -29,3 +29,20 @@ function rp3_copy_permalink() {
 }
 
 add_action( 'plugins_loaded', 'rp3_copy_permalink' );
+
+/**
+ * Filter the Yoast Google Analytics Plugin to suit our needs
+ */
+
+function rp3_yoast_ga_filter( $gaq_push ) {
+
+	array_pop( $gaq_push );
+
+	// var_dump( $gaq_push );
+
+	return $gaq_push;
+
+}
+
+add_filter( 'yoast-ga-push-array-universal', 'rp3_yoast_ga_filter', 1 );
+
