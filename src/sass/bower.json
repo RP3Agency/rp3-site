@@ -15,6 +15,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "js-cookie": "~2.1.0"
+    "susy": "~2.2.3",
+    "breakpoint-sass": "~2.6.0"
   }
 }

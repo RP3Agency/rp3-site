@@ -6,7 +6,7 @@ var gulp			= require('gulp'),
 	// Sass/Compass/related CSSy things
 	sass			= require('gulp-sass'),
 	autoprefixer	= require('gulp-autoprefixer'),
-	minifycss		= require('gulp-minify-css'),
+	cssnano			= require('gulp-cssnano'),
 	sourcemaps		= require('gulp-sourcemaps'),
 
 	// JavaScript
@@ -53,7 +53,7 @@ var // Project
 
 // Styles
 gulp.task('styles', function() {
-	return gulp.src(src_sass + '/*.scss')
+	return gulp.src( src_sass + '/*.scss' )
 		.pipe( sourcemaps.init() )
 		.pipe( sass( {
 			errLogToConsole: true
@@ -66,7 +66,9 @@ gulp.task('styles', function() {
 		.pipe( rename( {
 			suffix: '.min'
 		} ) )
-		.pipe( minifycss() )
+		.pipe( cssnano( {
+			autoprefixer : false
+		} ) )
 		.pipe( gulp.dest( dest_theme_css ) )
 		.pipe( livereload() );
 });
@@ -157,10 +159,6 @@ gulp.task('clean', function() {
 	del( [dest_theme, dest_plugin], function() {
 		console.log( 'Theme and plugin directories deleted.' );
 	});
-
-	// del( [__dirname + '/builders'], function() {
-	// 	console.log( '/builders/ directory deleted.' );
-	// });
 });
 
 
@@ -192,7 +190,6 @@ gulp.task('build-plugin', function() {
 gulp.task('build', ['styles', 'scripts'], function() {
 	gulp.start('build-theme');
 	gulp.start('build-plugin');
-	// gulp.start('builders');
 });
 
 
@@ -219,31 +216,6 @@ gulp.task('watch', ['default'], function() {
 	// Watch plugin files
 	gulp.watch( src_plugin + '/**/*.*', ['build-plugin'] );
 
-	// Watch builders/sass/*.scss files
-	// gulp.watch( __dirname + '/src/builders/**/*.*', ['builders'] );
-
 	livereload.listen();
 	gutil.log( 'LiveReload server activated' );
 });
-
-
-
-// Build processes for builders case study
-// gulp.task('builders', function() {
-// 	gulp.src(src + '/builders/**/*')
-// 		.pipe(gulp.dest(__dirname + '/builders'));
-
-// 	return gulp.src(__dirname + '/src/builders/sass/*.scss')
-// 		.pipe( sourcemaps.init() )
-// 		.pipe(sass({
-// 			errLogToConsole: true
-// 		}))
-// 		.pipe(autoprefixer({
-// 			browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-// 		}))
-// 		.pipe(sourcemaps.write())
-// 		.pipe(gulp.dest(__dirname + '/builders/css'))
-// 		.pipe(rename({suffix: '.min'}))
-// 		.pipe(minifycss())
-// 		.pipe(gulp.dest(__dirname + '/builders/css'));
-// });
