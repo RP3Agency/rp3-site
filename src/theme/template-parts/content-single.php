@@ -49,6 +49,18 @@
 
 			<?php the_content(); ?>
 
+			<?php if ( function_exists( 'sharing_display' ) ) : ?>
+
+				<!-- Sharing -->
+
+				<div class="single-blog__sharing">
+
+					<?php sharing_display( '', true ); ?>
+
+				</div>
+
+			<?php endif; ?>
+
 		</section>
 
 		<?php if ( is_singular( 'rp3_cpt_careers' ) ) : ?>

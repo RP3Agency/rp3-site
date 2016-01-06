@@ -4,7 +4,7 @@
 
 <% _.each( posts, function( post ) { %>
 
-	<article id="post-<%= post.ID %>" class="single-post-content single-post-content--blog" data-permalink="<%= post.link %>">
+	<article id="post-<%= post.ID %>" class="single-post-content single-post-content--blog" data-permalink="<%= post.link %>" data-title="<%= post.title %>">
 
 		<div class="single-post-content__wrapper">
 

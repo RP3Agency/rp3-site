@@ -12,8 +12,6 @@ _wp
 .ssh
 wp-content/managewp
 wp-config-local.php
-builders
-!src/builders
 rp3config.json
 bower_components
 src/js/vendor/modernizr.js

@@ -17,7 +17,7 @@
 
 	<div class="site-header__blog-link">
 
-		<a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="arrow arrow--right"><span>Building Opportunity</span> Blog</a>
+		<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" class="arrow arrow--right"><span>Building Opportunity</span> Blog</a>
 
 	</div>
 
