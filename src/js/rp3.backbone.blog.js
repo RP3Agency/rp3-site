@@ -58,7 +58,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 					// store current location (previous loaded or landing url) and article depth in local scope
 					var prev_link = location.href,
-						article_depth = postCollection.state.currentPage;
+						article_depth = postCollection.state.currentPage,
+						prev_title = document.title;
 
 					// add article scroll waypoint
 					that.$el.find('article').waypoint({
@@ -68,7 +69,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 							if( direction == 'up' ) {
 								history.pushState( null, null, prev_link );
-								document.title = $article.data( 'title' ) + ' | RP3 Agency';
+								document.title = prev_title;
 							} else {
 
 								var permalink = $article.data( 'permalink' );
