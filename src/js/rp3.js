@@ -341,8 +341,14 @@ var rp3 = (function($) {
 
 		$buttons.each( function(i) {
 
+			// Disable the link that only does something if JS isn't available
+			$(this).find('a').on( 'click', function(e) {
+				e.preventDefault();
+			});
+
 			$(this).on( 'click', function() {
 
+				// Proceed as normal…
 				thisID = $(this).data( 'id' );
 				$thisPost = $('#post-' + thisID);
 				$thisContent = $thisPost.find( '.careers__content' );
