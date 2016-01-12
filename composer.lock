@@ -107,16 +107,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.4",
+            "version": "4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "ad70e5cf518b697eed94f558ca6c88e5cc87e65b"
+                "reference": "85d6a8c16c7e8bb369e7530d3676d16618f68e24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/ad70e5cf518b697eed94f558ca6c88e5cc87e65b",
-                "reference": "ad70e5cf518b697eed94f558ca6c88e5cc87e65b",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/85d6a8c16c7e8bb369e7530d3676d16618f68e24",
+                "reference": "85d6a8c16c7e8bb369e7530d3676d16618f68e24",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-12-08 23:46:14"
+            "time": "2016-01-06 18:46:15"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -476,15 +476,15 @@
         },
         {
             "name": "wpackagist-plugin/easy-digital-downloads",
-            "version": "2.4.10",
+            "version": "2.5.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/easy-digital-downloads/",
-                "reference": "tags/2.4.10"
+                "reference": "tags/2.5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/easy-digital-downloads.2.4.10.zip",
+                "url": "https://downloads.wordpress.org/plugin/easy-digital-downloads.2.5.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -556,15 +556,15 @@
         },
         {
             "name": "wpackagist-plugin/json-rest-api",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/json-rest-api/",
-                "reference": "tags/1.2.4"
+                "reference": "tags/1.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/json-rest-api.1.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/json-rest-api.1.2.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -717,15 +717,15 @@
         },
         {
             "name": "wpackagist-plugin/sucuri-scanner",
-            "version": "1.7.16",
+            "version": "1.7.17",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/sucuri-scanner/",
-                "reference": "tags/1.7.16"
+                "reference": "tags/1.7.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.1.7.16.zip",
+                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.1.7.17.zip",
                 "reference": null,
                 "shasum": null
             },
