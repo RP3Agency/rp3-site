@@ -48,13 +48,23 @@
 
 			<?php endif; ?>
 
-			<?php if ( has_term( 'internship', 'rp3_tax_departments' ) ) : ?>
+			<?php if ( '' !== get_field( 'boilerplate' ) ) : ?>
 
-				<?php dynamic_sidebar( 'internship-boilerplate-widget' ); ?>
+				<div class="single-post-content--careers__subsection">
 
-			<?php else : ?>
+					<?php
 
-				<?php dynamic_sidebar( 'careers-boilerplate-widget' ); ?>
+					$post = get_field( 'boilerplate' );
+
+					setup_postdata( $post );
+
+					the_content();
+
+					wp_reset_postdata();
+
+					?>
+
+				</div>
 
 			<?php endif; ?>
 

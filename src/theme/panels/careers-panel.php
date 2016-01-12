@@ -28,13 +28,17 @@
 								<button class="careers__trigger" data-id="<?php echo esc_attr( get_the_ID() ); ?>">
 
 									<header class="careers__header--article">
-										<h2 class="careers__title"><?php the_title(); ?></h2>
+
+										<h2 class="careers__title"><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></h2>
+
 									</header>
 									<!-- // .careers__header—article -->
 
 								</button>
 
 								<div id="post-<?php echo esc_attr( get_the_ID() ); ?>-content" class="careers__content">
+
+									<h2><?php the_title(); ?></h2>
 
 									<?php the_content(); ?>
 
@@ -51,6 +55,30 @@
 										<h3>Skills</h3>
 
 										<?php the_field( 'skills' ); ?>
+
+									<?php endif; ?>
+
+									<?php
+
+									$boilerplate = (object) get_field( 'boilerplate' );
+
+									if ( ! empty( $boilerplate ) ) : ?>
+
+										<footer class="careers__boilerplate">
+
+											<?php
+
+											$post = get_field( 'boilerplate' );
+
+											setup_postdata( $post );
+
+											the_content();
+
+											wp_reset_postdata();
+
+											?>
+
+										</footer>
 
 									<?php endif; ?>
 
@@ -94,16 +122,6 @@
 					?>
 
 				</ul>
-
-				<?php if ( '' !== get_sub_field( 'boilerplate_widget_area' ) ) : ?>
-
-					<footer class="careers__boilerplate">
-
-						<?php the_sub_field( 'boilerplate_widget_area' ); ?>
-
-					</footer>
-
-				<?php endif; ?>
 
 			</div>
 
