@@ -82,6 +82,17 @@
 
 	&__title {
 		margin-bottom: 0.5em;
+
+		a {
+			color: currentColor;
+			display: block;
+			text-decoration: none;
+
+			&:active,
+			&:focus {
+				outline: none;
+			}
+		}
 	}
 
 	&__secondary-copy {
@@ -235,6 +246,15 @@
 			}
 		}
 
+		h2 {
+			display: none;
+			font-size: 1.25rem;
+
+			@include breakpoint( bp() ) {
+				display: block;
+			}
+		}
+
 		h3 {
 			@extend %roboto-medium;
 			border-bottom: 1px solid $color__gray--light;
@@ -295,6 +315,12 @@
 			opacity: 0;
 		}
 	}
+
+	&__boilerplate {
+		border-top: 1px solid $color__gray--light;
+		margin-top: 1em;
+		padding-top: 1em;
+	}
 }
 
 
@@ -312,4 +338,8 @@
 			bottom: 2rem;
 		}
 	}
+}
+
+.single-post-content--careers__subsection ul li {
+	margin: 0 !important;
 }
