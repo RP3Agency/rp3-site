@@ -147,7 +147,7 @@ function rp3_cpt_news() {
 function rp3_cpt_careers() {
 
 	// Custom Post Type
-	$args = array(
+	$careers_args = array(
 		'labels'				=> array(
 			'name'					=> 'Careers',
 			'singular_name'			=> 'Job',
@@ -162,14 +162,14 @@ function rp3_cpt_careers() {
 		'menu_position'			=> 6,
 		'hierarchical'			=> false,
 		'menu_icon'				=> 'dashicons-admin-tools',
-		'supports'				=> array( 'title', 'editor', 'excerpt' ),
+		'supports'				=> array( 'title', 'editor' ),
 		'rewrite'				=> array(
 			'slug'					=> 'careers',
 			'with_front'			=> false
 		)
 	);
 
-	register_post_type( 'rp3_cpt_careers', $args );
+	register_post_type( 'rp3_cpt_careers', $careers_args );
 
 	// Custom Taxonomy
 	$tax_args = array(
@@ -182,12 +182,43 @@ function rp3_cpt_careers() {
 	);
 
 	register_taxonomy( 'rp3_tax_departments', 'rp3_cpt_careers', $tax_args );
+
+	/**
+	 * Career Boilerplate Snippets
+	 * The benefit boilerplate snippets
+	 */
+
+
+	$boilerplate_args = array(
+		'labels'				=> array(
+			'name'					=> 'Career Boilerplates',
+			'singular_name'			=> 'Boilerplate',
+			'add_new_item'			=> 'Add New Boilerplate',
+			'edit_item'				=> 'Edit Boilerplate',
+			'new_item'				=> 'New Boilerplate',
+			'view_item'				=> 'View Boilerplate',
+			'search_items'			=> 'Search Boilerplates'
+		),
+		'description'			=> 'Career boilerplates.',
+		'public'				=> false,
+		'exclude_from_search'	=> true,
+		'show_ui'				=> true,
+		'show_in_nav_menus'		=> false,
+		'show_in_menu'			=> true,
+		'menu_position'			=> 7,
+		'show_in_admin_bar'		=> false,
+		'hierarchical'			=> true,
+		'menu_icon'				=> 'dashicons-admin-tools',
+		'supports'				=> array( 'title', 'editor' )
+	);
+
+	register_post_type( 'rp3_cpt_career_bp', $boilerplate_args );
 }
+
 
 /**
  * Custom Taxonomies for Blog Posts
  */
-
 function rp3_blog_taxonomies() {
 
 	$industry_args = array(
