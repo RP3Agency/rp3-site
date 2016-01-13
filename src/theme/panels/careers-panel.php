@@ -68,13 +68,9 @@
 
 											<?php
 
-											$post = get_field( 'boilerplate' );
+											$boilerplate = get_field( 'boilerplate' );
 
-											setup_postdata( $post );
-
-											the_content();
-
-											wp_reset_postdata();
+											echo apply_filters( 'the_content', $boilerplate->post_content );
 
 											?>
 
