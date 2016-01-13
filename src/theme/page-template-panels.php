@@ -19,7 +19,7 @@ get_header(); ?>
 
 		<?php /** For the careers page, add some copy about not finding the right position */ ?>
 
-		<?php get_template_part( 'template-parts/component', 'careers-page-boilerplate' ); ?>
+		<?php // get_template_part( 'template-parts/component', 'careers-page-boilerplate' ); ?>
 
 	<?php endif; ?>
 
