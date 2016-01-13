@@ -138,20 +138,25 @@
 			top: rem(450px);
 		}
 
-		.checker-block--careers &--blue {
+		.checker-block--careers &--blue-01 {
 			background-color: $color__blue;
 			top: rem(450px);
 		}
 
+		.checker-block--careers &--blue-02 {
+			background-color: $color__blue;
+			left: rem(800px);
+		}
+
 		.checker-block--careers &--magenta-01 {
 			background-color: $color__magenta;
-			left: rem(800px);
+			width: rem(400px);
 		}
 
 		.checker-block--careers &--magenta-02 {
 			background-color: $color__magenta;
-			left: rem(200px);
-			top: rem(150px);
+			left: rem(1000px);
+			top: rem(300px);
 		}
 	}
 }

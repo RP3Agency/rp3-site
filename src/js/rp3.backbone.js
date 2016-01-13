@@ -1,5 +1,3 @@
-/* global rp3:true, wp:false */
-
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
 

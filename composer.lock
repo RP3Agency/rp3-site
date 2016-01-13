@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9d5aadcef3648f13c1b7a5dd7edd091b",
-    "content-hash": "337ea4c74439bf0fadd37d5ea4205d33",
+    "hash": "a66f991a8f0c3d138e6fcc19863c9c08",
+    "content-hash": "af05714234afd3c991bd31ecfb259f07",
     "packages": [
         {
             "name": "composer/installers",
@@ -293,6 +293,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/admin-post-navigation/"
+        },
+        {
+            "name": "wpackagist-plugin/advanced-custom-fields-widget-area-field",
+            "version": "1.0.0",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/advanced-custom-fields-widget-area-field/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields-widget-area-field.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/advanced-custom-fields-widget-area-field/"
         },
         {
             "name": "wpackagist-plugin/akismet",
