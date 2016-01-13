@@ -15,5 +15,29 @@ function rp3_widgets_init() {
 		'before_title'		=> '<h1 class="widget-title">',
 		'after_title'		=> '</h1>'
 	) );
+
+	// Careers Boilerplate Widget
+	register_sidebar( array(
+		'name'				=> __( 'Careers Boilerplate Widget', 'rp3' ),
+		'id'				=> 'careers-boilerplate-widget',
+		'class'				=> 'careers-boilerplate-widget boilerplate',
+		'description'		=> __( 'Boilerplate for full-time positions.', 'rp3' ),
+		'before_widget'		=> '<aside id="careers-boilerplate-widget__widget-area" class="widget %2$s">',
+		'after_widget'		=> '</aside>',
+		'before_title'		=> '<h1 class="widget-title">',
+		'after_title'		=> '</h1>'
+	) );
+
+	// Internship Boilerplate Widget
+	register_sidebar( array(
+		'name'				=> __( 'Internship Boilerplate Widget', 'rp3' ),
+		'id'				=> 'internship-boilerplate-widget',
+		'class'				=> 'internship-boilerplate-widget boilerplate',
+		'description'		=> __( 'Boilerplate for internship positions.', 'rp3' ),
+		'before_widget'		=> '<aside id="internship-boilerplate-widget__widget-area" class="widget %2$s">',
+		'after_widget'		=> '</aside>',
+		'before_title'		=> '<h1 class="widget-title">',
+		'after_title'		=> '</h1>'
+	) );
 }
 add_action( 'widgets_init', 'rp3_widgets_init' );

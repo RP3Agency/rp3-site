@@ -138,9 +138,7 @@ function rp3_add_slug_body_class( $classes ) {
 		$classes[] = $post->post_type . '-' . $post->post_name;
 	}
 
-	if ( is_single() && in_category( 'blog' ) ) {
-		$classes[] = 'single-post-blog';
-	}
+	$classes[] = 'single-post-blog';
 
 	return $classes;
 }
@@ -152,11 +150,6 @@ add_filter( 'body_class', 'rp3_add_slug_body_class' );
 function rp3_strip_anchor_filter( $content ) {
 	return preg_replace( '/<\/?a[^>]*>/', '', $content );
 }
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -212,8 +205,20 @@ function rp3_dequeue_plugin_css() {
 	wp_dequeue_style( 'main-style' );
 	wp_dequeue_style( 'rpbcStyle' );
 	wp_dequeue_style( 'yarppWidgetCss' );
+
+	if ( ! is_page( 'contact' ) ) {
+		wp_dequeue_style( 'contact-form-7' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'rp3_dequeue_plugin_css' );
+
+function rp3_dequeue_plugin_js() {
+
+	if ( ! is_page( 'contact' ) ) {
+		wp_dequeue_script( 'contact-form-7' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'rp3_dequeue_plugin_js' );
 
 // https://wordpress.org/support/topic/prevent-loading-relatedcss-and-widgetcss
 function rp3_dequeue_yarpp_related_css() {

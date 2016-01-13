@@ -10,16 +10,16 @@
 
 	<?php if ( have_rows( 'flexible_content_panels' ) ) : ?>
 
-		<?php while ( have_rows( 'flexible_content_panels' ) ) : the_row(); ?>
+		<?php $counter = 0; while ( have_rows( 'flexible_content_panels' ) ) : the_row(); ?>
 
-			<section class="page__panel">
+			<section id="panel-<?php echo esc_attr( $counter ); ?>" class="page__panel" data-panel-id="<?php echo esc_attr( $counter ); ?>">
 
 				<?php get_template_part( 'panels/' . get_row_layout() ); ?>
 
 			</section>
 			<!-- page panels -->
 
-		<?php endwhile; ?>
+		<?php $counter++; endwhile; ?>
 
 	<?php endif; ?>
 

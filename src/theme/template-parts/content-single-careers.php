@@ -48,15 +48,44 @@
 
 			<?php endif; ?>
 
+			<?php if ( '' !== get_field( 'boilerplate' ) ) : ?>
+
+				<div class="single-post-content--careers__subsection">
+
+					<?php
+
+					$post = get_field( 'boilerplate' );
+
+					setup_postdata( $post );
+
+					the_content();
+
+					wp_reset_postdata();
+
+					?>
+
+				</div>
+
+			<?php endif; ?>
+
+			<?php if ( function_exists( 'sharing_display' ) ) : ?>
+
+			<!-- Sharing -->
+
+			<div class="single-post-content__sharing">
+
+				<?php sharing_display( '', true ); ?>
+
+			</div>
+
 		</section>
 
-		<?php if ( has_term( 'internship', 'rp3_tax_departments' ) ) : ?>
-
-			<?php get_template_part( 'template-parts/content', 'careers-boilerplate-internship' ); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'template-parts/content', 'careers-boilerplate' ); ?>
+			<li class="share-link" id="share-link-<?php echo esc_attr( get_the_ID() ); ?>" data-post-id="<?php echo esc_attr( get_the_ID() ); ?>">
+				<a rel="nofollow" data-post-id="<?php echo esc_attr( get_the_ID() ); ?>" data-shared="sharing-link-<?php echo esc_attr( get_the_ID() ); ?>" data-clipboard-text="<?php echo esc_url( get_permalink() ); ?>" class="share-link sd-button share-icon no-text" href="#!" title="Click to copy permalink.">
+					<span></span>
+					<span class="sharing-screen-reader-text">Click to copy permalink to clipboard</span>
+				</a>
+			</li>
 
 		<?php endif; ?>
 

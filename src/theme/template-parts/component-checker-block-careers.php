@@ -52,7 +52,9 @@
 
 		<!-- Blue Spacer Blocks -->
 
-		<div class="checker-block__block checker-block__block--blue"></div>
+		<div class="checker-block__block checker-block__block--blue-01"></div>
+		
+		<div class="checker-block__block checker-block__block--blue-02"></div>
 
 		<!-- Magenta Spacer Block -->
 

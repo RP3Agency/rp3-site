@@ -1,5 +1,3 @@
-/* global rp3:true, picturefill:false */
-
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
 

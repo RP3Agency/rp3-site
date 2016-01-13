@@ -68,19 +68,19 @@
 
 			<?php the_content(); ?>
 
+			<?php if ( function_exists( 'sharing_display' ) ) : ?>
+
+				<!-- Sharing -->
+
+				<div class="single-post-content__sharing">
+
+					<?php sharing_display( '', true ); ?>
+
+				</div>
+
+			<?php endif; ?>
+
 		</section>
-
-		<?php if ( function_exists( 'sharing_display' ) ) : ?>
-
-			<!-- Sharing -->
-
-			<section class="single-post-content__sharing">
-
-				<?php sharing_display( '', true ); ?>
-
-			</section>
-
-		<?php endif; ?>
 
 		<?php /** If comments are open or we have at least one comment, load up the comment template */ ?>
 
