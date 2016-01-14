@@ -8,6 +8,7 @@ var gulp			= require('gulp'),
 	autoprefixer	= require('gulp-autoprefixer'),
 	cssnano			= require('gulp-cssnano'),
 	sourcemaps		= require('gulp-sourcemaps'),
+	kss				= require('kss'),
 
 	// JavaScript
 	jshint			= require('gulp-jshint'),
@@ -50,6 +51,9 @@ var // Project
  * Now, let's do things.
  */
 
+/* ==========================================================================
+   CSS
+   ========================================================================== */
 
 // Styles
 gulp.task('styles', function() {
@@ -72,6 +76,23 @@ gulp.task('styles', function() {
 		.pipe( gulp.dest( dest_theme_css ) )
 		.pipe( livereload() );
 });
+
+// KSS
+gulp.task( 'kss', function() {
+
+	var kss_node = __dirname + '/node_modules/.bin/kss-node';
+
+	return gulp.src( '' )
+		.pipe( shell(
+			kss_node + ' --source ' + src_sass + ' --destination styleguide --css /wp-content/themes/rp3/css/rp3.css'
+		) )
+		.pipe( livereload() );
+
+});
+
+/* ==========================================================================
+   JavaScript
+   ========================================================================== */
 
 // Scripts task: JSHint & minify custom js
 // Scripts need to be loaded in a particular order. There's probably a better way of doing this.
@@ -156,7 +177,7 @@ gulp.task('scripts', function() {
 
 // Clean
 gulp.task('clean', function() {
-	del( [dest_theme, dest_plugin], function() {
+	del( [dest_theme, dest_plugin, __dirname + '/styleguide'], function() {
 		console.log( 'Theme and plugin directories deleted.' );
 	});
 });
@@ -202,7 +223,7 @@ gulp.task('default', function() {
 // Watch: watch our files and do things when they change
 gulp.task('watch', function() {
 	// Watch .scss files
-	gulp.watch( src_sass + '/**/*.scss', ['styles'] );
+	gulp.watch( src_sass + '/**/*.scss', ['styles', 'kss'] );
 
 	// Watch custom JavaScript files
 	gulp.watch( src_js + '/*.js', ['scripts-custom'] );
