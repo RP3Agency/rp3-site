@@ -9,8 +9,8 @@
 		}
 	}
 
-	background-color: $color__black;
-	color: $color__white;
+	background-color: color( 'black' );
+	color: color( 'white' );
 	font-size: rem( 12px );
 	line-height: 1.5;
 	padding: 2rem 0;
@@ -21,7 +21,7 @@
 	}
 
 	a {
-		color: $color__white;
+		color: color( 'white' );
 		text-decoration: none;
 
 		@include hover-state {
@@ -52,7 +52,7 @@
 		}
 
 		path {
-			fill: $color__white;
+			fill: color( 'white' );
 		}
 	}
 
@@ -82,14 +82,14 @@
 
 			a {
 				border: none;
-				color: $color__white;
+				color: color( 'white' );
 				padding: 0;
 				transition: background-color 100ms linear,
 					color 100ms linear;
 
 				@include hover-state {
-					background-color: $color__white;
-					color: $color__black;
+					background-color: color( 'white' );
+					color: color( 'black' );
 					text-decoration: none;
 				}
 			}

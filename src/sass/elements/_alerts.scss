@@ -9,10 +9,10 @@
 // .warning			- Something _may_ have gone wrong
 // .error			- Something _did_ go wrong
 // 
-// Styleguide: components.alerts
+// Styleguide: Components.Alerts
 
 .rp3-alert {
-	background-color: mix( white, $color__black, 95% );
+	background-color: mix( white, color( 'black' ), 95% );
 	border: 2px solid;
 	margin: 0.5em 0;
 	padding: 0.5em;

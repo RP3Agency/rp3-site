@@ -1,15 +1,15 @@
 a {
-	color: $color__link;
+	color: color( 'blue' );
 	transition: color 100ms linear;
 
 	&:visited {
-		color: $color__link--visited;
+		color: color( 'blue' );
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link--hover;
+		color: color( 'magenta' );
 	}
 
 	&:focus {
@@ -32,11 +32,11 @@ a {
 // Make something _look_ like a link, even if it's not really
 // (mostly for "learn more" type copy inside 'blocked' anchors)
 .link {
-	color: $color__link;
+	color: color( 'blue' );
 	text-decoration: underline;
 
 	@include hover-state {
-		color: $color__link--hover;
+		color: color( 'magenta' );
 	}
 }
 

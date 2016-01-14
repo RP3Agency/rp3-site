@@ -7,7 +7,7 @@ html {
 }
 
 body {
-	color: $color__black;
+	color: color( 'black' );
 
 	// Inheritance issues vs. reset prohibit us from using our %roboto-normal placeholder selector
 	font: {

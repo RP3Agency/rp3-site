@@ -6,7 +6,7 @@
 		@include hover-state {
 
 			.video-panel__play-button rect {
-				fill: transparentize( $color__black, 0.2 );
+				fill: transparentize( color( 'black' ), 0.2 );
 			}
 		}
 	}
@@ -22,11 +22,11 @@
 		}
 
 		polygon {
-			fill: $color__blue;
+			fill: color( 'blue' );
 		}
 
 		rect {
-			fill: transparentize( $color__white, 0.2 );
+			fill: transparentize( color( 'white' ), 0.2 );
 			transition: fill 100ms linear;
 		}
 	}
@@ -37,7 +37,7 @@
 		position: relative;
 
 		// > a::after {
-		// 	background-color: transparentize( $color__black, 0.2 );
+		// 	background-color: transparentize( color( 'black' ), 0.2 );
 		// 	border: 1px solid #fff;
 		// 	border-radius: 2px;
 		// 	color: #fff;
@@ -62,7 +62,7 @@
 
 		// @include hover-state {
 		// 	> a::after {
-		// 		background-color: $color__black;
+		// 		background-color: color( 'black' );
 		// 	}
 		// }
 	}

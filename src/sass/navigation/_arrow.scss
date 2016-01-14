@@ -1,8 +1,8 @@
 .arrow {
-	background-color: transparentize( $color__blue, 1 );
-	border: 2px solid $color__blue;
+	background-color: transparentize( color( 'blue' ), 1 );
+	border: 2px solid color( 'blue' );
 	box-sizing: content-box;
-	color: $color__blue;
+	color: color( 'blue' );
 	display: inline-block;
 	font: {
 		size: rem(12px);
@@ -19,7 +19,7 @@
 	white-space: nowrap;
 
 	@include modernizr( "cssclippathpolygon" ) {
-		background-color: transparentize( $color__white, 0.5 );
+		background-color: transparentize( color( 'white' ), 0.5 );
 		border: none;
 		box-sizing: border-box;
 		height: auto;
@@ -30,17 +30,17 @@
 	}
 
 	@include hover-state {
-		background-color: $color__blue;
-		color: $color__white;
+		background-color: color( 'blue' );
+		color: color( 'white' );
 		transition: background-color 100ms;
 
 		&::before {
-			background-color: $color__blue;
+			background-color: color( 'blue' );
 		}
 
 		@include modernizr( "cssclippathpolygon" ) {
-			background-color: $color__blue;
-			color: $color__white;
+			background-color: color( 'blue' );
+			color: color( 'white' );
 		}
 	}
 
@@ -54,8 +54,8 @@
 	}
 
 	&::before {
-		background-color: transparentize( $color__blue, 1 );
-		border: solid $color__blue;
+		background-color: transparentize( color( 'blue' ), 1 );
+		border: solid color( 'blue' );
 		box-sizing: content-box;
 		content: "";
 		display: block;
@@ -66,7 +66,7 @@
 		z-index: -1;
 
 		@include modernizr( "cssclippathpolygon" ) {
-			background-color: $color__blue;
+			background-color: color( 'blue' );
 			border: none;
 			bottom: 0;
 			height: 100%;
@@ -80,12 +80,12 @@
 	}
 
 	&--left {
-		background-color: mix( white, $color__gray--light, 50% );
+		background-color: mix( white, color( 'gray--light' ), 50% );
 		border-left-width: 0;
 		margin-left: 15px;
 
 		&::before {
-			background-color: mix( white, $color__gray--light, 50% );
+			background-color: mix( white, color( 'gray--light' ), 50% );
 			border-width: 0 0 2px 2px;
 			left: -10px;
 			transform: rotate( 45deg );

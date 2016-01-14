@@ -6,7 +6,7 @@
 	-webkit-overflow-scrolling: touch;
 
 	&__post {
-		background-color: $color__blue;
+		background-color: color( 'blue' );
 		margin-right: gutter();
 		min-width: ( 320px * 0.8 );
 		overflow: hidden;
@@ -32,7 +32,7 @@
 		}
 
 		&__label {
-			color: $color__white;
+			color: color( 'white' );
 			line-height: 1.5;
 			padding: 1em;
 		}

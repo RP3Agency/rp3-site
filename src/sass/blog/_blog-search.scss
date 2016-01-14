@@ -1,7 +1,7 @@
 .blog-search {
-	background-color: transparentize( $color__white, 0.05 );
+	background-color: transparentize( color( 'white' ), 0.05 );
 	bottom: 0;
-	color: mix( black, $color__gray, 50% );
+	color: mix( black, color( 'gray' ), 50% );
 	left: 0;
 	opacity: 0;
 	overflow: hidden;
@@ -51,7 +51,7 @@
 	&__list {
 
 		li {
-			border-bottom: 1px solid $color__gray;
+			border-bottom: 1px solid color( 'gray' );
 			margin-bottom: 1em;
 			padding-bottom: 1em;
 
@@ -134,7 +134,7 @@
 			&::before {
 				@extend %genericon;
 				@extend %genericon-search;
-				color: $color__blue;
+				color: color( 'blue' );
 				flex-grow: 0;
 				font-size: rem(32px);
 				height: auto;
@@ -150,7 +150,7 @@
 			background-color: transparent;
 			border-radius: 0;
 			border-width: 0 0 1px 0;
-			border-color: $color__blue;
+			border-color: color( 'blue' );
 			flex-grow: 1;
 			font-size: 1rem;
 		}

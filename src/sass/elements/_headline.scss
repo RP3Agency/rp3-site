@@ -1,5 +1,5 @@
 .headline {
-	background-color: transparentize( $color__white, 0.1 );
+	background-color: transparentize( color( 'white' ), 0.1 );
 	font-size: rem( 14px );
 	line-height: 1;
 	padding: 1em;
