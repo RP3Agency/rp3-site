@@ -18,10 +18,36 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 
+// Strong
+// 
+// Because it's really, _really_ important.
+// 
+// Markup:
+// <div><strong>Don't make me shout!</strong></div>
+// <div><b>Don't make me shout!</b></div>
+// 
+// Styleguide: Components.Typography.Strong
+
 b,
 strong {
 	font-weight: $font-weight__medium;
 }
+
+// Emphasis
+// 
+// Because it's really important.
+// 
+// Markup:
+// <div><em>I'm emphasizing this.</em></div>
+// <div><i>I'm emphasizing this.</i></div>
+// 
+// Styleguide: Components.Typography.Emphasis
+
+em,
+i {
+	font-style: italic;
+}
+
 
 /** Larger and small fonts as adjustments to the current font context. */
 

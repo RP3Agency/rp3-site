@@ -1,11 +1,49 @@
-/* ==========================================================================
-   centered
-   Horizontal and/or vertical centering via `transform: translate()`
-   Parent element must have `position: relative;` (unless already set as 
-   `position: absolute`)
+// @appearance { }
+// 
+// Vendor-prefix the "appearance" property (b/c autoprefixer doesn't).
+// 
+// Styleguide Helpers.Mixins.appearance
 
-   Accepted values: "both" (default), "horizontal", "vertical"
-   ========================================================================== */
+@mixin appearance($appearance) {
+	-webkit-appearance: $appearance;
+	-moz-appearance: $appearance;
+	appearance: $appearance;
+}
+
+
+// @aspect-ratio( $width, $height) { }
+// 
+// Define a constant aspect ratio, regardless of actual size. Default is 4:3.
+// 
+// Styleguide Helpers.Mixins.aspect-ratio
+
+@mixin aspect-ratio( $width: 4, $height: 3 ) {
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		padding-top: percentage( $height / $width );
+		width: 100%;
+	}
+
+	> * {
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+
+// @centered( $direction ) { }
+// 
+// Horizontal and/or vertical centering via `transform: translate()`. Parent element must have `position: relative;` (unless already set as `position: absolute`)
+//
+// $direction - How the child element should be centered (can be horizontal or vertical, defaults to both)
+// 
+// Styleguide Helpers.Mixins.centered
 
 @mixin centered( $direction: "both" ) {
 	position: absolute;
@@ -28,10 +66,13 @@
 	}
 }
 
-/* ==========================================================================
-   highlight
-   Background coloring for debugging
-   ========================================================================== */
+// @highlight( $adjustment ) { }
+// 
+// Background coloring for debugging
+//
+// $adjustment - Any adjustments to the hue. By default, hue = 0 (pure magenta)
+// 
+// Styleguide Helpers.Mixins.highlight
 
 @mixin highlight( $adjustment: 0 ) {
 
@@ -41,10 +82,11 @@
 }
 
 
-/* ==========================================================================
-   hover-state
-   Quicker way of writing &:hover, &:active, &:focus
-   ========================================================================== */
+// @hover-state { }
+// 
+// Quicker way of writing &:hover, &:active, &:focus. Does not take any arguments.
+// 
+// Styleguide Helpers.Mixins.hover-state
 
 @mixin hover-state {
 
@@ -56,50 +98,15 @@
 }
 
 
-/* ==========================================================================
-   aspect-ratio
-   Define a constant aspect ratio, regardless of actual size.
-   Default is 4:3
-   ========================================================================== */
+// @modernizr( $test ) { }
+// 
+// Make adjustments for browser support issues.
+// 
+// $test - Which test result we're looking to account for.
+// 
+// Styleguide Helpers.Mixins.modernizr
 
-@mixin aspect-ratio( $width: 320px, $height: 240px ) {
-	position: relative;
-
-	&::before {
-		content: "";
-		display: block;
-		padding-top: percentage( $height / $width );
-		width: 100%;
-	}
-
-	> * {
-		bottom: 0;
-		left: 0;
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
-}
-
-
-/* ==========================================================================
-   appearance
-   vendor-prefix the "appearance" property (b/c autoprefixer doesn't)
-   ========================================================================== */
-
-@mixin appearance($appearance) {
-	-webkit-appearance: $appearance;
-	-moz-appearance: $appearance;
-	appearance: $appearance;
-}
-
-
-
-/* ==========================================================================
-   modernizr
-   ========================================================================== */
-
-@mixin modernizr($test) {
+@mixin modernizr( $test ) {
 	html.#{$test} & {
 		@content;
 	}
