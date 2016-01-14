@@ -84,7 +84,7 @@ gulp.task( 'kss', function() {
 
 	return gulp.src( '' )
 		.pipe( shell(
-			kss_node + ' --source ' + src_sass + ' --destination styleguide --css /wp-content/themes/rp3/css/rp3.css'
+			kss_node + ' --source ' + src_sass + ' --css /wp-content/themes/rp3/css/rp3.css --title "RP3 Agency Web Style Guide"'
 		) )
 		.pipe( livereload() );
 
@@ -214,9 +214,10 @@ gulp.task('build', ['styles', 'scripts'], function() {
 });
 
 
-// Default: right now, just running build
+// Default
 gulp.task('default', function() {
 	gulp.start('build');
+	gulp.start('kss');
 });
 
 
