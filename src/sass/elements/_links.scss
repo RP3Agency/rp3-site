@@ -1,3 +1,16 @@
+// Links
+// 
+// `elements/_links.scss`
+// 
+// Inline, text-based links.
+// 
+// .continue - Add a right-facing caret (er, greater than sign) on "continue" type links
+// 
+// Markup:
+// <p>Need to find something? <a href="https://google.com" class="{{modifier_class}}"">Go to Google.</a></p>
+// 
+// Styleguide: Typography.Links
+
 a {
 	color: color( 'blue' );
 	transition: color 100ms linear;
@@ -29,8 +42,23 @@ a {
 	}
 }
 
+// .link
+// 
+// `elements/_links.scss`
+// 
 // Make something _look_ like a link, even if it's not really
-// (mostly for "learn more" type copy inside 'blocked' anchors)
+// (mostly for "learn more" type copy inside 'blocked' anchors). Notice
+// how in the example, "Need to find something?" is also linked, it just
+// doesn't look like it. This is mostly done for "tile" like interfaces,
+// where you want to make the tap target bigger for touch devices.
+// 
+// Markup:
+// <a href="https://google.com" class="block">
+//     Need to find something? <span class="link">Go go Google.</span>
+// </a>
+// 
+// Styleguide: Typography.Links (Faux)
+
 .link {
 	color: color( 'blue' );
 	text-decoration: underline;
@@ -40,8 +68,6 @@ a {
 	}
 }
 
-// Add a right-facing caret (er, greater than sign) on "continue" type Links
-// (as opposed to "back" type links that get a left-facing caret (er, less than sign))
 .continue {
 	clear: both;
 	font-weight: $font-weight__medium;
