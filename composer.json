@@ -50,7 +50,7 @@
     "wpackagist-plugin/wp-super-cache":"*",
     "wpackagist-plugin/featured-images-for-rss-feeds": "*",
     "wpackagist-plugin/wp-bitly":"*",
-    "wpackagist-plugin/yet-another-related-posts-plugin":"dev-trunk",
+    "wpackagist-plugin/yet-another-related-posts-plugin":"*",
     "wpackagist-plugin/dynamic-featured-image": "*",
     "wpackagist-plugin/tc-comment-out": "*",
     "wpackagist-plugin/tinymce-advanced": "*",
@@ -58,7 +58,7 @@
     "wpackagist-plugin/wpclef": "^2.3",
     "wpackagist-plugin/easy-digital-downloads": "^2.4",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "^0.9.6",
-    "wpackagist-plugin/advanced-custom-fields-widget-area-field": "*"
+    "wpackagist-plugin/wp-super-cache-clear-cache-menu": "*"
   },
   "extra": {
     "wordpress-install-dir": "_wp",
