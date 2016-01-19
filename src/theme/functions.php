@@ -339,3 +339,19 @@ function add_player_id_to_iframe( $html, $url, $args ) {
 }
 
 add_filter( 'deprecated_constructor_trigger_error', '__return_false' );
+
+function rp3_editor_style() {
+
+	add_editor_style( get_stylesheet_directory_uri() . '/css/rp3-editor.css' );
+}
+
+add_action( 'admin_init', 'rp3_editor_style' );
+
+function rp3_editor_remove_styles( $in ) {
+
+	$in['block_formats'] = "Paragraph=p; Heading 2=h2";
+
+	return $in;
+}
+
+add_filter( 'tiny_mce_before_init', 'rp3_editor_remove_styles' );
