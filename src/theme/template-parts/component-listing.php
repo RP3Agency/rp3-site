@@ -144,7 +144,7 @@ if ( '' !== get_field( 'post_type' ) ) {
 
 							<?php
 							/** Use an alternate featured listing, if available */
-							if ( '' !== get_field( 'secondary_featured_image' ) ) {
+							if ( ( get_field( 'secondary_featured_image' ) ) && ( NULL !== get_field( 'secondary_featured_image' ) ) ) {
 								$featured_image_id = get_field( 'secondary_featured_image' );
 							} else {
 								$featured_image_id = get_post_thumbnail_id( get_the_ID() );
@@ -217,18 +217,13 @@ if ( '' !== get_field( 'post_type' ) ) {
 
 						<div class="listing__thumbnail">
 							<?php
-
 							/** Use an alternate featured listing, if available */
-							if ( get_field( 'secondary_featured_image' ) ) {
+							if ( ( get_field( 'secondary_featured_image' ) ) && ( NULL !== get_field( 'secondary_featured_image' ) ) ) {
 								$featured_image_id = get_field( 'secondary_featured_image' );
 							} else {
 								$featured_image_id = get_post_thumbnail_id( get_the_ID() );
 							}
-							?>
 
-							<!-- <?php echo get_post_thumbnail_id( get_the_ID() ); ?> -->
-
-							<?php
 							$image['small'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small' );
 							$image['small_2x'] = wp_get_attachment_image_src( $featured_image_id, 'four_three_small_2x' );
 
