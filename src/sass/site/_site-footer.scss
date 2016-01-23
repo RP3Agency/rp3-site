@@ -46,6 +46,10 @@
 	&__logo {
 		@extend %site-footer__bottom-margin;
 
+		a {
+			display: inline-block;
+		}
+
 		svg {
 			height: 28px;
 			width: 40px;
