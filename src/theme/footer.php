@@ -21,7 +21,7 @@
 
 					<div class="site-footer__logo">
 
-						<a href="<?php echo esc_url( home_url() ); ?>" class="block">
+						<a href="<?php echo esc_url( home_url() ); ?>">
 
 							<?php get_template_part( 'template-parts/inline', 'rp3-logo.svg' ); ?>
 
