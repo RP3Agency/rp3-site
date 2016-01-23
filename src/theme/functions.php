@@ -349,7 +349,7 @@ add_action( 'admin_init', 'rp3_editor_style' );
 
 function rp3_editor_remove_styles( $in ) {
 
-	$in['block_formats'] = "Paragraph=p; Heading 2=h2";
+	$in['block_formats'] = "Paragraph=p; Heading 1=h1; Heading 2=h2";
 
 	return $in;
 }

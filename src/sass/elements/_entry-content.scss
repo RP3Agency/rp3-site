@@ -1,4 +1,5 @@
-.entry-content {
+.entry-content,
+.wp-editor {
 	@extend %max-width--padded;
 	margin-bottom: 2em;
 	max-width: rem( 900px );
