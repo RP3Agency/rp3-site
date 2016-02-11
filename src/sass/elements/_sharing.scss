@@ -26,8 +26,8 @@ div.sharedaddy {
 	   ========================================================================== */
 
 	li[class*='share-'].share-link a.sd-button {
-		background-color: $color__blue;
-		color: $color__white !important;
+		background-color: color( 'blue' );
+		color: color( 'white' ) !important;
 	}
 
 	li.share-link {
@@ -35,8 +35,8 @@ div.sharedaddy {
 
 		&::after {
 			@extend %roboto-medium;
-			background-color: $color__black;
-			color: $color__white;
+			background-color: color( 'black' );
+			color: color( 'white' );
 			content: "Copied Permalink";
 			display: block;
 			font-size: rem(12px);

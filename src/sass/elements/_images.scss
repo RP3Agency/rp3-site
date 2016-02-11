@@ -11,8 +11,8 @@ img {
 }
 
 .wp-caption {
-	background-color: $color__gray--light;
-	border: 1px solid $color__gray;
+	background-color: color( 'gray--light' );
+	border: 1px solid color( 'gray' );
 	margin-bottom: 1em;
 	max-width: 100%;
 	padding: 4px;

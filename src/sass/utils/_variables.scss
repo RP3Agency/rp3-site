@@ -4,32 +4,33 @@
 
 $site-context: 1200px;
 
+$colors: (
+	'gray--light':		#e9e9e9,
+	'gray':				#bcbec0,
+	'black':			#222,
+	'white':			#fff,
+	'blue':				#00aeef,
+	'magenta':			#d10457
+);
 
-/* ==========================================================================
-   Color Palette
-   ========================================================================== */
+// Colors
+// 
+// Color palette. Use the Sass function indicated to call it. Example:
+// 
+//     .selector {
+//         background-color: color( 'blue' );
+//     }
+// 
+// Markup:
+// <div style="background:#e9e9e9; padding: 1rem;">color( 'gray--light' ): #e9e9e9</div>
+// <div style="background:#bcbec0; color: #fff; padding: 1rem;">color( 'gray' ): #bcbec0</div>
+// <div style="background:#222; color: #fff; padding: 1rem;">color( 'black' ): #222</div>
+// <div style="background:#fff; padding: 1rem;">color( 'white' ): #fff</div>
+// <div style="background:#00aeef; color: #fff; padding: 1rem;">color( 'blue' ): #00aeef</div>
+// <div style="background:#d10457; color: #fff; padding: 1rem;">color( 'magenta' ): #d10457</div>
+// 
+// Styleguide: Colors
 
-$color__gray--light:	#e9e9e9;
-$color__gray:			#bcbec0;
-$color__black:			#222;
-$color__white:			#fff;
-$color__blue:			#00aeef;
-$color__magenta:		#d10457;
-
-
-/* ==========================================================================
-   Color Meanings
-   ========================================================================== */
-
-$color__primary:		$color__blue;
-$color__secondary:		$color__magenta;
-$color__link:			$color__primary;
-$color__link--visited:	$color__primary;
-$color__link--hover:	$color__secondary;
-
-
-/* ==========================================================================
-   Legacy
-   ========================================================================== */
-
-$blue:		$color__blue;
+@function color( $color ) {
+	@return map-get( $colors, $color );
+}

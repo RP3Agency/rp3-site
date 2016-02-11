@@ -17,7 +17,7 @@
 
 		&__play-audio {
 			@extend %max-width--padded;
-			background-color: $color__white;
+			background-color: color( 'white' );
 			border: none;
 			display: none;
 			font-weight: $font-weight__bold;
@@ -38,8 +38,8 @@
 			}
 
 			@include hover-state {
-				background-color: $color__white;
-				color: $color__blue;
+				background-color: color( 'white' );
+				color: color( 'blue' );
 				opacity: 1;
 			}
 
@@ -91,7 +91,7 @@
 			}
 
 			&--color-bar {
-				background-color: $color__gray--light;
+				background-color: color( 'gray--light' );
 				height: rem( 450px / 2 );
 				position: relative;
 
@@ -166,7 +166,7 @@
 
 	&__blocks {
 		@extend %max-width;
-		color: $color__white;
+		color: color( 'white' );
 		font-size: rem( 12px );
 
 		&__subhead {
@@ -203,7 +203,7 @@
 		}
 
 		&__general-widget {
-			background-color: $color__magenta;
+			background-color: color( 'magenta' );
 
 			@include breakpoint( bp() ) {
 				background-image: url("../images/icon-lightning.svg");
@@ -211,7 +211,7 @@
 		}
 
 		&__blog {
-			background-color: $color__black;
+			background-color: color( 'black' );
 
 			@include breakpoint( bp() ) {
 				background-image: url("../images/icon-blog.svg");
@@ -228,7 +228,7 @@
 		}
 
 		&__twitter {
-			background-color: $color__blue;
+			background-color: color( 'blue' );
 
 			a {
 				color: currentColor;
@@ -250,7 +250,7 @@
 		}
 
 		&__news {
-			background-color: $color__gray;
+			background-color: color( 'gray' );
 
 			@include breakpoint( bp() ) {
 				background-image: url("../images/icon-flame.svg");

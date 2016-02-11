@@ -25,7 +25,7 @@
 
 	&__date {
 		@extend %roboto-medium;
-		color: mix( white, $color__black, 50% );
+		color: mix( white, color( 'black' ), 50% );
 		margin: {
 			top: 0.5em;
 			bottom: 0.5em;
@@ -74,13 +74,47 @@
 		font-weight: $font-weight__medium;
 	}
 
+	// Unordered Lists
+	// 
+	// `site/posts/_single.scss`
+	// 
+	// Default ul (inside `.single-post-content`).
+	// 
+	// Markup:
+	// <div class="single-post-content">
+	//     <ul>
+	//         <li>List item one.</li>
+	//         <li>List item two.</li>
+	//     </ul>
+	// </div>
+	// 
+	// Styleguide Typography.Lists.Unordered
+
 	ul:not(.social, .single-blog__comments__list) {
 		list-style: square;
 		margin: 0 0 2em 1em;
 	}
 
+	// .quotations
+	// 
+	// `site/posts/_single.scss`
+	// 
+	// Default ol (inside `.single-post-content`).
+	// 
+	// Markup:
+	// <div class="single-post-content">
+	//     <div class="quotations">
+	//         <ul class="quotations__quote-block">
+	//             <li class="quotations__quote">Ruby is for hipsters.</li>
+	//         </ul>
+	//         <div class="quotations__attribution">Kurt P. Roberts</div>
+	//     </div>
+	// </div>
+	// 
+	// Styleguide Typography.Lists.Quotations
+
 	.quotations {
-		border: 1px solid $color__gray--light;
+		border: 1px solid color( 'gray--light' );
 		margin-bottom: 2em;
 		padding: 1em;
 
@@ -100,9 +134,24 @@
 		}
 	}
 
+	// Blockquote
+	// 
+	// `site/posts/_single.scss`
+	// 
+	// Default blockquote (inside `.single-post-content`).
+	// 
+	// Markup:
+	// <div class="single-post-content">
+	//     <blockquote>
+	//         <p>You can have my hard "G" when you pry it from my cold, dead hands.</p>
+	//     </blockquote>
+	// </div>
+	// 
+	// Styleguide Typography.Lists.Blockquote
+
 	blockquote {
 		border-left: 3px solid;
-		color: $color__blue;
+		color: color( 'blue' );
 		font: {
 			size: rem( 16px );
 			style: italic;
@@ -143,7 +192,7 @@
 
 		&__subhead {
 			@extend %roboto-medium;
-			border-bottom: 1px solid $color__gray;
+			border-bottom: 1px solid color( 'gray' );
 			font-size: em( 14px );
 			margin-bottom: 0.5em;
 			padding-bottom: 0.25em;

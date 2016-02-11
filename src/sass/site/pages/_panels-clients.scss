@@ -4,7 +4,7 @@
 
 	svg path,
 	svg g > * {
-		fill: $color__black !important; // !important, to override inline styles from Adobe Illustrator
+		fill: color( 'black' ) !important; // !important, to override inline styles from Adobe Illustrator
 
 		&[fill="none"] {
 			fill: none !important;

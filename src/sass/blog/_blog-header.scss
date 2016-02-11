@@ -1,5 +1,5 @@
 .blog-header {
-	background: $color__gray--light url("../images/header-blog-background.jpg") repeat-y center center;
+	background: color( 'gray--light' ) url("../images/header-blog-background.jpg") repeat-y center center;
 
 	@include breakpoint( $hidpi ) {
 		background: {
@@ -49,7 +49,7 @@
 				}
 
 				&::after {
-					border: 1px dashed $color__magenta;
+					border: 1px dashed color( 'magenta' );
 					border-radius: 100%;
 					content: "";
 					display: block;
@@ -68,7 +68,7 @@
 				}
 
 				.building {
-					color: transparentize( mix( black, $color__blue, 5% ), 0.1 );
+					color: transparentize( mix( black, color( 'blue' ), 5% ), 0.1 );
 					display: inline-block;
 					margin-bottom: 16px;
 
@@ -82,8 +82,8 @@
 				}
 
 				.opportunity {
-					background-color: transparentize( mix( black, $color__blue, 5% ), 0.1 );
-					color: $color__gray--light;
+					background-color: transparentize( mix( black, color( 'blue' ), 5% ), 0.1 );
+					color: color( 'gray--light' );
 					display: inline-block;
 					font: {
 						style: italic;
@@ -124,8 +124,8 @@
 		width: 100%;
 
 		&::after {
-			background-color: transparentize( $color__gray--light, 1 );
-			border-bottom-color: transparentize( $color__gray, 1 );
+			background-color: transparentize( color( 'gray--light' ), 1 );
+			border-bottom-color: transparentize( color( 'gray' ), 1 );
 			bottom: 0;
 			content: "";
 			display: block;
@@ -140,8 +140,8 @@
 		}
 
 		&.fixed::after {
-			background-color: transparentize( $color__gray--light, 0.1 );
-			border-bottom: 1px solid transparentize( $color__gray, 0.1 );
+			background-color: transparentize( color( 'gray--light' ), 0.1 );
+			border-bottom: 1px solid transparentize( color( 'gray' ), 0.1 );
 			bottom: auto;
 			position: fixed;
 		}

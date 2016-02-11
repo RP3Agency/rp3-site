@@ -91,14 +91,23 @@
 
 
 /* ==========================================================================
-   Image Replacement
+   Buttons
    ========================================================================== */
+
+// Buttons
+// 
+// Things you click or tap on
+// 
+// Markup:
+// <button>Button Label</button>
+// 
+// Styleguide: Components.Buttons
 
 %button {
 	background-color: transparent;
-	border: 2px solid $color__blue;
+	border: 2px solid color( 'blue' );
 	border-radius: 0;
-	color: $color__blue;
+	color: color( 'blue' );
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	font: {
 		size: rem( 16px );
@@ -116,8 +125,8 @@
 	@include appearance(none);
 
 	@include hover-state {
-		background-color: $color__blue;
-		color: $color__white;
+		background-color: color( 'blue' );
+		color: color( 'white' );
 	}
 }
 
@@ -130,7 +139,7 @@
 	position: relative;
 
 	&::before {
-		color: transparentize($color__gray--light, 0.5);
+		color: transparentize(color( 'gray--light' ), 0.5);
 		content: "\f106";
 		display: block;
 		font-family: Genericons;

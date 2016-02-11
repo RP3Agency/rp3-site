@@ -6,8 +6,18 @@ html {
 	font-size: percentage( $font-size__default / 16px );
 }
 
+// Base Typography
+// 
+// Default paragraph text is Roboto Light (300), 16px, #222.<br/>
+// The version of Roboto used is the one Google released in June, 2014 (see https://en.wikipedia.org/wiki/Roboto#Redesign)
+// 
+// Markup:
+// <p>RP3 Agency’s capabilities run the gamut from strategy through implementation with a holistic approach that never loses sight of your big picture business goals.</p>
+// 
+// Styleguide: Typography.Base Typography
+
 body {
-	color: $color__black;
+	color: color( 'black' );
 
 	// Inheritance issues vs. reset prohibit us from using our %roboto-normal placeholder selector
 	font: {
@@ -18,10 +28,34 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 
+// Strong
+// 
+// Roboto Medium (500)
+// 
+// Markup:
+// <div><strong>Don't make me shout!</strong></div>
+// 
+// Styleguide: Typography.Strong
+
 b,
 strong {
 	font-weight: $font-weight__medium;
 }
+
+// Emphasis
+// 
+// Roboto Italic
+// 
+// Markup:
+// <div><em>I'm emphasizing this.</em></div>
+// 
+// Styleguide: Typography.Emphasis
+
+em,
+i {
+	font-style: italic;
+}
+
 
 /** Larger and small fonts as adjustments to the current font context. */
 

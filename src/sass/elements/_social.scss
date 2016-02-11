@@ -37,13 +37,13 @@ $social: (
 
 		a {
 			@extend %social;
-			border: 1px solid $blue;
-			color: $color__blue;
+			border: 1px solid color( 'blue' );
+			color: color( 'blue' );
 			margin-right: 8px;
 
 			@include hover-state {
-				background-color: $color__blue;
-				color: $color__white;
+				background-color: color( 'blue' );
+				color: color( 'white' );
 			}
 		}
 

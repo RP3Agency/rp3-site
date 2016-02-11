@@ -5,7 +5,7 @@
 	}
 
 	&__outer {
-		background-color: $color__gray--light;
+		background-color: color( 'gray--light' );
 	}
 
 	&__container {
@@ -17,7 +17,7 @@
 
 	&__wrapper {
 		background: {
-			color: $color__gray--light;
+			color: color( 'gray--light' );
 			image: url("../images/interstitial-blog.jpg");
 			position: center;
 		}
@@ -36,7 +36,7 @@
 
 	&__inner {
 		@extend %max-width--blog;
-		background-color: transparentize( $color__white, 0.3 );
+		background-color: transparentize( color( 'white' ), 0.3 );
 		padding: 1em;
 	}
 
@@ -112,7 +112,7 @@
 
 /** Subscription Modal */
 .blog__subscribe__modal {
-	background-color: transparentize( $color__black, 0.5 );
+	background-color: transparentize( color( 'black' ), 0.5 );
 	bottom: 0;
 	left: 0;
 	position: fixed;
@@ -122,13 +122,13 @@
 }
 
 .blog-subscription-modal {
-	background-color: $color__white;
+	background-color: color( 'white' );
 	left: 50%;
 	padding: 2em;
 	position: absolute;
 	top: 50%;
 	transform: translate( -50%, -50% );
-	box-shadow: 0 0 10px 5px transparentize( $color__black, 0.8 );
+	box-shadow: 0 0 10px 5px transparentize( color( 'black' ), 0.8 );
 }
 
 .blog-subscription-modal__close {
@@ -146,7 +146,7 @@
 		content: '\f406';
 		display: block;
 		text-indent: 0;
-		color: $color__black;
+		color: color( 'black' );
 		width: 20px;
 		height: 20px;
 		position: absolute;

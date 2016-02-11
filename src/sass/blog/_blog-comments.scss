@@ -13,7 +13,7 @@
 		border: solid {
 			width: 1px 0;
 		}
-		color: $color__gray;
+		color: color( 'gray' );
 		display: block;
 		font: {
 			size: em( 12px );
@@ -30,18 +30,18 @@
 		}
 
 		&:visited {
-			color: $color__gray;
+			color: color( 'gray' );
 		}
 
 		@include hover-state {
-			color: $color__gray;
+			color: color( 'gray' );
 		}
 	}
 
 	&__count {
-		background-color: $color__gray;
+		background-color: color( 'gray' );
 		border-radius: 100%;
-		color: $color__white;
+		color: color( 'white' );
 		display: inline-block;
 		font-weight: $font-weight__bold;
 		height: 24px;
@@ -54,7 +54,7 @@
 	/** Hide form and comments initially */
 
 	&__form {
-		border-bottom: 1px solid $color__gray;
+		border-bottom: 1px solid color( 'gray' );
 		display: none;
 		padding-top: 1rem;
 	}
@@ -70,7 +70,7 @@
 		}
 
 		article {
-			border: 1px solid $color__gray--light;
+			border: 1px solid color( 'gray--light' );
 			margin-bottom: 1rem;
 		}
 
@@ -91,7 +91,7 @@
 
 	.comment-metadata {
 		@extend %roboto-bold;
-		color: $color__gray;
+		color: color( 'gray' );
 		font-size: em( 12px );
 		text: {
 			decoration: none;
@@ -113,8 +113,8 @@
 
 	.comment-meta {
 		@extend %clearfix;
-		background-color: mix( white, $color__gray--light, 50% );
-		border-bottom: 1px solid $color__gray--light;
+		background-color: mix( white, color( 'gray--light' ), 50% );
+		border-bottom: 1px solid color( 'gray--light' );
 	}
 
 	.comment-form-author,

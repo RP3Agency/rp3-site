@@ -4,6 +4,21 @@
 	margin-bottom: 2em;
 	max-width: rem( 900px );
 
+
+// Headers
+// 
+// Headers in HTML-standard header tags (&lt;h1>, &lt;h2>, etc.) when used inside `.entry-content` elements.
+// 
+// Markup:
+// <div class="entry-content">
+//     <div class="entry-content__container">
+//         <h1>We are builders of business opportunity.</h1>
+//         <h2>RP3 Agency Builds a Little Virtual Magic to Light Up the Season</h2>
+//     </div>
+// </div>
+// 
+// Styleguide: Typography.Headers
+
 	h1 {
 		@extend %roboto-thin;
 		font-size: em( 40px );
