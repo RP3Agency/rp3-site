@@ -1,12 +1,12 @@
 $styleguide-icons: (
-	"featured":		( "magenta", "../images/icon-lightning.svg" ),
-	"blog":			( "black", "../images/icon-blog.svg" ),
-	"twitter":		( "blue", "../images/icon-twitter.svg" ),
-	"news":			( "gray--light", "../images/icon-flame.svg" ),
-	"strategy":		( "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-ships-wheel.svg" ),
-	"creative":		( "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090601/icon-unicorn.svg" ),
-	"connections":	( "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-radio-tower.svg" ),
-	"digital":		( "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-robot.svg" )
+	"featured":		( color( "magenta" ), "../images/icon-lightning.svg" ),
+	"blog":			( color( "black" ), "../images/icon-blog.svg" ),
+	"twitter":		( color( "blue" ), "../images/icon-twitter.svg" ),
+	"news":			( color( "gray--light" ), "../images/icon-flame.svg" ),
+	"strategy":		( transparent, "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-ships-wheel.svg" ),
+	"creative":		( transparent, "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090601/icon-unicorn.svg" ),
+	"connections":	( transparent, "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-radio-tower.svg" ),
+	"digital":		( transparent, "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-robot.svg" )
 );
 
 // Iconography
@@ -38,7 +38,7 @@ $styleguide-icons: (
 	width: 160px;
 
 	@each $key, $content in $styleguide-icons {
-		$color: color( nth( $content, 1 ) );
+		$color: nth( $content, 1 );
 		$url: nth( $content, 2 );
 
 		&--#{$key} {
