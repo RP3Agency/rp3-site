@@ -9,20 +9,20 @@
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.22",
+            "version": "v1.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
+                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
-                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
+                "url": "https://api.github.com/repos/composer/installers/zipball/6213d900e92647831f7a406d5c530ea1f3d4360e",
+                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "1.0.0"
+                "composer-plugin-api": "^1.0"
             },
             "replace": {
                 "roundcube/plugin-installer": "*",
@@ -103,20 +103,20 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2015-10-29 23:28:48"
+            "time": "2016-01-27 12:54:22"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.4.1",
+            "version": "4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "85d6a8c16c7e8bb369e7530d3676d16618f68e24"
+                "reference": "fe9320de0793602084c600e22c0c5e0bb601a264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/85d6a8c16c7e8bb369e7530d3676d16618f68e24",
-                "reference": "85d6a8c16c7e8bb369e7530d3676d16618f68e24",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/fe9320de0793602084c600e22c0c5e0bb601a264",
+                "reference": "fe9320de0793602084c600e22c0c5e0bb601a264",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-01-06 18:46:15"
+            "time": "2016-02-02 17:16:14"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -192,7 +192,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.3.3.2",
+            "version": "5.3.4",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -220,7 +220,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro",
-            "version": "1.5.3",
+            "version": "1.5.4",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro.zip",
@@ -234,7 +234,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro-cli",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro-cli.zip",
@@ -248,7 +248,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro-media-files",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro-media-files.zip",
@@ -316,15 +316,15 @@
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
-            "version": "0.9.11",
+            "version": "0.9.12",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/0.9.11"
+                "reference": "tags/0.9.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.9.11.zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.9.12.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -456,15 +456,15 @@
         },
         {
             "name": "wpackagist-plugin/easy-digital-downloads",
-            "version": "2.5.6",
+            "version": "2.5.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/easy-digital-downloads/",
-                "reference": "tags/2.5.6"
+                "reference": "tags/2.5.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/easy-digital-downloads.2.5.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/easy-digital-downloads.2.5.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -977,15 +977,15 @@
         },
         {
             "name": "wpackagist-plugin/wpclef",
-            "version": "2.3.3",
+            "version": "2.3.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wpclef/",
-                "reference": "tags/2.3.3"
+                "reference": "tags/2.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpclef.2.3.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpclef.2.3.4.zip",
                 "reference": null,
                 "shasum": null
             },
