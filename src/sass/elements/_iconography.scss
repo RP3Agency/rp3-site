@@ -1,12 +1,12 @@
 $styleguide-icons: (
-	"featured":		( "Featured", "Lightning bolt for the 'featured' block at the bottom of the home page.", "magenta", "../images/icon-lightning.svg" ),
-	"blog":			( "Blog", "Thought bubble for the blog block at the bottom of the home page.", "black", "../images/icon-blog.svg" ),
-	"twitter":		( "Twitter", "Twitter bird for the latest tweet block at the bottom of the home page.", "blue", "../images/icon-twitter.svg" ),
-	"news":			( "News", "Flame for the news block at the bottom of the home page.", "gray--light", "../images/icon-flame.svg" ),
-	"strategy":		( "Brand Strategy", "Ship's wheel for 'brand strategy' on the agency page.", "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-ships-wheel.svg" ),
-	"creative":		( "Creative", "Unicorn for 'creative' on the agency page.", "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090601/icon-unicorn.svg" ),
-	"connections":	( "Connections", "Radio tower for 'connections' on the agency page.", "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-radio-tower.svg" ),
-	"digital":		( "Digital", "Robot for 'digital' on the agency page.", "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-robot.svg" )
+	"featured":		( "magenta", "../images/icon-lightning.svg" ),
+	"blog":			( "black", "../images/icon-blog.svg" ),
+	"twitter":		( "blue", "../images/icon-twitter.svg" ),
+	"news":			( "gray--light", "../images/icon-flame.svg" ),
+	"strategy":		( "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-ships-wheel.svg" ),
+	"creative":		( "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090601/icon-unicorn.svg" ),
+	"connections":	( "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-radio-tower.svg" ),
+	"digital":		( "white", "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-robot.svg" )
 );
 
 // Iconography
@@ -15,16 +15,16 @@ $styleguide-icons: (
 // repository. The ones on the "Agency" page are content-managed, and kept in the media library.
 // 
 // The sample markup listed is _just_ for the purposes of this style guide, and is not intended to
-// be an example of live code.
+// be an example of live code. There's no "default" styling.
 // 
-// .styleguide-icon--featured		- Lightning bolt for the "featured" block at the bottom of the home page.
-// .styleguide-icon--blog			- Thought bubble for the blog block at the bottom of the home page.
-// .styleguide-icon--twitter		- Twitter bird for the latest tweet block at the bottom of the home page.
-// .styleguide-icon--news			- Flame for the news block at the bottom of the home page.
-// .styleguide-icon--strategy		- Ship's wheel for 'brand strategy' on the agency page.
-// .styleguide-icon--creative		- Unicorn for 'creative' on the agency page.
-// .styleguide-icon--connections	- Radio tower for 'connections' on the agency page.
-// .styleguide-icon--digital		- Robot for 'digital' on the agency page.
+// .styleguide-icon--featured		- **Featured:** Lightning bolt for the "featured" block at the bottom of the home page.
+// .styleguide-icon--blog			- **Blog:** Thought bubble for the blog block at the bottom of the home page.
+// .styleguide-icon--twitter		- **Twitter:** Twitter bird for the latest tweet block at the bottom of the home page.
+// .styleguide-icon--news			- **News:** Flame for the news block at the bottom of the home page.
+// .styleguide-icon--strategy		- **Strategy:** Ship's wheel for 'brand strategy' on the agency page.
+// .styleguide-icon--creative		- **Creative:** Unicorn for 'creative' on the agency page.
+// .styleguide-icon--connections	- **Connections:** Radio tower for 'connections' on the agency page.
+// .styleguide-icon--digital		- **Digital:** Robot for 'digital' on the agency page.
 // 
 // Markup:
 // <div class="styleguide-icon {{modifier_class}}"></div>
@@ -38,10 +38,8 @@ $styleguide-icons: (
 	width: 160px;
 
 	@each $key, $content in $styleguide-icons {
-		$title: nth( $content, 1 );
-		$description: nth( $content, 2 );
-		$color: color( nth( $content, 3 ) );
-		$url: nth( $content, 4 );
+		$color: color( nth( $content, 1 ) );
+		$url: nth( $content, 2 );
 
 		&--#{$key} {
 			background: {
