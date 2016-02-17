@@ -52,7 +52,7 @@
 	}
 
 	&__header--section {
-		border-bottom: 1px solid $color__gray;
+		border-bottom: 1px solid color( 'gray' );
 		margin-bottom: 3rem;
 
 		&.no-bottom-margin {
@@ -110,7 +110,7 @@
 	}
 
 	&__tagline {
-		color: $color__gray;
+		color: color( 'gray' );
 		font-size: em(16px);
 	}
 
@@ -179,7 +179,7 @@
 	}
 
 	&__article {
-		border-bottom: 1px solid $color__gray;
+		border-bottom: 1px solid color( 'gray' );
 
 		@include breakpoint( bp() ) {
 			padding: 0;
@@ -204,7 +204,7 @@
 		width: 100%;
 
 		&.open {
-			background-color: $color__gray--light;
+			background-color: color( 'gray--light' );
 		}
 
 		@include breakpoint( bp() ) {
@@ -257,7 +257,7 @@
 
 		h3 {
 			@extend %roboto-medium;
-			border-bottom: 1px solid $color__gray--light;
+			border-bottom: 1px solid color( 'gray--light' );
 			margin: {
 				top: 1em;
 				bottom: 0.5em;
@@ -282,7 +282,7 @@
 		.careers__trigger {
 
 			@include breakpoint( bp() ) {
-				background-color: $color__gray--light;
+				background-color: color( 'gray--light' );
 			}
 
 			&::after {
@@ -317,7 +317,7 @@
 	}
 
 	&__boilerplate {
-		border-top: 1px solid $color__gray--light;
+		border-top: 1px solid color( 'gray--light' );
 		margin-top: 1em;
 		padding-top: 1em;
 	}
@@ -329,7 +329,7 @@
 
 .careers__page-boilerplate {
 	@extend %max-width;
-	background-color: $color__gray--light;
+	background-color: color( 'gray--light' );
 
 	&__container {
 		@extend %max-width--padded;

@@ -23,7 +23,7 @@
 	}
 
 	&__byline {
-		color: mix( white, $color__black, 50% );
+		color: mix( white, color( 'black' ), 50% );
 	}
 
 	&__thumbnail {

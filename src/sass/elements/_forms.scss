@@ -38,7 +38,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	border: 1px solid $color__gray;
+	border: 1px solid color( 'gray' );
 	box-sizing: border-box;
 	color: #666;
 
@@ -81,6 +81,6 @@ label {
 
 	@include hover-state {
 		background-color: transparent;
-		color: $color__blue;
+		color: color( 'blue' );
 	}
 }

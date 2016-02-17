@@ -1,0 +1,57 @@
+// Alerts
+// 
+// Alert stylings for things like contact form responses and, well, I guess that's pretty much it.
+// 
+// Markup:
+// <div class="rp3-alert {{modifier_class}}">Alert message</div>
+// 
+// .success			- Successful form completion
+// .warning			- Something _may_ have gone wrong
+// .error			- Something _did_ go wrong
+// 
+// Styleguide: Components.Alerts
+
+.rp3-alert {
+	background-color: mix( white, color( 'black' ), 95% );
+	border: 2px solid;
+	margin: 0.5em 0;
+	padding: 0.5em;
+
+	&.success {
+		background-color: mix( white, #063, 95% );
+		border-color: #063;
+	}
+
+	&.warning {
+		background-color: mix( white, #d4b700, 95% );
+		border-color: #d4b700;
+	}
+
+	&.error {
+		background-color: mix( white, #c00, 95% );
+		border-color: #c00;
+	}
+}
+
+/**
+ * Contact Form 7 response <div> classes
+ * (need to specify the <div> element to get around specificity problems without
+ * resorting to !important)
+ */
+
+div.wpcf7-response-output {
+	@extend .rp3-alert;
+}
+
+div.wpcf7-mail-sent-ok {
+	@extend .rp3-alert.success;
+}
+
+div.wpcf7-spam-blocked,
+div.wpcf7-validation-errors {
+	@extend .rp3-alert.warning;
+}
+
+div.wpcf7-mail-sent-ng {
+	@extend .rp3-alert.error;
+}

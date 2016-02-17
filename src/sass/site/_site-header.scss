@@ -30,7 +30,7 @@
 		width: 40px;
 
 		path {
-			fill: $color__primary;
+			fill: color( 'blue' );
 		}
 	}
 
@@ -58,14 +58,14 @@
 
 		a:not(.arrow) {
 			@extend %roboto-medium;
-			color: $color__black;
+			color: color( 'black' );
 			text: {
 				decoration: none;
 				transform: uppercase;
 			}
 
 			@include hover-state {
-				color: $color__primary;
+				color: color( 'blue' );
 			}
 		}
 
@@ -75,7 +75,7 @@
 			font-size: rem( 13px );
 
 			.current-menu-item a {
-				color: $color__primary;
+				color: color( 'blue' );
 			}
 
 			.site-header__site-navigation--auxiliary {
@@ -89,16 +89,16 @@
 		/** Mobile */
 
 		&--mobile {
-			background-color: $color__gray--light;
+			background-color: color( 'gray--light' );
 			font-size: rem( 20px );
 			width: rem( 200px );
 
 			a {
 				border: {
-					top: 1px solid $color__white;
-					bottom: 1px solid $color__gray;
+					top: 1px solid color( 'white' );
+					bottom: 1px solid color( 'gray' );
 				}
-				color: mix( black, $color__gray, 50% );
+				color: mix( black, color( 'gray' ), 50% );
 			}
 
 			li:first-child {
@@ -117,7 +117,7 @@
 					position: relative;
 
 					&::after {
-						background-color: $color__white;
+						background-color: color( 'white' );
 						bottom: -2px;
 						content: '';
 						display: block;

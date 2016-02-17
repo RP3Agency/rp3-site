@@ -1,6 +1,6 @@
 .checker-block {
 	@extend %max-width;
-	background-color: $color__gray--light;
+	background-color: color( 'gray--light' );
 	height: rem(600px);
 	overflow: hidden;
 	position: relative;
@@ -61,19 +61,19 @@
 		}
 
 		.checker-block--agency &--blue-01 {
-			background-color: $color__blue;
+			background-color: color( 'blue' );
 			left: rem(200px);
 			top: rem(150px);
 		}
 
 		.checker-block--agency &--blue-02 {
-			background-color: $color__blue;
+			background-color: color( 'blue' );
 			left: rem(1000px);
 			top: rem(150px);
 		}
 
 		.checker-block--agency &--magenta {
-			background-color: $color__magenta;
+			background-color: color( 'magenta' );
 			left: rem(400px);
 			top: rem(300px);
 		}
@@ -139,22 +139,22 @@
 		}
 
 		.checker-block--careers &--blue-01 {
-			background-color: $color__blue;
+			background-color: color( 'blue' );
 			top: rem(450px);
 		}
 
 		.checker-block--careers &--blue-02 {
-			background-color: $color__blue;
+			background-color: color( 'blue' );
 			left: rem(800px);
 		}
 
 		.checker-block--careers &--magenta-01 {
-			background-color: $color__magenta;
+			background-color: color( 'magenta' );
 			width: rem(400px);
 		}
 
 		.checker-block--careers &--magenta-02 {
-			background-color: $color__magenta;
+			background-color: color( 'magenta' );
 			left: rem(1000px);
 			top: rem(300px);
 		}

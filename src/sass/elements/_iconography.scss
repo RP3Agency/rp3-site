@@ -1,0 +1,51 @@
+$styleguide-icons: (
+	"featured":		( color( "magenta" ), "../images/icon-lightning.svg" ),
+	"blog":			( color( "black" ), "../images/icon-blog.svg" ),
+	"twitter":		( color( "blue" ), "../images/icon-twitter.svg" ),
+	"news":			( color( "gray--light" ), "../images/icon-flame.svg" ),
+	"strategy":		( transparent, "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-ships-wheel.svg" ),
+	"creative":		( transparent, "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090601/icon-unicorn.svg" ),
+	"connections":	( transparent, "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-radio-tower.svg" ),
+	"digital":		( transparent, "https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/11/17090522/icon-robot.svg" )
+);
+
+// Iconography
+// 
+// Various icons used throughout the site. The ones on the home page are hard-coded, and kept in the GitHub
+// repository. The ones on the "Agency" page are content-managed, and kept in the media library.
+// 
+// The sample markup listed is _just_ for the purposes of this style guide, and is not intended to
+// be an example of live code. There's no "default" styling.
+// 
+// .styleguide-icon--featured		- **Featured:** Lightning bolt for the "featured" block at the bottom of the home page.
+// .styleguide-icon--blog			- **Blog:** Thought bubble for the blog block at the bottom of the home page.
+// .styleguide-icon--twitter		- **Twitter:** Twitter bird for the latest tweet block at the bottom of the home page.
+// .styleguide-icon--news			- **News:** Flame for the news block at the bottom of the home page.
+// .styleguide-icon--strategy		- **Strategy:** Ship's wheel for 'brand strategy' on the agency page.
+// .styleguide-icon--creative		- **Creative:** Unicorn for 'creative' on the agency page.
+// .styleguide-icon--connections	- **Connections:** Radio tower for 'connections' on the agency page.
+// .styleguide-icon--digital		- **Digital:** Robot for 'digital' on the agency page.
+// 
+// Markup:
+// <div class="styleguide-icon {{modifier_class}}"></div>
+// 
+// Styleguide: Iconography
+
+.styleguide-icon {
+	background: no-repeat center;
+	background-size: auto calc(100% - 20px);
+	height: 120px;
+	width: 160px;
+
+	@each $key, $content in $styleguide-icons {
+		$color: nth( $content, 1 );
+		$url: nth( $content, 2 );
+
+		&--#{$key} {
+			background: {
+				color: $color;
+				image: url($url);
+			}
+		}
+	}
+}
