@@ -220,7 +220,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro",
-            "version": "1.5.4",
+            "version": "1.5.5",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro.zip",
@@ -248,7 +248,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro-media-files",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro-media-files.zip",
@@ -396,15 +396,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.3.1",
+            "version": "4.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.3.1"
+                "reference": "tags/4.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.3.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -456,15 +456,15 @@
         },
         {
             "name": "wpackagist-plugin/easy-digital-downloads",
-            "version": "2.5.7",
+            "version": "2.5.9",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/easy-digital-downloads/",
-                "reference": "tags/2.5.7"
+                "reference": "tags/2.5.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/easy-digital-downloads.2.5.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/easy-digital-downloads.2.5.9.zip",
                 "reference": null,
                 "shasum": null
             },
