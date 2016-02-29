@@ -170,7 +170,36 @@
 		}
 	}
 
-	// Headline
+	// Work Entry Headline
+	//
+	// Dark text on a semi-transparent white overlay on a large image. The whole image and headline are linked
+	// to the case study, and the image is presented using the responsive <picture> element.
+	//
+	// The content of the headline varies according to its place on the website, but generally includes the
+	// name of the case study (or some variation on the "Building" theme) and the name of the client.
+	//
+	// Markup:
+	// <div class="work__full scroll-effect effect-ease-up">
+	//     <a href="#!" class="work__link block scroll-effect-target">
+	//         <div class="work__image work__image--full">
+	//             <picture>
+	//                 <source srcset="https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/09/17090604/NS_NATS-BUSY-1200x450.jpg, https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/09/17090604/NS_NATS-BUSY.jpg 2x" media="(min-width: 37.5rem)" />
+	//                 <source srcset="https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/09/17090604/NS_NATS-BUSY-600x450.jpg, https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/09/17090604/NS_NATS-BUSY-1200x900.jpg 2x" media="(min-width: 20.0625rem)" />
+	//                 <source srcset="https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/09/17090604/NS_NATS-BUSY-320x240.jpg, https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/09/17090604/NS_NATS-BUSY-640x480.jpg 2x" />
+	//                 <img srcset="https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/09/17090604/NS_NATS-BUSY-320x240.jpg, https://dugi6qw32tvb0.cloudfront.net/wp-content/uploads/2015/09/17090604/NS_NATS-BUSY-640x480.jpg 2x" />
+	//             </picture>
+	//         </div>
+	//         <div class="work__content headline">
+	//             <div class="headline__container">
+	//                 <h1 class="work__title headline__title">Game Central</h1>
+	//                 <div class="work__client headline__client">for <b>Norfolk Southern</b></div>
+	//             </div>
+	//         </div>
+	//      </a>
+	// </div>
+	//
+	// Styleguide: Images.Overlay
+
 	&__content {
 		bottom: 0;
 		left: 0;
