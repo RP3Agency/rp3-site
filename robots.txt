@@ -1,8 +1,0 @@
-User-agent: *
-Disallow: /video-portfolio/
-Disallow: /_wp/
-Disallow: /assets/
-Disallow: /wp-content/
-Disallow: /kss-template/
-Disallow: /wp-config-local.php
-Disallow: /wp-config.php
