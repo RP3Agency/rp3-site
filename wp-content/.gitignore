@@ -1,4 +1,5 @@
 plugins/*
+!plugins/really-simple-twitter-feed-widget
 debug.log
 xhc-xmt
 uploads/*
