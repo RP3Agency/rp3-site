@@ -32,7 +32,7 @@ function rp3_cpt_work() {
 		'menu_position'			=> 20,
 		'hierarchical'			=> true,
 		'menu_icon'				=> 'dashicons-portfolio',
-		'supports'				=> array( 'title', 'thumbnail' ),
+		'supports'				=> array( 'title', 'thumbnail', 'excerpt' ),
 		'rewrite'				=> array(
 			'slug'					=> 'work',
 			'with_front'			=> false
@@ -162,7 +162,7 @@ function rp3_cpt_careers() {
 		'menu_position'			=> 6,
 		'hierarchical'			=> false,
 		'menu_icon'				=> 'dashicons-admin-tools',
-		'supports'				=> array( 'title', 'editor' ),
+		'supports'				=> array( 'title', 'editor', 'excerpt' ),
 		'rewrite'				=> array(
 			'slug'					=> 'careers',
 			'with_front'			=> false
