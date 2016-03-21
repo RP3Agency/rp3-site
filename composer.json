@@ -57,7 +57,8 @@
     "wpackagist-plugin/wpclef": "^2.3",
     "wpackagist-plugin/easy-digital-downloads": "^2.4",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "^0.9.6",
-    "wpackagist-plugin/wp-super-cache-clear-cache-menu": "*"
+    "wpackagist-plugin/wp-super-cache-clear-cache-menu": "*",
+    "wpackagist-plugin/good-old-twitter-feed-widget": "*"
   },
   "extra": {
     "wordpress-install-dir": "_wp",

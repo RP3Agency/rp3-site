@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a2a4553c923034204c4ebb552ff836ac",
-    "content-hash": "26b2e886f97d3e2f7d5f31c0678dde1e",
+    "hash": "5ab993a73c3788668d67a59c900a5c31",
+    "content-hash": "e891adf3cce229185155ac07102bc88d",
     "packages": [
         {
             "name": "composer/installers",
@@ -493,6 +493,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/featured-images-for-rss-feeds/"
+        },
+        {
+            "name": "wpackagist-plugin/good-old-twitter-feed-widget",
+            "version": "1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/good-old-twitter-feed-widget/",
+                "reference": "tags/1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/good-old-twitter-feed-widget.1.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/good-old-twitter-feed-widget/"
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
