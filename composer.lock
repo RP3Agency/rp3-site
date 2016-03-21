@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5ab993a73c3788668d67a59c900a5c31",
-    "content-hash": "e891adf3cce229185155ac07102bc88d",
+    "hash": "41d955ae76d3d40d80f250fca9936e69",
+    "content-hash": "27e4008a11131ff404b2d64e572e023b",
     "packages": [
         {
             "name": "composer/installers",
@@ -192,7 +192,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.3.5",
+            "version": "5.3.6.1",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -261,11 +261,11 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "rp3agency/wp-offload-s3-pro",
-            "version": "1.0.4",
+            "name": "rp3agency/wp-offload-s3",
+            "version": "1.1.1",
             "dist": {
                 "type": "zip",
-                "url": "http://composer.rp3dev.com/wp-offload-s3-pro.zip",
+                "url": "http://composer.rp3dev.com/wp-offload-s3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -313,26 +313,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/"
-        },
-        {
-            "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
-            "version": "0.9.12",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/0.9.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.9.12.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
         },
         {
             "name": "wpackagist-plugin/amazon-web-services",
