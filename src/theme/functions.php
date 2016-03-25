@@ -58,6 +58,9 @@ function rp3_setup() {
 		'comment-form',
 		'gallery',
 	) );
+
+	// Enable title tag support (WordPress 4.1+)
+	add_theme_support( 'title-tag' );
 }
 endif; // rp3_setup
 add_action( 'after_setup_theme', 'rp3_setup' );
