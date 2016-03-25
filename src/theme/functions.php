@@ -355,3 +355,28 @@ function rp3_editor_remove_styles( $in ) {
 }
 
 add_filter( 'tiny_mce_before_init', 'rp3_editor_remove_styles' );
+
+
+// Set og:image tag for author archive pages
+function rp3_author_og_image() {
+	if ( is_author() && function_exists( 'get_coauthors' ) ) {
+
+		$authors = get_coauthors();
+
+		foreach ( $authors as $author ) {
+
+			if ( ( is_author() ) && ( get_query_var( 'author_name' ) == $author->user_nicename ) ) {
+
+				$author_image = wp_get_attachment_image_src( get_post_thumbnail_id( $author->ID ), 'four_three_small_2x' );
+				$author_description = $author->display_name . ' ' . $author->description;
+
+				echo "\n";
+				echo '<meta property="og:image" content="' . $author_image[0] . '"/>' . "\n";
+				echo '<meta property="og:description" content="' . $author_description . '"/>' . "\n";
+				echo '<meta property="og:image:width" content="640"/>' . "\n";
+				echo '<meta property="og:image:height" content="480"/>' . "\n";
+			}
+		}
+	}
+}
+add_action( 'wp_head', 'rp3_author_og_image' );
