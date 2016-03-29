@@ -100,6 +100,14 @@ function rp3_image_sizes() {
 	   ========================================================================== */
 
 	add_image_size( 'in_post', 720 );
+
+
+	/* ==========================================================================
+	   Social Media Images
+	   ========================================================================== */
+
+	add_image_size( 'facebook', 1200, 628, true );
+	add_image_size( 'twitter', 978, 511, true );
 }
 
 add_action( 'after_setup_theme', 'rp3_image_sizes' );
@@ -114,3 +122,21 @@ function rp3_custom_image_size( $sizes ) {
 }
 
 add_filter( 'image_size_names_choose', 'rp3_custom_image_size' );
+
+
+/**
+ * Specify the Facebook and Twitter optimized images in the appropriate meta tags
+ * if we haven't overwritten them via the Yoast SEO plugin.
+ */
+
+function rp3_opengraph_image_size() {
+	return 'facebook';
+}
+
+add_filter( 'wpseo_opengraph_image_size', 'rp3_opengraph_image_size' );
+
+function rp3_twitter_image_size() {
+	return 'twitter';
+}
+
+add_filter( 'wpseo_twitter_image_size', 'rp3_twitter_image_size' );
