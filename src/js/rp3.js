@@ -125,29 +125,34 @@ var rp3 = (function($) {
 
 	frontPageVideoAudio = function() {
 
-		var $playAudioLink = $('#play-with-audio'),
-			$iFrame = $('#front-page__video')[0],
-			player = $f($iFrame);
+		var $frontPage__video = $('#front-page__video');
 
-		player.addEvent( 'ready', function() {
+		if ( 0 < $frontPage__video.length ) {
 
-			player.api( 'setVolume', 0 );
-		});
+			var $playAudioLink = $('#play-with-audio'),
+				$iFrame = $frontPage__video[0],
+				player = $f($iFrame);
 
-		$playAudioLink.on( 'click', function(e) {
+			player.addEvent( 'ready', function() {
 
-			e.preventDefault();
-
-			if ( undefined !== window.ga ) {
-				ga( 'send', 'event', 'Interface Elements', 'Enable Audio' );
-			}
-
-			player.api( 'setVolume', 1 );
-			player.api( 'seekTo', 0 );
-			$(this).fadeOut( 100, function() {
-				$(this).remove();
+				player.api( 'setVolume', 0 );
 			});
-		});
+
+			$playAudioLink.on( 'click', function(e) {
+
+				e.preventDefault();
+
+				if ( undefined !== window.ga ) {
+					ga( 'send', 'event', 'Interface Elements', 'Enable Audio' );
+				}
+
+				player.api( 'setVolume', 1 );
+				player.api( 'seekTo', 0 );
+				$(this).fadeOut( 100, function() {
+					$(this).remove();
+				});
+			});
+		}
 	},
 
 	/* ==========================================================================
