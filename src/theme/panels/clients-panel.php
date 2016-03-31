@@ -1,3 +1,13 @@
+<?php
+/**
+ * Clients panel.
+ *
+ * @package RP3
+ */
+?>
+
+<!-- Clients Panel -->
+
 <section class="page__panel__clients clients">
 
 	<header class="clients__header page__panel__header">

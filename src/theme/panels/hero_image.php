@@ -1,4 +1,14 @@
 <?php
+/**
+ * Hero image panel.
+ *
+ * @package RP3
+ */
+?>
+
+<!-- Hero Image Panel -->
+
+<?php
 global $class;
 ?>
 

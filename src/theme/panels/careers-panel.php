@@ -1,3 +1,13 @@
+<?php
+/**
+ * Careers panel.
+ *
+ * @package RP3
+ */
+?>
+
+<!-- Careers Panel -->
+
 <div class="page__panel__careers careers">
 
 	<?php if ( '' !== get_sub_field( 'section_title' ) ) : ?>

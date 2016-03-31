@@ -1,3 +1,13 @@
+<?php
+/**
+ * Iconified panel.
+ *
+ * @package RP3
+ */
+?>
+
+<!-- Iconified Panel -->
+
 <section class="page__panel__iconified iconified">
 
 	<?php if ( have_rows( 'content_blocks' ) ) : ?>
