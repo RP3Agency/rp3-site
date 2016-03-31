@@ -80,9 +80,12 @@ function rp3_scripts() {
 
 	$style_css = file_get_contents( get_template_directory() . '/style.css' );
 
+	$cache_buster = '';
+
 	if ( ! empty( $style_css ) ) {
 
 		preg_match( '/Version: (\S+)/', $style_css, $matches );
+		$cache_buster = $matches[1];
 	}
 
 	$prerequisites = array(
@@ -101,23 +104,33 @@ function rp3_scripts() {
 		array_push( $prerequisites, 'froogaloop' );
 	}
 
+	/** Pinterest for the news and blog single pages, and the blog landing page (is_home()) */
+
+	if ( ( is_singular( 'rp3_cpt_news' ) ) || ( is_singular( 'post' ) ) || ( is_home() ) ) {
+
+		wp_register_script( 'pinterest', '//assets.pinterest.com/js/pinit.js', array(), $cache_buster, true );
+		array_push( $prerequisites, 'pinterest' );
+	}
+
 	if ( WP_DEBUG ) {
+
 		/** Uniminified for debugging */
 
-		wp_register_style( 'rp3-style', get_stylesheet_directory_uri() . '/css/rp3.css', array(), $matches[1] );
-		wp_register_script( 'rp3-vendor', get_template_directory_uri() . '/js/rp3-vendor.js', array(), $matches[1] );
-		wp_register_script( 'rp3-plugins', get_template_directory_uri() . '/js/rp3-plugins.js', array( 'jquery' ), $matches[1], true );
+		wp_register_style( 'rp3-style', get_stylesheet_directory_uri() . '/css/rp3.css', array(), $cache_buster );
+		wp_register_script( 'rp3-vendor', get_template_directory_uri() . '/js/rp3-vendor.js', array(), $cache_buster );
+		wp_register_script( 'rp3-plugins', get_template_directory_uri() . '/js/rp3-plugins.js', array( 'jquery' ), $cache_buster, true );
 		wp_register_script( 'rp3-google-maps', '//maps.googleapis.com/maps/api/js?key=AIzaSyDbQMhVNXn8QRMNJoiWJeemZ63O4NN75kI');
-		wp_register_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.js', $prerequisites, $matches[1], true );
+		wp_register_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.js', $prerequisites, $cache_buster, true );
 
 	} else {
+
 		/** Minified for production */
 
-		wp_register_style( 'rp3-style', get_stylesheet_directory_uri() . '/css/rp3.min.css', array(), $matches[1] );
-		wp_register_script( 'rp3-vendor', get_template_directory_uri() . '/js/rp3-vendor.min.js', array(), $matches[1] );
-		wp_register_script( 'rp3-plugins', get_template_directory_uri() . '/js/rp3-plugins.min.js', array( 'jquery' ), $matches[1], true );
+		wp_register_style( 'rp3-style', get_stylesheet_directory_uri() . '/css/rp3.min.css', array(), $cache_buster );
+		wp_register_script( 'rp3-vendor', get_template_directory_uri() . '/js/rp3-vendor.min.js', array(), $cache_buster );
+		wp_register_script( 'rp3-plugins', get_template_directory_uri() . '/js/rp3-plugins.min.js', array( 'jquery' ), $cache_buster, true );
 		wp_register_script( 'rp3-google-maps', '//maps.googleapis.com/maps/api/js?key=AIzaSyDbQMhVNXn8QRMNJoiWJeemZ63O4NN75kI');
-		wp_register_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', $prerequisites, $matches[1], true );
+		wp_register_script( 'rp3-javascript', get_template_directory_uri() . '/js/rp3.min.js', $prerequisites, $cache_buster, true );
 	}
 
 	// wp_enqueue_style( 'wawf-fonts' );
@@ -383,3 +396,21 @@ function rp3_author_og_image() {
 	}
 }
 add_action( 'wp_head', 'rp3_author_og_image' );
+
+
+/**
+ * Add "async" and "defer" attributes to the Pinterest loading script.
+ * We may need to modify this filter at a later date if we want to
+ * async and defer other scripts (and I suspect we do). TFR
+ */
+
+add_filter('script_loader_tag', 'rp3_add_async_defer', 10, 2);
+
+function rp3_add_async_defer( $tag, $handle ) {
+
+	if ( 'pinterest' !== $handle ) {
+		return $tag;
+	}
+
+	return str_replace( ' src', ' async defer src', $tag );
+}
