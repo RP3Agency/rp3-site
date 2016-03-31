@@ -6,6 +6,8 @@
  */
 ?>
 
+<!-- Six-up Image Panel -->
+
 <section class="work-single__six-up scroll-effect effect-fade-in">
 
 	<?php while ( have_rows( 'images' ) ) : the_row(); ?>

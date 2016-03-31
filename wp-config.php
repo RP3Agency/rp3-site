@@ -14,10 +14,14 @@
  * @package WordPress
  */
 
-if ( file_exists( '/var/www/assets/wp-config-local.php' ) ) {
-	include( '/var/www/assets/wp-config-local.php' );
+// Look for a wp-config-local.php file. Either in the /var/www/assets directory
+// (for AWS EC2 instances) or in the current directory (for development vagrant
+// environments).
+
+if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
+	include( dirname( __FILE__ ) . '/wp-config-local.php' );
 }
- 
+
 // ** MySQL settings - You can get this info from your web host ** //
 
 /** Database Charset to use in creating database tables. */
