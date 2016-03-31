@@ -1,3 +1,13 @@
+<?php
+/**
+ * Image interstitial panel.
+ *
+ * @package RP3
+ */
+?>
+
+<!-- Image Interstitial Panel -->
+
 <div class="page__panel__image-interstitial scroll-effect effect-ease-up">
 	<div class="scroll-effect-target">
 
