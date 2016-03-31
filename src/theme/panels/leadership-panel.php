@@ -1,6 +1,16 @@
+<?php
+/**
+ * Leadership panel.
+ *
+ * @package RP3
+ */
+?>
+
 <?php $posts = get_sub_field( 'leaders' ); ?>
 
 <?php if ( $posts ) : ?>
+
+<!-- Leadership Panel -->
 
 <section class="page__panel page__panel--leadership leadership">
 
