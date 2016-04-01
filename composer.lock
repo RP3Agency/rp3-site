@@ -516,15 +516,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.9.5",
+            "version": "3.9.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.9.5"
+                "reference": "tags/3.9.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.3.9.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.3.9.6.zip",
                 "reference": null,
                 "shasum": null
             },
