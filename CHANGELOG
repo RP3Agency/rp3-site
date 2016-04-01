@@ -1,3 +1,8 @@
+3.13.3 | 2016-04-01
+
+jeremy vs. yeti
+akismet update
+
 3.13.2 | 2016-04-01
 
 removed the robots.txt file from revision control so they can be different for different environments.
