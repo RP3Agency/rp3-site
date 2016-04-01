@@ -19,7 +19,7 @@
 		</div>
 
 		<div class="checker-block__block checker-block__block--05">
-			<img srcset="<?php echo esc_url( get_template_directory_uri() . '/images/checker-block-careers/checker-block-careers-05.png' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/checker-block-careers/checker-block-careers-05@2x.png' ); ?> 2x" alt=""/>
+			<img srcset="<?php echo esc_url( get_template_directory_uri() . '/images/checker-block-careers/checker-block-careers-05.jpg' ); ?>, <?php echo esc_url( get_template_directory_uri() . '/images/checker-block-careers/checker-block-careers-05@2x.jpg' ); ?> 2x" alt=""/>
 		</div>
 
 		<div class="checker-block__block checker-block__block--06">
