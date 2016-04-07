@@ -1,3 +1,16 @@
+3.13.3 | 2016-04-01
+
+jeremy vs. yeti
+akismet update
+
+3.13.2 | 2016-04-01
+
+removed the robots.txt file from revision control so they can be different for different environments.
+
+3.13.1 | 2016-04-01
+
+Jetpack update
+
 3.13.0 | 2016-03-31
 
 RPS-1241
