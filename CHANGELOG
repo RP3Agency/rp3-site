@@ -1,3 +1,9 @@
+3.13.7 | 2016-04-08
+
+Updated plugins
+Removed no longer needed plugins
+Made the Google Tag Code a little bit smarter by only loading if the Google Analytics plugin is active, and doing things that are a little more The WordPress Way™
+
 3.13.6 | 2016-04-07
 
 ACF Pro 5.3.7
