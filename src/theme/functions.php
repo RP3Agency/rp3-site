@@ -414,3 +414,20 @@ function rp3_add_async_defer( $tag, $handle ) {
 
 	return str_replace( ' src', ' async defer src', $tag );
 }
+
+/**
+ * Google tag manager code
+ */
+
+function rp3_google_tag_manager() {
+
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+	if ( is_plugin_active( 'google-analytics-for-wordpress/googleanalytics.php' ) ) :
+
+		get_template_part( 'template-parts/google-tag-manager' );
+	
+	endif;
+}
+
+add_action( 'wp_footer', 'rp3_google_tag_manager' );
