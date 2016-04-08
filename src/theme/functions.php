@@ -430,4 +430,4 @@ function rp3_google_tag_manager() {
 	endif;
 }
 
-add_action( 'wp_footer', 'rp3_google_tag_manager' );
+add_action( 'wp_head', 'rp3_google_tag_manager' );
