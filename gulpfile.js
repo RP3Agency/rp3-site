@@ -5,7 +5,8 @@ var gulp			= require('gulp'),
 
 	// Sass/Compass/related CSSy things
 	sass			= require('gulp-sass'),
-	autoprefixer	= require('gulp-autoprefixer'),
+	postcss			= require('gulp-postcss'),
+	autoprefixer	= require('autoprefixer'),
 	cssnano			= require('gulp-cssnano'),
 	sourcemaps		= require('gulp-sourcemaps'),
 	kss				= require('kss'),
@@ -56,16 +57,11 @@ var // Project
    ========================================================================== */
 
 // Styles
-gulp.task('styles', function() {
-	return gulp.src( src_sass + '/*.scss' )
-		.pipe( sourcemaps.init() )
-		.pipe( sass( {
-			errLogToConsole: true
-		} ) )
-		.pipe( autoprefixer( {
+gulp.task('styles', ['sass'], function() {
+	return gulp.src( dest_theme_css + '/*.css' )
+		.pipe( postcss( [ autoprefixer( {
 			browsers: [ 'last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ]
-		} ) )
-		.pipe( sourcemaps.write() )
+		} ) ] ) )
 		.pipe( gulp.dest( dest_theme_css ) )
 		.pipe( rename( {
 			suffix: '.min'
@@ -73,8 +69,17 @@ gulp.task('styles', function() {
 		.pipe( cssnano( {
 			autoprefixer : false
 		} ) )
-		.pipe( gulp.dest( dest_theme_css ) )
-		.pipe( livereload() );
+		.pipe( gulp.dest( dest_theme_css ) );
+});
+
+gulp.task( 'sass', function() {
+	return gulp.src( src_sass + '/*.scss' )
+		.pipe( sourcemaps.init() )
+		.pipe( sass( {
+			errLogToConsole: true
+		} ) )
+		.pipe( sourcemaps.write() )
+		.pipe( gulp.dest( dest_theme_css ) );
 });
 
 // KSS
