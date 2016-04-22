@@ -6,7 +6,7 @@
 
 	&__header {
 		@extend %max-width--padded;
-		@extend %roboto-light;
+		@extend %roboto-thin;
 		font-size: rem(20px);
 		margin-bottom: 0.5em;
 	}
@@ -96,7 +96,6 @@
 	}
 
 	&__secondary-copy {
-		@extend %wrapper;
 		margin-bottom: 3rem;
 		margin-top: 3rem;
 	}
@@ -139,9 +138,9 @@
 	 */
 	
 	&__inner {
+		@extend %max-width--padded;
 
 		@include breakpoint( bp() ) {
-			@extend %max-width--padded;
 			display: flex;
 		}
 
