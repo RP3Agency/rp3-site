@@ -23,7 +23,7 @@
 		font-size: em( 14px );
 
 		&--wide {
-			@extend %roboto-light;
+			@extend %roboto-thin;
 			display: none;
 
 			@include breakpoint( bp() ) {
@@ -33,7 +33,7 @@
 		}
 
 		&--narrow {
-			@extend %roboto-light;
+			@extend %roboto-thin;
 			@include span(24 of 24);
 
 			@include breakpoint( bp() ) {
