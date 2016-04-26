@@ -222,7 +222,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro",
-            "version": "1.5.5",
+            "version": "1.6",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro.zip",
@@ -236,7 +236,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro-cli",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro-cli.zip",
@@ -250,7 +250,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro-media-files",
-            "version": "1.4.3",
+            "version": "1.4.4",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro-media-files.zip",
