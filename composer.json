@@ -55,7 +55,8 @@
     "wpackagist-plugin/wpclef": "^2.3",
     "wpackagist-plugin/wp-super-cache-clear-cache-menu": "*",
     "wpackagist-plugin/good-old-twitter-feed-widget": "*",
-    "wpackagist-plugin/regenerate-thumbnails": "*"
+    "wpackagist-plugin/regenerate-thumbnails": "*",
+    "wpackagist-plugin/wp-ses": "*"
   },
   "extra": {
     "wordpress-install-dir": "_wp",
