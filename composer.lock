@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a46f4967d2ab953c50ae890e0a66e0e2",
-    "content-hash": "766f3a67895f7fe27aa09a3a70abb11c",
+    "hash": "2d89935d93bed359abccf9a21a9c863d",
+    "content-hash": "20a93b5a7c1016934900776cbcd09f8f",
     "packages": [
         {
             "name": "composer/installers",
@@ -109,16 +109,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.5",
+            "version": "4.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "a975896d0806f3dc1ccf3e170f91226440b267cb"
+                "reference": "494c0f663ff292334947097192392663b596a49e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/a975896d0806f3dc1ccf3e170f91226440b267cb",
-                "reference": "a975896d0806f3dc1ccf3e170f91226440b267cb",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/494c0f663ff292334947097192392663b596a49e",
+                "reference": "494c0f663ff292334947097192392663b596a49e",
                 "shasum": ""
             },
             "require": {
@@ -142,7 +142,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-04-12 17:46:20"
+            "time": "2016-04-26 18:01:25"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -798,15 +798,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.2.3",
+            "version": "3.2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.2.3"
+                "reference": "tags/3.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.2.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.2.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -875,6 +875,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-maintenance-mode/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-ses",
+            "version": "0.4.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-ses/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-ses.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-ses/"
         },
         {
             "name": "wpackagist-plugin/wp-super-cache",
