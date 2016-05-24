@@ -109,16 +109,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.5.1",
+            "version": "4.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "494c0f663ff292334947097192392663b596a49e"
+                "reference": "e992d00a34ea84d55c80023d27d5bcb839069add"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/494c0f663ff292334947097192392663b596a49e",
-                "reference": "494c0f663ff292334947097192392663b596a49e",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/e992d00a34ea84d55c80023d27d5bcb839069add",
+                "reference": "e992d00a34ea84d55c80023d27d5bcb839069add",
                 "shasum": ""
             },
             "require": {
@@ -142,7 +142,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-04-26 18:01:25"
+            "time": "2016-05-06 18:16:20"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -194,7 +194,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.3.7",
+            "version": "5.3.8.1",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -298,15 +298,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "3.1.10",
+            "version": "3.1.11",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/3.1.10"
+                "reference": "tags/3.1.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.3.1.10.zip",
+                "url": "https://downloads.wordpress.org/plugin/akismet.3.1.11.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -358,15 +358,15 @@
         },
         {
             "name": "wpackagist-plugin/co-authors-plus",
-            "version": "3.1.1",
+            "version": "3.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/co-authors-plus/",
-                "reference": "tags/3.1.1"
+                "reference": "tags/3.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/co-authors-plus.3.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/co-authors-plus.3.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -378,15 +378,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.4.1",
+            "version": "4.4.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.4.1"
+                "reference": "tags/4.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -478,15 +478,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.4.9",
+            "version": "5.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "trunk"
+                "reference": "tags/5.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -698,15 +698,15 @@
         },
         {
             "name": "wpackagist-plugin/svg-support",
-            "version": "2.2.2",
+            "version": "2.2.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/svg-support/",
-                "reference": "tags/2.2.2"
+                "reference": "tags/2.2.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/svg-support.2.2.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/svg-support.2.2.3.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -758,15 +758,15 @@
         },
         {
             "name": "wpackagist-plugin/theme-check",
-            "version": "20151211.1",
+            "version": "20160523.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/theme-check/",
-                "reference": "tags/20151211.1"
+                "reference": "tags/20160523.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/theme-check.20151211.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/theme-check.20160523.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -778,15 +778,15 @@
         },
         {
             "name": "wpackagist-plugin/tinymce-advanced",
-            "version": "4.3.8",
+            "version": "4.3.10.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/tinymce-advanced/",
-                "reference": "tags/4.3.8"
+                "reference": "tags/4.3.10.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.3.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.3.10.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -798,15 +798,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.2.4",
+            "version": "3.2.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.2.4"
+                "reference": "tags/3.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.2.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -938,15 +938,15 @@
         },
         {
             "name": "wpackagist-plugin/wpclef",
-            "version": "2.4.1",
+            "version": "2.5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wpclef/",
-                "reference": "tags/2.4.1"
+                "reference": "tags/2.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpclef.2.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpclef.2.5.2.zip",
                 "reference": null,
                 "shasum": null
             },
