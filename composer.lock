@@ -194,7 +194,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.3.8.1",
+            "version": "5.3.9",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -318,7 +318,7 @@
         },
         {
             "name": "wpackagist-plugin/amazon-web-services",
-            "version": "0.3.5",
+            "version": "0.3.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amazon-web-services/",
@@ -338,15 +338,15 @@
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
-            "version": "2.2.9",
+            "version": "2.2.10",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/black-studio-tinymce-widget/",
-                "reference": "tags/2.2.9"
+                "reference": "tags/2.2.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.2.10.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -498,15 +498,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "4.0.2",
+            "version": "4.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/4.0.2"
+                "reference": "tags/4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.4.0.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.4.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -578,15 +578,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.4.4",
+            "version": "2.4.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.4.4"
+                "reference": "tags/2.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.4.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.4.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -798,15 +798,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.2.5",
+            "version": "3.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.2.5"
+                "reference": "tags/3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.2.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -818,7 +818,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.1.30",
+            "version": "4.1.33",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/worker/",
@@ -938,15 +938,15 @@
         },
         {
             "name": "wpackagist-plugin/wpclef",
-            "version": "2.5.2",
+            "version": "2.5.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wpclef/",
-                "reference": "tags/2.5.2"
+                "reference": "tags/2.5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpclef.2.5.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpclef.2.5.3.zip",
                 "reference": null,
                 "shasum": null
             },
