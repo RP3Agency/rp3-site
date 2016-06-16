@@ -43,6 +43,15 @@
 					<?php endif; ?>
 
 
+					<div class="contact__info__media-inquiries">
+
+						<h2 class="contact__header">Media Inquiries</h2>
+
+						<p class="contact__info__email">Chris Finnegan<br />
+						<a href="mailto:cfinnegan@rp3agency.com">cfinnegan@rp3agency.com</a></p>
+
+					</div>
+
 
 					<?php // General Inquiries ?>
 
