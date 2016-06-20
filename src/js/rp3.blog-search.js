@@ -6,7 +6,6 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 	var
 
 	$body					= $('body'),
-	$searchSuggestions		= $('#blog-search__suggestions'),
 	$searchForm				= $('#search-form'),
 	$searchResults			= $('#blog-search__results'),
 	$searchResultsTemplate	= $('#blog-search__results__template'),
@@ -90,25 +89,29 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 	   Toggle Search Screen
 	========================================================================== */
 
-	toggleSearch = function() {
+	toggleSearch = function( layer, triggerEvent ) {
 
-		var $overlay	= $('#blog-search');
+		triggerEvent.preventDefault();
 
-		if ( $overlay.hasClass( 'open' ) ) {
+		if ( layer.hasClass( 'open' ) ) {
 
 			$body.removeClass( 'search-open' );
 
-			rp3.elementFadeOut( $overlay );
+			rp3.elementFadeOut( layer );
 
-		} else if ( ! $overlay.hasClass( 'close' ) ) {
+		} else if ( ! layer.hasClass( 'close' ) ) {
 
-			rp3.elementFadeIn( $overlay );
+			rp3.elementFadeIn( layer );
 
 			$body.addClass( 'search-open' );
 
-			if ( 0 < searchQuery.length ) {
-				$searchInput.val( searchQuery );
-				$searchForm.trigger( 'submit' );
+			if ( -1 < location.href.indexOf( '/blog' ) ) {
+
+				if ( 0 < searchQuery.length ) {
+
+					$searchInput.val( searchQuery );
+					$searchForm.trigger( 'submit' );
+				}
 			}
 
 			if ( ! Modernizr.touchevents ) {
@@ -129,15 +132,27 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 	toggleSearchControl = function() {
 
-		var triggerBttn			= $('#search__trigger--mobile'),
-			closeBttn			= $('#blog-search__close');
+		var triggerBttn				= $('#search__trigger--mobile'),
+			closeBttn				= $('#blog-search__close'),
+			mobileMenuTriggerBttn	= $('#site-header__menu-open'),
+			mobileMenuCloseBttn		= $('#mobile-nav__close'),
+			searchLayer				= $('#blog-search'),
+			mobileMenuLayer			= $('#site-header__site-navigation--mobile');
 
-		triggerBttn.on( 'click', function() {
-			toggleSearch();
+		triggerBttn.on( 'click', function( e ) {
+			toggleSearch( searchLayer, e );
 		});
 
-		closeBttn.on( 'click', function() {
-			toggleSearch();
+		mobileMenuTriggerBttn.on( 'click', function( e ) {
+			toggleSearch( mobileMenuLayer, e );
+		});
+
+		closeBttn.on( 'click', function( e ) {
+			toggleSearch( searchLayer, e );
+		});
+
+		mobileMenuCloseBttn.on( 'click', function( e ) {
+			toggleSearch( mobileMenuLayer, e );
 		});
 
 		$(document).keyup( function(e) {
@@ -168,11 +183,7 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 				'filter[post_type]'			: 'post'
 			};
 
-			$searchSuggestions.fadeOut( 200, function() {
-				$(this).remove();
-
-				postView.render( filters, searchQuery );
-			});
+			postView.render( filters, searchQuery );
 
 			// Add the search query to our location bar
 			appRouter.navigate( '#/search/' + encodeURIComponent( searchQuery ), { trigger: true } );
@@ -183,12 +194,16 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 		toggleSearchControl();
 		searchControl();
 
-		// check to see if we have a saved search
-		searchQuery = Backbone.history.getFragment();
+		if ( -1 < location.href.indexOf( '/blog' ) ) {
 
-		if ( 0 < searchQuery.length ) {
-			searchQuery = decodeURIComponent( searchQuery.substring( searchQuery.indexOf( '/' ) + 1 ) );
-			$body.addClass( 'search-saved' );
+			// check to see if we have a saved search
+			searchQuery = Backbone.history.getFragment();
+
+			if ( 0 < searchQuery.length ) {
+
+				searchQuery = decodeURIComponent( searchQuery.substring( searchQuery.indexOf( '/' ) + 1 ) );
+				$body.addClass( 'search-saved' );
+			}
 		}
 	};
 
@@ -202,7 +217,7 @@ rp3.backbone.blogSearch = (function($, _, Backbone) {
 
 	'use strict';
 
-	if ( -1 < location.href.indexOf( '/blog' ) ) {
+	// if ( -1 < location.href.indexOf( '/blog' ) ) {
 		rp3.backbone.blogSearch.init();
-	}
+	// }
 }());

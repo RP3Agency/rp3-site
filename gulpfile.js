@@ -10,6 +10,7 @@ var gulp			= require('gulp'),
 	cssnano			= require('gulp-cssnano'),
 	sourcemaps		= require('gulp-sourcemaps'),
 	kss				= require('kss'),
+	csswring        = require('csswring'),
 
 	// JavaScript
 	jshint			= require('gulp-jshint'),
@@ -23,7 +24,8 @@ var gulp			= require('gulp'),
 	shell			= require('gulp-shell'),
 
 	// Notifications and error handling
-	gutil			= require('gulp-util');
+	gutil			= require('gulp-util'),
+	plumber         = require('gulp-plumber');
 
 /**
  * Set our source and destination variables
@@ -57,30 +59,26 @@ var // Project
    ========================================================================== */
 
 // Styles
-gulp.task('styles', ['sass'], function() {
-	return gulp.src( dest_theme_css + '/*.css' )
+
+gulp.task( 'styles', function() {
+
+	return gulp.src( src_sass + '/**/*.scss' )
+		.pipe( sourcemaps.init() )
+		.pipe( plumber( function( err ) {
+			gutil.beep();
+			var errorText = err.message + '\n\n' + err.source;
+			gutil.log( gutil.colors.red( errorText ) );
+		} ) )
+		.pipe( sass.sync() )
+		.pipe( rename( function( path ) { path.extname = '.css' } ) )
 		.pipe( postcss( [ autoprefixer( {
 			browsers: [ 'last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ]
-		} ) ] ) )
+		}), csswring() ] ) )
+		.pipe( rename( function( path ) { path.extname = '.min.css' } ) )
+		.pipe( sourcemaps.write( '.' ) )
 		.pipe( gulp.dest( dest_theme_css ) )
-		.pipe( rename( {
-			suffix: '.min'
-		} ) )
-		.pipe( cssnano( {
-			autoprefixer : false
-		} ) )
-		.pipe( gulp.dest( dest_theme_css ) );
-});
-
-gulp.task( 'sass', function() {
-	return gulp.src( src_sass + '/*.scss' )
-		.pipe( sourcemaps.init() )
-		.pipe( sass( {
-			errLogToConsole: true
-		} ) )
-		.pipe( sourcemaps.write() )
-		.pipe( gulp.dest( dest_theme_css ) );
-});
+		.pipe( livereload() );
+} );
 
 // KSS
 gulp.task( 'kss', function() {

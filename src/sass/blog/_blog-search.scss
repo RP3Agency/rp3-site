@@ -7,8 +7,8 @@
 	overflow: hidden;
 	position: fixed;
 	right: 0;
-	transition: opacity 200ms;
 	top: 100%;
+	transition: opacity 200ms;
 	visibility: hidden;
 	z-index: 1000;
 
@@ -202,9 +202,4 @@ body.search-open {
 	overflow: hidden;
 	position: fixed;
 	width: 100%;
-}
-
-/** If we have a saved search state, hide the suggestions */
-body.search-saved .blog-search__suggestions {
-	display: none;
 }

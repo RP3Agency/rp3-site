@@ -85,6 +85,13 @@
 </div>
 <!-- // #page -->
 
+<?php
+
+/** Primary navigation: "mobile" */
+get_template_part( 'template-parts/navigation', 'mobile' );
+
+?>
+
 <?php wp_footer(); ?>
 
 </body>

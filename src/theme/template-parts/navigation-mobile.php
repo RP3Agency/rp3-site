@@ -13,5 +13,7 @@
 	</nav>
 	<!-- // #site-navigation -->
 
+	<button id="mobile-nav__close" class="mobile-nav__close blog-search__close">Close</button>
+
 </div>
 <!-- // #mobile-nav -->
