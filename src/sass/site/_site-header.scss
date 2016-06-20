@@ -71,8 +71,11 @@
 		/** Desktop */
 
 		&--desktop {
-			color: color( 'black' );
 			font-size: rem( 13px );
+
+			a:not(.arrow) {
+				color: color( 'black' );
+			}
 
 			.current-menu-item a {
 				color: color( 'blue' );
