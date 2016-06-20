@@ -90,7 +90,7 @@ rp3.backbone = (function($, _, Backbone, wp) {
 			var defaultImage;
 
 			if ( 'post' === type ) {
-				defaultImage = '//' + location.hostname + '/wp-content/uploads/2015/09/GENERIC-BLOG-HEADER';
+				defaultImage = 'https://media.rp3agency.com/wp-content/uploads/2015/09/17090506/GENERIC-BLOG-HEADER';
 			} else {
 				return false;
 			}
