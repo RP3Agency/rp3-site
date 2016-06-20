@@ -39,20 +39,20 @@ var rp3 = (function($) {
 	Navigation Canvas Slide
 	========================================================================== */
 
-	navigationCanvasSlide = function() {
+	// navigationCanvasSlide = function() {
 
-		var $body = $('body'),
-			$menuOpen = $('#site-header__menu-open');
+	// 	var $body = $('body'),
+	// 		$menuOpen = $('#site-header__menu-open');
 
-		$menuOpen.on( 'click', function(e) {
+	// 	$menuOpen.on( 'click', function(e) {
 
-			e.preventDefault();
+	// 		e.preventDefault();
 
-			$body.toggleClass('canvas-open');
+	// 		$body.toggleClass('canvas-open');
 
-			$(this).trigger( 'blur' );
-		});
-	},
+	// 		$(this).trigger( 'blur' );
+	// 	});
+	// },
 
 	/* ==========================================================================
 	   Load videos on work item pages
@@ -443,7 +443,7 @@ var rp3 = (function($) {
 
 	init = function() {
 
-		navigationCanvasSlide();
+		// navigationCanvasSlide();
 		videoToggle();
 		raptorJim();
 		revealComments();
