@@ -6,8 +6,6 @@
 
 		<div class="blog-search__container">
 
-			<button id="blog-search__close" class="blog-search__close">Close</button>
-
 			<?php get_search_form( true ); ?>
 
 			<div id="blog-search__results" class="blog-search__results">
@@ -22,6 +20,8 @@
 
 			</div>
 
+			<button id="blog-search__close" class="blog-search__close">Close</button>
+
 		</div>
 		<!-- // container -->
 
@@ -32,41 +32,46 @@
 
 <script type="text/template" id="blog-search__results__template">
 
-<ul class="blog-search__list">
+	<ul class="blog-search__list">
 
-<% _.each( posts, function( post ) { %>
+		<% _.each( posts, function( post ) { %>
 
-	<li><a href="<%= post.link %>" class="block">
+			<li>
 
-		<div class="blog-search__photo">
-			<img src="<%= post.four_three_thumb %>">
-		</div>
+				<a href="<%= post.link %>" class="block">
 
-		<div class="blog-search__details">
-			<span class="link"><%= post.title %></span><br/>
-			By
+					<div class="blog-search__photo">
+						<img src="<%= post.four_three_thumb %>">
+					</div>
 
-			<% if ( 1 === post.authors.length ) { %>
+					<div class="blog-search__details">
+						<span class="link"><%= post.title %></span><br/>
+						By
 
-				<%= post.authors[0].display_name %>
+						<% if ( 1 === post.authors.length ) { %>
 
-			<% } else { %>
+							<%= post.authors[0].display_name %>
 
-				<% var names = _.pluck( post.authors, 'display_name' ); %>
+						<% } else { %>
 
-				<% var andName = names.pop(); %>
+							<% var names = _.pluck( post.authors, 'display_name' ); %>
 
-				<%= names.join(', ') %> and <%= andName %>
+							<% var andName = names.pop(); %>
 
-			<% } %>
+							<%= names.join(', ') %> and <%= andName %>
 
-			on <%= post.longDate %>
-		</div>
-	</a></li>
+						<% } %>
 
-<% }) %>
+						on <%= post.longDate %>
+					</div>
 
-</ul>
+				</a>
+
+			</li>
+
+		<% } ); %>
+
+	</ul>
 
 </script>
 

@@ -77,11 +77,4 @@
 	</header>
 	<!-- // site header -->
 
-	<?php
-
-	/** Primary navigation: "mobile" */
-	get_template_part( 'template-parts/navigation', 'mobile' );
-
-	?>
-
 	<main id="content" class="site-content" role="main">

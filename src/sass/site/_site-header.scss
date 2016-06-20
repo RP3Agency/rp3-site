@@ -46,7 +46,7 @@
 		line-height: rem( 28px );
 		width: rem( 28px );
 
-		@include breakpoint( bp() ) {
+		@include breakpoint( 568px ) {
 			display: none;
 		}
 	}
@@ -58,7 +58,6 @@
 
 		a:not(.arrow) {
 			@extend %roboto-medium;
-			color: color( 'black' );
 			text: {
 				decoration: none;
 				transform: uppercase;
@@ -72,6 +71,7 @@
 		/** Desktop */
 
 		&--desktop {
+			color: color( 'black' );
 			font-size: rem( 13px );
 
 			.current-menu-item a {
@@ -89,54 +89,55 @@
 		/** Mobile */
 
 		&--mobile {
-			background-color: color( 'gray--light' );
+			background-color: transparentize( color( 'white' ), 0.05 );
+			bottom: 0;
 			font-size: rem( 20px );
-			width: rem( 200px );
+			left: 0;
+			opacity: 0;
+			position: fixed;
+			right: 0;
+			top: 100%;
+			transition: opacity 200ms;
+			visibility: hidden;
+			z-index: 1000;
 
-			a {
-				border: {
-					top: 1px solid color( 'white' );
-					bottom: 1px solid color( 'gray' );
-				}
-				color: mix( black, color( 'gray' ), 50% );
+			@include breakpoint( 568px ) {
+				display: none;
 			}
 
-			li:first-child {
-
-				a {
-					border-top: none;
-				}
+			&.open {
+				opacity: 1;
+				top: 0;
+				visibility: visible;
 			}
 
-			// Last li a element needs the white border to complete the emboss.
-			// We'll add it via a pseudo-element.
+			&.close {
+				opacity: 0;
+				top: 0;
+				visibility: visible;
+			}
 
-			li:last-child {
+			.mobile-navigation.menu--vertical {
+				display: flex;
+				flex-direction: column;
+				height: 100vh;
+				justify-content: center;
 
-				a {
-					position: relative;
+				li {
+					text-align: center;
 
-					&::after {
-						background-color: color( 'white' );
-						bottom: -2px;
-						content: '';
-						display: block;
-						height: 1px;
-						left: 0;
-						position: absolute;
-						right: 0;
+					a {
+						padding: {
+							top: 1em;
+							bottom: 1em;
+						}
 					}
 				}
 			}
+		}
 
-			// Set the body's position to "relative", but only when the canvas is open.
-
-			@at-root {
-
-				body.canvas-open {
-					position: relative;
-				}
-			}
+		.mobile-nav__close {
+			top: 21px;
 		}
 	}
 
@@ -172,27 +173,10 @@
 		&--desktop {
 			display: none;
 
-			@include breakpoint( bp() ) {
+			@include breakpoint( 568px ) {
 				align-items: center;
 				display: flex;
 				justify-content: space-between;
-			}
-		}
-
-		&--mobile {
-			bottom: 0;
-			position: fixed;
-			right: rem( -200px );
-			top: rem( 74px );
-			transition: right 200ms linear;
-			z-index: 10;
-
-			@include breakpoint( bp() ) {
-				display: none;
-			}
-
-			body.canvas-open & {
-				right: 0;
 			}
 		}
 	}
