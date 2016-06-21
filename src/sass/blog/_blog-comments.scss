@@ -63,9 +63,9 @@
 
 	&__list {
 		font-size: rem( 14px );
-		list-style: none;
+		list-style: none !important;
 		margin: {
-			left: 0;
+			left: 0 !important;
 			top: 1em;
 		}
 
@@ -82,7 +82,7 @@
 
 	.comment-body {
 		@extend .quotations;
-		padding: 0;
+		padding: 0 !important;
 	}
 
 	.comment-content {
