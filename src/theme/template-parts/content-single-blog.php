@@ -2,19 +2,19 @@
 /**
  * @package RP3
  */
-?>
-<?php
 
-	$post_id = $post->ID;
+$post_id = $post->ID;
 
-	// fetch industry taxonomy for single post
-	$industries = array();
-	if( is_single() ) {
-		foreach ( wp_get_post_terms( $post->ID, 'rp3_tax_industries' ) as $industry ) {
-			$industries[] = $industry->term_id;
-		}
+// fetch industry taxonomy for single post
+$industries = array();
+
+if( is_single() ) {
+
+	foreach ( wp_get_post_terms( $post->ID, 'rp3_tax_industries' ) as $industry ) {
+
+		$industries[] = $industry->term_id;
 	}
-
+}
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-content single-post-content--blog' ); ?>>
 
@@ -33,12 +33,12 @@
 
 		<?php
 
-		$post_image_id = 10850;
+			$post_image_id = 10850;
 
-		if ( '' !== get_the_post_thumbnail() ) {
+			if ( '' !== get_the_post_thumbnail() ) {
 
-			$post_image_id = get_post_thumbnail_id();
-		}
+				$post_image_id = get_post_thumbnail_id();
+			}
 
 		?>
 
@@ -96,16 +96,28 @@
 
 		<?php get_template_part( 'template-parts/content', 'blog-author' ); ?>
 
-		<!-- Related Posts -->
+		<?php if ( true !== get_field( 'link_white_paper' ) ) : ?>
 
-		<?php get_template_part( 'template-parts/content', 'blog-related' ); ?>
+			<!-- Related Posts -->
+
+			<?php get_template_part( 'template-parts/content', 'blog-related' ); ?>
+
+		<?php endif; ?>
 
 	</div>
 	<!-- // wrapper -->
 
 </article>
 
-<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
+<?php if ( true !== get_field( 'link_white_paper' ) ) : ?>
+
+	<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
+
+<?php else : ?>
+
+	<?php get_template_part( 'template-parts/content', 'blog-white-paper' ); ?>
+
+<?php endif; ?>
 
 <?php
 	// Create settings collection to pass to Backbone

@@ -22,7 +22,7 @@
     "rp3agency/wp-migrate-db-pro-cli": "*",
     "rp3agency/rp3agency": "*",
     "rp3agency/wp-offload-s3":"*",
-    "rp3agency/download-monitor":"*",
+    "wpackagist-plugin/download-monitor":"*",
     "wpackagist-plugin/admin-post-navigation":"*",
     "wpackagist-plugin/akismet":"*",
     "wpackagist-plugin/black-studio-tinymce-widget":"*",

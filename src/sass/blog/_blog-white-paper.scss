@@ -1,0 +1,44 @@
+.blog__white-paper {
+	background-color: get_color( 'blue' );
+	color: get_color( 'white' );
+
+	&__container {
+		@extend %max-width;
+
+		&__inner {
+			@extend %max-width--blog;
+			padding: {
+				top: 2em;
+				bottom: 2em;
+			}
+		}
+	}
+
+	h2 {
+		@extend %roboto-bold;
+	}
+
+	input[type="email"] {
+		background-color: mix( white, get_color( "blue" ), 90% );
+
+		&:focus {
+			background-color: get_color( "white" );
+		}
+	}
+
+	input[type="submit"] {
+		border-color: get_color( "white" );
+		color: get_color( "white" );
+
+		@include hover-state {
+			background-color: get_color( "white" );
+			color: get_color( "blue" );
+		}
+	}
+
+	.wpcf7-response-output {
+		background-color: transparent;
+		border: none;
+		padding: 0;
+	}
+}

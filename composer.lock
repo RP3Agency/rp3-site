@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5a480594f0907144569bc33008411336",
-    "content-hash": "98e8f1f56c51243d670477c28e63a9df",
+    "hash": "c9585283cb6f7e01da6461dd2bbd5aed",
+    "content-hash": "2c4ebfc43a3fcfae1631a8417650cbb8",
     "packages": [
         {
             "name": "composer/installers",
@@ -198,20 +198,6 @@
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "rp3agency/download-monitor",
-            "version": "3.3.6",
-            "dist": {
-                "type": "zip",
-                "url": "http://composer.rp3dev.com/download-monitor.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -429,6 +415,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/debug-bar/"
+        },
+        {
+            "name": "wpackagist-plugin/download-monitor",
+            "version": "1.9.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/download-monitor/",
+                "reference": "tags/1.9.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/download-monitor.1.9.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/download-monitor/"
         },
         {
             "name": "wpackagist-plugin/dynamic-featured-image",

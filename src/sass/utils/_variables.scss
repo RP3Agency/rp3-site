@@ -34,3 +34,7 @@ $colors: (
 @function color( $color ) {
 	@return map-get( $colors, $color );
 }
+
+@function get_color( $color ) {
+	@return color( $color );
+}
