@@ -4,11 +4,30 @@
 
 		<div class="blog__white-paper__container__inner">
 
-			<div class="blog__white-paper--left">
+			<div class="blog__white-paper__title">
 
 				<h2><?php the_field( 'header' ); ?></h2>
 
+			</div>
+
+			<div class="blog__white-paper__image">
+
+				<?php echo wp_get_attachment_image( get_field( 'image' ), 'full' ); ?>
+
+			</div>
+
+			<!-- // title -->
+
+			<div class="blog__white-paper__content">
+
 				<?php echo apply_filters( 'the_content', get_field( 'content' ) ); ?>
+
+			</div>
+			<!-- // content -->
+
+			<!-- // image -->
+
+			<div class="blog__white-paper__form">
 
 				<?php
 					// Build our EBD shortcode based on the parameters set in the post
@@ -22,9 +41,7 @@
 
 			</div>
 
-			<div class="blog__white-paper--right">
-
-			</div>
+			<!-- // form -->
 
 		</div>
 

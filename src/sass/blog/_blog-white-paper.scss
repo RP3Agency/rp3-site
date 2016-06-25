@@ -7,9 +7,14 @@
 
 		&__inner {
 			@extend %max-width--blog;
-			padding: {
-				top: 2em;
-				bottom: 2em;
+			padding: 2em 1em;
+			position: relative;
+
+			@include breakpoint( 740px ) {
+				padding: {
+					left: 0;
+					right: 0;
+				}
 			}
 		}
 	}
@@ -20,6 +25,8 @@
 
 	input[type="email"] {
 		background-color: mix( white, get_color( "blue" ), 90% );
+		margin-bottom: 1em;
+		max-width: 100%;
 
 		&:focus {
 			background-color: get_color( "white" );
@@ -40,5 +47,48 @@
 		background-color: transparent;
 		border: none;
 		padding: 0;
+	}
+
+	&__title {
+		margin-bottom: 1em;
+
+		@include breakpoint( bp( 'medium' ) ) {
+			width: span(17);
+		}
+	}
+
+	&__image {
+		margin-bottom: 1em;
+
+		@include breakpoint( bp( 'medium' ) ) {
+			position: absolute;
+			right: 1em;
+			top: 2em;
+			width: span(7);
+
+			img {
+				float: right;
+				max-width: 150px;
+				width: 100%;
+			}
+		}
+
+		@include breakpoint( 740px ) {
+			right: 0;
+		}
+	}
+
+	&__content {
+
+		@include breakpoint( bp( 'medium' ) ) {
+			width: span(17);
+		}
+	}
+
+	&__form {
+
+		@include breakpoint( bp( 'medium' ) ) {
+			width: span(17);
+		}
 	}
 }
