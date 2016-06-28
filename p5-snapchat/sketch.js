@@ -1,7 +1,5 @@
 var snapSketch = function( p ) {
 
-	var x = 100;
-	var y = 100;
 	var containerWidth, containerHeight;
 	var baseImg;
 	var gridSize = 19;
