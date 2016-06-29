@@ -9,21 +9,26 @@ var snapSketch = function( p ) {
 		containerHeight = document.getElementById( 'snap-sizer' ).offsetHeight;
 		p.createCanvas(containerWidth, containerHeight); // create canvas to match sizer element size
 		baseImg = p.loadImage('snapcode.png');  // Load the image
+		corners = p.loadImage('corners.png');  // Load the image
 
 		system = new ParticleSystem(); // Create particle system
 		system.addParticles(); // add particles to system
-
 	};
 
 	p.draw = function() {
+		p.clear();
 		p.image(baseImg, 0, 0, p.width, p.height); // Display base snapchat image
 		system.run(); // Run particle system
+		p.image(corners, 0, 0, p.width, p.height); // Display base snapchat image
 	};
 
 	//////////////////////////////////////////////// Particle class
 
 	var Particle = function(position) {
-		this.position = position.copy();
+		this.gridPosition = position.copy();
+		this.originalPos = p.createVector(p.width/gridSize*this.gridPosition.x,  p.width/gridSize*this.gridPosition.y);
+		this.realPos = p.createVector(p.width/gridSize*this.gridPosition.x,  p.width/gridSize*this.gridPosition.y);
+		this.velocity = p.createVector(0,0);
 	};
 
 	Particle.prototype.run = function() {
@@ -33,13 +38,36 @@ var snapSketch = function( p ) {
 
 	// Method to update
 	Particle.prototype.update = function() {
+		var mouseVector = p.createVector(p.mouseX, p.mouseY);
+		if ( p5.Vector.dist(this.realPos, mouseVector) < p.width/5 && mouseVector.mag() != 0){
+			this.velocity = p5.Vector.sub(this.realPos, mouseVector);
+			this.velocity.limit(0.5);
+		}
+
+		if ( this.realPos.x < 0 ) {
+			this.realPos.x = p.width;
+		} else if (this.realPos.x > p.width ) {
+			this.realPos.x = 0;
+		}else if ( this.realPos.y < 0 ) {
+			this.realPos.y = p.height;
+		} else if (this.realPos.y > p.height ) {
+			this.realPos.y = 0;
+		}
+
+		if ( mouseVector.x < 0 || mouseVector.x > p.width || mouseVector.y < 0 || mouseVector.y > p.height ) {
+			this.realPos = p5.Vector.lerp(this.realPos, this.originalPos, 0.05);
+			this.velocity.set(0,0);
+		} else {
+			this.realPos.add( this.velocity );
+		}
+
 	};
 
 	// Method to display
 	Particle.prototype.display = function() {
 		p.noStroke();
 		p.fill(0);
-		p.ellipse(p.width/gridSize*this.position.x, p.width/gridSize*this.position.y, p.width/35, p.width/35);
+		p.ellipse(this.realPos.x, this.realPos.y, p.width/35, p.width/35);
 	};
 
 	//////////////////////////////////////////////// Particle System Class
@@ -151,7 +179,6 @@ var snapSketch = function( p ) {
 		this.positions.push(p.createVector(13,18));
 		this.positions.push(p.createVector(14,18));
 		this.positions.push(p.createVector(15,18));
-
 	};
 
 	// Method to add particles
@@ -174,6 +201,13 @@ var snapSketch = function( p ) {
 	p.windowResized = function() {
 		containerWidth = document.getElementById( 'snap-sizer' ).offsetWidth;
 		containerHeight = document.getElementById( 'snap-sizer' ).offsetHeight;
+
+		for (var i = system.particles.length-1; i >= 0; i--) {
+			var particle = system.particles[i];
+			particle.originalPos.set(p.width/gridSize*particle.gridPosition.x, p.width/gridSize*particle.gridPosition.y);
+			particle.realPos.set(p.width/gridSize*particle.gridPosition.x, p.width/gridSize*particle.gridPosition.y);
+		}
+
 		p.resizeCanvas(containerWidth, containerHeight);
 	};
 
