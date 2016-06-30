@@ -194,7 +194,7 @@
         },
         {
             "name": "rp3agency/advanced-custom-fields-pro",
-            "version": "5.3.9.1",
+            "version": "5.3.9.2",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/advanced-custom-fields-pro.zip",
@@ -798,15 +798,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.3.2",
+            "version": "3.3.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.3.2"
+                "reference": "tags/3.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.3.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -818,7 +818,7 @@
         },
         {
             "name": "wpackagist-plugin/worker",
-            "version": "4.1.33",
+            "version": "4.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/worker/",
@@ -918,15 +918,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-super-cache-clear-cache-menu",
-            "version": "1.3.1",
+            "version": "1.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-super-cache-clear-cache-menu/",
-                "reference": "tags/1.3.1"
+                "reference": "tags/1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache-clear-cache-menu.1.3.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-super-cache-clear-cache-menu.1.4.zip",
                 "reference": null,
                 "shasum": null
             },
