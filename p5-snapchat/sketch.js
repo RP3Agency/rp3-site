@@ -41,7 +41,7 @@ var snapSketch = function( p ) {
 		var mouseVector = p.createVector(p.mouseX, p.mouseY);
 		if ( p5.Vector.dist(this.realPos, mouseVector) < p.width/5 && mouseVector.mag() != 0){
 			this.velocity = p5.Vector.sub(this.realPos, mouseVector);
-			this.velocity.limit(0.5);
+			this.velocity.limit(5);
 		}
 
 		if ( this.realPos.x < 0 ) {
