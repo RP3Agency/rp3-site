@@ -3,11 +3,14 @@ var snapSketch = function( p ) {
 	var containerWidth, containerHeight;
 	var baseImg;
 	var gridSize = 19;
+	var circleSize;
+	var velocityLimit = 3;
 
 	p.setup = function() {
 		containerWidth = document.getElementById( 'snap-sizer' ).offsetWidth; // get sizer element sizes
 		containerHeight = document.getElementById( 'snap-sizer' ).offsetHeight;
 		p.createCanvas(containerWidth, containerHeight); // create canvas to match sizer element size
+		circleSize = p.width/35;
 		baseImg = p.loadImage('snapcode.png');  // Load the image
 		corners = p.loadImage('corners.png');  // Load the image
 
@@ -18,6 +21,7 @@ var snapSketch = function( p ) {
 	p.draw = function() {
 		p.clear();
 		p.image(baseImg, 0, 0, p.width, p.height); // Display base snapchat image
+		system.bounce(); // Check if particles need to bounce off each other
 		system.run(); // Run particle system
 		p.image(corners, 0, 0, p.width, p.height); // Display base snapchat image
 	};
@@ -41,7 +45,7 @@ var snapSketch = function( p ) {
 		var mouseVector = p.createVector(p.mouseX, p.mouseY);
 		if ( p5.Vector.dist(this.realPos, mouseVector) < p.width/5 && mouseVector.mag() != 0){
 			this.velocity = p5.Vector.sub(this.realPos, mouseVector);
-			this.velocity.limit(5);
+			this.velocity.limit(velocityLimit);
 		}
 
 		if ( this.realPos.x < 0 ) {
@@ -66,8 +70,8 @@ var snapSketch = function( p ) {
 	// Method to display
 	Particle.prototype.display = function() {
 		p.noStroke();
-		p.fill(0);
-		p.ellipse(this.realPos.x, this.realPos.y, p.width/35, p.width/35);
+		p.fill(34);
+		p.ellipse(this.realPos.x, this.realPos.y, circleSize, circleSize);
 	};
 
 	//////////////////////////////////////////////// Particle System Class
@@ -188,6 +192,27 @@ var snapSketch = function( p ) {
 		}
 	};
 
+	// Method to bounce particles off eachother
+	ParticleSystem.prototype.bounce = function() {
+		for (var i = this.particles.length-1; i >= 0; i--) {
+
+			var particleOne = this.particles[i];
+
+			for (var j = this.particles.length-1; j >= 0; j--) {
+
+				var particleTwo = this.particles[j];
+
+				if ( p5.Vector.dist(particleOne.realPos, particleTwo.realPos) < circleSize ) {
+
+					if ( i != j ){
+						particleOne.velocity = p5.Vector.sub(particleOne.realPos, particleTwo.realPos);
+						particleOne.velocity.limit(velocityLimit);
+					}
+				}
+			}
+		}
+	};
+
 	// Method to run particles
 	ParticleSystem.prototype.run = function() {
 		for (var i = this.particles.length-1; i >= 0; i--) {
@@ -209,6 +234,7 @@ var snapSketch = function( p ) {
 		}
 
 		p.resizeCanvas(containerWidth, containerHeight);
+		circleSize = p.width/35;
 	};
 
 };
