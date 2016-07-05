@@ -1,0 +1,42 @@
+.page__panel__contact-groupings {
+	@extend %max-width;
+
+	ul {
+		@extend %max-width--padded;
+
+		@include breakpoint( bp( 'medium' ) ) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			margin-bottom: 2em;
+
+			&:nth-of-type(1) {
+				align-items: flex-end;
+			}
+
+			&:nth-of-type(2) {
+				align-items: flex-start;
+			}
+		}
+	}
+
+	li {
+		margin-bottom: 1em;
+
+		@include breakpoint( bp( 'medium' ) ) {
+			margin-right: gutter();
+			width: span(8);
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		h2 {
+			@extend %roboto-medium;
+			font-size: em( 12px );
+			margin-bottom: 1em;
+			text-transform: uppercase;
+		}
+	}
+}
