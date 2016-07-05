@@ -56,7 +56,7 @@
 			<address>
 				7316 Wisconsin Avenue<br/>
 				Suite 450<br/>
-				Bethesda, MD 20814
+				Bethesda, Maryland 20814
 			</address>
 		</li>
 
