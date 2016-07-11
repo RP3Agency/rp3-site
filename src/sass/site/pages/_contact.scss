@@ -1,5 +1,9 @@
 .contact {
-	@extend %max-width;
+	// @extend %max-width;
+
+	&__content {
+		@extend %max-width;
+	}
 
 	h2.contact__header {
 		@extend %roboto-medium;
@@ -8,19 +12,54 @@
 		text-transform: uppercase;
 	}
 
-	&__info-and-form {
+	/** Contact groupings */
 
-		@include breakpoint( bp() ) {
-			display: flex;
+	.page__panel__contact-groupings {
+
+		ul {
+
+			@include breakpoint( bp( 'medium' ) ) {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: flex-start;
+				margin-bottom: 2em;
+
+				&:nth-of-type(1) {
+					align-items: flex-end;
+				}
+
+				&:nth-of-type(2) {
+					align-items: flex-start;
+				}
+			}
+		}
+
+		li {
+			margin-bottom: 1em;
+
+			@include breakpoint( bp( 'medium' ) ) {
+				margin-right: gutter();
+				width: span(8);
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
 		}
 	}
 
-	&__info {
+	/** Social Media */
 
-		@include breakpoint( bp() ) {
-			margin-right: gutter();
-			width: span( 12 of 24 );
+	&__social ul {
+		margin: {
+			top: 0.5em;
+			bottom: 0.5em;
 		}
+	}
+
+
+	&__info {
+		@extend %max-width--padded;
 
 		> * {
 			margin-bottom: 2em;
@@ -36,16 +75,10 @@
 				margin-top: 1em;
 			}
 		}
-
-		&__social ul {
-			margin: {
-				top: 0.5em;
-				bottom: 0.5em;
-			}
-		}
 	}
 
 	&__form {
+		@extend %max-width--padded;
 
 		@include breakpoint( bp() ) {
 			width: span( 12 of 24 );
@@ -83,6 +116,60 @@
 			// Fixes distorted zoom controls in Google maps
 			img {
 				max-width: none;
+			}
+		}
+	}
+}
+
+
+.page__panel__social-media {
+	background-color: color( 'blue' );
+	padding: {
+		top: 2rem;
+		bottom: 2rem;
+	}
+
+	&__inner {
+		@extend %max-width;
+	}
+
+	h2 {
+		color: color( 'white' );
+	}
+
+	.contact__info__social {
+		@extend %max-width--padded;
+	}
+
+	.social {
+
+		li {
+			margin: {
+				right: 8px;
+				bottom: 8px;
+			}
+
+			&:nth-child(4) {
+				clear: both;
+			}
+
+			a {
+				border-color: color( 'white' );
+				color: color( 'white' );
+				height: 64px;
+				margin-right: 0;
+				width: 64px;
+
+				@include hover-state {
+					background-color: color( 'white' );
+					color: color( 'blue' );
+				}
+
+				&::before {
+					font-size: 2em;
+					height: 100%;
+					line-height: 64px;
+				}
 			}
 		}
 	}

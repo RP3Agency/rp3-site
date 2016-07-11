@@ -1,0 +1,56 @@
+.page__panel__social-media {
+	background-color: color( 'blue' );
+	padding: {
+		top: 2rem;
+		bottom: 2rem;
+	}
+
+	&__inner {
+		@extend %max-width;
+	}
+
+	h2 {
+		@extend %roboto-medium;
+		color: color( 'white' );
+		font-size: em( 12px );
+		margin-bottom: 1em;
+		text-transform: uppercase;
+	}
+
+	.contact__info__social {
+		@extend %max-width--padded;
+	}
+
+	.social {
+
+		li {
+			margin: {
+				right: 8px;
+				bottom: 8px;
+			}
+
+			&:nth-child(4) {
+				clear: both;
+			}
+
+			a {
+				border-color: color( 'white' );
+				color: color( 'white' );
+				height: 64px;
+				margin-right: 0;
+				width: 64px;
+
+				@include hover-state {
+					background-color: color( 'white' );
+					color: color( 'blue' );
+				}
+
+				&::before {
+					font-size: 2em;
+					height: 100%;
+					line-height: 64px;
+				}
+			}
+		}
+	}
+}
