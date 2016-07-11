@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c9585283cb6f7e01da6461dd2bbd5aed",
-    "content-hash": "2c4ebfc43a3fcfae1631a8417650cbb8",
+    "hash": "bef15ba931aa117215d52984982a2887",
+    "content-hash": "b57ae82d035234c1615bbff12ed7493d",
     "packages": [
         {
             "name": "composer/installers",
@@ -277,6 +277,26 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin"
+        },
+        {
+            "name": "wpackagist-plugin/acf-to-wp-rest-api",
+            "version": "1.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/acf-to-wp-rest-api/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/acf-to-wp-rest-api.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/acf-to-wp-rest-api/"
         },
         {
             "name": "wpackagist-plugin/admin-post-navigation",

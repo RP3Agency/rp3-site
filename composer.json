@@ -58,7 +58,8 @@
     "wpackagist-plugin/good-old-twitter-feed-widget": "*",
     "wpackagist-plugin/regenerate-thumbnails": "*",
     "wpackagist-plugin/wp-ses": "*",
-    "wpackagist-plugin/email-before-download": "*"
+    "wpackagist-plugin/email-before-download": "*",
+    "wpackagist-plugin/acf-to-wp-rest-api": "*"
   },
   "extra": {
     "wordpress-install-dir": "_wp",

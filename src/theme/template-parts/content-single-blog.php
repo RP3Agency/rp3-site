@@ -115,7 +115,7 @@ if( is_single() ) {
 
 <?php else : ?>
 
-	<?php get_template_part( 'template-parts/content', 'blog-white-paper' ); ?>
+	<?php get_template_part( 'template-parts/component', 'blog-interstitial--white-paper' ); ?>
 
 <?php endif; ?>
 

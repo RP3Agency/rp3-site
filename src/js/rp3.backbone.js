@@ -19,7 +19,8 @@ rp3.backbone = (function($, _, Backbone, wp) {
 				'four_three_medium_2x':		null,
 				'eight_three_large':		null,
 				'eight_three_large_2x':		null,
-				'four_three_thumb':			null
+				'four_three_thumb':			null,
+				'link_white_paper':			false
 			},
 
 			// set calculated values on model initialization

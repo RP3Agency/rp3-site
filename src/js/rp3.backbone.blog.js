@@ -46,6 +46,11 @@ rp3.backbone.blog = (function($, _, Backbone) {
 						displayInterstitial();
 					}
 
+					// Test to see if this is a "white paper" post
+					if ( postCollection.models[0].attributes.acf.link_white_paper ) {
+						displayWhitePageInterstitial();
+					}
+
 					// run picturefill to update inserted elements
 					picturefill({
 						reevaluate: true
@@ -150,6 +155,25 @@ rp3.backbone.blog = (function($, _, Backbone) {
 			template = _.template( $('#blog-template-interstitial').html() );
 
 		$interstitialElement.html( template() );
+
+		$blog__backbone.append( $interstitialElement );
+
+		rp3.scrollMagic.init();
+	},
+
+	/**
+	 * Display the white page interstitial
+	 */
+	
+	displayWhitePageInterstitial = function() {
+
+		var $interstitialElement = $('<div>').addClass( 'blog__backbone__interstitial--white-paper' ),
+			template = _.template( $('#blog-template-interstitial--white-paper').html() ),
+			downloadId = postCollection.models[0].attributes.acf.form,
+			formId = postCollection.models[0].attributes.acf.download_item,
+			shortcode = '[email-download download_id="' + downloadId + '" contact_form_id="' + formId + '"]';
+
+		$interstitialElement.html( template( { posts: postCollection.toJSON() }) );
 
 		$blog__backbone.append( $interstitialElement );
 

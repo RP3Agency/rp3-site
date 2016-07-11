@@ -1,4 +1,4 @@
-<div class="blog__white-paper">
+<div class="blog__white-paper blog__white-paper--snapchat">
 
 	<div class="blog__white-paper__container">
 
@@ -9,7 +9,6 @@
 				<h2><?php the_field( 'header' ); ?></h2>
 
 			</div>
-
 			<!-- // title (narrow) -->
 
 			<div class="blog__white-paper__image">
@@ -36,7 +35,6 @@
 				
 
 			</div>
-
 			<!-- // image -->
 
 			<div class="blog__white-paper__content">
@@ -46,7 +44,6 @@
 					<h2><?php the_field( 'header' ); ?></h2>
 
 				</div>
-
 				<!-- // title (wide) -->
 
 				<?php echo apply_filters( 'the_content', get_field( 'content' ) ); ?>
@@ -64,17 +61,19 @@
 					<?php echo do_shortcode( $ebd_shortcode ); ?>
 
 				</div>
-
 				<!-- // form -->
 
 			</div>
 			<!-- // content -->
 
 		</div>
+		<!-- // inner -->
 
 	</div>
+	<!-- // container -->
 
 </div>
+<!-- // white-paper -->
 
 <script>
 	var snapSketch = function( p ) {
