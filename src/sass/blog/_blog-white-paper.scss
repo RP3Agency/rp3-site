@@ -10,6 +10,12 @@
 			padding: 2em 1em;
 			position: relative;
 
+			@include breakpoint( bp( 'medium' ) ) {
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: space-between;
+			}
+
 			@include breakpoint( 740px ) {
 				padding: {
 					left: 0;
@@ -55,20 +61,33 @@
 		@include breakpoint( bp( 'medium' ) ) {
 			width: span(17);
 		}
+
+		&--narrow {
+
+			@include breakpoint( bp( 'medium' ) ) {
+				display: none;
+			}
+		}
+
+		&--wide {
+			display: none;
+
+			@include breakpoint( bp( 'medium' ) ) {
+				display: block;
+			}
+		}
 	}
 
 	&__image {
 		margin-bottom: 1em;
 
 		@include breakpoint( bp( 'medium' ) ) {
-			position: absolute;
-			right: 1em;
-			top: 2em;
+			margin-bottom: 0;
+			text-align: right;
 			width: span(7);
 
 			img {
-				float: right;
-				max-width: 150px;
+				max-width: 200px;
 				width: 100%;
 			}
 		}

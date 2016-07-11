@@ -1,3 +1,11 @@
+<?php $slug = $post->post_name; ?>
+
+<?php if ( file_exists( get_stylesheet_directory() . '/blog-white-paper-interstitials/' . $slug . '.php' ) ) : ?>
+
+	<?php get_template_part( 'blog-white-paper-interstitials/' . $slug ); ?>
+
+<?php else : ?>
+
 <div class="blog__white-paper">
 
 	<div class="blog__white-paper__container">
@@ -48,3 +56,5 @@
 	</div>
 
 </div>
+
+<?php endif; ?>
