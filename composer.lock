@@ -980,15 +980,15 @@
         },
         {
             "name": "wpackagist-plugin/wpclef",
-            "version": "2.5.5",
+            "version": "2.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wpclef/",
-                "reference": "tags/2.5.5"
+                "reference": "tags/2.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpclef.2.5.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpclef.2.6.0.zip",
                 "reference": null,
                 "shasum": null
             },
