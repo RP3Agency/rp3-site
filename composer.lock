@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2d89935d93bed359abccf9a21a9c863d",
-    "content-hash": "20a93b5a7c1016934900776cbcd09f8f",
+    "hash": "c9585283cb6f7e01da6461dd2bbd5aed",
+    "content-hash": "2c4ebfc43a3fcfae1631a8417650cbb8",
     "packages": [
         {
             "name": "composer/installers",
@@ -419,6 +419,26 @@
             "homepage": "https://wordpress.org/plugins/debug-bar/"
         },
         {
+            "name": "wpackagist-plugin/download-monitor",
+            "version": "1.9.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/download-monitor/",
+                "reference": "tags/1.9.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/download-monitor.1.9.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/download-monitor/"
+        },
+        {
             "name": "wpackagist-plugin/dynamic-featured-image",
             "version": "3.5.2",
             "source": {
@@ -437,6 +457,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/dynamic-featured-image/"
+        },
+        {
+            "name": "wpackagist-plugin/email-before-download",
+            "version": "3.4.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/email-before-download/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/email-before-download.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/email-before-download/"
         },
         {
             "name": "wpackagist-plugin/featured-images-for-rss-feeds",
