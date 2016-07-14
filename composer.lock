@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bef15ba931aa117215d52984982a2887",
-    "content-hash": "b57ae82d035234c1615bbff12ed7493d",
+    "hash": "69fef61f04777b40ae4a019151b1c9a4",
+    "content-hash": "b081a553526805f33e7e82cac238ed8c",
     "packages": [
         {
             "name": "composer/installers",
@@ -209,6 +209,20 @@
             "type": "wordpress-plugin"
         },
         {
+            "name": "rp3agency/email-before-download",
+            "version": "3.4.2",
+            "dist": {
+                "type": "zip",
+                "url": "http://composer.rp3dev.com/email-before-download.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
             "name": "rp3agency/rp3agency",
             "version": "1.2.0",
             "dist": {
@@ -224,7 +238,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro",
-            "version": "1.6",
+            "version": "1.6.1",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro.zip",
@@ -238,7 +252,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro-cli",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro-cli.zip",
@@ -252,7 +266,7 @@
         },
         {
             "name": "rp3agency/wp-migrate-db-pro-media-files",
-            "version": "1.4.4",
+            "version": "1.4.5",
             "dist": {
                 "type": "zip",
                 "url": "http://composer.rp3dev.com/wp-migrate-db-pro-media-files.zip",
@@ -477,26 +491,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/dynamic-featured-image/"
-        },
-        {
-            "name": "wpackagist-plugin/email-before-download",
-            "version": "3.4.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/email-before-download/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/email-before-download.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/email-before-download/"
         },
         {
             "name": "wpackagist-plugin/featured-images-for-rss-feeds",

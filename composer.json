@@ -22,6 +22,7 @@
     "rp3agency/wp-migrate-db-pro-cli": "*",
     "rp3agency/rp3agency": "*",
     "rp3agency/wp-offload-s3":"*",
+    "rp3agency/email-before-download": "*",
     "wpackagist-plugin/download-monitor":"*",
     "wpackagist-plugin/admin-post-navigation":"*",
     "wpackagist-plugin/akismet":"*",
@@ -58,7 +59,6 @@
     "wpackagist-plugin/good-old-twitter-feed-widget": "*",
     "wpackagist-plugin/regenerate-thumbnails": "*",
     "wpackagist-plugin/wp-ses": "*",
-    "wpackagist-plugin/email-before-download": "*",
     "wpackagist-plugin/acf-to-wp-rest-api": "*"
   },
   "extra": {
