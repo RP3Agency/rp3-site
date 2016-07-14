@@ -137,7 +137,7 @@
 
 				<% }); %>
 
-				<section id="single-post-content__related-placeholder-<%= post.ID %>" />
+				<div id="single-post-content__related-placeholder-<%= post.ID %>"></div>
 
 			</div>
 
@@ -154,6 +154,8 @@
 
 		<?php endif; ?>
 
+		<div id="single-post-content__interstitial--white-paper-placeholder-<%= post.ID %>"></div>
+
 	<% } ); %>
 
 </script>
@@ -164,67 +166,6 @@
 <script type="text/template" id="blog-template-interstitial">
 
 	<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
-
-</script>
-
-
-<!-- Blog Interstitial: White Paper  -->
-
-<script type="text/template" id="blog-template-interstitial--white-paper">
-
-	<% _.each( posts, function( post ) { %>
-
-		<div class="blog__white-paper">
-
-			<div class="blog__white-paper__container">
-
-				<div class="blog__white-paper__container__inner">
-
-					<div class="blog__white-paper__title blog__white-paper__title--narrow">
-
-						<h2><%= post.acf['header'] %></h2>
-
-					</div>
-					<!-- title narrow -->
-
-					<div class="blog__white-paper__image">
-
-						<?php echo wp_get_attachment_image( get_field( 'image' ), 'full' ); ?>
-
-					</div>
-					<!-- // image -->
-
-					<div class="blog__white-paper__content">
-
-						<div class="blog__white-paper__title blog__white-paper__title--wide">
-
-							<h2><%= post.acf['header'] %></h2>
-
-						</div>
-						<!-- title wide -->
-
-						<?php echo apply_filters( 'the_content', get_field( 'content' ) ); ?>
-
-						<div class="blog__white-paper__form">
-
-							fubar
-
-						</div>
-						<!-- // form -->
-
-					</div>
-					<!-- // content -->
-
-				</div>
-				<!-- // inner -->
-
-			</div>
-			<!-- // container -->
-
-		</div>
-		<!-- // white-paper -->
-
-	<% }); %>
 
 </script>
 
