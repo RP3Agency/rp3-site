@@ -1,4 +1,4 @@
-<div class="blog__white-paper blog__white-paper--snapchat">
+<div class="blog__white-paper blog__white-paper--snapchat single-blog__interstitial--white-paper">
 
 	<div class="blog__white-paper__container">
 
@@ -21,12 +21,13 @@
 
 						.snap-sizer {
 							display: block;
-							position: absolute;
-							visibility: hidden;
+							position: relative;
 						}
 
 						.snap-sizer canvas {
 							display: block;
+							position: relative;
+							z-index: 1;
 						}
 					</style>
 
@@ -46,7 +47,7 @@
 				</div>
 				<!-- // title (wide) -->
 
-				<?php echo apply_filters( 'the_content', get_field( 'content' ) ); ?>
+				<?php echo get_field( 'content' ); ?>
 
 				<div class="blog__white-paper__form">
 
@@ -89,8 +90,9 @@
 			containerHeight = document.getElementById( 'snap-sizer' ).offsetHeight;
 			p.createCanvas(containerWidth, containerHeight); // create canvas to match sizer element size
 			circleSize = p.width/35;
-			baseImg = p.loadImage('<?php echo esc_url( get_template_directory_uri() . '/images/snapcode.png'); ?>');  // Load the image
-			corners = p.loadImage('<?php echo esc_url( get_template_directory_uri() . '/images/corners.png'); ?>'); // Load the image
+			baseImg = p.loadImage('/wp-content/themes/rp3/images/snapcode.png');  // Load the image
+			corners = p.loadImage('/wp-content/themes/rp3/images/corners.png'); // Load the image
+			jQuery('#snap-sizer').css('display', 'none').css('position', 'absolute');
 
 			system = new ParticleSystem(); // Create particle system
 			system.addParticles(); // add particles to system
@@ -314,10 +316,10 @@
 			p.resizeCanvas(containerWidth, containerHeight);
 			circleSize = p.width/35;
 		};
-
 	};
 
 	window.onload = function() {
 		var snapP5 = new p5(snapSketch, 'snap-container');
-	}
+	};
+
 </script>
