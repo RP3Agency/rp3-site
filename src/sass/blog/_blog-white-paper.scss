@@ -103,11 +103,4 @@
 			width: span(17);
 		}
 	}
-
-	&__form {
-
-		@include breakpoint( bp( 'medium' ) ) {
-			width: span(17);
-		}
-	}
 }
