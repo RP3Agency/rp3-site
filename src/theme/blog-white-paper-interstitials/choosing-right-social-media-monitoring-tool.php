@@ -33,7 +33,8 @@
 
 					<?php echo wp_get_attachment_image( get_field( 'image' ), 'full', false, array( 'id' => 'snap-sizer', 'class' => 'snap-sizer' ) ); ?>
 				</div>
-				
+
+				<p style="margin-top:1em;text-align:center">Follow us on Snapchat!</p>
 
 			</div>
 			<!-- // image -->
