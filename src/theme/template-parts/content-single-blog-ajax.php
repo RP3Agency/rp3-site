@@ -14,4 +14,12 @@
 
 <?php endif; ?>
 
-<?php get_template_part( 'template-parts/content', 'blog-related' ); ?>
+<?php if ( get_field( 'link_white_paper' ) ) : ?>
+
+	<?php get_template_part( 'template-parts/component', 'blog-interstitial--white-paper' ); ?>
+
+<?php else : ?>
+
+	<?php get_template_part( 'template-parts/content', 'blog-related' ); ?>
+
+<?php endif; ?>

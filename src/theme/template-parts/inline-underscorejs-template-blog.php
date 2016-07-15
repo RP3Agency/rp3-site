@@ -1,173 +1,185 @@
 <!-- Underscore Templates -->
 
+
+<!-- Blog Template -->
+
 <script type="text/template" id="blog-template">
 
-<% _.each( posts, function( post ) { %>
+	<% _.each( posts, function( post ) { %>
 
-	<article id="post-<%= post.ID %>" class="single-post-content single-post-content--blog" data-permalink="<%= post.link %>" data-title="<%= post.title %>">
+		<article id="post-<%= post.ID %>" class="single-post-content single-post-content--blog" data-permalink="<%= post.link %>" data-title="<%= post.title %>">
 
-		<div class="single-post-content__wrapper">
+			<div class="single-post-content__wrapper">
 
-			<header class="single-post-content__header">
+				<header class="single-post-content__header">
 
-				<h1 class="single-post-content__title"><%= post.title %></h1>
+					<h1 class="single-post-content__title"><%= post.title %></h1>
 
-				<div class="single-post-content__date">By
+					<div class="single-post-content__date">By
 
-					<% if ( 1 === post.authors.length ) { %>
+						<% if ( 1 === post.authors.length ) { %>
 
-						<%= post.authors[0].display_name %>
+							<%= post.authors[0].display_name %>
 
-					<% } else { %>
+						<% } else { %>
 
-						<% var names = _.pluck( post.authors, 'display_name' ); %>
+							<% var names = _.pluck( post.authors, 'display_name' ); %>
 
-						<% var andName = names.pop(); %>
+							<% var andName = names.pop(); %>
 
-						<%= names.join(', ') %> and <%= andName %>
+							<%= names.join(', ') %> and <%= andName %>
 
-					<% } %>
+						<% } %>
 
-					on <%= post.longDate %>
+						on <%= post.longDate %>
 
-				</div>
+					</div>
 
-			</header>
+				</header>
 
-			<% if ( post.four_three_small !== false ) { %>
+				<% if ( post.four_three_small !== false ) { %>
 
-				<div class="single-post-content__featured-image">
+					<div class="single-post-content__featured-image">
 
-					<picture>
-						<source srcset="<%= post.eight_three_large %>, <%= post.eight_three_large_2x %> 2x" media="(min-width: 37.5rem)" />
-						<source srcset="<%= post.four_three_medium %>, <%= post.four_three_medium_2x %> 2x" media="(min-width: 20.0625rem)" />
-						<source srcset="<%= post.four_three_small %>, <%= post.four_three_small_2x %> 2x" />
-						<img srcset="<%= post.four_three_small %>, <%= post.four_three_small_2x %> 2x" />
-					</picture>
+						<picture>
+							<source srcset="<%= post.eight_three_large %>, <%= post.eight_three_large_2x %> 2x" media="(min-width: 37.5rem)" />
+							<source srcset="<%= post.four_three_medium %>, <%= post.four_three_medium_2x %> 2x" media="(min-width: 20.0625rem)" />
+							<source srcset="<%= post.four_three_small %>, <%= post.four_three_small_2x %> 2x" />
+							<img srcset="<%= post.four_three_small %>, <%= post.four_three_small_2x %> 2x" />
+						</picture>
 
-				</div>
-
-			<% } %>
-
-			<section class="single-post-content__content">
-
-				<%= post.content %>
-
-			</section>
-
-			<section id="single-post-content__comments-placeholder-<%= post.ID %>" />
-
-			<% _.each( post.authors, function( author ) { %>
-
-				<% if ( 1 === parseInt( author.alumni ) ) { %>
-
-					<section class="blog__author">
-
-						<div class="blog__author__bio">
-
-							<p>View more posts by <a href="<%= author.posts_url %>"><%= author.display_name %></a>.</p>
-
-						</div>
-
-					</section>
-
-				<% } else { %>
-
-					<section class="blog__author">
-
-						<header class="blog__author__header">
-
-							<div class="blog__author__meta">
-
-								<div class="blog__author__image">
-
-									<img srcset="<%= author.photo_url %>, <%= author.photo_url_2x %> 2x">
-
-								</div>
-								<!-- // blog author image -->
-
-							</div>
-							<!-- // blog author meta -->
-
-						</header>
-						<!-- // blog author header -->
-
-						<div class="blog__author__bio">
-
-							<p><a href="<%= author.posts_url %>"><%= author.display_name %></a> <%= author.description %></p>
-
-							<!-- Social media presence -->
-
-							<ul class="blog__author__social social">
-
-								<% if( author.email ) { %>
-								<li class="email"><a href="<%= author.email %>">Email</a></li>
-								<% } %>
-
-								<% if( author.facebook ) { %>
-								<li class="facebook"><a href="<%= author.facebook %>">Facebook</a></li>
-								<% } %>
-
-								<% if( author.twitter ) { %>
-								<li class="twitter"><a href="<%= author.twitter %>">Twitter</a></li>
-								<% } %>
-
-								<% if( author.linkedin ) { %>
-								<li class="linkedin"><a href="<%= author.linkedin %>">LinkedIn</a></li>
-								<% } %>
-
-								<% if( author.instagram ) { %>
-								<li class="instagram"><a href="<%= author.instagram %>">Instagram</a></li>
-								<% } %>
-
-								<% if( author.github ) { %>
-								<li class="github"><a href="<%= author.github %>">GitHub</a></li>
-								<% } %>
-
-							</ul>
-
-						</div>
-
-					</section>
+					</div>
 
 				<% } %>
 
-			<% }); %>
+				<section class="single-post-content__content">
 
-			<section id="single-post-content__related-placeholder-<%= post.ID %>" />
+					<%= post.content %>
 
-		</div>
+				</section>
 
-	</article>
+				<section id="single-post-content__comments-placeholder-<%= post.ID %>" />
 
-	<?php if ( function_exists( 'sharing_display' ) ) : ?>
+				<% _.each( post.authors, function( author ) { %>
 
-		<li class="share-link" id="share-link-<%= post.ID %>" data-post-id="<%= post.ID %>">
-			<a rel="nofollow" data-post-id="<%= post.ID %>" data-shared="sharing-link-<%= post.ID %>" data-clipboard-text="<%= post.link %>" class="share-link sd-button share-icon no-text" href="#!" title="Click to copy permalink.">
-				<span></span>
-				<span class="sharing-screen-reader-text">Click to copy permalink to clipboard</span>
-			</a>
-		</li>
+					<% if ( 1 === parseInt( author.alumni ) ) { %>
 
-	<?php endif; ?>
+						<section class="blog__author">
 
-<% }) %>
+							<div class="blog__author__bio">
+
+								<p>View more posts by <a href="<%= author.posts_url %>"><%= author.display_name %></a>.</p>
+
+							</div>
+
+						</section>
+
+					<% } else { %>
+
+						<section class="blog__author">
+
+							<header class="blog__author__header">
+
+								<div class="blog__author__meta">
+
+									<div class="blog__author__image">
+
+										<img srcset="<%= author.photo_url %>, <%= author.photo_url_2x %> 2x">
+
+									</div>
+									<!-- // blog author image -->
+
+								</div>
+								<!-- // blog author meta -->
+
+							</header>
+							<!-- // blog author header -->
+
+							<div class="blog__author__bio">
+
+								<p><a href="<%= author.posts_url %>"><%= author.display_name %></a> <%= author.description %></p>
+
+								<!-- Social media presence -->
+
+								<ul class="blog__author__social social">
+
+									<% if( author.email ) { %>
+									<li class="email"><a href="<%= author.email %>">Email</a></li>
+									<% } %>
+
+									<% if( author.facebook ) { %>
+									<li class="facebook"><a href="<%= author.facebook %>">Facebook</a></li>
+									<% } %>
+
+									<% if( author.twitter ) { %>
+									<li class="twitter"><a href="<%= author.twitter %>">Twitter</a></li>
+									<% } %>
+
+									<% if( author.linkedin ) { %>
+									<li class="linkedin"><a href="<%= author.linkedin %>">LinkedIn</a></li>
+									<% } %>
+
+									<% if( author.instagram ) { %>
+									<li class="instagram"><a href="<%= author.instagram %>">Instagram</a></li>
+									<% } %>
+
+									<% if( author.github ) { %>
+									<li class="github"><a href="<%= author.github %>">GitHub</a></li>
+									<% } %>
+
+								</ul>
+
+							</div>
+
+						</section>
+
+					<% } %>
+
+				<% }); %>
+
+				<div id="single-post-content__related-placeholder-<%= post.ID %>"></div>
+
+			</div>
+
+		</article>
+
+		<?php if ( function_exists( 'sharing_display' ) ) : ?>
+
+			<li class="share-link" id="share-link-<%= post.ID %>" data-post-id="<%= post.ID %>">
+				<a rel="nofollow" data-post-id="<%= post.ID %>" data-shared="sharing-link-<%= post.ID %>" data-clipboard-text="<%= post.link %>" class="share-link sd-button share-icon no-text" href="#!" title="Click to copy permalink.">
+					<span></span>
+					<span class="sharing-screen-reader-text">Click to copy permalink to clipboard</span>
+				</a>
+			</li>
+
+		<?php endif; ?>
+
+		<div id="single-post-content__interstitial--white-paper-placeholder-<%= post.ID %>"></div>
+
+	<% } ); %>
+
 </script>
+
+
+<!-- Blog Interstitial -->
 
 <script type="text/template" id="blog-template-interstitial">
 
-<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
+	<?php get_template_part( 'template-parts/component', 'blog-interstitial' ); ?>
 
 </script>
 
+
+<!-- Blog Subscription Modal -->
+
 <script type="text/template" id="blog-template-subscription-modal">
 
-<div id="blog-subscription-modal" class="blog-subscription-modal">
+	<div id="blog-subscription-modal" class="blog-subscription-modal">
 
-	<a href="#!" id="blog-subscription-modal__close" class="blog-subscription-modal__close">Close</a>
+		<a href="#!" id="blog-subscription-modal__close" class="blog-subscription-modal__close">Close</a>
 
-	<div id="blog-subscription-modal__message"></div>
+		<div id="blog-subscription-modal__message"></div>
 
-</div>
+	</div>
 
 </script>
