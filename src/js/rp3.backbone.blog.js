@@ -41,6 +41,11 @@ rp3.backbone.blog = (function($, _, Backbone) {
 						that.$el.find( '#single-post-content__related-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html .single-blog__related' );
 						that.$el.find( '#single-post-content__interstitial--white-paper-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html .single-blog__interstitial--white-paper', function() {
 							jQuery( '#single-post-content__interstitial--white-paper-placeholder-' + post.get('ID') ).find( 'form' ).wpcf7InitForm();
+
+							jQuery( '#snap-sizer' ).load( function() {
+								var snapP5 = new p5( RP3_snapSketch, 'snap-container' );
+								return snapP5;
+							});
 						} );
 					});
 

@@ -14,7 +14,9 @@
 		"$f",
 		"Clipboard",
 		"wp",
-		"google"
+		"google",
+		"p5",
+		"RP3_snapSketch"
 	],
 	"browser": true,
 	"jquery": true,
