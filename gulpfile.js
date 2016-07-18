@@ -110,6 +110,11 @@ gulp.task('scripts-custom', function() {
 			src_js + '/rp3.skip-link-focus-fix.js',
 			src_js + '/rp3.snapsketch.js'
 		])
+		.pipe( plumber( function( err ) {
+			gutil.beep();
+			var errorText = err.message + '\n\n' + err.source;
+			gutil.log( gutil.colors.red( errorText ) );
+		}))
 		.pipe(jshint(__dirname + '/.jshintrc'))
 		.pipe(jshint.reporter('default'))
 		.pipe(concat(project + '.js'))
