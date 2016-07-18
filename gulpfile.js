@@ -102,9 +102,6 @@ gulp.task( 'kss', function() {
 gulp.task('scripts-custom', function() {
 	return gulp.src([
 			src_js + '/rp3.js',
-			src_js + '/rp3.backbone.js',
-			src_js + '/rp3.backbone.*.js',
-			src_js + '/rp3.blog-search.js',
 			src_js + '/rp3.google-maps.js',
 			src_js + '/rp3.scroll-magic.js',
 			src_js + '/rp3.skip-link-focus-fix.js',
