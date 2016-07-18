@@ -90,8 +90,8 @@ function rp3_scripts() {
 
 	$prerequisites = array(
 		'jquery',
-		'backbone',
-		'underscore',
+		// 'backbone',
+		// 'underscore',
 		'wp-api',
 		'rp3-plugins'
 	);
