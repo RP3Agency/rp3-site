@@ -32,7 +32,7 @@
     "wpackagist-plugin/debug-bar":"*",
     "wpackagist-plugin/google-analytics-for-wordpress":"*",
     "wpackagist-plugin/jetpack":"*",
-    "wpackagist-plugin/json-rest-api":"*",
+    "wpackagist-plugin/rest-api":"dev-trunk",
     "wpackagist-plugin/limit-login-attempts":"*",
     "wpackagist-plugin/public-post-preview":"*",
     "wpackagist-plugin/redirection":"*",
@@ -59,7 +59,7 @@
     "wpackagist-plugin/good-old-twitter-feed-widget": "*",
     "wpackagist-plugin/regenerate-thumbnails": "*",
     "wpackagist-plugin/wp-ses": "*",
-    "wpackagist-plugin/acf-to-wp-rest-api": "*"
+    "wpackagist-plugin/acf-to-rest-api": "*"
   },
   "extra": {
     "wordpress-install-dir": "_wp",
@@ -69,6 +69,8 @@
     }
   },
   "config": {
-    "secure-http": false
+    "secure-http": false,
+    "minimum-stability": "beta",
+    "prefer-stable": true
   }
 }

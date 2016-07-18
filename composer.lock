@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "69fef61f04777b40ae4a019151b1c9a4",
-    "content-hash": "b081a553526805f33e7e82cac238ed8c",
+    "hash": "a3fff97e2609ef9138140012c6569401",
+    "content-hash": "2ed29963f6cf207b6fd9c555ec80a340",
     "packages": [
         {
             "name": "composer/installers",
@@ -293,16 +293,16 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "wpackagist-plugin/acf-to-wp-rest-api",
-            "version": "1.3",
+            "name": "wpackagist-plugin/acf-to-rest-api",
+            "version": "2.2.0",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/acf-to-wp-rest-api/",
-                "reference": "trunk"
+                "url": "https://plugins.svn.wordpress.org/acf-to-rest-api/",
+                "reference": "tags/2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/acf-to-wp-rest-api.zip",
+                "url": "https://downloads.wordpress.org/plugin/acf-to-rest-api.2.2.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -310,7 +310,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/acf-to-wp-rest-api/"
+            "homepage": "https://wordpress.org/plugins/acf-to-rest-api/"
         },
         {
             "name": "wpackagist-plugin/admin-post-navigation",
@@ -573,26 +573,6 @@
             "homepage": "https://wordpress.org/plugins/jetpack/"
         },
         {
-            "name": "wpackagist-plugin/json-rest-api",
-            "version": "1.2.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/json-rest-api/",
-                "reference": "tags/1.2.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/json-rest-api.1.2.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/json-rest-api/"
-        },
-        {
             "name": "wpackagist-plugin/limit-login-attempts",
             "version": "1.7.1",
             "source": {
@@ -671,6 +651,27 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+        },
+        {
+            "name": "wpackagist-plugin/rest-api",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/rest-api/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/rest-api.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/rest-api/",
+            "time": "2016-05-25 13:39:20"
         },
         {
             "name": "wpackagist-plugin/show-current-template",
@@ -1036,7 +1037,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "wpackagist-plugin/rest-api": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
