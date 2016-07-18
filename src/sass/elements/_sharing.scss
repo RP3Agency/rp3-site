@@ -19,6 +19,16 @@ div.sharedaddy {
 
 	li[class*='share-'] a {
 		border-radius: 0 !important;
+		height: rem(34px) !important;
+		width: rem(37px) !important;
+
+		&::before {
+			bottom: 0;
+			left: 0;
+			line-height: rem(34px);
+			position: absolute;
+			right: 0;
+		}
 	}
 
 	/* ==========================================================================
@@ -64,6 +74,10 @@ div.sharedaddy {
 
 		& a::before {
 			content: "\f107";
+			font: {
+				family: Genericons;
+				size: 28px;
+			}
 		}
 	}
 }
