@@ -36,25 +36,6 @@ var rp3 = (function($) {
 	},
 
 	/* ==========================================================================
-	Navigation Canvas Slide
-	========================================================================== */
-
-	// navigationCanvasSlide = function() {
-
-	// 	var $body = $('body'),
-	// 		$menuOpen = $('#site-header__menu-open');
-
-	// 	$menuOpen.on( 'click', function(e) {
-
-	// 		e.preventDefault();
-
-	// 		$body.toggleClass('canvas-open');
-
-	// 		$(this).trigger( 'blur' );
-	// 	});
-	// },
-
-	/* ==========================================================================
 	   Load videos on work item pages
 	========================================================================== */
 
@@ -146,10 +127,16 @@ var rp3 = (function($) {
 					ga( 'send', 'event', 'Interface Elements', 'Enable Audio' );
 				}
 
+				// Refactored this slightly to deal with a Chrome bug
+				// See: https://bugs.chromium.org/p/chromium/issues/detail?id=593273
+				// Basically, we're holding back on re-starting playback until the "speaker"
+				// icon is gone, which is 100ms.
+
 				player.api( 'setVolume', 1 );
-				player.api( 'seekTo', 0 );
+				player.api( 'pause' ).api( 'seekTo', 0 );
 				$(this).fadeOut( 100, function() {
 					$(this).remove();
+					player.api( 'play' );
 				});
 			});
 		}
