@@ -105,7 +105,9 @@ gulp.task('scripts-custom', function() {
 			src_js + '/rp3.google-maps.js',
 			src_js + '/rp3.scroll-magic.js',
 			src_js + '/rp3.skip-link-focus-fix.js',
-			src_js + '/rp3.snapsketch.js'
+			src_js + '/rp3.snapsketch.js',
+			src_js + '/rp3.wpapi.js',
+			src_js + '/rp3.backbone.blog.js'
 		])
 		.pipe( plumber( function( err ) {
 			gutil.beep();
