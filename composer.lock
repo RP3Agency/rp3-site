@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a3fff97e2609ef9138140012c6569401",
-    "content-hash": "2ed29963f6cf207b6fd9c555ec80a340",
+    "hash": "4b70434c00b7eba91069296b01a0d789",
+    "content-hash": "ae63475e9f5dee53b6904c6668693770",
     "packages": [
         {
             "name": "composer/installers",
@@ -674,6 +674,26 @@
             "time": "2016-05-25 13:39:20"
         },
         {
+            "name": "wpackagist-plugin/rest-api-console",
+            "version": "2.0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/rest-api-console/",
+                "reference": "tags/2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/rest-api-console.2.0.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/rest-api-console/"
+        },
+        {
             "name": "wpackagist-plugin/show-current-template",
             "version": "0.2.2",
             "source": {
@@ -855,15 +875,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.3.4",
+            "version": "3.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.3.4"
+                "reference": "tags/3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.3.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.4.zip",
                 "reference": null,
                 "shasum": null
             },

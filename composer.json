@@ -6,7 +6,7 @@
     },
     {
       "type": "composer",
-      "url": "http://composer.rp3dev.com"
+      "url": "https://s3.amazonaws.com/composer.rp3dev.com"
     },
     {
       "type": "composer",
@@ -59,7 +59,8 @@
     "wpackagist-plugin/good-old-twitter-feed-widget": "*",
     "wpackagist-plugin/regenerate-thumbnails": "*",
     "wpackagist-plugin/wp-ses": "*",
-    "wpackagist-plugin/acf-to-rest-api": "*"
+    "wpackagist-plugin/acf-to-rest-api": "*",
+    "wpackagist-plugin/rest-api-console": "*"
   },
   "extra": {
     "wordpress-install-dir": "_wp",
@@ -69,7 +70,6 @@
     }
   },
   "config": {
-    "secure-http": false,
     "minimum-stability": "beta",
     "prefer-stable": true
   }
