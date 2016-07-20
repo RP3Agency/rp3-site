@@ -7,29 +7,17 @@
 
 	<% _.each( posts, function( post ) { %>
 
-		<article id="post-<%= post.ID %>" class="single-post-content single-post-content--blog" data-permalink="<%= post.link %>" data-title="<%= post.title %>">
+		<article id="post-<%= post.id %>" class="single-post-content single-post-content--blog" data-permalink="<%= post.link %>" data-title="<%= post.title.rendered %>">
 
 			<div class="single-post-content__wrapper">
 
 				<header class="single-post-content__header">
 
-					<h1 class="single-post-content__title"><%= post.title %></h1>
+					<h1 class="single-post-content__title"><%= post.title.rendered %></h1>
 
 					<div class="single-post-content__date">By
 
-						<% if ( 1 === post.authors.length ) { %>
 
-							<%= post.authors[0].display_name %>
-
-						<% } else { %>
-
-							<% var names = _.pluck( post.authors, 'display_name' ); %>
-
-							<% var andName = names.pop(); %>
-
-							<%= names.join(', ') %> and <%= andName %>
-
-						<% } %>
 
 						on <%= post.longDate %>
 
@@ -54,11 +42,11 @@
 
 				<section class="single-post-content__content">
 
-					<%= post.content %>
+					<%= post.content.rendered %>
 
 				</section>
 
-				<section id="single-post-content__comments-placeholder-<%= post.ID %>" />
+				<section id="single-post-content__comments-placeholder-<%= post.id %>" />
 
 				<% _.each( post.authors, function( author ) { %>
 
@@ -137,7 +125,7 @@
 
 				<% }); %>
 
-				<div id="single-post-content__related-placeholder-<%= post.ID %>"></div>
+				<div id="single-post-content__related-placeholder-<%= post.id %>"></div>
 
 			</div>
 
@@ -145,8 +133,8 @@
 
 		<?php if ( function_exists( 'sharing_display' ) ) : ?>
 
-			<li class="share-link" id="share-link-<%= post.ID %>" data-post-id="<%= post.ID %>">
-				<a rel="nofollow" data-post-id="<%= post.ID %>" data-shared="sharing-link-<%= post.ID %>" data-clipboard-text="<%= post.link %>" class="share-link sd-button share-icon no-text" href="#!" title="Click to copy permalink.">
+			<li class="share-link" id="share-link-<%= post.id %>" data-post-id="<%= post.id %>">
+				<a rel="nofollow" data-post-id="<%= post.id %>" data-shared="sharing-link-<%= post.id %>" data-clipboard-text="<%= post.link %>" class="share-link sd-button share-icon no-text" href="#!" title="Click to copy permalink.">
 					<span></span>
 					<span class="sharing-screen-reader-text">Click to copy permalink to clipboard</span>
 				</a>
@@ -154,7 +142,7 @@
 
 		<?php endif; ?>
 
-		<div id="single-post-content__interstitial--white-paper-placeholder-<%= post.ID %>"></div>
+		<div id="single-post-content__interstitial--white-paper-placeholder-<%= post.id %>"></div>
 
 	<% } ); %>
 

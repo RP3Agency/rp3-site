@@ -50,8 +50,6 @@ rp3.wpapi = ( function( $, wp ) {
 			// get base serialized post
 			var attributes = wp.api.models.Post.prototype.toJSON.apply(this, arguments);
 
-console.log( attributes );
-
 			// serialize author attribute directly from related Author model instance
 			attributes.author = this.attributes.author;
 
@@ -67,16 +65,17 @@ console.log( attributes );
 
 		// Generate responsive image at given size from featured image
 		responsiveImage: function( size ) {
+
 			// If featuredImage is null, return the greatest hits image (I love that we're calling it that. ;-)
-			if ( ! this.has( 'featured_image' ) ) {
+			if ( ! this.has( 'featured_media' ) ) {
 				return greatestHitsImage( size, this.get( 'type' ) );
 			}
 
-			var featuredImage = this.get( 'featured_image' );
+			var featuredImage = this.get( 'featured_media' );
 
 			// If featuredImage has error_data as a property, or doesn't have an ID property, return
 			// the "greatest hits" image.
-			if ( featuredImage.hasOwnProperty( 'error_data' ) || ! featuredImage.hasOwnProperty( 'ID' ) ) {
+			if ( featuredImage.hasOwnProperty( 'error_data' ) || ! featuredImage ) {
 				return greatestHitsImage( size, this.get( 'type' ) );
 			}
 

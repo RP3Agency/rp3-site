@@ -25,6 +25,8 @@ get_header( 'blog' ); ?>
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
+			<?php // wp_die( var_dump( get_post_meta( $post->ID ) ) ); ?>
+
 			<?php get_template_part( 'template-parts/content', 'single-blog' ); ?>
 
 		<?php endwhile; ?>

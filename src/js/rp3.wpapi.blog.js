@@ -1,7 +1,7 @@
 // Define our "rp3" object, if not already defined
 if ( rp3 === undefined ) { var rp3 = {}; }
 
-rp3.backbone.blog = (function($, _, Backbone) {
+rp3.wpapi.blog = (function($, _, Backbone) {
 
 	/** Do something awesome */
 
@@ -12,7 +12,7 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 	// Posts collection instance
 
-	postCollection = new rp3.backbone.collections.Posts(),
+	postCollection = new rp3.wpapi.collections.Posts(),
 
 	/** Post View */
 
@@ -37,10 +37,10 @@ rp3.backbone.blog = (function($, _, Backbone) {
 					that.$el.html( template( { posts: posts.toJSON() } ) );
 
 					_.each( posts.models, function( post ) {
-						that.$el.find( '#single-post-content__comments-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html .single-blog__comments' );
-						that.$el.find( '#single-post-content__related-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html .single-blog__related' );
-						that.$el.find( '#single-post-content__interstitial--white-paper-placeholder-' + post.get('ID') ).load( post.get('link') + '?ajax=html .single-blog__interstitial--white-paper', function() {
-							jQuery( '#single-post-content__interstitial--white-paper-placeholder-' + post.get('ID') ).find( 'form' ).wpcf7InitForm();
+						that.$el.find( '#single-post-content__comments-placeholder-' + post.get('id') ).load( post.get('link') + '?ajax=html .single-blog__comments' );
+						that.$el.find( '#single-post-content__related-placeholder-' + post.get('id') ).load( post.get('link') + '?ajax=html .single-blog__related' );
+						that.$el.find( '#single-post-content__interstitial--white-paper-placeholder-' + post.get('id') ).load( post.get('link') + '?ajax=html .single-blog__interstitial--white-paper', function() {
+							jQuery( '#single-post-content__interstitial--white-paper-placeholder-' + post.get('id') ).find( 'form' ).wpcf7InitForm();
 
 							jQuery( '#snap-sizer' ).load( function() {
 								var snapP5 = new p5( RP3_snapSketch, 'snap-container' );
@@ -186,8 +186,10 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 				$blog__loading_indicator.addClass('visible');
 
+
 				// Create an element to store our rendering
 				$postElement = $('<div>').addClass('blog__backbone__post');
+
 				postView.setElement( $postElement );
 
 				// Set the filters for this query, based on whether or not this was a search
@@ -251,8 +253,8 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 		// Bring in our variables from the PHP template
 
-		exclude		= rp3.backbone.get('exclude');
-		industries	= rp3.backbone.get('industries');
+		exclude		= rp3.wpapi.get('exclude');
+		industries	= rp3.wpapi.get('industries');
 
 		Backbone.history.start();
 
@@ -269,7 +271,11 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 	'use strict';
 
-	if ( -1 < location.href.indexOf( '/blog' ) ) {
-		rp3.backbone.blog.init();
-	}
+	wp.api.loadPromise.done( function() {
+
+		if ( -1 < location.href.indexOf( '/blog' ) ) {
+
+			rp3.wpapi.blog.init();
+		}
+	});
 }());

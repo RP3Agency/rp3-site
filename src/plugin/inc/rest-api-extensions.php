@@ -114,3 +114,27 @@ function rp3_json_remove_excerpt_sharing() {
 	remove_filter( 'the_excerpt', 'sharing_display', 19 );
 }
 add_filter( RP3_JSON_PREFIX . 'pre_dispatch', 'rp3_json_remove_excerpt_sharing' );
+
+
+
+
+
+
+/**
+ * API v2
+ */
+
+add_action( 'rest_api_init', 'slug_register_starship' );
+
+function slug_register_starship() {
+	register_rest_field( 'post', 'starship', array(
+		'get_callback'		=> 'slug_get_starship',
+		'update_callback'	=> null,
+		'schema'			=> null
+	) );
+}
+
+function slug_get_starship( $object, $field_name, $request ) {
+	return get_post_meta( $object['id'], $field_name, true );
+}
+

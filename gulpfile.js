@@ -107,7 +107,7 @@ gulp.task('scripts-custom', function() {
 			src_js + '/rp3.skip-link-focus-fix.js',
 			src_js + '/rp3.snapsketch.js',
 			src_js + '/rp3.wpapi.js',
-			src_js + '/rp3.backbone.blog.js'
+			src_js + '/rp3.wpapi.blog.js'
 		])
 		.pipe( plumber( function( err ) {
 			gutil.beep();
