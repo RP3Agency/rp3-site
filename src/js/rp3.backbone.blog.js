@@ -194,8 +194,10 @@ rp3.backbone.blog = (function($, _, Backbone) {
 
 				searchQuery = Backbone.history.getFragment();
 
-				if ( 0 < searchQuery.length ) {
+				if ( ( 0 < searchQuery.length ) && ( 0 < searchQuery.indexOf( '/' ) ) ) {
 					searchQuery = decodeURIComponent( searchQuery.substring( searchQuery.indexOf( '/' ) + 1 ) );
+				} else {
+					searchQuery = '';
 				}
 
 				var filters;
