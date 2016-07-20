@@ -6,7 +6,7 @@
     },
     {
       "type": "composer",
-      "url": "http://composer.rp3dev.com"
+      "url": "https://s3.amazonaws.com/composer.rp3dev.com"
     },
     {
       "type": "composer",
@@ -69,6 +69,5 @@
     }
   },
   "config": {
-    "secure-http": false
   }
 }
