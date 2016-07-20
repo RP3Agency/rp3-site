@@ -1,4 +1,4 @@
-<div class="blog__white-paper blog__white-paper--snapchat single-blog__interstitial--white-paper">
+<div id="rp3-snapchat-primer" class="blog__white-paper blog__white-paper--snapchat single-blog__interstitial--white-paper">
 
 	<div class="blog__white-paper__container">
 
