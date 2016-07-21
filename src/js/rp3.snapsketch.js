@@ -15,7 +15,7 @@ var RP3_snapSketch = function( p ) {
 		circleSize = p.width/35;
 		baseImg = p.loadImage('/wp-content/themes/rp3/images/snapcode.png');  // Load the image
 		corners = p.loadImage('/wp-content/themes/rp3/images/corners.png'); // Load the image
-		jQuery('#snap-sizer').css('display', 'none').css('position', 'absolute');
+		jQuery('#snap-sizer').css('position', 'absolute');
 
 		system = new ParticleSystem(); // Create particle system
 		system.addParticles(); // add particles to system
