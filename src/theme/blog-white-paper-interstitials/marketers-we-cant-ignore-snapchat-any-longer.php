@@ -22,6 +22,7 @@
 						.snap-sizer {
 							display: block;
 							position: relative;
+							visibility: hidden;
 						}
 
 						.snap-sizer canvas {
