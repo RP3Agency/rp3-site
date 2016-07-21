@@ -36,25 +36,6 @@ var rp3 = (function($) {
 	},
 
 	/* ==========================================================================
-	Navigation Canvas Slide
-	========================================================================== */
-
-	// navigationCanvasSlide = function() {
-
-	// 	var $body = $('body'),
-	// 		$menuOpen = $('#site-header__menu-open');
-
-	// 	$menuOpen.on( 'click', function(e) {
-
-	// 		e.preventDefault();
-
-	// 		$body.toggleClass('canvas-open');
-
-	// 		$(this).trigger( 'blur' );
-	// 	});
-	// },
-
-	/* ==========================================================================
 	   Load videos on work item pages
 	========================================================================== */
 
