@@ -334,11 +334,18 @@ function add_param_oembed_fetch_url( $provider, $url, $args) {
 	return $provider . '&'. $parameters;
 }
 
-/** add player id to iframe id on vimeo */
 function add_player_id_to_iframe( $html, $url, $args ) {
-	if( isset( $args['player_id'] ) ) {
+
+	/** add player id to iframe id on vimeo */
+	if ( ( isset( $args['player_id'] ) ) && ( 'vimeo' == $args['platform'] ) ) {
 		$html = str_replace( '<iframe', '<iframe id="'. $args['player_id'] .'"', $html );
 	}
+
+	/** add "enablejsapi" flag to youtube videos */
+	if ( 'youtube' == $args['platform'] ) {
+		$html = str_replace( '<iframe', '<iframe enablejsapi="true"', $html );
+	}
+
 	return $html;
 }
 
