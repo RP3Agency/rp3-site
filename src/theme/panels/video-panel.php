@@ -125,6 +125,20 @@ if ( '' !== get_sub_field( 'video_link' ) ) {
 
 		<?php endif; ?>
 
+		<?php if ( '' !== get_sub_field( 'video_caption' ) ) : ?>
+
+			<div class="video-panel__caption">
+
+				<div class="video-panel__caption__container">
+
+					<?php the_sub_field( 'video_caption' ); ?>
+
+				</div>
+
+			</div>
+
+		<?php endif; ?>
+
 	</section>
 	<!-- full-width-image-panel -->
 
