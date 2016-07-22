@@ -16,7 +16,8 @@
 		"wp",
 		"google",
 		"p5",
-		"RP3_snapSketch"
+		"RP3_snapSketch",
+		"YT"
 	],
 	"browser": true,
 	"jquery": true,
