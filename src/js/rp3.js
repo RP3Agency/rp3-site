@@ -36,36 +36,6 @@ var rp3 = (function($) {
 	},
 
 	/* ==========================================================================
-	   Load videos on work item pages
-	========================================================================== */
-
-	videoToggle = function() {
-
-		var $videoTrigger = $('.video__trigger');
-
-
-		// Loop through each video on the page
-		$videoTrigger.each( function() {
-
-			// Get the hash which serves as the basis for all of our unique IDs
-			var hash = $(this).data('id'),
-				$modal = $('#' + hash + '__modal'), // the modal
-				$iframe = $('#' + hash + '__iframe'), // the vimeo iframe
-				player = $f( $iframe[0] ); // the vimeo player for the purposes of the API
-
-			player.addEvent( 'ready' ); // initialize the player API
-
-			// Clicking on the trigger reveals the modal and plays the video
-			$(this).on( 'click', function(e) {
-
-				e.preventDefault();
-				$modal.addClass('visible');
-				player.api( 'play' );
-			});
-		});
-	},
-
-	/* ==========================================================================
 	   Raptor Jim
 	========================================================================== */
 
@@ -423,9 +393,6 @@ var rp3 = (function($) {
 	========================================================================== */
 
 	init = function() {
-
-		// navigationCanvasSlide();
-		videoToggle();
 		raptorJim();
 		revealComments();
 		trackBlogRelated();
