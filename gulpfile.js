@@ -108,7 +108,8 @@ gulp.task('scripts-custom', function() {
 			src_js + '/rp3.google-maps.js',
 			src_js + '/rp3.scroll-magic.js',
 			src_js + '/rp3.skip-link-focus-fix.js',
-			src_js + '/rp3.snapsketch.js'
+			src_js + '/rp3.snapsketch.js',
+			src_js + '/rp3.video.js'
 		])
 		.pipe(jshint(__dirname + '/.jshintrc'))
 		.pipe(jshint.reporter('default'))
