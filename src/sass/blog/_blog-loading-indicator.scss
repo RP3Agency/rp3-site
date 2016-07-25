@@ -1,15 +1,51 @@
 .blog__loading-indicator {
-	margin-top: -2rem;
+	display: flex;
+	height: 17px;
+	justify-content: space-between;
+	margin: {
+		top: -2rem;
+		right: auto;
+		left: auto;
+	}
 	padding-bottom: 2rem;
-	text-align: center;
 	visibility: hidden;
+	width: 67px;
 
 	&.visible {
 		visibility: visible;
 	}
 
-	img {
-		display: inline-block;
-		width: 50px;
+	&__dot {
+		background-color: #040204;
+		border-radius: 100%;
+		display: block;
+		height: 14px;
+		opacity: 0.2;
+		width: 14px;
+
+		animation-name: fade-in-out;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+		animation-easing: linear;
+		
+		&:nth-child(1) {
+			animation-delay: 0;
+		}
+		
+		&:nth-child(2) {
+			animation-delay: 0.33s;
+		}
+		
+		&:nth-child(3) {
+			animation-delay: 0.67s;
+		}
 	}
+}
+
+@keyframes fade-in-out {
+	0% { opacity: 0.2; }
+	25% { opacity: 1; }
+	50% { opacity: 0.2; }
+	75% { opacity: 1; }
+	100% { opacity: 0.2; }
 }

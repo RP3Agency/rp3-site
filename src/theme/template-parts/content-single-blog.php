@@ -131,7 +131,9 @@ if( is_single() ) {
 
 <div id="blog__loading-indicator" class="blog__loading-indicator">
 
-	<img src="<?php echo esc_url( get_template_directory_uri() . '/images/loading-indicator.gif' ); ?>" />
+	<span class="blog__loading-indicator__dot"></span>
+	<span class="blog__loading-indicator__dot"></span>
+	<span class="blog__loading-indicator__dot"></span>
 
 </div>
 
