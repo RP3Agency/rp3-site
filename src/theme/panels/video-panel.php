@@ -9,6 +9,7 @@
 
 if ( '' !== get_sub_field( 'video_link' ) ) {
 
+
 	$video = get_sub_field( 'video_link' );
 
 	preg_match( '/src="(.+?)"/', $video, $matches );
@@ -18,24 +19,51 @@ if ( '' !== get_sub_field( 'video_link' ) ) {
 
 	$hash = md5( $src );
 
-	// Add additional parameters for autoplay and the API
 
-	$params = array(
-		'title'			=> 0,
-		'byline'		=> 0,
-		'portrait'		=> 0,
-		'player_id'		=> $hash . '__iframe'
-	);
+	// Vimeo
 
-	$new_src = add_query_arg( $params, $src );
+	if ( preg_match( '/vimeo/', $src ) ) {
 
-	$video = str_replace( $src, $new_src, $video );
+		// Add additional parameters for autoplay and the API
 
-	// Add the ID to the iframe
+		$params = array(
+			'title'			=> 0,
+			'byline'		=> 0,
+			'portrait'		=> 0,
+			'player_id'		=> $hash . '__iframe',
+			'platform'		=> 'vimeo'
+		);
 
-	$attributes = 'id="' . $hash . '__iframe"';
+		$new_src = add_query_arg( $params, $src );
 
-	$video = str_replace( '></iframe>', ' ' . $attributes . '></iframe>', $video );
+		$video = str_replace( $src, $new_src, $video );
+
+		// Add the ID to the iframe
+
+		$attributes = 'id="' . $hash . '__iframe"';
+
+		$video = str_replace( '></iframe>', ' ' . $attributes . '></iframe>', $video );
+
+	// YouTube
+
+	} elseif ( preg_match( '/youtube/', $src ) ) {
+
+		$params = array(
+			'player_id'		=> $hash . '__iframe',
+			'enablejsapi'	=> 1,
+			'platform'		=> 'youtube'
+		);
+
+		$new_src = add_query_arg( $params, $src );
+
+		$video = str_replace( $src, $new_src, $video );
+
+		// Add the ID to the iframe
+
+		$attributes = 'id="' . $hash . '__iframe"';
+
+		$video = str_replace( '></iframe>', ' ' . $attributes . '></iframe>', $video );
+	}
 }
 ?>
 
@@ -45,7 +73,7 @@ if ( '' !== get_sub_field( 'video_link' ) ) {
 
 	<section id="<?php echo esc_attr( $hash ); ?>" class="video-panel panel video-panel__trigger">
 
-		<a href="#!" id="<?php echo esc_attr( $hash . '__trigger' ); ?>" data-id="<?php echo esc_attr( $hash ); ?>" class="video-panel__image video__trigger block">
+		<a href="#!" id="<?php echo esc_attr( $hash . '__trigger' ); ?>" data-id="<?php echo esc_attr( $hash ); ?>" class="video-panel__image video__trigger block <?php echo esc_attr( $params['platform'] ); ?>">
 
 			<?php if ( '' != get_sub_field( 'full-width-image' ) ) : ?>
 
@@ -92,6 +120,20 @@ if ( '' !== get_sub_field( 'video_link' ) ) {
 			<div id="<?php echo esc_attr( $hash . '__modal' ); ?>" class="video-panel__modal">
 
 				<?php echo $video; ?>
+
+			</div>
+
+		<?php endif; ?>
+
+		<?php if ( '' !== get_sub_field( 'video_caption' ) ) : ?>
+
+			<div class="video-panel__caption">
+
+				<div class="video-panel__caption__container">
+
+					<?php the_sub_field( 'video_caption' ); ?>
+
+				</div>
 
 			</div>
 

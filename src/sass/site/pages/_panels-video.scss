@@ -35,36 +35,6 @@
 	&__trigger {
 		clear: both;
 		position: relative;
-
-		// > a::after {
-		// 	background-color: transparentize( color( 'black' ), 0.2 );
-		// 	border: 1px solid #fff;
-		// 	border-radius: 2px;
-		// 	color: #fff;
-		// 	content: '\f452';
-		// 	display: block;
-		// 	font-family: Genericons;
-		// 	font-size: em(14px);
-		// 	height: 26px;
-		// 	line-height: 26px;
-		// 	text-align: center;
-		// 	transition: background-color 200ms linear;
-		// 	width: 26px;
-		// 	@include centered( "both" );
-
-		// 	@include breakpoint( bp() ) {
-		// 		font-size: em(21px);
-		// 		height: 46px;
-		// 		line-height: 46px;
-		// 		width: 46px;
-		// 	}
-		// }
-
-		// @include hover-state {
-		// 	> a::after {
-		// 		background-color: color( 'black' );
-		// 	}
-		// }
 	}
 
 
@@ -88,6 +58,24 @@
 		iframe {
 			height: 100%;
 			width: 100%;
+		}
+	}
+
+	&__caption {
+		padding: {
+			top: 2em;
+			bottom: 6em;
+		}
+
+		&__container {
+			@extend %max-width--padded;
+			font-style: italic;
+			height: 100%;
+			margin: {
+				right: auto;
+				left: auto;
+			}
+			max-width: rem( 720px );
 		}
 	}
 }
