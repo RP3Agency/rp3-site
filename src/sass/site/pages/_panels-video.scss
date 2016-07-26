@@ -69,13 +69,16 @@
 
 		&__container {
 			@extend %max-width--padded;
-			font-style: italic;
 			height: 100%;
 			margin: {
 				right: auto;
 				left: auto;
 			}
 			max-width: rem( 720px );
+
+			p {
+				margin-bottom: 1em;
+			}
 		}
 	}
 }
