@@ -1,0 +1,34 @@
+{
+	"name":"rp3-site",
+	"friendlyName":"RP3 Agency Website",
+	"type":"wordpress",
+	"scm":"git",
+	"targets":{
+		"qc":{
+			"name":"QC",
+			"host":"qc.site.rp3.rp3dev.com",
+			"port":"22",
+			"path":"/var/www",
+			"user":"ubuntu",
+			"key":"~/.ssh/ec2/rp3-infrastructure.pem"
+		},
+		"prod":{
+			"name":"Production",
+			"host":"rp3agency.com",
+			"port":"22",
+			"path":"/var/www",
+			"user":"ubuntu",
+			"key":"~/.ssh/ec2/rp3-infrastructure.pem"
+		}
+	},
+	"preSwitchCmds": [
+		"ln -s ../../assets/wp-config-local.php wp-config-local.php",
+		"ln -s ../../assets/robots.txt robots.txt",
+		"ln -s ../../../assets/advanced-cache.php wp-content/advanced-cache.php",
+		"ln -s ../../../assets/cache wp-content/cache",
+		"ln -s ../../../assets/wp-cache-config.php wp-content/wp-cache-config.php",
+		"rm -rf wp-content/uploads",
+		"ln -s ../../../assets/uploads wp-content/uploads",
+		"sudo chown -R www-data:www-data ."
+	]
+}
